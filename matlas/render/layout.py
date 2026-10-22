@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from ..config import Config
-from ..models import SCHEMA_VERSION
+from ..models import SCHEMA_VERSION  # noqa: F401  （llms.txt 出口仍引用）
 from . import components as C
 
 _CSS = """
@@ -737,7 +737,6 @@ def page(
 </main>
 <footer class="site"><div class="wrap">
   <p>{C.esc(cfg.site_name)} · {C.esc(cfg.site_tagline)}</p>
-  <p>数据契约 v{SCHEMA_VERSION} · 全部历史可被哈希指纹核验，结论不做事后修改。</p>
 </div></footer>
 <a class="back-top" id="back-top" href="#" aria-label="回顶部">{ICON_TOP}</a>
 <nav class="v4-bottom-nav-global">
