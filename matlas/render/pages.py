@@ -852,7 +852,9 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
         )
     # 面板展开：#afp-toggle 与左侧 #fp-toggle 同机制但独立 id，互不影响
     rules.insert(0, "body:has(#afp-toggle:checked) #ai-filter-panel{display:block}")
-    rules.insert(0, ".ai-pred-card .ai-date{display:none}")
+    # 日期联动 span 在筛选条（.v4-date）里：默认全隐，选中项由 body:has 显示。
+    # 注意筛选条已移出卡片，选择器必须是 .ai-bar 而非 .ai-pred-card
+    rules.insert(0, ".ai-bar .ai-date{display:none}")
 
     # 筛选条：与左侧同款且完全独立在卡片外（‹ 更早一天 · 日期 · 更晚一天 › +
     # 筛选按钮）。列表最新在前：‹ = selectedIndex+1，› = selectedIndex-1（JS 处理）。
