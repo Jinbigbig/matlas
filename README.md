@@ -24,6 +24,22 @@ python build.py --reference 2026-10-22   # 额外并入第三方对照（需联�
 
 ---
 
+## 分支与发布
+
+| 分支 | 内容 |
+| --- | --- |
+| `main` | 源码 + 数据（`_site/` 已在 .gitignore 里，产物永不进 main） |
+| `gh-pages` | 构建产物，GitHub Pages 从这里出 |
+
+```bash
+./publish.sh              # 构建（strict）+ 推送 gh-pages
+./publish.sh --no-push    # 只构建，本地预览
+```
+
+发布脚本会先检查工作区是否有未提交改动 —— 有就拒绝发布，避免产物里夹带源码改动。
+
+---
+
 ## 它已经能做什么
 
 | 能力 | 说明 |
