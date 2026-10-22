@@ -211,6 +211,7 @@
    ],
    "confidence": "medium",
    "is_cold_start": false,
+   "main_pick": "",
    "h2h": [],
    "recent_home": [
     {
@@ -332,7 +333,7 @@
     "settled_at": "2026-10-22 02:40"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T12:44:38+08:00",
+   "generated_at": "2026-10-22T12:57:26+08:00",
    "extras": {
     "sample": true
    }
@@ -544,6 +545,49 @@
    ],
    "confidence": "low",
    "is_cold_start": false,
+   "main_pick": "主场强度与近况占优，方向取主胜，比分取 2-1",
+   "handicap": {
+    "spread": -1,
+    "pick": "让平",
+    "prob": 0.24,
+    "hit": false
+   },
+   "risk": {
+    "level": "warn",
+    "note": "客队中卫伤缺但反击效率仍高，平局风险高于常规主场盘",
+    "factors": [
+     "近两次交锋客队两胜",
+     "双方均处赛程密集期"
+    ],
+    "hit": true
+   },
+   "reference": {
+    "source": "球小策开源数据集",
+    "url": "https://github.com/ddzyx/qiuxiaoce-football-data",
+    "license": "CC BY-NC 4.0",
+    "items": [
+     {
+      "kind": "direction",
+      "label": "胜/平",
+      "hit": true
+     },
+     {
+      "kind": "score",
+      "label": "2:1",
+      "hit": false
+     },
+     {
+      "kind": "goals",
+      "label": "3球",
+      "hit": false
+     },
+     {
+      "kind": "htft",
+      "label": "平-胜",
+      "hit": false
+     }
+    ]
+   },
    "h2h": [
     {
      "date": "2025-03-11",
@@ -583,7 +627,7 @@
     "settled_at": "2026-10-22 05:00"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T12:44:38+08:00",
+   "generated_at": "2026-10-22T12:57:26+08:00",
    "extras": {
     "sample": true
    }
@@ -640,6 +684,12 @@
    ],
    "confidence": "medium",
    "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": -1,
+    "pick": "让平",
+    "prob": 0.26
+   },
    "h2h": [],
    "recent_home": [],
    "recent_away": [],
@@ -654,7 +704,7 @@
     "settled_at": "2026-10-22 10:35"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T12:44:38+08:00",
+   "generated_at": "2026-10-22T12:57:26+08:00",
    "extras": {
     "sample": true
    }
@@ -721,6 +771,7 @@
    ],
    "confidence": "none",
    "is_cold_start": false,
+   "main_pick": "",
    "h2h": [],
    "recent_home": [],
    "recent_away": [],
@@ -735,7 +786,7 @@
     "settled_at": "2026-10-22 02:45"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T12:44:38+08:00",
+   "generated_at": "2026-10-22T12:57:26+08:00",
    "extras": {
     "sample": true
    }
@@ -776,12 +827,13 @@
    ],
    "confidence": "low",
    "is_cold_start": true,
+   "main_pick": "",
    "h2h": [],
    "recent_home": [],
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T12:44:38+08:00",
+   "generated_at": "2026-10-22T12:57:26+08:00",
    "extras": {
     "sample": true
    }
