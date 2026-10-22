@@ -1878,7 +1878,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     var pnl = totWin - totAmt;
     var badge = { win: '<span class="bt-chip bt-win">✅ 中奖</span>', lose: '<span class="bt-chip bt-lose">❌ 未中奖</span>', pending: '<span class="bt-chip bt-pending">⏳ 待开奖</span>' };
     $("bk-stats").innerHTML = ""
-      + '<div class="stat-card"><div class="stat-num">' + totTickets + "</div><div class=\"stat-lbl\">📋 总票数（待开 " + pending + "）</div></div>"
+      + '<div class="stat-card"><div class="stat-num">' + totTickets + '</div><div class="stat-lbl">📋 总票数（待开 ' + pending + '）</div></div>'
       + '<div class="stat-card"><div class="stat-num">' + totAmt.toFixed(1) + '</div><div class="stat-lbl">💰 总投注(元)</div></div>'
       + '<div class="stat-card"><div class="stat-num">' + totWin.toFixed(1) + '</div><div class="stat-lbl">🏆 中奖(元)</div></div>'
       + '<div class="stat-card"><div class="stat-num ' + (pnl >= 0 ? "pnl-pos" : "pnl-neg") + '">' + (pnl >= 0 ? "+" : "") + pnl.toFixed(1) + '</div><div class="stat-lbl">📈 净收益(元)</div></div>';
