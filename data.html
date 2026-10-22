@@ -6,7 +6,7 @@
 <title>数据统计 - Matlas</title>
 <meta name="description" content="站点赛事统计：总场次、四维准确率、近10天走势、联赛与球队排名">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/data.html">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=1792665626">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据统计 - Matlas">
 <meta property="og:description" content="站点赛事统计：总场次、四维准确率、近10天走势、联赛与球队排名">
@@ -99,6 +99,36 @@ document.addEventListener("change", function (e) {
   var s = e.target.closest(".date-select");
   if (s && s.value) window.location.href = s.value;
 });
+// AI 预测卡日期：下拉/‹›箭头只改隐藏 radio 的选中态，内容显隐仍走纯 CSS 规则
+document.addEventListener("change", function (e) {
+  var s = e.target.closest(".ai-date-select");
+  if (!s) return;
+  var r = document.getElementById(s.value);
+  if (r) r.checked = true;
+  aiSyncArrows(s);
+});
+function aiSyncArrows(s) {
+  var card = s.closest("#ai-pred-card");
+  if (!card) return;
+  card.querySelectorAll("[data-aid-step]").forEach(function (a) {
+    var i = s.selectedIndex + parseInt(a.getAttribute("data-aid-step"), 10);
+    a.classList.toggle("off", i < 0 || i >= s.options.length);
+  });
+}
+document.addEventListener("click", function (e) {
+  var a = e.target.closest("[data-aid-step]");
+  if (!a) return;
+  e.preventDefault();
+  var s = document.querySelector("#ai-pred-card .ai-date-select");
+  if (!s) return;
+  var i = s.selectedIndex + parseInt(a.getAttribute("data-aid-step"), 10);
+  if (i < 0 || i >= s.options.length) return;
+  s.selectedIndex = i;
+  var r = document.getElementById(s.options[i].value);
+  if (r) r.checked = true;
+  aiSyncArrows(s);
+});
+document.querySelectorAll("#ai-pred-card .ai-date-select").forEach(aiSyncArrows);
 </script>
 </body>
 </html>
