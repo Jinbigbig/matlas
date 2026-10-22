@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>数据统计 - Matlas</title>
+<meta name="description" content="站点赛事统计：交易日、场次、方向命中率与各联赛分布">
+<link rel="canonical" href="https://jinbigbig.github.io/matlas/data.html">
+<link rel="stylesheet" href="assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据统计 - Matlas">
+<meta property="og:description" content="站点赛事统计：交易日、场次、方向命中率与各联赛分布">
+<meta name="robots" content="index,follow">
+
+</head>
+<body>
+<input type="checkbox" id="ss-toggle" class="ss-toggle" aria-hidden="true">
+<header class="site"><div class="wrap">
+  <div class="brand"><span class="brand-mark">M</span>Matlas<span>足球赛事量化图谱</span></div>
+  <nav class="site">
+    <a href="./">🏠赛事</a>
+    <a href="data.html">📊数据</a>
+    <a href="features.html">🧩功能</a>
+    <a href="me.html">👤我的</a>
+    <label class="is-icon nav-search" for="ss-toggle" aria-label="搜索"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.2" y2="16.2"></line></svg></label>
+  </nav>
+</div></header>
+<div class="site-search"><div class="wrap">
+  <form class="site-search-form" action="search.html" method="get">
+    <input class="search-input" name="q" type="text" placeholder="输入关键字" required>
+    <button class="search-btn" type="submit" aria-label="搜索"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.2" y2="16.2"></line></svg></button>
+  </form>
+</div></div>
+<main class="wrap">
+<h1>📊 数据统计</h1><div class="stats-grid"><div class="stat-card"><div class="pct stat-num">1</div><div class="stat-lbl">交易日</div></div><div class="stat-card"><div class="pct stat-num">5</div><div class="stat-lbl">赛事场次</div></div><div class="stat-card"><div class="pct stat-num">4</div><div class="stat-lbl">已结算</div></div><div class="stat-card"><div class="pct stat-num">25%</div><div class="stat-lbl">方向命中率</div></div></div><h2>各联赛方向命中</h2><div class="tw"><table class=""><thead><tr><th>联赛</th><th>已结算</th><th>命中</th><th>命中率</th></tr></thead><tbody><tr><td>欧冠</td><td>3</td><td>1</td><td><span class="pct">33%</span></td></tr><tr><td>解放者杯</td><td>1</td><td>0</td><td><span class="pct">0%</span></td></tr></tbody></table></div><h2>机器可读数据</h2><ul class="plain-list"><li><a href="https://jinbigbig.github.io/matlas/llms.txt">llms.txt</a> — 站点结构索引（LLM/GEO 用）</li><li><a href="https://jinbigbig.github.io/matlas/dataset.json">dataset.json</a> — 全量结构化数据</li><li><a href="https://jinbigbig.github.io/matlas/days/">📅 历史归档</a> — 逐日留档，结论指纹可核验</li></ul>
+</main>
+<footer class="site"><div class="wrap">
+  <p>Matlas · 足球赛事量化图谱</p>
+  <p>数据契约 v1.0 · 全部历史可被哈希指纹核验，结论不做事后修改。</p>
+</div></footer>
+<nav class="v4-bottom-nav-global">
+  <a class="v4-nav-item active" href="./">
+    <span class="v4-nav-icon">🏠</span><span class="v4-nav-lbl">今日</span></a>
+  <a class="v4-nav-item" href="days/">
+    <span class="v4-nav-icon">📅</span><span class="v4-nav-lbl">归档</span></a>
+  
+  <a class="v4-nav-item" href="llms.txt">
+    <span class="v4-nav-icon">📄</span><span class="v4-nav-lbl">索引</span></a>
+</nav>
+</body>
+</html>

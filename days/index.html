@@ -14,17 +14,23 @@
 
 </head>
 <body>
+<input type="checkbox" id="ss-toggle" class="ss-toggle" aria-hidden="true">
 <header class="site"><div class="wrap">
   <div class="brand"><span class="brand-mark">M</span>Matlas<span>足球赛事量化图谱</span></div>
   <nav class="site">
-    <a href="../">🏠今日</a>
-    <a href="../days/">📅归档</a>
-    <a class="is-btn" href="../llms.txt">📊数据</a>
-    <a class="is-btn" href="../">🧩功能</a>
-    <a class="is-btn" href="../">👤我的</a>
-    <a class="is-icon" href="../llms.txt" aria-label="站点索引">🔍</a>
+    <a href="../">🏠赛事</a>
+    <a href="../data.html">📊数据</a>
+    <a href="../features.html">🧩功能</a>
+    <a href="../me.html">👤我的</a>
+    <label class="is-icon nav-search" for="ss-toggle" aria-label="搜索"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.2" y2="16.2"></line></svg></label>
   </nav>
 </div></header>
+<div class="site-search"><div class="wrap">
+  <form class="site-search-form" action="../search.html" method="get">
+    <input class="search-input" name="q" type="text" placeholder="输入关键字" required>
+    <button class="search-btn" type="submit" aria-label="搜索"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.2" y2="16.2"></line></svg></button>
+  </form>
+</div></div>
 <main class="wrap">
 <h1>历史归档</h1><p class="sub">共 1 个交易日，逐日留档，结论指纹可核验。</p><div class="tw"><table class=""><thead><tr><th>日期</th><th></th></tr></thead><tbody><tr><td><a href="2026-10-22.html">2026-10-22</a></td><td>查看</td></tr></tbody></table></div>
 </main>

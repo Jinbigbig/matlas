@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>站内搜索 - Matlas</title>
+<meta name="description" content="按队名、联赛、竞彩编号检索全部历史赛事">
+<link rel="canonical" href="https://jinbigbig.github.io/matlas/search.html">
+<link rel="stylesheet" href="assets/style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="站内搜索 - Matlas">
+<meta property="og:description" content="按队名、联赛、竞彩编号检索全部历史赛事">
+<meta name="robots" content="index,follow">
+
+</head>
+<body>
+<input type="checkbox" id="ss-toggle" class="ss-toggle" aria-hidden="true">
+<header class="site"><div class="wrap">
+  <div class="brand"><span class="brand-mark">M</span>Matlas<span>足球赛事量化图谱</span></div>
+  <nav class="site">
+    <a href="./">🏠赛事</a>
+    <a href="data.html">📊数据</a>
+    <a href="features.html">🧩功能</a>
+    <a href="me.html">👤我的</a>
+    <label class="is-icon nav-search" for="ss-toggle" aria-label="搜索"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.2" y2="16.2"></line></svg></label>
+  </nav>
+</div></header>
+<div class="site-search"><div class="wrap">
+  <form class="site-search-form" action="search.html" method="get">
+    <input class="search-input" name="q" type="text" placeholder="输入关键字" required>
+    <button class="search-btn" type="submit" aria-label="搜索"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.2" y2="16.2"></line></svg></button>
+  </form>
+</div></div>
+<main class="wrap">
+<h1>🔍 站内搜索</h1><div class="search-page-box">
+<form class="site-search-form" action="search.html" method="get">
+  <input class="search-input" id="q" name="q" type="text" placeholder="输入队名 / 联赛 / 编号，如：拜仁、欧冠、周三004">
+  <button class="search-btn" type="submit">搜索</button>
+</form>
+<p class="sub" id="search-meta"></p>
+<div id="search-results" class="cards"></div>
+</div>
+<script>
+(function () {
+  var DATA = [["2026-10-22","周三004","欧冠","科莫","曼彻斯特联","2026-10-22-004"],["2026-10-22","周三010","欧冠","拜仁","阿森纳","2026-10-22-010"],["2026-10-22","周三013","解放者杯","帕尔梅拉斯","弗鲁米嫩","2026-10-22-013"],["2026-10-22","周三005","欧冠","里尔","加拉塔萨","2026-10-22-005"],["2026-10-22","周三001","日职联","FC东京","柏太阳神","2026-10-22-001"]];
+  var q = new URLSearchParams(location.search).get("q") || "";
+  document.getElementById("q").value = q;
+  var box = document.getElementById("search-results");
+  var meta = document.getElementById("search-meta");
+  if (!q.trim()) { meta.textContent = "输入关键字开始检索，支持队名、联赛、竞彩编号与日期。"; return; }
+  var kw = q.trim().toLowerCase();
+  var hits = DATA.filter(function (r) {
+    return r.some(function (v, i) { return i !== 5 && String(v).toLowerCase().indexOf(kw) !== -1; });
+  }).slice(0, 50);
+  meta.textContent = "共 " + hits.length + " 场匹配（最多显示 50 条）";
+  if (!hits.length) { box.innerHTML = '<p class="sub">没有匹配的赛事，换个关键字试试。</p>'; return; }
+  box.innerHTML = hits.map(function (r) {
+    return '<a class="match-card" href="' + "matches/" + r[5] + '.html">'
+      + '<div class="mc-header"><div class="mc-meta"><span class="date">' + r[0].slice(5).replace("-", "/")
+      + '</span><span class="league">' + r[2] + '</span><span class="num">' + r[1] + '</span></div></div>'
+      + '<div class="mc-body"><div class="mc-teams"><div class="mc-team"><span>' + r[3]
+      + '</span></div><div class="mc-score"><div class="vs">VS</div></div><div class="mc-team"><span>' + r[4]
+      + "</span></div></div></div></a>";
+  }).join("");
+})();
+</script>
+</main>
+<footer class="site"><div class="wrap">
+  <p>Matlas · 足球赛事量化图谱</p>
+  <p>数据契约 v1.0 · 全部历史可被哈希指纹核验，结论不做事后修改。</p>
+</div></footer>
+<nav class="v4-bottom-nav-global">
+  <a class="v4-nav-item active" href="./">
+    <span class="v4-nav-icon">🏠</span><span class="v4-nav-lbl">今日</span></a>
+  <a class="v4-nav-item" href="days/">
+    <span class="v4-nav-icon">📅</span><span class="v4-nav-lbl">归档</span></a>
+  
+  <a class="v4-nav-item" href="llms.txt">
+    <span class="v4-nav-icon">📄</span><span class="v4-nav-lbl">索引</span></a>
+</nav>
+</body>
+</html>
