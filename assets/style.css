@@ -443,7 +443,7 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .ranking-card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   overflow: hidden; }
 .ranking-card .card-header { font-size: 14px; font-weight: 700; color: #111;
-  padding: 14px 16px; border-bottom: 1px solid #f1f5f9; }
+  padding: 10px 15px; border-bottom: 1px solid #f1f5f9; }
 .ranking-list { padding: 6px 0; }
 .ranking-item { display: flex; align-items: center; gap: 8px; padding: 7px 14px;
   color: #374151; font-size: 13px; }
