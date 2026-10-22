@@ -1,0 +1,1131 @@
+{
+ "date": "2026-09-09",
+ "note": "数据源：jinbet 每日预测快照（poisson-v2.2 引擎），赛果赛后回填。",
+ "matches": [
+  {
+   "match_id": "2026-09-09-001",
+   "day": "2026-09-09",
+   "code": "周三001",
+   "competition": "韩K联",
+   "kickoff": "",
+   "home": {
+    "name": "江原FC",
+    "league": "韩K联"
+   },
+   "away": {
+    "name": "全北现代",
+    "league": "韩K联"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.347,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.342,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.311,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.151,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.116,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.113,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.101,
+     "rank": 4
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.109,
+    "lam_away": 1.082,
+    "lam_total": 2.191
+   },
+   "result": {
+    "full_score": "1-1",
+    "half_score": "0-1",
+    "direction_hit": true,
+    "score_hit": true,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-002",
+   "day": "2026-09-09",
+   "code": "周三002",
+   "competition": "沙特联",
+   "kickoff": "",
+   "home": {
+    "name": "拉斯永恒",
+    "league": "沙特联"
+   },
+   "away": {
+    "name": "利雅青年",
+    "league": "沙特联"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.409,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.333,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.257,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.112,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.083,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.083,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.078,
+     "rank": 4
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.479,
+    "lam_away": 1.258,
+    "lam_total": 2.737
+   },
+   "result": {
+    "full_score": "2-1",
+    "half_score": "1-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-003",
+   "day": "2026-09-09",
+   "code": "周三003",
+   "competition": "欧冠",
+   "kickoff": "",
+   "home": {
+    "name": "巴萨",
+    "league": "欧冠"
+   },
+   "away": {
+    "name": "费耶诺德",
+    "league": "欧冠"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.585,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.209,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.206,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.084,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.08,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.063,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.059,
+     "rank": 4
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 2.715,
+    "lam_away": 1.485,
+    "lam_total": 4.2
+   },
+   "result": {
+    "full_score": "5-1",
+    "half_score": "2-0",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-004",
+   "day": "2026-09-09",
+   "code": "周三004",
+   "competition": "欧冠",
+   "kickoff": "",
+   "home": {
+    "name": "斯图加特",
+    "league": "欧冠"
+   },
+   "away": {
+    "name": "维京",
+    "league": "欧冠"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.429,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.342,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.229,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.089,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.078,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.078,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.057,
+     "rank": 4
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 2.043,
+    "lam_away": 1.844,
+    "lam_total": 3.887
+   },
+   "result": {
+    "full_score": "3-1",
+    "half_score": "3-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-005",
+   "day": "2026-09-09",
+   "code": "周三005",
+   "competition": "荷甲",
+   "kickoff": "",
+   "home": {
+    "name": "特温特",
+    "league": "荷甲"
+   },
+   "away": {
+    "name": "斯达",
+    "league": "荷甲"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.636,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.241,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.123,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.092,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.088,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.079,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.073,
+     "rank": 4
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 2.524,
+    "lam_away": 1.077,
+    "lam_total": 3.601
+   },
+   "result": {
+    "full_score": "1-0",
+    "half_score": "0-0",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-006",
+   "day": "2026-09-09",
+   "code": "周三006",
+   "competition": "欧冠",
+   "kickoff": "",
+   "home": {
+    "name": "里斯本",
+    "league": "欧冠"
+   },
+   "away": {
+    "name": "加拉塔萨",
+    "league": "欧冠"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.804,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.152,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.044,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.151,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.121,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.12,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.077,
+     "rank": 4
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 2.456,
+    "lam_away": 0.574,
+    "lam_total": 3.03
+   },
+   "result": {
+    "full_score": "3-1",
+    "half_score": "1-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-007",
+   "day": "2026-09-09",
+   "code": "周三007",
+   "competition": "欧冠",
+   "kickoff": "",
+   "home": {
+    "name": "那不勒斯",
+    "league": "欧冠"
+   },
+   "away": {
+    "name": "阿森纳",
+    "league": "欧冠"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.428,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.325,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.248,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.115,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.093,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.076,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.072,
+     "rank": 4
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.24,
+    "lam_away": 1.601,
+    "lam_total": 2.841
+   },
+   "result": {
+    "full_score": "0-1",
+    "half_score": "0-0",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-008",
+   "day": "2026-09-09",
+   "code": "周三008",
+   "competition": "欧冠",
+   "kickoff": "",
+   "home": {
+    "name": "利物浦",
+    "league": "欧冠"
+   },
+   "away": {
+    "name": "马竞",
+    "league": "欧冠"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.552,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.227,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.221,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.1,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.091,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.079,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.069,
+     "rank": 4
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 2.065,
+    "lam_away": 1.181,
+    "lam_total": 3.246
+   },
+   "result": {
+    "full_score": "2-1",
+    "half_score": "1-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-009",
+   "day": "2026-09-09",
+   "code": "周三009",
+   "competition": "欧冠",
+   "kickoff": "",
+   "home": {
+    "name": "巴黎圣曼",
+    "league": "欧冠"
+   },
+   "away": {
+    "name": "布拉迪斯",
+    "league": "欧冠"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.526,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.25,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.224,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.09,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.087,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.072,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.061,
+     "rank": 4
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 2.32,
+    "lam_away": 1.516,
+    "lam_total": 3.836
+   },
+   "result": {
+    "full_score": "6-1",
+    "half_score": "3-0",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-010",
+   "day": "2026-09-09",
+   "code": "周三010",
+   "competition": "英冠",
+   "kickoff": "",
+   "home": {
+    "name": "查尔顿",
+    "league": "英冠"
+   },
+   "away": {
+    "name": "女王巡游",
+    "league": "英冠"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.447,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.301,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.252,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.117,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.104,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.101,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.092,
+     "rank": 4
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.343,
+    "lam_away": 1.097,
+    "lam_total": 2.44
+   },
+   "result": {
+    "full_score": "0-0",
+    "half_score": "0-0",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-011",
+   "day": "2026-09-09",
+   "code": "周三011",
+   "competition": "英联杯",
+   "kickoff": "",
+   "home": {
+    "name": "切尔西",
+    "league": "英联杯"
+   },
+   "away": {
+    "name": "利兹联",
+    "league": "英联杯"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.601,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.259,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.14,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.11,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.106,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.099,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.095,
+     "rank": 4
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.801,
+    "lam_away": 1.038,
+    "lam_total": 2.84
+   },
+   "result": {
+    "full_score": "6-3",
+    "half_score": "0-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-012",
+   "day": "2026-09-09",
+   "code": "周三012",
+   "competition": "葡超",
+   "kickoff": "",
+   "home": {
+    "name": "摩雷伦斯",
+    "league": "葡超"
+   },
+   "away": {
+    "name": "本菲卡",
+    "league": "葡超"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.576,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.266,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.158,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.093,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.089,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.086,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.084,
+     "rank": 4
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.084,
+    "lam_away": 2.297,
+    "lam_total": 3.381
+   },
+   "result": {
+    "full_score": "0-4",
+    "half_score": "0-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-013",
+   "day": "2026-09-09",
+   "code": "周三013",
+   "competition": "解放者杯",
+   "kickoff": "",
+   "home": {
+    "name": "帕梅拉斯",
+    "league": "解放者杯"
+   },
+   "away": {
+    "name": "基多体大",
+    "league": "解放者杯"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.635,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.247,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.118,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.138,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.126,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.124,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.08,
+     "rank": 4
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.869,
+    "lam_away": 0.705,
+    "lam_total": 2.574
+   },
+   "result": {
+    "full_score": "1-0",
+    "half_score": "1-0",
+    "direction_hit": true,
+    "score_hit": true,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-014",
+   "day": "2026-09-09",
+   "code": "周三014",
+   "competition": "解放者杯",
+   "kickoff": "",
+   "home": {
+    "name": "拉普大学",
+    "league": "解放者杯"
+   },
+   "away": {
+    "name": "科林蒂安",
+    "league": "解放者杯"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.339,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.337,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.324,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.147,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.135,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.132,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.128,
+     "rank": 4
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 0.886,
+    "lam_away": 0.908,
+    "lam_total": 1.794
+   },
+   "result": {
+    "full_score": "1-1",
+    "half_score": "1-0",
+    "direction_hit": false,
+    "score_hit": true,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  },
+  {
+   "match_id": "2026-09-09-015",
+   "day": "2026-09-09",
+   "code": "周三015",
+   "competition": "美职联",
+   "kickoff": "",
+   "home": {
+    "name": "芝加哥",
+    "league": "美职联"
+   },
+   "away": {
+    "name": "迈国际",
+    "league": "美职联"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.4,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.339,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.261,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.1,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.072,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.071,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "3-2",
+     "prob": 0.056,
+     "rank": 4
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.873,
+    "lam_away": 2.2,
+    "lam_total": 4.073
+   },
+   "result": {
+    "full_score": "1-1",
+    "half_score": "1-0",
+    "direction_hit": false,
+    "score_hit": true,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-09"
+   }
+  }
+ ]
+}

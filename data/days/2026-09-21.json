@@ -1,0 +1,117 @@
+{
+ "date": "2026-09-21",
+ "note": "数据源：jinbet 每日预测快照（poisson-v2.2 引擎），赛果赛后回填。",
+ "matches": [
+  {
+   "match_id": "2026-09-21-001",
+   "day": "2026-09-21",
+   "code": "周一001",
+   "competition": "亚运女足",
+   "kickoff": "",
+   "home": {
+    "name": "中国女",
+    "league": "亚运女足"
+   },
+   "away": {
+    "name": "菲律宾女",
+    "league": "亚运女足"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.904,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.092,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.004,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.211,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.176,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.169,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "4-0",
+     "prob": 0.11,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "5-0",
+     "prob": 0.055,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.054,
+     "rank": 6
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 2.496,
+    "lam_away": 0.258,
+    "lam_total": 2.754,
+    "upset_prob": 11.0,
+    "upset_level": "低",
+    "rq_best_ev": 0.915,
+    "rq_best_odds": 3.2,
+    "data_n": {
+     "home": 7,
+     "away": 2
+    },
+    "headline": {
+     "score": "2:0",
+     "prob": 21.1
+    }
+   },
+   "odds": {
+    "home": 1.1723,
+    "draw": 11.3365,
+    "away": 17.0158,
+    "handicap": -2.0
+   },
+   "handicap": {
+    "spread": -2.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   },
+   "result": {
+    "full_score": "5-1",
+    "half_score": "2-0",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-21"
+   }
+  }
+ ]
+}

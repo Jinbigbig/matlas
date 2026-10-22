@@ -1,0 +1,108 @@
+{
+ "date": "2026-10-01",
+ "note": "数据源：jinbet 每日预测快照（poisson-v2.2 引擎），赛果赛后回填。",
+ "matches": [
+  {
+   "match_id": "2026-10-01-001",
+   "day": "2026-10-01",
+   "code": "",
+   "competition": "美职联",
+   "kickoff": "",
+   "home": {
+    "name": "纽约红牛",
+    "league": "美职联"
+   },
+   "away": {
+    "name": "圣路易城",
+    "league": "美职联"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.565,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.27,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.165,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.132,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.093,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.088,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.087,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "1-3",
+     "prob": 0.06,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "0-3",
+     "prob": 0.058,
+     "rank": 6
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.122,
+    "lam_away": 1.93,
+    "lam_total": 3.052,
+    "upset_prob": 42.2,
+    "upset_level": "中",
+    "rq_best_ev": 1.028,
+    "rq_best_odds": 2.95,
+    "data_n": {
+     "home": 4,
+     "away": 3
+    },
+    "headline": {
+     "score": "1:2",
+     "prob": 9.3
+    }
+   },
+   "odds": {
+    "home": 3.62,
+    "draw": 4.05,
+    "away": 1.65,
+    "handicap": 1.0
+   },
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   }
+  }
+ ]
+}

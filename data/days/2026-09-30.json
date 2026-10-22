@@ -1,0 +1,228 @@
+{
+ "date": "2026-09-30",
+ "note": "数据源：jinbet 每日预测快照（poisson-v2.2 引擎），赛果赛后回填。",
+ "matches": [
+  {
+   "match_id": "2026-09-30-001",
+   "day": "2026-09-30",
+   "code": "周三001",
+   "competition": "亚运男足",
+   "kickoff": "",
+   "home": {
+    "name": "韩国亚",
+    "league": "亚运男足"
+   },
+   "away": {
+    "name": "中国亚",
+    "league": "亚运男足"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.797,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.169,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.035,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.154,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.143,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.111,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.103,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.087,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "3-1",
+     "prob": 0.074,
+     "rank": 6
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 2.16,
+    "lam_away": 0.671,
+    "lam_total": 2.83,
+    "upset_prob": 26.1,
+    "upset_level": "低",
+    "rq_best_ev": 0.896,
+    "rq_best_odds": 1.79,
+    "data_n": {
+     "home": 2,
+     "away": 4
+    },
+    "headline": {
+     "score": "2:0",
+     "prob": 17.8
+    }
+   },
+   "odds": {
+    "home": 1.21,
+    "draw": 4.73,
+    "away": 11.0,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球胜",
+    "prob": null,
+    "hit": null
+   },
+   "result": {
+    "full_score": "2-1",
+    "half_score": "1-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-30"
+   }
+  },
+  {
+   "match_id": "2026-09-30-002",
+   "day": "2026-09-30",
+   "code": "周三002",
+   "competition": "亚运男足",
+   "kickoff": "",
+   "home": {
+    "name": "乌兹别亚",
+    "league": "亚运男足"
+   },
+   "away": {
+    "name": "日本亚",
+    "league": "亚运男足"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.671,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.203,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.126,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.101,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-3",
+     "prob": 0.089,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.075,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.073,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "2-3",
+     "prob": 0.069,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "1-4",
+     "prob": 0.059,
+     "rank": 6
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.542,
+    "lam_away": 2.658,
+    "lam_total": 4.2,
+    "upset_prob": 32.8,
+    "upset_level": "低",
+    "rq_best_ev": 0.95,
+    "rq_best_odds": 2.5,
+    "data_n": {
+     "home": 1,
+     "away": 3
+    },
+    "headline": {
+     "score": "0:2",
+     "prob": 13.0
+    }
+   },
+   "odds": {
+    "home": 6.45,
+    "draw": 3.85,
+    "away": 1.4,
+    "handicap": 1.0
+   },
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球胜",
+    "prob": null,
+    "hit": null
+   },
+   "result": {
+    "full_score": "1-1",
+    "half_score": "1-0",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-09-30"
+   }
+  }
+ ]
+}

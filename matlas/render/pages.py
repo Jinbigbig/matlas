@@ -383,12 +383,15 @@ def _mc_teams(m: Match, pre: str = "") -> str:
 
 
 def _mc_tags(m: Match) -> str:
-    """四个维度的 emoji 标签，命中项加 .hit 提亮。
+    """四个维度的图标标签，命中项加 .hit 提亮。
 
-    只带 emoji + 结论，不带维度名 —— 维度名由 emoji 表达，
-    否则窄屏一行放不下会折行。
+    图标统一走 L.ICON_* 单色线性 SVG（全站一套风格，不用彩色 emoji），
+    只带图标 + 结论，不带维度名 —— 否则窄屏一行放不下会折行。
     """
-    emoji = {"direction": "🧭", "score": "🔢", "goals": "⚽", "htft": "📈"}
+    icon = {
+        "direction": L.ICON_TARGET, "score": L.ICON_HASH,
+        "goals": L.ICON_SPORTS, "htft": L.ICON_TREND,
+    }
     hit_of = {
         "direction": "direction_hit", "score": "score_hit",
         "goals": "goals_hit", "htft": "htft_hit",
@@ -401,7 +404,7 @@ def _mc_tags(m: Match) -> str:
         hit = bool(m.result and getattr(m.result, hit_of[kind], None))
         tags.append(
             f'<div class="mc-tag{" hit" if hit else ""}">'
-            f"{emoji[kind]} {C.esc(f.label)}</div>"
+            f"{icon[kind]} {C.esc(f.label)}</div>"
         )
     return f'<div class="mc-tags">{"".join(tags)}</div>' if tags else ""
 
@@ -503,7 +506,7 @@ def _ranking_card(rows: list[tuple[str, int, int]], pre: str = "",
                 f'<span class="rank-acc pct">{acc:.1f}%</span></a>'
             )
         inner = f'<div class="ranking-list">{"".join(items)}</div>'
-    head = "🛡️ 球队Top 10" if kind == "team" else "🏆 赛事Top 10"
+    head = f"{L.ICON_SHIELD} 球队Top 10" if kind == "team" else f"{L.ICON_TROPHY} 赛事Top 10"
     return (
         f'<div id="{"team-ranking-card" if kind == "team" else "league-ranking-card"}" class="ranking-card">'
         f'<div class="card-header">{head}</div>'
@@ -513,7 +516,8 @@ def _ranking_card(rows: list[tuple[str, int, int]], pre: str = "",
 
 def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
                ranking: list[tuple[str, int, int]] | None = None,
-               team_ranking: list[tuple[str, int, int]] | None = None) -> str:
+               team_ranking: list[tuple[str, int, int]] | None = None,
+               dates: list[str] | None = None) -> str:
     base = cfg.base_url.rstrip("/")
     ms = sort_matches(day.matches)
     if is_today:
@@ -578,18 +582,37 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
         if has_jc
         else ""
     )
+    # 时间行：跨日期切换赛程（导航，不是本页过滤）。最新日期在首位；
+    # 最多展示 8 个，更多走归档页。当前日期高亮且不可点。
+    time_row = ""
+    if dates:
+        pre_d = "" if is_today else "../"
+        opts = []
+        for dstr in dates[:8]:
+            lab = f"{int(dstr[5:7])}月{int(dstr[8:10])}日"
+            if dstr == day.date:
+                opts.append(f'<a class="fp-opt active" href="#">{lab}</a>')
+            else:
+                opts.append(
+                    f'<a class="fp-opt" href="{pre_d}days/{dstr}.html">{lab}</a>'
+                )
+        opts.append(f'<a class="fp-opt" href="{pre_d}days/">更多…</a>')
+        time_row = (
+            '<div class="fp-row"><div class="fp-label">时间:</div>'
+            f'<div class="fp-options">{"".join(opts)}</div></div>'
+        )
     panel = (
         f'{filter_css}<input type="checkbox" id="fp-toggle" class="fp-toggle">'
         '<div id="filter-panel" class="filter-panel">'
-        f"{type_row}{league_row}"
+        f"{time_row}{type_row}{league_row}"
         "</div>"
     )
     main_col = (
         '<div class="v4-main-col">'
         '<div class="v4-filter-bar">'
-        f'<div class="v4-date">📅 {date_lab} ({len(ms)}场)</div>'
+        f'<div class="v4-date">{L.ICON_CALENDAR} {date_lab} ({len(ms)}场)</div>'
         '<label class="v4-filter-btn" for="fp-toggle">'
-        f'<span>🔍 筛选</span></label>'
+        f'<span>{L.ICON_FILTER} 筛选</span></label>'
         "</div>"
         f"{panel}"
         f'<div class="cards">{cards}</div>'
@@ -703,7 +726,7 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         for lg, h, n in ranking
     ]
     body = (
-        "<h1>📊 数据统计</h1>"
+        f"<h1 class='page-h1'>{L.ICON_DATA} 数据统计</h1>"
         '<div class="stats-grid">'
         f'<div class="stat-card"><div class="pct stat-num">{total}</div><div class="stat-lbl">交易日</div></div>'
         f'<div class="stat-card"><div class="pct stat-num">{n_matches}</div><div class="stat-lbl">赛事场次</div></div>'
@@ -730,22 +753,28 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
 
 
 def render_features(cfg: Config) -> str:
-    """🧩功能：站点功能清单。只列已上线的能力，每条给真实入口。"""
+    """功能页：站点功能清单。只列已上线的能力，每条给真实入口。
+
+    版式与全站统一：白卡网格 + 单色线性 SVG 图标（不用 emoji）。
+    """
     base = cfg.base_url.rstrip("/")
     items = [
-        ("📅 每日赛事前瞻", "当日全部赛事的结构化量化分析与 AI 置信度", f"{base}/"),
-        ("📚 历史归档", "逐日留档，结论带哈希指纹，不删不改可核验", f"{base}/days/"),
-        ("🏆 赛事 Top 榜", "按已结算场次统计各联赛方向命中率", f"{base}/"),
-        ("🔍 站内搜索", "按队名、联赛、编号检索历史赛事", f"{base}/search.html"),
-        ("📈 单场深度数据", "六维雷达、0-90' 动量曲线、赔率与让球面板", f"{base}/days/"),
-        ("🤖 机器可读数据", "llms.txt / dataset.json，供 LLM 与工具直接消费", f"{base}/llms.txt"),
+        (L.ICON_SPORTS, "每日赛事前瞻", "当日全部赛事的结构化量化分析与 AI 置信度", f"{base}/"),
+        (L.ICON_ARCHIVE, "历史归档", "逐日留档，结论带哈希指纹，不删不改可核验", f"{base}/days/"),
+        (L.ICON_TROPHY, "赛事 / 球队 Top 榜", "按已结算场次统计联赛与球队的方向命中率", f"{base}/"),
+        (L.ICON_SEARCH, "站内搜索", "按队名、联赛、编号检索历史赛事", f"{base}/search.html"),
+        (L.ICON_ACTIVITY, "单场深度数据", "六维雷达、0-90' 动量曲线、赔率与让球面板", f"{base}/days/"),
+        (L.ICON_CPU, "机器可读数据", "llms.txt / dataset.json，供 LLM 与工具直接消费", f"{base}/llms.txt"),
     ]
-    lis = "".join(
-        f'<li class="feat-item"><div class="feat-name">{name}</div>'
-        f'<div class="feat-desc">{desc}</div><a href="{url}">进入 →</a></li>'
-        for name, desc, url in items
+    cards = "".join(
+        f'<a class="feat-item" href="{url}">'
+        f'<span class="feat-ico">{ico}</span>'
+        f'<span class="feat-txt"><span class="feat-name">{name}</span>'
+        f'<span class="feat-desc">{desc}</span>'
+        f'<span class="feat-go">进入 →</span></span></a>'
+        for ico, name, desc, url in items
     )
-    body = f"<h1>🧩 功能</h1><ul class='feat-list'>{lis}</ul>"
+    body = f"<h1 class='page-h1'>{L.ICON_FUNCT} 功能</h1><div class='feat-grid'>{cards}</div>"
     return L.page(
         cfg, title="功能", description="站点功能清单：每日前瞻、历史归档、赛事Top、站内搜索、机器可读数据",
         body=body, canonical=f"{base}/features.html", depth=0,
@@ -756,9 +785,9 @@ def render_me(cfg: Config) -> str:
     """👤我的：会员中心占位。功能未上线，如实说明。"""
     base = cfg.base_url.rstrip("/")
     body = (
-        "<h1>👤 我的</h1>"
+        f"<h1 class='page-h1'>{L.ICON_USER} 我的</h1>"
         '<div class="me-card">'
-        '<div class="me-avatar">👤</div>'
+        f'<div class="me-avatar">{L.ICON_USER}</div>'
         "<h2>会员中心</h2>"
         '<p class="sub">个性化功能（订阅、收藏、推送）正在开发中，敬请期待。</p>'
         '<p class="sub">当前无需登录，全部数据免费开放浏览。</p>'
@@ -781,7 +810,7 @@ def render_search(cfg: Config, days: list[Day]) -> str:
     ]
     data_js = _json.dumps(items, ensure_ascii=False, separators=(",", ":"))
     body = (
-        "<h1>🔍 站内搜索</h1>"
+        f"<h1 class='page-h1'>{L.ICON_SEARCH} 站内搜索</h1>"
         f"""<div class="search-page-box">
 <form class="site-search-form" action="search.html" method="get">
   <input class="search-input" id="q" name="q" type="text" placeholder="输入队名 / 联赛 / 编号，如：拜仁、欧冠、周三004">

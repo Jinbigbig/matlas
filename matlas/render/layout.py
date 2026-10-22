@@ -60,8 +60,17 @@ body:has(.fp-toggle:checked) .filter-panel { display: block; }
 .fp-radio { position: absolute; opacity: 0; width: 0; height: 0; }
 .fp-opt { font-size: 13px; padding: 4px 14px; border-radius: 6px; border: 1px solid #e5e7eb;
   background: #fff; color: #4b5563; cursor: pointer; transition: all 0.15s;
-  display: inline-block; }
-.fp-opt:hover { border-color: #93c5fd; color: var(--accent); }
+  display: inline-block; text-decoration: none; }
+.fp-opt:hover { border-color: #93c5fd; color: var(--accent); text-decoration: none; }
+a.fp-opt.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+/* 行内 SVG 图标与文字对齐（顶导/卡片头/筛选条统一走这条） */
+.card-header svg, .v4-date svg, .v4-filter-btn svg, .feat-ico svg, .page-h1 svg,
+.me-avatar svg, .fp-label svg { flex: none; }
+.card-header svg { vertical-align: -3px; }
+.page-h1 svg { vertical-align: -3px; margin-right: 2px; }
+.v4-date svg { vertical-align: -2.5px; margin-right: 2px; }
+.v4-filter-btn svg { vertical-align: -2.5px; margin-right: 2px; }
+.v4-nav-icon svg { width: 20px; height: 20px; }
 .fp-radio:checked + .fp-opt { background: var(--accent); color: #fff; border-color: var(--accent); }
 .fp-radio:focus-visible + .fp-opt { outline: 2px solid #93c5fd; outline-offset: 2px; }
 .note-line { color: #9ca3af; font-size: 12px; margin: -4px 0 10px; }
@@ -75,14 +84,25 @@ body:has(.fp-toggle:checked) .filter-panel { display: block; }
 .plain-list { margin: 10px 0 0 1.2em; }
 .plain-list li { margin: 6px 0; }
 .feat-list { list-style: none; margin: 14px 0; padding: 0; display: grid; gap: 10px; }
-.feat-item { background: #fff; border: 1px solid var(--rule); border-radius: 10px;
-  padding: 14px 16px; }
-.feat-name { font-weight: 700; font-size: 15px; }
-.feat-desc { font-size: 13px; color: #6b7280; margin: 4px 0 8px; }
-.feat-item a { font-size: 13px; color: var(--accent); text-decoration: none; }
+.feat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 14px 0; }
+.feat-item { display: flex; align-items: flex-start; gap: 12px; background: #fff;
+  border: 1px solid var(--rule); border-radius: 10px; padding: 16px;
+  text-decoration: none; transition: border-color 0.15s, box-shadow 0.15s; }
+a.feat-item:hover { border-color: #93c5fd; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+  text-decoration: none; }
+.feat-ico { width: 38px; height: 38px; flex: none; border-radius: 10px; background: #eff6ff;
+  color: var(--accent); display: inline-flex; align-items: center; justify-content: center; }
+.feat-ico svg { width: 20px; height: 20px; }
+.feat-txt { min-width: 0; }
+.feat-name { font-weight: 700; font-size: 15px; color: #111; display: block; }
+.feat-desc { font-size: 13px; color: #6b7280; margin-top: 4px; display: block; }
+a.feat-item .feat-go { font-size: 13px; color: var(--accent); margin-top: 8px; display: block; }
 .me-card { background: #fff; border: 1px solid var(--rule); border-radius: 12px;
   padding: 32px 20px; text-align: center; max-width: 480px; margin: 20px auto; }
-.me-avatar { font-size: 2.6rem; }
+.me-avatar { width: 68px; height: 68px; margin: 0 auto; border-radius: 50%;
+  background: #eff6ff; color: var(--accent); display: flex; align-items: center;
+  justify-content: center; }
+.me-avatar svg { width: 34px; height: 34px; }
 .me-card h2 { margin: 10px 0 6px; }
 @media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
 
@@ -338,6 +358,7 @@ svg.mom { max-width: 620px; }
 .mc-tags { display: flex; justify-content: center; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
 .mc-tag { font-size: 12px; padding: 4px 10px; border-radius: 6px; background: #f3f4f6;
   color: #6b7280; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s; }
+.mc-tag svg { width: 13px; height: 13px; }
 .mc-tag.hit { background: #fff1f0; color: #f56c6c; border: 1px solid #ffccc7; font-weight: 600; }
 .mc-footer { display: flex; justify-content: space-between; align-items: center;
   padding: 10px 15px; background: #f9fafb; border-top: 1px solid #f3f4f6;
@@ -354,7 +375,7 @@ svg.mom { max-width: 620px; }
 /* ---------- 双栏：主列 + 右侧栏（对齐 qiuxiaoce 的 v4 布局） ---------- */
 .v4-layout { display: flex; gap: 20px; align-items: flex-start; }
 .v4-main-col { flex: 1; min-width: 0; }
-.right-sidebar-new { width: 360px; flex: none; }
+.right-sidebar-new { width: 360px; flex: none; display: flex; flex-direction: column; gap: 16px; }
 @media (max-width: 1000px) {
   .right-sidebar-new { display: none; }
 }
@@ -519,6 +540,53 @@ ICON_USER = (  # 我的：人形
 ICON_TOP = (  # 回顶部：向上箭头
     f'<svg {_ICON_ATTRS}><path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path></svg>'
 )
+ICON_CALENDAR = (  # 日期
+    f'<svg {_ICON_ATTRS}><rect x="3" y="4.5" width="18" height="17" rx="2"></rect>'
+    '<path d="M8 2.5v4M16 2.5v4M3 10.5h18"></path></svg>'
+)
+ICON_FILTER = (  # 筛选：漏斗
+    f'<svg {_ICON_ATTRS}><path d="M3 5h18l-7 8.5V19l-4 2.5v-8z"></path></svg>'
+)
+ICON_TROPHY = (  # 赛事Top：奖杯
+    f'<svg {_ICON_ATTRS}><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>'
+    '<path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path>'
+    '<path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>'
+    '<path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>'
+    '<path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>'
+)
+ICON_SHIELD = (  # 球队Top：盾徽
+    f'<svg {_ICON_ATTRS}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>'
+)
+ICON_HOME = (  # 今日：房子
+    f'<svg {_ICON_ATTRS}><path d="M3 9.5 12 3l9 6.5V20a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 20z"></path>'
+    '<path d="M9.5 21.5v-8h5v8"></path></svg>'
+)
+ICON_ARCHIVE = (  # 归档：盒盖箱
+    f'<svg {_ICON_ATTRS}><path d="M21 8v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8"></path>'
+    '<rect x="1.5" y="3" width="21" height="5" rx="1"></rect><path d="M10 12h4"></path></svg>'
+)
+ICON_DOC = (  # 索引：文件
+    f'<svg {_ICON_ATTRS}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>'
+    '<path d="M14 2v6h6M9 13h6M9 17h6"></path></svg>'
+)
+ICON_CPU = (  # 机器可读：芯片
+    f'<svg {_ICON_ATTRS}><rect x="4.5" y="4.5" width="15" height="15" rx="2"></rect>'
+    '<rect x="9.5" y="9.5" width="5" height="5"></rect>'
+    '<path d="M9.5 2v2.5M14.5 2v2.5M9.5 19.5V22M14.5 19.5V22M2 9.5h2.5M2 14.5h2.5M19.5 9.5H22M19.5 14.5H22"></path></svg>'
+)
+ICON_ACTIVITY = (  # 深度数据：心电折线
+    f'<svg {_ICON_ATTRS}><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>'
+)
+ICON_TARGET = (  # 方向：靶心
+    f'<svg {_ICON_ATTRS}><circle cx="12" cy="12" r="9"></circle>'
+    '<circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.2"></circle></svg>'
+)
+ICON_HASH = (  # 比分：井号
+    f'<svg {_ICON_ATTRS}><path d="M5 9h14M5 15h14M10 3 8 21M16 3l-2 18"></path></svg>'
+)
+ICON_TREND = (  # 半全场：趋势
+    f'<svg {_ICON_ATTRS}><path d="M3 17l6-6 4 4 8-8"></path><path d="M15 7h6v6"></path></svg>'
+)
 
 
 def _write_style(cfg: Config) -> None:
@@ -611,12 +679,12 @@ def page(
 <a class="back-top" id="back-top" href="#" aria-label="回顶部">{ICON_TOP}</a>
 <nav class="v4-bottom-nav-global">
   <a class="v4-nav-item active" href="{home}">
-    <span class="v4-nav-icon">🏠</span><span class="v4-nav-lbl">今日</span></a>
+    <span class="v4-nav-icon">{ICON_HOME}</span><span class="v4-nav-lbl">今日</span></a>
   <a class="v4-nav-item" href="{pre}days/">
-    <span class="v4-nav-icon">📅</span><span class="v4-nav-lbl">归档</span></a>
+    <span class="v4-nav-icon">{ICON_ARCHIVE}</span><span class="v4-nav-lbl">归档</span></a>
   {nav_extra_bottom}
   <a class="v4-nav-item" href="{pre}llms.txt">
-    <span class="v4-nav-icon">📄</span><span class="v4-nav-lbl">索引</span></a>
+    <span class="v4-nav-icon">{ICON_DOC}</span><span class="v4-nav-lbl">索引</span></a>
 </nav>
 <script>
 (function () {{

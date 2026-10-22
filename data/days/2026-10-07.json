@@ -1,0 +1,672 @@
+{
+ "date": "2026-10-07",
+ "note": "数据源：jinbet 每日预测快照（poisson-v2.2 引擎），赛果赛后回填。",
+ "matches": [
+  {
+   "match_id": "2026-10-07-001",
+   "day": "2026-10-07",
+   "code": "周三001",
+   "competition": "芬超",
+   "kickoff": "",
+   "home": {
+    "name": "赫尔火花",
+    "league": "芬超"
+   },
+   "away": {
+    "name": "国际图",
+    "league": "芬超"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.404,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.349,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.247,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.164,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.131,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.125,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.084,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.078,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.072,
+     "rank": 6
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 0.862,
+    "lam_away": 1.226,
+    "lam_total": 2.088,
+    "upset_prob": 59.3,
+    "upset_level": "高",
+    "rq_best_ev": 1.05,
+    "rq_best_odds": 1.8,
+    "data_n": {
+     "home": 20,
+     "away": 18
+    },
+    "headline": {
+     "score": "1:2",
+     "prob": 11.7
+    }
+   },
+   "odds": {
+    "home": 3.58,
+    "draw": 3.55,
+    "away": 1.76,
+    "handicap": 1.0
+   },
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球胜",
+    "prob": null,
+    "hit": null
+   },
+   "result": {
+    "full_score": "0-0",
+    "half_score": "0-0",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-10-07"
+   }
+  },
+  {
+   "match_id": "2026-10-07-002",
+   "day": "2026-10-07",
+   "code": "周三002",
+   "competition": "巴甲",
+   "kickoff": "",
+   "home": {
+    "name": "巴西国际",
+    "league": "巴甲"
+   },
+   "away": {
+    "name": "科林蒂安",
+    "league": "巴甲"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.458,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.284,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.258,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.239,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.181,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.129,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.12,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.058,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.051,
+     "rank": 6
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 0.901,
+    "lam_away": 0.843,
+    "lam_total": 1.744,
+    "upset_prob": 67.6,
+    "upset_level": "高",
+    "rq_best_ev": 1.035,
+    "rq_best_odds": 1.55,
+    "data_n": {
+     "home": 6,
+     "away": 14
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 15.7
+    }
+   },
+   "odds": {
+    "home": 2.13,
+    "draw": 2.98,
+    "away": 3.08,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   },
+   "result": {
+    "full_score": "2-1",
+    "half_score": "1-0",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-10-07"
+   }
+  },
+  {
+   "match_id": "2026-10-07-003",
+   "day": "2026-10-07",
+   "code": "周三003",
+   "competition": "巴甲",
+   "kickoff": "",
+   "home": {
+    "name": "里莫",
+    "league": "巴甲"
+   },
+   "away": {
+    "name": "格雷米奥",
+    "league": "巴甲"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.445,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.284,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.271,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.218,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.184,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.122,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.119,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.057,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.053,
+     "rank": 6
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 0.938,
+    "lam_away": 0.899,
+    "lam_total": 1.837,
+    "upset_prob": 68.2,
+    "upset_level": "高",
+    "rq_best_ev": 1.103,
+    "rq_best_odds": 1.59,
+    "data_n": {
+     "home": 17,
+     "away": 8
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 14.8
+    }
+   },
+   "odds": {
+    "home": 2.03,
+    "draw": 3.13,
+    "away": 3.15,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   },
+   "result": {
+    "full_score": "1-1",
+    "half_score": "0-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-10-07"
+   }
+  },
+  {
+   "match_id": "2026-10-07-004",
+   "day": "2026-10-07",
+   "code": "周三004",
+   "competition": "巴甲",
+   "kickoff": "",
+   "home": {
+    "name": "布拉干RB",
+    "league": "巴甲"
+   },
+   "away": {
+    "name": "米拉索尔",
+    "league": "巴甲"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.531,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.306,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.163,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.158,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.138,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.102,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.101,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.079,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.058,
+     "rank": 6
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.463,
+    "lam_away": 1.003,
+    "lam_total": 2.466,
+    "upset_prob": 53.9,
+    "upset_level": "高",
+    "rq_best_ev": 1.09,
+    "rq_best_odds": 2.01,
+    "data_n": {
+     "home": 2,
+     "away": 11
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 11.9
+    }
+   },
+   "odds": {
+    "home": 1.62,
+    "draw": 3.6,
+    "away": 4.28,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   },
+   "result": {
+    "full_score": "1-1",
+    "half_score": "0-0",
+    "direction_hit": false,
+    "score_hit": true,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-10-07"
+   }
+  },
+  {
+   "match_id": "2026-10-07-005",
+   "day": "2026-10-07",
+   "code": "周三005",
+   "competition": "巴甲",
+   "kickoff": "",
+   "home": {
+    "name": "维多利亚",
+    "league": "巴甲"
+   },
+   "away": {
+    "name": "沙佩科恩斯",
+    "league": "巴甲"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.579,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.336,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.085,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.216,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.182,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.139,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.129,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.077,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.06,
+     "rank": 6
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.292,
+    "lam_away": 0.55,
+    "lam_total": 1.843,
+    "upset_prob": 44.6,
+    "upset_level": "中",
+    "rq_best_ev": 1.002,
+    "rq_best_odds": 2.31,
+    "data_n": {
+     "home": 8,
+     "away": 3
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 12.6
+    }
+   },
+   "odds": {
+    "home": 1.45,
+    "draw": 3.92,
+    "away": 5.4,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   },
+   "result": {
+    "full_score": "4-0",
+    "half_score": "1-0",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-10-07"
+   }
+  },
+  {
+   "match_id": "2026-10-07-006",
+   "day": "2026-10-07",
+   "code": "周三006",
+   "competition": "巴甲",
+   "kickoff": "",
+   "home": {
+    "name": "博塔弗戈",
+    "league": "巴甲"
+   },
+   "away": {
+    "name": "达伽马",
+    "league": "巴甲"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.418,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.339,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.244,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.187,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.181,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.131,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.1,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.068,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.064,
+     "rank": 6
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 0.931,
+    "lam_away": 1.042,
+    "lam_total": 1.973,
+    "upset_prob": 63.2,
+    "upset_level": "高",
+    "rq_best_ev": 0.939,
+    "rq_best_odds": 1.53,
+    "data_n": {
+     "home": 8,
+     "away": 4
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 14.5
+    }
+   },
+   "odds": {
+    "home": 2.77,
+    "draw": 3.35,
+    "away": 2.13,
+    "handicap": 1.0
+   },
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球胜",
+    "prob": null,
+    "hit": null
+   },
+   "result": {
+    "full_score": "1-2",
+    "half_score": "0-1",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": null,
+    "htft_hit": null,
+    "settled_at": "2026-10-07"
+   }
+  }
+ ]
+}
