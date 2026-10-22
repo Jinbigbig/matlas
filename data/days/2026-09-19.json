@@ -128,7 +128,17 @@
    },
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "日职联",
+     "opponent": "广岛三箭",
+     "venue": "away",
+     "score": "6-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -139,7 +149,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.414,
     "lam_away": 1.773,
@@ -296,7 +306,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.081,
     "lam_away": 1.527,
@@ -441,8 +451,46 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-06",
+     "competition": "韩K联",
+     "opponent": "江原FC",
+     "venue": "home",
+     "score": "0-3",
+     "outcome": "L",
+     "half_ft": "客/客"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "韩K联",
+     "opponent": "仁川联",
+     "venue": "home",
+     "score": "2-1",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-08",
+     "competition": "韩K联",
+     "opponent": "首尔FC",
+     "venue": "home",
+     "score": "1-0",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "韩K联",
+     "opponent": "济州SK",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -453,7 +501,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.167,
     "lam_away": 1.836,
@@ -599,7 +647,17 @@
    },
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-09-05",
+     "competition": "日职联",
+     "opponent": "福冈黄蜂",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -610,7 +668,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.756,
     "lam_away": 1.303,
@@ -651,6 +709,12 @@
     "slug": "",
     "league": "英超",
     "country": "",
+    "rank": 12,
+    "points": 8,
+    "played": 7,
+    "win": 2,
+    "draw": 2,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/66.png"
    },
@@ -755,8 +819,73 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-15",
+     "competition": "英联杯",
+     "opponent": "利物浦",
+     "venue": "away",
+     "score": "3-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "英超",
+     "opponent": "埃弗顿",
+     "venue": "home",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "英超",
+     "opponent": "诺丁汉",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-16",
+     "competition": "英联杯",
+     "opponent": "考文垂",
+     "venue": "away",
+     "score": "1-3",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "英超",
+     "opponent": "诺丁汉",
+     "venue": "home",
+     "score": "1-2",
+     "outcome": "L",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-08",
+     "competition": "欧冠",
+     "opponent": "布鲁日",
+     "venue": "away",
+     "score": "2-3",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "英超",
+     "opponent": "赫尔城",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-1",
@@ -767,7 +896,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.485,
     "lam_away": 1.542,
@@ -924,7 +1053,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.381,
     "lam_away": 1.526,
@@ -957,6 +1086,12 @@
     "slug": "",
     "league": "西甲",
     "country": "",
+    "rank": 10,
+    "points": 11,
+    "played": 9,
+    "win": 3,
+    "draw": 2,
+    "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/727.png"
    },
@@ -965,6 +1100,12 @@
     "slug": "",
     "league": "西甲",
     "country": "",
+    "rank": 14,
+    "points": 9,
+    "played": 8,
+    "win": 2,
+    "draw": 3,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/728.png"
    },
@@ -1069,8 +1210,64 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-16",
+     "competition": "西甲",
+     "opponent": "马竞",
+     "venue": "away",
+     "score": "4-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "西甲",
+     "opponent": "西班牙人",
+     "venue": "home",
+     "score": "0-2",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "西甲",
+     "opponent": "阿拉维斯",
+     "venue": "away",
+     "score": "5-2",
+     "outcome": "L",
+     "half_ft": "主/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-15",
+     "competition": "西甲",
+     "opponent": "西班牙人",
+     "venue": "home",
+     "score": "2-1",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "西甲",
+     "opponent": "皇马",
+     "venue": "away",
+     "score": "4-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "西甲",
+     "opponent": "桑坦德",
+     "venue": "home",
+     "score": "3-2",
+     "outcome": "W",
+     "half_ft": "平/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -1081,7 +1278,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.438,
     "lam_away": 1.397,
@@ -1114,6 +1311,12 @@
     "slug": "",
     "league": "意甲",
     "country": "",
+    "rank": 16,
+    "points": 4,
+    "played": 7,
+    "win": 1,
+    "draw": 1,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/494.png"
    },
@@ -1122,6 +1325,12 @@
     "slug": "",
     "league": "意甲",
     "country": "",
+    "rank": 7,
+    "points": 13,
+    "played": 7,
+    "win": 4,
+    "draw": 1,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/490.png"
    },
@@ -1226,8 +1435,46 @@
     "pick": "让球胜"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-14",
+     "competition": "意甲",
+     "opponent": "国际米兰",
+     "venue": "away",
+     "score": "5-3",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-07",
+     "competition": "意甲",
+     "opponent": "拉齐奥",
+     "venue": "home",
+     "score": "1-2",
+     "outcome": "L",
+     "half_ft": "平/客"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "意甲",
+     "opponent": "亚特兰大",
+     "venue": "away",
+     "score": "1-2",
+     "outcome": "W",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-07",
+     "competition": "意甲",
+     "opponent": "莱切",
+     "venue": "home",
+     "score": "1-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-0",
@@ -1238,7 +1485,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.669,
     "lam_away": 1.364,
@@ -1271,6 +1518,12 @@
     "slug": "",
     "league": "意甲",
     "country": "",
+    "rank": 15,
+    "points": 5,
+    "played": 7,
+    "win": 1,
+    "draw": 2,
+    "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/500.png"
    },
@@ -1279,6 +1532,12 @@
     "slug": "",
     "league": "意甲",
     "country": "",
+    "rank": 10,
+    "points": 10,
+    "played": 7,
+    "win": 3,
+    "draw": 1,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/503.png"
    },
@@ -1383,8 +1642,46 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-13",
+     "competition": "意甲",
+     "opponent": "那不勒斯",
+     "venue": "away",
+     "score": "1-0",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "意甲",
+     "opponent": "萨索洛",
+     "venue": "home",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "客/平"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-14",
+     "competition": "意甲",
+     "opponent": "罗马",
+     "venue": "home",
+     "score": "0-2",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "意甲",
+     "opponent": "佛罗伦萨",
+     "venue": "away",
+     "score": "1-2",
+     "outcome": "W",
+     "half_ft": "平/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -1395,7 +1692,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.972,
     "lam_away": 1.344,
@@ -1541,7 +1838,17 @@
    },
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-09-07",
+     "competition": "瑞超",
+     "opponent": "索尔纳",
+     "venue": "home",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -1552,7 +1859,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.491,
     "lam_away": 2.074,
@@ -1585,6 +1892,12 @@
     "slug": "",
     "league": "德甲",
     "country": "",
+    "rank": 11,
+    "points": 8,
+    "played": 6,
+    "win": 2,
+    "draw": 2,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/169.png"
    },
@@ -1593,6 +1906,12 @@
     "slug": "",
     "league": "德甲",
     "country": "",
+    "rank": 3,
+    "points": 13,
+    "played": 6,
+    "win": 4,
+    "draw": 1,
+    "loss": 1,
     "form": "",
     "logo": "assets/logo/teams/160.png"
    },
@@ -1697,8 +2016,46 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-12",
+     "competition": "德甲",
+     "opponent": "美因茨",
+     "venue": "away",
+     "score": "1-3",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "德甲",
+     "opponent": "奥格斯堡",
+     "venue": "home",
+     "score": "1-4",
+     "outcome": "L",
+     "half_ft": "主/客"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "德甲",
+     "opponent": "门兴",
+     "venue": "home",
+     "score": "5-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "德甲",
+     "opponent": "帕德博恩",
+     "venue": "away",
+     "score": "0-1",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "2-1",
@@ -1709,7 +2066,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.992,
     "lam_away": 1.99,
@@ -1742,6 +2099,12 @@
     "slug": "",
     "league": "德甲",
     "country": "",
+    "rank": 9,
+    "points": 9,
+    "played": 6,
+    "win": 3,
+    "draw": 0,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/175.png"
    },
@@ -1750,6 +2113,12 @@
     "slug": "",
     "league": "德甲",
     "country": "",
+    "rank": 12,
+    "points": 7,
+    "played": 6,
+    "win": 2,
+    "draw": 1,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/192.png"
    },
@@ -1854,8 +2223,37 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-13",
+     "competition": "德甲",
+     "opponent": "莱红牛",
+     "venue": "away",
+     "score": "5-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "德甲",
+     "opponent": "美因茨",
+     "venue": "home",
+     "score": "0-5",
+     "outcome": "L",
+     "half_ft": "客/客"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "德甲",
+     "opponent": "不来梅",
+     "venue": "home",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "主/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -1866,7 +2264,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.778,
     "lam_away": 1.812,
@@ -1899,6 +2297,12 @@
     "slug": "",
     "league": "德甲",
     "country": "",
+    "rank": 18,
+    "points": 0,
+    "played": 6,
+    "win": 0,
+    "draw": 0,
+    "loss": 6,
     "form": "",
     "logo": "assets/logo/teams/163.png"
    },
@@ -1907,6 +2311,12 @@
     "slug": "",
     "league": "德甲",
     "country": "",
+    "rank": 5,
+    "points": 10,
+    "played": 6,
+    "win": 3,
+    "draw": 1,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/164.png"
    },
@@ -2011,8 +2421,46 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-12",
+     "competition": "德甲",
+     "opponent": "弗赖堡",
+     "venue": "away",
+     "score": "5-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "德甲",
+     "opponent": "埃尔弗斯贝格",
+     "venue": "home",
+     "score": "3-4",
+     "outcome": "L",
+     "half_ft": "主/客"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "德甲",
+     "opponent": "法兰克福",
+     "venue": "home",
+     "score": "1-3",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "德甲",
+     "opponent": "汉堡",
+     "venue": "away",
+     "score": "0-5",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-2",
@@ -2023,7 +2471,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.556,
     "lam_away": 1.89,
@@ -2064,6 +2512,12 @@
     "slug": "",
     "league": "德甲",
     "country": "",
+    "rank": 10,
+    "points": 8,
+    "played": 6,
+    "win": 2,
+    "draw": 2,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/170.png"
    },
@@ -2168,8 +2622,46 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-12",
+     "competition": "德甲",
+     "opponent": "科隆",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "主/平"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "德甲",
+     "opponent": "莱红牛",
+     "venue": "home",
+     "score": "3-1",
+     "outcome": "W",
+     "half_ft": "主/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "德甲",
+     "opponent": "勒沃库森",
+     "venue": "home",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "客/平"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "德甲",
+     "opponent": "法兰克福",
+     "venue": "away",
+     "score": "1-4",
+     "outcome": "W",
+     "half_ft": "主/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-1",
@@ -2180,7 +2672,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.913,
     "lam_away": 1.815,
@@ -2213,6 +2705,12 @@
     "slug": "",
     "league": "英超",
     "country": "",
+    "rank": 8,
+    "points": 10,
+    "played": 7,
+    "win": 2,
+    "draw": 4,
+    "loss": 1,
     "form": "",
     "logo": "assets/logo/teams/45.png"
    },
@@ -2221,6 +2719,12 @@
     "slug": "",
     "league": "英超",
     "country": "",
+    "rank": 10,
+    "points": 9,
+    "played": 7,
+    "win": 3,
+    "draw": 0,
+    "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/57.png"
    },
@@ -2325,8 +2829,46 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-12",
+     "competition": "英超",
+     "opponent": "热刺",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "英超",
+     "opponent": "曼联",
+     "venue": "home",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-15",
+     "competition": "英联杯",
+     "opponent": "阿森纳",
+     "venue": "home",
+     "score": "2-4",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "英超",
+     "opponent": "水晶宫",
+     "venue": "away",
+     "score": "2-3",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -2337,7 +2879,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.91,
     "lam_away": 1.426,
@@ -2370,6 +2912,12 @@
     "slug": "",
     "league": "英超",
     "country": "",
+    "rank": 11,
+    "points": 8,
+    "played": 7,
+    "win": 2,
+    "draw": 2,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/34.png"
    },
@@ -2378,6 +2926,12 @@
     "slug": "",
     "league": "英超",
     "country": "",
+    "rank": 9,
+    "points": 9,
+    "played": 7,
+    "win": 2,
+    "draw": 3,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/64.png"
    },
@@ -2482,8 +3036,55 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-14",
+     "competition": "英超",
+     "opponent": "利兹联",
+     "venue": "away",
+     "score": "4-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "英超",
+     "opponent": "伯恩茅斯",
+     "venue": "home",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "客/平"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "英超",
+     "opponent": "切尔西",
+     "venue": "away",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "客/平"
+    },
+    {
+     "date": "2026-09-08",
+     "competition": "英联杯",
+     "opponent": "桑德兰",
+     "venue": "away",
+     "score": "1-0",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "英超",
+     "opponent": "维拉",
+     "venue": "home",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "2-0",
@@ -2494,7 +3095,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.49,
     "lam_away": 0.924,
@@ -2640,7 +3241,17 @@
    },
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "挪超",
+     "opponent": "特罗姆瑟",
+     "venue": "home",
+     "score": "5-3",
+     "outcome": "W",
+     "half_ft": "主/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-1",
@@ -2651,7 +3262,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.105,
     "lam_away": 2.36,
@@ -2684,6 +3295,12 @@
     "slug": "",
     "league": "西甲",
     "country": "",
+    "rank": 13,
+    "points": 9,
+    "played": 8,
+    "win": 2,
+    "draw": 3,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/531.png"
    },
@@ -2692,6 +3309,12 @@
     "slug": "",
     "league": "西甲",
     "country": "",
+    "rank": 7,
+    "points": 11,
+    "played": 9,
+    "win": 3,
+    "draw": 2,
+    "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/542.png"
    },
@@ -2796,8 +3419,55 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-12",
+     "competition": "西甲",
+     "opponent": "埃尔切",
+     "venue": "home",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "西甲",
+     "opponent": "马竞",
+     "venue": "home",
+     "score": "3-0",
+     "outcome": "W",
+     "half_ft": "平/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-15",
+     "competition": "西甲",
+     "opponent": "巴伦西亚",
+     "venue": "home",
+     "score": "0-1",
+     "outcome": "L",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "西甲",
+     "opponent": "桑坦德",
+     "venue": "away",
+     "score": "2-1",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "西甲",
+     "opponent": "奥萨苏纳",
+     "venue": "home",
+     "score": "5-2",
+     "outcome": "W",
+     "half_ft": "主/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-0",
@@ -2808,7 +3478,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.022,
     "lam_away": 1.229,
@@ -2953,8 +3623,46 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-12",
+     "competition": "法甲",
+     "opponent": "里昂",
+     "venue": "home",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "法甲",
+     "opponent": "马赛",
+     "venue": "away",
+     "score": "2-3",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "法甲",
+     "opponent": "摩纳哥",
+     "venue": "home",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "法甲",
+     "opponent": "特鲁瓦",
+     "venue": "away",
+     "score": "2-6",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -2965,7 +3673,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.515,
     "lam_away": 1.132,
@@ -2998,6 +3706,12 @@
     "slug": "",
     "league": "意甲",
     "country": "",
+    "rank": 3,
+    "points": 17,
+    "played": 7,
+    "win": 5,
+    "draw": 2,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/497.png"
    },
@@ -3006,6 +3720,12 @@
     "slug": "",
     "league": "意甲",
     "country": "",
+    "rank": 1,
+    "points": 19,
+    "played": 7,
+    "win": 6,
+    "draw": 1,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/505.png"
    },
@@ -3110,8 +3830,64 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-14",
+     "competition": "意甲",
+     "opponent": "都灵",
+     "venue": "away",
+     "score": "0-2",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-10",
+     "competition": "欧冠",
+     "opponent": "费内巴切",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "客/平"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "意甲",
+     "opponent": "亚特兰大",
+     "venue": "home",
+     "score": "2-1",
+     "outcome": "W",
+     "half_ft": "平/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-14",
+     "competition": "意甲",
+     "opponent": "乌迪内斯",
+     "venue": "home",
+     "score": "5-3",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-08",
+     "competition": "欧冠",
+     "opponent": "皇马",
+     "venue": "away",
+     "score": "2-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "意甲",
+     "opponent": "那不勒斯",
+     "venue": "home",
+     "score": "3-2",
+     "outcome": "W",
+     "half_ft": "平/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "2-0",
@@ -3122,7 +3898,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.952,
     "lam_away": 2.006,
@@ -3155,6 +3931,12 @@
     "slug": "",
     "league": "英超",
     "country": "",
+    "rank": 19,
+    "points": 5,
+    "played": 7,
+    "win": 1,
+    "draw": 2,
+    "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/65.png"
    },
@@ -3163,6 +3945,12 @@
     "slug": "",
     "league": "英超",
     "country": "",
+    "rank": 17,
+    "points": 6,
+    "played": 7,
+    "win": 2,
+    "draw": 0,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/1346.png"
    },
@@ -3267,8 +4055,46 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-12",
+     "competition": "英超",
+     "opponent": "维拉",
+     "venue": "away",
+     "score": "1-2",
+     "outcome": "W",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "英超",
+     "opponent": "热刺",
+     "venue": "home",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-16",
+     "competition": "英联杯",
+     "opponent": "维拉",
+     "venue": "home",
+     "score": "1-3",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "英超",
+     "opponent": "曼城",
+     "venue": "away",
+     "score": "1-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-0",
@@ -3279,7 +4105,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.7,
     "lam_away": 0.996,
@@ -3312,6 +4138,12 @@
     "slug": "",
     "league": "德甲",
     "country": "",
+    "rank": 13,
+    "points": 6,
+    "played": 6,
+    "win": 2,
+    "draw": 0,
+    "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/172.png"
    },
@@ -3320,6 +4152,12 @@
     "slug": "",
     "league": "德甲",
     "country": "",
+    "rank": 2,
+    "points": 14,
+    "played": 6,
+    "win": 4,
+    "draw": 2,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/165.png"
    },
@@ -3424,8 +4262,55 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-12",
+     "competition": "德甲",
+     "opponent": "霍芬海姆",
+     "venue": "away",
+     "score": "2-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-09",
+     "competition": "欧冠",
+     "opponent": "维京",
+     "venue": "home",
+     "score": "3-1",
+     "outcome": "W",
+     "half_ft": "主/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "德甲",
+     "opponent": "帕德博恩",
+     "venue": "home",
+     "score": "3-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-08",
+     "competition": "欧冠",
+     "opponent": "比利亚雷",
+     "venue": "home",
+     "score": "3-2",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "德甲",
+     "opponent": "霍芬海姆",
+     "venue": "away",
+     "score": "2-3",
+     "outcome": "W",
+     "half_ft": "主/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-0",
@@ -3436,7 +4321,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.121,
     "lam_away": 2.079,
@@ -3469,6 +4354,12 @@
     "slug": "",
     "league": "西甲",
     "country": "",
+    "rank": 8,
+    "points": 11,
+    "played": 9,
+    "win": 2,
+    "draw": 5,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/538.png"
    },
@@ -3477,6 +4368,12 @@
     "slug": "",
     "league": "西甲",
     "country": "",
+    "rank": 17,
+    "points": 8,
+    "played": 9,
+    "win": 2,
+    "draw": 2,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/4665.png"
    },
@@ -3581,8 +4478,64 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-16",
+     "competition": "欧罗巴",
+     "opponent": "奥莫尼亚",
+     "venue": "away",
+     "score": "1-0",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-13",
+     "competition": "西甲",
+     "opponent": "马拉加",
+     "venue": "home",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "主/平"
+    },
+    {
+     "date": "2026-09-07",
+     "competition": "西甲",
+     "opponent": "赫塔费",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "主/平"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-16",
+     "competition": "西甲",
+     "opponent": "巴萨",
+     "venue": "away",
+     "score": "7-2",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "西甲",
+     "opponent": "阿拉维斯",
+     "venue": "home",
+     "score": "2-1",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "西甲",
+     "opponent": "巴列卡诺",
+     "venue": "away",
+     "score": "3-2",
+     "outcome": "L",
+     "half_ft": "平/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "2-0",
@@ -3593,7 +4546,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.015,
     "lam_away": 1.432,
@@ -3738,8 +4691,46 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-15",
+     "competition": "荷甲",
+     "opponent": "威廉二世",
+     "venue": "home",
+     "score": "5-1",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "荷甲",
+     "opponent": "福图纳",
+     "venue": "away",
+     "score": "1-5",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "荷甲",
+     "opponent": "埃因霍温",
+     "venue": "home",
+     "score": "1-3",
+     "outcome": "L",
+     "half_ft": "客/客"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-08",
+     "competition": "荷甲",
+     "opponent": "奈梅亨",
+     "venue": "away",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-1",
@@ -3750,7 +4741,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.697,
     "lam_away": 1.33,
@@ -3783,6 +4774,12 @@
     "slug": "",
     "league": "意甲",
     "country": "",
+    "rank": 20,
+    "points": 3,
+    "played": 7,
+    "win": 1,
+    "draw": 0,
+    "loss": 6,
     "form": "",
     "logo": "assets/logo/teams/517.png"
    },
@@ -3791,6 +4788,12 @@
     "slug": "",
     "league": "意甲",
     "country": "",
+    "rank": 2,
+    "points": 19,
+    "played": 7,
+    "win": 6,
+    "draw": 1,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/487.png"
    },
@@ -3895,8 +4898,46 @@
     "pick": "让球胜"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-11",
+     "competition": "意甲",
+     "opponent": "佛罗伦萨",
+     "venue": "home",
+     "score": "2-4",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "意甲",
+     "opponent": "弗洛西诺",
+     "venue": "away",
+     "score": "3-2",
+     "outcome": "L",
+     "half_ft": "主/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-12",
+     "competition": "意甲",
+     "opponent": "AC米兰",
+     "venue": "home",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "主/平"
+    },
+    {
+     "date": "2026-09-07",
+     "competition": "意甲",
+     "opponent": "乌迪内斯",
+     "venue": "away",
+     "score": "1-2",
+     "outcome": "W",
+     "half_ft": "平/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-0",
@@ -3907,7 +4948,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.164,
     "lam_away": 1.843,
@@ -4053,7 +5094,26 @@
    },
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-09-13",
+     "competition": "法甲",
+     "opponent": "里尔",
+     "venue": "away",
+     "score": "2-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "法甲",
+     "opponent": "斯特拉斯",
+     "venue": "home",
+     "score": "2-6",
+     "outcome": "L",
+     "half_ft": "客/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -4064,7 +5124,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.365,
     "lam_away": 1.103,
@@ -4209,8 +5269,55 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-16",
+     "competition": "欧罗巴",
+     "opponent": "安德莱",
+     "venue": "away",
+     "score": "1-2",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "法甲",
+     "opponent": "巴黎FC",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "法甲",
+     "opponent": "朗斯",
+     "venue": "away",
+     "score": "0-1",
+     "outcome": "W",
+     "half_ft": "平/客"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-16",
+     "competition": "欧罗巴",
+     "opponent": "格风暴",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-11",
+     "competition": "法甲",
+     "opponent": "马赛",
+     "venue": "home",
+     "score": "1-0",
+     "outcome": "W",
+     "half_ft": "平/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "2-0",
@@ -4221,7 +5328,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.5,
     "lam_away": 1.258,
@@ -4254,6 +5361,12 @@
     "slug": "",
     "league": "西甲",
     "country": "",
+    "rank": 6,
+    "points": 14,
+    "played": 9,
+    "win": 4,
+    "draw": 2,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/536.png"
    },
@@ -4262,6 +5375,12 @@
     "slug": "",
     "league": "西甲",
     "country": "",
+    "rank": 1,
+    "points": 27,
+    "played": 9,
+    "win": 9,
+    "draw": 0,
+    "loss": 0,
     "form": "",
     "logo": ""
    },
@@ -4366,8 +5485,73 @@
     "pick": "让球胜"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-16",
+     "competition": "西甲",
+     "opponent": "拉科",
+     "venue": "away",
+     "score": "0-1",
+     "outcome": "W",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-11",
+     "competition": "西甲",
+     "opponent": "巴伦西亚",
+     "venue": "home",
+     "score": "1-0",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "西甲",
+     "opponent": "西班牙人",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-16",
+     "competition": "西甲",
+     "opponent": "桑坦德",
+     "venue": "home",
+     "score": "7-2",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-13",
+     "competition": "西甲",
+     "opponent": "莱万特",
+     "venue": "away",
+     "score": "2-4",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-09",
+     "competition": "欧冠",
+     "opponent": "费耶诺德",
+     "venue": "home",
+     "score": "5-1",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "西甲",
+     "opponent": "巴伦西亚",
+     "venue": "away",
+     "score": "0-5",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-1",
@@ -4378,7 +5562,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.016,
     "lam_away": 3.184,
@@ -4523,8 +5707,37 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-13",
+     "competition": "葡超",
+     "opponent": "法马利康",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-09",
+     "competition": "欧冠",
+     "opponent": "加拉塔萨",
+     "venue": "home",
+     "score": "3-1",
+     "outcome": "W",
+     "half_ft": "平/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-07",
+     "competition": "葡超",
+     "opponent": "埃斯托里",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "2-0",
@@ -4535,7 +5748,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.575,
     "lam_away": 0.786,
@@ -4681,7 +5894,26 @@
    },
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-09-16",
+     "competition": "巴甲",
+     "opponent": "格雷米奥",
+     "venue": "home",
+     "score": "3-2",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "巴甲",
+     "opponent": "帕梅拉斯",
+     "venue": "home",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "2-0",
@@ -4692,7 +5924,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.288,
     "lam_away": 1.11,

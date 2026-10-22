@@ -127,8 +127,100 @@
     "pick": "让球胜"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-10-09",
+     "competition": "法甲",
+     "opponent": "朗斯",
+     "venue": "away",
+     "score": "2-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-19",
+     "competition": "法甲",
+     "opponent": "雷恩",
+     "venue": "home",
+     "score": "4-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-16",
+     "competition": "欧罗巴",
+     "opponent": "安德莱",
+     "venue": "away",
+     "score": "1-2",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "法甲",
+     "opponent": "巴黎FC",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "法甲",
+     "opponent": "朗斯",
+     "venue": "away",
+     "score": "0-1",
+     "outcome": "W",
+     "half_ft": "平/客"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-10-11",
+     "competition": "英超",
+     "opponent": "诺丁汉",
+     "venue": "home",
+     "score": "3-1",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-20",
+     "competition": "英超",
+     "opponent": "利兹联",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-17",
+     "competition": "欧罗巴",
+     "opponent": "波兹南",
+     "venue": "home",
+     "score": "4-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "英超",
+     "opponent": "伊普斯",
+     "venue": "home",
+     "score": "2-3",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "英超",
+     "opponent": "富勒姆",
+     "venue": "away",
+     "score": "2-3",
+     "outcome": "W",
+     "half_ft": "主/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "2-0",
@@ -139,7 +231,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.657,
     "lam_away": 1.473,
@@ -155,6 +247,224 @@
     "headline": {
      "score": "1:1",
      "prob": 12.6
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ]
     }
    }
   },
@@ -284,8 +594,64 @@
     "pick": "让球胜"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-17",
+     "competition": "欧罗巴",
+     "opponent": "利勒斯特",
+     "venue": "away",
+     "score": "1-2",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-20",
+     "competition": "英超",
+     "opponent": "曼城",
+     "venue": "away",
+     "score": "5-3",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-16",
+     "competition": "欧罗巴",
+     "opponent": "阿尔克马",
+     "venue": "home",
+     "score": "1-0",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "英超",
+     "opponent": "阿森纳",
+     "venue": "home",
+     "score": "0-2",
+     "outcome": "L",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-08",
+     "competition": "英联杯",
+     "opponent": "赫尔城",
+     "venue": "home",
+     "score": "1-0",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "英超",
+     "opponent": "布伦特",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -296,7 +662,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 0.378,
     "lam_away": 1.925,
@@ -312,6 +678,196 @@
     "headline": {
      "score": "0:2",
      "prob": 13.5
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 7,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 5
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 3,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 5
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      }
+     ]
     }
    }
   },
@@ -441,8 +997,64 @@
     "pick": "让球胜"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-17",
+     "competition": "欧罗巴",
+     "opponent": "水晶宫",
+     "venue": "away",
+     "score": "4-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-10-10",
+     "competition": "德甲",
+     "opponent": "美因茨",
+     "venue": "away",
+     "score": "3-4",
+     "outcome": "W",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-20",
+     "competition": "德甲",
+     "opponent": "莱红牛",
+     "venue": "home",
+     "score": "2-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-16",
+     "competition": "欧罗巴",
+     "opponent": "采列",
+     "venue": "home",
+     "score": "2-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "德甲",
+     "opponent": "奥格斯堡",
+     "venue": "away",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "客/平"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "德甲",
+     "opponent": "柏林联合",
+     "venue": "home",
+     "score": "4-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-3",
@@ -453,7 +1065,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.521,
     "lam_away": 2.679,
@@ -469,6 +1081,132 @@
     "headline": {
      "score": "1:2",
      "prob": 11.8
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 1,
+       "ga": 3
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 5
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      }
+     ]
     }
    }
   },
@@ -599,7 +1337,53 @@
    },
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-10-11",
+     "competition": "西甲",
+     "opponent": "拉科",
+     "venue": "home",
+     "score": "3-2",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-20",
+     "competition": "西甲",
+     "opponent": "巴伦西亚",
+     "venue": "away",
+     "score": "2-3",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-17",
+     "competition": "欧罗巴",
+     "opponent": "伯恩茅斯",
+     "venue": "home",
+     "score": "1-2",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-13",
+     "competition": "西甲",
+     "opponent": "马竞",
+     "venue": "home",
+     "score": "0-3",
+     "outcome": "L",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-07",
+     "competition": "西甲",
+     "opponent": "埃尔切",
+     "venue": "away",
+     "score": "2-3",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-0",
@@ -610,7 +1394,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.771,
     "lam_away": 1.718,
@@ -626,6 +1410,256 @@
     "headline": {
      "score": "2:1",
      "prob": 9.7
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 5,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 5,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ]
     }
    }
   },
@@ -756,7 +1790,53 @@
    },
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-10-11",
+     "competition": "意甲",
+     "opponent": "萨索洛",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-20",
+     "competition": "意甲",
+     "opponent": "莱切",
+     "venue": "home",
+     "score": "3-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-16",
+     "competition": "欧罗巴",
+     "opponent": "本菲卡",
+     "venue": "home",
+     "score": "0-2",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "意甲",
+     "opponent": "拉齐奥",
+     "venue": "away",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "主/平"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "意甲",
+     "opponent": "尤文图斯",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-2",
@@ -767,7 +1847,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.339,
     "lam_away": 2.032,
@@ -783,6 +1863,188 @@
     "headline": {
      "score": "1:2",
      "prob": 11.7
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 2,
+       "ga": 0
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 0
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 6,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 6,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      }
+     ]
     }
    }
   },
@@ -913,7 +2175,53 @@
    },
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-10-10",
+     "competition": "西甲",
+     "opponent": "巴萨",
+     "venue": "away",
+     "score": "3-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-20",
+     "competition": "西甲",
+     "opponent": "马拉加",
+     "venue": "home",
+     "score": "1-0",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-17",
+     "competition": "西甲",
+     "opponent": "贝蒂斯",
+     "venue": "away",
+     "score": "1-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-13",
+     "competition": "西甲",
+     "opponent": "拉科",
+     "venue": "home",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-07",
+     "competition": "西甲",
+     "opponent": "塞尔塔",
+     "venue": "home",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "主/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-0",
@@ -924,7 +2232,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.058,
     "lam_away": 1.315,
@@ -940,6 +2248,320 @@
     "headline": {
      "score": "1:1",
      "prob": 14.8
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 5
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ]
     }
    }
   },
@@ -1058,11 +2680,58 @@
    "is_cold_start": false,
    "main_pick": "",
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-10-12",
+     "competition": "亚冠精英",
+     "opponent": "迪拜连接",
+     "venue": "away",
+     "score": "1-3",
+     "outcome": "W",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-14",
+     "competition": "亚冠精英",
+     "opponent": "棉农",
+     "venue": "home",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-08",
+     "competition": "沙特联",
+     "opponent": "胡巴卡德",
+     "venue": "away",
+     "score": "3-2",
+     "outcome": "L",
+     "half_ft": "主/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-15",
+     "competition": "亚冠精英",
+     "opponent": "艾因",
+     "venue": "away",
+     "score": "4-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "沙特联",
+     "opponent": "吉达联合",
+     "venue": "away",
+     "score": "2-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    }
+   ],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.541,
     "lam_away": 1.821,
@@ -1074,6 +2743,228 @@
     "headline": {
      "score": "1:2",
      "prob": 8.6
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 5,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      }
+     ]
     }
    }
   },
@@ -1203,8 +3094,100 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-10-11",
+     "competition": "西甲",
+     "opponent": "埃尔切",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-19",
+     "competition": "西甲",
+     "opponent": "桑坦德",
+     "venue": "home",
+     "score": "5-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-16",
+     "competition": "欧罗巴",
+     "opponent": "奥莫尼亚",
+     "venue": "away",
+     "score": "1-0",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-13",
+     "competition": "西甲",
+     "opponent": "马拉加",
+     "venue": "home",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "主/平"
+    },
+    {
+     "date": "2026-09-07",
+     "competition": "西甲",
+     "opponent": "赫塔费",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "主/平"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-10-11",
+     "competition": "意甲",
+     "opponent": "卡利亚里",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "主/平"
+    },
+    {
+     "date": "2026-09-20",
+     "competition": "意甲",
+     "opponent": "亚特兰大",
+     "venue": "home",
+     "score": "2-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-17",
+     "competition": "欧罗巴",
+     "opponent": "奈梅亨",
+     "venue": "home",
+     "score": "5-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-13",
+     "competition": "意甲",
+     "opponent": "萨索洛",
+     "venue": "away",
+     "score": "3-2",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "意甲",
+     "opponent": "AC米兰",
+     "venue": "home",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -1215,7 +3198,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.324,
     "lam_away": 1.843,
@@ -1231,6 +3214,208 @@
     "headline": {
      "score": "1:1",
      "prob": 13.7
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ]
     }
    }
   },
@@ -1360,8 +3545,64 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-10-10",
+     "competition": "德甲",
+     "opponent": "汉堡",
+     "venue": "home",
+     "score": "2-3",
+     "outcome": "L",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-20",
+     "competition": "德甲",
+     "opponent": "帕德博恩",
+     "venue": "away",
+     "score": "3-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-17",
+     "competition": "欧罗巴",
+     "opponent": "克里特",
+     "venue": "away",
+     "score": "2-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "德甲",
+     "opponent": "斯图加特",
+     "venue": "home",
+     "score": "2-1",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "德甲",
+     "opponent": "多特蒙德",
+     "venue": "home",
+     "score": "2-3",
+     "outcome": "L",
+     "half_ft": "主/客"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-17",
+     "competition": "欧罗巴",
+     "opponent": "马赛",
+     "venue": "home",
+     "score": "4-1",
+     "outcome": "W",
+     "half_ft": "平/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-0",
@@ -1372,7 +3613,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.019,
     "lam_away": 1.48,
@@ -1388,6 +3629,356 @@
     "headline": {
      "score": "2:1",
      "prob": 11.6
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 5
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 5,
+       "ga": 1
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 4,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 5
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 4,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 4,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ]
     }
    }
   },
@@ -1517,7 +4108,53 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
+   "recent_home": [
+    {
+     "date": "2026-10-11",
+     "competition": "法甲",
+     "opponent": "特鲁瓦",
+     "venue": "away",
+     "score": "0-2",
+     "outcome": "W",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-20",
+     "competition": "法甲",
+     "opponent": "巴黎圣曼",
+     "venue": "home",
+     "score": "1-2",
+     "outcome": "L",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-17",
+     "competition": "欧罗巴",
+     "opponent": "贝西克塔",
+     "venue": "away",
+     "score": "4-1",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-11",
+     "competition": "法甲",
+     "opponent": "雷恩",
+     "venue": "away",
+     "score": "1-0",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-06",
+     "competition": "法甲",
+     "opponent": "巴黎FC",
+     "venue": "home",
+     "score": "2-3",
+     "outcome": "L",
+     "half_ft": "客/客"
+    }
+   ],
    "recent_away": [],
    "injuries": [],
    "result": {
@@ -1529,7 +4166,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.391,
     "lam_away": 1.019,
@@ -1545,6 +4182,288 @@
     "headline": {
      "score": "2:1",
      "prob": 10.7
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ]
     }
    }
   },
@@ -1674,8 +4593,64 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-10-10",
+     "competition": "英超",
+     "opponent": "切尔西",
+     "venue": "away",
+     "score": "5-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-20",
+     "competition": "英超",
+     "opponent": "利物浦",
+     "venue": "home",
+     "score": "0-1",
+     "outcome": "L",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-17",
+     "competition": "欧罗巴",
+     "opponent": "皇家社会",
+     "venue": "away",
+     "score": "1-2",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-12",
+     "competition": "英超",
+     "opponent": "布伦特",
+     "venue": "home",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-05",
+     "competition": "英超",
+     "opponent": "纽卡斯尔",
+     "venue": "away",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "客/平"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-16",
+     "competition": "欧罗巴",
+     "opponent": "雷恩",
+     "venue": "home",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-0",
@@ -1686,7 +4661,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.235,
     "lam_away": 0.386,
@@ -1702,6 +4677,332 @@
     "headline": {
      "score": "2:0",
      "prob": 15.5
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 5,
+       "ga": 1
+      },
+      {
+       "gf": 5,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 6
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 5,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 6
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 6
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 6
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      }
+     ]
     }
    }
   },
@@ -1831,7 +5132,53 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
+   "recent_home": [
+    {
+     "date": "2026-10-11",
+     "competition": "葡超",
+     "opponent": "吉马良斯",
+     "venue": "home",
+     "score": "2-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-20",
+     "competition": "葡超",
+     "opponent": "波尔图",
+     "venue": "away",
+     "score": "3-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-16",
+     "competition": "欧罗巴",
+     "opponent": "AC米兰",
+     "venue": "away",
+     "score": "0-2",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-13",
+     "competition": "葡超",
+     "opponent": "吉维森特",
+     "venue": "home",
+     "score": "3-1",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-09",
+     "competition": "葡超",
+     "opponent": "摩雷伦斯",
+     "venue": "away",
+     "score": "0-4",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
    "recent_away": [],
    "injuries": [],
    "result": {
@@ -1843,7 +5190,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 3.117,
     "lam_away": 1.083,
@@ -1859,6 +5206,308 @@
     "headline": {
      "score": "2:0",
      "prob": 11.3
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 6
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 6
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 5,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 5,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 5,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ]
     }
    }
   },
@@ -1989,7 +5638,44 @@
    },
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-10-09",
+     "competition": "葡超",
+     "opponent": "里斯本",
+     "venue": "home",
+     "score": "1-3",
+     "outcome": "L",
+     "half_ft": "主/客"
+    },
+    {
+     "date": "2026-09-14",
+     "competition": "葡超",
+     "opponent": "埃斯托里",
+     "venue": "home",
+     "score": "1-0",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-10",
+     "competition": "葡超",
+     "opponent": "阿马多拉",
+     "venue": "away",
+     "score": "2-1",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-09",
+     "competition": "欧冠",
+     "opponent": "巴黎圣曼",
+     "venue": "away",
+     "score": "6-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-0",
@@ -2000,7 +5686,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.619,
     "lam_away": 1.48,
@@ -2016,6 +5702,140 @@
     "headline": {
      "score": "1:1",
      "prob": 13.5
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ]
     }
    }
   },
@@ -2145,8 +5965,64 @@
     "pick": "让球负"
    },
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-16",
+     "competition": "解放者杯",
+     "opponent": "科林蒂安",
+     "venue": "away",
+     "score": "0-1",
+     "outcome": "W",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-09-09",
+     "competition": "解放者杯",
+     "opponent": "科林蒂安",
+     "venue": "home",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "主/平"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-10-08",
+     "competition": "巴甲",
+     "opponent": "桑托斯",
+     "venue": "away",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "客/平"
+    },
+    {
+     "date": "2026-09-17",
+     "competition": "解放者杯",
+     "opponent": "德尔瓦耶独立",
+     "venue": "home",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "客/平"
+    },
+    {
+     "date": "2026-09-13",
+     "competition": "巴甲",
+     "opponent": "科林蒂安",
+     "venue": "home",
+     "score": "2-1",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-10",
+     "competition": "解放者杯",
+     "opponent": "德尔瓦耶独立",
+     "venue": "away",
+     "score": "0-2",
+     "outcome": "W",
+     "half_ft": "平/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-0",
@@ -2157,7 +6033,7 @@
     "settled_at": "2026-10-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 0.983,
     "lam_away": 1.577,

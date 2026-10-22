@@ -102,7 +102,17 @@
    "is_cold_start": false,
    "main_pick": "",
    "h2h": [],
-   "recent_home": [],
+   "recent_home": [
+    {
+     "date": "2026-09-06",
+     "competition": "韩K联",
+     "opponent": "安养FC",
+     "venue": "away",
+     "score": "0-3",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
    "recent_away": [],
    "injuries": [],
    "result": {
@@ -114,7 +124,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.109,
     "lam_away": 1.082,
@@ -234,7 +244,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.479,
     "lam_away": 1.258,
@@ -255,6 +265,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
+    "rank": 8,
+    "points": 6,
+    "played": 3,
+    "win": 2,
+    "draw": 0,
+    "loss": 1,
     "form": "",
     "logo": ""
    },
@@ -263,6 +279,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
+    "rank": 26,
+    "points": 3,
+    "played": 3,
+    "win": 1,
+    "draw": 0,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/209.png"
    },
@@ -335,7 +357,17 @@
    "is_cold_start": false,
    "main_pick": "",
    "h2h": [],
-   "recent_home": [],
+   "recent_home": [
+    {
+     "date": "2026-09-06",
+     "competition": "西甲",
+     "opponent": "巴伦西亚",
+     "venue": "away",
+     "score": "0-5",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
    "recent_away": [],
    "injuries": [],
    "result": {
@@ -347,7 +379,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.715,
     "lam_away": 1.485,
@@ -368,6 +400,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
+    "rank": 6,
+    "points": 7,
+    "played": 3,
+    "win": 2,
+    "draw": 1,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/172.png"
    },
@@ -467,7 +505,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.043,
     "lam_away": 1.844,
@@ -587,7 +625,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.524,
     "lam_away": 1.077,
@@ -616,6 +654,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
+    "rank": 23,
+    "points": 3,
+    "played": 3,
+    "win": 1,
+    "draw": 0,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/645.png"
    },
@@ -707,7 +751,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.456,
     "lam_away": 0.574,
@@ -728,6 +772,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
+    "rank": 22,
+    "points": 3,
+    "played": 3,
+    "win": 1,
+    "draw": 0,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/492.png"
    },
@@ -736,6 +786,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
+    "rank": 7,
+    "points": 7,
+    "played": 3,
+    "win": 2,
+    "draw": 1,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/42.png"
    },
@@ -808,8 +864,28 @@
    "is_cold_start": false,
    "main_pick": "",
    "h2h": [],
-   "recent_home": [],
-   "recent_away": [],
+   "recent_home": [
+    {
+     "date": "2026-09-05",
+     "competition": "意甲",
+     "opponent": "国际米兰",
+     "venue": "away",
+     "score": "3-2",
+     "outcome": "L",
+     "half_ft": "平/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-09-06",
+     "competition": "英超",
+     "opponent": "切尔西",
+     "venue": "home",
+     "score": "2-1",
+     "outcome": "W",
+     "half_ft": "平/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-0",
@@ -820,7 +896,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.24,
     "lam_away": 1.601,
@@ -841,6 +917,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
+    "rank": 3,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/40.png"
    },
@@ -849,6 +931,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
+    "rank": 16,
+    "points": 4,
+    "played": 3,
+    "win": 1,
+    "draw": 1,
+    "loss": 1,
     "form": "",
     "logo": ""
    },
@@ -922,7 +1010,17 @@
    "main_pick": "",
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-09-05",
+     "competition": "西甲",
+     "opponent": "毕尔巴鄂",
+     "venue": "away",
+     "score": "3-0",
+     "outcome": "L",
+     "half_ft": "平/主"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "1-1",
@@ -933,7 +1031,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.065,
     "lam_away": 1.181,
@@ -954,6 +1052,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
+    "rank": 1,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/85.png"
    },
@@ -1046,7 +1150,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 2.32,
     "lam_away": 1.516,
@@ -1166,7 +1270,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.343,
     "lam_away": 1.097,
@@ -1274,7 +1378,17 @@
    "is_cold_start": false,
    "main_pick": "",
    "h2h": [],
-   "recent_home": [],
+   "recent_home": [
+    {
+     "date": "2026-09-06",
+     "competition": "英超",
+     "opponent": "阿森纳",
+     "venue": "away",
+     "score": "2-1",
+     "outcome": "L",
+     "half_ft": "平/主"
+    }
+   ],
    "recent_away": [],
    "injuries": [],
    "result": {
@@ -1286,7 +1400,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.801,
     "lam_away": 1.038,
@@ -1395,7 +1509,17 @@
    "main_pick": "",
    "h2h": [],
    "recent_home": [],
-   "recent_away": [],
+   "recent_away": [
+    {
+     "date": "2026-09-05",
+     "competition": "葡超",
+     "opponent": "马里迪莫",
+     "venue": "away",
+     "score": "0-3",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
    "injuries": [],
    "result": {
     "half_score": "0-1",
@@ -1406,7 +1530,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.084,
     "lam_away": 2.297,
@@ -1514,7 +1638,17 @@
    "is_cold_start": false,
    "main_pick": "",
    "h2h": [],
-   "recent_home": [],
+   "recent_home": [
+    {
+     "date": "2026-09-06",
+     "competition": "巴甲",
+     "opponent": "博塔弗戈",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
    "recent_away": [],
    "injuries": [],
    "result": {
@@ -1526,7 +1660,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.869,
     "lam_away": 0.705,
@@ -1646,7 +1780,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 0.886,
     "lam_away": 0.908,
@@ -1766,7 +1900,7 @@
     "settled_at": "2026-09-09"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T16:27:18+08:00",
+   "generated_at": "2026-10-22T16:36:55+08:00",
    "extras": {
     "lam_home": 1.873,
     "lam_away": 2.2,
