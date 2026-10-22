@@ -117,6 +117,27 @@
      "prob": 0.089,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.326,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/客",
+     "prob": 0.168,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.137,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "low",
@@ -131,7 +152,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 1.123,
     "lam_away": 1.76,
@@ -147,6 +168,22 @@
     "headline": {
      "score": "1:2",
      "prob": 12.0
+    },
+    "htft_half": {
+     "home": 21.5,
+     "draw": 39.4,
+     "away": 39.1
+    },
+    "htft_cells": {
+     "主/主": 13.6,
+     "主/平": 4.9,
+     "主/客": 2.9,
+     "平/主": 8.9,
+     "平/平": 13.7,
+     "平/客": 16.8,
+     "客/主": 1.6,
+     "客/平": 4.9,
+     "客/客": 32.6
     }
    }
   },
@@ -266,6 +303,27 @@
      "prob": 0.093,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.388,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/客",
+     "prob": 0.169,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.117,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "low",
@@ -280,7 +338,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 1.255,
     "lam_away": 2.233,
@@ -296,6 +354,22 @@
     "headline": {
      "score": "1:2",
      "prob": 12.1
+    },
+    "htft_half": {
+     "home": 20.2,
+     "draw": 34.4,
+     "away": 45.3
+    },
+    "htft_cells": {
+     "主/主": 11.7,
+     "主/平": 4.8,
+     "主/客": 3.8,
+     "平/主": 7.2,
+     "平/平": 10.3,
+     "平/客": 16.9,
+     "客/主": 1.7,
+     "客/平": 4.8,
+     "客/客": 38.8
     }
    }
   },
@@ -415,6 +489,27 @@
      "prob": 0.09,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.422,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.18,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.103,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "high",
@@ -429,7 +524,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 2.272,
     "lam_away": 1.093,
@@ -445,6 +540,22 @@
     "headline": {
      "score": "2:1",
      "prob": 12.7
+    },
+    "htft_half": {
+     "home": 48.0,
+     "draw": 34.5,
+     "away": 17.5
+    },
+    "htft_cells": {
+     "主/主": 42.2,
+     "主/平": 4.4,
+     "主/客": 1.4,
+     "平/主": 18.0,
+     "平/平": 10.3,
+     "平/客": 6.2,
+     "客/主": 3.6,
+     "客/平": 4.4,
+     "客/客": 9.5
     }
    }
   },
@@ -564,6 +675,27 @@
      "prob": 0.113,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.453,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.196,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.11,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "high",
@@ -578,7 +710,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 2.212,
     "lam_away": 0.859,
@@ -594,6 +726,22 @@
     "headline": {
      "score": "2:1",
      "prob": 12.1
+    },
+    "htft_half": {
+     "home": 50.1,
+     "draw": 35.7,
+     "away": 14.1
+    },
+    "htft_cells": {
+     "主/主": 45.3,
+     "主/平": 3.8,
+     "主/客": 0.9,
+     "平/主": 19.6,
+     "平/平": 11.0,
+     "平/客": 5.1,
+     "客/主": 3.2,
+     "客/平": 3.8,
+     "客/客": 7.1
     }
    }
   },
@@ -713,6 +861,27 @@
      "prob": 0.096,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.571,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/客",
+     "prob": 0.197,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.074,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "high",
@@ -727,7 +896,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 0.726,
     "lam_away": 2.789,
@@ -743,6 +912,22 @@
     "headline": {
      "score": "0:2",
      "prob": 13.9
+    },
+    "htft_half": {
+     "home": 9.6,
+     "draw": 29.9,
+     "away": 60.5
+    },
+    "htft_cells": {
+     "主/主": 3.7,
+     "主/平": 2.7,
+     "主/客": 3.2,
+     "平/主": 2.8,
+     "平/平": 7.4,
+     "平/客": 19.7,
+     "客/主": 0.5,
+     "客/平": 2.7,
+     "客/客": 57.1
     }
    }
   },
@@ -862,6 +1047,27 @@
      "prob": 0.095,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.287,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.168,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.153,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "low",
@@ -876,7 +1082,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 1.68,
     "lam_away": 1.28,
@@ -892,6 +1098,22 @@
     "headline": {
      "score": "2:1",
      "prob": 11.7
+    },
+    "htft_half": {
+     "home": 35.9,
+     "draw": 39.2,
+     "away": 24.9
+    },
+    "htft_cells": {
+     "主/主": 28.7,
+     "主/平": 5.2,
+     "主/客": 2.0,
+     "平/主": 15.3,
+     "平/平": 13.6,
+     "平/客": 10.4,
+     "客/主": 2.9,
+     "客/平": 5.2,
+     "客/客": 16.8
     }
    }
   },
@@ -1011,6 +1233,27 @@
      "prob": 0.075,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.231,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.226,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.128,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "low",
@@ -1025,7 +1268,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 1.567,
     "lam_away": 1.584,
@@ -1041,6 +1284,22 @@
     "headline": {
      "score": "1:1",
      "prob": 14.0
+    },
+    "htft_half": {
+     "home": 30.8,
+     "draw": 38.0,
+     "away": 31.2
+    },
+    "htft_cells": {
+     "主/主": 22.6,
+     "主/平": 5.4,
+     "主/客": 2.7,
+     "平/主": 12.5,
+     "平/平": 12.8,
+     "平/客": 12.7,
+     "客/主": 2.7,
+     "客/平": 5.4,
+     "客/客": 23.1
     }
    }
   },
@@ -1160,6 +1419,27 @@
      "prob": 0.088,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.295,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.188,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.139,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "low",
@@ -1174,7 +1454,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 2.023,
     "lam_away": 1.638,
@@ -1190,6 +1470,22 @@
     "headline": {
      "score": "1:1",
      "prob": 12.0
+    },
+    "htft_half": {
+     "home": 37.6,
+     "draw": 34.5,
+     "away": 27.8
+    },
+    "htft_cells": {
+     "主/主": 29.5,
+     "主/平": 5.4,
+     "主/客": 2.7,
+     "平/主": 13.9,
+     "平/平": 10.5,
+     "平/客": 10.1,
+     "客/主": 3.6,
+     "客/平": 5.4,
+     "客/客": 18.8
     }
    }
   },
@@ -1309,6 +1605,27 @@
      "prob": 0.086,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.285,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.192,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.139,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "medium",
@@ -1323,7 +1640,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 1.93,
     "lam_away": 1.598,
@@ -1339,6 +1656,22 @@
     "headline": {
      "score": "1:1",
      "prob": 10.1
+    },
+    "htft_half": {
+     "home": 36.6,
+     "draw": 35.3,
+     "away": 28.0
+    },
+    "htft_cells": {
+     "主/主": 28.5,
+     "主/平": 5.4,
+     "主/客": 2.7,
+     "平/主": 13.9,
+     "平/平": 11.0,
+     "平/客": 10.4,
+     "客/主": 3.4,
+     "客/平": 5.4,
+     "客/客": 19.2
     }
    }
   },
@@ -1458,6 +1791,27 @@
      "prob": 0.087,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.478,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/客",
+     "prob": 0.184,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.089,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "high",
@@ -1472,7 +1826,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 1.031,
     "lam_away": 2.542,
@@ -1488,6 +1842,22 @@
     "headline": {
      "score": "1:2",
      "prob": 12.6
+    },
+    "htft_half": {
+     "home": 15.0,
+     "draw": 32.2,
+     "away": 52.8
+    },
+    "htft_cells": {
+     "主/主": 7.3,
+     "主/平": 3.9,
+     "主/客": 3.8,
+     "平/主": 4.8,
+     "平/平": 8.9,
+     "平/客": 18.4,
+     "客/主": 1.1,
+     "客/平": 3.9,
+     "客/客": 47.8
     }
    }
   },
@@ -1607,6 +1977,27 @@
      "prob": 0.102,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.318,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.163,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.151,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "medium",
@@ -1621,7 +2012,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 2.0,
     "lam_away": 1.452,
@@ -1637,6 +2028,22 @@
     "headline": {
      "score": "2:1",
      "prob": 11.5
+    },
+    "htft_half": {
+     "home": 39.3,
+     "draw": 35.5,
+     "away": 25.1
+    },
+    "htft_cells": {
+     "主/主": 31.8,
+     "主/平": 5.3,
+     "主/客": 2.3,
+     "平/主": 15.1,
+     "平/平": 11.1,
+     "平/客": 9.3,
+     "客/主": 3.5,
+     "客/平": 5.3,
+     "客/客": 16.3
     }
    }
   },
@@ -1756,6 +2163,27 @@
      "prob": 0.108,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.29,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.189,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.14,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "low",
@@ -1770,7 +2198,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 1.957,
     "lam_away": 1.594,
@@ -1786,6 +2214,22 @@
     "headline": {
      "score": "1:1",
      "prob": 12.9
+    },
+    "htft_half": {
+     "home": 37.1,
+     "draw": 35.2,
+     "away": 27.7
+    },
+    "htft_cells": {
+     "主/主": 29.0,
+     "主/平": 5.4,
+     "主/客": 2.6,
+     "平/主": 14.0,
+     "平/平": 10.9,
+     "平/客": 10.3,
+     "客/主": 3.5,
+     "客/平": 5.4,
+     "客/客": 18.9
     }
    }
   },
@@ -1905,6 +2349,27 @@
      "prob": 0.184,
      "rank": 3,
      "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.448,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.236,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.168,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "high",
@@ -1919,7 +2384,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-22T15:11:51+08:00",
+   "generated_at": "2026-10-22T16:27:18+08:00",
    "extras": {
     "lam_home": 1.713,
     "lam_away": 0.4,
@@ -1935,6 +2400,22 @@
     "headline": {
      "score": "2:0",
      "prob": 18.6
+    },
+    "htft_half": {
+     "home": 47.7,
+     "draw": 44.2,
+     "away": 8.2
+    },
+    "htft_cells": {
+     "主/主": 44.8,
+     "主/平": 2.5,
+     "主/客": 0.3,
+     "平/主": 23.6,
+     "平/平": 16.8,
+     "平/客": 3.8,
+     "客/主": 1.6,
+     "客/平": 2.5,
+     "客/客": 4.0
     }
    }
   }
