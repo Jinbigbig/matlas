@@ -138,33 +138,37 @@ def form_dots(outcomes: Sequence[str]) -> str:
     return f'<div class="form-row">{"".join(dots)}</div>' if dots else ""
 
 
-_LOGO_OK = re.compile(r"^(https?://|\.{0,2}/)")
+_LOGO_OK = re.compile(r"^(https?://|/|\.{0,2}/|assets/)")
+_ABS_LOGO = re.compile(r"^(https?://|/)")
 
 
-def crest_img(team, cls: str = "crest") -> str:
+def crest_img(team, cls: str = "crest", pre: str = "") -> str:
     """队徽。有合法 logo 出 <img>，没有则用队名首字做**同尺寸**圆形占位。
 
     占位不是假数据：它就是队名首字，作用是把卡片高度撑到和有队徽时一致，
     否则列表里会有的一半高一半矮。协议只放行 http(s) 与相对路径。
+    站点相对路径（assets/...）按页深补 pre 前缀；绝对 URL 与根路径原样使用。
     """
     logo = (getattr(team, "logo", "") or "").strip()
     if logo and _LOGO_OK.match(logo):
+        src = logo if _ABS_LOGO.match(logo) else pre + logo
         return (
-            f'<img class="{cls}" src="{esc(logo)}" alt="{esc(team.name)}队徽"'
+            f'<img class="{cls}" src="{esc(src)}" alt="{esc(team.name)}队徽"'
             f' loading="lazy" width="48" height="48">'
         )
     initial = (getattr(team, "name", "") or "?").strip()[:1] or "?"
     return f'<div class="{cls} crest-ph" aria-hidden="true">{esc(initial)}</div>'
 
 
-def team_side(team, side: str = "home") -> str:
+def team_side(team, side: str = "home", pre: str = "") -> str:
     """行内单侧队伍展示（队徽与队名同一行，用于窄幅版面）。"""
     name = f'<span class="{side}">{esc(team.name)}</span>'
     logo = (getattr(team, "logo", "") or "").strip()
     if not logo or not _LOGO_OK.match(logo):
         return name
+    src = logo if _ABS_LOGO.match(logo) else pre + logo
     img = (
-        f'<img class="crest" src="{esc(logo)}" alt="{esc(team.name)}队徽"'
+        f'<img class="crest" src="{esc(src)}" alt="{esc(team.name)}队徽"'
         f' loading="lazy" width="32" height="32">'
     )
     return f'<span class="tm">{img}{name}</span>'

@@ -280,7 +280,7 @@ def render_match(cfg: Config, m: Match) -> str:
     cold = ' <span class="mini">样本不足 · 不进精选</span>' if m.is_cold_start else ""
     sample = ' <span class="mini">示例数据</span>' if m.extras.get("sample") else ""
 
-    teams_row = f'<h1 class="sr-only">{C.esc(m.home.name)} vs {C.esc(m.away.name)}</h1>' + _mc_teams(m)
+    teams_row = f'<h1 class="sr-only">{C.esc(m.home.name)} vs {C.esc(m.away.name)}</h1>' + _mc_teams(m, pre="../")
     header = _mc_header(m)
     body_parts = [
         '<div class="card card-match">',
@@ -302,7 +302,6 @@ def render_match(cfg: Config, m: Match) -> str:
         _injury_panel(m),
         _reference_panel(m),
         _ledger(m),
-        f'<p class="disclaimer">{C.esc(cfg.disclaimer)}</p>',
     ]
 
     jsonld = _match_jsonld(cfg, m, url, title, desc)
@@ -358,8 +357,8 @@ def _mc_header(m: Match) -> str:
     )
 
 
-def _mc_teams(m: Match) -> str:
-    """队徽 + 大比分（括号内半场）。未结算时中间出 VS。"""
+def _mc_teams(m: Match, pre: str = "") -> str:
+    """队徽 + 大比分（括号内半场）。未结算时中间出 VS。pre 为页深前缀。"""
     if m.result and m.result.full_score:
         sub = (
             f'<div class="sub">({C.esc(m.result.half_score)})</div>'
@@ -374,7 +373,10 @@ def _mc_teams(m: Match) -> str:
         score = '<div class="mc-score"><div class="vs">VS</div></div>'
 
     def cell(t) -> str:
-        return f'<div class="mc-team">{C.crest_img(t)}<span>{C.esc(t.name)}</span></div>'
+        return (
+            f'<div class="mc-team">{C.crest_img(t, pre=pre)}'
+            f"<span>{C.esc(t.name)}</span></div>"
+        )
 
     return f'<div class="mc-teams">{cell(m.home)}{score}{cell(m.away)}</div>'
 
@@ -422,14 +424,62 @@ def _card(cfg: Config, m: Match, *, pre: str = "", lg: str = "") -> str:
         f'<a class="match-card" href="{url}"{attr}>'
         + _mc_header(m)
         + '<div class="mc-body">'
-        + _mc_teams(m)
+        + _mc_teams(m, pre=pre)
         + _mc_tags(m)
         + footer
         + "</div></a>"
     )
 
 
-def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "") -> str:
+def compute_ranking(days: list[Day], top: int = 10) -> list[tuple[str, int, int]]:
+    """赛事命中榜：按联赛统计方向命中率，返回 [(联赛, 命中, 已结算场次), ...]。
+
+    口径固定为「方向命中」，与卡片上的 🧭 标签同一来源；只统计已结算场次，
+    未回填赛果的联赛不进榜（不做 0/0 的假 100%）。样本量并列时场次多的在前，
+    避免 1 场 1 中压过 20 场 15 中。
+    """
+    agg: dict[str, list[int]] = {}
+    for d in days:
+        for m in d.matches:
+            if not m.competition or not m.result:
+                continue
+            if m.result.direction_hit is None:
+                continue
+            row = agg.setdefault(m.competition, [0, 0])
+            row[1] += 1
+            if m.result.direction_hit:
+                row[0] += 1
+    rows = [(lg, hit, n) for lg, (hit, n) in agg.items() if n > 0]
+    rows.sort(key=lambda x: (-(x[1] / x[2]), -x[2], x[0]))
+    return rows[:top]
+
+
+def _ranking_card(rows: list[tuple[str, int, int]], pre: str = "") -> str:
+    """右侧「🏆 赛事Top 10」。结构对齐 qiuxiaoce 的 .ranking-card。"""
+    if not rows:
+        inner = '<div class="ranking-empty">暂无可统计的已结算赛事。</div>'
+    else:
+        items = []
+        for i, (lg, hit, n) in enumerate(rows, 1):
+            acc = hit / n * 100
+            items.append(
+                f'<a class="ranking-item" href="{pre}days/">'
+                f'<div class="rank-index">{i}</div>'
+                f'<span class="rank-name">{C.esc(lg)}</span>'
+                f'<div class="rank-bar-wrap">'
+                f'<div class="rank-bar" style="width:{acc:.1f}%"></div></div>'
+                f'<span class="rank-acc">{acc:.0f}%</span></a>'
+            )
+        inner = f'<div class="ranking-list">{"".join(items)}</div>'
+    return (
+        '<div id="league-ranking-card" class="ranking-card">'
+        '<div class="card-header">🏆 赛事Top 10</div>'
+        f"{inner}</div>"
+    )
+
+
+def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
+               ranking: list[tuple[str, int, int]] | None = None) -> str:
     base = cfg.base_url.rstrip("/")
     ms = sort_matches(day.matches)
     if is_today:
@@ -475,16 +525,22 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "") 
         filter_css = "<style>" + "".join(rules) + "</style>"
 
     date_lab = f"{int(day.date[5:7])}月{int(day.date[8:10])}日"
-    body = (
-        f'<h1 class="sr-only">{C.esc(h1)}</h1>'
-        f'<p class="site-disclaimer">{C.esc(cfg.disclaimer)}</p>'
-        f'<div class="v4-filter-bar">'
+    main_col = (
+        '<div class="v4-main-col">'
+        '<div class="v4-filter-bar">'
         f'<div class="v4-date">📅 {date_lab}（{len(ms)}场）</div>'
         f'<div class="v4-filter-btn">🔍 {C.esc("、".join(leagues)) or "筛选"}</div>'
-        f"</div>"
+        "</div>"
         f'<p class="sub">{C.esc(desc)}</p>'
         f"{filter_css}{filter_bar}"
         f'<div class="cards">{cards}</div>'
+        "</div>"
+    )
+    body = (
+        f'<h1 class="sr-only">{C.esc(h1)}</h1>'
+        f'<div class="v4-layout">{main_col}'
+        f'<aside class="right-sidebar-new">{_ranking_card(ranking or [])}</aside>'
+        "</div>"
     )
     jsonld = [
         _graph(cfg, {

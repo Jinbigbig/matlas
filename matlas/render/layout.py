@@ -57,18 +57,27 @@ main.wrap { padding-bottom: 2.5rem; }
 .lf:checked + label { background: #2563eb; color: #fff; border-color: #2563eb; }
 .lf:focus-visible + label { outline: 2px solid #93c5fd; outline-offset: 2px; }
 
-/* ---------- 页头：白底 + 蓝字 + 吸顶，同 qiuxiaoce 的 header ---------- */
+/* ---------- 页头：白底 + 左 logo + 右上功能按钮，同 qiuxiaoce 的 header ---------- */
 header.site {
-  background: #fff; color: var(--ink); position: sticky; top: 0; z-index: 100;
-  border-bottom: 1px solid var(--rule); box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  background: #fff; color: var(--ink); position: relative; z-index: 99;
+  padding: 22px 0 18px; margin-bottom: 20px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.06);
 }
-header.site .wrap { position: relative; z-index: 1; padding-top: 0.9rem; padding-bottom: 0.9rem;
+header.site .wrap { position: relative; z-index: 1;
   display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-.brand { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; color: var(--accent); }
-.brand span { font-weight: 400; color: var(--muted); font-size: 0.78rem; margin-left: 0.5rem; }
-nav.site { margin-left: auto; display: flex; gap: 1.1rem; font-size: 0.85rem; }
-nav.site a { color: var(--gray-700); }
-nav.site a:hover { color: var(--accent); text-decoration: none; }
+.brand { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; color: var(--accent);
+  display: flex; align-items: center; gap: 7px; }
+.brand .brand-mark { width: 30px; height: 30px; border-radius: 8px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 800; letter-spacing: -0.03em; flex: none; }
+.brand span { font-weight: 400; color: #6b7280; font-size: 0.75rem; margin-left: 2px; }
+nav.site { margin-left: auto; display: flex; align-items: center; gap: 0.35rem;
+  font-size: 0.86rem; }
+nav.site a { color: #4b5563; padding: 6px 10px; border-radius: 8px; white-space: nowrap; }
+nav.site a:hover { color: var(--accent); background: #eff6ff; text-decoration: none; }
+nav.site a.is-btn { border: 1px solid var(--rule); }
+nav.site a.is-icon { border: 1px solid var(--rule); padding: 6px 9px; font-size: 0.9rem; }
 
 /* ---------- 标题层级 ---------- */
 main .wrap > h1 { font-weight: 700; font-size: 1.7rem; letter-spacing: -0.02em;
@@ -290,8 +299,38 @@ svg.mom { max-width: 620px; }
 .stamp-red { color: #dc2626; border: 1px solid #dc2626; background: #fff1f2; }
 .stamp-black { color: #374151; border: 1px solid #374151; background: #f3f4f6; }
 
+/* ---------- 双栏：主列 + 右侧栏（对齐 qiuxiaoce 的 v4 布局） ---------- */
+.v4-layout { display: flex; gap: 20px; align-items: flex-start; }
+.v4-main-col { flex: 1; min-width: 0; }
+.right-sidebar-new { width: 300px; flex: none; }
+@media (max-width: 1000px) {
+  .right-sidebar-new { display: none; }
+}
+
+/* ---------- 赛事 Top 卡：榜序号 / 赛事名 / 进度条 / 命中率 ---------- */
+.ranking-card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  overflow: hidden; }
+.ranking-card .card-header { font-size: 14px; font-weight: 700; color: #111;
+  padding: 14px 16px; border-bottom: 1px solid #f1f5f9; }
+.ranking-list { padding: 6px 0; }
+.ranking-item { display: flex; align-items: center; gap: 8px; padding: 7px 14px;
+  color: #374151; font-size: 13px; }
+.ranking-item:hover { background: #f8fafc; text-decoration: none; }
+.rank-index { width: 18px; flex: none; text-align: center; font-size: 12px;
+  font-weight: 700; color: #9ca3af; }
+.ranking-item:nth-child(1) .rank-index { color: #dc2626; }
+.ranking-item:nth-child(2) .rank-index { color: #ea580c; }
+.ranking-item:nth-child(3) .rank-index { color: #ca8a04; }
+.rank-name { flex: none; width: 52px; overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap; }
+.rank-bar-wrap { flex: 1; height: 5px; background: #f1f5f9; border-radius: 3px; overflow: hidden; }
+.rank-bar { height: 100%; background: linear-gradient(90deg, #93c5fd, #2563eb); border-radius: 3px; }
+.rank-acc { flex: none; width: 38px; text-align: right; font-size: 12px; font-weight: 600;
+  color: #2563eb; }
+.ranking-empty { padding: 14px 16px; font-size: 12px; color: #9ca3af; }
+
 /* ---------- 列表网格：对方是单列垂直列表，主列宽度约等于其 1200 - 侧栏 ---------- */
-.cards { display: block; max-width: 840px; margin: 0 auto; }
+.cards { display: block; }
 .card-picks { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; font-size: 0.8rem;
   color: var(--muted); }
 
@@ -456,19 +495,21 @@ def page(
 </head>
 <body>
 <header class="site"><div class="wrap">
-  <div class="brand">{C.esc(cfg.site_name)}<span>{C.esc(cfg.site_tagline)}</span></div>
+  <div class="brand"><span class="brand-mark">M</span>{C.esc(cfg.site_name)}<span>{C.esc(cfg.site_tagline)}</span></div>
   <nav class="site">
-    <a href="{home}">今日</a>
-    <a href="{pre}days/">归档</a>
-    {nav_extra}
-    <a href="{pre}llms.txt">llms.txt</a>
+    <a href="{home}">🏠今日</a>
+    <a href="{pre}days/">📅归档</a>
+    <a class="is-btn" href="{pre}llms.txt">📊数据</a>
+    <a class="is-btn" href="{home}">🧩功能</a>
+    <a class="is-btn" href="{home}">👤我的</a>
+    <a class="is-icon" href="{pre}llms.txt" aria-label="站点索引">🔍</a>
   </nav>
 </div></header>
 <main class="wrap">
 {body}
 </main>
 <footer class="site"><div class="wrap">
-  <p>{C.esc(cfg.site_name)} · {C.esc(cfg.site_tagline)}　{C.esc(cfg.disclaimer)}</p>
+  <p>{C.esc(cfg.site_name)} · {C.esc(cfg.site_tagline)}</p>
   <p>数据契约 v{SCHEMA_VERSION} · 全部历史可被哈希指纹核验，结论不做事后修改。</p>
 </div></footer>
 <nav class="v4-bottom-nav-global">
