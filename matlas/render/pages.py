@@ -854,8 +854,8 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
     rules.insert(0, "body:has(#afp-toggle:checked) #ai-filter-panel{display:block}")
     rules.insert(0, ".ai-pred-card .ai-date{display:none}")
 
-    # 筛选条：与左侧同款（‹ 更早一天 · 日期 · 更晚一天 › + 筛选按钮）。
-    # 列表最新在前：‹ = selectedIndex+1，› = selectedIndex-1（全局 JS 处理）。
+    # 筛选条：与左侧同款且完全独立在卡片外（‹ 更早一天 · 日期 · 更晚一天 › +
+    # 筛选按钮）。列表最新在前：‹ = selectedIndex+1，› = selectedIndex-1（JS 处理）。
     bar = (
         '<div class="v4-filter-bar ai-bar">'
         '<div class="v4-date-nav">'
@@ -879,11 +879,12 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
     )
     return (
         "<style>" + "".join(rules) + "</style>"
+        # 筛选条完全独立在卡片外：与左侧筛选条同级、同款白条
+        f"{bar}"
         '<div id="ai-pred-card" class="ranking-card ai-pred-card">'
         f'{"".join(radios)}'
         f'<input type="checkbox" id="afp-toggle" class="fp-toggle">'
         f'<div class="card-header">{L.ICON_CPU} AI 预测</div>'
-        f"{bar}"
         f"{panel}"
         f'{"".join(bodies)}'
         "</div>"
@@ -1304,8 +1305,6 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
 
     body = (
         f"<h1 class='page-h1'>{L.ICON_DATA} 数据统计</h1>"
-        '<p class="stats-note">准确率主口径为「方向命中」（胜/平/负），与首页卡片同一数据源；'
-        "半全场自 2026-10-22 起接入，样本量随日期积累。全部数字由已回填赛果自动计算。</p>"
         '<div class="stats-grid stats-main">'
         f'<div class="stat-card"><div class="pct stat-num">{n_matches}</div><div class="stat-lbl">📊 总预测场次</div></div>'
         f'<div class="stat-card"><div class="pct stat-num">{acc:.1f}%</div><div class="stat-lbl">🎯 整体准确率</div></div>'
@@ -1340,6 +1339,8 @@ def render_features(cfg: Config) -> str:
         (L.ICON_TROPHY, "赛事 / 球队 Top 榜", "按已结算场次统计联赛与球队的方向命中率", f"{base}/"),
         (L.ICON_SEARCH, "站内搜索", "按队名、联赛、编号检索历史赛事", f"{base}/search.html"),
         (L.ICON_ACTIVITY, "单场深度数据", "六维雷达、0-90' 动量曲线、赔率与让球面板", f"{base}/days/"),
+        (L.ICON_TREND, "盘口", "竞彩赔率快照按日浏览，完赛场次附赛果对照", f"{base}/odds.html"),
+        (L.ICON_CPU, "记录本", "投注记录本地留存，赛果自动结算与盈亏统计", f"{base}/bets.html"),
         (L.ICON_CPU, "机器可读数据", "llms.txt / dataset.json，供 LLM 与工具直接消费", f"{base}/llms.txt"),
     ]
     cards = "".join(
@@ -1430,19 +1431,38 @@ def render_search(cfg: Config, days: list[Day]) -> str:
 
 
 def _odds_payload(ordered: list[Day]) -> tuple[list, list]:
-    """赔率数据集：(按日倒序的日期表, 场次行)。只收带盘口的场次，不造假。"""
+    """全玩法赔率数据集：(倒序日期表, 场次行)。只收带 extras.odds_full 的场次。
+
+    行内含赛果数字（未开赛为 null），赔率页用于对照高亮、投注页用于自动结算。
+    """
+    import re as _re
+
     rows = []
     for d in ordered:
         for m in d.matches:
-            o = m.odds
-            if not (o and (o.home or o.handicap is not None or o.total is not None)):
+            of = (m.extras or {}).get("odds_full")
+            if not of:
                 continue
+            gh = ga = hh = ha = None
+            res = m.result
+            if res and res.full_score:
+                parts = _re.split(r"[:\-]", str(res.full_score).strip())
+                if len(parts) == 2:
+                    try:
+                        gh, ga = int(parts[0]), int(parts[1])
+                    except ValueError:
+                        gh = ga = None
+                if res.half_score:
+                    hp = _re.split(r"[:\-]", str(res.half_score).strip())
+                    if len(hp) == 2:
+                        try:
+                            hh, ha = int(hp[0]), int(hp[1])
+                        except ValueError:
+                            hh = ha = None
             rows.append({
-                "d": d.date, "c": m.code or "", "lg": m.competition or "",
-                "h": m.home.name, "a": m.away.name, "id": m.match_id,
-                "o": [o.home, o.draw, o.away, o.handicap, o.handicap_home,
-                      o.handicap_away, o.total, o.over, o.under],
-                "r": (m.result.full_score or "") if m.result else "",
+                "d": d.date, "id": m.match_id, "c": m.code or "",
+                "lg": m.competition or "", "h": m.home.name, "a": m.away.name,
+                "gh": gh, "ga": ga, "hh": hh, "ha": ha, "of": of,
             })
     rows.reverse()
     dates: list[str] = []
@@ -1453,10 +1473,10 @@ def _odds_payload(ordered: list[Day]) -> tuple[list, list]:
 
 
 def render_odds(cfg: Config, ordered: list[Day]) -> str:
-    """📈赔率：盘口浏览页（数据=jinbet/网易抓取的竞彩盘口快照）。
+    """📈盘口：竞彩全玩法赔率快照（胜平负/让球/比分/总进球/半全场）。
 
-    日期 tab（JS 切换）+ 当日全部场次的胜平负 / 让球 / 进球盘口表；
-    已完赛场次附带比分，便于对照盘口与赛果。
+    版式对照原工具「赔率管理」：每场一卡、分区药丸（标签+数值），已完赛
+    场次高亮命中项；数据 = jinbet/odds_data.json（经导入回填 extras.odds_full）。
     """
     import json as _json
 
@@ -1465,9 +1485,7 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
     data_js = _json.dumps({"dates": dates, "rows": rows},
                           ensure_ascii=False, separators=(",", ":"))
     body = (
-        f"<h1 class='page-h1'>{L.ICON_TREND} 赔率</h1>"
-        '<p class="stats-note">竞彩盘口快照（胜平负 / 让球 / 进球数），数据来源与首页单场页一致；'
-        "已完赛场次附带比分。盘口为赛前快照，不随时间更新。</p>"
+        f"<h1 class='page-h1'>{L.ICON_TREND} 盘口</h1>"
         '<div class="odds-strip" id="odds-dates"></div>'
         '<div id="odds-out"></div>'
         "<script>\n(function () {\n"
@@ -1475,7 +1493,6 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
         '''  var strip = document.getElementById("odds-dates");
   var out = document.getElementById("odds-out");
   if (!DATA.dates.length) { out.innerHTML = '<p class="sub">暂无盘口数据。</p>'; return; }
-  var fmt = function (v) { return (v === null || v === undefined || v === "") ? "—" : v; };
   DATA.dates.forEach(function (d, i) {
     var b = document.createElement("a");
     b.className = "fp-opt" + (i === 0 ? " active" : "");
@@ -1488,242 +1505,407 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
     });
     strip.appendChild(b);
   });
+  function pill(lab, val, hit, cls) {
+    if (val === undefined || val === null || val === "") return "";
+    return '<span class="odds-pill' + (hit ? " hit" : "") + '"><b class="' + (cls || "") + '">'
+      + lab + "</b><i>" + val + "</i></span>";
+  }
+  function sec(title, inner) {
+    if (!inner) return "";
+    return '<div class="odds-sec"><div class="odds-sec-t">' + title + '</div><div class="odds-pills">' + inner + "</div></div>";
+  }
   function render(d) {
     var rows = DATA.rows.filter(function (r) { return r.d === d; });
-    var html = '<section class="panel"><h3>' + d + ' 共 ' + rows.length + ' 场</h3>'
-      + '<table class="history-table"><tr><th>编号</th><th>赛事</th><th>对阵</th>'
-      + '<th>主胜</th><th>平</th><th>客胜</th><th>让球</th><th>主</th><th>客</th>'
-      + '<th>进球</th><th>大</th><th>小</th><th>赛果</th></tr>';
+    var html = "";
     rows.forEach(function (r) {
-      var o = r.o;
-      html += '<tr><td>' + r.c + '</td><td>' + r.lg + '</td>'
-        + '<td><a href="matches/' + r.id + '.html">' + r.h + ' vs ' + r.a + '</a></td>'
-        + '<td>' + fmt(o[0]) + '</td><td>' + fmt(o[1]) + '</td><td>' + fmt(o[2]) + '</td>'
-        + '<td>' + fmt(o[3]) + '</td><td>' + fmt(o[4]) + '</td><td>' + fmt(o[5]) + '</td>'
-        + '<td>' + fmt(o[6]) + '</td><td>' + fmt(o[7]) + '</td><td>' + fmt(o[8]) + '</td>'
-        + '<td>' + (r.r || "—") + '</td></tr>';
+      var of = r.of, done = r.gh !== null && r.gh !== undefined;
+      var head = '<div class="odds-m-head">'
+        + (r.c ? '<span class="odds-code">' + r.c + "</span>" : "")
+        + (r.lg ? '<span class="odds-lg">' + r.lg + "</span>" : "")
+        + '<span class="odds-vs"><a href="matches/' + r.id + '.html">' + r.h + " vs " + r.a + "</a></span>"
+        + (done ? '<span class="odds-res">赛果 ' + r.gh + "-" + r.ga
+          + (r.hh !== null && r.hh !== undefined ? " (半 " + r.hh + "-" + r.ha + ")" : "") + "</span>" : "")
+        + "</div>";
+      // 胜平负
+      var w = done ? (r.gh > r.ga ? "胜" : r.gh < r.ga ? "负" : "平") : null;
+      var s = pill("胜", of.spf && of.spf["胜"], w === "胜", "s-h")
+        + pill("平", of.spf && of.spf["平"], w === "平", "s-d")
+        + pill("负", of.spf && of.spf["负"], w === "负", "s-a");
+      html += '<section class="odds-match">' + head + sec("胜平负", s);
+      // 让球（多行；走水行不高亮）
+      var rq = "";
+      (of.rq || []).forEach(function (row) {
+        var line = parseFloat(row.handicap), rw = null;
+        if (done && line === line) {
+          var adj = r.gh + line;
+          rw = adj > r.ga ? "胜" : adj < r.ga ? "负" : "平";
+        }
+        rq += '<span class="rq-tag">让球' + row.handicap + "</span>"
+          + pill("胜", row["胜"], rw === "胜", "s-h")
+          + pill("平", row["平"], rw === "平", "s-d")
+          + pill("负", row["负"], rw === "负", "s-a");
+      });
+      html += sec("让球", rq);
+      // 比分（主胜组 / 平组 / 客胜组）
+      var sc = "";
+      Object.keys(of.score || {}).forEach(function (k) {
+        var v = of.score[k], cls = "", hit = false;
+        var mm = k.match(/^(\\d+):(\\d+)$/);
+        if (mm) {
+          var x = +mm[1], y = +mm[2];
+          cls = x > y ? "s-h" : x < y ? "s-a" : "s-d";
+          hit = done && r.gh === x && r.ga === y;
+        } else {
+          cls = k.indexOf("胜") === 0 ? "s-h" : k.indexOf("负") === 0 ? "s-a" : "s-d";
+        }
+        sc += pill(k, v, hit, cls);
+      });
+      html += sec("比分", sc);
+      // 总进球
+      var gl = "", tg = done ? r.gh + r.ga : null;
+      Object.keys(of.goals || {}).forEach(function (k) {
+        var hit = false;
+        if (tg !== null) hit = k === "7+" ? tg >= 7 : +k === tg;
+        gl += pill(k, of.goals[k], hit, "");
+      });
+      html += sec("总进球", gl);
+      // 半全场（胜胜…负负）
+      var ht = "", hr = done ? (r.hh > r.ha ? "胜" : r.hh < r.ha ? "负" : "平") : null;
+      var fr = done ? w : null;
+      Object.keys(of.htft || {}).forEach(function (k) {
+        ht += pill(k, of.htft[k], done && k === hr + fr, "");
+      });
+      html += sec("半全场", ht) + "</section>";
     });
-    out.innerHTML = html + '</table></section>';
+    out.innerHTML = html || '<p class="sub">当日无盘口数据。</p>';
   }
   render(DATA.dates[0]);
 })();
 </script>'''
     )
     return L.page(
-        cfg, title="赔率", description="竞彩盘口快照浏览：胜平负、让球、进球数盘口与赛果对照",
+        cfg, title="盘口", description="竞彩全玩法赔率快照：胜平负、让球、比分、总进球、半全场，完赛对照高亮",
         body=body, canonical=f"{base}/odds.html", depth=0,
     )
 
 
 def render_bets(cfg: Config, ordered: list[Day]) -> str:
-    """🎯投注：个人记录页（静态站实现：localStorage 存记录 + 内嵌赛果自动结算）。
+    """🎯记录本：对照原工具「足彩记录」重做。
 
-    添加记录（日期→场次→玩法→选项→赔率→本金）后，JS 按 embed 的赛果自动判
-    赢 / 输 / 走水；未开赛自动挂「待开赛」，赛果回填后刷新页面即自动结算。
-    记录保存在浏览器本地（localStorage），不依赖后端。
+    统计卡（总票数/总投注/中奖/净收益）+ 个人汇总 + 状态筛选 + 主表格 +
+    添加表单（过关方式 / 人员与倍数 / 场次玩法与选项 / 计算注数与 SP）；
+    记录存浏览器 localStorage，内嵌全量赛果自动结算（胜平负/让球/总进球/
+    比分/半全场）。静态站不含贴图上传与 AI 预测模块。
     """
     import json as _json
 
     base = cfg.base_url.rstrip("/")
-    ms = []
-    for d in ordered:
-        for m in d.matches:
-            o = m.odds
-            ms.append({
-                "id": m.match_id, "d": d.date, "c": m.code or "",
-                "lg": m.competition or "", "h": m.home.name, "a": m.away.name,
-                "o": ([o.home, o.draw, o.away, o.handicap, o.handicap_home,
-                       o.handicap_away, o.total, o.over, o.under] if o else None),
-                "r": (m.result.full_score or "") if m.result else "",
-                "hf": (m.result.half_score or "") if m.result else "",
-            })
-    data_js = _json.dumps(ms, ensure_ascii=False, separators=(",", ":"))
+    dates, rows = _odds_payload(ordered)
+    data_js = _json.dumps({"dates": dates, "rows": rows},
+                          ensure_ascii=False, separators=(",", ":"))
+    pass_modes = ("单关", "2串1", "3串1", "4串1", "5串1", "6串1")
+    persons = "ABCDEF"
     body = (
-        f"<h1 class='page-h1'>{L.ICON_ACTIVITY} 投注</h1>"
-        '<p class="stats-note">个人投注记录本：记录保存在本浏览器（localStorage），'
-        "赛果回填后自动结算盈亏。仅供个人记账复盘，不构成任何购彩建议。</p>"
-        '<div class="stats-grid stats-main" id="bet-sum"></div>'
-        '<div class="stats-box"><h3>➕ 添加记录</h3>'
-        '<div class="bet-form">'
-        '<label>日期<select id="b-date"></select></label>'
-        '<label>场次<select id="b-match"></select></label>'
-        '<label>玩法<select id="b-mk">'
-        '<option value="胜平负">胜平负</option><option value="让球">让球</option>'
-        '<option value="总进球">总进球</option><option value="比分">精确比分</option>'
-        '<option value="半全场">半全场</option></select></label>'
-        '<label>选项<select id="b-pick"></select></label>'
-        '<label id="b-score-w" style="display:none">比分<input id="b-score" type="text" placeholder="如 2-1"></label>'
-        '<label id="b-line-w" style="display:none">盘口<input id="b-line" type="number" step="0.5" placeholder="如 -1 / 2.5"></label>'
-        '<label>赔率<input id="b-odds" type="number" step="0.01" min="1"></label>'
-        '<label>本金<input id="b-stake" type="number" step="1" min="1" value="10"></label>'
-        '<button class="search-btn" id="b-add" type="button">添加</button>'
-        "</div>"
-        '<p class="sub" id="b-hint">选好场次后，胜平负 / 让球 / 总进球的赔率会按盘口自动填入，可手动修改。</p>'
-        "</div>"
-        '<div class="stats-box"><h3>📒 我的记录</h3><div id="b-list"></div></div>'
+        f"<h1 class='page-h1'>{L.ICON_ACTIVITY} 记录本</h1>"
+        '<div class="bets-stats" id="bk-stats"></div>'
+        '<div class="bets-card"><h3>👤 个人投注与中奖汇总</h3><div id="bk-person"></div></div>'
+        '<div class="bets-card"><h3>➕ 添加投注记录</h3><div class="bets-form">'
+        '<div class="bf-row"><label>过关方式</label><div id="bk-pass" class="bf-chips">'
+        + "".join(
+            f'<label class="bf-check"><input type="checkbox" value="{v}">{v}</label>'
+            for v in pass_modes
+        )
+        + '</div></div>'
+        '<div class="bf-row"><label>人员与倍数</label>'
+        '<div id="bk-persons" class="bf-persons"></div>'
+        '<div class="bf-addperson"><select id="bk-psel">'
+        f'<option value="">— 选择 —</option>'
+        + "".join(f"<option>{p}</option>" for p in persons)
+        + '<option value="__c__">自定义</option></select>'
+        '<input id="bk-pname" placeholder="名称" style="display:none" width="8">'
+        '<input id="bk-pmult" type="number" value="1" min="0" step="any" style="width:70px">'
+        '<button id="bk-padd" type="button" class="bt-mini">添加</button>'
+        "</div></div>"
+        '<div class="bf-row"><label>场次</label>'
+        '<div class="bf-schedule"><select id="bk-date"></select>'
+        '<button id="bk-load" type="button" class="bt-mini">📅 加载比赛</button></div>'
+        '<div id="bk-games" class="bf-games"></div></div>'
+        '<div class="bf-actions"><button id="bk-calc" type="button" class="bt-gold">⚡ 计算注数 & 金额</button>'
+        '<span class="bf-sp">注数 <b id="bk-n">—</b></span>'
+        '<span class="bf-sp">SP范围 <b id="bk-sp">—</b></span>'
+        '<span class="bf-sp">总倍数 <b id="bk-mult">—</b></span>'
+        '<span class="bf-sp">金额(元) <b id="bk-amt">—</b></span>'
+        '<button id="bk-save" type="button" class="bt-go">保存</button></div>'
+        '<div id="bk-combos" class="bk-combos"></div>'
+        "</div></div>"
+        '<div class="bets-filter"><label>🔍 状态筛选：</label>'
+        '<select id="bk-st"><option value="all">全部</option>'
+        '<option value="pending">⏳ 待开奖</option><option value="win">✅ 中奖</option>'
+        '<option value="lose">❌ 未中奖</option></select></div>'
+        '<div class="bets-twrap"><table class="bets-table"><thead><tr>'
+        "<th>#</th><th>场次详情</th><th>过关方式</th><th>注数</th><th>总倍数</th>"
+        "<th>SP范围</th><th>投注(元)</th><th>中奖(元)</th><th>状态</th><th>操作</th>"
+        '</tr></thead><tbody id="bk-tbody"></tbody></table></div>'
+        '<p class="bets-foot">记录保存在本浏览器；赛果由站内已回填数据自动结算。</p>'
         "<script>\n(function () {\n"
-        f"  var MS = {data_js};\n"
-        '''  var KEY = "matlas_bets_v1";
+        f"  var DATA = {data_js};\n"
+        '''  var IDX = {};
+  DATA.rows.forEach(function (r) { IDX[r.id] = r; });
   var $ = function (id) { return document.getElementById(id); };
-  var byId = {}; MS.forEach(function (m) { byId[m.id] = m; });
-  var dates = []; MS.forEach(function (m) { if (dates.indexOf(m.d) === -1) dates.push(m.d); });
-  dates.reverse();
+  var LS = "matlas_tickets_v1";
+  var MK_ZH = { spf: "胜平负", rq: "让球", goals: "总进球", score: "比分", htft: "半全场" };
 
-  function load() { try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { return []; } }
-  function save(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} }
+  // ---- 存储 ----
+  function load() { try { return JSON.parse(localStorage.getItem(LS)) || []; } catch (e) { return []; } }
+  function save(t) { localStorage.setItem(LS, JSON.stringify(t)); render(); }
 
-  var PICKS = {
-    "胜平负": ["主胜", "平", "客胜"],
-    "让球": ["主", "客"],
-    "总进球": ["大", "小"],
-    "比分": [],
-    "半全场": ["主/主", "主/平", "主/客", "平/主", "平/平", "平/客", "客/主", "客/平", "客/客"]
-  };
-
-  function fillMatches() {
-    var d = $("b-date").value;
-    var sel = $("b-match");
-    sel.innerHTML = "";
-    MS.filter(function (m) { return m.d === d; }).forEach(function (m) {
-      var op = document.createElement("option");
-      op.value = m.id;
-      op.textContent = (m.c ? m.c + " " : "") + m.h + " vs " + m.a + (m.r ? "（" + m.r + "）" : "");
-      sel.appendChild(op);
-    });
-    fillPicks();
-  }
-  function fillPicks() {
-    var mk = $("b-mk").value, sel = $("b-pick");
-    sel.innerHTML = "";
-    (PICKS[mk] || []).forEach(function (p) {
-      var op = document.createElement("option"); op.value = p; op.textContent = p; sel.appendChild(op);
-    });
-    var isScore = mk === "比分";
-    sel.style.display = isScore ? "none" : "";
-    $("b-score-w").style.display = isScore ? "" : "none";
-    $("b-line-w").style.display = (mk === "让球" || mk === "总进球") ? "" : "none";
-    autoOdds();
-  }
-  function autoOdds() {
-    var m = byId[$("b-match").value];
-    if (!m || !m.o) return;
-    var mk = $("b-mk").value, pick = $("b-pick").value;
-    var o = m.o, v = null;
-    if (mk === "胜平负") v = pick === "主胜" ? o[0] : (pick === "平" ? o[1] : o[2]);
-    else if (mk === "让球") v = pick === "主" ? o[4] : o[5];
-    else if (mk === "总进球") v = pick === "大" ? o[7] : o[8];
-    if (v) $("b-odds").value = v;
-    if (mk === "让球" && o[3] !== null && o[3] !== undefined && !$("b-line").value) $("b-line").value = o[3];
-    if (mk === "总进球" && o[6] !== null && o[6] !== undefined && !$("b-line").value) $("b-line").value = o[6];
-  }
-
-  function settle(bet, m) {
-    if (!m || !m.r) return null;
-    var f = m.r.split("-"); if (f.length !== 2) return null;
-    var h = +f[0], a = +f[1], hf = m.hf ? m.hf.split("-") : null;
-    switch (bet.mk) {
-      case "胜平负":
-        return (bet.pick === "主胜" ? h > a : bet.pick === "平" ? h === a : a > h) ? "win" : "lose";
-      case "让球": {
-        var eh = h + parseFloat(bet.line);
-        if (eh === a) return "push";
-        return (bet.pick === "主" ? eh > a : eh < a) ? "win" : "lose";
-      }
-      case "总进球": {
-        var t = h + a, ln = parseFloat(bet.line);
-        if (t === ln) return "push";
-        return (bet.pick === "大" ? t > ln : t < ln) ? "win" : "lose";
-      }
-      case "比分": return bet.pick === m.r ? "win" : "lose";
-      case "半全场": {
-        if (!hf) return null;
-        var hs = +hf[0] > +hf[1] ? "主" : (+hf[0] < +hf[1] ? "客" : "平");
-        var fs = h > a ? "主" : (h < a ? "客" : "平");
-        return bet.pick === hs + "/" + fs ? "win" : "lose";
-      }
+  // ---- 选项构造：玩法 → [{opt, odds, line, pick}] ----
+  function optionsOf(of, mk) {
+    var out = [];
+    if (!of) return out;
+    if (mk === "spf") {
+      [["胜", of.spf && of.spf["胜"]], ["平", of.spf && of.spf["平"]], ["负", of.spf && of.spf["负"]]].forEach(function (x) {
+        if (x[1]) out.push({ mk: mk, opt: x[0], odds: +x[1] });
+      });
+    } else if (mk === "rq") {
+      (of.rq || []).forEach(function (row) {
+        [["胜", row["胜"]], ["平", row["平"]], ["负", row["负"]]].forEach(function (x) {
+          if (x[1]) out.push({ mk: mk, opt: "让球" + row.handicap + " " + x[0], odds: +x[1], line: parseFloat(row.handicap), pick: x[0] });
+        });
+      });
+    } else {
+      var src = mk === "goals" ? of.goals : mk === "score" ? of.score : of.htft;
+      Object.keys(src || {}).forEach(function (k) {
+        if (src[k]) out.push({ mk: mk, opt: k, odds: +src[k] });
+      });
     }
-    return null;
+    return out;
+  }
+  function legRes(p, row) {
+    if (!row || row.gh === null || row.gh === undefined) return "pending";
+    var gh = row.gh, ga = row.ga;
+    if (p.mk === "spf") return p.opt === (gh > ga ? "胜" : gh < ga ? "负" : "平") ? "win" : "lose";
+    if (p.mk === "rq") {
+      var adj = gh + p.line;
+      return p.pick === (adj > ga ? "胜" : adj < ga ? "负" : "平") ? "win" : "lose";
+    }
+    if (p.mk === "goals") { var t = gh + ga; return (p.opt === "7+" ? t >= 7 : +p.opt === t) ? "win" : "lose"; }
+    if (p.mk === "score") return p.opt === gh + ":" + ga ? "win" : "lose";
+    if (p.mk === "htft") {
+      var h = row.hh > row.ha ? "胜" : row.hh < row.ha ? "负" : "平";
+      var f = gh > ga ? "胜" : gh < ga ? "负" : "平";
+      return p.opt === h + f ? "win" : "lose";
+    }
+    return "lose";
+  }
+  function kOf(mode) { return mode === "单关" ? 1 : +mode.charAt(0); }
+  function combosOf(t) {
+    var out = [];
+    (t.passModes || []).forEach(function (mode) {
+      var k = kOf(mode);
+      var idxs = t.games.map(function (_, i) { return i; });
+      function comb(start, acc) {
+        if (acc.length === k) {
+          function prod(i, accP) {
+            if (i === acc.length) { out.push({ sp: accP.reduce(function (a, p) { return a * p.odds; }, 1), legs: accP.slice(), mode: mode }); return; }
+            t.games[acc[i]].picks.forEach(function (p) { accP.push(p); prod(i + 1, accP); accP.pop(); });
+          }
+          prod(0, []);
+          return;
+        }
+        for (var i = start; i < idxs.length; i++) { acc.push(idxs[i]); comb(i + 1, acc); acc.pop(); }
+      }
+      comb(0, []);
+    });
+    return out;
+  }
+  function settle(t) {
+    var cs = combosOf(t);
+    var winSp = 0, anyPending = false;
+    cs.forEach(function (c) {
+      var win = true;
+      c.legs.forEach(function (p) {
+        var r = legRes(p, IDX[p.mid]);
+        if (r === "pending") { anyPending = true; win = false; }
+        else if (r === "lose") win = false;
+      });
+      if (win) winSp += c.sp;
+    });
+    var mult = (t.persons || []).reduce(function (a, p) { return a + (+p.mult || 0); }, 0);
+    var winAmt = 2 * mult * winSp;
+    var status = winAmt > 0 ? "win" : anyPending ? "pending" : "lose";
+    return { betCount: cs.length, winAmt: winAmt, status: status, spMin: cs.length ? Math.min.apply(null, cs.map(function (c) { return c.sp; })) : 0, spMax: cs.length ? Math.max.apply(null, cs.map(function (c) { return c.sp; })) : 0 };
   }
 
-  function render() {
-    var bets = load().slice().reverse();
-    var n = bets.length, win = 0, lose = 0, push = 0, pending = 0, stake = 0, pnl = 0;
-    var html = "";
-    bets.forEach(function (b) {
-      var m = byId[b.mid];
-      var st = settle(b, m);
-      if (st === "win") { win++; pnl += b.stake * (b.odds - 1); }
-      else if (st === "lose") { lose++; pnl -= b.stake; }
-      else if (st === "push") { push++; }
-      else pending++;
-      if (st !== "push") stake += b.stake;
-      var badge = st === "win" ? '<span class="b-win">✔ 已中</span>'
-        : st === "lose" ? '<span class="b-lose">✘ 未中</span>'
-        : st === "push" ? '<span class="b-push">＝ 走水</span>'
-        : '<span class="b-wait">… 待开赛</span>';
-      html += '<div class="bet-rec"><div class="br-head"><b>' + (m ? m.h + " vs " + m.a : b.mid)
-        + '</b>' + badge
-        + '<a class="br-del" href="javascript:;" data-ts="' + b.ts + '">删除</a></div>'
-        + '<div class="br-meta">' + b.mid + ' · ' + b.mk
-        + (bet.line !== "" && bet.line !== undefined && (b.mk === "让球" || b.mk === "总进球") ? "（盘口 " + b.line + "）" : "")
-        + ' · <b>' + b.pick + '</b> @ ' + b.odds + ' · 本金 ' + b.stake
-        + ' · 盈亏 <b>' + (st === "win" ? "+" + (b.stake * (b.odds - 1)).toFixed(1)
-          : st === "lose" ? "-" + b.stake : st === "push" ? "0" : "—") + '</b>'
-        + (m && m.r ? ' · 赛果 ' + m.r + (m.hf ? '（' + m.hf + '）' : '') : '')
-        + '</div></div>';
+  // ---- 添加表单 ----
+  var games = [];   // [{mid, mk, picks:[{mk,opt,odds,line,pick}]}]
+  var persons = []; // [{name, mult}]
+  function totalMult() { return persons.reduce(function (a, p) { return a + (+p.mult || 0); }, 0); }
+  function renderPersons() {
+    $("bk-persons").innerHTML = persons.map(function (p, i) {
+      return '<span class="bf-person">' + p.name + ' × <input type="number" value="' + p.mult
+        + '" min="0" step="any" data-i="' + i + '" class="bf-pmult"> <a class="bf-pdel" data-i="' + i + '">✕</a></span>';
+    }).join("") || '<span class="sub">尚未添加人员</span>';
+    $("bk-persons").querySelectorAll(".bf-pdel").forEach(function (a) {
+      a.addEventListener("click", function () { persons.splice(+a.getAttribute("data-i"), 1); renderPersons(); });
     });
-    $("b-list").innerHTML = html || '<p class="sub">还没有记录，用上面表单添加第一笔。</p>';
-    var settled = win + lose;
-    $("bet-sum").innerHTML =
-      '<div class="stat-card"><div class="stat-num">' + n + '</div><div class="stat-lbl">总记录</div></div>'
-      + '<div class="stat-card"><div class="stat-num">' + (settled ? (win / settled * 100).toFixed(1) + '%' : '—') + '</div><div class="stat-lbl">命中率</div></div>'
-      + '<div class="stat-card"><div class="stat-num">' + stake.toFixed(0) + '</div><div class="stat-lbl">总投入</div></div>'
-      + '<div class="stat-card"><div class="stat-num ' + (pnl >= 0 ? 'pnl-pos' : 'pnl-neg') + '">' + (pnl >= 0 ? '+' : '') + pnl.toFixed(1) + '</div><div class="stat-lbl">净盈亏</div></div>';
-    $("b-list").querySelectorAll(".br-del").forEach(function (a) {
-      a.addEventListener("click", function () {
-        save(load().filter(function (x) { return String(x.ts) !== a.getAttribute("data-ts"); }));
-        render();
+    $("bk-persons").querySelectorAll(".bf-pmult").forEach(function (inp) {
+      inp.addEventListener("change", function () { persons[+inp.getAttribute("data-i")].mult = +inp.value || 0; });
+    });
+  }
+  $("bk-psel").addEventListener("change", function () {
+    var v = this.value;
+    $("bk-pname").style.display = v === "__c__" ? "" : "none";
+  });
+  $("bk-padd").addEventListener("click", function () {
+    var v = $("bk-psel").value;
+    if (!v) return;
+    var name = v === "__c__" ? ($("bk-pname").value || "自定义").trim() : v;
+    if (name && !persons.some(function (p) { return p.name === name; })) persons.push({ name: name, mult: +$("bk-pmult").value || 0 });
+    $("bk-pname").value = ""; renderPersons();
+  });
+  $("bk-date").innerHTML = DATA.dates.map(function (d) {
+    return '<option value="' + d + '">' + (+d.slice(5, 7)) + "月" + (+d.slice(8, 10)) + "日</option>";
+  }).join("");
+  function renderGames() {
+    if (!games.length) { $("bk-games").innerHTML = '<p class="sub">选择日期后点「加载比赛」，为场次选玩法与选项。</p>'; return; }
+    $("bk-games").innerHTML = games.map(function (g, i) {
+      var r = IDX[g.mid];
+      var opts = optionsOf(r.of, g.mk);
+      var chips = opts.map(function (p, j) {
+        var on = g.picks.some(function (x) { return x.opt === p.opt; });
+        return '<label class="bf-opt"><input type="checkbox" data-g="' + i + '" data-j="' + j + '"' + (on ? " checked" : "") + ">" + p.opt + " @" + p.odds + "</label>";
+      }).join("");
+      var mkSel = Object.keys(MK_ZH).map(function (k) {
+        return '<option value="' + k + '"' + (g.mk === k ? " selected" : "") + ">" + MK_ZH[k] + "</option>";
+      }).join("");
+      return '<div class="bf-game"><div class="bf-game-h"><b>' + r.c + "</b> " + r.h + " vs " + r.a
+        + (r.gh !== null ? ' <span class="bf-done">已赛 ' + r.gh + "-" + r.ga + "</span>" : "")
+        + ' <select class="bf-mk" data-g="' + i + '">' + mkSel + "</select>"
+        + ' <a class="bf-gdel" data-g="' + i + '">✕</a></div>'
+        + '<div class="bf-opts">' + (chips || '<span class="sub">该玩法暂无赔率</span>') + "</div></div>";
+    }).join("");
+    $("bk-games").querySelectorAll(".bf-mk").forEach(function (sel) {
+      sel.addEventListener("change", function () {
+        var g = games[+sel.getAttribute("data-g")];
+        g.mk = sel.value; g.picks = []; renderGames();
+      });
+    });
+    $("bk-games").querySelectorAll(".bf-gdel").forEach(function (a) {
+      a.addEventListener("click", function () { games.splice(+a.getAttribute("data-g"), 1); renderGames(); });
+    });
+    $("bk-games").querySelectorAll(".bf-opt input").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        var g = games[+cb.getAttribute("data-g")];
+        var p = optionsOf(IDX[g.mid].of, g.mk)[+cb.getAttribute("data-j")];
+        if (cb.checked) { if (!g.picks.some(function (x) { return x.opt === p.opt; })) g.picks.push(p); }
+        else g.picks = g.picks.filter(function (x) { return x.opt !== p.opt; });
       });
     });
   }
-
-  $("b-date").innerHTML = dates.map(function (d) {
-    return '<option value="' + d + '">' + d + '</option>';
-  }).join("");
-  $("b-date").addEventListener("change", fillMatches);
-  $("b-mk").addEventListener("change", fillPicks);
-  $("b-pick").addEventListener("change", autoOdds);
-  $("b-match").addEventListener("change", autoOdds);
-  $("b-add").addEventListener("click", function () {
-    var mid = $("b-match").value;
-    var mk = $("b-mk").value;
-    var pick = mk === "比分" ? ($("b-score") ? $("b-score").value.trim() : "") : $("b-pick").value;
-    var odds = parseFloat($("b-odds").value);
-    var stake = parseFloat($("b-stake").value);
-    if (!mid || !pick || !(odds >= 1) || !(stake > 0)) { alert("请补全：场次、选项、赔率与本金。"); return; }
-    if (mk === "让球" || mk === "总进球") {
-      var ln = parseFloat($("b-line").value);
-      if (isNaN(ln)) { alert("该玩法需要填写盘口。"); return; }
-      var bets = load();
-      bets.push({ mid: mid, mk: mk, pick: pick, line: ln, odds: odds, stake: stake, ts: Date.now() });
-      save(bets);
-    } else {
-      var bets = load();
-      bets.push({ mid: mid, mk: mk, pick: pick, line: "", odds: odds, stake: stake, ts: Date.now() });
-      save(bets);
-    }
-    render();
+  $("bk-load").addEventListener("click", function () {
+    var d = $("bk-date").value;
+    DATA.rows.filter(function (r) { return r.d === d; }).forEach(function (r) {
+      if (!games.some(function (g) { return g.mid === r.id; })) games.push({ mid: r.id, mk: "spf", picks: [] });
+    });
+    renderGames();
   });
-  fillMatches();
+  $("bk-calc").addEventListener("click", function () {
+    var modes = Array.prototype.slice.call($("bk-pass").querySelectorAll("input:checked")).map(function (x) { return x.value; });
+    var bad = [];
+    if (!modes.length) bad.push("过关方式");
+    if (!persons.length) bad.push("人员");
+    if (!games.length || games.some(function (g) { return !g.picks.length; })) bad.push("场次选项");
+    if (bad.length) { $("bk-combos").innerHTML = '<p class="sub">请补全：' + bad.join("、") + "</p>"; return; }
+    var t = { passModes: modes, persons: persons, games: games };
+    var cs = combosOf(t);
+    var sps = cs.map(function (c) { return c.sp; });
+    var n = cs.length, mult = totalMult();
+    $("bk-n").textContent = n;
+    $("bk-mult").textContent = mult;
+    $("bk-sp").textContent = n ? Math.min.apply(null, sps).toFixed(2) + " ~ " + Math.max.apply(null, sps).toFixed(2) : "—";
+    $("bk-amt").textContent = (2 * mult * n).toFixed(1);
+    $("bk-combos").innerHTML = "<b>各过关组合明细（每注SP）</b>" + cs.map(function (c) {
+      return '<div class="bk-combo">' + c.mode + "："
+        + c.legs.map(function (p) {
+          var r = IDX[p.mid];
+          return r.c + " " + MK_ZH[p.mk] + " " + p.opt + " @" + p.odds;
+        }).join(" × ") + " → SP " + c.sp.toFixed(2) + "</div>";
+    }).join("");
+  });
+  $("bk-save").addEventListener("click", function () {
+    var modes = Array.prototype.slice.call($("bk-pass").querySelectorAll("input:checked")).map(function (x) { return x.value; });
+    if (!modes.length || !persons.length || !games.length || games.some(function (g) { return !g.picks.length; })) {
+      $("bk-combos").innerHTML = '<p class="sub">请先补全过关方式、人员与场次选项（点「计算注数 & 金额」可预览）。</p>'; return;
+    }
+    var t = { ts: Date.now(), passModes: modes, persons: persons.slice(), games: JSON.parse(JSON.stringify(games)) };
+    var all = load(); all.unshift(t); save(all);
+    games = []; renderGames();
+    $("bk-combos").innerHTML = ""; ["bk-n", "bk-sp", "bk-mult", "bk-amt"].forEach(function (id) { $(id).textContent = "—"; });
+  });
+
+  // ---- 列表与结算 ----
+  function render() {
+    var ts = load(), st = $("bk-st").value;
+    var shown = ts.map(function (t) { return { t: t, s: settle(t) }; })
+      .filter(function (x) { return st === "all" || x.s.status === st; });
+    var totTickets = ts.length, totAmt = 0, totWin = 0, pending = 0;
+    var byPerson = {};
+    ts.forEach(function (t) {
+      var s = settle(t);
+      var mult = (t.persons || []).reduce(function (a, p) { return a + (+p.mult || 0); }, 0);
+      totAmt += 2 * mult * s.betCount; totWin += s.winAmt;
+      if (s.status === "pending") pending += 1;
+      t.persons.forEach(function (p) {
+        var b = byPerson[p.name] || (byPerson[p.name] = { amt: 0, win: 0 });
+        b.amt += 2 * (+p.mult || 0) * s.betCount;
+        b.win += s.winAmt ? s.winAmt * (+p.mult || 0) / mult : 0;
+      });
+    });
+    var pnl = totWin - totAmt;
+    var badge = { win: '<span class="bt-chip bt-win">✅ 中奖</span>', lose: '<span class="bt-chip bt-lose">❌ 未中奖</span>', pending: '<span class="bt-chip bt-pending">⏳ 待开奖</span>' };
+    $("bk-stats").innerHTML = ""
+      + '<div class="stat-card"><div class="stat-num">' + totTickets + "</div><div class=\"stat-lbl\">📋 总票数（待开 " + pending + "）</div></div>"
+      + '<div class="stat-card"><div class="stat-num">' + totAmt.toFixed(1) + '</div><div class="stat-lbl">💰 总投注(元)</div></div>'
+      + '<div class="stat-card"><div class="stat-num">' + totWin.toFixed(1) + '</div><div class="stat-lbl">🏆 中奖(元)</div></div>'
+      + '<div class="stat-card"><div class="stat-num ' + (pnl >= 0 ? "pnl-pos" : "pnl-neg") + '">' + (pnl >= 0 ? "+" : "") + pnl.toFixed(1) + '</div><div class="stat-lbl">📈 净收益(元)</div></div>';
+    var pk = Object.keys(byPerson);
+    $("bk-person").innerHTML = pk.length
+      ? '<table class="bets-table bt-small"><thead><tr><th>人员</th><th>投注(元)</th><th>中奖(元)</th><th>净收益(元)</th></tr></thead><tbody>'
+        + pk.map(function (k) {
+          var b = byPerson[k], net = b.win - b.amt;
+          return "<tr><td><b>" + k + "</b></td><td>" + b.amt.toFixed(1) + "</td><td>" + b.win.toFixed(1)
+            + '</td><td class="' + (net >= 0 ? "pnl-pos" : "pnl-neg") + '">' + (net >= 0 ? "+" : "") + net.toFixed(1) + "</td></tr>";
+        }).join("") + "</tbody></table>"
+      : '<p class="sub">暂无记录。</p>';
+    $("bk-tbody").innerHTML = shown.length ? shown.map(function (x, i) {
+      var t = x.t, s = x.s;
+      var detail = t.games.map(function (g) {
+        var r = IDX[g.mid];
+        return (r ? r.c + " " : "") + MK_ZH[g.mk] + " " + g.picks.map(function (p) { return p.opt; }).join("/");
+      }).join("<br>");
+      var mult = (t.persons || []).reduce(function (a, p) { return a + (+p.mult || 0); }, 0);
+      return "<tr><td>" + (i + 1) + "</td><td>" + detail + "</td><td>" + t.passModes.join("+") + "</td><td>"
+        + s.betCount + "</td><td>" + mult + "</td><td>" + s.spMin.toFixed(2) + " ~ " + s.spMax.toFixed(2)
+        + "</td><td>" + (2 * mult * s.betCount).toFixed(1) + "</td><td>" + s.winAmt.toFixed(1) + "</td><td>"
+        + badge[s.status] + '</td><td><a class="bt-del" data-ts="' + t.ts + '">删除</a></td></tr>';
+    }).join("") : '<tr><td colspan="10"><p class="sub">暂无记录，用上方表单添加第一注。</p></td></tr>';
+    $("bk-tbody").querySelectorAll(".bt-del").forEach(function (a) {
+      a.addEventListener("click", function () {
+        save(load().filter(function (x) { return String(x.ts) !== a.getAttribute("data-ts"); }));
+      });
+    });
+  }
+  $("bk-st").addEventListener("change", render);
+  renderPersons();
   render();
 })();
 </script>'''
     )
     return L.page(
-        cfg, title="投注", description="个人投注记录本：localStorage 存档，赛果回填后自动结算盈亏",
+        cfg, title="记录本", description="足彩投注记录：过关方式、人员倍数、自动结算与个人盈亏汇总",
         body=body, canonical=f"{base}/bets.html", depth=0,
     )
-
 
 def _lt_header(name: str, *, logo: str, meta: str, ph_char: str = "") -> str:
     """联赛/球队专题页头部（对齐对方 .lt-header：徽章 + 标题 + 统计行）。"""

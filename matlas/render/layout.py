@@ -47,7 +47,8 @@ main.wrap { padding-bottom: 2.5rem; }
   padding: 8px 12px; font-size: 12px; line-height: 1.5; border-radius: 8px;
   margin: 1rem 0 10px; }
 .v4-filter-bar { display: flex; justify-content: space-between; align-items: center;
-  padding: 0 0 12px; gap: 0.75rem; }
+  background: #fff; border-radius: 10px; padding: 10px 14px; gap: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 12px; }
 .v4-date { font-weight: 700; color: #111; font-size: 15px; }
 /* 展开式筛选面板：对齐 qiuxiaoce 的 #filter-panel（类型/赛事两行） */
 .fp-toggle { position: absolute; opacity: 0; width: 0; height: 0; }
@@ -163,6 +164,18 @@ nav.site label.is-icon { display: inline-flex; align-items: center; cursor: poin
 .back-top:hover { color: var(--accent); border-color: #93c5fd; }
 @media (max-width: 768px) { .back-top { right: 14px; bottom: 76px; } }
 nav.site label.is-icon:hover { color: var(--accent); background: #eff6ff; }
+/* 「功能」下拉菜单：悬停/键盘聚焦展开，收纳赔率与投注（盘口 / 记录本） */
+.nav-drop { position: relative; }
+.nav-drop .nav-menu { display: none; position: absolute; top: 100%; right: 0;
+  background: #fff; border: 1px solid #eef2f7; border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.10); padding: 6px; min-width: 128px;
+  z-index: 60; }
+.nav-drop:hover .nav-menu, .nav-drop:focus-within .nav-menu { display: block; }
+.nav-menu a { display: flex; align-items: center; gap: 6px; padding: 8px 12px;
+  border-radius: 8px; font-size: 13px; color: #374151; white-space: nowrap; }
+.nav-menu a svg { width: 14px; height: 14px; flex: none; color: #94a3b8; }
+.nav-menu a:hover { background: #f1f5f9; color: var(--accent); text-decoration: none; }
+.nav-menu a:hover svg { color: var(--accent); }
 /* 搜索滑出层：checkbox hack，零 JS（对齐 qiuxiaoce 的 .site-search） */
 .ss-toggle { position: absolute; opacity: 0; width: 0; height: 0; }
 .site-search { display: none; background: #fff; border-bottom: 1px solid var(--rule);
@@ -472,8 +485,7 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 
 /* ---------- 右栏 AI 预测卡：复用 .ranking-card 卡壳，筛选芯片与左侧同款 ---------- */
 /* 卡内自带时间/赛事两行筛选（fp-opt 同款），日期横向滚动、赛事横向滚动 */
-/* AI 预测卡：筛选条与左侧完全同构（‹日期› + 筛选按钮独立成条，卡头只留标题） */
-.ai-pred-card .v4-filter-bar { padding: 10px 14px 12px; }
+/* AI 预测卡：筛选条完全独立在卡片外（与左侧同款白条），卡内只留标题+面板+列表 */
 .ai-date { color: #6b7280; font-weight: 600; font-size: 13px;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 #ai-filter-panel { display: none; background: #fff; border-bottom: 1px solid #f1f5f9;
@@ -551,6 +563,96 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .b-wait { color: #d97706; font-weight: 700; font-size: 12px; }
 .pnl-pos { color: #dc2626; }
 .pnl-neg { color: #16a34a; }
+
+/* 盘口页：全玩法面板（对照原工具「赔率管理」：彩色标签 + 数值框） */
+.odds-match { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 14px 16px; margin-bottom: 14px; }
+.odds-m-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: 14px; font-weight: 700; color: #111; margin-bottom: 4px; }
+.odds-m-head a { color: inherit; text-decoration: none; }
+.odds-m-head a:hover { color: var(--accent); }
+.odds-code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11px; font-weight: 500;
+  background: #f1f5f9; padding: 2px 7px; border-radius: 5px; color: #6b7280; }
+.odds-lg { font-size: 11px; font-weight: 600; background: #eff6ff; color: var(--accent);
+  padding: 2px 7px; border-radius: 5px; }
+.odds-res { margin-left: auto; font-size: 12px; color: #16a34a; font-weight: 700; }
+.odds-sec { margin-top: 10px; }
+.odds-sec-t { font-size: 12px; color: #6b7280; font-weight: 600; margin-bottom: 6px; }
+.odds-pills { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.odds-pill { display: inline-flex; align-items: stretch; border: 1px solid #eef0f4;
+  border-radius: 8px; overflow: hidden; font-size: 12px; background: #fff; }
+.odds-pill b { padding: 4px 8px; font-weight: 600; background: #f8f9fc; }
+.odds-pill i { font-style: normal; padding: 4px 9px; font-weight: 700; color: #111;
+  min-width: 40px; text-align: center; }
+.odds-pill b.s-h { color: #dc2626; }
+.odds-pill b.s-d { color: #6b7280; }
+.odds-pill b.s-a { color: #0d9488; }
+.odds-pill.hit { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.odds-pill.hit i { color: var(--accent); }
+.rq-tag { font-size: 11px; color: #6b7280; background: #f1f5f9; border-radius: 6px;
+  padding: 4px 8px; }
+
+/* 记录本页：统计卡 / 编辑器 / 主表格（对照原工具「足彩记录」） */
+.bets-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0; }
+.bets-stats .stat-num { font-size: 1.4rem; }
+@media (max-width: 800px) { .bets-stats { grid-template-columns: repeat(2, 1fr); } }
+.bets-card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 14px 16px; margin-bottom: 14px; }
+.bets-card h3 { font-size: 14px; margin: 0 0 10px; color: #111; }
+.bf-row { margin-bottom: 12px; }
+.bf-row > label { display: block; font-size: 12px; color: #6b7280; font-weight: 600; margin-bottom: 6px; }
+.bf-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.bf-check, .bf-opt { font-size: 12px; color: #374151; background: #f8f9fc;
+  border: 1px solid #eef0f4; border-radius: 6px; padding: 4px 9px; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 4px; }
+.bf-check:has(input:checked), .bf-opt:has(input:checked) { background: #eff6ff;
+  border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.bf-persons { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+.bf-person { font-size: 12px; background: #f8f9fc; border: 1px solid #eef0f4;
+  border-radius: 6px; padding: 3px 8px; display: inline-flex; align-items: center; gap: 4px; }
+.bf-person input { width: 52px; border: none; background: transparent; font-size: 12px; }
+.bf-pdel { color: #dc2626; text-decoration: none; cursor: pointer; }
+.bf-addperson { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.bf-addperson select, .bf-addperson input { font-size: 12px; padding: 4px 7px;
+  border: 1px solid var(--rule); border-radius: 6px; }
+.bf-schedule { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.bt-mini, .bf-actions button { font-size: 12px; padding: 6px 12px; border-radius: 8px;
+  border: 1px solid #e2e8f0; background: #fff; color: #374151; cursor: pointer; }
+.bt-mini:hover { border-color: #93c5fd; color: var(--accent); }
+.bt-gold { background: #fef3c7; border-color: #fcd34d; font-weight: 600; }
+.bt-go { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+.bf-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 12px 0; }
+.bf-sp { font-size: 12px; color: #6b7280; background: #f8f9fc; border-radius: 16px; padding: 5px 12px; }
+.bf-sp b { color: #111; }
+.bf-games { display: flex; flex-direction: column; gap: 8px; }
+.bf-game { border: 1px solid #eef0f4; border-radius: 10px; padding: 8px 10px; }
+.bf-game-h { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px;
+  font-weight: 600; color: #111; margin-bottom: 6px; }
+.bf-game-h select { font-size: 12px; padding: 3px 7px; border: 1px solid var(--rule); border-radius: 6px; }
+.bf-gdel { color: #dc2626; text-decoration: none; cursor: pointer; margin-left: auto; }
+.bf-done { font-size: 11px; color: #16a34a; font-weight: 600; }
+.bf-opts { display: flex; flex-wrap: wrap; gap: 5px; }
+.bk-combos { background: #fafbfc; border: 1px solid #eef0f4; border-radius: 10px;
+  padding: 10px 12px; font-size: 12px; color: #374151; max-height: 300px; overflow-y: auto; }
+.bk-combos b { display: block; margin-bottom: 6px; color: #111; }
+.bk-combo { padding: 3px 0; border-bottom: 1px dashed #eef0f4; }
+.bets-filter { display: flex; align-items: center; gap: 8px; margin-bottom: 10px;
+  font-size: 13px; color: #374151; }
+.bets-filter select { font-size: 13px; padding: 5px 9px; border: 1px solid var(--rule);
+  border-radius: 8px; background: #fff; }
+.bets-twrap { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 6px 12px; overflow-x: auto; }
+.bets-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.bets-table th, .bets-table td { padding: 8px 9px; text-align: left; border-bottom: 1px solid #f1f5f9;
+  vertical-align: top; }
+.bets-table th { color: #6b7280; font-weight: 600; font-size: 12px; white-space: nowrap; }
+.bt-small { font-size: 12px; }
+.bt-chip { font-size: 11px; font-weight: 700; border-radius: 12px; padding: 3px 9px; white-space: nowrap; }
+.bt-win { background: #fee2e2; color: #dc2626; }
+.bt-lose { background: #f1f5f9; color: #9ca3af; }
+.bt-pending { background: #fef3c7; color: #d97706; }
+.bt-del { color: #dc2626; font-size: 12px; text-decoration: none; cursor: pointer; }
+.bets-foot { font-size: 12px; color: #9ca3af; margin: 10px 2px; }
 
 /* ---------- 联赛 / 球队专题页：头部对齐对方 .lt-header（徽章 + 标题 + 统计） ---------- */
 .lt-header { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
@@ -826,10 +928,14 @@ def page(
   <div class="brand"><span class="brand-mark">M</span>{C.esc(cfg.site_name)}<span>{C.esc(cfg.site_tagline)}</span></div>
   <nav class="site">
     <a href="{home}">{ICON_SPORTS}赛事</a>
-    <a href="{pre}odds.html">{ICON_TREND}赔率</a>
-    <a href="{pre}bets.html">{ICON_ACTIVITY}投注</a>
     <a href="{pre}data.html">{ICON_DATA}数据</a>
-    <a href="{pre}features.html">{ICON_FUNCT}功能</a>
+    <div class="nav-drop">
+      <a href="{pre}features.html">{ICON_FUNCT}功能</a>
+      <div class="nav-menu">
+        <a href="{pre}odds.html">{ICON_TREND}盘口</a>
+        <a href="{pre}bets.html">{ICON_ACTIVITY}记录本</a>
+      </div>
+    </div>
     <a href="{pre}me.html">{ICON_USER}我的</a>
     <label class="is-icon nav-search" for="ss-toggle" aria-label="搜索">{ICON_SEARCH}</label>
   </nav>
@@ -893,9 +999,7 @@ document.addEventListener("change", function (e) {{
   aiSyncArrows(s);
 }});
 function aiSyncArrows(s) {{
-  var card = s.closest("#ai-pred-card");
-  if (!card) return;
-  card.querySelectorAll("[data-aid-step]").forEach(function (a) {{
+  document.querySelectorAll("[data-aid-step]").forEach(function (a) {{
     var i = s.selectedIndex + parseInt(a.getAttribute("data-aid-step"), 10);
     a.classList.toggle("off", i < 0 || i >= s.options.length);
   }});

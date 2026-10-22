@@ -27,6 +27,7 @@ PRED_DIR = Path("C:/Users/Jin/jinbet/predictions")
 RES_DIR = Path("C:/Users/Jin/jinbet/results_history")
 # 引擎全量赛果库（results_history 归档缺失时回退）：key = {date}_{主}_{客}
 RESULTS_DATA_JSON = Path("C:/Users/Jin/jinbet/results_data.json")
+ODDS_JSON = Path("C:/Users/Jin/jinbet/odds_data.json")
 _results_data_cache: dict | None = None
 OUT_DIR = Path("C:/Users/Jin/matlas/data/days")
 
@@ -194,7 +195,8 @@ def _direction_hit(top_label: str, win_flag: str) -> bool | None:
 
 def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                   standings: dict | None = None,
-                  net_form: dict | None = None) -> dict:
+                  net_form: dict | None = None,
+                  odds_idx: dict | None = None) -> dict:
     standings = standings or {}
     net_form = net_form or {}
     code = str(m.get("id", "")).strip()
@@ -333,6 +335,11 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
     # 网易赛前状态（仅当日场次有）：近 7 场 / 近 7 同主客场的进失球序列
     if code in net_form:
         extras["form_net"] = net_form[code]
+    # 竞彩全玩法赔率快照（胜平负/让球多行/比分/总进球/半全场），赔率页与投注页用
+    if odds_idx:
+        of = odds_idx.get((date, code)) or odds_idx.get((date, home, away))
+        if of:
+            extras["odds_full"] = of
 
     def _team_side(name: str) -> dict:
         """队侧槽位：积分榜命中则填 rank/points/played/win/draw/loss。"""
@@ -369,11 +376,44 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
     return out
 
 
+def _load_odds_index() -> dict[tuple, dict]:
+    """竞彩全玩法赔率（odds_data.json，jinbet/update_odds_net.py 抓取维护）。
+
+    键：(日期, 周X编号) 主键 + (日期, 主队, 客队) 回退键；值为
+    {spf: 胜平负, rq: 让球多行, score: 全部比分, goals: 总进球, htft: 半全场}。
+    """
+    try:
+        d = json.loads(ODDS_JSON.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    idx: dict[tuple, dict] = {}
+    for item in (d.get("data") or {}).values():
+        dk = str(item.get("date_key", ""))
+        date, _, rest = dk.partition("_")
+        if len(date) != 10 or not rest:
+            continue
+        names = rest.split("_")
+        entry = {
+            "spf": {"胜": item.get("胜"), "平": item.get("平"), "负": item.get("负")},
+            "rq": item.get("让球") or [],
+            "score": item.get("比分") or {},
+            "goals": item.get("总进球") or {},
+            "htft": item.get("半全场") or {},
+        }
+        num = str(item.get("matchNumStr", "")).strip()
+        if num:
+            idx[(date, num)] = entry
+        if len(names) >= 2:
+            idx[(date, names[0], names[1])] = entry
+    return idx
+
+
 def main() -> None:
     dry = "--dry-run" in sys.argv
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     standings = _load_standings()
     net_form = _load_net_form()
+    odds_idx = _load_odds_index()
     n_days = n_matches = n_results = 0
     for d in sorted(PRED_DIR.iterdir()):
         if len(d.name) != 10 or not d.is_dir():
@@ -388,7 +428,8 @@ def main() -> None:
         seen: set[str] = set()
         for i, m in enumerate(s.get("matches", [])):
             cm = convert_match(date, m, by_code, by_name,
-                               standings=standings, net_form=net_form)
+                               standings=standings, net_form=net_form,
+                               odds_idx=odds_idx)
             if not cm["match_id"] or cm["match_id"] in seen:
                 cm["match_id"] = f"{date}-{i + 1:03d}"
             seen.add(cm["match_id"])
