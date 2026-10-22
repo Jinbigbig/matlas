@@ -1,0 +1,726 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: M
+        - text: Matlas
+        - generic [ref=e6]: 足球赛事量化图谱
+      - navigation [ref=e7]:
+        - link "赛事" [ref=e8] [cursor=pointer]:
+          - /url: ./
+        - link "数据" [ref=e13] [cursor=pointer]:
+          - /url: data.html
+        - link "功能" [ref=e16] [cursor=pointer]:
+          - /url: features.html
+        - link "我的" [ref=e22] [cursor=pointer]:
+          - /url: me.html
+        - generic "搜索" [ref=e26] [cursor=pointer]
+  - main [ref=e30]:
+    - heading "2026-10-22 赛事量化分析" [level=1] [ref=e31]
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - link "‹一天" [ref=e36] [cursor=pointer]:
+              - /url: days/2026-10-21.html
+              - text: ‹
+            - generic [ref=e37]: 10月22日 (13场)
+            - generic: ›
+          - generic [ref=e41] [cursor=pointer]: 筛选
+        - checkbox "筛选"
+        - generic [ref=e45]:
+          - link "10/22 欧罗巴 周四001 AI置信度:低 格风暴队徽 格风暴 VS (0-0) 马赛队徽 马赛 客胜 1-1 2 球 客/客" [ref=e46] [cursor=pointer]:
+            - /url: matches/2026-10-22-001.html
+            - generic [ref=e47]:
+              - generic [ref=e48]:
+                - generic [ref=e49]: 10/22
+                - generic [ref=e50]: 欧罗巴
+                - generic [ref=e51]: 周四001
+              - generic [ref=e52]: AI置信度:低
+            - generic [ref=e54]:
+              - generic [ref=e55]:
+                - generic [ref=e57]:
+                  - img "格风暴队徽" [ref=e58]
+                  - generic [ref=e59]: 格风暴
+                - generic [ref=e60]:
+                  - generic [ref=e61]: VS
+                  - generic [ref=e62]: (0-0)
+                - generic [ref=e64]:
+                  - img "马赛队徽" [ref=e65]
+                  - generic [ref=e66]: 马赛
+              - generic [ref=e67]:
+                - generic "方向" [ref=e68]: 客胜
+                - generic "比分" [ref=e73]: 1-1
+                - generic "进球" [ref=e76]: 2 球
+                - generic "半全场" [ref=e81]: 客/客
+          - link "10/22 欧罗巴 周四002 AI置信度:低 波兹南队徽 波兹南 VS (0-0) 桑德兰队徽 桑德兰 客胜 1-1 2 球 客/客" [ref=e85] [cursor=pointer]:
+            - /url: matches/2026-10-22-002.html
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - generic [ref=e88]: 10/22
+                - generic [ref=e89]: 欧罗巴
+                - generic [ref=e90]: 周四002
+              - generic [ref=e91]: AI置信度:低
+            - generic [ref=e93]:
+              - generic [ref=e94]:
+                - generic [ref=e96]:
+                  - img "波兹南队徽" [ref=e97]
+                  - generic [ref=e98]: 波兹南
+                - generic [ref=e99]:
+                  - generic [ref=e100]: VS
+                  - generic [ref=e101]: (0-0)
+                - generic [ref=e103]:
+                  - img "桑德兰队徽" [ref=e104]
+                  - generic [ref=e105]: 桑德兰
+              - generic [ref=e106]:
+                - generic "方向" [ref=e107]: 客胜
+                - generic "比分" [ref=e112]: 1-1
+                - generic "进球" [ref=e115]: 2 球
+                - generic "半全场" [ref=e120]: 客/客
+          - link "10/22 欧罗巴 周四003 AI置信度:高 萨迪纳摩队徽 萨迪纳摩 VS (0-0) 奈梅亨队徽 奈梅亨 主胜 2-1 2 球 主/主" [ref=e124] [cursor=pointer]:
+            - /url: matches/2026-10-22-003.html
+            - generic [ref=e125]:
+              - generic [ref=e126]:
+                - generic [ref=e127]: 10/22
+                - generic [ref=e128]: 欧罗巴
+                - generic [ref=e129]: 周四003
+              - generic [ref=e130]: AI置信度:高
+            - generic [ref=e132]:
+              - generic [ref=e133]:
+                - generic [ref=e135]:
+                  - img "萨迪纳摩队徽" [ref=e136]
+                  - generic [ref=e137]: 萨迪纳摩
+                - generic [ref=e138]:
+                  - generic [ref=e139]: VS
+                  - generic [ref=e140]: (0-0)
+                - generic [ref=e142]:
+                  - img "奈梅亨队徽" [ref=e143]
+                  - generic [ref=e144]: 奈梅亨
+              - generic [ref=e145]:
+                - generic "方向" [ref=e146]: 主胜
+                - generic "比分" [ref=e151]: 2-1
+                - generic "进球" [ref=e154]: 2 球
+                - generic "半全场" [ref=e159]: 主/主
+          - link "10/22 欧罗巴 周四004 AI置信度:高 尤文图斯队徽 尤文图斯 VS (0-0) 雷恩队徽 雷恩 主胜 2-0 2 球 主/主" [ref=e163] [cursor=pointer]:
+            - /url: matches/2026-10-22-004.html
+            - generic [ref=e164]:
+              - generic [ref=e165]:
+                - generic [ref=e166]: 10/22
+                - generic [ref=e167]: 欧罗巴
+                - generic [ref=e168]: 周四004
+              - generic [ref=e169]: AI置信度:高
+            - generic [ref=e171]:
+              - generic [ref=e172]:
+                - generic [ref=e174]:
+                  - img "尤文图斯队徽" [ref=e175]
+                  - generic [ref=e176]: 尤文图斯
+                - generic [ref=e177]:
+                  - generic [ref=e178]: VS
+                  - generic [ref=e179]: (0-0)
+                - generic [ref=e181]:
+                  - img "雷恩队徽" [ref=e182]
+                  - generic [ref=e183]: 雷恩
+              - generic [ref=e184]:
+                - generic "方向" [ref=e185]: 主胜
+                - generic "比分" [ref=e190]: 2-0
+                - generic "进球" [ref=e193]: 2 球
+                - generic "半全场" [ref=e198]: 主/主
+          - link "10/22 欧罗巴 周四005 AI置信度:高 克里特队徽 克里特 VS (0-0) 勒沃库森队徽 勒沃库森 客胜 1-2 3 球 客/客" [ref=e202] [cursor=pointer]:
+            - /url: matches/2026-10-22-005.html
+            - generic [ref=e203]:
+              - generic [ref=e204]:
+                - generic [ref=e205]: 10/22
+                - generic [ref=e206]: 欧罗巴
+                - generic [ref=e207]: 周四005
+              - generic [ref=e208]: AI置信度:高
+            - generic [ref=e210]:
+              - generic [ref=e211]:
+                - generic [ref=e213]:
+                  - img "克里特队徽" [ref=e214]
+                  - generic [ref=e215]: 克里特
+                - generic [ref=e216]:
+                  - generic [ref=e217]: VS
+                  - generic [ref=e218]: (0-0)
+                - generic [ref=e220]:
+                  - img "勒沃库森队徽" [ref=e221]
+                  - generic [ref=e222]: 勒沃库森
+              - generic [ref=e223]:
+                - generic "方向" [ref=e224]: 客胜
+                - generic "比分" [ref=e229]: 1-2
+                - generic "进球" [ref=e232]: 3 球
+                - generic "半全场" [ref=e237]: 客/客
+          - link "10/22 欧罗巴 周四006 AI置信度:低 伯恩茅斯队徽 伯恩茅斯 VS (0-0) AC米兰队徽 AC米兰 主胜 1-1 2 球 主/主" [ref=e241] [cursor=pointer]:
+            - /url: matches/2026-10-22-006.html
+            - generic [ref=e242]:
+              - generic [ref=e243]:
+                - generic [ref=e244]: 10/22
+                - generic [ref=e245]: 欧罗巴
+                - generic [ref=e246]: 周四006
+              - generic [ref=e247]: AI置信度:低
+            - generic [ref=e249]:
+              - generic [ref=e250]:
+                - generic [ref=e252]:
+                  - img "伯恩茅斯队徽" [ref=e253]
+                  - generic [ref=e254]: 伯恩茅斯
+                - generic [ref=e255]:
+                  - generic [ref=e256]: VS
+                  - generic [ref=e257]: (0-0)
+                - generic [ref=e259]:
+                  - img "AC米兰队徽" [ref=e260]
+                  - generic [ref=e261]: AC米兰
+              - generic [ref=e262]:
+                - generic "方向" [ref=e263]: 主胜
+                - generic "比分" [ref=e268]: 1-1
+                - generic "进球" [ref=e271]: 2 球
+                - generic "半全场" [ref=e276]: 主/主
+          - link "10/22 欧罗巴 周四007 AI置信度:低 凯尔特人队徽 凯尔特人 VS (0-0) 塞尔塔队徽 塞尔塔 主胜 1-1 2 球 客/客" [ref=e280] [cursor=pointer]:
+            - /url: matches/2026-10-22-007.html
+            - generic [ref=e281]:
+              - generic [ref=e282]:
+                - generic [ref=e283]: 10/22
+                - generic [ref=e284]: 欧罗巴
+                - generic [ref=e285]: 周四007
+              - generic [ref=e286]: AI置信度:低
+            - generic [ref=e288]:
+              - generic [ref=e289]:
+                - generic [ref=e291]:
+                  - img "凯尔特人队徽" [ref=e292]
+                  - generic [ref=e293]: 凯尔特人
+                - generic [ref=e294]:
+                  - generic [ref=e295]: VS
+                  - generic [ref=e296]: (0-0)
+                - generic [ref=e298]:
+                  - img "塞尔塔队徽" [ref=e299]
+                  - generic [ref=e300]: 塞尔塔
+              - generic [ref=e301]:
+                - generic "方向" [ref=e302]: 主胜
+                - generic "比分" [ref=e307]: 1-1
+                - generic "进球" [ref=e310]: 2 球
+                - generic "半全场" [ref=e315]: 客/客
+          - link "10/22 欧罗巴 周四008 AI置信度:低 贝西克塔队徽 贝西克塔 VS (0-0) 水晶宫队徽 水晶宫 主胜 1-1 2 球 主/主" [ref=e319] [cursor=pointer]:
+            - /url: matches/2026-10-22-008.html
+            - generic [ref=e320]:
+              - generic [ref=e321]:
+                - generic [ref=e322]: 10/22
+                - generic [ref=e323]: 欧罗巴
+                - generic [ref=e324]: 周四008
+              - generic [ref=e325]: AI置信度:低
+            - generic [ref=e327]:
+              - generic [ref=e328]:
+                - generic [ref=e330]:
+                  - img "贝西克塔队徽" [ref=e331]
+                  - generic [ref=e332]: 贝西克塔
+                - generic [ref=e333]:
+                  - generic [ref=e334]: VS
+                  - generic [ref=e335]: (0-0)
+                - generic [ref=e337]:
+                  - img "水晶宫队徽" [ref=e338]
+                  - generic [ref=e339]: 水晶宫
+              - generic [ref=e340]:
+                - generic "方向" [ref=e341]: 主胜
+                - generic "比分" [ref=e346]: 1-1
+                - generic "进球" [ref=e349]: 2 球
+                - generic "半全场" [ref=e354]: 主/主
+          - link "10/22 欧罗巴 周四009 AI置信度:中 霍芬海姆队徽 霍芬海姆 VS (0-0) 里昂队徽 里昂 主胜 1-1 2 球 主/主" [ref=e358] [cursor=pointer]:
+            - /url: matches/2026-10-22-009.html
+            - generic [ref=e359]:
+              - generic [ref=e360]:
+                - generic [ref=e361]: 10/22
+                - generic [ref=e362]: 欧罗巴
+                - generic [ref=e363]: 周四009
+              - generic [ref=e364]: AI置信度:中
+            - generic [ref=e366]:
+              - generic [ref=e367]:
+                - generic [ref=e369]:
+                  - img "霍芬海姆队徽" [ref=e370]
+                  - generic [ref=e371]: 霍芬海姆
+                - generic [ref=e372]:
+                  - generic [ref=e373]: VS
+                  - generic [ref=e374]: (0-0)
+                - generic [ref=e376]:
+                  - img "里昂队徽" [ref=e377]
+                  - generic [ref=e378]: 里昂
+              - generic [ref=e379]:
+                - generic "方向" [ref=e380]: 主胜
+                - generic "比分" [ref=e385]: 1-1
+                - generic "进球" [ref=e388]: 2 球
+                - generic "半全场" [ref=e393]: 主/主
+          - link "10/22 欧罗巴 周四010 AI置信度:高 利勒斯特队徽 利勒斯特 VS (0-0) 皇家社会队徽 皇家社会 客胜 1-2 2 球 客/客" [ref=e397] [cursor=pointer]:
+            - /url: matches/2026-10-22-010.html
+            - generic [ref=e398]:
+              - generic [ref=e399]:
+                - generic [ref=e400]: 10/22
+                - generic [ref=e401]: 欧罗巴
+                - generic [ref=e402]: 周四010
+              - generic [ref=e403]: AI置信度:高
+            - generic [ref=e405]:
+              - generic [ref=e406]:
+                - generic [ref=e408]:
+                  - img "利勒斯特队徽" [ref=e409]
+                  - generic [ref=e410]: 利勒斯特
+                - generic [ref=e411]:
+                  - generic [ref=e412]: VS
+                  - generic [ref=e413]: (0-0)
+                - generic [ref=e415]:
+                  - img "皇家社会队徽" [ref=e416]
+                  - generic [ref=e417]: 皇家社会
+              - generic [ref=e418]:
+                - generic "方向" [ref=e419]: 客胜
+                - generic "比分" [ref=e424]: 1-2
+                - generic "进球" [ref=e427]: 2 球
+                - generic "半全场" [ref=e432]: 客/客
+          - link "10/22 欧协联 周四011 AI置信度:中 阿贾克斯队徽 阿贾克斯 VS (0-0) 亚特兰大队徽 亚特兰大 主胜 1-1 2 球 主/主" [ref=e436] [cursor=pointer]:
+            - /url: matches/2026-10-22-011.html
+            - generic [ref=e437]:
+              - generic [ref=e438]:
+                - generic [ref=e439]: 10/22
+                - generic [ref=e440]: 欧协联
+                - generic [ref=e441]: 周四011
+              - generic [ref=e442]: AI置信度:中
+            - generic [ref=e444]:
+              - generic [ref=e445]:
+                - generic [ref=e447]:
+                  - img "阿贾克斯队徽" [ref=e448]
+                  - generic [ref=e449]: 阿贾克斯
+                - generic [ref=e450]:
+                  - generic [ref=e451]: VS
+                  - generic [ref=e452]: (0-0)
+                - generic [ref=e454]:
+                  - img "亚特兰大队徽" [ref=e455]
+                  - generic [ref=e456]: 亚特兰大
+              - generic [ref=e457]:
+                - generic "方向" [ref=e458]: 主胜
+                - generic "比分" [ref=e463]: 1-1
+                - generic "进球" [ref=e466]: 2 球
+                - generic "半全场" [ref=e471]: 主/主
+          - link "10/22 欧协联 周四012 AI置信度:低 摩纳哥队徽 摩纳哥 VS (0-0) 弗赖堡队徽 弗赖堡 主胜 1-1 3 球 主/主" [ref=e475] [cursor=pointer]:
+            - /url: matches/2026-10-22-012.html
+            - generic [ref=e476]:
+              - generic [ref=e477]:
+                - generic [ref=e478]: 10/22
+                - generic [ref=e479]: 欧协联
+                - generic [ref=e480]: 周四012
+              - generic [ref=e481]: AI置信度:低
+            - generic [ref=e483]:
+              - generic [ref=e484]:
+                - generic [ref=e486]:
+                  - img "摩纳哥队徽" [ref=e487]
+                  - generic [ref=e488]: 摩纳哥
+                - generic [ref=e489]:
+                  - generic [ref=e490]: VS
+                  - generic [ref=e491]: (0-0)
+                - generic [ref=e493]:
+                  - img "弗赖堡队徽" [ref=e494]
+                  - generic [ref=e495]: 弗赖堡
+              - generic [ref=e496]:
+                - generic "方向" [ref=e497]: 主胜
+                - generic "比分" [ref=e502]: 1-1
+                - generic "进球" [ref=e505]: 3 球
+                - generic "半全场" [ref=e510]: 主/主
+          - link "10/22 解放者杯 周四013 AI置信度:高 弗拉门戈队徽 弗拉门戈 VS (0-0) 拉普大学队徽 拉普大学 主胜 1-0 2 球 主/主" [ref=e514] [cursor=pointer]:
+            - /url: matches/2026-10-22-013.html
+            - generic [ref=e515]:
+              - generic [ref=e516]:
+                - generic [ref=e517]: 10/22
+                - generic [ref=e518]: 解放者杯
+                - generic [ref=e519]: 周四013
+              - generic [ref=e520]: AI置信度:高
+            - generic [ref=e522]:
+              - generic [ref=e523]:
+                - generic [ref=e525]:
+                  - img "弗拉门戈队徽" [ref=e526]
+                  - generic [ref=e527]: 弗拉门戈
+                - generic [ref=e528]:
+                  - generic [ref=e529]: VS
+                  - generic [ref=e530]: (0-0)
+                - generic [ref=e532]:
+                  - img "拉普大学队徽" [ref=e533]
+                  - generic [ref=e534]: 拉普大学
+              - generic [ref=e535]:
+                - generic "方向" [ref=e536]: 主胜
+                - generic "比分" [ref=e541]: 1-0
+                - generic "进球" [ref=e544]: 2 球
+                - generic "半全场" [ref=e549]: 主/主
+      - complementary [ref=e553]:
+        - generic [ref=e554]:
+          - generic [ref=e555]:
+            - link "前一天" [ref=e556] [cursor=pointer]:
+              - /url: "#"
+              - text: ‹
+            - generic [ref=e557]: 10月22日 (13场)
+            - link "后一天":
+              - /url: "#"
+              - text: ›
+          - generic [ref=e561] [cursor=pointer]: 筛选
+        - generic [ref=e565]:
+          - radio [checked]
+          - radio
+          - radio
+          - radio
+          - radio
+          - radio
+          - checkbox "筛选"
+          - generic [ref=e566]: AI 预测
+          - generic [ref=e571]:
+            - link "周四001 格风暴 vs 马赛 客胜 47.4% 1-1 12.8% 2 球 20.4% 客/客 32.6%" [ref=e572] [cursor=pointer]:
+              - /url: matches/2026-10-22-001.html
+              - generic [ref=e573]:
+                - generic [ref=e574]: 周四001
+                - generic [ref=e575]: 格风暴 vs 马赛
+              - generic [ref=e576]:
+                - generic [ref=e577]:
+                  - text: 客胜
+                  - generic [ref=e582]: 47.4%
+                - generic [ref=e583]:
+                  - text: 1-1
+                  - generic [ref=e586]: 12.8%
+                - generic [ref=e587]:
+                  - text: 2 球
+                  - generic [ref=e592]: 20.4%
+                - generic [ref=e593]:
+                  - text: 客/客
+                  - generic [ref=e597]: 32.6%
+            - link "周四002 波兹南 vs 桑德兰 客胜 55.9% 1-1 10.0% 2 球 17.2% 客/客 38.8%" [ref=e598] [cursor=pointer]:
+              - /url: matches/2026-10-22-002.html
+              - generic [ref=e599]:
+                - generic [ref=e600]: 周四002
+                - generic [ref=e601]: 波兹南 vs 桑德兰
+              - generic [ref=e602]:
+                - generic [ref=e603]:
+                  - text: 客胜
+                  - generic [ref=e608]: 55.9%
+                - generic [ref=e609]:
+                  - text: 1-1
+                  - generic [ref=e612]: 10.0%
+                - generic [ref=e613]:
+                  - text: 2 球
+                  - generic [ref=e618]: 17.2%
+                - generic [ref=e619]:
+                  - text: 客/客
+                  - generic [ref=e623]: 38.8%
+            - link "周四003 萨迪纳摩 vs 奈梅亨 主胜 70.1% 2-1 10.6% 2 球 19.4% 主/主 42.2%" [ref=e624] [cursor=pointer]:
+              - /url: matches/2026-10-22-003.html
+              - generic [ref=e625]:
+                - generic [ref=e626]: 周四003
+                - generic [ref=e627]: 萨迪纳摩 vs 奈梅亨
+              - generic [ref=e628]:
+                - generic [ref=e629]:
+                  - text: 主胜
+                  - generic [ref=e634]: 70.1%
+                - generic [ref=e635]:
+                  - text: 2-1
+                  - generic [ref=e638]: 10.6%
+                - generic [ref=e639]:
+                  - text: 2 球
+                  - generic [ref=e644]: 19.4%
+                - generic [ref=e645]:
+                  - text: 主/主
+                  - generic [ref=e649]: 42.2%
+            - link "周四004 尤文图斯 vs 雷恩 主胜 73.7% 2-0 12.1% 2 球 21.4% 主/主 45.3%" [ref=e650] [cursor=pointer]:
+              - /url: matches/2026-10-22-004.html
+              - generic [ref=e651]:
+                - generic [ref=e652]: 周四004
+                - generic [ref=e653]: 尤文图斯 vs 雷恩
+              - generic [ref=e654]:
+                - generic [ref=e655]:
+                  - text: 主胜
+                  - generic [ref=e660]: 73.7%
+                - generic [ref=e661]:
+                  - text: 2-0
+                  - generic [ref=e664]: 12.1%
+                - generic [ref=e665]:
+                  - text: 2 球
+                  - generic [ref=e670]: 21.4%
+                - generic [ref=e671]:
+                  - text: 主/主
+                  - generic [ref=e675]: 45.3%
+            - link "周四005 克里特 vs 勒沃库森 客胜 80.6% 1-2 10.5% 3 球 20.0% 客/客 57.1%" [ref=e676] [cursor=pointer]:
+              - /url: matches/2026-10-22-005.html
+              - generic [ref=e677]:
+                - generic [ref=e678]: 周四005
+                - generic [ref=e679]: 克里特 vs 勒沃库森
+              - generic [ref=e680]:
+                - generic [ref=e681]:
+                  - text: 客胜
+                  - generic [ref=e686]: 80.6%
+                - generic [ref=e687]:
+                  - text: 1-2
+                  - generic [ref=e690]: 10.5%
+                - generic [ref=e691]:
+                  - text: 3 球
+                  - generic [ref=e696]: 20.0%
+                - generic [ref=e697]:
+                  - text: 客/客
+                  - generic [ref=e701]: 57.1%
+            - link "周四006 伯恩茅斯 vs AC米兰 主胜 53.1% 1-1 13.2% 2 球 21.3% 主/主 28.7%" [ref=e702] [cursor=pointer]:
+              - /url: matches/2026-10-22-006.html
+              - generic [ref=e703]:
+                - generic [ref=e704]: 周四006
+                - generic [ref=e705]: 伯恩茅斯 vs AC米兰
+              - generic [ref=e706]:
+                - generic [ref=e707]:
+                  - text: 主胜
+                  - generic [ref=e712]: 53.1%
+                - generic [ref=e713]:
+                  - text: 1-1
+                  - generic [ref=e716]: 13.2%
+                - generic [ref=e717]:
+                  - text: 2 球
+                  - generic [ref=e722]: 21.3%
+                - generic [ref=e723]:
+                  - text: 主/主
+                  - generic [ref=e727]: 28.7%
+            - link "周四007 凯尔特人 vs 塞尔塔 主胜 43.8% 1-1 14.4% 2 球 20.6% 客/客 23.1%" [ref=e728] [cursor=pointer]:
+              - /url: matches/2026-10-22-007.html
+              - generic [ref=e729]:
+                - generic [ref=e730]: 周四007
+                - generic [ref=e731]: 凯尔特人 vs 塞尔塔
+              - generic [ref=e732]:
+                - generic [ref=e733]:
+                  - text: 主胜
+                  - generic [ref=e738]: 43.8%
+                - generic [ref=e739]:
+                  - text: 1-1
+                  - generic [ref=e742]: 14.4%
+                - generic [ref=e743]:
+                  - text: 2 球
+                  - generic [ref=e748]: 20.6%
+                - generic [ref=e749]:
+                  - text: 客/客
+                  - generic [ref=e753]: 23.1%
+            - link "周四008 贝西克塔 vs 水晶宫 主胜 53.9% 1-1 10.8% 2 球 17.5% 主/主 29.5%" [ref=e754] [cursor=pointer]:
+              - /url: matches/2026-10-22-008.html
+              - generic [ref=e755]:
+                - generic [ref=e756]: 周四008
+                - generic [ref=e757]: 贝西克塔 vs 水晶宫
+              - generic [ref=e758]:
+                - generic [ref=e759]:
+                  - text: 主胜
+                  - generic [ref=e764]: 53.9%
+                - generic [ref=e765]:
+                  - text: 1-1
+                  - generic [ref=e768]: 10.8%
+                - generic [ref=e769]:
+                  - text: 2 球
+                  - generic [ref=e774]: 17.5%
+                - generic [ref=e775]:
+                  - text: 主/主
+                  - generic [ref=e779]: 29.5%
+            - link "周四009 霍芬海姆 vs 里昂 主胜 51.4% 1-1 11.3% 2 球 17.9% 主/主 28.5%" [ref=e780] [cursor=pointer]:
+              - /url: matches/2026-10-22-009.html
+              - generic [ref=e781]:
+                - generic [ref=e782]: 周四009
+                - generic [ref=e783]: 霍芬海姆 vs 里昂
+              - generic [ref=e784]:
+                - generic [ref=e785]:
+                  - text: 主胜
+                  - generic [ref=e790]: 51.4%
+                - generic [ref=e791]:
+                  - text: 1-1
+                  - generic [ref=e794]: 11.3%
+                - generic [ref=e795]:
+                  - text: 2 球
+                  - generic [ref=e800]: 17.9%
+                - generic [ref=e801]:
+                  - text: 主/主
+                  - generic [ref=e805]: 28.5%
+            - link "周四010 利勒斯特 vs 皇家社会 客胜 69.2% 1-2 9.8% 2 球 17.5% 客/客 47.8%" [ref=e806] [cursor=pointer]:
+              - /url: matches/2026-10-22-010.html
+              - generic [ref=e807]:
+                - generic [ref=e808]: 周四010
+                - generic [ref=e809]: 利勒斯特 vs 皇家社会
+              - generic [ref=e810]:
+                - generic [ref=e811]:
+                  - text: 客胜
+                  - generic [ref=e816]: 69.2%
+                - generic [ref=e817]:
+                  - text: 1-2
+                  - generic [ref=e820]: 9.8%
+                - generic [ref=e821]:
+                  - text: 2 球
+                  - generic [ref=e826]: 17.5%
+                - generic [ref=e827]:
+                  - text: 客/客
+                  - generic [ref=e831]: 47.8%
+            - link "周四011 阿贾克斯 vs 亚特兰大 主胜 53.3% 1-1 11.0% 2 球 17.4% 主/主 31.8%" [ref=e832] [cursor=pointer]:
+              - /url: matches/2026-10-22-011.html
+              - generic [ref=e833]:
+                - generic [ref=e834]: 周四011
+                - generic [ref=e835]: 阿贾克斯 vs 亚特兰大
+              - generic [ref=e836]:
+                - generic [ref=e837]:
+                  - text: 主胜
+                  - generic [ref=e842]: 53.3%
+                - generic [ref=e843]:
+                  - text: 1-1
+                  - generic [ref=e846]: 11.0%
+                - generic [ref=e847]:
+                  - text: 2 球
+                  - generic [ref=e852]: 17.4%
+                - generic [ref=e853]:
+                  - text: 主/主
+                  - generic [ref=e857]: 31.8%
+            - link "周四012 摩纳哥 vs 弗赖堡 主胜 46.8% 1-1 10.8% 3 球 15.2% 主/主 29.0%" [ref=e858] [cursor=pointer]:
+              - /url: matches/2026-10-22-012.html
+              - generic [ref=e859]:
+                - generic [ref=e860]: 周四012
+                - generic [ref=e861]: 摩纳哥 vs 弗赖堡
+              - generic [ref=e862]:
+                - generic [ref=e863]:
+                  - text: 主胜
+                  - generic [ref=e868]: 46.8%
+                - generic [ref=e869]:
+                  - text: 1-1
+                  - generic [ref=e872]: 10.8%
+                - generic [ref=e873]:
+                  - text: 3 球
+                  - generic [ref=e878]: 15.2%
+                - generic [ref=e879]:
+                  - text: 主/主
+                  - generic [ref=e883]: 29.0%
+            - link "周四013 弗拉门戈 vs 拉普大学 主胜 75.8% 1-0 22.3% 2 球 28.9% 主/主 44.8%" [ref=e884] [cursor=pointer]:
+              - /url: matches/2026-10-22-013.html
+              - generic [ref=e885]:
+                - generic [ref=e886]: 周四013
+                - generic [ref=e887]: 弗拉门戈 vs 拉普大学
+              - generic [ref=e888]:
+                - generic [ref=e889]:
+                  - text: 主胜
+                  - generic [ref=e894]: 75.8%
+                - generic [ref=e895]:
+                  - text: 1-0
+                  - generic [ref=e898]: 22.3%
+                - generic [ref=e899]:
+                  - text: 2 球
+                  - generic [ref=e904]: 28.9%
+                - generic [ref=e905]:
+                  - text: 主/主
+                  - generic [ref=e909]: 44.8%
+        - generic [ref=e910]:
+          - generic [ref=e911]: 赛事Top 10
+          - generic [ref=e918]:
+            - link "1 日联赛杯 100.0%" [ref=e919] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e920]: "1"
+              - generic [aria-hidden] [ref=e921]: 日
+              - generic [ref=e922]: 日联赛杯
+              - generic [ref=e925]: 100.0%
+            - link "2 英联杯徽章 英联杯 100.0%" [ref=e926] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e927]: "2"
+              - img "英联杯徽章" [ref=e928]
+              - generic [ref=e929]: 英联杯
+              - generic [ref=e932]: 100.0%
+            - link "3 亚冠乙 100.0%" [ref=e933] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e934]: "3"
+              - generic [aria-hidden] [ref=e935]: 亚
+              - generic [ref=e936]: 亚冠乙
+              - generic [ref=e939]: 100.0%
+            - link "4 亚运男足 86.7%" [ref=e940] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e941]: "4"
+              - generic [aria-hidden] [ref=e942]: 亚
+              - generic [ref=e943]: 亚运男足
+              - generic [ref=e946]: 86.7%
+            - link "5 荷乙 85.7%" [ref=e947] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e948]: "5"
+              - generic [aria-hidden] [ref=e949]: 荷
+              - generic [ref=e950]: 荷乙
+              - generic [ref=e953]: 85.7%
+            - link "6 国际赛 71.4%" [ref=e954] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e955]: "6"
+              - generic [aria-hidden] [ref=e956]: 国
+              - generic [ref=e957]: 国际赛
+              - generic [ref=e960]: 71.4%
+            - link "7 亚运女足 71.4%" [ref=e961] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e962]: "7"
+              - generic [aria-hidden] [ref=e963]: 亚
+              - generic [ref=e964]: 亚运女足
+              - generic [ref=e967]: 71.4%
+            - link "8 沙特联徽章 沙特联 71.4%" [ref=e968] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e969]: "8"
+              - img "沙特联徽章" [ref=e970]
+              - generic [ref=e971]: 沙特联
+              - generic [ref=e974]: 71.4%
+            - link "9 英锦标赛徽章 英锦标赛 66.7%" [ref=e975] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e976]: "9"
+              - img "英锦标赛徽章" [ref=e977]
+              - generic [ref=e978]: 英锦标赛
+              - generic [ref=e981]: 66.7%
+            - link "10 欧冠 65.3%" [ref=e982] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e983]: "10"
+              - generic [aria-hidden] [ref=e984]: 欧
+              - generic [ref=e985]: 欧冠
+              - generic [ref=e988]: 65.3%
+        - generic [ref=e989]:
+          - generic [ref=e990]: 球队Top 10
+          - generic [ref=e993]:
+            - link "1 巴萨队徽 巴萨 100.0%" [ref=e994] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e995]: "1"
+              - img "巴萨队徽" [ref=e996]
+              - generic [ref=e997]: 巴萨
+              - generic [ref=e1000]: 100.0%
+            - link "2 京都队徽 京都 100.0%" [ref=e1001] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e1002]: "2"
+              - img "京都队徽" [ref=e1003]
+              - generic [ref=e1004]: 京都
+              - generic [ref=e1007]: 100.0%
+            - link "3 威尼斯队徽 威尼斯 100.0%" [ref=e1008] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e1009]: "3"
+              - img "威尼斯队徽" [ref=e1010]
+              - generic [ref=e1011]: 威尼斯
+              - generic [ref=e1014]: 100.0%
+            - link "4 神户胜利队徽 神户胜利 100.0%" [ref=e1015] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e1016]: "4"
+              - img "神户胜利队徽" [ref=e1017]
+              - generic [ref=e1018]: 神户胜利
+              - generic [ref=e1021]: 100.0%
+            - link "5 克罗地亚队徽 克罗地亚 100.0%" [ref=e1022] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e1023]: "5"
+              - img "克罗地亚队徽" [ref=e1024]
+              - generic [ref=e1025]: 克罗地亚
+              - generic [ref=e1028]: 100.0%
+            - link "6 北马其顿队徽 北马其顿 100.0%" [ref=e1029] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e1030]: "6"
+              - img "北马其顿队徽" [ref=e1031]
+              - generic [ref=e1032]: 北马其顿
+              - generic [ref=e1035]: 100.0%
+            - link "7 卡尔马队徽 卡尔马 100.0%" [ref=e1036] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e1037]: "7"
+              - img "卡尔马队徽" [ref=e1038]
+              - generic [ref=e1039]: 卡尔马
+              - generic [ref=e1042]: 100.0%
+            - link "8 哈萨克队徽 哈萨克 100.0%" [ref=e1043] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e1044]: "8"
+              - img "哈萨克队徽" [ref=e1045]
+              - generic [ref=e1046]: 哈萨克
+              - generic [ref=e1049]: 100.0%
+            - link "9 大阪钢巴队徽 大阪钢巴 100.0%" [ref=e1050] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e1051]: "9"
+              - img "大阪钢巴队徽" [ref=e1052]
+              - generic [ref=e1053]: 大阪钢巴
+              - generic [ref=e1056]: 100.0%
+            - link "10 巴伊亚队徽 巴伊亚 100.0%" [ref=e1057] [cursor=pointer]:
+              - /url: days/
+              - generic [ref=e1058]: "10"
+              - img "巴伊亚队徽" [ref=e1059]
+              - generic [ref=e1060]: 巴伊亚
+              - generic [ref=e1063]: 100.0%
+  - contentinfo [ref=e1064]:
+    - paragraph [ref=e1066]: Matlas · 足球赛事量化图谱
