@@ -26,6 +26,22 @@ PRED_DIR = Path("C:/Users/Jin/jinbet/predictions")
 RES_DIR = Path("C:/Users/Jin/jinbet/results_history")
 OUT_DIR = Path("C:/Users/Jin/matlas/data/days")
 
+# ---- jinbet 侧成熟数据源（赛前信息 / 积分分析）----
+# qq_standings.json：腾讯体育积分榜（欧冠/英超/意甲/德甲/西甲），rank/p/w/d/l/pts
+STANDINGS_JSON = Path("C:/Users/Jin/jinbet/qq_standings.json")
+# scripts/matches_data.json：网易当日抓取，home_recent 等 gf/ga 近况序列
+MATCHES_DATA_JSON = Path("C:/Users/Jin/jinbet/scripts/matches_data.json")
+
+# 竞彩短名 → 腾讯榜全名（宁缺勿错：只收已核实条目，匹配不到就不填积分）
+TEAM_ALIAS = {
+    "巴黎圣曼": "巴黎圣日耳曼", "巴黎": "巴黎圣日耳曼", "维拉": "阿斯顿维拉",
+    "拜仁": "拜仁慕尼黑", "布伦特": "布伦特福德", "纽卡斯尔": "纽卡斯尔联",
+    "诺丁汉": "诺丁汉森林", "伊普斯": "伊普斯维奇", "加拉塔萨": "加拉塔萨雷",
+    "毕尔巴鄂": "毕尔巴鄂竞技", "比利亚雷": "比利亚雷亚尔", "拉科": "拉科鲁尼亚",
+    "门兴": "门兴格拉德巴赫", "桑坦德": "桑坦德竞技", "莱红牛": "RB莱比锡",
+    "皇馬": "皇家马德里", "巴萨": "巴塞罗那", "马竞": "马德里竞技",
+}
+
 # 联赛名归一：与 matlas 既有叫法/队徽映射（logos.LEAGUE_CREST）对齐。
 LEAGUE_ALIAS = {
     "日职": "日职联",
@@ -38,6 +54,46 @@ LEAGUE_ALIAS = {
 
 # 结果文件里未必与预测侧完全同名的球队，不做模糊匹配——精确匹配不到就当没赛果。
 _NAME_NORM = str.strip
+
+
+def _load_standings() -> dict[str, dict[str, dict]]:
+    """腾讯积分榜 → {联赛: {队名: row}}。文件缺失/损坏时返回空（积分槽位留空）。"""
+    try:
+        d = json.loads(STANDINGS_JSON.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    out: dict[str, dict[str, dict]] = {}
+    for lg, v in (d.get("leagues") or {}).items():
+        rows = {}
+        for t in v.get("teams") or []:
+            if t.get("name"):
+                rows[t["name"]] = t
+        out[lg] = rows
+    return out
+
+
+def _load_net_form() -> dict[str, dict]:
+    """网易当日近况 → {编号(周四001): {home_7/home_home/away_7/away_away: [gf/ga]}}。
+
+    只取「当天」的 matches_data.json（临时文件会被每日覆盖），历史天没有存档，
+    因此只有最新一个交易日的场次带这份赛前状态，其余天留空降级。
+    """
+    try:
+        d = json.loads(MATCHES_DATA_JSON.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for m in d.get("matches") or []:
+        num = str(m.get("matchNumStr", "")).strip()
+        if not num:
+            continue
+        out[num] = {
+            "home_7": m.get("home_recent") or [],
+            "home_home": m.get("home_recent_home") or [],
+            "away_7": m.get("away_recent") or [],
+            "away_away": m.get("away_recent_away") or [],
+        }
+    return out
 
 
 def _f(v) -> float | None:
@@ -89,7 +145,11 @@ def _direction_hit(top_label: str, win_flag: str) -> bool | None:
     return None if want is None else want == win_flag
 
 
-def convert_match(date: str, m: dict, by_code: dict, by_name: dict) -> dict:
+def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
+                  standings: dict | None = None,
+                  net_form: dict | None = None) -> dict:
+    standings = standings or {}
+    net_form = net_form or {}
     code = str(m.get("id", "")).strip()
     num = re.search(r"(\d+)$", code)
     match_id = f"{date}-{int(num.group(1)):03d}" if num else ""
@@ -223,6 +283,22 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict) -> dict:
             extras["htft_half"] = htft["half"]   # 半场胜平负概率（百分数）
         if isinstance(htft.get("cells"), dict):
             extras["htft_cells"] = htft["cells"]  # 九选项概率（百分数）
+    # 网易赛前状态（仅当日场次有）：近 7 场 / 近 7 同主客场的进失球序列
+    if code in net_form:
+        extras["form_net"] = net_form[code]
+
+    def _team_side(name: str) -> dict:
+        """队侧槽位：积分榜命中则填 rank/points/played/win/draw/loss。"""
+        side = {"name": name, "league": league}
+        row = standings.get(league, {}).get(name) \
+            or standings.get(league, {}).get(TEAM_ALIAS.get(name, ""))
+        if row:
+            side.update({
+                "rank": row.get("rank"), "points": row.get("pts"),
+                "played": row.get("p"), "win": row.get("w"),
+                "draw": row.get("d"), "loss": row.get("l"),
+            })
+        return side
 
     out = {
         "match_id": match_id,
@@ -230,8 +306,8 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict) -> dict:
         "code": code,
         "competition": league,
         "kickoff": "",
-        "home": {"name": home, "league": league},
-        "away": {"name": away, "league": league},
+        "home": _team_side(home),
+        "away": _team_side(away),
         "forecasts": forecasts,
         "confidence": confidence,
         "is_cold_start": bool(m.get("cold")),
@@ -249,6 +325,8 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict) -> dict:
 def main() -> None:
     dry = "--dry-run" in sys.argv
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    standings = _load_standings()
+    net_form = _load_net_form()
     n_days = n_matches = n_results = 0
     for d in sorted(PRED_DIR.iterdir()):
         if len(d.name) != 10 or not d.is_dir():
@@ -262,7 +340,8 @@ def main() -> None:
         matches = []
         seen: set[str] = set()
         for i, m in enumerate(s.get("matches", [])):
-            cm = convert_match(date, m, by_code, by_name)
+            cm = convert_match(date, m, by_code, by_name,
+                               standings=standings, net_form=net_form)
             if not cm["match_id"] or cm["match_id"] in seen:
                 cm["match_id"] = f"{date}-{i + 1:03d}"
             seen.add(cm["match_id"])

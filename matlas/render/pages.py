@@ -109,34 +109,80 @@ def _standings_panel(m: Match) -> str:
 
 
 def _form_panel(m: Match) -> str:
-    """近期战绩：jinbet 同款 —— 圆点概括 + 明细表（二者始终并列）。"""
+    """近期战绩：明细（自产历史聚合，含半全场结果）+ 网易近况圆点（当日场次）。
+
+    明细来自站点已回填赛果（date < 本场，赛前视角可回溯）；网易序列只有
+    进失球（无对手/日期），出圆点概括不冒充明细。
+    """
     parts = []
-    for title, rows_src, team in (
-        (f"{m.home.name} 近期", m.recent_home, m.home),
-        (f"{m.away.name} 近期", m.recent_away, m.away),
+    for title, rows_src in (
+        (f"{m.home.name} 近期", m.recent_home),
+        (f"{m.away.name} 近期", m.recent_away),
     ):
         if not rows_src:
             continue
         dots = C.form_dots([r.outcome for r in rows_src])
+        zh = {"W": "胜", "D": "平", "L": "负"}
         rows = [
-            [r.date, r.competition, ("主" if r.venue == "home" else "客") + " " + r.opponent, r.score, r.outcome]
+            [r.date, r.competition, ("主" if r.venue == "home" else "客") + " " + r.opponent,
+             r.score, r.half_ft or "—", zh.get(r.outcome, r.outcome)]
             for r in rows_src
         ]
         parts.append(
             f"<h3>{C.esc(title)}</h3>{dots}"
-            + C.table(["日期", "赛事", "对手", "比分", "结果"], rows, cls="history-table")
+            + C.table(["日期", "赛事", "对手", "比分", "半全场", "结果"], rows, cls="history-table")
         )
-    return C.panel("近期战绩", "".join(parts)) if parts else C.panel(
+    # 网易赛前状态（gf/ga 序列）：圆点 + 场均进失，主客各两组
+    fn = m.extras.get("form_net") or {}
+
+    def _net_bits(key: str) -> str:
+        seq = fn.get(key) or []
+        if not seq:
+            return ""
+        outcomes = []
+        gf_sum = ga_sum = 0
+        for x in seq:
+            try:
+                gf, ga = int(x.get("gf", 0)), int(x.get("ga", 0))
+            except (ValueError, TypeError, AttributeError):
+                continue
+            outcomes.append("W" if gf > ga else ("D" if gf == ga else "L"))
+            gf_sum += gf
+            ga_sum += ga
+        if not outcomes:
+            return ""
+        n = len(outcomes)
+        return (
+            f"<h3>{C.esc(key_map[key])}</h3>{C.form_dots(outcomes)}"
+            f'<p class="sub">近 {n} 场 进 {gf_sum} 失 {ga_sum}'
+            f"（场均 {gf_sum / n:.1f} / {ga_sum / n:.1f}）</p>"
+        )
+
+    key_map = {"home_7": f"{m.home.name} 近期", "home_home": f"{m.home.name} 近期主场",
+               "away_7": f"{m.away.name} 近期", "away_away": f"{m.away.name} 近期客场"}
+    net_parts = "".join(filter(None, (_net_bits(k) for k in key_map)))
+    if net_parts:
+        parts.append('<div class="net-form">' + net_parts + "</div>")
+    if parts:
+        return C.panel("近期战绩", "".join(parts))
+    return C.panel(
         "近期战绩",
         '<p class="panel-empty">近期战绩数据源尚未接入，框架已预留，数据补齐后自动展示。</p>',
     )
 
 
 def _h2h_panel(m: Match) -> str:
+    """历史交锋：两队交手明细（自产聚合，含半全场）；无记录时出占位。"""
     if not m.h2h:
-        return C.panel("历史交锋", "<p>暂无交锋记录</p>")
-    rows = [[h.date, h.competition, f"{h.home} {h.score} {h.away}"] for h in m.h2h]
-    return C.panel("历史交锋", C.table(["日期", "赛事", "对阵与比分"], rows))
+        return C.panel(
+            "历史交锋",
+            '<p class="panel-empty">两队在本站收录期内暂无交手记录，数据积累后自动展示。</p>',
+        )
+    rows = []
+    for h in m.h2h:
+        # 主客对调过的场次按当时主客呈现，另标出本场视角的半全场意义有限，仅列比分
+        rows.append([h.date, h.competition, f"{h.home} {h.score} {h.away}"])
+    return C.panel("历史交锋", C.table(["日期", "赛事", "对阵与比分"], rows, cls="history-table"))
 
 
 def _injury_panel(m: Match) -> str:

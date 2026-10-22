@@ -368,6 +368,9 @@ svg.mom { max-width: 620px; }
 .mc-tag.miss { background: #f3f4f6; color: #9ca3af; }
 .mc-tag.miss .tag-state { color: #ef4444; }
 .mc-tag-ph { background: transparent; border: 1px dashed #d1d5db; color: #9ca3af; }
+.net-form { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; margin-top: 10px; }
+.net-form h3 { margin: 6px 0 4px; }
+@media (max-width: 640px) { .net-form { grid-template-columns: 1fr; } }
 .panel-empty { font-size: 13px; color: #9ca3af; margin: 4px 0; }
 .pick-ph { color: #9ca3af; }
 .pick-ph .lab { color: #9ca3af; }

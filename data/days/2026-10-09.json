@@ -913,7 +913,13 @@
    "kickoff": "",
    "home": {
     "name": "多特蒙德",
-    "league": "德甲"
+    "league": "德甲",
+    "rank": 2,
+    "points": 14,
+    "played": 6,
+    "win": 4,
+    "draw": 2,
+    "loss": 0
    },
    "away": {
     "name": "不来梅",
@@ -1300,11 +1306,23 @@
    "kickoff": "",
    "home": {
     "name": "马拉加",
-    "league": "西甲"
+    "league": "西甲",
+    "rank": 20,
+    "points": 4,
+    "played": 9,
+    "win": 0,
+    "draw": 4,
+    "loss": 5
    },
    "away": {
     "name": "西班牙人",
-    "league": "西甲"
+    "league": "西甲",
+    "rank": 16,
+    "points": 8,
+    "played": 9,
+    "win": 2,
+    "draw": 2,
+    "loss": 5
    },
    "forecasts": [
     {

@@ -172,6 +172,7 @@ class RecentItem:
     venue: str = ""     # home / away
     score: str = ""
     outcome: str = ""   # W / D / L
+    half_ft: str = ""   # 半全场结果，如 "主/客"（halfScore+fullScore 推导）
 
 
 @dataclass

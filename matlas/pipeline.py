@@ -56,8 +56,50 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
                                                 dates=dates_desc))
         stats["files"] += 1
 
-    # 2. 按日归档 + 单场落地页
+    # 2. 按日归档 + 单场落地页。
+    # 近况/交锋按「赛前视角」聚合：渲染某日单场页时只用该日**之前**的已结算
+    # 场次（时间截断），历史页可回溯、不穿越。半全场结果由 halfScore+fullScore 推导。
+    def _half_ft(fh: int, fa: int, sh: int, sa: int) -> str:
+        def side(a: int, b: int) -> str:
+            return "主" if a > b else ("客" if a < b else "平")
+        return f"{side(fh, fa)}/{side(sh, sa)}"
+
+    from collections import defaultdict
+
+    hist_by_team: dict[str, list] = defaultdict(list)   # 队名 -> RecentItem（时间升序）
+    hist_h2h: dict[tuple[str, str], list] = defaultdict(list)  # (甲,乙) 有序对 -> 交手列表
     for d in ordered:
+        for m in d.matches:
+            # 先填当前场（此时 hist 只含更早日期），再落账当天结果
+            home_hist = [r for r in hist_by_team.get(m.home.name, [])][-5:]
+            away_hist = [r for r in hist_by_team.get(m.away.name, [])][-5:]
+            m.recent_home = list(reversed(home_hist))   # 新 -> 旧
+            m.recent_away = list(reversed(away_hist))
+            pair = tuple(sorted((m.home.name, m.away.name)))
+            m.h2h = list(reversed(hist_h2h.get(pair, [])))[-6:]
+            if not (m.result and m.result.full_score):
+                continue
+            try:
+                sh, sa = (int(x) for x in m.result.full_score.split("-"))
+                h_rec = "W" if sh > sa else ("D" if sh == sa else "L")
+                a_rec = "W" if sa > sh else ("D" if sa == sh else "L")
+                half_ft = ""
+                if m.result.half_score:
+                    fh, fa = (int(x) for x in m.result.half_score.split("-"))
+                    half_ft = _half_ft(fh, fa, sh, sa)
+            except ValueError:
+                continue
+            from .models import H2HItem, RecentItem
+
+            hist_by_team[m.home.name].append(RecentItem(
+                date=m.day, competition=m.competition, opponent=m.away.name,
+                venue="home", score=m.result.full_score, outcome=h_rec, half_ft=half_ft))
+            hist_by_team[m.away.name].append(RecentItem(
+                date=m.day, competition=m.competition, opponent=m.home.name,
+                venue="away", score=m.result.full_score, outcome=a_rec, half_ft=half_ft))
+            hist_h2h[pair].append(H2HItem(
+                date=m.day, competition=m.competition,
+                home=m.home.name, away=m.away.name, score=m.result.full_score))
         rel = f"days/{d.date}.html"
         L.write(cfg, rel, P.render_day(cfg, d, is_today=False, rel=rel,
                                        ranking=ranking, team_ranking=team_ranking,
