@@ -15,17 +15,29 @@ from . import layout as L
 
 
 def _picks(m: Match) -> str:
-    """四宫格：方向 / 比分 / 进球 / 半全。缺哪维就不画哪格；半全场恒缺出占位。"""
+    """四宫格：方向 / 比分 / 进球 / 半全。缺哪维就不画哪格。
+
+    半全场：无预测结论但已结算的历史场次，展示「实际赛果」而非占位——
+    半全场结果由半场/全场比分推导，是赛果数据，不需要等预测存档。
+    """
     titles = {"direction": "方向", "score": "比分", "goals": "进球", "htft": "半全场"}
     cells = []
     for kind, title in titles.items():
         items = m.forecasts_of(kind)
         if not items:
             if kind == "htft":
-                cells.append(
-                    '<div class="pick pick-ph"><div class="lab">半全场</div>'
-                    '<div class="mini">待接入</div></div>'
-                )
+                act = _actual_htft(m)
+                if act:
+                    cells.append(
+                        f'<div class="pick"><div class="lab">{title}</div>'
+                        f'<div class="val">{act}</div>'
+                        '<div class="mini">实际赛果</div></div>'
+                    )
+                else:
+                    cells.append(
+                        '<div class="pick pick-ph"><div class="lab">半全场</div>'
+                        '<div class="mini">待接入</div></div>'
+                    )
             continue
         top = items[0]
         extra = ""
@@ -547,12 +559,35 @@ def _mc_teams(m: Match, pre: str = "") -> str:
     return f'<div class="mc-teams">{cell(m.home)}{score}{cell(m.away)}</div>'
 
 
+def _actual_htft(m: Match) -> str:
+    """已结算场次的「实际半全场」（halfScore+fullScore 推导，主/客/平组合）。
+
+    这是实际赛果而非预测——历史日期没有 htft 预测存档，但赛果本身含半场比分，
+    可如实展示。未结算 / 缺半场比分 / 比分格式异常时返回空。
+    """
+    r = m.result
+    if not r or not r.half_score or not r.full_score:
+        return ""
+    try:
+        fh, fa = (int(x) for x in r.half_score.split("-"))
+        sh, sa = (int(x) for x in r.full_score.split("-"))
+    except ValueError:
+        return ""
+
+    def side(a: int, b: int) -> str:
+        return "主" if a > b else ("客" if a < b else "平")
+
+    return f"{side(fh, fa)}/{side(sh, sa)}"
+
+
 def _mc_tags(m: Match) -> str:
     """四个维度的图标标签，命中项加 .hit 提亮。
 
     图标统一走 L.ICON_* 单色线性 SVG（全站一套风格，不用彩色 emoji）。
     已结算的场次在每个标签上直接应用赛果状态：命中 ✓（红提亮）/ 未中 ✗（灰），
-    让历史日期页一眼看出每条结论的命中情况。半全场暂无数据源，出占位格。
+    让历史日期页一眼看出每条结论的命中情况。
+    半全场：有预测结论就展示预测并标 ✓/✗；无预测但已结算的（历史日期），
+    展示「实际半全场」——由半场/全场比分推导，属赛果数据而非预测。
     """
     icon = {
         "direction": L.ICON_TARGET, "score": L.ICON_HASH,
@@ -568,9 +603,16 @@ def _mc_tags(m: Match) -> str:
         f = m.headline.get(kind)
         if not f:
             if kind == "htft":
-                tags.append(
-                    '<div class="mc-tag mc-tag-ph">半全场 · 待接入</div>'
-                )
+                act = _actual_htft(m)
+                if act:
+                    tags.append(
+                        f'<div class="mc-tag" title="半全场（实际赛果）">'
+                        f"{L.ICON_TREND} {act}</div>"
+                    )
+                else:
+                    tags.append(
+                        '<div class="mc-tag mc-tag-ph">半全场 · 待接入</div>'
+                    )
             continue
         cls = ""
         state = ""

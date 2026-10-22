@@ -29,10 +29,15 @@ OUT_DIR = Path("C:/Users/Jin/matlas/data/days")
 # ---- jinbet 侧成熟数据源（赛前信息 / 积分分析）----
 # qq_standings.json：腾讯体育积分榜（欧冠/英超/意甲/德甲/西甲），rank/p/w/d/l/pts
 STANDINGS_JSON = Path("C:/Users/Jin/jinbet/qq_standings.json")
+# fox_standings.json：fox 体育积分榜（欧罗巴/解放者杯），groups[].teams[] 分组结构
+FOX_STANDINGS_JSON = Path("C:/Users/Jin/jinbet/fox_standings.json")
+# uefa_standings.json：欧协联积分榜，同 fox 的分组结构
+UEFA_STANDINGS_JSON = Path("C:/Users/Jin/jinbet/uefa_standings.json")
 # scripts/matches_data.json：网易当日抓取，home_recent 等 gf/ga 近况序列
 MATCHES_DATA_JSON = Path("C:/Users/Jin/jinbet/scripts/matches_data.json")
 
-# 竞彩短名 → 腾讯榜全名（宁缺勿错：只收已核实条目，匹配不到就不填积分）
+# 竞彩短名 → 积分榜行键（腾讯榜全名 / fox·uefa 榜中文名）。宁缺勿错：只收已核实条目，
+# 匹配不到就不填积分。fox/uefa 的行键是中文简称（zh 字段），如「尤文」「格拉茨风暴」。
 TEAM_ALIAS = {
     "巴黎圣曼": "巴黎圣日耳曼", "巴黎": "巴黎圣日耳曼", "维拉": "阿斯顿维拉",
     "拜仁": "拜仁慕尼黑", "布伦特": "布伦特福德", "纽卡斯尔": "纽卡斯尔联",
@@ -40,6 +45,16 @@ TEAM_ALIAS = {
     "毕尔巴鄂": "毕尔巴鄂竞技", "比利亚雷": "比利亚雷亚尔", "拉科": "拉科鲁尼亚",
     "门兴": "门兴格拉德巴赫", "桑坦德": "桑坦德竞技", "莱红牛": "RB莱比锡",
     "皇馬": "皇家马德里", "巴萨": "巴塞罗那", "马竞": "马德里竞技",
+    # ---- fox 欧罗巴 ----
+    "尤文图斯": "尤文", "格风暴": "格拉茨风暴", "波兹南": "波兹南莱赫",
+    "萨迪纳摩": "萨格勒布迪纳摩", "贝西克塔": "贝西克塔斯", "安德莱": "安德莱赫特",
+    "奥林匹亚": "奥林匹亚科斯", "圣吉联合": "圣吉尔联", "利勒斯特": "利勒斯特罗姆",
+    "克里特": "OFI克里特", "阿尔克马": "阿尔克马尔",
+    # ---- uefa 欧协联 ----
+    "克拉约瓦": "克拉约瓦大学",
+    # ---- fox 解放者杯 ----
+    "基多体大": "基多大学", "帕梅拉斯": "帕尔梅拉斯", "弗鲁米嫩": "弗鲁米嫩塞",
+    "德尔瓦耶独立": "山谷独立", "普拉滕斯": "普拉滕塞", "拉普大学": "大学生",
 }
 
 # 联赛名归一：与 matlas 既有叫法/队徽映射（logos.LEAGUE_CREST）对齐。
@@ -57,18 +72,35 @@ _NAME_NORM = str.strip
 
 
 def _load_standings() -> dict[str, dict[str, dict]]:
-    """腾讯积分榜 → {联赛: {队名: row}}。文件缺失/损坏时返回空（积分槽位留空）。"""
+    """积分榜聚合 → {联赛: {队名: row}}，三源合并：
+
+    - 腾讯 qq_standings（欧冠/英超/意甲/德甲/西甲），行键=全名；
+    - fox（欧罗巴/解放者杯）、uefa（欧协联）分组结构，行键=中文简称 zh
+      （zh 为空的行宁缺勿错直接跳过）。
+    某个文件缺失/损坏时该来源置空，不影响其余来源。
+    """
+    out: dict[str, dict[str, dict]] = {}
+
+    def _merge(lg: str, row: dict, key: str) -> None:
+        if lg and key and isinstance(row, dict):
+            out.setdefault(lg, {})[key] = row
+
     try:
         d = json.loads(STANDINGS_JSON.read_text(encoding="utf-8"))
+        for lg, v in (d.get("leagues") or {}).items():
+            for t in v.get("teams") or []:
+                _merge(lg, t, t.get("name") or "")
     except (OSError, ValueError):
-        return {}
-    out: dict[str, dict[str, dict]] = {}
-    for lg, v in (d.get("leagues") or {}).items():
-        rows = {}
-        for t in v.get("teams") or []:
-            if t.get("name"):
-                rows[t["name"]] = t
-        out[lg] = rows
+        pass
+    for path in (FOX_STANDINGS_JSON, UEFA_STANDINGS_JSON):
+        try:
+            d = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        for lg, v in (d.get("leagues") or {}).items():
+            for g in v.get("groups") or []:
+                for t in g.get("teams") or []:
+                    _merge(lg, t, t.get("zh") or "")
     return out
 
 
