@@ -146,10 +146,12 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
         teams=[(k, v[0], v[1], v[2]) for k, v in sorted(tm_stat.items(), key=lambda x: -x[1][0])],
     ))
     L.write(cfg, "data.html", P.render_stats(cfg, ordered))
+    L.write(cfg, "odds.html", P.render_odds(cfg, ordered))
+    L.write(cfg, "bets.html", P.render_bets(cfg, ordered))
     L.write(cfg, "features.html", P.render_features(cfg))
     L.write(cfg, "me.html", P.render_me(cfg))
     L.write(cfg, "search.html", P.render_search(cfg, ordered))
-    stats["files"] += 5
+    stats["files"] += 7
 
     # 4. 联赛 / 球队专题页（卡片上的联赛名、球队名可点跳转；数据随导入自动生长）
     for lg, ms in sorted(lg_matches.items()):

@@ -472,6 +472,62 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .ai-chip svg { width: 12px; height: 12px; flex: none; color: #94a3b8; }
 .ai-chip .pct { font-size: 11px; }
 
+/* ---------- 数据统计页（结构对齐球小策 /shu-ju-tong-ji/） ---------- */
+.stats-note { font-size: 13px; color: #6b7280; margin: 0 0 14px; }
+.stats-main .stat-card .stat-num { font-size: 30px; font-weight: 800; color: #111; }
+.stats-main .stat-card .stat-lbl { font-size: 13px; color: #6b7280; margin-top: 2px; }
+.stats-box { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 16px; min-width: 0; }
+.stats-box h3 { margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #111; }
+.stats-box .history-table { margin-top: 8px; }
+.stats-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+@media (max-width: 1000px) { .stats-duo { grid-template-columns: 1fr; } }
+.dim-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+@media (max-width: 640px) { .dim-grid { grid-template-columns: repeat(2, 1fr); } }
+.dim-card { background: #f8fafc; border: 1px solid #eef2f7; border-radius: 10px;
+  padding: 10px 12px; text-align: center; }
+.dim-name { font-size: 12px; color: #6b7280; }
+.dim-acc { font-size: 20px; font-weight: 800; color: var(--accent); margin: 3px 0; }
+.dim-n { font-size: 11px; color: #9ca3af; }
+.trend { display: flex; gap: 8px; align-items: stretch; }
+.t-col { flex: 1; min-width: 0; text-align: center; }
+.t-val { font-size: 11px; font-weight: 700; color: #10b981; }
+.t-area { height: 90px; display: flex; align-items: flex-end; margin: 4px 0; }
+.t-bar { width: 100%; background: linear-gradient(180deg, #6ee7b7, #10b981);
+  border-radius: 4px 4px 0 0; min-height: 4px; }
+.t-lbl { font-size: 10px; color: #6b7280; white-space: nowrap; }
+.t-sub { font-size: 10px; color: #9ca3af; }
+.team-out { max-height: 340px; overflow-y: auto; }
+.team-stat + .team-stat { margin-top: 10px; }
+.team-stat .ts-head { display: flex; justify-content: space-between; align-items: baseline;
+  gap: 8px; font-size: 13px; margin-bottom: 4px; }
+.team-stat .ts-head span { font-size: 12px; color: #6b7280; }
+.team-stat .pct { color: #10b981; font-weight: 700; }
+
+/* ---------- 赔率 / 投注页 ---------- */
+.odds-strip { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 12px; }
+.odds-strip .fp-opt { flex: none; }
+.odds-strip a.fp-opt { text-decoration: none; }
+.bet-form { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; align-items: end; }
+@media (max-width: 800px) { .bet-form { grid-template-columns: repeat(2, 1fr); } }
+.bet-form label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #6b7280; }
+.bet-form select, .bet-form input { padding: 7px 9px; border: 1px solid var(--rule); border-radius: 8px;
+  font-size: 13px; background: #fff; }
+.bet-form .search-btn { align-self: end; padding: 8px 0; }
+.bet-rec { padding: 9px 10px; border-radius: 8px; border: 1px solid #f1f5f9; }
+.bet-rec + .bet-rec { margin-top: 8px; }
+.bet-rec .br-head { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.bet-rec .br-head b { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bet-rec .br-del { font-size: 11px; color: #dc2626; text-decoration: none; }
+.bet-rec .br-meta { font-size: 12px; color: #6b7280; margin-top: 4px; }
+.bet-rec .br-meta b { color: #111; }
+.b-win { color: #dc2626; font-weight: 700; font-size: 12px; }
+.b-lose { color: #9ca3af; font-weight: 700; font-size: 12px; }
+.b-push { color: #2563eb; font-weight: 700; font-size: 12px; }
+.b-wait { color: #d97706; font-weight: 700; font-size: 12px; }
+.pnl-pos { color: #dc2626; }
+.pnl-neg { color: #16a34a; }
+
 /* ---------- 联赛 / 球队专题页：头部对齐对方 .lt-header（徽章 + 标题 + 统计） ---------- */
 .lt-header { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   padding: 22px 24px; display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
@@ -746,6 +802,8 @@ def page(
   <div class="brand"><span class="brand-mark">M</span>{C.esc(cfg.site_name)}<span>{C.esc(cfg.site_tagline)}</span></div>
   <nav class="site">
     <a href="{home}">{ICON_SPORTS}赛事</a>
+    <a href="{pre}odds.html">{ICON_TREND}赔率</a>
+    <a href="{pre}bets.html">{ICON_ACTIVITY}投注</a>
     <a href="{pre}data.html">{ICON_DATA}数据</a>
     <a href="{pre}features.html">{ICON_FUNCT}功能</a>
     <a href="{pre}me.html">{ICON_USER}我的</a>

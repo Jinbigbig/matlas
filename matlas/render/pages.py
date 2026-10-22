@@ -1089,33 +1089,179 @@ def _match_jsonld(cfg: Config, m: Match, url: str, title: str, desc: str) -> lis
 
 
 def render_stats(cfg: Config, days: list[Day]) -> str:
-    """📊数据：站点统计页。全部数字实时从已发布数据计算，不造假。"""
+    """📊数据统计：结构与球小策 /shu-ju-tong-ji/ 对齐。
+
+    区块：口径说明 → 三大总览卡 → 四维明细卡 → 近10天走势 + 球队表现查询
+    → 联赛/杯赛准确率排名 → 球队准确率 Top 15 → 机器可读数据。
+    全部数字实时从已发布数据计算，不造假；准确率主口径=方向命中。
+    """
+    import json as _json
+
     base = cfg.base_url.rstrip("/")
-    total = len(days)
-    n_matches = sum(len(d.matches) for d in days)
-    settled = [m for d in days for m in d.matches if m.result and m.result.full_score]
+    ordered = sorted(days, key=lambda d: d.date)
+    n_matches = sum(len(d.matches) for d in ordered)
+    settled = [m for d in ordered for m in d.matches if m.result and m.result.full_score]
     hit = sum(1 for m in settled if m.result.direction_hit)
     acc = (hit / len(settled) * 100) if settled else 0.0
-    ranking = compute_ranking(days, top=999)
-    rows = [
-        [C.esc(lg), str(n), str(h), f'<span class="pct">{(h / n * 100):.0f}%</span>']
-        for lg, h, n in ranking
+
+    # ---- 四维明细（仅统计有该维预测结论的已结算场次）----
+    def _dim(name: str) -> tuple[int, int]:
+        s = [m for m in settled if getattr(m.result, f"{name}_hit") is not None]
+        h = sum(1 for m in s if getattr(m.result, f"{name}_hit"))
+        return h, len(s)
+
+    dims = [("direction", "方向"), ("score", "比分"), ("goals", "进球"), ("htft", "半全场")]
+    dim_cards = ""
+    for name, zh in dims:
+        h, n = _dim(name)
+        acc_txt = f'<span class="pct">{h / n * 100:.1f}%</span>' if n else "—"
+        dim_cards += (
+            f'<div class="dim-card"><div class="dim-name">{zh}</div>'
+            f'<div class="dim-acc">{acc_txt}</div>'
+            f'<div class="dim-n">命中 {h} / {n} 场</div></div>'
+        )
+
+    # ---- 近 10 个有结算样本的交易日走势（方向命中率）----
+    trend = []
+    for d in reversed(ordered):
+        s = [m for m in d.matches if m.result and m.result.direction_hit is not None]
+        if not s:
+            continue
+        h = sum(1 for m in s if m.result.direction_hit)
+        trend.append((d.date[5:], h, len(s), h / len(s) * 100))
+        if len(trend) >= 10:
+            break
+    trend.reverse()
+    bars = "".join(
+        f'<div class="t-col"><div class="t-val pct">{a:.0f}%</div>'
+        f'<div class="t-area"><div class="t-bar" style="height:{max(a, 4):.0f}%"></div></div>'
+        f'<div class="t-lbl">{C.esc(lab)}</div>'
+        f'<div class="t-sub">{h}/{n}</div></div>'
+        for lab, h, n, a in trend
+    )
+    trend_box = (
+        '<div class="stats-box"><h3>📈 近10个交易日准确率走势</h3>'
+        + (
+            f'<div class="trend">{bars}</div>'
+            if bars
+            else '<p class="panel-empty">暂无已结算样本。</p>'
+        )
+        + "</div>"
+    )
+
+    # ---- 球队表现查询（内嵌全量球队汇总，前端过滤）----
+    team_agg: dict[str, dict] = {}
+    for m in settled:
+        if m.result.direction_hit is None:
+            continue
+        rec = m.result.direction_hit
+        for t, opp in ((m.home.name, m.away.name), (m.away.name, m.home.name)):
+            a = team_agg.setdefault(t, {"n": 0, "h": 0, "recent": []})
+            a["n"] += 1
+            a["h"] += 1 if rec else 0
+            if len(a["recent"]) < 5:
+                a["recent"].append([m.day, opp, m.result.full_score,
+                                    "胜" if rec else "未中"])
+    teams_js = _json.dumps(
+        [[k, v["n"], v["h"], v["recent"]] for k, v in sorted(team_agg.items())],
+        ensure_ascii=False, separators=(",", ":"),
+    )
+    search_box = (
+        '<div class="stats-box"><h3>🔍 球队表现查询</h3>'
+        '<input class="search-input" id="team-q" type="text" placeholder="输入球队名，如：皇马、拜仁、利物浦" style="width:100%">'
+        '<div id="team-out" class="team-out"><p class="sub">输入球队名查看该队的已结算场次与方向命中明细。</p></div>'
+        "<script>\n(function () {\n"
+        f"  var DATA = {teams_js};\n"
+        """  var out = document.getElementById("team-out");
+  document.getElementById("team-q").addEventListener("input", function () {
+    var q = this.value.trim();
+    if (!q) { out.innerHTML = '<p class="sub">输入球队名查看该队的已结算场次与方向命中明细。</p>'; return; }
+    var rows = DATA.filter(function (r) { return r[0].indexOf(q) !== -1; }).slice(0, 8);
+    if (!rows.length) { out.innerHTML = '<p class="sub">未找到该球队（仅统计已收录且已结算的场次）。</p>'; return; }
+    var html = "";
+    rows.forEach(function (r) {
+      var acc = r[2] / r[1] * 100;
+      html += '<div class="team-stat"><div class="ts-head"><b>' + r[0] + '</b>'
+        + '<span>已结算 ' + r[1] + ' 场 · 方向命中 <span class="pct">' + acc.toFixed(1) + '%</span></span></div><table class="history-table"><tr><th>日期</th><th>对手</th><th>比分</th><th>方向</th></tr>';
+      r[3].forEach(function (g) {
+        html += '<tr><td>' + g[0] + '</td><td>' + g[1] + '</td><td>' + g[2] + '</td><td>' + g[3] + '</td></tr>';
+      });
+      html += '</table></div>';
+    });
+    out.innerHTML = html;
+  });
+})();
+</script></div>"""
+    )
+
+    # ---- 联赛/杯赛排名（带四维）----
+    lg_agg: dict[str, dict] = {}
+    for m in settled:
+        if not m.competition or m.result.direction_hit is None:
+            continue
+        a = lg_agg.setdefault(m.competition, {"n": 0, "h": 0})
+        for name, _ in dims:
+            v = getattr(m.result, f"{name}_hit")
+            if v is not None:
+                d = a.setdefault(name, [0, 0])
+                d[1] += 1
+                d[0] += 1 if v else 0
+        a["n"] += 1
+        a["h"] += 1 if m.result.direction_hit else 0
+    lg_rows_list = sorted(
+        lg_agg.items(), key=lambda kv: (-(kv[1]["h"] / kv[1]["n"]), -kv[1]["n"], kv[0])
+    )
+
+    def _pc(pair) -> str:
+        h, n = pair
+        return f'<span class="pct">{h / n * 100:.0f}%</span>' if n else "—"
+
+    lg_rows = [
+        [C.esc(lg), str(a["n"]), f'<span class="pct">{a["h"] / a["n"] * 100:.1f}%</span>',
+         _pc(a.get("direction", [0, 0])), _pc(a.get("score", [0, 0])),
+         _pc(a.get("goals", [0, 0])), _pc(a.get("htft", [0, 0]))]
+        for lg, a in lg_rows_list
     ]
+    league_box = (
+        '<div class="stats-box"><h3>🏆 各联赛、杯赛准确率排名</h3>'
+        + (
+            C.table(["赛事", "场次", "准确率", "方向", "比分", "进球", "半全场"], lg_rows, cls="history-table")
+            if lg_rows
+            else '<p class="panel-empty">暂无已结算赛事，赛后自动回填。</p>'
+        )
+        + "</div>"
+    )
+
+    # ---- 球队 Top 15 ----
+    t15 = compute_team_ranking(ordered, top=15)
+    t_rows = [
+        [str(i), C.esc(name), str(n), f'<span class="pct">{h / n * 100:.1f}%</span>']
+        for i, (name, h, n) in enumerate(t15, 1)
+    ]
+    team_box = (
+        '<div class="stats-box"><h3>🛡️ 球队准确率排名 (Top 15)</h3>'
+        + (
+            C.table(["#", "球队", "已结算", "准确率"], t_rows, cls="history-table")
+            if t_rows
+            else '<p class="panel-empty">暂无已结算样本。</p>'
+        )
+        + "</div>"
+    )
+
     body = (
         f"<h1 class='page-h1'>{L.ICON_DATA} 数据统计</h1>"
-        '<div class="stats-grid">'
-        f'<div class="stat-card"><div class="pct stat-num">{total}</div><div class="stat-lbl">交易日</div></div>'
-        f'<div class="stat-card"><div class="pct stat-num">{n_matches}</div><div class="stat-lbl">赛事场次</div></div>'
-        f'<div class="stat-card"><div class="pct stat-num">{len(settled)}</div><div class="stat-lbl">已结算</div></div>'
-        f'<div class="stat-card"><div class="pct stat-num">{acc:.0f}%</div><div class="stat-lbl">方向命中率</div></div>'
+        '<p class="stats-note">准确率主口径为「方向命中」（胜/平/负），与首页卡片同一数据源；'
+        "半全场自 2026-10-22 起接入，样本量随日期积累。全部数字由已回填赛果自动计算。</p>"
+        '<div class="stats-grid stats-main">'
+        f'<div class="stat-card"><div class="pct stat-num">{n_matches}</div><div class="stat-lbl">📊 总预测场次</div></div>'
+        f'<div class="stat-card"><div class="pct stat-num">{acc:.1f}%</div><div class="stat-lbl">🎯 整体准确率</div></div>'
+        f'<div class="stat-card"><div class="pct stat-num">{hit}</div><div class="stat-lbl">✅ 命中场次</div></div>'
         "</div>"
-        "<h2>各联赛方向命中</h2>"
-        + (
-            C.table(["联赛", "已结算", "命中", "命中率"], rows)
-            if rows
-            else '<p class="sub">暂无已结算赛事，赛后自动回填。</p>'
-        )
-        + "<h2>机器可读数据</h2>"
+        '<div class="stats-box"><h3>🔍 单项维度准确率</h3>'
+        f'<div class="dim-grid">{dim_cards}</div></div>'
+        f'<div class="stats-duo">{trend_box}{search_box}</div>'
+        f'<div class="stats-duo">{league_box}{team_box}</div>'
+        "<h2>机器可读数据</h2>"
         '<ul class="plain-list">'
         f'<li><a href="{base}/llms.txt">llms.txt</a> — 站点结构索引（LLM/GEO 用）</li>'
         f'<li><a href="{base}/dataset.json">dataset.json</a> — 全量结构化数据</li>'
@@ -1123,7 +1269,7 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         "</ul>"
     )
     return L.page(
-        cfg, title="数据统计", description="站点赛事统计：交易日、场次、方向命中率与各联赛分布",
+        cfg, title="数据统计", description="站点赛事统计：总场次、四维准确率、近10天走势、联赛与球队排名",
         body=body, canonical=f"{base}/data.html", depth=0,
     )
 
@@ -1223,6 +1369,305 @@ def render_search(cfg: Config, days: list[Day]) -> str:
     return L.page(
         cfg, title="站内搜索", description="按队名、联赛、竞彩编号检索全部历史赛事",
         body=body, canonical=f"{base}/search.html", depth=0,
+    )
+
+
+# ---------------------------------------------------------------- 赔率 / 投注
+
+
+def _odds_payload(ordered: list[Day]) -> tuple[list, list]:
+    """赔率数据集：(按日倒序的日期表, 场次行)。只收带盘口的场次，不造假。"""
+    rows = []
+    for d in ordered:
+        for m in d.matches:
+            o = m.odds
+            if not (o and (o.home or o.handicap is not None or o.total is not None)):
+                continue
+            rows.append({
+                "d": d.date, "c": m.code or "", "lg": m.competition or "",
+                "h": m.home.name, "a": m.away.name, "id": m.match_id,
+                "o": [o.home, o.draw, o.away, o.handicap, o.handicap_home,
+                      o.handicap_away, o.total, o.over, o.under],
+                "r": (m.result.full_score or "") if m.result else "",
+            })
+    rows.reverse()
+    dates: list[str] = []
+    for r in rows:
+        if r["d"] not in dates:
+            dates.append(r["d"])
+    return dates, rows
+
+
+def render_odds(cfg: Config, ordered: list[Day]) -> str:
+    """📈赔率：盘口浏览页（数据=jinbet/网易抓取的竞彩盘口快照）。
+
+    日期 tab（JS 切换）+ 当日全部场次的胜平负 / 让球 / 进球盘口表；
+    已完赛场次附带比分，便于对照盘口与赛果。
+    """
+    import json as _json
+
+    base = cfg.base_url.rstrip("/")
+    dates, rows = _odds_payload(ordered)
+    data_js = _json.dumps({"dates": dates, "rows": rows},
+                          ensure_ascii=False, separators=(",", ":"))
+    body = (
+        f"<h1 class='page-h1'>{L.ICON_TREND} 赔率</h1>"
+        '<p class="stats-note">竞彩盘口快照（胜平负 / 让球 / 进球数），数据来源与首页单场页一致；'
+        "已完赛场次附带比分。盘口为赛前快照，不随时间更新。</p>"
+        '<div class="odds-strip" id="odds-dates"></div>'
+        '<div id="odds-out"></div>'
+        "<script>\n(function () {\n"
+        f"  var DATA = {data_js};\n"
+        '''  var strip = document.getElementById("odds-dates");
+  var out = document.getElementById("odds-out");
+  if (!DATA.dates.length) { out.innerHTML = '<p class="sub">暂无盘口数据。</p>'; return; }
+  var fmt = function (v) { return (v === null || v === undefined || v === "") ? "—" : v; };
+  DATA.dates.forEach(function (d, i) {
+    var b = document.createElement("a");
+    b.className = "fp-opt" + (i === 0 ? " active" : "");
+    b.href = "javascript:;";
+    b.textContent = (+d.slice(5, 7)) + "月" + (+d.slice(8, 10)) + "日";
+    b.addEventListener("click", function () {
+      strip.querySelectorAll(".fp-opt").forEach(function (x) { x.classList.remove("active"); });
+      b.classList.add("active");
+      render(d);
+    });
+    strip.appendChild(b);
+  });
+  function render(d) {
+    var rows = DATA.rows.filter(function (r) { return r.d === d; });
+    var html = '<section class="panel"><h3>' + d + ' 共 ' + rows.length + ' 场</h3>'
+      + '<table class="history-table"><tr><th>编号</th><th>赛事</th><th>对阵</th>'
+      + '<th>主胜</th><th>平</th><th>客胜</th><th>让球</th><th>主</th><th>客</th>'
+      + '<th>进球</th><th>大</th><th>小</th><th>赛果</th></tr>';
+    rows.forEach(function (r) {
+      var o = r.o;
+      html += '<tr><td>' + r.c + '</td><td>' + r.lg + '</td>'
+        + '<td><a href="matches/' + r.id + '.html">' + r.h + ' vs ' + r.a + '</a></td>'
+        + '<td>' + fmt(o[0]) + '</td><td>' + fmt(o[1]) + '</td><td>' + fmt(o[2]) + '</td>'
+        + '<td>' + fmt(o[3]) + '</td><td>' + fmt(o[4]) + '</td><td>' + fmt(o[5]) + '</td>'
+        + '<td>' + fmt(o[6]) + '</td><td>' + fmt(o[7]) + '</td><td>' + fmt(o[8]) + '</td>'
+        + '<td>' + (r.r || "—") + '</td></tr>';
+    });
+    out.innerHTML = html + '</table></section>';
+  }
+  render(DATA.dates[0]);
+})();
+</script>'''
+    )
+    return L.page(
+        cfg, title="赔率", description="竞彩盘口快照浏览：胜平负、让球、进球数盘口与赛果对照",
+        body=body, canonical=f"{base}/odds.html", depth=0,
+    )
+
+
+def render_bets(cfg: Config, ordered: list[Day]) -> str:
+    """🎯投注：个人记录页（静态站实现：localStorage 存记录 + 内嵌赛果自动结算）。
+
+    添加记录（日期→场次→玩法→选项→赔率→本金）后，JS 按 embed 的赛果自动判
+    赢 / 输 / 走水；未开赛自动挂「待开赛」，赛果回填后刷新页面即自动结算。
+    记录保存在浏览器本地（localStorage），不依赖后端。
+    """
+    import json as _json
+
+    base = cfg.base_url.rstrip("/")
+    ms = []
+    for d in ordered:
+        for m in d.matches:
+            o = m.odds
+            ms.append({
+                "id": m.match_id, "d": d.date, "c": m.code or "",
+                "lg": m.competition or "", "h": m.home.name, "a": m.away.name,
+                "o": ([o.home, o.draw, o.away, o.handicap, o.handicap_home,
+                       o.handicap_away, o.total, o.over, o.under] if o else None),
+                "r": (m.result.full_score or "") if m.result else "",
+                "hf": (m.result.half_score or "") if m.result else "",
+            })
+    data_js = _json.dumps(ms, ensure_ascii=False, separators=(",", ":"))
+    body = (
+        f"<h1 class='page-h1'>{L.ICON_ACTIVITY} 投注</h1>"
+        '<p class="stats-note">个人投注记录本：记录保存在本浏览器（localStorage），'
+        "赛果回填后自动结算盈亏。仅供个人记账复盘，不构成任何购彩建议。</p>"
+        '<div class="stats-grid stats-main" id="bet-sum"></div>'
+        '<div class="stats-box"><h3>➕ 添加记录</h3>'
+        '<div class="bet-form">'
+        '<label>日期<select id="b-date"></select></label>'
+        '<label>场次<select id="b-match"></select></label>'
+        '<label>玩法<select id="b-mk">'
+        '<option value="胜平负">胜平负</option><option value="让球">让球</option>'
+        '<option value="总进球">总进球</option><option value="比分">精确比分</option>'
+        '<option value="半全场">半全场</option></select></label>'
+        '<label>选项<select id="b-pick"></select></label>'
+        '<label id="b-score-w" style="display:none">比分<input id="b-score" type="text" placeholder="如 2-1"></label>'
+        '<label id="b-line-w" style="display:none">盘口<input id="b-line" type="number" step="0.5" placeholder="如 -1 / 2.5"></label>'
+        '<label>赔率<input id="b-odds" type="number" step="0.01" min="1"></label>'
+        '<label>本金<input id="b-stake" type="number" step="1" min="1" value="10"></label>'
+        '<button class="search-btn" id="b-add" type="button">添加</button>'
+        "</div>"
+        '<p class="sub" id="b-hint">选好场次后，胜平负 / 让球 / 总进球的赔率会按盘口自动填入，可手动修改。</p>'
+        "</div>"
+        '<div class="stats-box"><h3>📒 我的记录</h3><div id="b-list"></div></div>'
+        "<script>\n(function () {\n"
+        f"  var MS = {data_js};\n"
+        '''  var KEY = "matlas_bets_v1";
+  var $ = function (id) { return document.getElementById(id); };
+  var byId = {}; MS.forEach(function (m) { byId[m.id] = m; });
+  var dates = []; MS.forEach(function (m) { if (dates.indexOf(m.d) === -1) dates.push(m.d); });
+  dates.reverse();
+
+  function load() { try { return JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (e) { return []; } }
+  function save(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch (e) {} }
+
+  var PICKS = {
+    "胜平负": ["主胜", "平", "客胜"],
+    "让球": ["主", "客"],
+    "总进球": ["大", "小"],
+    "比分": [],
+    "半全场": ["主/主", "主/平", "主/客", "平/主", "平/平", "平/客", "客/主", "客/平", "客/客"]
+  };
+
+  function fillMatches() {
+    var d = $("b-date").value;
+    var sel = $("b-match");
+    sel.innerHTML = "";
+    MS.filter(function (m) { return m.d === d; }).forEach(function (m) {
+      var op = document.createElement("option");
+      op.value = m.id;
+      op.textContent = (m.c ? m.c + " " : "") + m.h + " vs " + m.a + (m.r ? "（" + m.r + "）" : "");
+      sel.appendChild(op);
+    });
+    fillPicks();
+  }
+  function fillPicks() {
+    var mk = $("b-mk").value, sel = $("b-pick");
+    sel.innerHTML = "";
+    (PICKS[mk] || []).forEach(function (p) {
+      var op = document.createElement("option"); op.value = p; op.textContent = p; sel.appendChild(op);
+    });
+    var isScore = mk === "比分";
+    sel.style.display = isScore ? "none" : "";
+    $("b-score-w").style.display = isScore ? "" : "none";
+    $("b-line-w").style.display = (mk === "让球" || mk === "总进球") ? "" : "none";
+    autoOdds();
+  }
+  function autoOdds() {
+    var m = byId[$("b-match").value];
+    if (!m || !m.o) return;
+    var mk = $("b-mk").value, pick = $("b-pick").value;
+    var o = m.o, v = null;
+    if (mk === "胜平负") v = pick === "主胜" ? o[0] : (pick === "平" ? o[1] : o[2]);
+    else if (mk === "让球") v = pick === "主" ? o[4] : o[5];
+    else if (mk === "总进球") v = pick === "大" ? o[7] : o[8];
+    if (v) $("b-odds").value = v;
+    if (mk === "让球" && o[3] !== null && o[3] !== undefined && !$("b-line").value) $("b-line").value = o[3];
+    if (mk === "总进球" && o[6] !== null && o[6] !== undefined && !$("b-line").value) $("b-line").value = o[6];
+  }
+
+  function settle(bet, m) {
+    if (!m || !m.r) return null;
+    var f = m.r.split("-"); if (f.length !== 2) return null;
+    var h = +f[0], a = +f[1], hf = m.hf ? m.hf.split("-") : null;
+    switch (bet.mk) {
+      case "胜平负":
+        return (bet.pick === "主胜" ? h > a : bet.pick === "平" ? h === a : a > h) ? "win" : "lose";
+      case "让球": {
+        var eh = h + parseFloat(bet.line);
+        if (eh === a) return "push";
+        return (bet.pick === "主" ? eh > a : eh < a) ? "win" : "lose";
+      }
+      case "总进球": {
+        var t = h + a, ln = parseFloat(bet.line);
+        if (t === ln) return "push";
+        return (bet.pick === "大" ? t > ln : t < ln) ? "win" : "lose";
+      }
+      case "比分": return bet.pick === m.r ? "win" : "lose";
+      case "半全场": {
+        if (!hf) return null;
+        var hs = +hf[0] > +hf[1] ? "主" : (+hf[0] < +hf[1] ? "客" : "平");
+        var fs = h > a ? "主" : (h < a ? "客" : "平");
+        return bet.pick === hs + "/" + fs ? "win" : "lose";
+      }
+    }
+    return null;
+  }
+
+  function render() {
+    var bets = load().slice().reverse();
+    var n = bets.length, win = 0, lose = 0, push = 0, pending = 0, stake = 0, pnl = 0;
+    var html = "";
+    bets.forEach(function (b) {
+      var m = byId[b.mid];
+      var st = settle(b, m);
+      if (st === "win") { win++; pnl += b.stake * (b.odds - 1); }
+      else if (st === "lose") { lose++; pnl -= b.stake; }
+      else if (st === "push") { push++; }
+      else pending++;
+      if (st !== "push") stake += b.stake;
+      var badge = st === "win" ? '<span class="b-win">✔ 已中</span>'
+        : st === "lose" ? '<span class="b-lose">✘ 未中</span>'
+        : st === "push" ? '<span class="b-push">＝ 走水</span>'
+        : '<span class="b-wait">… 待开赛</span>';
+      html += '<div class="bet-rec"><div class="br-head"><b>' + (m ? m.h + " vs " + m.a : b.mid)
+        + '</b>' + badge
+        + '<a class="br-del" href="javascript:;" data-ts="' + b.ts + '">删除</a></div>'
+        + '<div class="br-meta">' + b.mid + ' · ' + b.mk
+        + (bet.line !== "" && bet.line !== undefined && (b.mk === "让球" || b.mk === "总进球") ? "（盘口 " + b.line + "）" : "")
+        + ' · <b>' + b.pick + '</b> @ ' + b.odds + ' · 本金 ' + b.stake
+        + ' · 盈亏 <b>' + (st === "win" ? "+" + (b.stake * (b.odds - 1)).toFixed(1)
+          : st === "lose" ? "-" + b.stake : st === "push" ? "0" : "—") + '</b>'
+        + (m && m.r ? ' · 赛果 ' + m.r + (m.hf ? '（' + m.hf + '）' : '') : '')
+        + '</div></div>';
+    });
+    $("b-list").innerHTML = html || '<p class="sub">还没有记录，用上面表单添加第一笔。</p>';
+    var settled = win + lose;
+    $("bet-sum").innerHTML =
+      '<div class="stat-card"><div class="stat-num">' + n + '</div><div class="stat-lbl">总记录</div></div>'
+      + '<div class="stat-card"><div class="stat-num">' + (settled ? (win / settled * 100).toFixed(1) + '%' : '—') + '</div><div class="stat-lbl">命中率</div></div>'
+      + '<div class="stat-card"><div class="stat-num">' + stake.toFixed(0) + '</div><div class="stat-lbl">总投入</div></div>'
+      + '<div class="stat-card"><div class="stat-num ' + (pnl >= 0 ? 'pnl-pos' : 'pnl-neg') + '">' + (pnl >= 0 ? '+' : '') + pnl.toFixed(1) + '</div><div class="stat-lbl">净盈亏</div></div>';
+    $("b-list").querySelectorAll(".br-del").forEach(function (a) {
+      a.addEventListener("click", function () {
+        save(load().filter(function (x) { return String(x.ts) !== a.getAttribute("data-ts"); }));
+        render();
+      });
+    });
+  }
+
+  $("b-date").innerHTML = dates.map(function (d) {
+    return '<option value="' + d + '">' + d + '</option>';
+  }).join("");
+  $("b-date").addEventListener("change", fillMatches);
+  $("b-mk").addEventListener("change", fillPicks);
+  $("b-pick").addEventListener("change", autoOdds);
+  $("b-match").addEventListener("change", autoOdds);
+  $("b-add").addEventListener("click", function () {
+    var mid = $("b-match").value;
+    var mk = $("b-mk").value;
+    var pick = mk === "比分" ? ($("b-score") ? $("b-score").value.trim() : "") : $("b-pick").value;
+    var odds = parseFloat($("b-odds").value);
+    var stake = parseFloat($("b-stake").value);
+    if (!mid || !pick || !(odds >= 1) || !(stake > 0)) { alert("请补全：场次、选项、赔率与本金。"); return; }
+    if (mk === "让球" || mk === "总进球") {
+      var ln = parseFloat($("b-line").value);
+      if (isNaN(ln)) { alert("该玩法需要填写盘口。"); return; }
+      var bets = load();
+      bets.push({ mid: mid, mk: mk, pick: pick, line: ln, odds: odds, stake: stake, ts: Date.now() });
+      save(bets);
+    } else {
+      var bets = load();
+      bets.push({ mid: mid, mk: mk, pick: pick, line: "", odds: odds, stake: stake, ts: Date.now() });
+      save(bets);
+    }
+    render();
+  });
+  fillMatches();
+  render();
+})();
+</script>'''
+    )
+    return L.page(
+        cfg, title="投注", description="个人投注记录本：localStorage 存档，赛果回填后自动结算盈亏",
+        body=body, canonical=f"{base}/bets.html", depth=0,
     )
 
 

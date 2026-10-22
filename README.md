@@ -2,7 +2,7 @@
 
 **Matlas（Match Atlas · 赛图）** —— 足球赛事量化图谱，纯静态发布层。
 
-源码与 jinbet **完全分离**，规则与 jinbet **完全一致**（见 [RULES.md](RULES.md)）。
+源码与 jinbet **完全分离**，规则与 jinbet **完全一致**（见 [RULES.md](RULES.md)）：
 
 ```
 jinbet  →  负责「算」：V3.4 引擎、Platt 校准、Brier_opt / Kalman
@@ -10,23 +10,18 @@ Matlas  →  负责「发」：per-match 落地页、留档核验、llms.txt / s
            ↑ 两者唯一的耦合是数据契约（models.py），不互相 import
 ```
 
----
-
 ## 快速开始
 
 ```bash
+python import_jinbet.py         # 从 jinbet 导入预测/赛果/积分/盘口 → data/days/
 python build.py                 # 构建 data/days 下全部交易日 → _site/
 python build.py --strict        # 红线命中即以非零码退出（CI 用）
-python build.py --reference 2026-10-22   # 额外并入第三方对照（需联网，默认关）
+python build.py --slots         # 重新生成 SLOTS.md 并打印槽位接线状态
 ```
 
 零依赖、零 CDN、离线可跑。Python 3.10+。
 
----
-
 ## 分支与发布
-
-两个分支**在本地都是实体**，各有一个工作目录，互不干扰：
 
 | 分支 | 内容 | 本地位置 |
 | --- | --- | --- |
@@ -37,69 +32,50 @@ python build.py --reference 2026-10-22   # 额外并入第三方对照（需联�
 git worktree add .publish gh-pages   # 首次：建产物工作树
 ./publish.sh                         # 构建（strict）→ 同步到 .publish → 提交 → 推送
 ./publish.sh --no-push               # 只构建到 _site，不动产物分支
-git -C .publish log --oneline -5     # 看产物提交历史（连续，不再强推）
 ```
 
-发布脚本的安全阀：
-- 工作区有未提交改动 → 拒绝发布（产物不应夹带源码改动）；
-- `.publish` 不存在或不在 `gh-pages` 分支 → 拒绝写入，避免产物落到错误的地方。
+发布脚本的安全阀：工作区有未提交改动时拒绝发布；`.publish` 不在 `gh-pages` 分支时拒绝写入。
 
-产物历史从 `93e7305` 起连续。此前每次发布都在临时目录 `git init` 后强推，历史是孤儿提交串，
-现在改为工作树提交，`git -C .publish diff` 能直接看出两次发布之间页面变了什么。
+**线上地址**：<https://jinbigbig.github.io/matlas/>（canonical / sitemap / llms.txt 全部指向这里）。
+域名只在 `matlas/config.py::DEFAULT_BASE_URL` 定义一处，换域名只改这一行再发布。
 
-### 线上地址
-
-| 入口 | URL | 用途 |
-| --- | --- | --- |
-| **主站** | <https://jinbigbig.github.io/matlas/> | GitHub Pages，公开可抓取，canonical / sitemap / llms.txt 全部指向这里 |
-| 预览镜像 | `https://matlas.app.workbuddy.host/?sharecode=…` | 内置发布通道，**裸路径 403**，仅供人工预览 |
-
-域名只在 `matlas/config.py::DEFAULT_BASE_URL` 定义一处，渲染层（canonical / og / JSON-LD / sitemap / robots / llms.txt）全部由它派生。
-换域名只改这一行再 `./publish.sh`，或临时覆盖：`python build.py --base-url https://example.com`。
-
-> canonical 必须是不带任何参数就能打开的地址。带 `?sharecode=` 的链接对爬虫等于 403，会造成整站索引失效。
-
----
-
-## 它已经能做什么
+## 功能
 
 | 能力 | 说明 |
 | --- | --- |
+| **每日赛事前瞻** | 首页卡片列表 + 时间滚动条切换日期 + 类型/赛事筛选（纯 CSS，无 JS 依赖） |
 | **per-match 落地页** | 每场独立 URL：`matches/<match_id>.html`，可被搜索引擎与 AI 单独索引 |
-| **主推条** | 一句话主推 + 方向评级（可用/慎用/别跟），页面第一视觉重心 |
-| **四宫格结论** | 方向 / 比分 / 进球 / 半全场，各带首选与次选概率 |
-| **让球结论** | 盘口（市场给的）与结论（我们的）分离成两个字段，避免混排 |
-| **风险提示** | 三档 info / warn / block，`block` 只标注不隐藏页面——留档必须完整 |
-| **外部对照** | 第三方结论并列成表，强制署名，永不参与本站概率计算 |
-| **纯 SVG 可视化** | 六维战力雷达 + 0–90 分钟进球威胁度曲线，无第三方 JS |
+| **四宫格结论** | 方向 / 比分 / 进球 / 半全场，各带首选与次选概率与命中标记 |
+| **赛前情报与积分** | 赛前情报速览、核心数据对比、积分排名（腾讯五联赛 + 欧战三源） |
+| **近期战绩 / 历史交锋** | 赛前视角聚合（时间截断不穿越），含半全场结果列与胜平负圆点 |
+| **AI 预测卡** | 右栏：最近 6 个交易日的四维预测首选，时间/赛事筛选 |
+| **赔率页** | 竞彩盘口快照浏览（胜平负 / 让球 / 进球数），按日期切换，附赛果对照 |
+| **投注记录本** | localStorage 记录 + 内嵌赛果自动结算（赢/输/走水/待开赛）与盈亏统计 |
+| **数据统计** | 总场次 / 四维准确率 / 近10天走势 / 球队表现查询 / 联赛与球队 Top 榜 |
+| **联赛 / 球队专题页** | `leagues/*.html`、`teams/*.html`，数据随导入自动生长 |
+| **历史归档三视图** | 交易日 / 联赛 / 球队，`days/*.html` 逐日留档 |
+| **站内搜索** | 按队名、联赛、竞彩编号检索全部历史赛事（前端过滤，无后端） |
 | **结论指纹** | 覆盖赛前全部结论字段的 SHA-256 前 12 位，赛后回填不改变该值 |
-| **GEO 基建** | `llms.txt` / `robots.txt` / `sitemap.xml` / `sitemap-today.xml` |
-| **Schema.org** | 每页输出 `Article` + `SportsEvent`，列表页输出 `CollectionPage` + `ItemList` |
-| **数据快照** | `data/dataset.json` 全量 + `data/days/*.json` 逐日，便于 diff 出结论变动 |
+| **纯 SVG 可视化** | 六维战力雷达 + 0–90 分钟进球威胁度曲线，无第三方 JS |
+| **GEO 基建** | `llms.txt` / `robots.txt` / `sitemap.xml` / `dataset.json` / Schema.org |
 | **红线自检** | `matlas/rules.py` 构建后自动扫描产物，见下方规则清单 |
-| **缺字段降级** | 任何维度缺失自动省略对应区块，不做补白、不写解释句 |
-| **槽位登记表** | [SLOTS.md](SLOTS.md)：每个模块 ↔ 契约字段 ↔ 数据来源 ↔ 接线状态 |
 
----
+## 数据来源
 
-## 框架先于数据
+数据经 `import_jinbet.py` 从 jinbet 项目导入（可重复执行，幂等）：
 
-渲染层（`matlas/render/`）已把全部**功能槽位**铺好，契约（`matlas/models.py`）也留了位；
-今天没有的数据不会报错，只会让对应区块不出现。
+| 源 | 内容 |
+| --- | --- |
+| `predictions/{date}/pred_snapshot.json` | 预测快照：方向/比分/进球/半全场、λ、冷门、让球结论 |
+| `results_history/{date}.json`（缺失时回退 `results_data.json`） | 赛果回填：半场/全场比分与各维命中 |
+| `qq_standings.json` + `fox_standings.json` + `uefa_standings.json` | 积分榜：五联赛 + 欧罗巴/解放者杯/欧协联 |
+| `scripts/matches_data.json` | 当日网易赛前近况（gf/ga 序列）与盘口 |
 
-谁往哪个槽位写数据、用哪个源或 Agent Skill，统一记在 [SLOTS.md](SLOTS.md)（由 `matlas/slots.py` 生成）：
-
-```bash
-python build.py --slots     # 重新生成 SLOTS.md 并打印接线状态
-```
-
-构建结束时也会打一行汇总，例如：`槽位 15 个：已接线 13 / 待接线 1 / 待开发 1`。
-
----
+队徽库离线自球小策公开队徽库（`assets/logo/teams/`，按编号引用），映射表见 `matlas/logos.py`。
 
 ## 数据契约
 
-唯一对外接口，定义在 [matlas/models.py](matlas/models.py)。上游只要产出符合它的 JSON：
+唯一对外接口，定义在 [matlas/models.py](matlas/models.py)。上游只要产出符合它的 JSON 即可接入：
 
 ```json
 {
@@ -121,14 +97,11 @@ python build.py --slots     # 重新生成 SLOTS.md 并打印接线状态
 
 `forecasts` 的 `kind` 限定 `direction | score | goals | htft`；
 `confidence` 限定 `high | medium | low | none`；其余字段全可选。
+缺字段自动降级：任何维度缺失，对应区块不出现，不做补白。
 
-把 jinbet 的 `_calc_result.json` 转成这个形状即可接入 —— 转换脚本**不在本项目范围内**，等你下一步指示。
+## 构建期规则
 
----
-
-## 继承的规则（构建期强制）
-
-`matlas/rules.py` 在每次构建结束后扫描 `_site/**/*.html`，违规即报文件名与行号。
+`matlas/rules.py` 在每次构建结束后扫描 `_site/**/*.html`，违规即报文件名与行号（`--strict` 时非零退出）。
 
 | 规则 | 内容 |
 | --- | --- |
@@ -140,36 +113,25 @@ python build.py --slots     # 重新生成 SLOTS.md 并打印接线状态
 | 评级词表 | 只允许 **可用 / 慎用 / 别跟** |
 | 留档不可篡改 | 赛后回填不得改变结论指纹 |
 
----
-
 ## 目录
 
 ```
 matlas/
 ├── RULES.md          项目定义 + 继承规则（必读）
+├── SLOTS.md          槽位登记表（由 matlas/slots.py 生成）
 ├── build.py          构建入口
+├── import_jinbet.py  jinbet 数据导入（预测/赛果/积分/盘口）
+├── publish.sh        发布脚本（strict 构建 → .publish → 推送 gh-pages）
 ├── matlas/
 │   ├── models.py     数据契约 ← 唯一对外接口
 │   ├── rules.py      红线自检
+│   ├── logos.py      队名 → 队徽编号映射
 │   ├── config.py     站点身份与路径
 │   ├── pipeline.py   构建流水线
 │   ├── seo.py        llms.txt / robots / sitemap / 数据快照
 │   ├── source/       数据源适配层（插件式）
 │   └── render/       布局 / 组件 / 页面
-├── data/days/        每日数据
-└── _site/            产物（gitignored）
+├── assets/logo/      队徽与赛事徽章（离线快照）
+├── data/days/        每日数据（git 留档）
+└── _site/            构建产物（gitignored）
 ```
-
----
-
-## 没做的部分
-
-按你的要求，**可能冲突或需要你定夺的一律没动**，全部列在 [RULES.md §5](RULES.md)：
-
-- ⏸ 接 jinbet V3.4 引擎（契约已预留）
-- ⏸ 赔率 / 7M / 腾讯 / Fox / lineupstoday 抓取
-- ⏸ SCORE_ALIGN 比分口径、让球分级、冷门过滤
-- ⏸ 第三方对照源（适配器已写好，默认关闭）
-- ❌ 明确不做：LLM 长文（与文案红线冲突）、任何运行时依赖
-
-等你的下一步指示。
