@@ -192,7 +192,24 @@ def _intel_panel(m: Match) -> str:
         ["AI 置信度", zh_conf, "冷启动", "是（不进精选）" if m.is_cold_start else "否"],
         ["结论模型", "量化推演引擎", "数据样本", f"主 {dn.get('home', '—')} 场 / 客 {dn.get('away', '—')} 场"],
     ]
+    # 半场胜平负概率（2026-10-22 起引擎输出 htft_half）。
+    # table 对以 '<' 开头的单元格按原文输出（内部值均为受控数字/固定枚举）。
+    hh = m.extras.get("htft_half") or {}
+    if hh:
+        rows.append([
+            "半场概率",
+            f'<b>主</b> {_pct(hh.get("home"))} / <b>平</b> {_pct(hh.get("draw"))}'
+            f' / <b>客</b> {_pct(hh.get("away"))}',
+            "半全场首选",
+            next((f'<b>{C.esc(f.label)}</b> <span class="pct">{C.pct(f.prob)}</span>'
+                  for f in m.forecasts_of("htft") if f.rank == 1), "—"),
+        ])
     return C.panel("赛前情报速览", C.table(["项目", "内容", "项目", "内容"], rows, cls="duo"))
+
+
+def _pct(v) -> str:
+    """百分数展示（情报表用）：引擎给 39.4（百分数），无值出 —。走 pct 类红线口径。"""
+    return f'<span class="pct">{v:g}%</span>' if isinstance(v, (int, float)) else "—"
 
 
 def _compare_panel(m: Match) -> str:

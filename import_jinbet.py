@@ -136,6 +136,21 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict) -> dict:
     for i, (g, p) in enumerate(sorted(goals_prob.items(), key=lambda x: -x[1])[:3], 1):
         forecasts.append({"kind": "goals", "label": f"{g} 球", "prob": round(p / 100, 4), "rank": i})
 
+    # ---- 半全场预测：htft.top 前 3（2026-10-22 起引擎输出）----
+    # htft = {"half": {home/draw/away 半场概率}, "cells": {"主/主": 概率...},
+    #         "top": [["客/客", 32.6], ...]}；概率为百分数，归一为小数。
+    htft = m.get("htft") if isinstance(m.get("htft"), dict) else {}
+    top_htft = ""
+    for i, item in enumerate(htft.get("top") or [], 1):
+        if not isinstance(item, (list, tuple)) or len(item) < 2:
+            continue
+        lab, p = str(item[0]).strip(), _f(item[1])
+        if not lab or p is None:
+            continue
+        if i == 1:
+            top_htft = lab
+        forecasts.append({"kind": "htft", "label": lab, "prob": round(p / 100, 4), "rank": i})
+
     # ---- 赔率 ----
     raw_odds = m.get("odds") or {}
     odds: dict = {}
@@ -167,6 +182,18 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict) -> dict:
                 goals_hit = top_goals == f"{gh + ga} 球"
             except ValueError:
                 pass
+        # htft_hit：首选半全场（如 "客/客"）vs 实际半全场。
+        # 实际由 halfScore/fullScore 推：半场主>客=主 …；全场同规则。
+        htft_hit = None
+        if top_htft and "-" in full and "-" in half:
+            try:
+                fh, fa = (int(x) for x in half.split("-"))
+                sh, sa = (int(x) for x in full.split("-"))
+                def _side(a: int, b: int) -> str:
+                    return "主" if a > b else ("客" if a < b else "平")
+                htft_hit = top_htft == f"{_side(fh, fa)}/{_side(sh, sa)}"
+            except ValueError:
+                pass
         if full:
             result = {
                 "full_score": full,
@@ -174,7 +201,7 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict) -> dict:
                 "direction_hit": _direction_hit(top_dir, win_flag),
                 "score_hit": (top_score_label == full) if top_score_label else None,
                 "goals_hit": goals_hit,
-                "htft_hit": None,
+                "htft_hit": htft_hit,
                 "settled_at": date,
             }
 
@@ -191,6 +218,11 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict) -> dict:
         extras["data_n"] = m["data_n"]
     if m.get("headline"):
         extras["headline"] = m["headline"]
+    if htft:
+        if isinstance(htft.get("half"), dict):
+            extras["htft_half"] = htft["half"]   # 半场胜平负概率（百分数）
+        if isinstance(htft.get("cells"), dict):
+            extras["htft_cells"] = htft["cells"]  # 九选项概率（百分数）
 
     out = {
         "match_id": match_id,
