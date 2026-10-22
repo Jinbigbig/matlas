@@ -38,6 +38,18 @@ python build.py --reference 2026-10-22   # 额外并入第三方对照（需联�
 
 发布脚本会先检查工作区是否有未提交改动 —— 有就拒绝发布，避免产物里夹带源码改动。
 
+### 线上地址
+
+| 入口 | URL | 用途 |
+| --- | --- | --- |
+| **主站** | <https://jinbigbig.github.io/matlas/> | GitHub Pages，公开可抓取，canonical / sitemap / llms.txt 全部指向这里 |
+| 预览镜像 | `https://matlas.app.workbuddy.host/?sharecode=…` | 内置发布通道，**裸路径 403**，仅供人工预览 |
+
+域名只在 `matlas/config.py::DEFAULT_BASE_URL` 定义一处，渲染层（canonical / og / JSON-LD / sitemap / robots / llms.txt）全部由它派生。
+换域名只改这一行再 `./publish.sh`，或临时覆盖：`python build.py --base-url https://example.com`。
+
+> canonical 必须是不带任何参数就能打开的地址。带 `?sharecode=` 的链接对爬虫等于 403，会造成整站索引失效。
+
 ---
 
 ## 它已经能做什么
