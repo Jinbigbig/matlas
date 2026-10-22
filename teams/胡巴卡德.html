@@ -72,9 +72,10 @@ document.addEventListener("click", function (e) {
   e.stopPropagation();
   window.location.href = t.getAttribute("data-goto");
 });
-// 时间行日期条：把当前日期水平滚进可视区（历史页 active 排在列表深处）
-document.querySelectorAll(".fp-scroll a.fp-opt.active").forEach(function (el) {
-  el.scrollIntoView({ inline: "center", block: "nearest" });
+// 时间行日期下拉：选中即跳转对应日期页（optgroup 按月分组，数量无上限）
+document.addEventListener("change", function (e) {
+  var s = e.target.closest(".date-select");
+  if (s && s.value) window.location.href = s.value;
 });
 </script>
 </body>
