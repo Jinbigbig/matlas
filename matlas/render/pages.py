@@ -502,13 +502,10 @@ def _mc_header(m: Match, pre: str = "") -> str:
     conf_lab = {"high": "高", "medium": "中", "low": "低", "none": "冷门"}.get(
         m.confidence, "未评级"
     )
+    # 猜对了才出对勾章；未中不放标记（用户口径：对错只以对勾表达）
     stamp = ""
-    if m.result and m.result.direction_hit is not None:
-        stamp = (
-            '<div class="prediction-stamp stamp-red">✔</div>'
-            if m.result.direction_hit
-            else '<div class="prediction-stamp stamp-black">✘</div>'
-        )
+    if m.result and m.result.direction_hit:
+        stamp = '<div class="prediction-stamp stamp-red">✔</div>'
     return (
         '<div class="mc-header"><div class="mc-meta">'
         f'<span class="date">{C.esc(date_txt)}</span>'
