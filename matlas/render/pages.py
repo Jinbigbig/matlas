@@ -740,20 +740,21 @@ def _ranking_card(rows: list[tuple[str, int, int]], pre: str = "",
     )
 
 
-def _optgroup_select(dates: list[str], cur: str, value_of) -> str:
-    """按月分组的原生下拉选项（optgroup）；value_of(date) 产出 option value。"""
-    groups: dict[str, list[str]] = {}
-    for d in dates:
-        groups.setdefault(d[:7], []).append(d)
-    parts = []
-    for ym, ds_ in groups.items():
-        opts = "".join(
-            f'<option value="{value_of(x)}"{" selected" if x == cur else ""}>'
-            f"{int(x[5:7])}月{int(x[8:10])}日</option>"
-            for x in ds_
-        )
-        parts.append(f'<optgroup label="{ym[:4]}年{int(ym[5:7])}月">{opts}</optgroup>')
-    return "".join(parts)
+def _date_input(dates: list[str], cur: str, mode: str, pre: str = "") -> str:
+    """原生日历选择控件（input[type=date]，点开即日历面板）。
+
+    dates 为可选日期（YYYY-MM-DD）；选中无数据的日期时由全局 JS 吸附到
+    最近的有数据日期。mode 决定 change 行为：jump=跳日期页 / ai=切 AI 卡
+    radio / odds=重渲染赔率面板 / bets=仅存值待「加载比赛」读取。
+    """
+    import json as _json
+
+    return (
+        '<input type="date" class="date-cal" '
+        f'value="{cur}" min="{min(dates)}" max="{max(dates)}" '
+        f'data-mode="{mode}" data-pre="{pre}" '
+        f"data-dates='{_json.dumps(dates, separators=(',', ':'))}'>"
+    )
 
 
 def build_ai_digest(days: list[Day], top_n_dates: int = 6) -> list[tuple]:
@@ -799,7 +800,6 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
 
     radios, date_spans, bodies, rules = [], [], [], []
     dates_all: list[str] = []
-    aid_of: dict[str, str] = {}
     first = True
     for i, (date, n, items) in enumerate(digest):
         if not items:
@@ -808,7 +808,6 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
         checked = " checked" if first else ""
         first = False
         dates_all.append(date)
-        aid_of[date] = f"aid-{i}"
         radios.append(
             f'<input type="radio" name="aid" id="aid-{i}" class="fp-radio"{checked}>'
         )
@@ -873,9 +872,8 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
     panel = (
         '<div id="ai-filter-panel">'
         '<div class="fp-row"><div class="fp-label">时间:</div>'
-        '<select class="ai-date-select">'
-        f"{_optgroup_select(dates_all, dates_all[0], lambda x: aid_of[x])}"
-        "</select></div>"
+        f"{_date_input(dates_all, dates_all[0], 'ai')}"
+        "</div>"
         '<div class="fp-row"><div class="fp-label">赛事:</div>'
         f'<div class="fp-options">{"".join(lg_opts)}</div></div>'
         "</div>"
@@ -985,9 +983,8 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
         )
         time_row = (
             '<div class="fp-row"><div class="fp-label">时间:</div>'
-            f'<select class="date-select">'
-            f"{_optgroup_select(dates, day.date, lambda x: f'{pre_d}days/{x}.html')}"
-            "</select></div>"
+            f"{_date_input(dates, day.date, 'jump', pre=pre_d)}"
+            "</div>"
         )
     panel = (
         f'{filter_css}<input type="checkbox" id="fp-toggle" class="fp-toggle">'
@@ -1489,28 +1486,14 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
                           ensure_ascii=False, separators=(",", ":"))
     body = (
         f"<h1 class='page-h1'>{L.ICON_TREND} 赔率</h1>"
-        '<select class="odds-date" id="odds-dates" aria-label="选择日期"></select>'
+        '<input type="date" class="date-cal" id="odds-dates" data-mode="odds" '
+        f'value="{dates[0]}" min="{min(dates)}" max="{max(dates)}" '
+        f"data-dates='{_json.dumps(dates, separators=(',', ':'))}'>"
         '<div id="odds-out"></div>'
         "<script>\n(function () {\n"
         f"  var DATA = {data_js};\n"
-        '''  var sel = document.getElementById("odds-dates");
-  var out = document.getElementById("odds-out");
+        '''  var out = document.getElementById("odds-out");
   if (!DATA.dates.length) { out.innerHTML = '<p class="sub">暂无盘口数据。</p>'; return; }
-  // 日期下拉：按月分组（optgroup），数量再多也不占版面
-  var groups = {};
-  DATA.dates.forEach(function (d) { (groups[d.slice(0, 7)] = groups[d.slice(0, 7)] || []).push(d); });
-  Object.keys(groups).forEach(function (ym) {
-    var og = document.createElement("optgroup");
-    og.label = ym.slice(0, 4) + "年" + (+ym.slice(5, 7)) + "月";
-    groups[ym].forEach(function (d) {
-      var o = document.createElement("option");
-      o.value = d;
-      o.textContent = (+d.slice(5, 7)) + "月" + (+d.slice(8, 10)) + "日";
-      og.appendChild(o);
-    });
-    sel.appendChild(og);
-  });
-  sel.addEventListener("change", function () { render(sel.value); });
   function pill(lab, val, hit, cls) {
     if (val === undefined || val === null || val === "") return "";
     return '<span class="odds-pill' + (hit ? " hit" : "") + '"><b class="' + (cls || "") + '">'
@@ -1585,6 +1568,7 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
     });
     out.innerHTML = html || '<p class="sub">当日无盘口数据。</p>';
   }
+  window.renderOddsDay = render; // 日历控件 change 时由全局 JS 调用
   render(DATA.dates[0]);
 })();
 </script>'''
@@ -1633,7 +1617,9 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         '<button id="bk-padd" type="button" class="bt-mini">添加</button>'
         "</div></div>"
         '<div class="bf-row"><label>场次</label>'
-        '<div class="bf-schedule"><select id="bk-date" class="odds-date"></select>'
+        '<div class="bf-schedule"><input type="date" class="date-cal" id="bk-date" '
+        f'data-mode="bets" value="{dates[0]}" min="{min(dates)}" max="{max(dates)}" '
+        f"data-dates='{_json.dumps(dates, separators=(',', ':'))}'" + ">"
         '<button id="bk-load" type="button" class="bt-mini">📅 加载比赛</button></div>'
         '<div id="bk-games" class="bf-games"></div></div>'
         '<div class="bf-actions"><button id="bk-calc" type="button" class="bt-gold">⚡ 计算注数 & 金额</button>'
@@ -1770,16 +1756,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     if (name && !persons.some(function (p) { return p.name === name; })) persons.push({ name: name, mult: +$("bk-pmult").value || 0 });
     $("bk-pname").value = ""; renderPersons();
   });
-  // 日期下拉：按月分组（optgroup）
-  var dgroups = {};
-  DATA.dates.forEach(function (d) { (dgroups[d.slice(0, 7)] = dgroups[d.slice(0, 7)] || []).push(d); });
-  $("bk-date").innerHTML = Object.keys(dgroups).map(function (ym) {
-    return '<optgroup label="' + ym.slice(0, 4) + "年" + (+ym.slice(5, 7)) + '月">'
-      + dgroups[ym].map(function (d) {
-        return '<option value="' + d + '">' + (+d.slice(5, 7)) + "月" + (+d.slice(8, 10)) + "日</option>";
-      }).join("")
-      + "</optgroup>";
-  }).join("");
+  // 日期为日历控件（服务端内嵌可选范围），此处不再填充
   function renderGames() {
     if (!games.length) { $("bk-games").innerHTML = '<p class="sub">选择日期后点「加载比赛」，为场次选玩法与选项。</p>'; return; }
     $("bk-games").innerHTML = games.map(function (g, i) {

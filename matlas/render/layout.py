@@ -79,19 +79,15 @@ a.fp-opt.active { background: var(--accent); color: #fff; border-color: var(--ac
 .v4-nav-icon svg { width: 20px; height: 20px; }
 .fp-radio:checked + .fp-opt { background: var(--accent); color: #fff; border-color: var(--accent); }
 .fp-radio:focus-visible + .fp-opt { outline: 2px solid #93c5fd; outline-offset: 2px; }
-/* 时间行：原生下拉（optgroup 按月分组），日期数量再大也不占版面；
-   筛选条上另有 ‹ › 箭头做前后翻日。appearance 去掉系统样式，自绘箭头。
-   .ai-date-select 是 AI 卡内同款（值是 radio id，由全局 JS 切换，不跳转） */
-.date-select, .ai-date-select, .odds-date { appearance: none; -webkit-appearance: none;
-  font-size: 13px;
-  color: #111; background: #fff
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236b7280' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
-  no-repeat right 11px center;
-  border: 1px solid #e5e7eb; border-radius: 8px; padding: 6px 30px 6px 12px;
+/* 时间行/赔率/投注页日期选择：原生日历控件（input[type=date]，点开即日历面板），
+   日期数量无上限；无数据的日期由全局 JS 吸附到最近的有数据日期。
+   筛选条上另有 ‹ › 箭头做前后翻日。 */
+.date-cal { font-size: 13px; color: #111; background: #fff;
+  border: 1px solid #e5e7eb; border-radius: 8px; padding: 6px 10px;
   cursor: pointer; max-width: 260px; font-family: inherit; }
-.date-select:hover, .ai-date-select:hover, .odds-date:hover { border-color: #93c5fd; color: var(--accent); }
-.date-select:focus-visible, .ai-date-select:focus-visible, .odds-date:focus-visible {
-  outline: 2px solid #93c5fd; outline-offset: 2px; }
+.date-cal:hover { border-color: #93c5fd; }
+.date-cal:focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }
+.date-cal::-webkit-calendar-picker-indicator { cursor: pointer; opacity: 0.55; }
 .v4-date-nav { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .v4-day-arrow { display: flex; align-items: center; justify-content: center;
   width: 26px; height: 26px; border-radius: 50%; border: 1px solid #e5e7eb;
@@ -544,8 +540,8 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .team-stat .pct { color: #10b981; font-weight: 700; }
 
 /* ---------- 赔率 / 投注页 ---------- */
-/* 赔率/投注页日期选择：与全站 date-select 同款按月分组下拉 */
-.odds-date { font-size: 13px; margin-bottom: 12px; }
+/* 日期选择为全站同款日历控件（.date-cal） */
+#odds-dates { margin-bottom: 12px; }
 .bet-form { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; align-items: end; }
 @media (max-width: 800px) { .bet-form { grid-template-columns: repeat(2, 1fr); } }
 .bet-form label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #6b7280; }
@@ -981,39 +977,60 @@ document.addEventListener("click", function (e) {{
   e.stopPropagation();
   window.location.href = t.getAttribute("data-goto");
 }});
-// 时间行日期下拉：选中即跳转对应日期页（optgroup 按月分组，数量无上限）
+// 日历日期选择（input[type=date]）：无数据的日期自动吸附到最近的有数据日期
+function snapDate(arr, v) {{
+  if (arr.indexOf(v) >= 0) return v;
+  var prev = null, next = null;
+  arr.forEach(function (d) {{
+    if (d < v && (prev === null || d > prev)) prev = d;
+    if (d > v && (next === null || d < next)) next = d;
+  }});
+  return prev || next || v;
+}}
 document.addEventListener("change", function (e) {{
-  var s = e.target.closest(".date-select");
-  if (s && s.value) window.location.href = s.value;
+  var c = e.target.closest(".date-cal");
+  if (!c || !c.value) return;
+  var dates = JSON.parse(c.getAttribute("data-dates"));
+  var t = snapDate(dates, c.value);
+  c.value = t;
+  var mode = c.getAttribute("data-mode");
+  if (mode === "jump") {{
+    window.location.href = (c.getAttribute("data-pre") || "") + "days/" + t + ".html";
+  }} else if (mode === "ai") {{
+    var r = document.getElementById("aid-" + dates.indexOf(t));
+    if (r) r.checked = true;
+    aiSyncArrows();
+  }} else if (mode === "odds") {{
+    if (window.renderOddsDay) window.renderOddsDay(t);
+  }}
+  // mode === "bets"：仅存值，点「加载比赛」时读取
 }});
-// AI 预测卡日期：下拉/‹›箭头只改隐藏 radio 的选中态，内容显隐仍走纯 CSS 规则
-document.addEventListener("change", function (e) {{
-  var s = e.target.closest(".ai-date-select");
-  if (!s) return;
-  var r = document.getElementById(s.value);
-  if (r) r.checked = true;
-  aiSyncArrows(s);
-}});
-function aiSyncArrows(s) {{
+// AI 预测卡 ‹› 箭头：基于隐藏 radio 序号步进，内容显隐仍走纯 CSS 规则
+function aiSyncArrows() {{
+  var radios = document.querySelectorAll('#ai-pred-card input[name="aid"]');
+  if (!radios.length) return;
+  var cur = -1;
+  radios.forEach(function (r, i) {{ if (r.checked) cur = i; }});
   document.querySelectorAll("[data-aid-step]").forEach(function (a) {{
-    var i = s.selectedIndex + parseInt(a.getAttribute("data-aid-step"), 10);
-    a.classList.toggle("off", i < 0 || i >= s.options.length);
+    var i = cur + parseInt(a.getAttribute("data-aid-step"), 10);
+    a.classList.toggle("off", i < 0 || i >= radios.length);
   }});
 }}
 document.addEventListener("click", function (e) {{
   var a = e.target.closest("[data-aid-step]");
   if (!a) return;
   e.preventDefault();
-  var s = document.querySelector("#ai-pred-card .ai-date-select");
-  if (!s) return;
-  var i = s.selectedIndex + parseInt(a.getAttribute("data-aid-step"), 10);
-  if (i < 0 || i >= s.options.length) return;
-  s.selectedIndex = i;
-  var r = document.getElementById(s.options[i].value);
-  if (r) r.checked = true;
-  aiSyncArrows(s);
+  var radios = document.querySelectorAll('#ai-pred-card input[name="aid"]');
+  var cur = -1;
+  radios.forEach(function (r, i) {{ if (r.checked) cur = i; }});
+  var i = cur + parseInt(a.getAttribute("data-aid-step"), 10);
+  if (i >= 0 && i < radios.length) radios[i].checked = true;
+  aiSyncArrows();
 }});
-document.querySelectorAll("#ai-pred-card .ai-date-select").forEach(aiSyncArrows);
+document.addEventListener("change", function (e) {{
+  if (e.target && e.target.name === "aid") aiSyncArrows();
+}});
+aiSyncArrows();
 </script>
 </body>
 </html>
