@@ -62,6 +62,15 @@
   });
   sync();
 })();
+// data-goto 事件委托：联赛/球队内链在整卡 <a> 内部（HTML 不允许嵌套 a），
+// 点击时阻止整卡默认跳转，改跳联赛/球队专题页。
+document.addEventListener("click", function (e) {
+  var t = e.target.closest("[data-goto]");
+  if (!t) return;
+  e.preventDefault();
+  e.stopPropagation();
+  window.location.href = t.getAttribute("data-goto");
+});
 </script>
 </body>
 </html>

@@ -96,6 +96,27 @@
      "prob": 0.066,
      "rank": 6,
      "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.251,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.203,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "0 球",
+     "prob": 0.117,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "low",
@@ -114,10 +135,11 @@
     "full_score": "0-0",
     "direction_hit": false,
     "score_hit": false,
+    "goals_hit": false,
     "settled_at": "2026-09-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T14:47:01+08:00",
+   "generated_at": "2026-10-22T15:10:02+08:00",
    "extras": {
     "lam_home": 1.411,
     "lam_away": 0.936,
@@ -231,6 +253,27 @@
      "prob": 0.049,
      "rank": 6,
      "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.228,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.226,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.191,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "high",
@@ -249,10 +292,11 @@
     "full_score": "3-0",
     "direction_hit": true,
     "score_hit": false,
+    "goals_hit": true,
     "settled_at": "2026-09-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T14:47:01+08:00",
+   "generated_at": "2026-10-22T15:10:02+08:00",
    "extras": {
     "lam_home": 2.37,
     "lam_away": 0.219,
@@ -366,6 +410,27 @@
      "prob": 0.057,
      "rank": 6,
      "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.219,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.161,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "0 球",
+     "prob": 0.089,
+     "rank": 3,
+     "note": ""
     }
    ],
    "confidence": "low",
@@ -384,10 +449,11 @@
     "full_score": "2-0",
     "direction_hit": true,
     "score_hit": false,
+    "goals_hit": true,
     "settled_at": "2026-09-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-22T14:47:01+08:00",
+   "generated_at": "2026-10-22T15:10:02+08:00",
    "extras": {
     "lam_home": 1.469,
     "lam_away": 1.051,
