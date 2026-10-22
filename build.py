@@ -23,6 +23,7 @@ sys.path.insert(0, str(ROOT))
 from matlas.config import Config, DEFAULT_BASE_URL  # noqa: E402
 from matlas.pipeline import render, stamp  # noqa: E402
 from matlas.rules import check_site, report  # noqa: E402
+from matlas import slots as slot_registry  # noqa: E402
 from matlas.source.base import LocalDirSource, merge_reference  # noqa: E402
 
 
@@ -65,6 +66,8 @@ def build(cfg: Config, *, strict: bool = False, reference_date: str | None = Non
         print("[×] strict 模式下红线违规不允许发布。")
         return 2
 
+    print(f"[i] {slot_registry.summary()}（python build.py --slots 查看明细）")
+
     dt = (datetime.now(timezone.utc) - t0).total_seconds()
     print(f"[✓] 用时 {dt:.2f}s")
     return 0
@@ -78,7 +81,17 @@ def main() -> int:
     ap.add_argument("--site-name", default="Matlas")
     ap.add_argument("--strict", action="store_true", help="红线违规时以非零码退出")
     ap.add_argument("--reference", metavar="YYYY-MM-DD", help="启用第三方对照源（需联网）")
+    ap.add_argument("--slots", action="store_true", help="打印槽位登记表并写入 SLOTS.md")
     ns = ap.parse_args()
+
+    if ns.slots:
+        print(slot_registry.summary())
+        for s in slot_registry.SLOTS:
+            print(f"  [{s.status:7}] {s.name:<8} {s.contract}")
+        out = ROOT / "SLOTS.md"
+        out.write_text(slot_registry.markdown(), encoding="utf-8")
+        print(f"[✓] 已写入 {out}")
+        return 0
 
     cfg = Config(
         site_root=ROOT,

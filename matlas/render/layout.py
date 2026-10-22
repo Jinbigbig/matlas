@@ -150,6 +150,38 @@ table.duo td:not(:first-child) { font-variant-numeric: tabular-nums; }
 .mini { display: inline-block; font-size: 0.75rem; color: var(--muted); border: 1px solid var(--rule);
   border-radius: 4px; padding: 0.05rem 0.45rem; }
 
+/* ---------- 主推条：整页第一视觉重心 ---------- */
+.mainpick { display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  color: #fff; border-radius: 10px; padding: 0.9rem 1.25rem; margin: 1rem 0;
+  box-shadow: 0 2px 10px rgba(26,26,46,0.18); }
+.mainpick .mp-lab { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255,255,255,0.55);
+  border-right: 1px solid rgba(255,255,255,0.2); padding-right: 0.9rem; }
+.mainpick .mp-txt { font-size: 1rem; font-weight: 600; line-height: 1.5; flex: 1; min-width: 200px; }
+.mainpick .mp-tag { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+/* ---------- 风险提示：三档色条 ---------- */
+.risk-note { display: flex; align-items: flex-start; gap: 0.75rem; flex-wrap: wrap;
+  border-radius: 8px; padding: 0.7rem 1rem; margin: 0.75rem 0; font-size: 0.85rem;
+  border-left: 3px solid var(--rule); background: var(--bg); }
+.risk-note .risk-lab { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+  padding: 0.1rem 0.5rem; border-radius: 4px; white-space: nowrap; }
+.risk-note .risk-txt { flex: 1; min-width: 180px; }
+.risk-note .risk-factors { margin: 0.3rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+.risk-note .risk-factors li { line-height: 1.6; }
+.r-info { border-left-color: var(--home); }
+.r-info .risk-lab { background: rgba(69,123,157,0.12); color: var(--home); }
+.r-warn { border-left-color: var(--accent3); background: rgba(244,162,97,0.08); }
+.r-warn .risk-lab { background: rgba(244,162,97,0.18); color: #b4700f; }
+.r-block { border-left-color: var(--accent); background: rgba(230,57,70,0.06); }
+.r-block .risk-lab { background: rgba(230,57,70,0.12); color: var(--accent); }
+
+/* ---------- 外部对照表 ---------- */
+table.ref-table td:not(:first-child) { font-variant-numeric: tabular-nums; }
+table.ref-table td:nth-child(3) { color: var(--muted); }
+table.ref-table .hit { margin-left: 0.25rem; }
+
 /* ---------- 结论四宫格 ---------- */
 .prediction { background: linear-gradient(135deg, rgba(42,157,143,0.08), rgba(42,157,143,0.02));
   border: 1px solid rgba(42,157,143,0.2); border-radius: 10px; padding: 1rem 1.25rem; margin: 1rem 0; }
@@ -202,6 +234,9 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
   .match-teams { font-size: 1.05rem; gap: 0.6rem; }
   .odds-grid { gap: 0.5rem; }
   .cards { grid-template-columns: 1fr; }
+  .mainpick { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .mainpick .mp-lab { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding: 0 0 0.35rem; }
 }
 """
 

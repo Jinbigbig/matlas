@@ -26,17 +26,26 @@ python build.py --reference 2026-10-22   # 额外并入第三方对照（需联�
 
 ## 分支与发布
 
-| 分支 | 内容 |
-| --- | --- |
-| `main` | 源码 + 数据（`_site/` 已在 .gitignore 里，产物永不进 main） |
-| `gh-pages` | 构建产物，GitHub Pages 从这里出 |
+两个分支**在本地都是实体**，各有一个工作目录，互不干扰：
+
+| 分支 | 内容 | 本地位置 |
+| --- | --- | --- |
+| `main` | 源码 + 数据 | 工作区 `<repo>/`（`_site/`、`.publish/` 均被 .gitignore） |
+| `gh-pages` | 构建产物 | 工作树 `<repo>/.publish/`（一个提交 = 一次发布） |
 
 ```bash
-./publish.sh              # 构建（strict）+ 推送 gh-pages
-./publish.sh --no-push    # 只构建，本地预览
+git worktree add .publish gh-pages   # 首次：建产物工作树
+./publish.sh                         # 构建（strict）→ 同步到 .publish → 提交 → 推送
+./publish.sh --no-push               # 只构建到 _site，不动产物分支
+git -C .publish log --oneline -5     # 看产物提交历史（连续，不再强推）
 ```
 
-发布脚本会先检查工作区是否有未提交改动 —— 有就拒绝发布，避免产物里夹带源码改动。
+发布脚本的安全阀：
+- 工作区有未提交改动 → 拒绝发布（产物不应夹带源码改动）；
+- `.publish` 不存在或不在 `gh-pages` 分支 → 拒绝写入，避免产物落到错误的地方。
+
+产物历史从 `93e7305` 起连续。此前每次发布都在临时目录 `git init` 后强推，历史是孤儿提交串，
+现在改为工作树提交，`git -C .publish diff` 能直接看出两次发布之间页面变了什么。
 
 ### 线上地址
 
@@ -57,7 +66,11 @@ python build.py --reference 2026-10-22   # 额外并入第三方对照（需联�
 | 能力 | 说明 |
 | --- | --- |
 | **per-match 落地页** | 每场独立 URL：`matches/<match_id>.html`，可被搜索引擎与 AI 单独索引 |
+| **主推条** | 一句话主推 + 方向评级（可用/慎用/别跟），页面第一视觉重心 |
 | **四宫格结论** | 方向 / 比分 / 进球 / 半全场，各带首选与次选概率 |
+| **让球结论** | 盘口（市场给的）与结论（我们的）分离成两个字段，避免混排 |
+| **风险提示** | 三档 info / warn / block，`block` 只标注不隐藏页面——留档必须完整 |
+| **外部对照** | 第三方结论并列成表，强制署名，永不参与本站概率计算 |
 | **纯 SVG 可视化** | 六维战力雷达 + 0–90 分钟进球威胁度曲线，无第三方 JS |
 | **结论指纹** | 覆盖赛前全部结论字段的 SHA-256 前 12 位，赛后回填不改变该值 |
 | **GEO 基建** | `llms.txt` / `robots.txt` / `sitemap.xml` / `sitemap-today.xml` |
@@ -65,6 +78,22 @@ python build.py --reference 2026-10-22   # 额外并入第三方对照（需联�
 | **数据快照** | `data/dataset.json` 全量 + `data/days/*.json` 逐日，便于 diff 出结论变动 |
 | **红线自检** | `matlas/rules.py` 构建后自动扫描产物，见下方规则清单 |
 | **缺字段降级** | 任何维度缺失自动省略对应区块，不做补白、不写解释句 |
+| **槽位登记表** | [SLOTS.md](SLOTS.md)：每个模块 ↔ 契约字段 ↔ 数据来源 ↔ 接线状态 |
+
+---
+
+## 框架先于数据
+
+渲染层（`matlas/render/`）已把全部**功能槽位**铺好，契约（`matlas/models.py`）也留了位；
+今天没有的数据不会报错，只会让对应区块不出现。
+
+谁往哪个槽位写数据、用哪个源或 Agent Skill，统一记在 [SLOTS.md](SLOTS.md)（由 `matlas/slots.py` 生成）：
+
+```bash
+python build.py --slots     # 重新生成 SLOTS.md 并打印接线状态
+```
+
+构建结束时也会打一行汇总，例如：`槽位 15 个：已接线 13 / 待接线 1 / 待开发 1`。
 
 ---
 

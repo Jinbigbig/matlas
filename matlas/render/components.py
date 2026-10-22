@@ -329,6 +329,78 @@ def momentum_svg(
     return legend + "".join(parts)
 
 
+# ---------------------------------------------------------------- 主推 / 风险 / 对照
+
+
+def main_pick_bar(text: str, *, tag: str = "", hit: bool | None = None) -> str:
+    """一句话主推。整页视觉重心之一，放在四宫格上方。
+
+    `tag` 传已渲染好的评级标签（走 grade_tag，词表只有 可用/慎用/别跟）。
+    """
+    if not text:
+        return ""
+    mark = ""
+    if hit is True:
+        mark = '<span class="hit hit-y">命中</span>'
+    elif hit is False:
+        mark = '<span class="hit hit-n">未中</span>'
+    return (
+        f'<div class="mainpick"><div class="mp-lab">主推</div>'
+        f'<div class="mp-txt">{esc(text)}</div>'
+        f'<div class="mp-tag">{tag}{mark}</div></div>'
+    )
+
+
+def risk_note(level: str, note: str, factors: Sequence[str] = ()) -> str:
+    """风险提示条。level: info / warn / block，决定左侧色条与标签。"""
+    if not note and not factors:
+        return ""
+    label, cls = {
+        "info": ("提示", "r-info"),
+        "warn": ("注意", "r-warn"),
+        "block": ("否决", "r-block"),
+    }.get(level, ("提示", "r-info"))
+    items = "".join(f"<li>{esc(f)}</li>" for f in factors if f)
+    ul = f'<ul class="risk-factors">{items}</ul>' if items else ""
+    body = f'<div class="risk-txt">{esc(note)}</div>' if note else ""
+    return (
+        f'<div class="risk-note {cls}">'
+        f'<span class="risk-lab">{esc(label)}</span>{body}{ul}</div>'
+    )
+
+
+def reference_table(
+    rows: Sequence[tuple[str, str, str]],
+    *,
+    source: str = "",
+    url: str = "",
+    license_: str = "",
+) -> str:
+    """第三方对照表。rows = (维度, 本站, 外部)。
+
+    值按**已渲染 HTML** 处理，原样插入（调用方负责转义文本部分），
+    这样才能在单元格里放 prob_tag / 命中徽标。
+    """
+    if not rows:
+        return ""
+    head = f'<th>维度</th><th>本站</th>'
+    head += f"<th>{esc(source) or '外部'}</th>"
+    trs = "".join(
+        f"<tr><td>{esc(dim)}</td><td>{ours}</td><td>{theirs}</td></tr>"
+        for dim, ours, theirs in rows
+    )
+    note = ""
+    if source:
+        src = f'<a href="{esc(url)}">{esc(source)}</a>' if url else esc(source)
+        note = f'<p class="panel-hint">外部对照：{src}'
+        note += f"（{esc(license_)}）" if license_ else ""
+        note += "　仅供比对，不参与本站结论</p>"
+    return (
+        f'<div class="tw"><table class="ref-table"><thead><tr>{head}</tr></thead>'
+        f"<tbody>{trs}</tbody></table></div>{note}"
+    )
+
+
 # ---------------------------------------------------------------- 卡片
 
 

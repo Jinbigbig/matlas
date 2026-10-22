@@ -5,3 +5,6 @@ __pycache__/
 .DS_Store
 .idea/
 .vscode/
+
+# gh-pages 的本地工作树（产物分支），不参与 main 的跟踪
+.publish/

@@ -183,6 +183,80 @@ class Injury:
 
 
 @dataclass
+class Handicap:
+    """让球结论。
+
+    与 `Odds.handicap*` 的区别：那是**盘口赔率**（市场给的），这里是**我们的结论**
+    （在这个盘口下看好哪一边）。评级词表沿用 §3.3，只出 可用 / 慎用 / 别跟。
+    """
+
+    spread: float | None = None     # 主队让球，负值为受让
+    pick: str = ""                  # 让胜 / 让平 / 让负
+    prob: float | None = None       # 0-1
+    hit: bool | None = None         # 赛后回填
+
+    @classmethod
+    def from_dict(cls, d: dict[str, Any]) -> "Handicap":
+        return cls(**{k: v for k, v in d.items() if k in cls.__annotations__})
+
+
+@dataclass
+class Risk:
+    """风险提示。
+
+    `level` 只有三档：info（提示）/ warn（注意）/ block（否决）。
+    block 表示「本场不建议作为精选」，但不隐藏页面 —— 留档必须完整。
+    """
+
+    LEVELS = ("info", "warn", "block")
+
+    level: str = "info"
+    note: str = ""
+    factors: list[str] = field(default_factory=list)
+    hit: bool | None = None
+
+    @classmethod
+    def from_dict(cls, d: dict[str, Any]) -> "Risk":
+        return cls(
+            level=str(d.get("level", "info")),
+            note=str(d.get("note", "")),
+            factors=[str(x) for x in d.get("factors", [])],
+            hit=d.get("hit"),
+        )
+
+
+@dataclass
+class ReferenceItem:
+    """外部对照的单条结论。"""
+
+    kind: str = ""
+    label: str = ""
+    hit: bool | None = None
+
+
+@dataclass
+class Reference:
+    """第三方对照源。
+
+    只承载「别人怎么说」，永不参与本站概率计算，页面单独成块并强制署名。
+    """
+
+    source: str = ""
+    url: str = ""
+    license: str = ""
+    items: list[ReferenceItem] = field(default_factory=list)
+
+    @classmethod
+    def from_dict(cls, d: dict[str, Any]) -> "Reference":
+        return cls(
+            source=str(d.get("source", "")),
+            url=str(d.get("url", "")),
+            license=str(d.get("license", "")),
+            items=[ReferenceItem(**x) for x in d.get("items", [])],
+        )
+
+
+@dataclass
 class Result:
     """赛后回填。半场/全场比分 + 四个维度是否命中。"""
 
@@ -241,6 +315,12 @@ class Match:
     confidence: str = "none"         # high / medium / low / none
     is_cold_start: bool = False      # 冷启动：样本不足，不进精选
 
+    # ---- 结论侧槽位（全部可选，缺则整块不渲染）----
+    main_pick: str = ""              # 一句话主推
+    handicap: Handicap | None = None  # 让球结论
+    risk: Risk | None = None         # 风险提示
+    reference: Reference | None = None  # 第三方对照
+
     h2h: list[H2HItem] = field(default_factory=list)
     recent_home: list[RecentItem] = field(default_factory=list)
     recent_away: list[RecentItem] = field(default_factory=list)
@@ -296,6 +376,10 @@ class Match:
             "confidence": self.confidence,
             "odds": asdict(self.odds) if self.odds else None,
         }
+        # 注意：新增槽位（main_pick / handicap / risk）**不进指纹**。
+        # 指纹的作用是「证明赛前结论没被事后改过」，口径一旦扩大，
+        # 已发布页面的留档值就会全部变化，反而看起来像被篡改。
+        # 若将来要把新槽位纳入校验，应新增「指纹 v2」并同时展示，而不是原地改 v1。
         raw = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
         return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:12]
 
@@ -321,6 +405,10 @@ class Match:
                 "forecasts": [asdict(f) for f in self.forecasts],
                 "confidence": self.confidence,
                 "is_cold_start": self.is_cold_start,
+                "main_pick": self.main_pick,
+                "handicap": asdict(self.handicap) if self.handicap else None,
+                "risk": asdict(self.risk) if self.risk else None,
+                "reference": asdict(self.reference) if self.reference else None,
                 "h2h": [asdict(x) for x in self.h2h],
                 "recent_home": [asdict(x) for x in self.recent_home],
                 "recent_away": [asdict(x) for x in self.recent_away],
@@ -354,6 +442,10 @@ class Match:
             forecasts=[Forecast.from_dict(x) for x in d.get("forecasts", [])],
             confidence=str(d.get("confidence", "none")),
             is_cold_start=bool(d.get("is_cold_start", False)),
+            main_pick=str(d.get("main_pick", "")),
+            handicap=Handicap.from_dict(d["handicap"]) if d.get("handicap") else None,
+            risk=Risk.from_dict(d["risk"]) if d.get("risk") else None,
+            reference=Reference.from_dict(d["reference"]) if d.get("reference") else None,
             h2h=[H2HItem(**x) for x in d.get("h2h", [])],
             recent_home=[RecentItem(**x) for x in d.get("recent_home", [])],
             recent_away=[RecentItem(**x) for x in d.get("recent_away", [])],

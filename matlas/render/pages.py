@@ -165,6 +165,81 @@ def _charts_panel(m: Match) -> str:
     )
 
 
+def _main_pick_block(m: Match) -> str:
+    """一句话主推 + 方向评级。缺 main_pick 就整块不出现。"""
+    if not m.main_pick:
+        return ""
+    tag = ""
+    top = (m.forecasts_of("direction") or [None])[0]
+    if top:
+        tag = C.grade_tag(top.prob, m.confidence)
+    return C.main_pick_bar(
+        m.main_pick,
+        tag=tag,
+        hit=m.result.direction_hit if (m.result and m.result.full_score) else None,
+    )
+
+
+def _handicap_panel(m: Match) -> str:
+    """让球结论。盘口来自 Odds，结论来自 Handicap，两者缺一就不画。"""
+    h = m.handicap
+    if not h or not h.pick:
+        return ""
+    spread = ""
+    if h.spread is not None:
+        # 负值 = 主队让球，正值 = 主队受让；直接写「主让 1」比「-1」好读
+        if h.spread < 0:
+            spread = f"主让 {abs(h.spread):g}"
+        elif h.spread > 0:
+            spread = f"主受 {h.spread:g}"
+        else:
+            spread = "平手"
+    cells = []
+    if spread:
+        cells.append(("让球", spread))
+    cells.append(("结论", f'<strong>{C.esc(h.pick)}</strong>'))
+    if h.prob is not None:
+        cells.append(("概率", C.prob_tag(h.prob)))
+        cells.append(("评级", C.grade_tag(h.prob, m.confidence)))
+    if h.hit is not None:
+        cells.append(("结果", "命中" if h.hit else "未中"))
+    body = C.insight_grid(cells)
+    return C.panel("让球", body) if body else ""
+
+
+def _risk_panel(m: Match) -> str:
+    r = m.risk
+    if not r:
+        return ""
+    body = C.risk_note(r.level, r.note, r.factors)
+    if not body:
+        return ""
+    if r.hit is not None:
+        body += f'<p class="panel-hint">赛后核验：{"风险已兑现" if r.hit else "风险未兑现"}</p>'
+    return C.panel("风险", body)
+
+
+def _reference_panel(m: Match) -> str:
+    """第三方对照。只在有对照数据时出现，且强制署名。"""
+    ref = m.reference
+    if not ref or not ref.items:
+        return ""
+    ours = {k: (v.label if v else "—") for k, v in m.headline.items()}
+    titles = {"direction": "方向", "score": "比分", "goals": "进球", "htft": "半全场"}
+    rows = []
+    for it in ref.items:
+        if it.kind not in titles:
+            continue
+        mark = ""
+        if it.hit is True:
+            mark = ' <span class="hit hit-y">中</span>'
+        elif it.hit is False:
+            mark = ' <span class="hit hit-n">未中</span>'
+        rows.append((titles[it.kind], C.esc(ours.get(it.kind, "—")), C.esc(it.label) + mark))
+    body = C.reference_table(rows, source=ref.source, url=ref.url, license_=ref.license)
+    return C.panel("外部对照", body) if body else ""
+
+
 def _ledger(m: Match) -> str:
     settled = ""
     if m.result and m.result.full_score:
@@ -224,13 +299,17 @@ def render_match(cfg: Config, m: Match) -> str:
         f'<p class="sub" style="text-align:center">{C.esc(meta)}{cold}{sample}</p>',
         header,
         "</div>",
+        _main_pick_block(m),
+        _risk_panel(m),
         _picks(m),
         _charts_panel(m),
         _odds_panel(m),
+        _handicap_panel(m),
         _standings_panel(m),
         _h2h_panel(m),
         _form_panel(m),
         _injury_panel(m),
+        _reference_panel(m),
         _ledger(m),
         f'<p class="disclaimer">{C.esc(cfg.disclaimer)}</p>',
     ]
