@@ -1,0 +1,346 @@
+"""纯 SVG / HTML 组件库。
+
+约束：
+- 零第三方依赖（不引 Chart.js，不引 CDN），离线可跑、可长期归档；
+- 所有图形都带文字标签，不靠颜色单独编码；
+- 缺失数据直接省掉对应区块，不占位、不写「暂无」以外的解释句。
+"""
+
+from __future__ import annotations
+
+import html
+import math
+from typing import Sequence
+
+# 配色常量与 jinbet 报告页 CSS 变量一致（--home / --away / --ink / --muted / --rule）
+HOME_COLOR = "#457b9d"
+AWAY_COLOR = "#e76f51"
+INK = "#1a1a2e"
+MUTED = "#6c757d"
+LINE = "#dee2e6"
+
+
+def esc(s: object) -> str:
+    return html.escape(str(s) if s is not None else "")
+
+
+def pct(p: float, nd: int = 1) -> str:
+    """概率唯一渲染口径：所有百分比都过这个函数，避免同页出现不同精度。"""
+    return f"{p * 100:.{nd}f}%"
+
+
+# ---------------------------------------------------------------- 徽标 / 标签
+
+
+def confidence_badge(conf: str, settled: bool | None = None) -> str:
+    """置信度徽标。词表与配色同 jinbet 的 tag-* 系列。"""
+    label = {"high": "高", "medium": "中", "low": "低", "none": "冷门"}.get(conf, "未评级")
+    tone = {
+        "high": ("rgba(42,157,143,0.12)", "#2a9d8f"),
+        "medium": ("rgba(244,162,97,0.14)", "#b4700f"),
+        "low": ("rgba(108,117,125,0.1)", "#6c757d"),
+        "none": ("rgba(230,57,70,0.1)", "#e63946"),
+    }.get(conf, ("rgba(108,117,125,0.1)", "#6c757d"))
+    bg, fg = tone
+    hit = ""
+    if settled is True:
+        hit = '<span class="hit hit-y">命中</span>'
+    elif settled is False:
+        hit = '<span class="hit hit-n">未中</span>'
+    return (
+        f'<span class="badge" style="background:{bg};color:{fg}">置信度 {esc(label)}</span>{hit}'
+    )
+
+
+def prob_tag(p: float) -> str:
+    """概率数字：>=60 强 / 45-60 中 / <45 弱。同一字形同一大小。"""
+    cls = "p-hi" if p >= 0.60 else ("p-mid" if p >= 0.45 else "p-lo")
+    return f'<span class="pct {cls}">{pct(p)}</span>'
+
+
+def grade(prob: float, confidence: str = "medium") -> str:
+    """方向评级。词表全局唯一：可用 / 慎用 / 别跟，不得另造。
+
+    阈值与 jinbet 一致：
+      ≥50% 且置信度非低 → 可用
+      ≥42%             → 慎用
+      其余              → 别跟
+    """
+    if prob >= 0.50 and confidence != "low":
+        return "可用"
+    if prob >= 0.42:
+        return "慎用"
+    return "别跟"
+
+
+def grade_tag(prob: float, confidence: str = "medium") -> str:
+    """评级标签，配色沿用 jinbet 的 tag-green / tag-yellow / tag-blue。"""
+    g = grade(prob, confidence)
+    bg = {
+        "可用": "rgba(42,157,143,0.12)",
+        "慎用": "rgba(244,162,97,0.14)",
+        "别跟": "rgba(108,117,125,0.1)",
+    }[g]
+    fg = {"可用": "#2a9d8f", "慎用": "#b4700f", "别跟": "#6c757d"}[g]
+    return f'<span class="badge" style="background:{bg};color:{fg}">{g}</span>'
+
+
+def mini_tag(text: str) -> str:
+    return f'<span class="mini">{esc(text)}</span>'
+
+
+# ---------------------------------------------------------------- 赔率九宫格
+
+
+def odds_grid(items: Sequence[tuple[str, str, str]]) -> str:
+    """jinbet 同款三列赔率格。items = (标签, 数值, 语调 win/draw/loss/'')。"""
+    if not items:
+        return ""
+    cells = "".join(
+        f'<div class="odds-item"><div class="label">{esc(lab)}</div>'
+        f'<div class="value {tone}">{val if val.startswith("<") else esc(val)}</div></div>'
+        for lab, val, tone in items
+    )
+    return f'<div class="odds-grid">{cells}</div>'
+
+
+def insight(label: str, value: str) -> str:
+    if value in (None, ""):
+        return ""
+    return (
+        f'<div class="insight-card"><div class="insight-label">{esc(label)}</div>'
+        f'<div class="insight-value">{value if value.startswith("<") else esc(value)}</div></div>'
+    )
+
+
+def insight_grid(items: Sequence[tuple[str, str]]) -> str:
+    cells = "".join(insight(k, v) for k, v in items)
+    return f'<div class="insight-grid">{cells}</div>' if cells else ""
+
+
+# ---------------------------------------------------------------- 近况圆点
+
+
+def form_dots(outcomes: Sequence[str]) -> str:
+    """近几场胜平负：W/D/L 圆点。outcomes 取 'W'/'D'/'L' 或中文首字。"""
+    zh = {"W": ("胜", "w"), "D": ("平", "d"), "L": ("负", "l"),
+          "胜": ("胜", "w"), "平": ("平", "d"), "负": ("负", "l")}
+    dots = []
+    for o in outcomes:
+        if o is None:
+            continue
+        key = str(o).strip()[:1].upper()
+        if key not in zh and str(o).strip()[:1] not in zh:
+            continue
+        label, cls = zh.get(key) or zh[str(o).strip()[:1]]
+        dots.append(f'<span class="form-dot {cls}">{label}</span>')
+    return f'<div class="form-row">{"".join(dots)}</div>' if dots else ""
+
+
+def card_header(*, match_id: str = "", league: str = "", time_: str = "", extra: str = "") -> str:
+    left = " ".join(
+        f'<span class="{cls}">{esc(v)}</span>'
+        for cls, v in (("match-id", match_id), ("match-league", league), ("match-time", time_))
+        if v
+    )
+    right = extra or ""
+    if not left and not right:
+        return ""
+    return f'<div class="card-header"><div>{left}</div><div>{right}</div></div>'
+
+
+# ---------------------------------------------------------------- 表格
+
+
+def table(headers: Sequence[str], rows: Sequence[Sequence[str]], *, cls: str = "") -> str:
+    if not rows:
+        return ""
+    head = "".join(f"<th>{esc(h)}</th>" for h in headers)
+    body = []
+    for r in rows:
+        tds = "".join(f"<td>{c if c.startswith('<') else esc(c)}</td>" for c in r)
+        body.append(f"<tr>{tds}</tr>")
+    return (
+        f'<div class="tw"><table class="{cls}"><thead><tr>{head}</tr></thead>'
+        f'<tbody>{"".join(body)}</tbody></table></div>'
+    )
+
+
+def duo_table(
+    title: str,
+    row_labels: Sequence[str],
+    left_vals: Sequence[str],
+    right_vals: Sequence[str],
+    left_name: str,
+    right_name: str,
+) -> str:
+    """主 / 客对照表：项目 | 主队 | 客队。值缺就整行不画。"""
+    rows = []
+    for lab, a, b in zip(row_labels, left_vals, right_vals):
+        if a in (None, "", "-") and b in (None, "", "-"):
+            continue
+        rows.append([lab, a, b])
+    if not rows:
+        return ""
+    return table([title, left_name, right_name], rows, cls="duo")
+
+
+# ---------------------------------------------------------------- 雷达图
+
+
+def radar_svg(
+    home_vals: Sequence[float],
+    away_vals: Sequence[float],
+    axes: Sequence[str],
+    home_name: str,
+    away_name: str,
+    *,
+    size: int = 320,
+    max_val: float = 100.0,
+) -> str:
+    """六维战力雷达。纯 SVG，含图例与轴刻度，不依赖颜色单独区分两队。"""
+    n = len(axes)
+    if n < 3:
+        return ""
+    cx = cy = size / 2
+    r = size / 2 - 46
+    rings = (0.25, 0.5, 0.75, 1.0)
+
+    def pt(i: int, ratio: float) -> tuple[float, float]:
+        ang = -math.pi / 2 + 2 * math.pi * i / n
+        return cx + r * ratio * math.cos(ang), cy + r * ratio * math.sin(ang)
+
+    parts: list[str] = [
+        f'<svg class="radar" viewBox="0 0 {size} {size}" role="img" '
+        f'aria-label="{esc(home_name)} 与 {esc(away_name)} 六维战力对比">'
+    ]
+
+    for ring in rings:
+        poly = " ".join(f"{x:.1f},{y:.1f}" for x, y in (pt(i, ring) for i in range(n)))
+        parts.append(
+            f'<polygon points="{poly}" fill="none" stroke="{LINE}" stroke-width="1"/>'
+        )
+    for i in range(n):
+        x, y = pt(i, 1.0)
+        parts.append(f'<line x1="{cx}" y1="{cy}" x2="{x:.1f}" y2="{y:.1f}" stroke="{LINE}" stroke-width="1"/>')
+
+    def series(vals: Sequence[float], color: str, dash: str) -> None:
+        nonlocal parts
+        poly = " ".join(
+            f"{x:.1f},{y:.1f}"
+            for x, y in (pt(i, max(0.0, min(1.0, v / max_val))) for i, v in enumerate(vals))
+        )
+        parts.append(
+            f'<polygon points="{poly}" fill="{color}" fill-opacity="0.14" '
+            f'stroke="{color}" stroke-width="1.6" stroke-dasharray="{dash}"/>'
+        )
+        for i, v in enumerate(vals):
+            x, y = pt(i, max(0.0, min(1.0, v / max_val)))
+            parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.6" fill="{color}"/>')
+
+    series(away_vals, AWAY_COLOR, "0")
+    series(home_vals, HOME_COLOR, "0")
+
+    for i, name in enumerate(axes):
+        x, y = pt(i, 1.19)
+        anchor = "middle"
+        if x > cx + 6:
+            anchor = "start"
+        elif x < cx - 6:
+            anchor = "end"
+        parts.append(
+            f'<text x="{x:.1f}" y="{y:.1f}" text-anchor="{anchor}" dominant-baseline="central" '
+            f'font-size="12" fill="{MUTED}">{esc(name)}</text>'
+        )
+    parts.append(f'<text x="{cx}" y="{size - 8}" text-anchor="middle" font-size="10" fill="{MUTED}">0–100</text>')
+    parts.append("</svg>")
+
+    legend = (
+        '<div class="legend">'
+        f'<span><i style="background:{HOME_COLOR}"></i>{esc(home_name)}（实线）</span>'
+        f'<span><i style="background:{AWAY_COLOR}"></i>{esc(away_name)}（实线）</span>'
+        "</div>"
+    )
+    return legend + "".join(parts)
+
+
+# ---------------------------------------------------------------- 走势曲线
+
+
+def momentum_svg(
+    labels: Sequence[str],
+    home: Sequence[float],
+    away: Sequence[float],
+    home_name: str,
+    away_name: str,
+    *,
+    w: int = 560,
+    h: int = 200,
+) -> str:
+    """进球威胁度随时间变化。两条线用色 + 虚实 + 端点标记三重区分。"""
+    if len(labels) < 2 or len(home) != len(labels) or len(away) != len(labels):
+        return ""
+    pad_l, pad_r, pad_t, pad_b = 34, 12, 14, 26
+    iw, ih = w - pad_l - pad_r, h - pad_t - pad_b
+    top = max(1.0, max(home), max(away)) * 1.15
+
+    def xy(i: int, v: float) -> tuple[float, float]:
+        return pad_l + iw * i / (len(labels) - 1), pad_t + ih * (1 - v / top)
+
+    parts = [f'<svg class="mom" viewBox="0 0 {w} {h}" role="img" aria-label="全场进球威胁度走势">']
+    for frac in (0.0, 0.5, 1.0):
+        y = pad_t + ih * frac
+        parts.append(f'<line x1="{pad_l}" y1="{y:.1f}" x2="{w - pad_r}" y2="{y:.1f}" stroke="{LINE}" stroke-width="1"/>')
+        val = int(round(top * (1 - frac)))
+        parts.append(
+            f'<text x="{pad_l - 6}" y="{y:.1f}" text-anchor="end" dominant-baseline="central" '
+            f'font-size="10" fill="{MUTED}">{val}</text>'
+        )
+
+    def line(vals: Sequence[float], color: str, dash: str, name: str) -> None:
+        pts = [xy(i, v) for i, v in enumerate(vals)]
+        d = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+        parts.append(
+            f'<polyline points="{d}" fill="none" stroke="{color}" stroke-width="2" '
+            f'stroke-dasharray="{dash}" stroke-linejoin="round"/>'
+        )
+        for x, y in pts:
+            parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.6" fill="#fff" stroke="{color}" stroke-width="1.6"/>')
+        lx, ly = pts[-1]
+        parts.append(
+            f'<text x="{lx - 4:.1f}" y="{ly - 8:.1f}" text-anchor="end" font-size="11" fill="{color}">{esc(name)}</text>'
+        )
+
+    line(home, HOME_COLOR, "0", home_name)
+    line(away, AWAY_COLOR, "5 3", away_name)
+
+    for i, lab in enumerate(labels):
+        x = pad_l + iw * i / (len(labels) - 1)
+        parts.append(
+            f'<text x="{x:.1f}" y="{h - 8}" text-anchor="middle" font-size="10" fill="{MUTED}">{esc(lab)}</text>'
+        )
+    parts.append("</svg>")
+    legend = (
+        '<div class="legend">'
+        f'<span><i style="background:{HOME_COLOR}"></i>{esc(home_name)}（实线）</span>'
+        f'<span><i style="background:{AWAY_COLOR}"></i>{esc(away_name)}（虚线）</span>'
+        "</div>"
+    )
+    return legend + "".join(parts)
+
+
+# ---------------------------------------------------------------- 卡片
+
+
+def panel(title: str, body: str, *, hint: str = "") -> str:
+    if not body:
+        return ""
+    h = f'<p class="panel-hint">{esc(hint)}</p>' if hint else ""
+    return (
+        f'<section class="panel"><h3>{esc(title)}</h3>{h}{body}</section>'
+    )
+
+
+def kv_rows(pairs: Sequence[tuple[str, str]]) -> str:
+    rows = [[k, v] for k, v in pairs if v not in (None, "")]
+    return table(["项目", "内容"], rows, cls="kv") if rows else ""
