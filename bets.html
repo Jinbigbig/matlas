@@ -6,7 +6,7 @@
 <title>投注 - Matlas</title>
 <meta name="description" content="足彩投注记录：过关方式、人员倍数、自动结算与个人盈亏汇总">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/bets.html">
-<link rel="stylesheet" href="assets/style.css?v=1792674680">
+<link rel="stylesheet" href="assets/style.css?v=1792675047">
 <meta property="og:type" content="article">
 <meta property="og:title" content="投注 - Matlas">
 <meta property="og:description" content="足彩投注记录：过关方式、人员倍数、自动结算与个人盈亏汇总">
@@ -258,7 +258,7 @@
     var pnl = totWin - totAmt;
     var badge = { win: '<span class="bt-chip bt-win">✅ 中奖</span>', lose: '<span class="bt-chip bt-lose">❌ 未中奖</span>', pending: '<span class="bt-chip bt-pending">⏳ 待开奖</span>' };
     $("bk-stats").innerHTML = ""
-      + '<div class="stat-card"><div class="stat-num">' + totTickets + "</div><div class="stat-lbl">📋 总票数（待开 " + pending + "）</div></div>"
+      + '<div class="stat-card"><div class="stat-num">' + totTickets + '</div><div class="stat-lbl">📋 总票数（待开 ' + pending + '）</div></div>'
       + '<div class="stat-card"><div class="stat-num">' + totAmt.toFixed(1) + '</div><div class="stat-lbl">💰 总投注(元)</div></div>'
       + '<div class="stat-card"><div class="stat-num">' + totWin.toFixed(1) + '</div><div class="stat-lbl">🏆 中奖(元)</div></div>'
       + '<div class="stat-card"><div class="stat-num ' + (pnl >= 0 ? "pnl-pos" : "pnl-neg") + '">' + (pnl >= 0 ? "+" : "") + pnl.toFixed(1) + '</div><div class="stat-lbl">📈 净收益(元)</div></div>';
