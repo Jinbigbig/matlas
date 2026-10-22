@@ -745,7 +745,7 @@ def _date_input(dates: list[str], cur: str, mode: str, pre: str = "") -> str:
 
     dates 为可选日期（YYYY-MM-DD）；选中无数据的日期时由全局 JS 吸附到
     最近的有数据日期。mode 决定 change 行为：jump=跳日期页 / ai=切 AI 卡
-    radio / odds=重渲染赔率面板 / bets=仅存值待「加载比赛」读取。
+    radio / odds=重渲染赔率面板 / bets=仅存值待「添加场次」读取。
     """
     import json as _json
 
@@ -1620,7 +1620,6 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         '<div class="bf-schedule"><input type="date" class="date-cal" id="bk-date" '
         f'data-mode="bets" value="{dates[0]}" min="{min(dates)}" max="{max(dates)}" '
         f"data-dates='{_json.dumps(dates, separators=(',', ':'))}'" + ">"
-        '<button id="bk-load" type="button" class="bt-mini">📅 加载比赛</button></div>'
         '<div id="bk-games" class="bf-games"></div></div>'
         '<div class="bf-actions"><button id="bk-calc" type="button" class="bt-gold">⚡ 计算注数 & 金额</button>'
         '<span class="bf-sp">注数 <b id="bk-n">—</b></span>'
@@ -1630,6 +1629,8 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         '<button id="bk-save" type="button" class="bt-go">保存</button></div>'
         '<div id="bk-combos" class="bk-combos"></div>'
         "</div></div>"
+        '<div class="bets-actions"><button id="bk-loadres" type="button" class="bt-go">📥 载入赛果并结算</button>'
+        '<span id="bk-loadres-msg" class="sub"></span></div>'
         '<div class="bets-filter"><label>🔍 状态筛选：</label>'
         '<select id="bk-st"><option value="all">全部</option>'
         '<option value="pending">⏳ 待开奖</option><option value="win">✅ 中奖</option>'
@@ -1644,6 +1645,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         '''  var IDX = {};
   DATA.rows.forEach(function (r) { IDX[r.id] = r; });
   var $ = function (id) { return document.getElementById(id); };
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
   var LS = "matlas_tickets_v1";
   var MK_ZH = { spf: "胜平负", rq: "让球", goals: "总进球", score: "比分", htft: "半全场" };
 
@@ -1700,7 +1702,12 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         if (acc.length === k) {
           function prod(i, accP) {
             if (i === acc.length) { out.push({ sp: accP.reduce(function (a, p) { return a * p.odds; }, 1), legs: accP.slice(), mode: mode }); return; }
-            t.games[acc[i]].picks.forEach(function (p) { accP.push(p); prod(i + 1, accP); accP.pop(); });
+            var gm = t.games[acc[i]];
+            gm.picks.forEach(function (p) {
+              var pc = {}; for (var key in p) pc[key] = p[key];
+              pc.mid = gm.mid; // 腿上补 mid，结算时才能按场次查赛果
+              accP.push(pc); prod(i + 1, accP); accP.pop();
+            });
           }
           prod(0, []);
           return;
@@ -1757,57 +1764,119 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     $("bk-pname").value = ""; renderPersons();
   });
   // 日期为日历控件（服务端内嵌可选范围），此处不再填充
+  function lgCls(lg) {
+    lg = lg || "";
+    if (lg.indexOf("欧冠") >= 0) return "lg-ucl";
+    if (lg.indexOf("欧罗巴") >= 0 || lg.indexOf("欧联") >= 0) return "lg-uel";
+    if (lg.indexOf("欧协") >= 0) return "lg-uecl";
+    if (lg.indexOf("解放者") >= 0) return "lg-lib";
+    if (lg.indexOf("日职") >= 0) return "lg-j1";
+    if (lg.indexOf("英超") >= 0) return "lg-epl";
+    var h = 0;
+    for (var i = 0; i < lg.length; i++) h = (h * 31 + lg.charCodeAt(i)) % 5;
+    return "lg-c" + h;
+  }
   function renderGames() {
-    if (!games.length) { $("bk-games").innerHTML = '<p class="sub">选择日期后点「加载比赛」，为场次选玩法与选项。</p>'; return; }
-    $("bk-games").innerHTML = games.map(function (g, i) {
+    var list = games.length ? games.map(function (g, i) {
       var r = IDX[g.mid];
       var opts = optionsOf(r.of, g.mk);
-      var chips = opts.map(function (p, j) {
-        var on = g.picks.some(function (x) { return x.opt === p.opt; });
-        return '<label class="bf-opt"><input type="checkbox" data-g="' + i + '" data-j="' + j + '"' + (on ? " checked" : "") + ">" + p.opt + " @" + p.odds + "</label>";
-      }).join("");
+      var optSel = '<select class="bf-osel" data-g="' + i + '">'
+        + (opts.length
+          ? opts.map(function (p) { return '<option value="' + p.opt + '">' + p.opt + " @" + p.odds.toFixed(2) + "</option>"; }).join("")
+          : '<option value="">无可用选项</option>')
+        + "</select>";
       var mkSel = Object.keys(MK_ZH).map(function (k) {
         return '<option value="' + k + '"' + (g.mk === k ? " selected" : "") + ">" + MK_ZH[k] + "</option>";
       }).join("");
-      return '<div class="bf-game"><div class="bf-game-h"><b>' + r.c + "</b> " + r.h + " vs " + r.a
-        + (r.gh !== null ? ' <span class="bf-done">已赛 ' + r.gh + "-" + r.ga + "</span>" : "")
-        + ' <select class="bf-mk" data-g="' + i + '">' + mkSel + "</select>"
-        + ' <a class="bf-gdel" data-g="' + i + '">✕</a></div>'
-        + '<div class="bf-opts">' + (chips || '<span class="sub">该玩法暂无赔率</span>') + "</div></div>";
-    }).join("");
+      var done = r.gh !== null && r.gh !== undefined;
+      var picks = (g.picks || []).map(function (p, j) {
+        return '<span class="bf-pick">' + MK_ZH[p.mk] + " " + esc(p.opt) + " @" + p.odds.toFixed(2)
+          + ' <a class="bf-pdel" data-g="' + i + '" data-j="' + j + '">✕</a></span>';
+      }).join("");
+      return '<div class="bf-game">'
+        + '<span class="bf-lg ' + lgCls(r.lg) + '">' + esc(r.lg) + "</span>"
+        + '<span class="bf-code">' + r.c + "</span>"
+        + '<span class="bf-vs"><b>' + esc(r.h) + "</b> vs <b>" + esc(r.a) + "</b></span>"
+        + (done ? '<span class="bf-done">赛果 ' + r.gh + "-" + r.ga + "</span>" : "")
+        + '<select class="bf-mk" data-g="' + i + '">' + mkSel + "</select>"
+        + optSel
+        + '<button type="button" class="bf-addopt" data-g="' + i + '">＋添加' + MK_ZH[g.mk] + "选项</button>"
+        + '<a class="bf-gdel" data-g="' + i + '" title="删除本场">✕</a>'
+        + (picks ? '<div class="bf-picks">' + picks + "</div>" : "")
+        + "</div>";
+    }).join("") : '<p class="sub">点「＋ 添加场次」载入所选日期的全部比赛，再逐场添加选项。</p>';
+    $("bk-games").innerHTML = list
+      + '<button type="button" id="bk-addgames" class="bf-addgames">＋ 添加场次</button>';
     $("bk-games").querySelectorAll(".bf-mk").forEach(function (sel) {
       sel.addEventListener("change", function () {
-        var g = games[+sel.getAttribute("data-g")];
-        g.mk = sel.value; g.picks = []; renderGames();
+        games[+sel.getAttribute("data-g")].mk = sel.value; renderGames();
       });
     });
     $("bk-games").querySelectorAll(".bf-gdel").forEach(function (a) {
       a.addEventListener("click", function () { games.splice(+a.getAttribute("data-g"), 1); renderGames(); });
     });
-    $("bk-games").querySelectorAll(".bf-opt input").forEach(function (cb) {
-      cb.addEventListener("change", function () {
-        var g = games[+cb.getAttribute("data-g")];
-        var p = optionsOf(IDX[g.mid].of, g.mk)[+cb.getAttribute("data-j")];
-        if (cb.checked) { if (!g.picks.some(function (x) { return x.opt === p.opt; })) g.picks.push(p); }
-        else g.picks = g.picks.filter(function (x) { return x.opt !== p.opt; });
+    // ＋添加选项：把当前选中的玩法选项加入该场（可多选项，支持跨玩法）
+    $("bk-games").querySelectorAll(".bf-addopt").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var i = +btn.getAttribute("data-g");
+        var g = games[i];
+        var sel = $("bk-games").querySelector('.bf-osel[data-g="' + i + '"]');
+        var p = optionsOf(IDX[g.mid].of, g.mk).filter(function (x) { return x.opt === sel.value; })[0];
+        if (!p) return;
+        if (!g.picks.some(function (x) { return x.mk === p.mk && x.opt === p.opt; })) g.picks.push(p);
+        renderGames();
       });
     });
-  }
-  $("bk-load").addEventListener("click", function () {
-    var d = $("bk-date").value;
-    DATA.rows.filter(function (r) { return r.d === d; }).forEach(function (r) {
-      if (!games.some(function (g) { return g.mid === r.id; })) games.push({ mid: r.id, mk: "spf", picks: [] });
+    $("bk-games").querySelectorAll(".bf-pdel").forEach(function (a) {
+      a.addEventListener("click", function () {
+        var g = games[+a.getAttribute("data-g")];
+        g.picks.splice(+a.getAttribute("data-j"), 1); renderGames();
+      });
     });
-    renderGames();
+    var add = document.getElementById("bk-addgames");
+    add.addEventListener("click", function () {
+      var d = $("bk-date").value;
+      var added = 0;
+      DATA.rows.filter(function (r) { return r.d === d; }).forEach(function (r) {
+        if (!games.some(function (g) { return g.mid === r.id; })) { games.push({ mid: r.id, mk: "spf", picks: [] }); added += 1; }
+      });
+      renderGames();
+      if (!added) add.textContent = "该日期场次已全部载入";
+    });
+  }
+  // 📥 载入赛果并结算：按场次匹配站内赛果 → 逐腿判定 → 重算全部票（jinbet 同款逻辑）
+  $("bk-loadres").addEventListener("click", function () {
+    var ts = load(), matched = 0, tickets = 0;
+    ts.forEach(function (t) {
+      var touched = false;
+      t.games.forEach(function (g) {
+        var r = IDX[g.mid];
+        if (r && r.gh !== null && r.gh !== undefined) {
+          g.result = r.gh + "-" + r.ga;
+          g.resHalf = (r.hh !== null && r.hh !== undefined) ? r.hh + "-" + r.ha : "";
+          g.isWin = (g.picks || []).some(function (p) { return legRes(p, r) === "win"; });
+          matched += 1; touched = true;
+        } else { g.result = ""; g.isWin = null; }
+      });
+      if (touched) tickets += 1;
+    });
+    localStorage.setItem(LS, JSON.stringify(ts));
+    render();
+    $("bk-loadres-msg").textContent = tickets
+      ? "✅ 已为 " + tickets + " 票匹配 " + matched + " 场赛果并重新结算"
+      : "暂无已保存的票";
   });
+  // 只统计已添加选项的场次：批量载入后未加选项的场次在计算/保存时自动忽略
+  function pickGames() { return games.filter(function (g) { return g.picks.length; }); }
   $("bk-calc").addEventListener("click", function () {
     var modes = Array.prototype.slice.call($("bk-pass").querySelectorAll("input:checked")).map(function (x) { return x.value; });
+    var used = pickGames();
     var bad = [];
     if (!modes.length) bad.push("过关方式");
     if (!persons.length) bad.push("人员");
-    if (!games.length || games.some(function (g) { return !g.picks.length; })) bad.push("场次选项");
+    if (!used.length) bad.push("场次选项");
     if (bad.length) { $("bk-combos").innerHTML = '<p class="sub">请补全：' + bad.join("、") + "</p>"; return; }
-    var t = { passModes: modes, persons: persons, games: games };
+    var t = { passModes: modes, persons: persons, games: used };
     var cs = combosOf(t);
     var sps = cs.map(function (c) { return c.sp; });
     var n = cs.length, mult = totalMult();
@@ -1821,17 +1890,21 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
           var r = IDX[p.mid];
           return r.c + " " + MK_ZH[p.mk] + " " + p.opt + " @" + p.odds;
         }).join(" × ") + " → SP " + c.sp.toFixed(2) + "</div>";
-    }).join("");
+    }).join("")
+    + (games.length > used.length ? '<p class="sub">已忽略 ' + (games.length - used.length) + " 场未添加选项的场次。</p>" : "");
   });
   $("bk-save").addEventListener("click", function () {
     var modes = Array.prototype.slice.call($("bk-pass").querySelectorAll("input:checked")).map(function (x) { return x.value; });
-    if (!modes.length || !persons.length || !games.length || games.some(function (g) { return !g.picks.length; })) {
-      $("bk-combos").innerHTML = '<p class="sub">请先补全过关方式、人员与场次选项（点「计算注数 & 金额」可预览）。</p>'; return;
+    var used = pickGames();
+    if (!modes.length || !persons.length || !used.length) {
+      $("bk-combos").innerHTML = '<p class="sub">请先补全过关方式、人员，并至少给一场添加选项（点「计算注数 & 金额」可预览）。</p>'; return;
     }
-    var t = { ts: Date.now(), passModes: modes, persons: persons.slice(), games: JSON.parse(JSON.stringify(games)) };
+    var ignored = games.length - used.length;
+    var t = { ts: Date.now(), passModes: modes, persons: persons.slice(), games: JSON.parse(JSON.stringify(used)) };
     var all = load(); all.unshift(t); save(all);
     games = []; renderGames();
-    $("bk-combos").innerHTML = ""; ["bk-n", "bk-sp", "bk-mult", "bk-amt"].forEach(function (id) { $(id).textContent = "—"; });
+    $("bk-combos").innerHTML = ignored ? '<p class="sub">✅ 已保存；忽略 ' + ignored + " 场未添加选项的场次。</p>" : "";
+    ["bk-n", "bk-sp", "bk-mult", "bk-amt"].forEach(function (id) { $(id).textContent = "—"; });
   });
 
   // ---- 列表与结算 ----
@@ -1872,7 +1945,13 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
       var t = x.t, s = x.s;
       var detail = t.games.map(function (g) {
         var r = IDX[g.mid];
-        return (r ? r.c + " " : "") + MK_ZH[g.mk] + " " + g.picks.map(function (p) { return p.opt; }).join("/");
+        var done = r && r.gh !== null && r.gh !== undefined;
+        var mark = "";
+        if (done) {
+          var win = (g.picks || []).some(function (p) { return legRes(p, r) === "win"; });
+          mark = ' <b class="' + (win ? "hit-y" : "hit-n") + '">' + (win ? "✓" : "✗") + "</b> <span class='bf-res'>" + r.gh + "-" + r.ga + "</span>";
+        }
+        return (r ? r.c + " " : "") + esc(MK_ZH[g.mk]) + " " + g.picks.map(function (p) { return esc(p.opt); }).join("/") + mark;
       }).join("<br>");
       var mult = (t.persons || []).reduce(function (a, p) { return a + (+p.mult || 0); }, 0);
       return "<tr><td>" + (i + 1) + "</td><td>" + detail + "</td><td>" + t.passModes.join("+") + "</td><td>"
@@ -1888,6 +1967,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
   }
   $("bk-st").addEventListener("change", render);
   renderPersons();
+  renderGames();
   render();
 })();
 </script>'''

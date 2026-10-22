@@ -623,13 +623,42 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .bf-sp { font-size: 12px; color: #6b7280; background: #f8f9fc; border-radius: 16px; padding: 5px 12px; }
 .bf-sp b { color: #111; }
 .bf-games { display: flex; flex-direction: column; gap: 8px; }
-.bf-game { border: 1px solid #eef0f4; border-radius: 10px; padding: 8px 10px; }
-.bf-game-h { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px;
-  font-weight: 600; color: #111; margin-bottom: 6px; }
-.bf-game-h select { font-size: 12px; padding: 3px 7px; border: 1px solid var(--rule); border-radius: 6px; }
-.bf-gdel { color: #dc2626; text-decoration: none; cursor: pointer; margin-left: auto; }
-.bf-done { font-size: 11px; color: #16a34a; font-weight: 600; }
-.bf-opts { display: flex; flex-wrap: wrap; gap: 5px; }
+/* 场次行：对照原工具「足彩记录」——联赛彩色徽章 + 编号 + 对阵 + 玩法/选项
+   下拉 + ＋添加选项（青色）+ 删除✕，已加选项为可删标签 */
+.bf-game { display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  background: #fff; border: 1px solid #eef0f4; border-radius: 10px; padding: 9px 12px; }
+.bf-lg { flex: none; font-size: 11px; font-weight: 700; color: #fff;
+  padding: 3px 8px; border-radius: 6px; }
+.lg-ucl { background: #1d4ed8; } .lg-uel { background: #ea580c; }
+.lg-uecl { background: #059669; } .lg-lib { background: #0d9488; }
+.lg-j1 { background: #2563eb; } .lg-epl { background: #7c3aed; }
+.lg-c0 { background: #64748b; } .lg-c1 { background: #b45309; }
+.lg-c2 { background: #be185d; } .lg-c3 { background: #4d7c0f; } .lg-c4 { background: #0e7490; }
+.bf-code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11px;
+  background: #f1f5f9; padding: 2px 6px; border-radius: 4px; color: #6b7280; }
+.bf-vs { font-size: 13px; color: #111; }
+.bf-vs b { font-weight: 700; }
+.bf-done { font-size: 12px; color: #dc2626; background: #fff1f2;
+  padding: 2px 8px; border-radius: 6px; font-weight: 600; }
+.bf-mk, .bf-osel { font-size: 12px; padding: 5px 8px; border: 1px solid var(--rule);
+  border-radius: 8px; background: #fff; color: #111; cursor: pointer; }
+.bf-addopt { font-size: 12px; color: #fff; background: #06b6d4; border: none;
+  border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+.bf-addopt:hover { background: #0891b2; }
+.bf-gdel { color: #dc2626; font-size: 14px; cursor: pointer; text-decoration: none;
+  margin-left: auto; }
+.bf-picks { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px; }
+.bf-pick { font-size: 12px; background: #f8fafc; border: 1px solid #eef2f7;
+  border-radius: 8px; padding: 4px 8px; color: #374151; }
+.bf-pdel { color: #dc2626; cursor: pointer; margin-left: 2px; }
+.bf-addgames { width: 100%; border: 1px dashed #93c5fd; background: #f8fbff;
+  color: var(--accent); border-radius: 10px; padding: 10px; font-size: 13px;
+  cursor: pointer; }
+.bf-addgames:hover { background: #eff6ff; }
+.bf-res { font-family: 'SFMono-Regular', Consolas, monospace; color: #6b7280; }
+.hit-y { color: #dc2626; }
+.hit-n { color: #9ca3af; }
+.bets-actions { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; }
 .bk-combos { background: #fafbfc; border: 1px solid #eef0f4; border-radius: 10px;
   padding: 10px 12px; font-size: 12px; color: #374151; max-height: 300px; overflow-y: auto; }
 .bk-combos b { display: block; margin-bottom: 6px; color: #111; }
