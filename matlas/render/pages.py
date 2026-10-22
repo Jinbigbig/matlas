@@ -1342,8 +1342,8 @@ def render_features(cfg: Config) -> str:
         (L.ICON_TROPHY, "赛事 / 球队 Top 榜", "按已结算场次统计联赛与球队的方向命中率", f"{base}/"),
         (L.ICON_SEARCH, "站内搜索", "按队名、联赛、编号检索历史赛事", f"{base}/search.html"),
         (L.ICON_ACTIVITY, "单场深度数据", "六维雷达、0-90' 动量曲线、赔率与让球面板", f"{base}/days/"),
-        (L.ICON_TREND, "盘口", "竞彩赔率快照按日浏览，完赛场次附赛果对照", f"{base}/odds.html"),
-        (L.ICON_CPU, "记录本", "投注记录本地留存，赛果自动结算与盈亏统计", f"{base}/bets.html"),
+        (L.ICON_TREND, "赔率", "竞彩赔率快照按日浏览，完赛场次附赛果对照", f"{base}/odds.html"),
+        (L.ICON_CPU, "投注", "投注记录本地留存，赛果自动结算与盈亏统计", f"{base}/bets.html"),
         (L.ICON_CPU, "机器可读数据", "llms.txt / dataset.json，供 LLM 与工具直接消费", f"{base}/llms.txt"),
     ]
     cards = "".join(
@@ -1488,7 +1488,7 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
     data_js = _json.dumps({"dates": dates, "rows": rows},
                           ensure_ascii=False, separators=(",", ":"))
     body = (
-        f"<h1 class='page-h1'>{L.ICON_TREND} 盘口</h1>"
+        f"<h1 class='page-h1'>{L.ICON_TREND} 赔率</h1>"
         '<div class="odds-strip" id="odds-dates"></div>'
         '<div id="odds-out"></div>'
         "<script>\n(function () {\n"
@@ -1587,7 +1587,7 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
 </script>'''
     )
     return L.page(
-        cfg, title="盘口", description="竞彩全玩法赔率快照：胜平负、让球、比分、总进球、半全场，完赛对照高亮",
+        cfg, title="赔率", description="竞彩全玩法赔率快照：胜平负、让球、比分、总进球、半全场，完赛对照高亮",
         body=body, canonical=f"{base}/odds.html", depth=0,
     )
 
@@ -1609,7 +1609,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     pass_modes = ("单关", "2串1", "3串1", "4串1", "5串1", "6串1")
     persons = "ABCDEF"
     body = (
-        f"<h1 class='page-h1'>{L.ICON_ACTIVITY} 记录本</h1>"
+        f"<h1 class='page-h1'>{L.ICON_ACTIVITY} 投注</h1>"
         '<div class="bets-stats" id="bk-stats"></div>'
         '<div class="bets-card"><h3>👤 个人投注与中奖汇总</h3><div id="bk-person"></div></div>'
         '<div class="bets-card"><h3>➕ 添加投注记录</h3><div class="bets-form">'
@@ -1906,7 +1906,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
 </script>'''
     )
     return L.page(
-        cfg, title="记录本", description="足彩投注记录：过关方式、人员倍数、自动结算与个人盈亏汇总",
+        cfg, title="投注", description="足彩投注记录：过关方式、人员倍数、自动结算与个人盈亏汇总",
         body=body, canonical=f"{base}/bets.html", depth=0,
     )
 
