@@ -739,6 +739,22 @@ def _ranking_card(rows: list[tuple[str, int, int]], pre: str = "",
     )
 
 
+def _optgroup_select(dates: list[str], cur: str, value_of) -> str:
+    """按月分组的原生下拉选项（optgroup）；value_of(date) 产出 option value。"""
+    groups: dict[str, list[str]] = {}
+    for d in dates:
+        groups.setdefault(d[:7], []).append(d)
+    parts = []
+    for ym, ds_ in groups.items():
+        opts = "".join(
+            f'<option value="{value_of(x)}"{" selected" if x == cur else ""}>'
+            f"{int(x[5:7])}月{int(x[8:10])}日</option>"
+            for x in ds_
+        )
+        parts.append(f'<optgroup label="{ym[:4]}年{int(ym[5:7])}月">{opts}</optgroup>')
+    return "".join(parts)
+
+
 def build_ai_digest(days: list[Day], top_n_dates: int = 6) -> list[tuple]:
     """右栏「AI 预测」卡数据：最近若干交易日的报告预测首选（方向/比分/进球/半全场）。
 
@@ -765,11 +781,12 @@ def build_ai_digest(days: list[Day], top_n_dates: int = 6) -> list[tuple]:
 
 
 def _ai_card(digest: list[tuple], pre: str = "") -> str:
-    """右栏「AI 预测」卡：与左侧赛程同构——日期标题 + 「筛选」按钮 + 收起式面板。
+    """右栏「AI 预测」卡：筛选与左侧赛程完全同构，独立成条。
 
-    头部：🧠 AI 预测 + 当前选中日期（radio 联动显隐）+ 筛选按钮；
-    面板（默认收起）：时间行（日期 radio，仅最近 6 个交易日、数量有界）+
-    赛事行（联赛 radio 过滤）。交互全部纯 CSS；概率走 C.prob_tag（pct 红线口径）。
+    结构 = 卡头标题 + 筛选条（‹ 日期 › + 「筛选」按钮，与左侧同款）+
+    收起式面板（时间行 = 同款按月分组下拉；赛事行 = 同款芯片）+ 场次列表。
+    隐藏 radio 只是状态载体：下拉/箭头经全局 JS 改其选中态，内容显隐仍走
+    纯 CSS（body:has）规则。概率一律走 C.prob_tag（pct 红线口径）。
     """
     if not digest:
         return ""
@@ -779,7 +796,9 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
             if it["lg"] and it["lg"] not in lg_idx:
                 lg_idx[it["lg"]] = str(len(lg_idx))
 
-    tabs, date_spans, bodies, rules = [], [], [], []
+    radios, date_spans, bodies, rules = [], [], [], []
+    dates_all: list[str] = []
+    aid_of: dict[str, str] = {}
     first = True
     for i, (date, n, items) in enumerate(digest):
         if not items:
@@ -787,13 +806,13 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
         lab = f"{int(date[5:7])}月{int(date[8:10])}日 ({n}场)"
         checked = " checked" if first else ""
         first = False
-        # radio 紧贴 label：复用全站 .fp-radio:checked + .fp-opt 的选中态样式
-        tabs.append(
+        dates_all.append(date)
+        aid_of[date] = f"aid-{i}"
+        radios.append(
             f'<input type="radio" name="aid" id="aid-{i}" class="fp-radio"{checked}>'
-            f'<label class="fp-opt" for="aid-{i}">{C.esc(lab)}</label>'
         )
         rules.append(f'body:has(#aid-{i}:checked) .ai-body-{i}{{display:block}}')
-        # 头部日期随 radio 联动显隐（纯 CSS）
+        # 筛选条日期随 radio 联动显隐（纯 CSS）
         date_spans.append(f'<span class="ai-date ai-date-{i}">{C.esc(lab)}</span>')
         rules.append(
             f'body:has(#aid-{i}:checked) .ai-date-{i}{{display:inline}}'
@@ -835,22 +854,37 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
     rules.insert(0, "body:has(#afp-toggle:checked) #ai-filter-panel{display:block}")
     rules.insert(0, ".ai-pred-card .ai-date{display:none}")
 
-    return (
-        "<style>" + "".join(rules) + "</style>"
-        '<div id="ai-pred-card" class="ranking-card ai-pred-card">'
-        f'<input type="checkbox" id="afp-toggle" class="fp-toggle">'
-        '<div class="card-header">'
-        f'<span class="ai-hd-title">{L.ICON_CPU} AI 预测</span>'
-        f'{"".join(date_spans)}'
+    # 筛选条：与左侧同款（‹ 更早一天 · 日期 · 更晚一天 › + 筛选按钮）。
+    # 列表最新在前：‹ = selectedIndex+1，› = selectedIndex-1（全局 JS 处理）。
+    bar = (
+        '<div class="v4-filter-bar ai-bar">'
+        '<div class="v4-date-nav">'
+        '<a class="v4-day-arrow" href="#" data-aid-step="1" aria-label="前一天">‹</a>'
+        f'<div class="v4-date">{L.ICON_CALENDAR} {"".join(date_spans)}</div>'
+        '<a class="v4-day-arrow" href="#" data-aid-step="-1" aria-label="后一天">›</a>'
+        "</div>"
         '<label class="v4-filter-btn" for="afp-toggle">'
         f'<span>{L.ICON_FILTER} 筛选</span></label>'
         "</div>"
+    )
+    panel = (
         '<div id="ai-filter-panel">'
         '<div class="fp-row"><div class="fp-label">时间:</div>'
-        f'<div class="fp-options">{"".join(tabs)}</div></div>'
+        '<select class="ai-date-select">'
+        f"{_optgroup_select(dates_all, dates_all[0], lambda x: aid_of[x])}"
+        "</select></div>"
         '<div class="fp-row"><div class="fp-label">赛事:</div>'
         f'<div class="fp-options">{"".join(lg_opts)}</div></div>'
         "</div>"
+    )
+    return (
+        "<style>" + "".join(rules) + "</style>"
+        '<div id="ai-pred-card" class="ranking-card ai-pred-card">'
+        f'{"".join(radios)}'
+        f'<input type="checkbox" id="afp-toggle" class="fp-toggle">'
+        f'<div class="card-header">{L.ICON_CPU} AI 预测</div>'
+        f"{bar}"
+        f"{panel}"
         f'{"".join(bodies)}'
         "</div>"
     )
@@ -945,20 +979,11 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
             f'<div class="v4-date">{L.ICON_CALENDAR} {date_lab} ({len(ms)}场)</div>'
             f'{arrow(next_d, "›")}'
         )
-        groups: dict[str, list[str]] = {}
-        for dstr in dates:
-            groups.setdefault(dstr[:7], []).append(dstr)
-        sel = []
-        for ym, ds_ in groups.items():
-            opts_ = "".join(
-                f'<option value="{pre_d}days/{x}.html"{" selected" if x == day.date else ""}>'
-                f"{int(x[5:7])}月{int(x[8:10])}日</option>"
-                for x in ds_
-            )
-            sel.append(f'<optgroup label="{ym[:4]}年{int(ym[5:7])}月">{opts_}</optgroup>')
         time_row = (
             '<div class="fp-row"><div class="fp-label">时间:</div>'
-            f'<select class="date-select">{"".join(sel)}</select></div>'
+            f'<select class="date-select">'
+            f"{_optgroup_select(dates, day.date, lambda x: f'{pre_d}days/{x}.html')}"
+            "</select></div>"
         )
     panel = (
         f'{filter_css}<input type="checkbox" id="fp-toggle" class="fp-toggle">'

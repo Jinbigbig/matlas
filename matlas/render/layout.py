@@ -3,12 +3,17 @@
 from __future__ import annotations
 
 import json
+import time
 from pathlib import Path
 from typing import Any
 
 from ..config import Config
 from ..models import SCHEMA_VERSION  # noqa: F401  （llms.txt 出口仍引用）
 from . import components as C
+
+# CSS 版本号：每次构建变化 → style.css 引用带 ?v=，部署后浏览器不再吃旧缓存
+# （此前筛选面板的联动修复因 Pages 10 分钟 CSS 缓存迟迟不生效）
+_CSS_VER = str(int(time.time()))
 
 _CSS = """
 /* 配色直接对齐 qiuxiaoce.com：Tailwind 标准色板（blue-600 / emerald-500 /
@@ -74,11 +79,18 @@ a.fp-opt.active { background: var(--accent); color: #fff; border-color: var(--ac
 .fp-radio:checked + .fp-opt { background: var(--accent); color: #fff; border-color: var(--accent); }
 .fp-radio:focus-visible + .fp-opt { outline: 2px solid #93c5fd; outline-offset: 2px; }
 /* 时间行：原生下拉（optgroup 按月分组），日期数量再大也不占版面；
-   筛选条上另有 ‹ › 箭头做前后翻日 */
-.date-select { font-size: 13px; color: #374151; background: #f1f5f9;
-  border: 1px solid #e2e8f0; border-radius: 8px; padding: 5px 10px; cursor: pointer;
-  max-width: 240px; }
-.date-select:focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }
+   筛选条上另有 ‹ › 箭头做前后翻日。appearance 去掉系统样式，自绘箭头。
+   .ai-date-select 是 AI 卡内同款（值是 radio id，由全局 JS 切换，不跳转） */
+.date-select, .ai-date-select { appearance: none; -webkit-appearance: none;
+  font-size: 13px;
+  color: #111; background: #fff
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236b7280' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+  no-repeat right 11px center;
+  border: 1px solid #e5e7eb; border-radius: 8px; padding: 6px 30px 6px 12px;
+  cursor: pointer; max-width: 260px; font-family: inherit; }
+.date-select:hover, .ai-date-select:hover { border-color: #93c5fd; color: var(--accent); }
+.date-select:focus-visible, .ai-date-select:focus-visible {
+  outline: 2px solid #93c5fd; outline-offset: 2px; }
 .v4-date-nav { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .v4-day-arrow { display: flex; align-items: center; justify-content: center;
   width: 26px; height: 26px; border-radius: 50%; border: 1px solid #e5e7eb;
@@ -460,17 +472,13 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 
 /* ---------- 右栏 AI 预测卡：复用 .ranking-card 卡壳，筛选芯片与左侧同款 ---------- */
 /* 卡内自带时间/赛事两行筛选（fp-opt 同款），日期横向滚动、赛事横向滚动 */
-/* AI 预测卡头部：标题 + 当前日期 + 筛选按钮（与左侧筛选条同构） */
-.ai-pred-card .card-header { gap: 8px; }
-.ai-hd-title { display: inline-flex; align-items: center; gap: 5px; }
-.ai-hd-title svg { width: 15px; height: 15px; }
+/* AI 预测卡：筛选条与左侧完全同构（‹日期› + 筛选按钮独立成条，卡头只留标题） */
+.ai-pred-card .v4-filter-bar { padding: 10px 14px 12px; }
 .ai-date { color: #6b7280; font-weight: 600; font-size: 13px;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ai-pred-card .v4-filter-btn { padding: 4px 10px; font-size: 12px; }
 #ai-filter-panel { display: none; background: #fff; border-bottom: 1px solid #f1f5f9;
   padding: 12px 14px; }
 #ai-filter-panel .fp-row + .fp-row { margin-top: 8px; }
-#ai-filter-panel .fp-opt { font-size: 12px; padding: 3px 10px; }
 .ai-body { display: none; max-height: 480px; overflow-y: auto; padding: 8px 10px 12px; }
 .ai-m { display: block; padding: 8px 8px 9px; border-radius: 8px; color: inherit;
   text-decoration: none; }
@@ -805,7 +813,7 @@ def page(
 <title>{C.esc(head_title)}</title>
 <meta name="description" content="{C.esc(description)}">
 <link rel="canonical" href="{C.esc(canonical)}">
-<link rel="stylesheet" href="{pre}assets/style.css">
+<link rel="stylesheet" href="{pre}assets/style.css?v={_CSS_VER}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{C.esc(head_title)}">
 <meta property="og:description" content="{C.esc(description)}">
@@ -876,6 +884,36 @@ document.addEventListener("change", function (e) {{
   var s = e.target.closest(".date-select");
   if (s && s.value) window.location.href = s.value;
 }});
+// AI 预测卡日期：下拉/‹›箭头只改隐藏 radio 的选中态，内容显隐仍走纯 CSS 规则
+document.addEventListener("change", function (e) {{
+  var s = e.target.closest(".ai-date-select");
+  if (!s) return;
+  var r = document.getElementById(s.value);
+  if (r) r.checked = true;
+  aiSyncArrows(s);
+}});
+function aiSyncArrows(s) {{
+  var card = s.closest("#ai-pred-card");
+  if (!card) return;
+  card.querySelectorAll("[data-aid-step]").forEach(function (a) {{
+    var i = s.selectedIndex + parseInt(a.getAttribute("data-aid-step"), 10);
+    a.classList.toggle("off", i < 0 || i >= s.options.length);
+  }});
+}}
+document.addEventListener("click", function (e) {{
+  var a = e.target.closest("[data-aid-step]");
+  if (!a) return;
+  e.preventDefault();
+  var s = document.querySelector("#ai-pred-card .ai-date-select");
+  if (!s) return;
+  var i = s.selectedIndex + parseInt(a.getAttribute("data-aid-step"), 10);
+  if (i < 0 || i >= s.options.length) return;
+  s.selectedIndex = i;
+  var r = document.getElementById(s.options[i].value);
+  if (r) r.checked = true;
+  aiSyncArrows(s);
+}});
+document.querySelectorAll("#ai-pred-card .ai-date-select").forEach(aiSyncArrows);
 </script>
 </body>
 </html>
