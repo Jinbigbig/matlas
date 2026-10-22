@@ -62,9 +62,13 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
             stats["files"] += 1
             stats["matches"] += 1
 
-    # 3. 归档索引
+    # 3. 归档索引 + 页头四按钮落地页（数据/功能/我的/搜索）
     L.write(cfg, "days/index.html", P.render_archive_index(cfg, [d.date for d in ordered]))
-    stats["files"] += 1
+    L.write(cfg, "data.html", P.render_stats(cfg, ordered))
+    L.write(cfg, "features.html", P.render_features(cfg))
+    L.write(cfg, "me.html", P.render_me(cfg))
+    L.write(cfg, "search.html", P.render_search(cfg, ordered))
+    stats["files"] += 5
 
     # 4. 静态资源（队徽）
     stats["assets"] = _copy_assets(cfg)

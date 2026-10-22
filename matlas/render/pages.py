@@ -498,42 +498,73 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
         _card(cfg, m, pre="" if is_today else "../", lg=lg_idx.get(m.competition, ""))
         for m in ms
     ) or "<p>当日无赛事数据。</p>"
-    if day.note:
-        cards = f'<p class="sub">{C.esc(day.note)}</p>' + cards
 
-    # 联赛筛选：纯 CSS（radio + :checked ~ 兄弟选择器），不引 JS。
-    # 单选/标签取联赛下标而非联赛名，避免中文名进选择器后转义出错。
-    filter_bar = filter_css = ""
+    # 筛选区：对齐 qiuxiaoce——主张条 + 「🔍 筛选」按钮 + 展开式两行面板
+    # （类型 / 赛事）。纯 CSS：checkbox 控制面板展开，radio 控制选中态。
+    # 类型行按真实数据出项（当前源全为竞彩；北单/其他类型无数据不放假选项）。
+    has_jc = any(m.code for m in ms)
+    type_opts = [
+        '<input type="radio" name="ft" id="ft-all" class="fp-radio" checked>'
+        '<label class="fp-opt" for="ft-all">全部</label>'
+    ]
+    if has_jc:
+        type_opts.append(
+            '<input type="radio" name="ft" id="ft-jc" class="fp-radio">'
+            '<label class="fp-opt" for="ft-jc">竞彩</label>'
+        )
+    # 竞彩选中 = 全显示（数据全为竞彩），无需额外规则。
+    date_lab = f"{int(day.date[5:7])}月{int(day.date[8:10])}日"
+    league_row = ""
+    filter_css = ""
     if len(leagues) > 1:
         opts = [
-            '<input type="radio" name="lf" id="lf-all" class="lf" checked>'
-            '<label for="lf-all">全部</label>'
+            '<input type="radio" name="lf" id="lf-all" class="fp-radio" checked>'
+            '<label class="fp-opt" for="lf-all">全部</label>'
         ]
         rules = []
         for i, lg in enumerate(leagues):
             opts.append(
-                f'<input type="radio" name="lf" id="lf-{i}" class="lf">'
-                f'<label for="lf-{i}">{C.esc(lg)}</label>'
+                f'<input type="radio" name="lf" id="lf-{i}" class="fp-radio">'
+                f'<label class="fp-opt" for="lf-{i}">{C.esc(lg)}</label>'
             )
-            # radio 在 .lf-bar 内部，不是 .cards 的兄弟，所以不能用 `~`；
+            # radio 在面板深处，不是 .cards 的兄弟，不能用 `~`；
             # 用 body:has() 从根上匹配，规则不受 DOM 层级限制。
             rules.append(
                 f'body:has(#lf-{i}:checked) .cards .match-card:not([data-lg="{i}"])'
                 "{display:none}"
             )
-        filter_bar = f'<div class="lf-bar">{"".join(opts)}</div>'
+        league_row = (
+            '<div class="fp-row"><div class="fp-label">赛事:</div>'
+            f'<div class="fp-options">{"".join(opts)}</div></div>'
+        )
         filter_css = "<style>" + "".join(rules) + "</style>"
-
-    date_lab = f"{int(day.date[5:7])}月{int(day.date[8:10])}日"
+    type_row = (
+        '<div class="fp-row"><div class="fp-label">类型:</div>'
+        f'<div class="fp-options">{"".join(type_opts)}</div></div>'
+        if has_jc
+        else ""
+    )
+    panel = (
+        f'{filter_css}<input type="checkbox" id="fp-toggle" class="fp-toggle">'
+        '<div id="filter-panel" class="filter-panel">'
+        f"{type_row}{league_row}"
+        "</div>"
+    )
     main_col = (
         '<div class="v4-main-col">'
-        '<div class="v4-filter-bar">'
-        f'<div class="v4-date">📅 {date_lab}（{len(ms)}场）</div>'
-        f'<div class="v4-filter-btn">🔍 {C.esc("、".join(leagues)) or "筛选"}</div>'
+        '<div class="site-disclaimer">'
+        "本站仅提供赛事前瞻分析报告，不提供任何方案的推荐和购买。"
+        "坚持做可回溯的分析系统，历史数据完整，不删不改。"
         "</div>"
+        '<div class="v4-filter-bar">'
+        f'<div class="v4-date">📅 {date_lab} ({len(ms)}场)</div>'
+        '<label class="v4-filter-btn" for="fp-toggle">'
+        f'<span>🔍 筛选</span></label>'
+        "</div>"
+        f"{panel}"
         f'<p class="sub">{C.esc(desc)}</p>'
-        f"{filter_css}{filter_bar}"
-        f'<div class="cards">{cards}</div>'
+        + (f'<p class="sub note-line">{C.esc(day.note)}</p>' if day.note else "")
+        + f'<div class="cards">{cards}</div>'
         "</div>"
     )
     body = (
@@ -620,3 +651,140 @@ def _match_jsonld(cfg: Config, m: Match, url: str, title: str, desc: str) -> lis
         })
     )
     return blocks
+
+
+# ---------------------------------------------------------------- 独立页面
+# 页头四按钮（📊数据 / 🧩功能 / 👤我的 / 🔍搜索）的真实落地页。
+# 对齐 qiuxiaoce：每个导航项都有页面，不出现"点了跳首页"的死按钮。
+
+
+def render_stats(cfg: Config, days: list[Day]) -> str:
+    """📊数据：站点统计页。全部数字实时从已发布数据计算，不造假。"""
+    base = cfg.base_url.rstrip("/")
+    total = len(days)
+    n_matches = sum(len(d.matches) for d in days)
+    settled = [m for d in days for m in d.matches if m.result and m.result.full_score]
+    hit = sum(1 for m in settled if m.result.direction_hit)
+    acc = (hit / len(settled) * 100) if settled else 0.0
+    ranking = compute_ranking(days, top=999)
+    rows = [
+        [C.esc(lg), str(n), str(h), f'<span class="pct">{(h / n * 100):.0f}%</span>']
+        for lg, h, n in ranking
+    ]
+    body = (
+        "<h1>📊 数据统计</h1>"
+        '<div class="stats-grid">'
+        f'<div class="stat-card"><div class="pct stat-num">{total}</div><div class="stat-lbl">交易日</div></div>'
+        f'<div class="stat-card"><div class="pct stat-num">{n_matches}</div><div class="stat-lbl">赛事场次</div></div>'
+        f'<div class="stat-card"><div class="pct stat-num">{len(settled)}</div><div class="stat-lbl">已结算</div></div>'
+        f'<div class="stat-card"><div class="pct stat-num">{acc:.0f}%</div><div class="stat-lbl">方向命中率</div></div>'
+        "</div>"
+        "<h2>各联赛方向命中</h2>"
+        + (
+            C.table(["联赛", "已结算", "命中", "命中率"], rows)
+            if rows
+            else '<p class="sub">暂无已结算赛事，赛后自动回填。</p>'
+        )
+        + "<h2>机器可读数据</h2>"
+        '<ul class="plain-list">'
+        f'<li><a href="{base}/llms.txt">llms.txt</a> — 站点结构索引（LLM/GEO 用）</li>'
+        f'<li><a href="{base}/dataset.json">dataset.json</a> — 全量结构化数据</li>'
+        f'<li><a href="{base}/days/">📅 历史归档</a> — 逐日留档，结论指纹可核验</li>'
+        "</ul>"
+    )
+    return L.page(
+        cfg, title="数据统计", description="站点赛事统计：交易日、场次、方向命中率与各联赛分布",
+        body=body, canonical=f"{base}/data.html", depth=0,
+    )
+
+
+def render_features(cfg: Config) -> str:
+    """🧩功能：站点功能清单。只列已上线的能力，每条给真实入口。"""
+    base = cfg.base_url.rstrip("/")
+    items = [
+        ("📅 每日赛事前瞻", "当日全部赛事的结构化量化分析与 AI 置信度", f"{base}/"),
+        ("📚 历史归档", "逐日留档，结论带哈希指纹，不删不改可核验", f"{base}/days/"),
+        ("🏆 赛事 Top 榜", "按已结算场次统计各联赛方向命中率", f"{base}/"),
+        ("🔍 站内搜索", "按队名、联赛、编号检索历史赛事", f"{base}/search.html"),
+        ("📈 单场深度数据", "六维雷达、0-90' 动量曲线、赔率与让球面板", f"{base}/days/"),
+        ("🤖 机器可读数据", "llms.txt / dataset.json，供 LLM 与工具直接消费", f"{base}/llms.txt"),
+    ]
+    lis = "".join(
+        f'<li class="feat-item"><div class="feat-name">{name}</div>'
+        f'<div class="feat-desc">{desc}</div><a href="{url}">进入 →</a></li>'
+        for name, desc, url in items
+    )
+    body = f"<h1>🧩 功能</h1><ul class='feat-list'>{lis}</ul>"
+    return L.page(
+        cfg, title="功能", description="站点功能清单：每日前瞻、历史归档、赛事Top、站内搜索、机器可读数据",
+        body=body, canonical=f"{base}/features.html", depth=0,
+    )
+
+
+def render_me(cfg: Config) -> str:
+    """👤我的：会员中心占位。功能未上线，如实说明。"""
+    base = cfg.base_url.rstrip("/")
+    body = (
+        "<h1>👤 我的</h1>"
+        '<div class="me-card">'
+        '<div class="me-avatar">👤</div>'
+        "<h2>会员中心</h2>"
+        '<p class="sub">个性化功能（订阅、收藏、推送）正在开发中，敬请期待。</p>'
+        '<p class="sub">当前无需登录，全部数据免费开放浏览。</p>'
+        "</div>"
+    )
+    return L.page(
+        cfg, title="我的", description="会员中心占位页：个性化功能开发中",
+        body=body, canonical=f"{base}/me.html", depth=0,
+    )
+
+
+def render_search(cfg: Config, days: list[Day]) -> str:
+    """🔍搜索：内嵌全量比赛摘要 + 前端过滤。静态站无后端，JS 只做检索。"""
+    import json as _json
+
+    base = cfg.base_url.rstrip("/")
+    items = [
+        [d.date, m.code or "", m.competition or "", m.home.name, m.away.name, m.match_id]
+        for d in days for m in d.matches
+    ]
+    data_js = _json.dumps(items, ensure_ascii=False, separators=(",", ":"))
+    body = (
+        "<h1>🔍 站内搜索</h1>"
+        f"""<div class="search-page-box">
+<form class="site-search-form" action="search.html" method="get">
+  <input class="search-input" id="q" name="q" type="text" placeholder="输入队名 / 联赛 / 编号，如：拜仁、欧冠、周三004">
+  <button class="search-btn" type="submit">搜索</button>
+</form>
+<p class="sub" id="search-meta"></p>
+<div id="search-results" class="cards"></div>
+</div>
+<script>
+(function () {{
+  var DATA = {data_js};
+  var q = new URLSearchParams(location.search).get("q") || "";
+  document.getElementById("q").value = q;
+  var box = document.getElementById("search-results");
+  var meta = document.getElementById("search-meta");
+  if (!q.trim()) {{ meta.textContent = "输入关键字开始检索，支持队名、联赛、竞彩编号与日期。"; return; }}
+  var kw = q.trim().toLowerCase();
+  var hits = DATA.filter(function (r) {{
+    return r.some(function (v, i) {{ return i !== 5 && String(v).toLowerCase().indexOf(kw) !== -1; }});
+  }}).slice(0, 50);
+  meta.textContent = "共 " + hits.length + " 场匹配（最多显示 50 条）";
+  if (!hits.length) {{ box.innerHTML = '<p class="sub">没有匹配的赛事，换个关键字试试。</p>'; return; }}
+  box.innerHTML = hits.map(function (r) {{
+    return '<a class="match-card" href="' + "matches/" + r[5] + '.html">'
+      + '<div class="mc-header"><div class="mc-meta"><span class="date">' + r[0].slice(5).replace("-", "/")
+      + '</span><span class="league">' + r[2] + '</span><span class="num">' + r[1] + '</span></div></div>'
+      + '<div class="mc-body"><div class="mc-teams"><div class="mc-team"><span>' + r[3]
+      + '</span></div><div class="mc-score"><div class="vs">VS</div></div><div class="mc-team"><span>' + r[4]
+      + "</span></div></div></div></a>";
+  }}).join("");
+}})();
+</script>"""
+    )
+    return L.page(
+        cfg, title="站内搜索", description="按队名、联赛、竞彩编号检索全部历史赛事",
+        body=body, canonical=f"{base}/search.html", depth=0,
+    )

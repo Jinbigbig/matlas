@@ -44,18 +44,47 @@ main.wrap { padding-bottom: 2.5rem; }
 .v4-filter-bar { display: flex; justify-content: space-between; align-items: center;
   padding: 0 0 12px; gap: 0.75rem; }
 .v4-date { font-weight: 700; color: #111; font-size: 15px; }
+/* 展开式筛选面板：对齐 qiuxiaoce 的 #filter-panel（类型/赛事两行） */
+.fp-toggle { position: absolute; opacity: 0; width: 0; height: 0; }
+.filter-panel { display: none; background: #fff; border: 1px solid var(--rule);
+  border-radius: 8px; padding: 12px 14px; margin: 0 0 12px; }
+body:has(.fp-toggle:checked) .filter-panel { display: block; }
 .v4-filter-btn { display: flex; align-items: center; gap: 4px; background: #fff;
   border: 1px solid #e5e7eb; padding: 6px 12px; border-radius: 20px; font-size: 13px;
-  color: #4b5563; white-space: nowrap; }
-/* 纯 CSS 联赛筛选：radio 隐藏，:checked 控制卡片显隐 */
-.lf { position: absolute; opacity: 0; width: 0; height: 0; }
-.lf-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; }
-.lf-bar label { font-size: 13px; padding: 6px 12px; border-radius: 20px;
-  border: 1px solid #e5e7eb; background: #fff; color: #4b5563; cursor: pointer;
-  transition: all 0.2s; }
-.lf-bar label:hover { border-color: #93c5fd; color: #2563eb; }
-.lf:checked + label { background: #2563eb; color: #fff; border-color: #2563eb; }
-.lf:focus-visible + label { outline: 2px solid #93c5fd; outline-offset: 2px; }
+  color: #4b5563; white-space: nowrap; cursor: pointer; }
+.v4-filter-btn:hover { color: var(--accent); border-color: #93c5fd; }
+.fp-row { display: flex; align-items: flex-start; gap: 10px; }
+.fp-row + .fp-row { margin-top: 10px; }
+.fp-label { font-size: 13px; color: #6b7280; flex: none; line-height: 28px; }
+.fp-options { display: flex; gap: 8px; flex-wrap: wrap; }
+.fp-radio { position: absolute; opacity: 0; width: 0; height: 0; }
+.fp-opt { font-size: 13px; padding: 4px 14px; border-radius: 6px; border: 1px solid #e5e7eb;
+  background: #fff; color: #4b5563; cursor: pointer; transition: all 0.15s;
+  display: inline-block; }
+.fp-opt:hover { border-color: #93c5fd; color: var(--accent); }
+.fp-radio:checked + .fp-opt { background: var(--accent); color: #fff; border-color: var(--accent); }
+.fp-radio:focus-visible + .fp-opt { outline: 2px solid #93c5fd; outline-offset: 2px; }
+.note-line { color: #9ca3af; font-size: 12px; margin: -4px 0 10px; }
+
+/* ---------- 独立页面：数据统计 / 功能 / 我的 ---------- */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+.stat-card { background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+  padding: 18px 12px; text-align: center; }
+.stat-num { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
+.stat-lbl { font-size: 12px; color: #6b7280; margin-top: 4px; }
+.plain-list { margin: 10px 0 0 1.2em; }
+.plain-list li { margin: 6px 0; }
+.feat-list { list-style: none; margin: 14px 0; padding: 0; display: grid; gap: 10px; }
+.feat-item { background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+  padding: 14px 16px; }
+.feat-name { font-weight: 700; font-size: 15px; }
+.feat-desc { font-size: 13px; color: #6b7280; margin: 4px 0 8px; }
+.feat-item a { font-size: 13px; color: var(--accent); text-decoration: none; }
+.me-card { background: #fff; border: 1px solid var(--rule); border-radius: 12px;
+  padding: 32px 20px; text-align: center; max-width: 480px; margin: 20px auto; }
+.me-avatar { font-size: 2.6rem; }
+.me-card h2 { margin: 10px 0 6px; }
+@media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
 
 /* ---------- 页头：白底 + 左 logo + 右上功能按钮，同 qiuxiaoce 的 header ---------- */
 header.site {
@@ -77,7 +106,21 @@ nav.site { margin-left: auto; display: flex; align-items: center; gap: 0.35rem;
 nav.site a { color: #4b5563; padding: 6px 10px; border-radius: 8px; white-space: nowrap; }
 nav.site a:hover { color: var(--accent); background: #eff6ff; text-decoration: none; }
 nav.site a.is-btn { border: 1px solid var(--rule); }
-nav.site a.is-icon { border: 1px solid var(--rule); padding: 6px 9px; font-size: 0.9rem; }
+nav.site a.is-icon, nav.site label.is-icon { border: 1px solid var(--rule); padding: 6px 9px; font-size: 0.9rem; }
+nav.site label.is-icon { display: inline-flex; align-items: center; cursor: pointer; color: #4b5563; }
+nav.site label.is-icon:hover { color: var(--accent); background: #eff6ff; }
+/* 搜索滑出层：checkbox hack，零 JS（对齐 qiuxiaoce 的 .site-search） */
+.ss-toggle { position: absolute; opacity: 0; width: 0; height: 0; }
+.site-search { display: none; background: #fff; border-bottom: 1px solid var(--rule);
+  padding: 14px 0; }
+body:has(.ss-toggle:checked) .site-search { display: block; }
+.site-search-form { display: flex; gap: 8px; }
+.search-input { flex: 1; border: 1px solid var(--rule); border-radius: 8px;
+  padding: 9px 14px; font-size: 14px; outline: none; }
+.search-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px #dbeafe; }
+.search-btn { border: none; background: var(--accent); color: #fff; border-radius: 8px;
+  padding: 0 18px; cursor: pointer; display: inline-flex; align-items: center; }
+.search-btn:hover { background: #1d4ed8; }
 
 /* ---------- 标题层级 ---------- */
 main .wrap > h1 { font-weight: 700; font-size: 1.7rem; letter-spacing: -0.02em;
@@ -431,6 +474,15 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
 """
 
 
+# 搜索图标：对齐 qiuxiaoce 顶导的 iconfont 放大镜（tbfa 是私有字体拿不到，
+# 用内联 SVG 等价替代，随 currentColor 变色）。
+ICON_SEARCH = (
+    '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" '
+    'stroke-width="2" stroke-linecap="round" aria-hidden="true">'
+    '<circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.2" y2="16.2"></line></svg>'
+)
+
+
 def _write_style(cfg: Config) -> None:
     s = cfg.out_dir / "assets"
     s.mkdir(parents=True, exist_ok=True)
@@ -494,17 +546,23 @@ def page(
 {_jsonld(jsonld or [])}
 </head>
 <body>
+<input type="checkbox" id="ss-toggle" class="ss-toggle" aria-hidden="true">
 <header class="site"><div class="wrap">
   <div class="brand"><span class="brand-mark">M</span>{C.esc(cfg.site_name)}<span>{C.esc(cfg.site_tagline)}</span></div>
   <nav class="site">
-    <a href="{home}">🏠今日</a>
-    <a href="{pre}days/">📅归档</a>
-    <a class="is-btn" href="{pre}llms.txt">📊数据</a>
-    <a class="is-btn" href="{home}">🧩功能</a>
-    <a class="is-btn" href="{home}">👤我的</a>
-    <a class="is-icon" href="{pre}llms.txt" aria-label="站点索引">🔍</a>
+    <a href="{home}">🏠赛事</a>
+    <a href="{pre}data.html">📊数据</a>
+    <a href="{pre}features.html">🧩功能</a>
+    <a href="{pre}me.html">👤我的</a>
+    <label class="is-icon nav-search" for="ss-toggle" aria-label="搜索">{ICON_SEARCH}</label>
   </nav>
 </div></header>
+<div class="site-search"><div class="wrap">
+  <form class="site-search-form" action="{pre}search.html" method="get">
+    <input class="search-input" name="q" type="text" placeholder="输入关键字" required>
+    <button class="search-btn" type="submit" aria-label="搜索">{ICON_SEARCH}</button>
+  </form>
+</div></div>
 <main class="wrap">
 {body}
 </main>
