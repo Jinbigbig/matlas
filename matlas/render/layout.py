@@ -932,13 +932,7 @@ def page(
   <nav class="site">
     <a href="{home}">{ICON_SPORTS}赛事</a>
     <a href="{pre}data.html">{ICON_DATA}数据</a>
-    <div class="nav-drop">
-      <a href="{pre}features.html">{ICON_FUNCT}功能</a>
-      <div class="nav-menu">
-        <a href="{pre}odds.html">{ICON_TREND}盘口</a>
-        <a href="{pre}bets.html">{ICON_ACTIVITY}记录本</a>
-      </div>
-    </div>
+    <a href="{pre}features.html">{ICON_FUNCT}功能</a>
     <a href="{pre}me.html">{ICON_USER}我的</a>
     <label class="is-icon nav-search" for="ss-toggle" aria-label="搜索">{ICON_SEARCH}</label>
   </nav>
