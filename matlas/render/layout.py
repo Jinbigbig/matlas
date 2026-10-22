@@ -48,7 +48,7 @@ main.wrap { padding-bottom: 2.5rem; }
 .fp-toggle { position: absolute; opacity: 0; width: 0; height: 0; }
 .filter-panel { display: none; background: #fff; border: 1px solid var(--rule);
   border-radius: 8px; padding: 12px 14px; margin: 0 0 12px; }
-body:has(.fp-toggle:checked) .filter-panel { display: block; }
+body:has(#fp-toggle:checked) #filter-panel { display: block; }
 .v4-filter-btn { display: flex; align-items: center; gap: 4px; background: #fff;
   border: 1px solid #e5e7eb; padding: 6px 12px; border-radius: 20px; font-size: 13px;
   color: #4b5563; white-space: nowrap; cursor: pointer; }
@@ -73,11 +73,19 @@ a.fp-opt.active { background: var(--accent); color: #fff; border-color: var(--ac
 .v4-nav-icon svg { width: 20px; height: 20px; }
 .fp-radio:checked + .fp-opt { background: var(--accent); color: #fff; border-color: var(--accent); }
 .fp-radio:focus-visible + .fp-opt { outline: 2px solid #93c5fd; outline-offset: 2px; }
-/* 时间行日期条：横向滚动（日期数量无上限，最新在左）。
-   不用「更多…」展开——日期堆到成百上千时全量展开不可用。 */
-.fp-scroll { flex-wrap: nowrap; overflow-x: auto; max-width: 100%;
-  scrollbar-width: thin; padding-bottom: 2px; -webkit-overflow-scrolling: touch; }
-.fp-scroll .fp-opt { flex: none; }
+/* 时间行：原生下拉（optgroup 按月分组），日期数量再大也不占版面；
+   筛选条上另有 ‹ › 箭头做前后翻日 */
+.date-select { font-size: 13px; color: #374151; background: #f1f5f9;
+  border: 1px solid #e2e8f0; border-radius: 8px; padding: 5px 10px; cursor: pointer;
+  max-width: 240px; }
+.date-select:focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }
+.v4-date-nav { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.v4-day-arrow { display: flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; border-radius: 50%; border: 1px solid #e5e7eb;
+  background: #fff; color: #4b5563; font-size: 15px; line-height: 1;
+  text-decoration: none; flex: none; }
+.v4-day-arrow:hover { color: var(--accent); border-color: #93c5fd; text-decoration: none; }
+.v4-day-arrow.off { opacity: 0.35; pointer-events: none; }
 .note-line { color: #9ca3af; font-size: 12px; margin: -4px 0 10px; }
 
 /* ---------- 独立页面：数据统计 / 功能 / 我的 ---------- */
@@ -452,9 +460,17 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 
 /* ---------- 右栏 AI 预测卡：复用 .ranking-card 卡壳，筛选芯片与左侧同款 ---------- */
 /* 卡内自带时间/赛事两行筛选（fp-opt 同款），日期横向滚动、赛事横向滚动 */
-.ai-pred-card .ai-filter { padding: 12px 14px 12px; border-bottom: 1px solid #f1f5f9; }
-.ai-pred-card .ai-filter .fp-row + .fp-row { margin-top: 8px; }
-.ai-pred-card .ai-filter .fp-opt { font-size: 12px; padding: 3px 10px; }
+/* AI 预测卡头部：标题 + 当前日期 + 筛选按钮（与左侧筛选条同构） */
+.ai-pred-card .card-header { gap: 8px; }
+.ai-hd-title { display: inline-flex; align-items: center; gap: 5px; }
+.ai-hd-title svg { width: 15px; height: 15px; }
+.ai-date { color: #6b7280; font-weight: 600; font-size: 13px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ai-pred-card .v4-filter-btn { padding: 4px 10px; font-size: 12px; }
+#ai-filter-panel { display: none; background: #fff; border-bottom: 1px solid #f1f5f9;
+  padding: 12px 14px; }
+#ai-filter-panel .fp-row + .fp-row { margin-top: 8px; }
+#ai-filter-panel .fp-opt { font-size: 12px; padding: 3px 10px; }
 .ai-body { display: none; max-height: 480px; overflow-y: auto; padding: 8px 10px 12px; }
 .ai-m { display: block; padding: 8px 8px 9px; border-radius: 8px; color: inherit;
   text-decoration: none; }
@@ -855,9 +871,10 @@ document.addEventListener("click", function (e) {{
   e.stopPropagation();
   window.location.href = t.getAttribute("data-goto");
 }});
-// 时间行日期条：把当前日期水平滚进可视区（历史页 active 排在列表深处）
-document.querySelectorAll(".fp-scroll a.fp-opt.active").forEach(function (el) {{
-  el.scrollIntoView({{ inline: "center", block: "nearest" }});
+// 时间行日期下拉：选中即跳转对应日期页（optgroup 按月分组，数量无上限）
+document.addEventListener("change", function (e) {{
+  var s = e.target.closest(".date-select");
+  if (s && s.value) window.location.href = s.value;
 }});
 </script>
 </body>

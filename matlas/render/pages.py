@@ -765,12 +765,11 @@ def build_ai_digest(days: list[Day], top_n_dates: int = 6) -> list[tuple]:
 
 
 def _ai_card(digest: list[tuple], pre: str = "") -> str:
-    """右栏「AI 预测」卡：风格与左侧赛程统一（ranking-card 卡壳 + fp-opt 筛选芯片）。
+    """右栏「AI 预测」卡：与左侧赛程同构——日期标题 + 「筛选」按钮 + 收起式面板。
 
-    卡内自带与左侧同构的筛选条件：
-    - 时间行：日期 radio 切换（10月22日 (13场) 式），横向滚动、数量无上限；
-    - 赛事行：联赛 radio 过滤（body:has 规则按生成时联赛数展开）。
-    交互全部纯 CSS；概率一律走 C.prob_tag（pct 红线口径）。
+    头部：🧠 AI 预测 + 当前选中日期（radio 联动显隐）+ 筛选按钮；
+    面板（默认收起）：时间行（日期 radio，仅最近 6 个交易日、数量有界）+
+    赛事行（联赛 radio 过滤）。交互全部纯 CSS；概率走 C.prob_tag（pct 红线口径）。
     """
     if not digest:
         return ""
@@ -780,7 +779,7 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
             if it["lg"] and it["lg"] not in lg_idx:
                 lg_idx[it["lg"]] = str(len(lg_idx))
 
-    tabs, bodies, rules = [], [], []
+    tabs, date_spans, bodies, rules = [], [], [], []
     first = True
     for i, (date, n, items) in enumerate(digest):
         if not items:
@@ -794,6 +793,11 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
             f'<label class="fp-opt" for="aid-{i}">{C.esc(lab)}</label>'
         )
         rules.append(f'body:has(#aid-{i}:checked) .ai-body-{i}{{display:block}}')
+        # 头部日期随 radio 联动显隐（纯 CSS）
+        date_spans.append(f'<span class="ai-date ai-date-{i}">{C.esc(lab)}</span>')
+        rules.append(
+            f'body:has(#aid-{i}:checked) .ai-date-{i}{{display:inline}}'
+        )
         rows = []
         for it in items:
             chips = "".join(
@@ -827,16 +831,25 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
             f'body:has(#ail-{idx}:checked) #ai-pred-card '
             f'.ai-m:not([data-lg="{idx}"]){{display:none}}'
         )
+    # 面板展开：#afp-toggle 与左侧 #fp-toggle 同机制但独立 id，互不影响
+    rules.insert(0, "body:has(#afp-toggle:checked) #ai-filter-panel{display:block}")
+    rules.insert(0, ".ai-pred-card .ai-date{display:none}")
 
     return (
         "<style>" + "".join(rules) + "</style>"
         '<div id="ai-pred-card" class="ranking-card ai-pred-card">'
-        f'<div class="card-header">{L.ICON_CPU} AI 预测</div>'
-        '<div class="ai-filter">'
+        f'<input type="checkbox" id="afp-toggle" class="fp-toggle">'
+        '<div class="card-header">'
+        f'<span class="ai-hd-title">{L.ICON_CPU} AI 预测</span>'
+        f'{"".join(date_spans)}'
+        '<label class="v4-filter-btn" for="afp-toggle">'
+        f'<span>{L.ICON_FILTER} 筛选</span></label>'
+        "</div>"
+        '<div id="ai-filter-panel">'
         '<div class="fp-row"><div class="fp-label">时间:</div>'
-        f'<div class="fp-options fp-scroll">{"".join(tabs)}</div></div>'
+        f'<div class="fp-options">{"".join(tabs)}</div></div>'
         '<div class="fp-row"><div class="fp-label">赛事:</div>'
-        f'<div class="fp-options fp-scroll">{"".join(lg_opts)}</div></div>'
+        f'<div class="fp-options">{"".join(lg_opts)}</div></div>'
         "</div>"
         f'{"".join(bodies)}'
         "</div>"
@@ -912,24 +925,40 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
         if has_jc
         else ""
     )
-    # 时间行：跨日期切换赛程（导航，不是本页过滤）。最新日期在首位。
-    # 日期条横向滚动、数量无上限——"更多"展开在日期堆到成百上千时不可用，
-    # 一条可滑动的 strip 才是可扩展方案；当前日期由全局 JS 滚进可视区。
+    # 时间行：跨日期切换赛程（导航，不是本页过滤）。不用日期条——日期堆到
+    # 成百上千时全量展开不可用；改按月分组的原生下拉（数量无上限、不占版面），
+    # 配合筛选条上的 ‹ › 箭头做前后翻日。
     time_row = ""
+    arrows = ""
     if dates:
         pre_d = "" if is_today else "../"
-        opts = []
+        idx = dates.index(day.date) if day.date in dates else -1
+        prev_d = dates[idx + 1] if 0 <= idx < len(dates) - 1 else None  # 更早一天
+        next_d = dates[idx - 1] if idx > 0 else None  # 更晚一天
+        arrow = lambda d, ch: (
+            f'<a class="v4-day-arrow" href="{pre_d}days/{d}.html" '
+            f'aria-label="{ch}一天">{ch}</a>'
+            if d else f'<span class="v4-day-arrow off">{ch}</span>'
+        )
+        arrows = (
+            f'{arrow(prev_d, "‹")}'
+            f'<div class="v4-date">{L.ICON_CALENDAR} {date_lab} ({len(ms)}场)</div>'
+            f'{arrow(next_d, "›")}'
+        )
+        groups: dict[str, list[str]] = {}
         for dstr in dates:
-            lab = f"{int(dstr[5:7])}月{int(dstr[8:10])}日"
-            if dstr == day.date:
-                opts.append(f'<a class="fp-opt active" href="#">{lab}</a>')
-            else:
-                opts.append(
-                    f'<a class="fp-opt" href="{pre_d}days/{dstr}.html">{lab}</a>'
-                )
+            groups.setdefault(dstr[:7], []).append(dstr)
+        sel = []
+        for ym, ds_ in groups.items():
+            opts_ = "".join(
+                f'<option value="{pre_d}days/{x}.html"{" selected" if x == day.date else ""}>'
+                f"{int(x[5:7])}月{int(x[8:10])}日</option>"
+                for x in ds_
+            )
+            sel.append(f'<optgroup label="{ym[:4]}年{int(ym[5:7])}月">{opts_}</optgroup>')
         time_row = (
             '<div class="fp-row"><div class="fp-label">时间:</div>'
-            f'<div class="fp-options fp-scroll">{"".join(opts)}</div></div>'
+            f'<select class="date-select">{"".join(sel)}</select></div>'
         )
     panel = (
         f'{filter_css}<input type="checkbox" id="fp-toggle" class="fp-toggle">'
@@ -940,7 +969,7 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
     main_col = (
         '<div class="v4-main-col">'
         '<div class="v4-filter-bar">'
-        f'<div class="v4-date">{L.ICON_CALENDAR} {date_lab} ({len(ms)}场)</div>'
+        f'<div class="v4-date-nav">{arrows or f"<div class=\"v4-date\">{L.ICON_CALENDAR} {date_lab} ({len(ms)}场)</div>"}</div>'
         '<label class="v4-filter-btn" for="fp-toggle">'
         f'<span>{L.ICON_FILTER} 筛选</span></label>'
         "</div>"
