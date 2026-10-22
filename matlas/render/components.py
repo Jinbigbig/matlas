@@ -14,11 +14,11 @@ import re
 from typing import Sequence
 
 # 配色常量与 jinbet 报告页 CSS 变量一致（--home / --away / --ink / --muted / --rule）
-HOME_COLOR = "#457b9d"
-AWAY_COLOR = "#e76f51"
-INK = "#1a1a2e"
-MUTED = "#6c757d"
-LINE = "#dee2e6"
+HOME_COLOR = "#2563eb"
+AWAY_COLOR = "#f59e0b"
+INK = "#111111"
+MUTED = "#6b7280"
+LINE = "#e5e7eb"
 
 
 def esc(s: object) -> str:
@@ -37,11 +37,11 @@ def confidence_badge(conf: str, settled: bool | None = None) -> str:
     """置信度徽标。词表与配色同 jinbet 的 tag-* 系列。"""
     label = {"high": "高", "medium": "中", "low": "低", "none": "冷门"}.get(conf, "未评级")
     tone = {
-        "high": ("rgba(42,157,143,0.12)", "#2a9d8f"),
-        "medium": ("rgba(244,162,97,0.14)", "#b4700f"),
-        "low": ("rgba(108,117,125,0.1)", "#6c757d"),
-        "none": ("rgba(230,57,70,0.1)", "#e63946"),
-    }.get(conf, ("rgba(108,117,125,0.1)", "#6c757d"))
+        "high": ("rgba(16,185,129,0.12)", "#10b981"),
+        "medium": ("rgba(245,158,11,0.14)", "#b45309"),
+        "low": ("rgba(107,114,128,0.1)", "#6b7280"),
+        "none": ("rgba(220,38,38,0.1)", "#dc2626"),
+    }.get(conf, ("rgba(107,114,128,0.1)", "#6b7280"))
     bg, fg = tone
     hit = ""
     if settled is True:
@@ -78,11 +78,11 @@ def grade_tag(prob: float, confidence: str = "medium") -> str:
     """评级标签，配色沿用 jinbet 的 tag-green / tag-yellow / tag-blue。"""
     g = grade(prob, confidence)
     bg = {
-        "可用": "rgba(42,157,143,0.12)",
-        "慎用": "rgba(244,162,97,0.14)",
-        "别跟": "rgba(108,117,125,0.1)",
+        "可用": "rgba(16,185,129,0.12)",
+        "慎用": "rgba(245,158,11,0.14)",
+        "别跟": "rgba(107,114,128,0.1)",
     }[g]
-    fg = {"可用": "#2a9d8f", "慎用": "#b4700f", "别跟": "#6c757d"}[g]
+    fg = {"可用": "#10b981", "慎用": "#b45309", "别跟": "#6b7280"}[g]
     return f'<span class="badge" style="background:{bg};color:{fg}">{g}</span>'
 
 
@@ -138,21 +138,36 @@ def form_dots(outcomes: Sequence[str]) -> str:
     return f'<div class="form-row">{"".join(dots)}</div>' if dots else ""
 
 
-def team_side(team, side: str = "home") -> str:
-    """单侧队伍展示。
+_LOGO_OK = re.compile(r"^(https?://|\.{0,2}/)")
 
-    `Team.logo` 有值才出队徽，没有就退化为纯文字 —— 不留空占位框、不写
-    「暂无队徽」这类解释句。只接受 http(s) 与站点相对路径，挡掉
-    `javascript:` / `data:` 之类的协议，避免 logo 字段被数据侧污染成 XSS 入口。
+
+def crest_img(team, cls: str = "crest") -> str:
+    """队徽。有合法 logo 出 <img>，没有则用队名首字做**同尺寸**圆形占位。
+
+    占位不是假数据：它就是队名首字，作用是把卡片高度撑到和有队徽时一致，
+    否则列表里会有的一半高一半矮。协议只放行 http(s) 与相对路径。
     """
+    logo = (getattr(team, "logo", "") or "").strip()
+    if logo and _LOGO_OK.match(logo):
+        return (
+            f'<img class="{cls}" src="{esc(logo)}" alt="{esc(team.name)}队徽"'
+            f' loading="lazy" width="48" height="48">'
+        )
+    initial = (getattr(team, "name", "") or "?").strip()[:1] or "?"
+    return f'<div class="{cls} crest-ph" aria-hidden="true">{esc(initial)}</div>'
+
+
+def team_side(team, side: str = "home") -> str:
+    """行内单侧队伍展示（队徽与队名同一行，用于窄幅版面）。"""
     name = f'<span class="{side}">{esc(team.name)}</span>'
     logo = (getattr(team, "logo", "") or "").strip()
-    if not logo or not re.match(r"^(https?://|\.{0,2}/)", logo):
+    if not logo or not _LOGO_OK.match(logo):
         return name
-    return (
-        f'<span class="tm"><img class="crest" src="{esc(logo)}"'
-        f' alt="{esc(team.name)}队徽" loading="lazy" width="32" height="32">{name}</span>'
+    img = (
+        f'<img class="crest" src="{esc(logo)}" alt="{esc(team.name)}队徽"'
+        f' loading="lazy" width="32" height="32">'
     )
+    return f'<span class="tm">{img}{name}</span>'
 
 
 def card_header(*, match_id: str = "", league: str = "", time_: str = "", extra: str = "") -> str:

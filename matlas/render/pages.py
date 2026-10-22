@@ -280,24 +280,15 @@ def render_match(cfg: Config, m: Match) -> str:
     cold = ' <span class="mini">样本不足 · 不进精选</span>' if m.is_cold_start else ""
     sample = ' <span class="mini">示例数据</span>' if m.extras.get("sample") else ""
 
-    teams_row = (
-        f'<h1 class="match-teams">'
-        f"{C.team_side(m.home, 'home')}"
-        f'<span class="vs">VS</span>'
-        f"{C.team_side(m.away, 'away')}"
-        f"</h1>"
-    )
-    header = C.card_header(
-        match_id=m.code or m.match_id,
-        league=m.competition,
-        time_=m.kickoff,
-        extra=C.confidence_badge(m.confidence, settled),
-    )
+    teams_row = f'<h1 class="sr-only">{C.esc(m.home.name)} vs {C.esc(m.away.name)}</h1>' + _mc_teams(m)
+    header = _mc_header(m)
     body_parts = [
-        '<div class="card">',
-        teams_row,
-        f'<p class="sub" style="text-align:center">{C.esc(meta)}{cold}{sample}</p>',
+        '<div class="card card-match">',
         header,
+        '<div class="mc-body">',
+        teams_row,
+        f'<p class="sub" style="text-align:center;margin:0">{C.esc(meta)}{cold}{sample}</p>',
+        "</div>",
         "</div>",
         _main_pick_block(m),
         _risk_panel(m),
@@ -330,43 +321,111 @@ def render_match(cfg: Config, m: Match) -> str:
 # ---------------------------------------------------------------- 今日列表
 
 
-def _card(cfg: Config, m: Match, *, pre: str = "") -> str:
-    url = f"{pre}matches/{m.match_id}.html"
-    times = m.kickoff[-5:] if m.kickoff else ""
-    picks = []
-    hd = m.headline
-    rename = {"direction": "方向", "score": "比分", "goals": "进球", "htft": "半全"}
+# ---------------------------------------------------------------- 与 qiuxiaoce 同构的卡片部件
+
+
+def _mc_header(m: Match) -> str:
+    """日期 / 联赛 / 编号 / 时间 + AI置信度 + 命中印章。
+
+    结构与 class 名对齐 qiuxiaoce 的 `.mc-header`。印章只在有赛果时出现。
+    """
+    date_txt = ""
+    if len(m.match_id) >= 10:
+        date_txt = f"{int(m.match_id[5:7])}/{int(m.match_id[8:10])}"
+    time_txt = m.kickoff[-5:] if m.kickoff else ""
+    conf_cls = {"high": "high", "medium": "medium", "low": "low", "none": "cold"}.get(
+        m.confidence, ""
+    )
+    conf_lab = {"high": "高", "medium": "中", "low": "低", "none": "冷门"}.get(
+        m.confidence, "未评级"
+    )
+    stamp = ""
+    if m.result and m.result.direction_hit is not None:
+        stamp = (
+            '<div class="prediction-stamp stamp-red">✔</div>'
+            if m.result.direction_hit
+            else '<div class="prediction-stamp stamp-black">✘</div>'
+        )
+    return (
+        '<div class="mc-header"><div class="mc-meta">'
+        f'<span class="date">{C.esc(date_txt)}</span>'
+        f'<span class="league">{C.esc(m.competition)}</span>'
+        + (f'<span class="num">{C.esc(m.code)}</span>' if m.code else "")
+        + f'<span class="time">{C.esc(time_txt)}</span>'
+        '</div><div class="mc-status">'
+        f'<span class="mc-conf {conf_cls}">AI置信度:{C.esc(conf_lab)}</span>{stamp}'
+        "</div></div>"
+    )
+
+
+def _mc_teams(m: Match) -> str:
+    """队徽 + 大比分（括号内半场）。未结算时中间出 VS。"""
+    if m.result and m.result.full_score:
+        sub = (
+            f'<div class="sub">({C.esc(m.result.half_score)})</div>'
+            if m.result.half_score
+            else ""
+        )
+        score = (
+            f'<div class="mc-score"><div class="main">{C.esc(m.result.full_score)}</div>'
+            f"{sub}</div>"
+        )
+    else:
+        score = '<div class="mc-score"><div class="vs">VS</div></div>'
+
+    def cell(t) -> str:
+        return f'<div class="mc-team">{C.crest_img(t)}<span>{C.esc(t.name)}</span></div>'
+
+    return f'<div class="mc-teams">{cell(m.home)}{score}{cell(m.away)}</div>'
+
+
+def _mc_tags(m: Match) -> str:
+    """四个维度的 emoji 标签，命中项加 .hit 提亮。
+
+    只带 emoji + 结论，不带维度名 —— 维度名由 emoji 表达，
+    否则窄屏一行放不下会折行。
+    """
+    emoji = {"direction": "🧭", "score": "🔢", "goals": "⚽", "htft": "📈"}
+    hit_of = {
+        "direction": "direction_hit", "score": "score_hit",
+        "goals": "goals_hit", "htft": "htft_hit",
+    }
+    tags = []
     for kind in ("direction", "score", "goals", "htft"):
-        f = hd.get(kind)
+        f = m.headline.get(kind)
         if not f:
             continue
-        picks.append(
-            f'<span class="mini">{rename[kind]} {C.esc(f.label)}</span> {C.prob_tag(f.prob)}'
+        hit = bool(m.result and getattr(m.result, hit_of[kind], None))
+        tags.append(
+            f'<div class="mc-tag{" hit" if hit else ""}">'
+            f"{emoji[kind]} {C.esc(f.label)}</div>"
         )
-    score = ""
-    if m.result and m.result.full_score:
-        half = m.result.half_score
-        half_txt = f' <span class="half">(半 {C.esc(half)})</span>' if half else ""
-        score = f'<div class="card-score">赛果 {C.esc(m.result.full_score)}{half_txt}</div>'
-    teams = (
-        f'<div class="match-teams">'
-        f"{C.team_side(m.home, 'home')}"
-        f'<span class="vs">VS</span>'
-        f"{C.team_side(m.away, 'away')}"
-        f"</div>"
-    )
+    return f'<div class="mc-tags">{"".join(tags)}</div>' if tags else ""
+
+
+def _card(cfg: Config, m: Match, *, pre: str = "", lg: str = "") -> str:
+    """首页/归档列表卡片。整卡结构与 class 名对齐 qiuxiaoce 的 `.match-card`。
+
+    `lg` 是该场联赛在当日联赛列表里的下标，写进 `data-lg` 供纯 CSS 筛选使用。
+    """
+    url = f"{pre}matches/{m.match_id}.html"
+    footer = ""
+    if m.main_pick:
+        footer = (
+            '<div class="mc-footer"><div class="mc-footer-left">'
+            '<span class="mc-highlight-icon">💡</span>'
+            f'<span class="mc-highlight-text">{C.esc(m.main_pick)}</span>'
+            "</div></div>"
+        )
+    attr = f' data-lg="{C.esc(lg)}"' if lg else ""
     return (
-        f'<a class="card" href="{url}">'
-        + C.card_header(
-            match_id=m.code or m.match_id,
-            league=m.competition,
-            time_=times,
-            extra=C.confidence_badge(m.confidence, m.result.direction_hit if m.result else None),
-        )
-        + teams
-        + score
-        + f'<div class="card-picks">{"".join(picks)}</div>'
-        + "</a>"
+        f'<a class="match-card" href="{url}"{attr}>'
+        + _mc_header(m)
+        + '<div class="mc-body">'
+        + _mc_teams(m)
+        + _mc_tags(m)
+        + footer
+        + "</div></a>"
     )
 
 
@@ -379,18 +438,53 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "") 
     else:
         h1 = f"{day.date} 赛事量化归档"
         rel_url = f"{base}/{rel.lstrip('/')}"
+    leagues = sorted({m.competition for m in ms if m.competition})
     desc = (
         f"{day.date} 共 {len(ms)} 场赛事的结构化量化数据与结论，"
-        f"含 {C.esc('、'.join(sorted({m.competition for m in ms if m.competition})))}。"
+        f"含 {C.esc('、'.join(leagues))}。"
     )
-    cards = "".join(_card(cfg, m, pre="" if is_today else "../") for m in ms) or "<p>当日无赛事数据。</p>"
+    lg_idx = {lg: str(i) for i, lg in enumerate(leagues)}
+    cards = "".join(
+        _card(cfg, m, pre="" if is_today else "../", lg=lg_idx.get(m.competition, ""))
+        for m in ms
+    ) or "<p>当日无赛事数据。</p>"
     if day.note:
         cards = f'<p class="sub">{C.esc(day.note)}</p>' + cards
+
+    # 联赛筛选：纯 CSS（radio + :checked ~ 兄弟选择器），不引 JS。
+    # 单选/标签取联赛下标而非联赛名，避免中文名进选择器后转义出错。
+    filter_bar = filter_css = ""
+    if len(leagues) > 1:
+        opts = [
+            '<input type="radio" name="lf" id="lf-all" class="lf" checked>'
+            '<label for="lf-all">全部</label>'
+        ]
+        rules = []
+        for i, lg in enumerate(leagues):
+            opts.append(
+                f'<input type="radio" name="lf" id="lf-{i}" class="lf">'
+                f'<label for="lf-{i}">{C.esc(lg)}</label>'
+            )
+            # radio 在 .lf-bar 内部，不是 .cards 的兄弟，所以不能用 `~`；
+            # 用 body:has() 从根上匹配，规则不受 DOM 层级限制。
+            rules.append(
+                f'body:has(#lf-{i}:checked) .cards .match-card:not([data-lg="{i}"])'
+                "{display:none}"
+            )
+        filter_bar = f'<div class="lf-bar">{"".join(opts)}</div>'
+        filter_css = "<style>" + "".join(rules) + "</style>"
+
+    date_lab = f"{int(day.date[5:7])}月{int(day.date[8:10])}日"
     body = (
-        f"<h1>{C.esc(h1)}</h1>"
+        f'<h1 class="sr-only">{C.esc(h1)}</h1>'
+        f'<p class="site-disclaimer">{C.esc(cfg.disclaimer)}</p>'
+        f'<div class="v4-filter-bar">'
+        f'<div class="v4-date">📅 {date_lab}（{len(ms)}场）</div>'
+        f'<div class="v4-filter-btn">🔍 {C.esc("、".join(leagues)) or "筛选"}</div>'
+        f"</div>"
         f'<p class="sub">{C.esc(desc)}</p>'
+        f"{filter_css}{filter_bar}"
         f'<div class="cards">{cards}</div>'
-        f'<p class="disclaimer">{C.esc(cfg.disclaimer)}</p>'
     )
     jsonld = [
         _graph(cfg, {
