@@ -6,7 +6,7 @@
 <title>罗森博格 赛事专题 - Matlas</title>
 <meta name="description" content="罗森博格 全部已收录场次的方向命中率与逐场分析">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/teams/罗森博格.html">
-<link rel="stylesheet" href="../assets/style.css?v=1792665626">
+<link rel="stylesheet" href="../assets/style.css?v=1792667042">
 <meta property="og:type" content="article">
 <meta property="og:title" content="罗森博格 赛事专题 - Matlas">
 <meta property="og:description" content="罗森博格 全部已收录场次的方向命中率与逐场分析">
@@ -19,10 +19,14 @@
   <div class="brand"><span class="brand-mark">M</span>Matlas<span>足球赛事量化图谱</span></div>
   <nav class="site">
     <a href="../"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7.2l4.6 3.3-1.8 5.4H9.2L7.4 10.5z"></path><path d="M12 3v4.2M3.6 9.4l3.8 1.1M20.4 9.4l-3.8 1.1M8 20l1.2-4.1M16 20l-1.2-4.1"></path></svg>赛事</a>
-    <a href="../odds.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"></path><path d="M15 7h6v6"></path></svg>赔率</a>
-    <a href="../bets.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>投注</a>
     <a href="../data.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20v-6M12 20V7M19 20v-9"></path><path d="M3 20h18"></path></svg>数据</a>
-    <a href="../features.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"></rect></svg>功能</a>
+    <div class="nav-drop">
+      <a href="../features.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"></rect></svg>功能</a>
+      <div class="nav-menu">
+        <a href="../odds.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"></path><path d="M15 7h6v6"></path></svg>盘口</a>
+        <a href="../bets.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>记录本</a>
+      </div>
+    </div>
     <a href="../me.html"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21c0-3.9 3.4-6.2 7.5-6.2s7.5 2.3 7.5 6.2"></path></svg>我的</a>
     <label class="is-icon nav-search" for="ss-toggle" aria-label="搜索"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.2" y2="16.2"></line></svg></label>
   </nav>
@@ -86,9 +90,7 @@ document.addEventListener("change", function (e) {
   aiSyncArrows(s);
 });
 function aiSyncArrows(s) {
-  var card = s.closest("#ai-pred-card");
-  if (!card) return;
-  card.querySelectorAll("[data-aid-step]").forEach(function (a) {
+  document.querySelectorAll("[data-aid-step]").forEach(function (a) {
     var i = s.selectedIndex + parseInt(a.getAttribute("data-aid-step"), 10);
     a.classList.toggle("off", i < 0 || i >= s.options.length);
   });
