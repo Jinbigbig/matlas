@@ -1489,25 +1489,28 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
                           ensure_ascii=False, separators=(",", ":"))
     body = (
         f"<h1 class='page-h1'>{L.ICON_TREND} 赔率</h1>"
-        '<div class="odds-strip" id="odds-dates"></div>'
+        '<select class="odds-date" id="odds-dates" aria-label="选择日期"></select>'
         '<div id="odds-out"></div>'
         "<script>\n(function () {\n"
         f"  var DATA = {data_js};\n"
-        '''  var strip = document.getElementById("odds-dates");
+        '''  var sel = document.getElementById("odds-dates");
   var out = document.getElementById("odds-out");
   if (!DATA.dates.length) { out.innerHTML = '<p class="sub">暂无盘口数据。</p>'; return; }
-  DATA.dates.forEach(function (d, i) {
-    var b = document.createElement("a");
-    b.className = "fp-opt" + (i === 0 ? " active" : "");
-    b.href = "javascript:;";
-    b.textContent = (+d.slice(5, 7)) + "月" + (+d.slice(8, 10)) + "日";
-    b.addEventListener("click", function () {
-      strip.querySelectorAll(".fp-opt").forEach(function (x) { x.classList.remove("active"); });
-      b.classList.add("active");
-      render(d);
+  // 日期下拉：按月分组（optgroup），数量再多也不占版面
+  var groups = {};
+  DATA.dates.forEach(function (d) { (groups[d.slice(0, 7)] = groups[d.slice(0, 7)] || []).push(d); });
+  Object.keys(groups).forEach(function (ym) {
+    var og = document.createElement("optgroup");
+    og.label = ym.slice(0, 4) + "年" + (+ym.slice(5, 7)) + "月";
+    groups[ym].forEach(function (d) {
+      var o = document.createElement("option");
+      o.value = d;
+      o.textContent = (+d.slice(5, 7)) + "月" + (+d.slice(8, 10)) + "日";
+      og.appendChild(o);
     });
-    strip.appendChild(b);
+    sel.appendChild(og);
   });
+  sel.addEventListener("change", function () { render(sel.value); });
   function pill(lab, val, hit, cls) {
     if (val === undefined || val === null || val === "") return "";
     return '<span class="odds-pill' + (hit ? " hit" : "") + '"><b class="' + (cls || "") + '">'
@@ -1630,7 +1633,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         '<button id="bk-padd" type="button" class="bt-mini">添加</button>'
         "</div></div>"
         '<div class="bf-row"><label>场次</label>'
-        '<div class="bf-schedule"><select id="bk-date"></select>'
+        '<div class="bf-schedule"><select id="bk-date" class="odds-date"></select>'
         '<button id="bk-load" type="button" class="bt-mini">📅 加载比赛</button></div>'
         '<div id="bk-games" class="bf-games"></div></div>'
         '<div class="bf-actions"><button id="bk-calc" type="button" class="bt-gold">⚡ 计算注数 & 金额</button>'
@@ -1767,8 +1770,15 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     if (name && !persons.some(function (p) { return p.name === name; })) persons.push({ name: name, mult: +$("bk-pmult").value || 0 });
     $("bk-pname").value = ""; renderPersons();
   });
-  $("bk-date").innerHTML = DATA.dates.map(function (d) {
-    return '<option value="' + d + '">' + (+d.slice(5, 7)) + "月" + (+d.slice(8, 10)) + "日</option>";
+  // 日期下拉：按月分组（optgroup）
+  var dgroups = {};
+  DATA.dates.forEach(function (d) { (dgroups[d.slice(0, 7)] = dgroups[d.slice(0, 7)] || []).push(d); });
+  $("bk-date").innerHTML = Object.keys(dgroups).map(function (ym) {
+    return '<optgroup label="' + ym.slice(0, 4) + "年" + (+ym.slice(5, 7)) + '月">'
+      + dgroups[ym].map(function (d) {
+        return '<option value="' + d + '">' + (+d.slice(5, 7)) + "月" + (+d.slice(8, 10)) + "日</option>";
+      }).join("")
+      + "</optgroup>";
   }).join("");
   function renderGames() {
     if (!games.length) { $("bk-games").innerHTML = '<p class="sub">选择日期后点「加载比赛」，为场次选玩法与选项。</p>'; return; }
