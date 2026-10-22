@@ -4,6 +4,7 @@
 来源（只读）：
   C:/Users/Jin/jinbet/predictions/{date}/pred_snapshot.json   每日预测快照
   C:/Users/Jin/jinbet/results_history/{date}.json             赛果回填（key: {date}_{主}_{客}）
+  C:/Users/Jin/jinbet/results_data.json                      赛果回填回退源（归档缺失的日期）
 
 映射规则（宁缺勿错，缺的槽位留空，渲染层自动降级）：
   code      <- id（周三001）            match_id <- {date}-{三位编号}
@@ -24,6 +25,9 @@ from pathlib import Path
 
 PRED_DIR = Path("C:/Users/Jin/jinbet/predictions")
 RES_DIR = Path("C:/Users/Jin/jinbet/results_history")
+# 引擎全量赛果库（results_history 归档缺失时回退）：key = {date}_{主}_{客}
+RESULTS_DATA_JSON = Path("C:/Users/Jin/jinbet/results_data.json")
+_results_data_cache: dict | None = None
 OUT_DIR = Path("C:/Users/Jin/matlas/data/days")
 
 # ---- jinbet 侧成熟数据源（赛前信息 / 积分分析）----
@@ -148,13 +152,24 @@ def _score_fmt(s: str) -> str:
 
 
 def _load_results(date: str) -> dict:
+    """当日赛果：优先 results_history/{date}.json（按日归档，历史稳定）；
+
+    归档缺失的日期（如近期尚未跑归档）回退 results_data.json —— 引擎维护的
+    全量赛果库（key: {date}_{主}_{客}，每日刷新），按日期前缀过滤出当日记录。
+    """
     p = RES_DIR / f"{date}.json"
-    if not p.exists():
-        return {}
-    try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return {}
+    if p.exists():
+        try:
+            return json.loads(p.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+    global _results_data_cache
+    if _results_data_cache is None:
+        try:
+            _results_data_cache = json.loads(RESULTS_DATA_JSON.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            _results_data_cache = {}
+    return {k: v for k, v in _results_data_cache.items() if k.startswith(f"{date}_")}
 
 
 def _result_index(raw: dict) -> tuple[dict[str, dict], dict[tuple[str, str], dict]]:

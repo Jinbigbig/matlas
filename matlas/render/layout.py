@@ -73,10 +73,11 @@ a.fp-opt.active { background: var(--accent); color: #fff; border-color: var(--ac
 .v4-nav-icon svg { width: 20px; height: 20px; }
 .fp-radio:checked + .fp-opt { background: var(--accent); color: #fff; border-color: var(--accent); }
 .fp-radio:focus-visible + .fp-opt { outline: 2px solid #93c5fd; outline-offset: 2px; }
-/* 时间行「更多…」就地展开：checkbox 选中后隐藏日期参与 flex 排布 */
-.fp-more-dates { display: none; }
-body:has(#td-more:checked) .fp-more-dates { display: contents; }
-body:has(#td-more:checked) label[for="td-more"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+/* 时间行日期条：横向滚动（日期数量无上限，最新在左）。
+   不用「更多…」展开——日期堆到成百上千时全量展开不可用。 */
+.fp-scroll { flex-wrap: nowrap; overflow-x: auto; max-width: 100%;
+  scrollbar-width: thin; padding-bottom: 2px; -webkit-overflow-scrolling: touch; }
+.fp-scroll .fp-opt { flex: none; }
 .note-line { color: #9ca3af; font-size: 12px; margin: -4px 0 10px; }
 
 /* ---------- 独立页面：数据统计 / 功能 / 我的 ---------- */
@@ -449,28 +450,12 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
   color: #10b981; }
 .ranking-empty { padding: 14px 16px; font-size: 12px; color: #9ca3af; }
 
-/* ---------- 右栏 AI 预测卡：日期 tab（纯 CSS radio）+ 每场四维首选 chip ---------- */
-.ai-pred-card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  overflow: hidden; }
-.ai-pred-card .card-header { font-size: 14px; font-weight: 700; color: #111;
-  padding: 14px 16px; border-bottom: 1px solid #f1f5f9; }
-.ai-pred-card .ai-radio { display: none; }
-.ai-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 14px 0; }
-.ai-tab { font-size: 12px; color: #6b7280; background: #f1f5f9; border-radius: 16px;
-  padding: 4px 11px; cursor: pointer; user-select: none; }
-.ai-tab:hover { color: var(--accent); }
-/* radio 在前、tabs/body 是其兄弟节点：~ 选择器即可完成切换，无需 JS */
-#aid-0:checked ~ .ai-tabs label[for="aid-0"],
-#aid-1:checked ~ .ai-tabs label[for="aid-1"],
-#aid-2:checked ~ .ai-tabs label[for="aid-2"],
-#aid-3:checked ~ .ai-tabs label[for="aid-3"],
-#aid-4:checked ~ .ai-tabs label[for="aid-4"],
-#aid-5:checked ~ .ai-tabs label[for="aid-5"] {
-  background: var(--accent); color: #fff; font-weight: 600; }
+/* ---------- 右栏 AI 预测卡：复用 .ranking-card 卡壳，筛选芯片与左侧同款 ---------- */
+/* 卡内自带时间/赛事两行筛选（fp-opt 同款），日期横向滚动、赛事横向滚动 */
+.ai-pred-card .ai-filter { padding: 12px 14px 12px; border-bottom: 1px solid #f1f5f9; }
+.ai-pred-card .ai-filter .fp-row + .fp-row { margin-top: 8px; }
+.ai-pred-card .ai-filter .fp-opt { font-size: 12px; padding: 3px 10px; }
 .ai-body { display: none; max-height: 480px; overflow-y: auto; padding: 8px 10px 12px; }
-#aid-0:checked ~ .ai-body-0, #aid-1:checked ~ .ai-body-1,
-#aid-2:checked ~ .ai-body-2, #aid-3:checked ~ .ai-body-3,
-#aid-4:checked ~ .ai-body-4, #aid-5:checked ~ .ai-body-5 { display: block; }
 .ai-m { display: block; padding: 8px 8px 9px; border-radius: 8px; color: inherit;
   text-decoration: none; }
 .ai-m:hover { background: #f8fafc; text-decoration: none; }
@@ -811,6 +796,10 @@ document.addEventListener("click", function (e) {{
   e.preventDefault();
   e.stopPropagation();
   window.location.href = t.getAttribute("data-goto");
+}});
+// 时间行日期条：把当前日期水平滚进可视区（历史页 active 排在列表深处）
+document.querySelectorAll(".fp-scroll a.fp-opt.active").forEach(function (el) {{
+  el.scrollIntoView({{ inline: "center", block: "nearest" }});
 }});
 </script>
 </body>

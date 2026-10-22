@@ -532,23 +532,24 @@ def _tm_href(team: str) -> str:
 
 
 def _mc_teams(m: Match, pre: str = "") -> str:
-    """队徽 + 大比分（括号内半场）。未结算时中间出 VS。pre 为页深前缀。
+    """队徽 + 大比分（括号内半场）。未结算时中间出 VS。
 
+    口径对齐球小策：未开赛上部为 VS、下部半场比分位出 (0-0) 占位；
+    已完赛上部全场比分、下部半场比分（无半场比分时下部留空）。
     球队名/队徽用 span+data-goto 而非 <a>：列表卡片与单场页头部都处在
     整卡 <a> 内部，HTML 不允许嵌套 a，点击跳转交给全局事件委托。
     """
     if m.result and m.result.full_score:
-        sub = (
-            f'<div class="sub">({C.esc(m.result.half_score)})</div>'
-            if m.result.half_score
-            else ""
-        )
-        score = (
-            f'<div class="mc-score"><div class="main">{C.esc(m.result.full_score)}</div>'
-            f"{sub}</div>"
-        )
+        top = f'<div class="main">{C.esc(m.result.full_score)}</div>'
+        sub = C.esc(m.result.half_score) if m.result.half_score else ""
     else:
-        score = '<div class="mc-score"><div class="vs">VS</div></div>'
+        top = '<div class="vs">VS</div>'
+        sub = "0-0"
+    score = (
+        f'<div class="mc-score">{top}'
+        + (f'<div class="sub">({sub})</div>' if sub else "")
+        + "</div>"
+    )
 
     def cell(t) -> str:
         return (
@@ -743,7 +744,7 @@ def build_ai_digest(days: list[Day], top_n_dates: int = 6) -> list[tuple]:
 
     每场取各维 rank==1 的首选结论 + 概率，与左侧卡片标签同一数据源（jinbet 报告）；
     某维缺失就少一颗 chip，不硬凑。返回 [(date, 场数, [item]), ...]，最新日期在前，
-    item = {id, code, home, away, picks: [(kind, label, prob)]}。
+    item = {id, code, lg, home, away, picks: [(kind, label, prob)]}，lg 供卡内赛事筛选。
     """
     ds = sorted(days, key=lambda d: d.date)[-top_n_dates:]
     out = []
@@ -756,7 +757,7 @@ def build_ai_digest(days: list[Day], top_n_dates: int = 6) -> list[tuple]:
                 if fs:
                     picks.append((kind, fs[0].label, fs[0].prob))
             items.append({
-                "id": m.match_id, "code": m.code,
+                "id": m.match_id, "code": m.code, "lg": m.competition or "",
                 "home": m.home.name, "away": m.away.name, "picks": picks,
             })
         out.append((d.date, len(items), items))
@@ -764,23 +765,35 @@ def build_ai_digest(days: list[Day], top_n_dates: int = 6) -> list[tuple]:
 
 
 def _ai_card(digest: list[tuple], pre: str = "") -> str:
-    """右栏「AI 预测」卡：日期 tab（纯 CSS radio 切换）+ 每场四维首选 chip。
+    """右栏「AI 预测」卡：风格与左侧赛程统一（ranking-card 卡壳 + fp-opt 筛选芯片）。
 
-    日期头「10月22日 (13场)」样式对齐筛选时间行；点击场次进单场页。
-    概率一律走 C.prob_tag（pct 红线口径）。
+    卡内自带与左侧同构的筛选条件：
+    - 时间行：日期 radio 切换（10月22日 (13场) 式），横向滚动、数量无上限；
+    - 赛事行：联赛 radio 过滤（body:has 规则按生成时联赛数展开）。
+    交互全部纯 CSS；概率一律走 C.prob_tag（pct 红线口径）。
     """
     if not digest:
         return ""
-    radios, tabs, bodies = [], [], []
+    lg_idx: dict[str, str] = {}
+    for _, _, items in digest:
+        for it in items:
+            if it["lg"] and it["lg"] not in lg_idx:
+                lg_idx[it["lg"]] = str(len(lg_idx))
+
+    tabs, bodies, rules = [], [], []
+    first = True
     for i, (date, n, items) in enumerate(digest):
         if not items:
             continue
         lab = f"{int(date[5:7])}月{int(date[8:10])}日 ({n}场)"
-        checked = " checked" if not radios else ""
-        radios.append(
-            f'<input type="radio" name="aid" id="aid-{i}" class="ai-radio"{checked}>'
+        checked = " checked" if first else ""
+        first = False
+        # radio 紧贴 label：复用全站 .fp-radio:checked + .fp-opt 的选中态样式
+        tabs.append(
+            f'<input type="radio" name="aid" id="aid-{i}" class="fp-radio"{checked}>'
+            f'<label class="fp-opt" for="aid-{i}">{C.esc(lab)}</label>'
         )
-        tabs.append(f'<label class="ai-tab" for="aid-{i}">{C.esc(lab)}</label>')
+        rules.append(f'body:has(#aid-{i}:checked) .ai-body-{i}{{display:block}}')
         rows = []
         for it in items:
             chips = "".join(
@@ -791,20 +804,40 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
                 )
             )
             code = f'<span class="ai-m-code">{C.esc(it["code"])}</span>' if it["code"] else ""
+            lg_attr = f' data-lg="{lg_idx[it["lg"]]}"' if it["lg"] in lg_idx else ""
             rows.append(
-                f'<a class="ai-m" href="{pre}matches/{it["id"]}.html">'
+                f'<a class="ai-m" href="{pre}matches/{it["id"]}.html"{lg_attr}>'
                 f'<div class="ai-m-head">{code}'
                 f'<span class="ai-m-vs">{C.esc(it["home"])} vs {C.esc(it["away"])}</span></div>'
                 f'<div class="ai-m-picks">{chips}</div></a>'
             )
         bodies.append(f'<div class="ai-body ai-body-{i}">{"".join(rows)}</div>')
-    if not radios:
-        return ""
+
+    # 赛事行：全部（默认）+ 各联赛；选中某联赛时其余场次隐藏
+    lg_opts = [
+        '<input type="radio" name="ail" id="ail-all" class="fp-radio" checked>'
+        '<label class="fp-opt" for="ail-all">全部</label>'
+    ]
+    for name, idx in lg_idx.items():
+        lg_opts.append(
+            f'<input type="radio" name="ail" id="ail-{idx}" class="fp-radio">'
+            f'<label class="fp-opt" for="ail-{idx}">{C.esc(name)}</label>'
+        )
+        rules.append(
+            f'body:has(#ail-{idx}:checked) #ai-pred-card '
+            f'.ai-m:not([data-lg="{idx}"]){{display:none}}'
+        )
+
     return (
-        '<div id="ai-pred-card" class="ai-pred-card">'
+        "<style>" + "".join(rules) + "</style>"
+        '<div id="ai-pred-card" class="ranking-card ai-pred-card">'
         f'<div class="card-header">{L.ICON_CPU} AI 预测</div>'
-        f'{"".join(radios)}'
-        f'<div class="ai-tabs">{"".join(tabs)}</div>'
+        '<div class="ai-filter">'
+        '<div class="fp-row"><div class="fp-label">时间:</div>'
+        f'<div class="fp-options fp-scroll">{"".join(tabs)}</div></div>'
+        '<div class="fp-row"><div class="fp-label">赛事:</div>'
+        f'<div class="fp-options fp-scroll">{"".join(lg_opts)}</div></div>'
+        "</div>"
         f'{"".join(bodies)}'
         "</div>"
     )
@@ -879,14 +912,14 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
         if has_jc
         else ""
     )
-    # 时间行：跨日期切换赛程（导航，不是本页过滤）。最新日期在首位；
-    # 默认展示 6 个，「更多…」checkbox 就地展开其余日期（不跳归档页）。
+    # 时间行：跨日期切换赛程（导航，不是本页过滤）。最新日期在首位。
+    # 日期条横向滚动、数量无上限——"更多"展开在日期堆到成百上千时不可用，
+    # 一条可滑动的 strip 才是可扩展方案；当前日期由全局 JS 滚进可视区。
     time_row = ""
     if dates:
         pre_d = "" if is_today else "../"
-        head, rest = dates[:6], dates[6:]
         opts = []
-        for dstr in head:
+        for dstr in dates:
             lab = f"{int(dstr[5:7])}月{int(dstr[8:10])}日"
             if dstr == day.date:
                 opts.append(f'<a class="fp-opt active" href="#">{lab}</a>')
@@ -894,21 +927,9 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
                 opts.append(
                     f'<a class="fp-opt" href="{pre_d}days/{dstr}.html">{lab}</a>'
                 )
-        more = ""
-        if rest:
-            tail = "".join(
-                f'<a class="fp-opt" href="{pre_d}days/{x}.html">'
-                f"{int(x[5:7])}月{int(x[8:10])}日</a>"
-                for x in rest if x != day.date
-            )
-            more = (
-                '<input type="checkbox" id="td-more" class="fp-radio">'
-                '<label class="fp-opt" for="td-more">更多…</label>'
-                f'<span class="fp-more-dates">{tail}</span>'
-            )
         time_row = (
             '<div class="fp-row"><div class="fp-label">时间:</div>'
-            f'<div class="fp-options">{"".join(opts)}{more}</div></div>'
+            f'<div class="fp-options fp-scroll">{"".join(opts)}</div></div>'
         )
     panel = (
         f'{filter_css}<input type="checkbox" id="fp-toggle" class="fp-toggle">'
