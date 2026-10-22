@@ -8,3 +8,6 @@ __pycache__/
 
 # gh-pages 的本地工作树（产物分支），不参与 main 的跟踪
 .publish/
+
+# 项目记忆：刻意不进仓库，避免 reset --hard 抹掉笔记
+.workbuddy/

@@ -28,6 +28,13 @@ class Slot:
 
 
 SLOTS: tuple[Slot, ...] = (
+    # ---------------- 页头区 ----------------
+    Slot(
+        "crest", "队徽", "Team.logo",
+        ("jinbet 球队字典（尚无 logo 字段）",), "pending",
+        "渲染层已接线且带协议校验（只放行 http(s)/相对路径）；"
+        "无 logo 时退化为纯文字，不留占位框。缺的是数据源，不是框架",
+    ),
     # ---------------- 结论区 ----------------
     Slot(
         "main_pick", "主推", "Match.main_pick",

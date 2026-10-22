@@ -282,9 +282,9 @@ def render_match(cfg: Config, m: Match) -> str:
 
     teams_row = (
         f'<h1 class="match-teams">'
-        f'<span class="home">{C.esc(m.home.name)}</span>'
+        f"{C.team_side(m.home, 'home')}"
         f'<span class="vs">VS</span>'
-        f'<span class="away">{C.esc(m.away.name)}</span>'
+        f"{C.team_side(m.away, 'away')}"
         f"</h1>"
     )
     header = C.card_header(
@@ -345,12 +345,14 @@ def _card(cfg: Config, m: Match, *, pre: str = "") -> str:
         )
     score = ""
     if m.result and m.result.full_score:
-        score = f'<div class="card-score">赛果 {C.esc(m.result.full_score)}</div>'
+        half = m.result.half_score
+        half_txt = f' <span class="half">(半 {C.esc(half)})</span>' if half else ""
+        score = f'<div class="card-score">赛果 {C.esc(m.result.full_score)}{half_txt}</div>'
     teams = (
         f'<div class="match-teams">'
-        f'<span class="home">{C.esc(m.home.name)}</span>'
+        f"{C.team_side(m.home, 'home')}"
         f'<span class="vs">VS</span>'
-        f'<span class="away">{C.esc(m.away.name)}</span>'
+        f"{C.team_side(m.away, 'away')}"
         f"</div>"
     )
     return (

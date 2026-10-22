@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import html
 import math
+import re
 from typing import Sequence
 
 # 配色常量与 jinbet 报告页 CSS 变量一致（--home / --away / --ink / --muted / --rule）
@@ -135,6 +136,23 @@ def form_dots(outcomes: Sequence[str]) -> str:
         label, cls = zh.get(key) or zh[str(o).strip()[:1]]
         dots.append(f'<span class="form-dot {cls}">{label}</span>')
     return f'<div class="form-row">{"".join(dots)}</div>' if dots else ""
+
+
+def team_side(team, side: str = "home") -> str:
+    """单侧队伍展示。
+
+    `Team.logo` 有值才出队徽，没有就退化为纯文字 —— 不留空占位框、不写
+    「暂无队徽」这类解释句。只接受 http(s) 与站点相对路径，挡掉
+    `javascript:` / `data:` 之类的协议，避免 logo 字段被数据侧污染成 XSS 入口。
+    """
+    name = f'<span class="{side}">{esc(team.name)}</span>'
+    logo = (getattr(team, "logo", "") or "").strip()
+    if not logo or not re.match(r"^(https?://|\.{0,2}/)", logo):
+        return name
+    return (
+        f'<span class="tm"><img class="crest" src="{esc(logo)}"'
+        f' alt="{esc(team.name)}队徽" loading="lazy" width="32" height="32">{name}</span>'
+    )
 
 
 def card_header(*, match_id: str = "", league: str = "", time_: str = "", extra: str = "") -> str:

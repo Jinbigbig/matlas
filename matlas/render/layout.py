@@ -80,11 +80,17 @@ a.card:hover { border-color: var(--accent2); text-decoration: none; }
 .match-teams .vs { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.82rem;
   color: var(--muted); background: var(--bg); padding: 0.3rem 0.8rem; border-radius: 20px;
   font-weight: 400; }
+/* 队徽：Team.logo 有值才出现，没有就只剩文字，不留占位框 */
+.match-teams .tm { display: inline-flex; align-items: center; gap: 0.5rem; min-width: 0;
+  overflow-wrap: anywhere; }
+.crest { width: 32px; height: 32px; object-fit: contain; flex: none; }
+h1.match-teams .crest { width: 40px; height: 40px; }
 .match-teams .home { color: var(--home); }
 .match-teams .away { color: var(--away); }
 h1.match-teams { justify-content: center; gap: 1rem; margin: 0.5rem 0 0.25rem; }
 .card-score { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.85rem;
   color: var(--ink); text-align: center; }
+.card-score .half { color: var(--muted); font-size: 0.92em; }
 
 /* ---------- 面板 / 洞察 ---------- */
 .panel { background: var(--bg2); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.25rem 0;
@@ -237,6 +243,41 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
   .mainpick { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
   .mainpick .mp-lab { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2);
     padding: 0 0 0.35rem; }
+}
+
+/* 平板竖屏 / 大屏手机：四宫格降到两列，面板内边距收紧 */
+@media (max-width: 640px) {
+  .picks4 { grid-template-columns: repeat(2, 1fr); }
+  .insight-grid { grid-template-columns: 1fr; }
+  .pick .val { font-size: 1.1rem; }
+  .card, .panel { padding: 1rem 0.9rem; }
+  .odds-item .value { font-size: 1.1rem; }
+  .match-teams { font-size: 1rem; }
+  .crest { width: 26px; height: 26px; }
+  h1.match-teams .crest { width: 34px; height: 34px; }
+  svg.radar { max-width: 100%; }
+  .mainpick .mp-txt { font-size: 0.92rem; }
+  table { font-size: 0.8rem; }
+  thead th, tbody td { padding: 0.45rem 0.5rem; }
+}
+
+/* 小屏手机：四宫格单列，页头副标题让位给导航 */
+@media (max-width: 480px) {
+  .wrap { padding: 0 0.75rem; }
+  main .wrap > h1 { font-size: 1.15rem; }
+  .picks4 { grid-template-columns: 1fr; }
+  .odds-grid { gap: 0.35rem; }
+  .odds-item { padding: 0.55rem 0.25rem; }
+  .odds-item .value { font-size: 1rem; }
+  .match-teams { font-size: 0.92rem; gap: 0.4rem; }
+  .crest { width: 22px; height: 22px; }
+  h1.match-teams .crest { width: 28px; height: 28px; }
+  .brand span { display: none; }
+  .card-header { gap: 0.4rem; font-size: 0.75rem; }
+  nav.site { gap: 0.7rem; font-size: 0.78rem; }
+  .form-dot { width: 18px; height: 18px; font-size: 0.6rem; }
+  .risk-note { padding: 0.6rem 0.75rem; }
+  .legend { gap: 0.7rem; font-size: 0.72rem; }
 }
 """
 
