@@ -434,7 +434,10 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 /* ---------- 双栏：主列 + 右侧栏（对齐 qiuxiaoce 的 v4 布局） ---------- */
 .v4-layout { display: flex; gap: 20px; align-items: flex-start; }
 .v4-main-col { flex: 1; min-width: 0; }
-.right-sidebar-new { width: 360px; flex: none; display: flex; flex-direction: column; gap: 16px; }
+.right-sidebar-new { width: 360px; flex: none; display: flex; flex-direction: column; }
+/* 右栏垂直节奏与左栏完全一致：间距全部用 margin（bar mb 12 / 卡 mb 15），
+   不用 flex gap——gap 会叠加 bar 的 margin-bottom，把 AI 卡推低 16px */
+.right-sidebar-new .ranking-card { margin: 0 0 15px; }
 @media (max-width: 1000px) {
   .right-sidebar-new { display: none; }
 }
