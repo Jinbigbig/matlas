@@ -738,10 +738,83 @@ def _ranking_card(rows: list[tuple[str, int, int]], pre: str = "",
     )
 
 
+def build_ai_digest(days: list[Day], top_n_dates: int = 6) -> list[tuple]:
+    """右栏「AI 预测」卡数据：最近若干交易日的报告预测首选（方向/比分/进球/半全场）。
+
+    每场取各维 rank==1 的首选结论 + 概率，与左侧卡片标签同一数据源（jinbet 报告）；
+    某维缺失就少一颗 chip，不硬凑。返回 [(date, 场数, [item]), ...]，最新日期在前，
+    item = {id, code, home, away, picks: [(kind, label, prob)]}。
+    """
+    ds = sorted(days, key=lambda d: d.date)[-top_n_dates:]
+    out = []
+    for d in reversed(ds):
+        items = []
+        for m in sort_matches(d.matches):
+            picks = []
+            for kind in ("direction", "score", "goals", "htft"):
+                fs = m.forecasts_of(kind)
+                if fs:
+                    picks.append((kind, fs[0].label, fs[0].prob))
+            items.append({
+                "id": m.match_id, "code": m.code,
+                "home": m.home.name, "away": m.away.name, "picks": picks,
+            })
+        out.append((d.date, len(items), items))
+    return out
+
+
+def _ai_card(digest: list[tuple], pre: str = "") -> str:
+    """右栏「AI 预测」卡：日期 tab（纯 CSS radio 切换）+ 每场四维首选 chip。
+
+    日期头「10月22日 (13场)」样式对齐筛选时间行；点击场次进单场页。
+    概率一律走 C.prob_tag（pct 红线口径）。
+    """
+    if not digest:
+        return ""
+    radios, tabs, bodies = [], [], []
+    for i, (date, n, items) in enumerate(digest):
+        if not items:
+            continue
+        lab = f"{int(date[5:7])}月{int(date[8:10])}日 ({n}场)"
+        checked = " checked" if not radios else ""
+        radios.append(
+            f'<input type="radio" name="aid" id="aid-{i}" class="ai-radio"{checked}>'
+        )
+        tabs.append(f'<label class="ai-tab" for="aid-{i}">{C.esc(lab)}</label>')
+        rows = []
+        for it in items:
+            chips = "".join(
+                f'<span class="ai-chip">{icon} {C.esc(label)} {C.prob_tag(p)}</span>'
+                for icon, (kind, label, p) in zip(
+                    (L.ICON_TARGET, L.ICON_HASH, L.ICON_SPORTS, L.ICON_TREND),
+                    it["picks"], strict=False,
+                )
+            )
+            code = f'<span class="ai-m-code">{C.esc(it["code"])}</span>' if it["code"] else ""
+            rows.append(
+                f'<a class="ai-m" href="{pre}matches/{it["id"]}.html">'
+                f'<div class="ai-m-head">{code}'
+                f'<span class="ai-m-vs">{C.esc(it["home"])} vs {C.esc(it["away"])}</span></div>'
+                f'<div class="ai-m-picks">{chips}</div></a>'
+            )
+        bodies.append(f'<div class="ai-body ai-body-{i}">{"".join(rows)}</div>')
+    if not radios:
+        return ""
+    return (
+        '<div id="ai-pred-card" class="ai-pred-card">'
+        f'<div class="card-header">{L.ICON_CPU} AI 预测</div>'
+        f'{"".join(radios)}'
+        f'<div class="ai-tabs">{"".join(tabs)}</div>'
+        f'{"".join(bodies)}'
+        "</div>"
+    )
+
+
 def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
                ranking: list[tuple[str, int, int]] | None = None,
                team_ranking: list[tuple[str, int, int]] | None = None,
-               dates: list[str] | None = None) -> str:
+               dates: list[str] | None = None,
+               ai_digest: list[tuple] | None = None) -> str:
     base = cfg.base_url.rstrip("/")
     ms = sort_matches(day.matches)
     if is_today:
@@ -858,6 +931,7 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
         f'<h1 class="sr-only">{C.esc(h1)}</h1>'
         f'<div class="v4-layout">{main_col}'
         '<aside class="right-sidebar-new">'
+        f'{_ai_card(ai_digest or [], pre="../" if not is_today else "")}'
         f'{_ranking_card(ranking or [], pre="../" if not is_today else "")}'
         f'{_ranking_card(team_ranking or [], pre="../" if not is_today else "", kind="team")}'
         "</aside>"

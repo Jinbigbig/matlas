@@ -449,6 +449,44 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
   color: #10b981; }
 .ranking-empty { padding: 14px 16px; font-size: 12px; color: #9ca3af; }
 
+/* ---------- 右栏 AI 预测卡：日期 tab（纯 CSS radio）+ 每场四维首选 chip ---------- */
+.ai-pred-card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  overflow: hidden; }
+.ai-pred-card .card-header { font-size: 14px; font-weight: 700; color: #111;
+  padding: 14px 16px; border-bottom: 1px solid #f1f5f9; }
+.ai-pred-card .ai-radio { display: none; }
+.ai-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 14px 0; }
+.ai-tab { font-size: 12px; color: #6b7280; background: #f1f5f9; border-radius: 16px;
+  padding: 4px 11px; cursor: pointer; user-select: none; }
+.ai-tab:hover { color: var(--accent); }
+/* radio 在前、tabs/body 是其兄弟节点：~ 选择器即可完成切换，无需 JS */
+#aid-0:checked ~ .ai-tabs label[for="aid-0"],
+#aid-1:checked ~ .ai-tabs label[for="aid-1"],
+#aid-2:checked ~ .ai-tabs label[for="aid-2"],
+#aid-3:checked ~ .ai-tabs label[for="aid-3"],
+#aid-4:checked ~ .ai-tabs label[for="aid-4"],
+#aid-5:checked ~ .ai-tabs label[for="aid-5"] {
+  background: var(--accent); color: #fff; font-weight: 600; }
+.ai-body { display: none; max-height: 480px; overflow-y: auto; padding: 8px 10px 12px; }
+#aid-0:checked ~ .ai-body-0, #aid-1:checked ~ .ai-body-1,
+#aid-2:checked ~ .ai-body-2, #aid-3:checked ~ .ai-body-3,
+#aid-4:checked ~ .ai-body-4, #aid-5:checked ~ .ai-body-5 { display: block; }
+.ai-m { display: block; padding: 8px 8px 9px; border-radius: 8px; color: inherit;
+  text-decoration: none; }
+.ai-m:hover { background: #f8fafc; text-decoration: none; }
+.ai-m + .ai-m { border-top: 1px solid #f8fafc; }
+.ai-m-head { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600;
+  color: #111; margin-bottom: 5px; }
+.ai-m-code { flex: none; font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11px;
+  color: #6b7280; background: #f1f5f9; padding: 1px 6px; border-radius: 4px; }
+.ai-m-vs { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ai-m-picks { display: flex; flex-wrap: wrap; gap: 5px; }
+.ai-chip { display: inline-flex; align-items: center; gap: 3px; font-size: 11px;
+  color: #374151; background: #f8fafc; border: 1px solid #eef2f7; border-radius: 6px;
+  padding: 2px 6px; }
+.ai-chip svg { width: 12px; height: 12px; flex: none; color: #94a3b8; }
+.ai-chip .pct { font-size: 11px; }
+
 /* ---------- 联赛 / 球队专题页：头部对齐对方 .lt-header（徽章 + 标题 + 统计） ---------- */
 .lt-header { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   padding: 22px 24px; display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
