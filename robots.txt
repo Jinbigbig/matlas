@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# LLM 上下文发现
+Allow: /llms.txt
+
+Sitemap: https://jinbigbig.github.io/matlas/sitemap.xml
+Sitemap: https://jinbigbig.github.io/matlas/sitemap-today.xml
