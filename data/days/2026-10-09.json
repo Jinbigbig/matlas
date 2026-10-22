@@ -1,6 +1,6 @@
 {
  "date": "2026-10-09",
- "note": "数据源：jinbet 每日预测快照（poisson-v2.2 引擎），赛果赛后回填。",
+ "note": "数据源：jinbet 每日预测快照，赛果赛后回填。",
  "matches": [
   {
    "match_id": "2026-10-09-001",
@@ -70,6 +70,24 @@
      "label": "2-0",
      "prob": 0.065,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.251,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.183,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "0 球",
+     "prob": 0.129,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -108,7 +126,7 @@
     "half_score": "3-0",
     "direction_hit": false,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": false,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }
@@ -181,6 +199,24 @@
      "label": "2-0",
      "prob": 0.055,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.179,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.139,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.087,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -219,7 +255,7 @@
     "half_score": "1-0",
     "direction_hit": true,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": false,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }
@@ -292,6 +328,24 @@
      "label": "2-0",
      "prob": 0.055,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.184,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.149,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.098,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -330,7 +384,7 @@
     "half_score": "0-0",
     "direction_hit": false,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": false,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }
@@ -403,6 +457,24 @@
      "label": "1-0",
      "prob": 0.056,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.18,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.128,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.088,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -441,7 +513,7 @@
     "half_score": "1-0",
     "direction_hit": true,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": false,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }
@@ -514,6 +586,24 @@
      "label": "1-3",
      "prob": 0.047,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.175,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.15,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.125,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -552,7 +642,7 @@
     "half_score": "0-2",
     "direction_hit": true,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": false,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }
@@ -625,6 +715,24 @@
      "label": "2-2",
      "prob": 0.063,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.163,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.149,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.137,
+     "rank": 3
     }
    ],
    "confidence": "high",
@@ -663,7 +771,7 @@
     "half_score": "1-0",
     "direction_hit": true,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": false,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }
@@ -736,6 +844,24 @@
      "label": "3-0",
      "prob": 0.07,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.186,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.179,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.084,
+     "rank": 3
     }
    ],
    "confidence": "high",
@@ -774,7 +900,7 @@
     "half_score": "0-0",
     "direction_hit": true,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": false,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }
@@ -847,6 +973,24 @@
      "label": "3-1",
      "prob": 0.077,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.211,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.195,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.112,
+     "rank": 3
     }
    ],
    "confidence": "high",
@@ -885,7 +1029,7 @@
     "half_score": "0-0",
     "direction_hit": false,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": false,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }
@@ -958,6 +1102,24 @@
      "label": "1-0",
      "prob": 0.045,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.138,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.132,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.087,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -996,7 +1158,7 @@
     "half_score": "1-0",
     "direction_hit": true,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": true,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }
@@ -1069,6 +1231,24 @@
      "label": "3-0",
      "prob": 0.069,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.202,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.177,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.098,
+     "rank": 3
     }
    ],
    "confidence": "high",
@@ -1107,7 +1287,7 @@
     "half_score": "0-1",
     "direction_hit": false,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": true,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }
@@ -1180,6 +1360,24 @@
      "label": "0-2",
      "prob": 0.068,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.239,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.182,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "0 球",
+     "prob": 0.095,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -1218,7 +1416,7 @@
     "half_score": "0-1",
     "direction_hit": false,
     "score_hit": true,
-    "goals_hit": null,
+    "goals_hit": true,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }
@@ -1291,6 +1489,24 @@
      "label": "0-1",
      "prob": 0.053,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.165,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.15,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.102,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -1329,7 +1545,7 @@
     "half_score": "1-0",
     "direction_hit": true,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": true,
     "htft_hit": null,
     "settled_at": "2026-10-09"
    }

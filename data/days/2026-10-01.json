@@ -1,6 +1,6 @@
 {
  "date": "2026-10-01",
- "note": "数据源：jinbet 每日预测快照（poisson-v2.2 引擎），赛果赛后回填。",
+ "note": "数据源：jinbet 每日预测快照，赛果赛后回填。",
  "matches": [
   {
    "match_id": "2026-10-01-001",
@@ -70,6 +70,24 @@
      "label": "0-3",
      "prob": 0.058,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.22,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.151,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.087,
+     "rank": 3
     }
    ],
    "confidence": "medium",

@@ -15,12 +15,17 @@ from . import layout as L
 
 
 def _picks(m: Match) -> str:
-    """四宫格：方向 / 比分 / 进球 / 半全。缺哪维就不画哪格。"""
+    """四宫格：方向 / 比分 / 进球 / 半全。缺哪维就不画哪格；半全场恒缺出占位。"""
     titles = {"direction": "方向", "score": "比分", "goals": "进球", "htft": "半全场"}
     cells = []
     for kind, title in titles.items():
         items = m.forecasts_of(kind)
         if not items:
+            if kind == "htft":
+                cells.append(
+                    '<div class="pick pick-ph"><div class="lab">半全场</div>'
+                    '<div class="mini">待接入</div></div>'
+                )
             continue
         top = items[0]
         extra = ""
@@ -121,7 +126,10 @@ def _form_panel(m: Match) -> str:
             f"<h3>{C.esc(title)}</h3>{dots}"
             + C.table(["日期", "赛事", "对手", "比分", "结果"], rows, cls="history-table")
         )
-    return C.panel("近期战绩", "".join(parts)) if parts else ""
+    return C.panel("近期战绩", "".join(parts)) if parts else C.panel(
+        "近期战绩",
+        '<p class="panel-empty">近期战绩数据源尚未接入，框架已预留，数据补齐后自动展示。</p>',
+    )
 
 
 def _h2h_panel(m: Match) -> str:
@@ -133,7 +141,10 @@ def _h2h_panel(m: Match) -> str:
 
 def _injury_panel(m: Match) -> str:
     if not m.injuries:
-        return ""
+        return C.panel(
+            "伤停与缺阵",
+            '<p class="panel-empty">伤停数据源尚未接入，框架已预留，数据补齐后自动展示。</p>',
+        )
     rows = []
     for inj in m.injuries:
         who = m.home.name if inj.team == "home" else (m.away.name if inj.team == "away" else inj.team)
@@ -144,7 +155,10 @@ def _injury_panel(m: Match) -> str:
 
 def _charts_panel(m: Match) -> str:
     if not m.metrics_home or not m.metrics_away:
-        return ""
+        return C.panel(
+            "战力对照",
+            '<p class="panel-empty">六维战力 / 动量曲线数据源尚未接入，框架已预留，数据补齐后自动展示。</p>',
+        )
     axes = [zh for _, zh in Metrics.AXES]
     radar = C.radar_svg(
         m.metrics_home.values(), m.metrics_away.values(), axes,
@@ -163,6 +177,76 @@ def _charts_panel(m: Match) -> str:
     return C.panel(
         "战力对照",
         f"<h3>六维战力</h3>{radar}{mom}",
+    )
+
+
+def _intel_panel(m: Match) -> str:
+    """赛前情报速览：基本信息一屏看全（对齐对方单场页首个区块的框架）。"""
+    zh_conf = {"high": "高", "medium": "中", "low": "低", "none": "冷门"}.get(
+        m.confidence, "未评级"
+    )
+    dn = m.extras.get("data_n") or {}
+    rows = [
+        ["赛事", m.competition or "—", "编号", m.code or "—"],
+        ["比赛日", m.day, "开球时间", m.kickoff or "待定"],
+        ["AI 置信度", zh_conf, "冷启动", "是（不进精选）" if m.is_cold_start else "否"],
+        ["结论模型", "量化推演引擎", "数据样本", f"主 {dn.get('home', '—')} 场 / 客 {dn.get('away', '—')} 场"],
+    ]
+    return C.panel("赛前情报速览", C.table(["项目", "内容", "项目", "内容"], rows, cls="duo"))
+
+
+def _compare_panel(m: Match) -> str:
+    """核心数据对比：主客两队可量化指标并排（对方「核心数据对比」同框架）。"""
+    ex = m.extras or {}
+    rows = []
+    lam_h, lam_a = ex.get("lam_home"), ex.get("lam_away")
+    if lam_h is not None and lam_a is not None:
+        rows.append(["期望进球（模型）", f"{lam_h:g}", f"{lam_a:g}"])
+    dn = ex.get("data_n") or {}
+    if dn.get("home") or dn.get("away"):
+        rows.append(["统计样本（场）", str(dn.get("home", "—")), str(dn.get("away", "—"))])
+    body = (
+        C.table(["数据维度", m.home.name, m.away.name], rows, cls="duo")
+        if rows
+        else '<p class="panel-empty">两队量化指标数据源尚未接入，框架已预留。</p>'
+    )
+    return C.panel("核心数据对比", body)
+
+
+def _model_panel(m: Match) -> str:
+    """模型视角：λ 总量 / 三方向最可能比分 / 冷门评估（来自模型快照 extras）。"""
+    ex = m.extras or {}
+    bits = []
+    if ex.get("lam_total") is not None:
+        bits.append(f"<p>模型预期总进球合计：<b>{ex['lam_total']:g}</b> 球</p>")
+    quad = ex.get("quad_top") or {}
+    qrows = []
+    for key, lab in (("home", "主胜"), ("draw", "平"), ("away", "客胜")):
+        q = quad.get(key)
+        if isinstance(q, dict) and q.get("score"):
+            qrows.append([lab, str(q["score"]).replace(":", "-"), f"{q.get('prob', 0):g}%"])
+    if qrows:
+        bits.append(
+            "<h4>三方向最可能比分</h4>"
+            + C.table(["方向", "最可能比分", "模型概率"], qrows)
+        )
+    if ex.get("upset_prob") is not None:
+        lvl = ex.get("upset_level", "")
+        bits.append(
+            f"<p>冷门评估：<b>{C.esc(str(lvl))}</b>"
+            f'（冷门概率 <span class="pct mini">{ex["upset_prob"]:g}%</span>）</p>'
+        )
+    body = "".join(bits) or (
+        '<p class="panel-empty">模型过程数据尚未接入，框架已预留。</p>'
+    )
+    return C.panel("模型视角", body)
+
+
+def _referee_panel(m: Match) -> str:
+    """裁判执法数据：暂无数据源，框架占位（对齐对方同区块）。"""
+    return C.panel(
+        "裁判执法数据",
+        '<p class="panel-empty">裁判执法数据源尚未接入，框架已预留，数据补齐后自动展示。</p>',
     )
 
 
@@ -282,7 +366,8 @@ def render_match(cfg: Config, m: Match) -> str:
     sample = ' <span class="mini">示例数据</span>' if m.extras.get("sample") else ""
 
     teams_row = f'<h1 class="sr-only">{C.esc(m.home.name)} vs {C.esc(m.away.name)}</h1>' + _mc_teams(m, pre="../")
-    header = _mc_header(m)
+    header = _mc_header(m, pre="../")
+    picks = _picks(m)
     body_parts = [
         '<div class="card card-match">',
         header,
@@ -291,17 +376,20 @@ def render_match(cfg: Config, m: Match) -> str:
         f'<p class="sub" style="text-align:center;margin:0">{C.esc(meta)}{cold}{sample}</p>',
         "</div>",
         "</div>",
-        _main_pick_block(m),
-        _risk_panel(m),
-        _picks(m),
-        _charts_panel(m),
-        _odds_panel(m),
-        _handicap_panel(m),
-        _standings_panel(m),
-        _h2h_panel(m),
-        _form_panel(m),
-        _injury_panel(m),
-        _reference_panel(m),
+        _intel_panel(m),        # 1. 📌 赛前情报速览
+        _main_pick_block(m),    # 一句话主推（有才出现）
+        _compare_panel(m),      # 2. 🔍 核心数据对比
+        _h2h_panel(m),          # 3. ⚔️ 历史交锋数据
+        _form_panel(m),         # 4. 📈 球队状态（近期战绩）
+        _injury_panel(m),       # 5. ⚠️ 核心球员缺阵影响
+        _referee_panel(m),      # 6. ⚖️ 裁判执法数据
+        _odds_panel(m),         # 市场数据
+        _handicap_panel(m),     # 7. 🤔 让步可信度分析
+        _model_panel(m),        # 8. 🧠 模型视角
+        C.panel("综合赛果推演", picks) if picks else "",   # 9. 🎯
+        _charts_panel(m),       # 战力对照（雷达/动量，有数据才画）
+        _standings_panel(m),    # 积分排名（有数据才画）
+        _reference_panel(m),    # 外部对照（有才出现）
         _ledger(m),
     ]
 
@@ -324,7 +412,7 @@ def render_match(cfg: Config, m: Match) -> str:
 # ---------------------------------------------------------------- 与 qiuxiaoce 同构的卡片部件
 
 
-def _mc_header(m: Match) -> str:
+def _mc_header(m: Match, pre: str = "") -> str:
     """日期 / 联赛 / 编号 / 时间 + AI置信度 + 命中印章。
 
     结构与 class 名对齐 qiuxiaoce 的 `.mc-header`。印章只在有赛果时出现。
@@ -349,7 +437,7 @@ def _mc_header(m: Match) -> str:
     return (
         '<div class="mc-header"><div class="mc-meta">'
         f'<span class="date">{C.esc(date_txt)}</span>'
-        f'<span class="league">{C.esc(m.competition)}</span>'
+        f'<span class="league lg-link" data-goto="{pre}{_lg_href(m.competition)}">{C.esc(m.competition)}</span>'
         + (f'<span class="num">{C.esc(m.code)}</span>' if m.code else "")
         + f'<span class="time">{C.esc(time_txt)}</span>'
         '</div><div class="mc-status">'
@@ -358,8 +446,22 @@ def _mc_header(m: Match) -> str:
     )
 
 
+def _lg_href(league: str) -> str:
+    """联赛名 → 联赛页相对路径（站点根下 leagues/{联赛名}.html，页深前缀由调用方补）。"""
+    return f"leagues/{C.esc(league)}.html"
+
+
+def _tm_href(team: str) -> str:
+    """球队名 → 球队页相对路径（站点根下 teams/{队名}.html）。"""
+    return f"teams/{C.esc(team)}.html"
+
+
 def _mc_teams(m: Match, pre: str = "") -> str:
-    """队徽 + 大比分（括号内半场）。未结算时中间出 VS。pre 为页深前缀。"""
+    """队徽 + 大比分（括号内半场）。未结算时中间出 VS。pre 为页深前缀。
+
+    球队名/队徽用 span+data-goto 而非 <a>：列表卡片与单场页头部都处在
+    整卡 <a> 内部，HTML 不允许嵌套 a，点击跳转交给全局事件委托。
+    """
     if m.result and m.result.full_score:
         sub = (
             f'<div class="sub">({C.esc(m.result.half_score)})</div>'
@@ -375,8 +477,8 @@ def _mc_teams(m: Match, pre: str = "") -> str:
 
     def cell(t) -> str:
         return (
-            f'<div class="mc-team">{C.crest_img(t, pre=pre)}'
-            f"<span>{C.esc(t.name)}</span></div>"
+            f'<div class="mc-team"><span class="team-link" data-goto="{pre}{_tm_href(t.name)}">'
+            f'{C.crest_img(t, pre=pre)}<span>{C.esc(t.name)}</span></span></div>'
         )
 
     return f'<div class="mc-teams">{cell(m.home)}{score}{cell(m.away)}</div>'
@@ -385,13 +487,15 @@ def _mc_teams(m: Match, pre: str = "") -> str:
 def _mc_tags(m: Match) -> str:
     """四个维度的图标标签，命中项加 .hit 提亮。
 
-    图标统一走 L.ICON_* 单色线性 SVG（全站一套风格，不用彩色 emoji），
-    只带图标 + 结论，不带维度名 —— 否则窄屏一行放不下会折行。
+    图标统一走 L.ICON_* 单色线性 SVG（全站一套风格，不用彩色 emoji）。
+    已结算的场次在每个标签上直接应用赛果状态：命中 ✓（红提亮）/ 未中 ✗（灰），
+    让历史日期页一眼看出每条结论的命中情况。半全场暂无数据源，出占位格。
     """
     icon = {
         "direction": L.ICON_TARGET, "score": L.ICON_HASH,
         "goals": L.ICON_SPORTS, "htft": L.ICON_TREND,
     }
+    zh = {"direction": "方向", "score": "比分", "goals": "进球", "htft": "半全场"}
     hit_of = {
         "direction": "direction_hit", "score": "score_hit",
         "goals": "goals_hit", "htft": "htft_hit",
@@ -400,11 +504,24 @@ def _mc_tags(m: Match) -> str:
     for kind in ("direction", "score", "goals", "htft"):
         f = m.headline.get(kind)
         if not f:
+            if kind == "htft":
+                tags.append(
+                    '<div class="mc-tag mc-tag-ph">半全场 · 待接入</div>'
+                )
             continue
-        hit = bool(m.result and getattr(m.result, hit_of[kind], None))
+        cls = ""
+        state = ""
+        if m.result:
+            hv = getattr(m.result, hit_of[kind], None)
+            if hv is True:
+                cls = " hit"
+                state = f'<span class="tag-state">{L.ICON_CHECK}</span>'
+            elif hv is False:
+                cls = " miss"
+                state = f'<span class="tag-state">{L.ICON_CROSS}</span>'
         tags.append(
-            f'<div class="mc-tag{" hit" if hit else ""}">'
-            f"{icon[kind]} {C.esc(f.label)}</div>"
+            f'<div class="mc-tag{cls}" title="{zh[kind]}">'
+            f"{icon[kind]} {C.esc(f.label)}{state}</div>"
         )
     return f'<div class="mc-tags">{"".join(tags)}</div>' if tags else ""
 
@@ -426,7 +543,7 @@ def _card(cfg: Config, m: Match, *, pre: str = "", lg: str = "") -> str:
     attr = f' data-lg="{C.esc(lg)}"' if lg else ""
     return (
         f'<a class="match-card" href="{url}"{attr}>'
-        + _mc_header(m)
+        + _mc_header(m, pre=pre)
         + '<div class="mc-body">'
         + _mc_teams(m, pre=pre)
         + _mc_tags(m)
@@ -490,8 +607,10 @@ def _ranking_card(rows: list[tuple[str, int, int]], pre: str = "",
             acc = hit / n * 100
             if kind == "team":
                 logo, alt = logos.crest_url(name), "队徽"
+                goto = f"{pre}teams/{C.esc(name)}.html"
             else:
                 logo, alt = logos.league_crest_url(name), "徽章"
+                goto = f"{pre}leagues/{C.esc(name)}.html"
             img = (
                 f'<img src="{pre}{C.esc(logo)}" class="rank-logo" alt="{C.esc(name)}{alt}" loading="lazy">'
                 if logo
@@ -500,7 +619,7 @@ def _ranking_card(rows: list[tuple[str, int, int]], pre: str = "",
             items.append(
                 f'<a class="ranking-item" href="{pre}days/">'
                 f'<div class="rank-index">{i}</div>{img}'
-                f'<span class="rank-name">{C.esc(name)}</span>'
+                f'<span class="rank-name lg-link" data-goto="{goto}">{C.esc(name)}</span>'
                 f'<div class="rank-bar-wrap">'
                 f'<div class="rank-bar" style="width:{acc:.1f}%"></div></div>'
                 f'<span class="rank-acc pct">{acc:.1f}%</span></a>'
@@ -583,12 +702,13 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
         else ""
     )
     # 时间行：跨日期切换赛程（导航，不是本页过滤）。最新日期在首位；
-    # 最多展示 8 个，更多走归档页。当前日期高亮且不可点。
+    # 默认展示 6 个，「更多…」checkbox 就地展开其余日期（不跳归档页）。
     time_row = ""
     if dates:
         pre_d = "" if is_today else "../"
+        head, rest = dates[:6], dates[6:]
         opts = []
-        for dstr in dates[:8]:
+        for dstr in head:
             lab = f"{int(dstr[5:7])}月{int(dstr[8:10])}日"
             if dstr == day.date:
                 opts.append(f'<a class="fp-opt active" href="#">{lab}</a>')
@@ -596,10 +716,21 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
                 opts.append(
                     f'<a class="fp-opt" href="{pre_d}days/{dstr}.html">{lab}</a>'
                 )
-        opts.append(f'<a class="fp-opt" href="{pre_d}days/">更多…</a>')
+        more = ""
+        if rest:
+            tail = "".join(
+                f'<a class="fp-opt" href="{pre_d}days/{x}.html">'
+                f"{int(x[5:7])}月{int(x[8:10])}日</a>"
+                for x in rest if x != day.date
+            )
+            more = (
+                '<input type="checkbox" id="td-more" class="fp-radio">'
+                '<label class="fp-opt" for="td-more">更多…</label>'
+                f'<span class="fp-more-dates">{tail}</span>'
+            )
         time_row = (
             '<div class="fp-row"><div class="fp-label">时间:</div>'
-            f'<div class="fp-options">{"".join(opts)}</div></div>'
+            f'<div class="fp-options">{"".join(opts)}{more}</div></div>'
         )
     panel = (
         f'{filter_css}<input type="checkbox" id="fp-toggle" class="fp-toggle">'
@@ -657,16 +788,61 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
     )
 
 
-def render_archive_index(cfg: Config, days: list[str]) -> str:
+def render_archive_index(cfg: Config, days: list[str],
+                         leagues: list[tuple[str, int, int, int]] | None = None,
+                         teams: list[tuple[str, int, int, int]] | None = None) -> str:
+    """历史归档页：交易日 / 联赛 / 球队 三视图（纯 CSS radio 切换）。
+
+    leagues/teams 元素为 (名称, 已收录场数, 命中场数, 已结算场数)。
+    """
     base = cfg.base_url.rstrip("/")
-    rows = [[f'<a href="{d}.html">{d}</a>', "查看"] for d in sorted(days, reverse=True)]
+    ds = sorted(days, reverse=True)
+    date_items = "".join(
+        f'<a class="arch-day" href="{d}.html">'
+        f'<span class="arch-date">{C.esc(d)}</span><span class="arch-go">查看 →</span></a>'
+        for d in ds
+    )
+
+    def _grid(items: list[tuple[str, int, int, int]], kind: str) -> str:
+        cells = []
+        for name, n, hit, total in items:
+            acc = (hit / total * 100) if total else 0.0
+            bar = (
+                f'<div class="rank-bar-wrap"><div class="rank-bar" style="width:{acc:.1f}%"></div></div>'
+                if total
+                else '<div class="rank-bar-wrap"></div>'
+            )
+            acc_txt = f'<span class="rank-acc pct">{acc:.1f}%</span>' if total else '<span class="mini">待回填</span>'
+            cells.append(
+                f'<a class="arch-cell" href="../{kind}/{C.esc(name)}.html">'
+                f'<span class="arch-name">{C.esc(name)}</span>'
+                f'<span class="arch-n">{n} 场</span>'
+                f'{bar}{acc_txt}</a>'
+            )
+        return f'<div class="arch-grid">{"".join(cells)}</div>'
+
+    lg_view = _grid(leagues or [], "leagues") or '<p class="sub">暂无联赛数据。</p>'
+    tm_view = _grid(teams or [], "teams") or '<p class="sub">暂无球队数据。</p>'
     body = (
         "<h1>历史归档</h1>"
-        f'<p class="sub">共 {len(days)} 个交易日，逐日留档，结论指纹可核验。</p>'
-        + (C.table(["日期", ""], rows) if rows else "<p>暂无归档。</p>")
+        f'<p class="sub">共 {len(ds)} 个交易日，逐日留档，结论指纹可核验；'
+        "也可按联赛 / 球队维度浏览。</p>"
+        '<div class="arch-tabs">'
+        '<input type="radio" name="arch" id="at-date" class="fp-radio" checked>'
+        '<label class="fp-opt" for="at-date">📅 按交易日</label>'
+        '<input type="radio" name="arch" id="at-lg" class="fp-radio">'
+        '<label class="fp-opt" for="at-lg">按联赛</label>'
+        '<input type="radio" name="arch" id="at-tm" class="fp-radio">'
+        '<label class="fp-opt" for="at-tm">按球队</label>'
+        '<div class="arch-view av-date">'
+        f'<div class="arch-days">{date_items}</div>'
+        "</div>"
+        f'<div class="arch-view av-lg">{lg_view}</div>'
+        f'<div class="arch-view av-tm">{tm_view}</div>'
+        "</div>"
     )
     return L.page(
-        cfg, title="历史归档", description="按日期归档的全部赛事分析",
+        cfg, title="历史归档", description="按日期、联赛、球队归档的全部赛事分析",
         body=body, canonical=f"{base}/days/", nav_day="", depth=1,
     )
 
@@ -847,4 +1023,77 @@ def render_search(cfg: Config, days: list[Day]) -> str:
     return L.page(
         cfg, title="站内搜索", description="按队名、联赛、竞彩编号检索全部历史赛事",
         body=body, canonical=f"{base}/search.html", depth=0,
+    )
+
+
+def _lt_header(name: str, *, logo: str, meta: str, ph_char: str = "") -> str:
+    """联赛/球队专题页头部（对齐对方 .lt-header：徽章 + 标题 + 统计行）。"""
+    img = (
+        f'<img class="lt-logo" src="../{C.esc(logo)}" alt="{C.esc(name)}徽标" loading="lazy">'
+        if logo
+        else f'<div class="lt-logo lt-logo-ph" aria-hidden="true">{C.esc(ph_char or name[:1])}</div>'
+    )
+    return (
+        '<div class="lt-header">'
+        f"{img}"
+        f'<div><h1 class="lt-title">{C.esc(name)}</h1>'
+        f'<div class="lt-meta">{meta}</div></div>'
+        "</div>"
+    )
+
+
+def render_league(cfg: Config, league: str, matches: list[Match],
+                  stats: tuple[int, int] | None = None) -> str:
+    """联赛专题页：头部（徽章+标题+统计）+ 该联赛全部已收录场次列表。
+
+    框架对齐对方 league-topic 页；列表与命中统计是我们自己的增量内容。
+    """
+    base = cfg.base_url.rstrip("/")
+    ordered = sorted(matches, key=lambda m: (m.day, m.code or ""), reverse=True)
+    cards = "".join(_card(cfg, m, pre="../") for m in ordered[:60]) or (
+        '<p class="sub">该联赛暂无已收录场次。</p>'
+    )
+    hit, total = stats or (0, 0)
+    acc = (hit / total * 100) if total else 0.0
+    meta = (
+        f"已收录 <b>{len(matches)}</b> 场 · 已结算 <b>{total}</b> 场 · "
+        f'方向命中 <span class="pct"><b>{acc:.1f}%</b></span>'
+        if total
+        else f"已收录 <b>{len(matches)}</b> 场 · 赛果回填后自动统计命中率"
+    )
+    logo = logos.league_crest_url(league)
+    body = (
+        _lt_header(league, logo=logo, meta=meta)
+        + f'<div class="cards">{cards}</div>'
+    )
+    return L.page(
+        cfg, title=f"{league} 赛事专题", description=f"{league} 全部已收录场次的方向命中率与逐场分析",
+        body=body, canonical=f"{base}/leagues/{league}.html", depth=1,
+    )
+
+
+def render_team(cfg: Config, team_name: str, matches: list[Match],
+                stats: tuple[int, int] | None = None) -> str:
+    """球队专题页：头部（队徽+队名+统计）+ 该队全部已收录场次列表。"""
+    base = cfg.base_url.rstrip("/")
+    ordered = sorted(matches, key=lambda m: (m.day, m.code or ""), reverse=True)
+    cards = "".join(_card(cfg, m, pre="../") for m in ordered[:60]) or (
+        '<p class="sub">该球队暂无已收录场次。</p>'
+    )
+    hit, total = stats or (0, 0)
+    acc = (hit / total * 100) if total else 0.0
+    meta = (
+        f"已收录 <b>{len(matches)}</b> 场 · 已结算 <b>{total}</b> 场 · "
+        f'方向命中 <span class="pct"><b>{acc:.1f}%</b></span>'
+        if total
+        else f"已收录 <b>{len(matches)}</b> 场 · 赛果回填后自动统计命中率"
+    )
+    logo = logos.crest_url(team_name)
+    body = (
+        _lt_header(team_name, logo=logo, meta=meta)
+        + f'<div class="cards">{cards}</div>'
+    )
+    return L.page(
+        cfg, title=f"{team_name} 赛事专题", description=f"{team_name} 全部已收录场次的方向命中率与逐场分析",
+        body=body, canonical=f"{base}/teams/{team_name}.html", depth=1,
     )

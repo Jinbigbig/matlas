@@ -1,6 +1,6 @@
 {
  "date": "2026-10-21",
- "note": "数据源：jinbet 每日预测快照（poisson-v2.2 引擎），赛果赛后回填。",
+ "note": "数据源：jinbet 每日预测快照，赛果赛后回填。",
  "matches": [
   {
    "match_id": "2026-10-21-001",
@@ -70,6 +70,24 @@
      "label": "3-2",
      "prob": 0.056,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.169,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.085,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.079,
+     "rank": 3
     }
    ],
    "confidence": "medium",
@@ -172,6 +190,24 @@
      "label": "1-2",
      "prob": 0.068,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.153,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.141,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.137,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -274,6 +310,24 @@
      "label": "3-2",
      "prob": 0.059,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.153,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.141,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.085,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -376,6 +430,24 @@
      "label": "3-1",
      "prob": 0.051,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.152,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.142,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.125,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -478,6 +550,24 @@
      "label": "2-2",
      "prob": 0.057,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.208,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.093,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.092,
+     "rank": 3
     }
    ],
    "confidence": "medium",
@@ -580,6 +670,24 @@
      "label": "1-0",
      "prob": 0.064,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.152,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.142,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.138,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -682,6 +790,24 @@
      "label": "4-0",
      "prob": 0.065,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.184,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.155,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.092,
+     "rank": 3
     }
    ],
    "confidence": "high",
@@ -784,6 +910,24 @@
      "label": "4-1",
      "prob": 0.069,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.195,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.1,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.092,
+     "rank": 3
     }
    ],
    "confidence": "high",
@@ -886,6 +1030,24 @@
      "label": "3-0",
      "prob": 0.059,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.15,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.136,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.078,
+     "rank": 3
     }
    ],
    "confidence": "high",
@@ -988,6 +1150,24 @@
      "label": "1-2",
      "prob": 0.055,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.136,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.131,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.082,
+     "rank": 3
     }
    ],
    "confidence": "low",
@@ -1090,6 +1270,24 @@
      "label": "4-1",
      "prob": 0.07,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.18,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.156,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.092,
+     "rank": 3
     }
    ],
    "confidence": "high",
@@ -1192,6 +1390,24 @@
      "label": "2-0",
      "prob": 0.056,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.136,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.13,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.082,
+     "rank": 3
     }
    ],
    "confidence": "medium",
@@ -1294,6 +1510,24 @@
      "label": "3-1",
      "prob": 0.055,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.251,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.11,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.091,
+     "rank": 3
     }
    ],
    "confidence": "medium",

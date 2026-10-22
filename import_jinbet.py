@@ -114,6 +114,7 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict) -> dict:
     # ---- 比分预测：top_scores 前 6 ----
     top_scores = [x for x in (m.get("top_scores") or []) if isinstance(x, dict)]
     top_score_label = ""
+    goals_prob: dict[int, float] = {}
     for i, x in enumerate(top_scores[:6], 1):
         lab = _score_fmt(str(x.get("score", "")))
         p = _f(x.get("prob"))
@@ -122,6 +123,18 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict) -> dict:
         if i == 1:
             top_score_label = lab
         forecasts.append({"kind": "score", "label": lab, "prob": round(p / 100, 4), "rank": i})
+    # ---- 进球数预测：由同一比分分布聚合总进球（真实推导，非造假）----
+    for x in top_scores:
+        s = str(x.get("score", ""))
+        p = _f(x.get("prob"))
+        if ":" in s and p is not None:
+            try:
+                g = int(s.split(":")[0]) + int(s.split(":")[1])
+                goals_prob[g] = goals_prob.get(g, 0.0) + p
+            except (ValueError, IndexError):
+                pass
+    for i, (g, p) in enumerate(sorted(goals_prob.items(), key=lambda x: -x[1])[:3], 1):
+        forecasts.append({"kind": "goals", "label": f"{g} 球", "prob": round(p / 100, 4), "rank": i})
 
     # ---- 赔率 ----
     raw_odds = m.get("odds") or {}
@@ -144,13 +157,23 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict) -> dict:
         full = _score_fmt(str(rec.get("fullScore", "")))
         half = _score_fmt(str(rec.get("halfScore", "")))
         win_flag = str(rec.get("winFlag", "")).strip()
+        # goals_hit：首选总进球 vs 实际总进球（fullScore "3-2" -> 5 球）
+        top_goals = next(
+            (f["label"] for f in forecasts if f["kind"] == "goals" and f["rank"] == 1), "")
+        goals_hit = None
+        if top_goals and "-" in full:
+            try:
+                gh, ga = (int(x) for x in full.split("-"))
+                goals_hit = top_goals == f"{gh + ga} 球"
+            except ValueError:
+                pass
         if full:
             result = {
                 "full_score": full,
                 "half_score": half,
                 "direction_hit": _direction_hit(top_dir, win_flag),
                 "score_hit": (top_score_label == full) if top_score_label else None,
-                "goals_hit": None,
+                "goals_hit": goals_hit,
                 "htft_hit": None,
                 "settled_at": date,
             }
@@ -216,7 +239,7 @@ def main() -> None:
             matches.append(cm)
         day = {
             "date": date,
-            "note": f"数据源：jinbet 每日预测快照（{s.get('engine', 'poisson')} 引擎），赛果赛后回填。",
+            "note": "数据源：jinbet 每日预测快照，赛果赛后回填。",
             "matches": matches,
         }
         n_days += 1

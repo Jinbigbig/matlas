@@ -1,6 +1,6 @@
 {
  "date": "2026-09-21",
- "note": "数据源：jinbet 每日预测快照（poisson-v2.2 引擎），赛果赛后回填。",
+ "note": "数据源：jinbet 每日预测快照，赛果赛后回填。",
  "matches": [
   {
    "match_id": "2026-09-21-001",
@@ -70,6 +70,24 @@
      "label": "2-1",
      "prob": 0.054,
      "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.23,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.211,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.169,
+     "rank": 3
     }
    ],
    "confidence": "high",
@@ -108,7 +126,7 @@
     "half_score": "2-0",
     "direction_hit": true,
     "score_hit": false,
-    "goals_hit": null,
+    "goals_hit": false,
     "htft_hit": null,
     "settled_at": "2026-09-21"
    }
