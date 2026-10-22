@@ -31,7 +31,7 @@ body {
 }
 a { color: var(--accent2); text-decoration: none; }
 a:hover { text-decoration: underline; }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 main.wrap { padding-bottom: 2.5rem; }
 /* 只给读屏和搜索引擎的文本（视觉标题用 mc-teams 表达） */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -103,11 +103,20 @@ header.site .wrap { position: relative; z-index: 1;
 .brand span { font-weight: 400; color: #6b7280; font-size: 0.75rem; margin-left: 2px; }
 nav.site { margin-left: auto; display: flex; align-items: center; gap: 0.35rem;
   font-size: 0.86rem; }
-nav.site a { color: #4b5563; padding: 6px 10px; border-radius: 8px; white-space: nowrap; }
+nav.site a { color: #4b5563; padding: 6px 10px; border-radius: 8px; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 5px; }
+nav.site a svg { flex: none; }
 nav.site a:hover { color: var(--accent); background: #eff6ff; text-decoration: none; }
-nav.site a.is-btn { border: 1px solid var(--rule); }
-nav.site a.is-icon, nav.site label.is-icon { border: 1px solid var(--rule); padding: 6px 9px; font-size: 0.9rem; }
-nav.site label.is-icon { display: inline-flex; align-items: center; cursor: pointer; color: #4b5563; }
+nav.site a.is-btn, nav.site a.is-icon, nav.site label.is-icon { border: none; }
+nav.site label.is-icon { display: inline-flex; align-items: center; cursor: pointer; color: #4b5563; padding: 6px 9px; }
+/* 回顶部：滚过一屏后出现，右下角悬浮（对方同款交互） */
+.back-top { position: fixed; right: 22px; bottom: 90px; z-index: 90; width: 42px; height: 42px;
+  border-radius: 50%; background: #fff; color: #4b5563; border: 1px solid var(--rule);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12); display: none; align-items: center;
+  justify-content: center; cursor: pointer; text-decoration: none; }
+.back-top.show { display: inline-flex; }
+.back-top:hover { color: var(--accent); border-color: #93c5fd; }
+@media (max-width: 768px) { .back-top { right: 14px; bottom: 76px; } }
 nav.site label.is-icon:hover { color: var(--accent); background: #eff6ff; }
 /* 搜索滑出层：checkbox hack，零 JS（对齐 qiuxiaoce 的 .site-search） */
 .ss-toggle { position: absolute; opacity: 0; width: 0; height: 0; }
@@ -345,12 +354,12 @@ svg.mom { max-width: 620px; }
 /* ---------- 双栏：主列 + 右侧栏（对齐 qiuxiaoce 的 v4 布局） ---------- */
 .v4-layout { display: flex; gap: 20px; align-items: flex-start; }
 .v4-main-col { flex: 1; min-width: 0; }
-.right-sidebar-new { width: 300px; flex: none; }
+.right-sidebar-new { width: 360px; flex: none; }
 @media (max-width: 1000px) {
   .right-sidebar-new { display: none; }
 }
 
-/* ---------- 赛事 Top 卡：榜序号 / 赛事名 / 进度条 / 命中率 ---------- */
+/* ---------- Top 卡：榜序号 / 徽章 / 名称 / 绿色进度条 / 命中率 ---------- */
 .ranking-card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   overflow: hidden; }
 .ranking-card .card-header { font-size: 14px; font-weight: 700; color: #111;
@@ -364,12 +373,16 @@ svg.mom { max-width: 620px; }
 .ranking-item:nth-child(1) .rank-index { color: #dc2626; }
 .ranking-item:nth-child(2) .rank-index { color: #ea580c; }
 .ranking-item:nth-child(3) .rank-index { color: #ca8a04; }
-.rank-name { flex: none; width: 52px; overflow: hidden; text-overflow: ellipsis;
+.rank-logo { width: 22px; height: 22px; flex: none; object-fit: contain;
+  border-radius: 50%; background: #f8fafc; }
+.rank-logo-ph { display: inline-flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; color: #64748b; }
+.rank-name { flex: none; width: 76px; overflow: hidden; text-overflow: ellipsis;
   white-space: nowrap; }
-.rank-bar-wrap { flex: 1; height: 5px; background: #f1f5f9; border-radius: 3px; overflow: hidden; }
-.rank-bar { height: 100%; background: linear-gradient(90deg, #93c5fd, #2563eb); border-radius: 3px; }
-.rank-acc { flex: none; width: 38px; text-align: right; font-size: 12px; font-weight: 600;
-  color: #2563eb; }
+.rank-bar-wrap { flex: 1; height: 6px; background: #f1f5f9; border-radius: 3px; overflow: hidden; }
+.rank-bar { height: 100%; background: linear-gradient(90deg, #6ee7b7, #10b981); border-radius: 3px; }
+.rank-acc { flex: none; width: 44px; text-align: right; font-size: 12px; font-weight: 600;
+  color: #10b981; }
 .ranking-empty { padding: 14px 16px; font-size: 12px; color: #9ca3af; }
 
 /* ---------- 列表网格：对方是单列垂直列表，主列宽度约等于其 1200 - 侧栏 ---------- */
@@ -474,12 +487,37 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
 """
 
 
-# 搜索图标：对齐 qiuxiaoce 顶导的 iconfont 放大镜（tbfa 是私有字体拿不到，
-# 用内联 SVG 等价替代，随 currentColor 变色）。
+# 顶导图标：单色线性 SVG（stroke 随 currentColor），与搜索放大镜同风格。
+# 刻意不用对方那套彩色 emoji——视觉更统一，也算"灵活替代"。
+_ICON_ATTRS = (
+    'viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" '
+    'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"'
+)
 ICON_SEARCH = (
-    '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" '
-    'stroke-width="2" stroke-linecap="round" aria-hidden="true">'
+    f'<svg {_ICON_ATTRS}>'
     '<circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.2" y2="16.2"></line></svg>'
+)
+ICON_SPORTS = (  # 赛事：足球
+    f'<svg {_ICON_ATTRS}><circle cx="12" cy="12" r="9"></circle>'
+    '<path d="M12 7.2l4.6 3.3-1.8 5.4H9.2L7.4 10.5z"></path>'
+    '<path d="M12 3v4.2M3.6 9.4l3.8 1.1M20.4 9.4l-3.8 1.1M8 20l1.2-4.1M16 20l-1.2-4.1"></path></svg>'
+)
+ICON_DATA = (  # 数据：柱状图
+    f'<svg {_ICON_ATTRS}><path d="M5 20v-6M12 20V7M19 20v-9"></path>'
+    '<path d="M3 20h18"></path></svg>'
+)
+ICON_FUNCT = (  # 功能：四宫格
+    f'<svg {_ICON_ATTRS}><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect>'
+    '<rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect>'
+    '<rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect>'
+    '<rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"></rect></svg>'
+)
+ICON_USER = (  # 我的：人形
+    f'<svg {_ICON_ATTRS}><circle cx="12" cy="8" r="4"></circle>'
+    '<path d="M4.5 21c0-3.9 3.4-6.2 7.5-6.2s7.5 2.3 7.5 6.2"></path></svg>'
+)
+ICON_TOP = (  # 回顶部：向上箭头
+    f'<svg {_ICON_ATTRS}><path d="M12 19V5"></path><path d="M6 11l6-6 6 6"></path></svg>'
 )
 
 
@@ -550,10 +588,10 @@ def page(
 <header class="site"><div class="wrap">
   <div class="brand"><span class="brand-mark">M</span>{C.esc(cfg.site_name)}<span>{C.esc(cfg.site_tagline)}</span></div>
   <nav class="site">
-    <a href="{home}">🏠赛事</a>
-    <a href="{pre}data.html">📊数据</a>
-    <a href="{pre}features.html">🧩功能</a>
-    <a href="{pre}me.html">👤我的</a>
+    <a href="{home}">{ICON_SPORTS}赛事</a>
+    <a href="{pre}data.html">{ICON_DATA}数据</a>
+    <a href="{pre}features.html">{ICON_FUNCT}功能</a>
+    <a href="{pre}me.html">{ICON_USER}我的</a>
     <label class="is-icon nav-search" for="ss-toggle" aria-label="搜索">{ICON_SEARCH}</label>
   </nav>
 </div></header>
@@ -570,6 +608,7 @@ def page(
   <p>{C.esc(cfg.site_name)} · {C.esc(cfg.site_tagline)}</p>
   <p>数据契约 v{SCHEMA_VERSION} · 全部历史可被哈希指纹核验，结论不做事后修改。</p>
 </div></footer>
+<a class="back-top" id="back-top" href="#" aria-label="回顶部">{ICON_TOP}</a>
 <nav class="v4-bottom-nav-global">
   <a class="v4-nav-item active" href="{home}">
     <span class="v4-nav-icon">🏠</span><span class="v4-nav-lbl">今日</span></a>
@@ -579,6 +618,21 @@ def page(
   <a class="v4-nav-item" href="{pre}llms.txt">
     <span class="v4-nav-icon">📄</span><span class="v4-nav-lbl">索引</span></a>
 </nav>
+<script>
+(function () {{
+  var btn = document.getElementById("back-top");
+  if (!btn) return;
+  var sync = function () {{
+    btn.classList.toggle("show", window.scrollY > 480);
+  }};
+  window.addEventListener("scroll", sync, {{ passive: true }});
+  btn.addEventListener("click", function (e) {{
+    e.preventDefault();
+    window.scrollTo({{ top: 0, behavior: "smooth" }});
+  }});
+  sync();
+}})();
+</script>
 </body>
 </html>
 """

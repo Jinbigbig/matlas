@@ -46,16 +46,19 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
     ordered = sorted(days, key=lambda d: d.date)
     latest = ordered[-1] if ordered else None
     ranking = P.compute_ranking(ordered)
+    team_ranking = P.compute_team_ranking(ordered)
 
     # 1. 今日首页 = 最新一日
     if latest:
-        L.write(cfg, "index.html", P.render_day(cfg, latest, is_today=True, ranking=ranking))
+        L.write(cfg, "index.html", P.render_day(cfg, latest, is_today=True,
+                                                ranking=ranking, team_ranking=team_ranking))
         stats["files"] += 1
 
     # 2. 按日归档 + 单场落地页
     for d in ordered:
         rel = f"days/{d.date}.html"
-        L.write(cfg, rel, P.render_day(cfg, d, is_today=False, rel=rel, ranking=ranking))
+        L.write(cfg, rel, P.render_day(cfg, d, is_today=False, rel=rel,
+                                       ranking=ranking, team_ranking=team_ranking))
         stats["files"] += 1
         for m in d.matches:
             L.write(cfg, f"matches/{m.match_id}.html", P.render_match(cfg, m))

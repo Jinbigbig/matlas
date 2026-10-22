@@ -717,3 +717,28 @@ def apply(days) -> int:
                     t.logo = u
                     n += 1
     return n
+
+
+# ---------------- 联赛徽章 ----------------
+# 来源：qiuxiaoce 侧栏 rank-logo 按 id 离线（assets/logo/competitions/）。
+# 覆盖面随抓取逐步补充；无映射联赛退化为首字占位圆（同队徽机制）。
+LEAGUE_CREST: dict[str, str] = {
+    "葡甲": "leagues/95",
+    "英联杯": "cups/48",
+    "德国杯": "cups/81",
+    "非洲杯": "cups/6",
+    "瑞士甲": "leagues/208",
+    "意大利杯": "cups/137",
+    "沙特联": "leagues/307",
+}
+
+_LEAGUE_ALIAS = {
+    "英锦标赛": "英联杯", "德国杯赛": "德国杯", "意杯": "意大利杯",
+}
+
+
+def league_crest_url(name: str) -> str:
+    """联赛名 → 徽章站点相对路径；无映射返回空串。"""
+    key = (name or "").strip()
+    rel = LEAGUE_CREST.get(key) or LEAGUE_CREST.get(_LEAGUE_ALIAS.get(key, ""))
+    return f"assets/logo/competitions/{rel}.png" if rel else ""

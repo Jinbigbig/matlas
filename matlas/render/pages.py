@@ -6,6 +6,7 @@ from typing import Any
 
 from ..config import Config
 from ..models import Match, Day, Metrics, Momentum, sort_matches
+from .. import logos
 from . import components as C
 from . import layout as L
 
@@ -454,32 +455,65 @@ def compute_ranking(days: list[Day], top: int = 10) -> list[tuple[str, int, int]
     return rows[:top]
 
 
-def _ranking_card(rows: list[tuple[str, int, int]], pre: str = "") -> str:
-    """右侧「🏆 赛事Top 10」。结构对齐 qiuxiaoce 的 .ranking-card。"""
+def compute_team_ranking(days: list[Day], top: int = 10) -> list[tuple[str, int, int]]:
+    """球队命中榜：口径同上，但按参赛队聚合（一支队的已结算场次）。"""
+    agg: dict[str, list[int]] = {}
+    for d in days:
+        for m in d.matches:
+            if not m.result or m.result.direction_hit is None:
+                continue
+            for t in (m.home.name, m.away.name):
+                row = agg.setdefault(t, [0, 0])
+                row[1] += 1
+                if m.result.direction_hit:
+                    row[0] += 1
+    rows = [(t, hit, n) for t, (hit, n) in agg.items() if n > 0]
+    rows.sort(key=lambda x: (-(x[1] / x[2]), -x[2], x[0]))
+    return rows[:top]
+
+
+def _ranking_card(rows: list[tuple[str, int, int]], pre: str = "",
+                  kind: str = "league") -> str:
+    """右侧 Top10 卡：结构逐字对齐 qiuxiaoce 的 .ranking-card。
+
+    rank-index + rank-logo（徽章，缺映射退化首字圆）+ rank-name +
+    rank-bar（绿色进度条）+ rank-acc（1 位小数）。kind: league=🏆赛事 / team=🛡️球队。
+    """
     if not rows:
         inner = '<div class="ranking-empty">暂无可统计的已结算赛事。</div>'
     else:
         items = []
-        for i, (lg, hit, n) in enumerate(rows, 1):
+        for i, (name, hit, n) in enumerate(rows, 1):
             acc = hit / n * 100
+            if kind == "team":
+                logo, alt = logos.crest_url(name), "队徽"
+            else:
+                logo, alt = logos.league_crest_url(name), "徽章"
+            img = (
+                f'<img src="{pre}{C.esc(logo)}" class="rank-logo" alt="{C.esc(name)}{alt}" loading="lazy">'
+                if logo
+                else f'<span class="rank-logo rank-logo-ph" aria-hidden="true">{C.esc(name[:1])}</span>'
+            )
             items.append(
                 f'<a class="ranking-item" href="{pre}days/">'
-                f'<div class="rank-index">{i}</div>'
-                f'<span class="rank-name">{C.esc(lg)}</span>'
+                f'<div class="rank-index">{i}</div>{img}'
+                f'<span class="rank-name">{C.esc(name)}</span>'
                 f'<div class="rank-bar-wrap">'
                 f'<div class="rank-bar" style="width:{acc:.1f}%"></div></div>'
-                f'<span class="rank-acc">{acc:.0f}%</span></a>'
+                f'<span class="rank-acc pct">{acc:.1f}%</span></a>'
             )
         inner = f'<div class="ranking-list">{"".join(items)}</div>'
+    head = "🛡️ 球队Top 10" if kind == "team" else "🏆 赛事Top 10"
     return (
-        '<div id="league-ranking-card" class="ranking-card">'
-        '<div class="card-header">🏆 赛事Top 10</div>'
+        f'<div id="{"team-ranking-card" if kind == "team" else "league-ranking-card"}" class="ranking-card">'
+        f'<div class="card-header">{head}</div>'
         f"{inner}</div>"
     )
 
 
 def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
-               ranking: list[tuple[str, int, int]] | None = None) -> str:
+               ranking: list[tuple[str, int, int]] | None = None,
+               team_ranking: list[tuple[str, int, int]] | None = None) -> str:
     base = cfg.base_url.rstrip("/")
     ms = sort_matches(day.matches)
     if is_today:
@@ -552,25 +586,22 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
     )
     main_col = (
         '<div class="v4-main-col">'
-        '<div class="site-disclaimer">'
-        "本站仅提供赛事前瞻分析报告，不提供任何方案的推荐和购买。"
-        "坚持做可回溯的分析系统，历史数据完整，不删不改。"
-        "</div>"
         '<div class="v4-filter-bar">'
         f'<div class="v4-date">📅 {date_lab} ({len(ms)}场)</div>'
         '<label class="v4-filter-btn" for="fp-toggle">'
         f'<span>🔍 筛选</span></label>'
         "</div>"
         f"{panel}"
-        f'<p class="sub">{C.esc(desc)}</p>'
-        + (f'<p class="sub note-line">{C.esc(day.note)}</p>' if day.note else "")
-        + f'<div class="cards">{cards}</div>'
+        f'<div class="cards">{cards}</div>'
         "</div>"
     )
     body = (
         f'<h1 class="sr-only">{C.esc(h1)}</h1>'
         f'<div class="v4-layout">{main_col}'
-        f'<aside class="right-sidebar-new">{_ranking_card(ranking or [])}</aside>'
+        '<aside class="right-sidebar-new">'
+        f'{_ranking_card(ranking or [], pre="../" if not is_today else "")}'
+        f'{_ranking_card(team_ranking or [], pre="../" if not is_today else "", kind="team")}'
+        "</aside>"
         "</div>"
     )
     jsonld = [
