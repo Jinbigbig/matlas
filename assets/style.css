@@ -47,8 +47,17 @@ body:has(.fp-toggle:checked) .filter-panel { display: block; }
 .fp-radio { position: absolute; opacity: 0; width: 0; height: 0; }
 .fp-opt { font-size: 13px; padding: 4px 14px; border-radius: 6px; border: 1px solid #e5e7eb;
   background: #fff; color: #4b5563; cursor: pointer; transition: all 0.15s;
-  display: inline-block; }
-.fp-opt:hover { border-color: #93c5fd; color: var(--accent); }
+  display: inline-block; text-decoration: none; }
+.fp-opt:hover { border-color: #93c5fd; color: var(--accent); text-decoration: none; }
+a.fp-opt.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+/* 行内 SVG 图标与文字对齐（顶导/卡片头/筛选条统一走这条） */
+.card-header svg, .v4-date svg, .v4-filter-btn svg, .feat-ico svg, .page-h1 svg,
+.me-avatar svg, .fp-label svg { flex: none; }
+.card-header svg { vertical-align: -3px; }
+.page-h1 svg { vertical-align: -3px; margin-right: 2px; }
+.v4-date svg { vertical-align: -2.5px; margin-right: 2px; }
+.v4-filter-btn svg { vertical-align: -2.5px; margin-right: 2px; }
+.v4-nav-icon svg { width: 20px; height: 20px; }
 .fp-radio:checked + .fp-opt { background: var(--accent); color: #fff; border-color: var(--accent); }
 .fp-radio:focus-visible + .fp-opt { outline: 2px solid #93c5fd; outline-offset: 2px; }
 .note-line { color: #9ca3af; font-size: 12px; margin: -4px 0 10px; }
@@ -62,14 +71,25 @@ body:has(.fp-toggle:checked) .filter-panel { display: block; }
 .plain-list { margin: 10px 0 0 1.2em; }
 .plain-list li { margin: 6px 0; }
 .feat-list { list-style: none; margin: 14px 0; padding: 0; display: grid; gap: 10px; }
-.feat-item { background: #fff; border: 1px solid var(--rule); border-radius: 10px;
-  padding: 14px 16px; }
-.feat-name { font-weight: 700; font-size: 15px; }
-.feat-desc { font-size: 13px; color: #6b7280; margin: 4px 0 8px; }
-.feat-item a { font-size: 13px; color: var(--accent); text-decoration: none; }
+.feat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 14px 0; }
+.feat-item { display: flex; align-items: flex-start; gap: 12px; background: #fff;
+  border: 1px solid var(--rule); border-radius: 10px; padding: 16px;
+  text-decoration: none; transition: border-color 0.15s, box-shadow 0.15s; }
+a.feat-item:hover { border-color: #93c5fd; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.08);
+  text-decoration: none; }
+.feat-ico { width: 38px; height: 38px; flex: none; border-radius: 10px; background: #eff6ff;
+  color: var(--accent); display: inline-flex; align-items: center; justify-content: center; }
+.feat-ico svg { width: 20px; height: 20px; }
+.feat-txt { min-width: 0; }
+.feat-name { font-weight: 700; font-size: 15px; color: #111; display: block; }
+.feat-desc { font-size: 13px; color: #6b7280; margin-top: 4px; display: block; }
+a.feat-item .feat-go { font-size: 13px; color: var(--accent); margin-top: 8px; display: block; }
 .me-card { background: #fff; border: 1px solid var(--rule); border-radius: 12px;
   padding: 32px 20px; text-align: center; max-width: 480px; margin: 20px auto; }
-.me-avatar { font-size: 2.6rem; }
+.me-avatar { width: 68px; height: 68px; margin: 0 auto; border-radius: 50%;
+  background: #eff6ff; color: var(--accent); display: flex; align-items: center;
+  justify-content: center; }
+.me-avatar svg { width: 34px; height: 34px; }
 .me-card h2 { margin: 10px 0 6px; }
 @media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
 
@@ -325,6 +345,7 @@ svg.mom { max-width: 620px; }
 .mc-tags { display: flex; justify-content: center; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
 .mc-tag { font-size: 12px; padding: 4px 10px; border-radius: 6px; background: #f3f4f6;
   color: #6b7280; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s; }
+.mc-tag svg { width: 13px; height: 13px; }
 .mc-tag.hit { background: #fff1f0; color: #f56c6c; border: 1px solid #ffccc7; font-weight: 600; }
 .mc-footer { display: flex; justify-content: space-between; align-items: center;
   padding: 10px 15px; background: #f9fafb; border-top: 1px solid #f3f4f6;
@@ -341,7 +362,7 @@ svg.mom { max-width: 620px; }
 /* ---------- 双栏：主列 + 右侧栏（对齐 qiuxiaoce 的 v4 布局） ---------- */
 .v4-layout { display: flex; gap: 20px; align-items: flex-start; }
 .v4-main-col { flex: 1; min-width: 0; }
-.right-sidebar-new { width: 360px; flex: none; }
+.right-sidebar-new { width: 360px; flex: none; display: flex; flex-direction: column; gap: 16px; }
 @media (max-width: 1000px) {
   .right-sidebar-new { display: none; }
 }

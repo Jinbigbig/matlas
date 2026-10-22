@@ -1,0 +1,140 @@
+{
+ "date": "2026-09-21",
+ "matches": [
+  {
+   "schema": "1.0",
+   "match_id": "2026-09-21-001",
+   "day": "2026-09-21",
+   "code": "周一001",
+   "competition": "亚运女足",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "中国女",
+    "slug": "",
+    "league": "亚运女足",
+    "country": "",
+    "form": "",
+    "logo": ""
+   },
+   "away": {
+    "name": "菲律宾女",
+    "slug": "",
+    "league": "亚运女足",
+    "country": "",
+    "form": "",
+    "logo": ""
+   },
+   "odds": {
+    "home": 1.1723,
+    "draw": 11.3365,
+    "away": 17.0158,
+    "handicap": -2.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.904,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.092,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.004,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.211,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.176,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.169,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "4-0",
+     "prob": 0.11,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "5-0",
+     "prob": 0.055,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.054,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": -2.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "2-0",
+    "full_score": "5-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "settled_at": "2026-09-21"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 2.496,
+    "lam_away": 0.258,
+    "lam_total": 2.754,
+    "upset_prob": 11.0,
+    "upset_level": "低",
+    "rq_best_ev": 0.915,
+    "rq_best_odds": 3.2,
+    "data_n": {
+     "home": 7,
+     "away": 2
+    },
+    "headline": {
+     "score": "2:0",
+     "prob": 21.1
+    }
+   }
+  }
+ ]
+}

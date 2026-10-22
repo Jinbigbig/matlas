@@ -1,0 +1,1895 @@
+{
+ "date": "2026-10-14",
+ "matches": [
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-001",
+   "day": "2026-10-14",
+   "code": "周三001",
+   "competition": "亚冠乙",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "墨胜利",
+    "slug": "",
+    "league": "亚冠乙",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/944.png"
+   },
+   "away": {
+    "name": "首尔FC",
+    "slug": "",
+    "league": "亚冠乙",
+    "country": "",
+    "form": "",
+    "logo": ""
+   },
+   "odds": {
+    "home": 1.59,
+    "draw": 3.9,
+    "away": 4.1,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.492,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.277,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.231,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.126,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.097,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.082,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.075,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.073,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-1",
+     "prob": 0.057,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "0-0",
+    "full_score": "3-0",
+    "direction_hit": true,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 1.775,
+    "lam_away": 1.334,
+    "lam_total": 3.109,
+    "upset_prob": 53.4,
+    "upset_level": "高",
+    "rq_best_ev": 1.125,
+    "rq_best_odds": 2.04,
+    "data_n": {
+     "home": 14,
+     "away": 25
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 12.6
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-002",
+   "day": "2026-10-14",
+   "code": "周三002",
+   "competition": "亚冠精英",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "神户胜利",
+    "slug": "",
+    "league": "亚冠精英",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/289.png"
+   },
+   "away": {
+    "name": "全北现代",
+    "slug": "",
+    "league": "亚冠精英",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/2762.png"
+   },
+   "odds": {
+    "home": 1.47,
+    "draw": 3.9,
+    "away": 5.2,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.592,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.275,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.133,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.136,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.134,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.112,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.105,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.079,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.062,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "1-0",
+    "full_score": "2-0",
+    "direction_hit": true,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 1.653,
+    "lam_away": 0.94,
+    "lam_total": 2.593,
+    "upset_prob": 52.3,
+    "upset_level": "高",
+    "rq_best_ev": 1.266,
+    "rq_best_odds": 2.3,
+    "data_n": {
+     "home": 18,
+     "away": 24
+    },
+    "headline": {
+     "score": "1:0",
+     "prob": 13.8
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-003",
+   "day": "2026-10-14",
+   "code": "周三003",
+   "competition": "亚冠精英",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "柏太阳神",
+    "slug": "",
+    "league": "亚冠精英",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/281.png"
+   },
+   "away": {
+    "name": "曼谷港务",
+    "slug": "",
+    "league": "亚冠精英",
+    "country": "",
+    "form": "",
+    "logo": ""
+   },
+   "odds": {
+    "home": 1.06,
+    "draw": 7.9,
+    "away": 17.0,
+    "handicap": -2.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.883,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.113,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.004,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.231,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.204,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.175,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "4-0",
+     "prob": 0.099,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.077,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "5-0",
+     "prob": 0.045,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": true,
+   "main_pick": "",
+   "handicap": {
+    "spread": -2.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "5-0",
+    "full_score": "5-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 2.264,
+    "lam_away": 0.187,
+    "lam_total": 2.451,
+    "upset_prob": 10.6,
+    "upset_level": "低",
+    "rq_best_ev": 0.996,
+    "rq_best_odds": 2.9,
+    "data_n": {
+     "home": 16,
+     "away": 0
+    },
+    "headline": {
+     "score": "2:0",
+     "prob": 15.2
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-004",
+   "day": "2026-10-14",
+   "code": "周三004",
+   "competition": "日联赛杯",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "横滨水手",
+    "slug": "",
+    "league": "日联赛杯",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/296.png"
+   },
+   "away": {
+    "name": "清水鼓动",
+    "slug": "",
+    "league": "日联赛杯",
+    "country": "",
+    "form": "",
+    "logo": ""
+   },
+   "odds": {
+    "home": 1.83,
+    "draw": 3.3,
+    "away": 3.6,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.545,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.304,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.15,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.144,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.143,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.109,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.106,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.097,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.055,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球胜"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "0-0",
+    "full_score": "2-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 1.512,
+    "lam_away": 0.894,
+    "lam_total": 2.406,
+    "upset_prob": 49.1,
+    "upset_level": "中",
+    "rq_best_ev": 1.086,
+    "rq_best_odds": 3.75,
+    "data_n": {
+     "home": 9,
+     "away": 7
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 13.4
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-005",
+   "day": "2026-10-14",
+   "code": "周三005",
+   "competition": "欧冠",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "费耶诺德",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/209.png"
+   },
+   "away": {
+    "name": "科莫",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/895.png"
+   },
+   "odds": {
+    "home": 3.35,
+    "draw": 3.85,
+    "away": 1.75,
+    "handicap": 1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.471,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.3,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.229,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.099,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.093,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.069,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.058,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-3",
+     "prob": 0.056,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.055,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "1-1",
+    "full_score": "3-2",
+    "direction_hit": false,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 1.509,
+    "lam_away": 2.141,
+    "lam_total": 3.65,
+    "upset_prob": 48.7,
+    "upset_level": "中",
+    "rq_best_ev": 0.904,
+    "rq_best_odds": 3.1,
+    "data_n": {
+     "home": 22,
+     "away": 25
+    },
+    "headline": {
+     "score": "1:2",
+     "prob": 11.5
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-006",
+   "day": "2026-10-14",
+   "code": "周三006",
+   "competition": "欧冠",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "LASK林茨",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": ""
+   },
+   "away": {
+    "name": "利物浦",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/40.png"
+   },
+   "odds": {
+    "home": 8.75,
+    "draw": 5.5,
+    "away": 1.2,
+    "handicap": 1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.756,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.163,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.081,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.128,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.102,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.102,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-3",
+     "prob": 0.1,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.078,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-3",
+     "prob": 0.075,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球胜"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "0-3",
+    "full_score": "3-6",
+    "direction_hit": true,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 0.748,
+    "lam_away": 2.434,
+    "lam_total": 3.182,
+    "upset_prob": 29.0,
+    "upset_level": "低",
+    "rq_best_ev": 1.256,
+    "rq_best_odds": 3.5,
+    "data_n": {
+     "home": 3,
+     "away": 25
+    },
+    "headline": {
+     "score": "0:2",
+     "prob": 12.4
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-007",
+   "day": "2026-10-14",
+   "code": "周三007",
+   "competition": "英冠",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "诺维奇",
+    "slug": "",
+    "league": "英冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/71.png"
+   },
+   "away": {
+    "name": "南安普敦",
+    "slug": "",
+    "league": "英冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/41.png"
+   },
+   "odds": {
+    "home": 2.28,
+    "draw": 3.45,
+    "away": 2.5,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.457,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.319,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.224,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.146,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.1,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.088,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.087,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.083,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.075,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "0-0",
+    "full_score": "0-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 1.153,
+    "lam_away": 1.576,
+    "lam_total": 2.728,
+    "upset_prob": 70.6,
+    "upset_level": "高",
+    "rq_best_ev": 1.15,
+    "rq_best_odds": 1.48,
+    "data_n": {
+     "home": 12,
+     "away": 23
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 11.3
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-008",
+   "day": "2026-10-14",
+   "code": "周三008",
+   "competition": "欧冠",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "罗马",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/497.png"
+   },
+   "away": {
+    "name": "皇马",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": ""
+   },
+   "odds": {
+    "home": 3.35,
+    "draw": 3.85,
+    "away": 1.75,
+    "handicap": 1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.471,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.297,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.232,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.101,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.095,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.072,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-3",
+     "prob": 0.057,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.057,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.055,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球胜"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "1-1",
+    "full_score": "3-4",
+    "direction_hit": true,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 1.538,
+    "lam_away": 2.148,
+    "lam_total": 3.687,
+    "upset_prob": 52.2,
+    "upset_level": "高",
+    "rq_best_ev": 0.963,
+    "rq_best_odds": 1.83,
+    "data_n": {
+     "home": 25,
+     "away": 25
+    },
+    "headline": {
+     "score": "1:2",
+     "prob": 11.6
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-009",
+   "day": "2026-10-14",
+   "code": "周三009",
+   "competition": "欧冠",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "博德闪耀",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/327.png"
+   },
+   "away": {
+    "name": "多特蒙德",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/165.png"
+   },
+   "odds": {
+    "home": 2.97,
+    "draw": 3.83,
+    "away": 1.88,
+    "handicap": 1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.424,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.347,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.229,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.09,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.082,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.073,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.059,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-3",
+     "prob": 0.051,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-3",
+     "prob": 0.05,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球胜"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "0-0",
+    "full_score": "1-0",
+    "direction_hit": false,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 1.812,
+    "lam_away": 2.236,
+    "lam_total": 4.047,
+    "upset_prob": 56.9,
+    "upset_level": "高",
+    "rq_best_ev": 1.012,
+    "rq_best_odds": 1.7,
+    "data_n": {
+     "home": 25,
+     "away": 25
+    },
+    "headline": {
+     "score": "1:2",
+     "prob": 11.1
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-010",
+   "day": "2026-10-14",
+   "code": "周三010",
+   "competition": "欧冠",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "贝蒂斯",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/543.png"
+   },
+   "away": {
+    "name": "波尔图",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/212.png"
+   },
+   "odds": {
+    "home": 1.81,
+    "draw": 3.5,
+    "away": 3.45,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.529,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.241,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.229,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.099,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.088,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.071,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-1",
+     "prob": 0.06,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.059,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.059,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "0-0",
+    "full_score": "3-2",
+    "direction_hit": true,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 2.126,
+    "lam_away": 1.596,
+    "lam_total": 3.722,
+    "upset_prob": 60.1,
+    "upset_level": "高",
+    "rq_best_ev": 1.117,
+    "rq_best_odds": 1.75,
+    "data_n": {
+     "home": 25,
+     "away": 25
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 12.7
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-011",
+   "day": "2026-10-14",
+   "code": "周三011",
+   "competition": "欧冠",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "曼城",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/50.png"
+   },
+   "away": {
+    "name": "巴黎圣曼",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/85.png"
+   },
+   "odds": {
+    "home": 1.93,
+    "draw": 3.7,
+    "away": 2.94,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.494,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.27,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.236,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.098,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.083,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.075,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.063,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-1",
+     "prob": 0.056,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-2",
+     "prob": 0.052,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "0-3",
+    "full_score": "2-4",
+    "direction_hit": false,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 2.126,
+    "lam_away": 1.741,
+    "lam_total": 3.867,
+    "upset_prob": 56.8,
+    "upset_level": "高",
+    "rq_best_ev": 0.977,
+    "rq_best_odds": 1.68,
+    "data_n": {
+     "home": 25,
+     "away": 25
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 10.8
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-012",
+   "day": "2026-10-14",
+   "code": "周三012",
+   "competition": "欧冠",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "维拉",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/66.png"
+   },
+   "away": {
+    "name": "费内巴切",
+    "slug": "",
+    "league": "欧冠",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/611.png"
+   },
+   "odds": {
+    "home": 1.45,
+    "draw": 4.1,
+    "away": 5.1,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.653,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.213,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.133,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.106,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.105,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.101,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.094,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.072,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-1",
+     "prob": 0.069,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "3-0",
+    "full_score": "6-0",
+    "direction_hit": true,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 2.037,
+    "lam_away": 0.984,
+    "lam_total": 3.02,
+    "upset_prob": 45.6,
+    "upset_level": "中",
+    "rq_best_ev": 1.098,
+    "rq_best_odds": 2.34,
+    "data_n": {
+     "home": 25,
+     "away": 7
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 12.1
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-013",
+   "day": "2026-10-14",
+   "code": "周三013",
+   "competition": "解放者杯",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "弗鲁米嫩",
+    "slug": "",
+    "league": "解放者杯",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/124.png"
+   },
+   "away": {
+    "name": "帕梅拉斯",
+    "slug": "",
+    "league": "解放者杯",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/121.png"
+   },
+   "odds": {
+    "home": 2.72,
+    "draw": 2.62,
+    "away": 2.63,
+    "handicap": 1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.346,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.338,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.316,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.185,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.085,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.082,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.082,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.069,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.066,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "0-1",
+    "full_score": "1-2",
+    "direction_hit": false,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 1.369,
+    "lam_away": 1.401,
+    "lam_total": 2.77,
+    "upset_prob": 67.1,
+    "upset_level": "高",
+    "rq_best_ev": 1.064,
+    "rq_best_odds": 6.9,
+    "data_n": {
+     "home": 17,
+     "away": 16
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 16.2
+    }
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-10-14-014",
+   "day": "2026-10-14",
+   "code": "周三014",
+   "competition": "美职联",
+   "round": "",
+   "kickoff": "",
+   "venue": "",
+   "home": {
+    "name": "圣路易城",
+    "slug": "",
+    "league": "美职联",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/20787.png"
+   },
+   "away": {
+    "name": "温哥华",
+    "slug": "",
+    "league": "美职联",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/1603.png"
+   },
+   "odds": {
+    "home": 2.04,
+    "draw": 3.68,
+    "away": 2.72,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.423,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.297,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.279,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.108,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.075,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.074,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-2",
+     "prob": 0.057,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.052,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-1",
+     "prob": 0.047,
+     "rank": 6,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球胜"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "result": {
+    "half_score": "0-0",
+    "full_score": "0-0",
+    "direction_hit": false,
+    "score_hit": false,
+    "settled_at": "2026-10-14"
+   },
+   "source_url": "",
+   "generated_at": "2026-10-22T14:47:01+08:00",
+   "extras": {
+    "lam_home": 2.235,
+    "lam_away": 1.965,
+    "lam_total": 4.2,
+    "upset_prob": 47.8,
+    "upset_level": "中",
+    "rq_best_ev": 1.049,
+    "rq_best_odds": 3.9,
+    "data_n": {
+     "home": 4,
+     "away": 7
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 10.2
+    }
+   }
+  }
+ ]
+}
