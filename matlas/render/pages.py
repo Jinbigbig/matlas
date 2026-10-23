@@ -211,6 +211,40 @@ def _injury_panel(m: Match) -> str:
     return C.panel("伤停与缺阵", C.table(["球队", "球员", "原因", "状态"], rows))
 
 
+def _weather_panel(m: Match) -> str:
+    """比赛当地比赛时段天气（extras.weather，import 按日期防错配）。"""
+    w = (m.extras or {}).get("weather")
+    if not w:
+        return ""
+    grade = {"ok": "✅ 适宜", "watch": "⚠️ 需留意", "bad": "🌧 恶劣"}.get(w.get("grade"), "")
+    rows = [
+        ["城市", C.esc(w.get("city", "")) or "—", "时段", "当地 18:00–23:00"],
+        ["气温", f'{w.get("t_min")}~{w.get("t_max")}℃', "降雨概率",
+         f'<span class="pct">{w.get("pop")}%</span>'],
+        ["降水量", f'{w.get("rain")}mm', "风速", f'{w.get("wind")}km/h'],
+        ["评估", grade, "", ""],
+    ]
+    return C.panel("天气", C.table(["项目", "内容", "项目", "内容"], rows, cls="duo"))
+
+
+def _referee_panel(m: Match) -> str:
+    """主裁判执法数据（extras.referee，直播吧「裁判分析」抓取）。"""
+    r = (m.extras or {}).get("referee")
+    if not r:
+        return ""
+    who = C.esc(str(r.get("ref") or ""))
+    if r.get("nation") or r.get("age"):
+        who += "（" + C.esc(str(r.get("nation") or ""))
+        if r.get("age"):
+            who += f'，{r["age"]}岁'
+        who += "）"
+    rows = [["主裁判", who]]
+    if r.get("h") is not None:
+        rows.append(["近20场执法", f'主队 {r["h"]}胜{r["d"]}平{r["a"]}负'])
+        rows.append(["出示", f'黄牌 {r.get("yellow", "—")} · 红牌 {r.get("red", "—")} · 点球 {r.get("pen", "—")}'])
+    return C.panel("裁判执法", C.table(["项目", "内容"], rows))
+
+
 def _charts_panel(m: Match) -> str:
     if not m.metrics_home or not m.metrics_away:
         return C.panel(
@@ -315,14 +349,6 @@ def _model_panel(m: Match) -> str:
         '<p class="panel-empty">模型过程数据尚未接入，框架已预留。</p>'
     )
     return C.panel("模型视角", body)
-
-
-def _referee_panel(m: Match) -> str:
-    """裁判执法数据：暂无数据源，框架占位（对齐对方同区块）。"""
-    return C.panel(
-        "裁判执法数据",
-        '<p class="panel-empty">裁判执法数据源尚未接入，框架已预留，数据补齐后自动展示。</p>',
-    )
 
 
 def _main_pick_block(m: Match) -> str:
@@ -457,7 +483,8 @@ def render_match(cfg: Config, m: Match) -> str:
         _h2h_panel(m),          # 3. ⚔️ 历史交锋数据
         _form_panel(m),         # 4. 📈 球队状态（近期战绩）
         _injury_panel(m),       # 5. ⚠️ 核心球员缺阵影响
-        _referee_panel(m),      # 6. ⚖️ 裁判执法数据
+        _weather_panel(m),      # 5.5 🌤 比赛地天气
+        _referee_panel(m),      # 5.6 🟨 主裁判执法数据
         _odds_panel(m),         # 市场数据
         _handicap_panel(m),     # 7. 🤔 让步可信度分析
         _model_panel(m),        # 8. 🧠 模型视角
@@ -1405,6 +1432,7 @@ def render_preview_index(cfg: Config, ordered: list[Day]) -> str:
     列表页本身不复刻报告内容。
     """
     base = cfg.base_url.rstrip("/")
+    ext = "https://jinbigbig.github.io/jinbet/predictions"
     days = [d for d in reversed(ordered) if d.matches]
 
     # 按年→月分组，<details> 原生展开收起；最新年/月默认展开
@@ -1415,11 +1443,11 @@ def render_preview_index(cfg: Config, ordered: list[Day]) -> str:
                 lgs.append(m.competition)
         lg_txt = "、".join(lgs[:3]) + ("等" if len(lgs) > 3 else "")
         return (
-            f'<a class="pv-day" href="{d.date}.html">'
+            f'<a class="pv-day" href="{ext}/{d.date}/" target="_blank" rel="noopener">'
             f'<span class="pv-d">{d.date}</span><span class="pv-w">{_pv_wd(d.date)}</span>'
             f'<span class="pv-n">共 {len(d.matches)} 场</span>'
             f'<span class="pv-lg">{C.esc(lg_txt)}</span>'
-            f'<span class="pv-go">打开 AI 报告 →</span></a>'
+            f'<span class="pv-go">打开 AI 报告 ↗</span></a>'
         )
 
     years: dict[str, dict[str, list[Day]]] = {}

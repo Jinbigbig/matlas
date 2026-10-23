@@ -451,6 +451,19 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
         out["handicap"] = {"spread": spread, "pick": pick, "prob": None, "hit": None}
     if result:
         out["result"] = result
+    # 顶层伤停列表（单场页 _injury_panel 按此渲染；extras 里的结构化副本供其他页用）
+    inj_rows = []
+    inj_ex = extras.get("injuries") or {}
+    for side_key, status in (("home", "out"), ("away", "out")):
+        side = inj_ex.get(side_key) or {}
+        for p in side.get("out") or []:
+            inj_rows.append({"team": side_key, "player": str(p.get("name", "")),
+                             "reason": str(p.get("reason", "")), "status": status})
+        for p in side.get("doubtful") or []:
+            inj_rows.append({"team": side_key, "player": str(p.get("name", "")),
+                             "reason": str(p.get("reason", "")), "status": "doubt"})
+    if inj_rows:
+        out["injuries"] = inj_rows
     return out
 
 

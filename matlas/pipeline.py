@@ -70,7 +70,7 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
 
     hist_by_team: dict[str, list] = defaultdict(list)   # 队名 -> RecentItem（时间升序）
     hist_h2h: dict[tuple[str, str], list] = defaultdict(list)  # (甲,乙) 有序对 -> 交手列表
-    for di, d in enumerate(ordered):
+    for d in ordered:
         for m in d.matches:
             # 先填当前场（此时 hist 只含更早日期），再落账当天结果
             home_hist = [r for r in hist_by_team.get(m.home.name, [])][-5:]
@@ -106,9 +106,6 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
         L.write(cfg, rel, P.render_day(cfg, d, is_today=False, rel=rel,
                                        ranking=ranking, team_ranking=team_ranking,
                                        dates=dates_desc, ai_digest=ai_digest))
-        # 独立模块：每日 AI 报告成页留档（preview/YYYY-MM-DD.html，含赛前环境）
-        L.write(cfg, f"preview/{d.date}.html",
-                P.render_preview_day(cfg, d, ordered[di - 1] if di else None))
         stats["files"] += 1
         for m in d.matches:
             L.write(cfg, f"matches/{m.match_id}.html", P.render_match(cfg, m))
