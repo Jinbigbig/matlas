@@ -33,6 +33,94 @@
     "handicap": -1.0,
     "bookmaker": ""
    },
+   "metrics_home": {
+    "attack": 24,
+    "defence": 3,
+    "control": 3,
+    "form": 22,
+    "value": 92,
+    "motivation": 3,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 81,
+    "defence": 97,
+    "control": 95,
+    "form": 97,
+    "value": 95,
+    "motivation": 81,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     1.0,
+     1.0,
+     2.0,
+     0.0
+    ],
+    "away": [
+     2.0,
+     2.0,
+     0.0,
+     2.0
+    ]
+   },
    "forecasts": [
     {
      "kind": "direction",
@@ -186,7 +274,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.526,
     "lam_away": 1.342,
@@ -306,6 +394,88 @@
     "away": 5.25,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 29,
+    "defence": 65,
+    "control": 29,
+    "form": 42,
+    "value": 19,
+    "motivation": 39,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 0,
+    "defence": 81,
+    "control": 29,
+    "form": 23,
+    "value": 19,
+    "motivation": 19,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     0.0,
+     2.0
+    ],
+    "away": [
+     0.0,
+     1.0
+    ]
    },
    "forecasts": [
     {
@@ -442,7 +612,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.987,
     "lam_away": 1.091,
@@ -492,6 +662,91 @@
     "away": 3.15,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 90,
+    "defence": 10,
+    "control": 29,
+    "form": 23,
+    "value": 19,
+    "motivation": 19,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 29,
+    "defence": 6,
+    "control": 6,
+    "form": 42,
+    "value": 3,
+    "motivation": 39,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     2.0,
+     0.0,
+     2.0
+    ],
+    "away": [
+     0.0,
+     2.0,
+     1.0
+    ]
    },
    "forecasts": [
     {
@@ -628,7 +883,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.477,
     "lam_away": 1.359,
@@ -748,6 +1003,94 @@
     "away": 1.76,
     "handicap": 1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 0,
+    "defence": 11,
+    "control": 5,
+    "form": 0,
+    "value": 0,
+    "motivation": 0,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 95,
+    "defence": 5,
+    "control": 19,
+    "form": 24,
+    "value": 3,
+    "motivation": 24,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     0.0,
+     2.0,
+     0.0,
+     0.0
+    ],
+    "away": [
+     3.0,
+     2.0,
+     1.0,
+     3.0
+    ]
    },
    "forecasts": [
     {
@@ -902,7 +1245,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 0.993,
     "lam_away": 1.584,
@@ -1034,6 +1377,74 @@
     "away": 8.0,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 88,
+    "defence": 92,
+    "control": 97,
+    "form": 97,
+    "value": 75,
+    "motivation": 96,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 87,
+    "defence": 8,
+    "control": 27,
+    "form": 36,
+    "value": 90,
+    "motivation": 84,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
    },
    "momentum": {
     "labels": [
@@ -1229,7 +1640,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.862,
     "lam_away": 0.935,
@@ -1291,6 +1702,94 @@
     "away": 2.37,
     "handicap": 1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 64,
+    "defence": 22,
+    "control": 34,
+    "form": 76,
+    "value": 82,
+    "motivation": 74,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 30,
+    "defence": 98,
+    "control": 85,
+    "form": 74,
+    "value": 67,
+    "motivation": 71,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     1.0,
+     2.0,
+     1.0,
+     1.0
+    ],
+    "away": [
+     3.0,
+     1.0,
+     0.0,
+     1.0
+    ]
    },
    "forecasts": [
     {
@@ -1455,7 +1954,7 @@
    ],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.335,
     "lam_away": 1.374,
@@ -1587,6 +2086,91 @@
     "away": 2.05,
     "handicap": 1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 11,
+    "defence": 56,
+    "control": 22,
+    "form": 9,
+    "value": 11,
+    "motivation": 8,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 83,
+    "defence": 31,
+    "control": 71,
+    "form": 39,
+    "value": 9,
+    "motivation": 38,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     1.0,
+     1.0,
+     2.0
+    ],
+    "away": [
+     1.0,
+     1.0,
+     1.0
+    ]
    },
    "forecasts": [
     {
@@ -1741,7 +2325,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 0.953,
     "lam_away": 1.247,
@@ -1797,6 +2381,91 @@
     "away": 2.55,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 0,
+    "defence": 0,
+    "control": 0,
+    "form": 1,
+    "value": 0,
+    "motivation": 1,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 5,
+    "defence": 77,
+    "control": 30,
+    "form": 12,
+    "value": 3,
+    "motivation": 11,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     1.0,
+     0.0,
+     1.0
+    ],
+    "away": [
+     1.0,
+     0.0,
+     0.0
+    ]
    },
    "forecasts": [
     {
@@ -1951,7 +2620,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.854,
     "lam_away": 1.808,
@@ -2083,6 +2752,94 @@
     "away": 1.2235,
     "handicap": 2.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 82,
+    "defence": 26,
+    "control": 68,
+    "form": 37,
+    "value": 7,
+    "motivation": 37,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 100,
+    "defence": 100,
+    "control": 100,
+    "form": 90,
+    "value": 92,
+    "motivation": 81,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     4.0,
+     2.0,
+     2.0,
+     2.0
+    ],
+    "away": [
+     7.0,
+     2.0,
+     3.0,
+     2.0
+    ]
    },
    "forecasts": [
     {
@@ -2255,7 +3012,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 0.887,
     "lam_away": 3.066,
@@ -2387,6 +3144,94 @@
     "away": 2.02,
     "handicap": 1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 96,
+    "defence": 26,
+    "control": 81,
+    "form": 75,
+    "value": 18,
+    "motivation": 79,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 78,
+    "defence": 99,
+    "control": 95,
+    "form": 90,
+    "value": 97,
+    "motivation": 81,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     5.0,
+     1.0,
+     4.0,
+     3.0
+    ],
+    "away": [
+     4.0,
+     4.0,
+     2.0,
+     2.0
+    ]
    },
    "forecasts": [
     {
@@ -2559,7 +3404,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.515,
     "lam_away": 1.812,
@@ -2621,6 +3466,94 @@
     "away": 1.45,
     "handicap": 1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 14,
+    "defence": 59,
+    "control": 19,
+    "form": 27,
+    "value": 1,
+    "motivation": 27,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 21,
+    "defence": 73,
+    "control": 34,
+    "form": 27,
+    "value": 15,
+    "motivation": 4,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     0.0,
+     0.0,
+     3.0,
+     0.0
+    ],
+    "away": [
+     1.0,
+     0.0,
+     2.0,
+     1.0
+    ]
    },
    "forecasts": [
     {
@@ -2784,7 +3717,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 0.912,
     "lam_away": 1.823,
@@ -2916,6 +3849,94 @@
     "away": 6.55,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 16,
+    "defence": 23,
+    "control": 18,
+    "form": 12,
+    "value": 96,
+    "motivation": 27,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 4,
+    "defence": 7,
+    "control": 3,
+    "form": 27,
+    "value": 11,
+    "motivation": 27,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     2.0,
+     2.0,
+     2.0,
+     3.0
+    ],
+    "away": [
+     0.0,
+     0.0,
+     2.0,
+     3.0
+    ]
    },
    "forecasts": [
     {
@@ -3088,7 +4109,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 2.273,
     "lam_away": 1.006,
@@ -3150,6 +4171,94 @@
     "away": 2.27,
     "handicap": 1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 62,
+    "defence": 8,
+    "control": 6,
+    "form": 21,
+    "value": 78,
+    "motivation": 53,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 17,
+    "defence": 57,
+    "control": 19,
+    "form": 5,
+    "value": 4,
+    "motivation": 4,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     3.0,
+     2.0,
+     0.0,
+     2.0
+    ],
+    "away": [
+     2.0,
+     0.0,
+     1.0,
+     1.0
+    ]
    },
    "forecasts": [
     {
@@ -3313,7 +4422,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.23,
     "lam_away": 1.299,
@@ -3445,6 +4554,74 @@
     "away": 4.35,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 88,
+    "defence": 5,
+    "control": 23,
+    "form": 17,
+    "value": 12,
+    "motivation": 0,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 58,
+    "defence": 27,
+    "control": 27,
+    "form": 26,
+    "value": 83,
+    "motivation": 4,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
    },
    "momentum": {
     "labels": [
@@ -3649,7 +4826,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 2.133,
     "lam_away": 1.528,
@@ -3781,6 +4958,94 @@
     "away": 2.3,
     "handicap": 1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 82,
+    "defence": 55,
+    "control": 81,
+    "form": 87,
+    "value": 84,
+    "motivation": 47,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 77,
+    "defence": 74,
+    "control": 87,
+    "form": 71,
+    "value": 8,
+    "motivation": 82,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     3.0,
+     2.0,
+     6.0,
+     3.0
+    ],
+    "away": [
+     1.0,
+     2.0,
+     3.0,
+     2.0
+    ]
    },
    "forecasts": [
     {
@@ -3962,7 +5227,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.349,
     "lam_away": 1.485,
@@ -4094,6 +5359,74 @@
     "away": 1.63,
     "handicap": 1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 39,
+    "defence": 69,
+    "control": 70,
+    "form": 29,
+    "value": 80,
+    "motivation": 26,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 85,
+    "defence": 76,
+    "control": 85,
+    "form": 79,
+    "value": 89,
+    "motivation": 85,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
    },
    "momentum": {
     "labels": [
@@ -4310,7 +5643,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.305,
     "lam_away": 2.007,
@@ -4360,6 +5693,88 @@
     "away": 6.7,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 60,
+    "defence": 26,
+    "control": 21,
+    "form": 21,
+    "value": 15,
+    "motivation": 28,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 15,
+    "defence": 19,
+    "control": 13,
+    "form": 11,
+    "value": 19,
+    "motivation": 11,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     0.0,
+     2.0
+    ],
+    "away": [
+     1.0,
+     0.0
+    ]
    },
    "forecasts": [
     {
@@ -4505,7 +5920,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.81,
     "lam_away": 0.653,
@@ -4625,6 +6040,88 @@
     "away": 3.95,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 9,
+    "defence": 0,
+    "control": 0,
+    "form": 4,
+    "value": 17,
+    "motivation": 4,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 39,
+    "defence": 9,
+    "control": 22,
+    "form": 35,
+    "value": 26,
+    "motivation": 35,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     0.0,
+     1.0
+    ],
+    "away": [
+     1.0,
+     1.0
+    ]
    },
    "forecasts": [
     {
@@ -4751,7 +6248,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.493,
     "lam_away": 0.975,
@@ -4813,6 +6310,74 @@
     "away": 13.8795,
     "handicap": -2.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 99,
+    "defence": 6,
+    "control": 82,
+    "form": 74,
+    "value": 93,
+    "motivation": 82,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 33,
+    "defence": 65,
+    "control": 31,
+    "form": 39,
+    "value": 76,
+    "motivation": 38,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
    },
    "momentum": {
     "labels": [
@@ -5008,7 +6573,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 2.462,
     "lam_away": 0.448,
@@ -5064,6 +6629,74 @@
     "away": 4.0,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 74,
+    "defence": 79,
+    "control": 84,
+    "form": 26,
+    "value": 14,
+    "motivation": 4,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 4,
+    "defence": 27,
+    "control": 4,
+    "form": 1,
+    "value": 82,
+    "motivation": 4,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
    },
    "momentum": {
     "labels": [
@@ -5271,7 +6904,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.807,
     "lam_away": 1.158,
@@ -5403,6 +7036,94 @@
     "away": 4.45,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 33,
+    "defence": 23,
+    "control": 22,
+    "form": 12,
+    "value": 4,
+    "motivation": 27,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 66,
+    "defence": 21,
+    "control": 33,
+    "form": 37,
+    "value": 14,
+    "motivation": 37,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     0.0,
+     6.0,
+     1.0,
+     1.0
+    ],
+    "away": [
+     1.0,
+     3.0,
+     2.0,
+     0.0
+    ]
    },
    "forecasts": [
     {
@@ -5575,7 +7296,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 2.232,
     "lam_away": 1.245,
@@ -5637,6 +7358,74 @@
     "away": 21.8997,
     "handicap": -3.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 99,
+    "defence": 76,
+    "control": 99,
+    "form": 100,
+    "value": 96,
+    "motivation": 100,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 5,
+    "defence": 95,
+    "control": 37,
+    "form": 39,
+    "value": 79,
+    "motivation": 35,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
    },
    "momentum": {
     "labels": [
@@ -5856,7 +7645,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 2.579,
     "lam_away": 0.41,
@@ -5906,6 +7695,94 @@
     "away": 3.88,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 16,
+    "defence": 0,
+    "control": 0,
+    "form": 3,
+    "value": 14,
+    "motivation": 27,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 14,
+    "defence": 89,
+    "control": 24,
+    "form": 30,
+    "value": 3,
+    "motivation": 78,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     1.0,
+     2.0,
+     3.0,
+     0.0
+    ],
+    "away": [
+     3.0,
+     1.0,
+     0.0,
+     0.0
+    ]
    },
    "forecasts": [
     {
@@ -6051,7 +7928,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.913,
     "lam_away": 1.577,
@@ -6171,6 +8048,88 @@
     "away": 1.2,
     "handicap": 1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 3,
+    "defence": 13,
+    "control": 13,
+    "form": 6,
+    "value": 6,
+    "motivation": 0,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 90,
+    "defence": 68,
+    "control": 84,
+    "form": 84,
+    "value": 3,
+    "motivation": 94,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     0.0,
+     1.0
+    ],
+    "away": [
+     2.0,
+     0.0
+    ]
    },
    "forecasts": [
     {
@@ -6316,7 +8275,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 0.735,
     "lam_away": 2.29,
@@ -6436,6 +8395,91 @@
     "away": 9.3,
     "handicap": -2.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 100,
+    "defence": 93,
+    "control": 100,
+    "form": 20,
+    "value": 0,
+    "motivation": 20,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 93,
+    "defence": 93,
+    "control": 93,
+    "form": 100,
+    "value": 0,
+    "motivation": 100,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     0.0,
+     6.0,
+     3.0
+    ],
+    "away": [
+     2.0,
+     3.0,
+     2.0
+    ]
    },
    "forecasts": [
     {
@@ -6581,7 +8625,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 2.659,
     "lam_away": 0.908,
@@ -6701,6 +8745,88 @@
     "away": 1.34,
     "handicap": 1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 16,
+    "defence": 0,
+    "control": 0,
+    "form": 3,
+    "value": 14,
+    "motivation": 3,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 78,
+    "defence": 92,
+    "control": 84,
+    "form": 97,
+    "value": 8,
+    "motivation": 97,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     1.0,
+     1.0
+    ],
+    "away": [
+     3.0,
+     1.0
+    ]
    },
    "forecasts": [
     {
@@ -6837,7 +8963,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.223,
     "lam_away": 2.405,
@@ -6963,6 +9089,94 @@
     "away": 6.3,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 2,
+    "defence": 82,
+    "control": 30,
+    "form": 24,
+    "value": 15,
+    "motivation": 38,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 83,
+    "defence": 88,
+    "control": 89,
+    "form": 87,
+    "value": 3,
+    "motivation": 82,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     1.0,
+     3.0,
+     1.0,
+     4.0
+    ],
+    "away": [
+     3.0,
+     1.0,
+     2.0,
+     0.0
+    ]
    },
    "forecasts": [
     {
@@ -7135,7 +9349,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.779,
     "lam_away": 0.661,
@@ -7255,6 +9469,74 @@
     "away": 5.3,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 51,
+    "defence": 79,
+    "control": 62,
+    "form": 66,
+    "value": 17,
+    "motivation": 68,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 21,
+    "defence": 38,
+    "control": 21,
+    "form": 30,
+    "value": 19,
+    "motivation": 28,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
    },
    "forecasts": [
     {
@@ -7381,7 +9663,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.734,
     "lam_away": 0.661,
@@ -7507,6 +9789,74 @@
     "away": 7.25,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 92,
+    "defence": 57,
+    "control": 89,
+    "form": 84,
+    "value": 93,
+    "motivation": 80,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 86,
+    "defence": 36,
+    "control": 78,
+    "form": 50,
+    "value": 97,
+    "motivation": 80,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
    },
    "momentum": {
     "labels": [
@@ -7717,7 +10067,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 2.559,
     "lam_away": 1.256,
@@ -7767,6 +10117,74 @@
     "away": 4.8,
     "handicap": -1.0,
     "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 26,
+    "defence": 33,
+    "control": 23,
+    "form": 40,
+    "value": 23,
+    "motivation": 35,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 98,
+    "defence": 100,
+    "control": 100,
+    "form": 100,
+    "value": 84,
+    "motivation": 100,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
    },
    "forecasts": [
     {
@@ -7893,7 +10311,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:35:36+08:00",
+   "generated_at": "2026-10-23T13:42:46+08:00",
    "extras": {
     "lam_home": 1.537,
     "lam_away": 1.035,
