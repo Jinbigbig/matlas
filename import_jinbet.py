@@ -34,6 +34,8 @@ MATCH_TIMES_JSON = Path("C:/Users/Jin/jinbet/match_times.json")
 INJURIES_JSON = Path("C:/Users/Jin/jinbet/injuries.json")
 LINEUPS_JSON = Path("C:/Users/Jin/jinbet/lineups.json")
 HKJC_JSON = Path("C:/Users/Jin/jinbet/hkjc.json")
+# 补充源：7M 联赛军情（港式中文）+ lineupstoday 联赛伤停汇总页（jinbet/_fetch_injuries_extra.py）
+INJURIES_EXTRA_JSON = Path("C:/Users/Jin/jinbet/injuries_extra.json")
 WEATHER_JSON = Path("C:/Users/Jin/jinbet/weather.json")
 REFEREE_JSON = Path("C:/Users/Jin/jinbet/referee.json")
 _results_data_cache: dict | None = None
@@ -292,6 +294,11 @@ def _load_env() -> dict:
     if d:
         env["hkjc"] = d.get("matches") or {}
         env["hkjc_date"] = str(d.get("date", ""))[:10]
+    d = _read(INJURIES_EXTRA_JSON)
+    if d:
+        env["extra_inj"] = d.get("teams") or {}
+        env["extra_moods"] = d.get("moods") or {}
+        env["extra_date"] = str(d.get("date", ""))[:10]
     d = _read(WEATHER_JSON)
     if d:
         env["weather"] = d.get("matches") or {}
@@ -306,6 +313,68 @@ def _load_env() -> dict:
 def _name_match(a: str | None, b: str | None) -> bool:
     """队名双向包含匹配（竞彩简称 ↔ 文章全/简称）。"""
     return bool(a and b and len(a) >= 2 and len(b) >= 2 and (a in b or b in a))
+
+
+# 7M 军情正文的字段标记：一次匹配（长的在前），避免「受伤／缺阵：」被二次切碎
+# 单个「受伤：」「缺阵：」也切，切完若把队名甩到上一行末尾，再由 _mood_fix 搬回来
+_MOOD_MARKS = re.compile(r"(受伤／缺阵：|上阵成疑：|成疑：|受伤：|缺阵：)")
+_MOOD_LABELS = ("停赛：", "上阵成疑：", "成疑：", "受伤／缺阵：", "受伤：", "缺阵：")
+_MOOD_TEAM_SUSP = re.compile(r"([\u4e00-\u9fa5]{2,7})停赛：")
+# 名单段后面常常直接跟回顾正文（「（不详）波鸿上轮…」），在队名前断开
+_MOOD_AFTER_LIST = re.compile(
+    r"(?<=）)([\u4e00-\u9fa5]{2,7})(?=(?:上轮|上仗|近|开季|球队|他们))")
+# 上一行末尾「。队名」被切断（队名应跟着下面的标记行）
+_MOOD_TAIL_TEAM = re.compile(r"[。；！？]([\u4e00-\u9fa5]{2,7})$")
+
+
+def _mood_tail(line: str) -> str:
+    """源页面在正文末尾截断，行尾常留未闭合的「（」——截到最后一个完整条目前。"""
+    if line.count("（") <= line.count("）"):
+        return line
+    cut = line.rfind("、")
+    if cut > 0:
+        return line[:cut]
+    cut = line.rfind("（")
+    return line[:cut] if cut > 0 else line
+
+
+def _mood_fix(lines: list[str]) -> list[str]:
+    """把被切断在上一行末尾的队名，搬回下面那行标记的开头。"""
+    out: list[str] = []
+    for ln in lines:
+        if out and any(ln.startswith(mk) for mk in _MOOD_LABELS):
+            m = _MOOD_TAIL_TEAM.search(out[-1])
+            if m:
+                out[-1] = out[-1][: m.start() + 1]
+                ln = m.group(1) + ln
+        out.append(ln)
+    return out
+
+
+def _mood_clean(raw: str) -> str:
+    """军情正文整理：去「军情」前缀与末尾截断符，按「队名+停赛：」/字段标记分段落。"""
+    t = raw.strip()
+    for cut in ("……", "…", "..."):
+        if t.endswith(cut):
+            t = t[: -len(cut)].rstrip()
+    if t.startswith("军情"):
+        t = t[2:].strip()
+    t = _MOOD_TEAM_SUSP.sub(lambda mm: "\n" + mm.group(1) + "停赛：", t)
+    t = re.sub(r"(?<![\u4e00-\u9fa5])(?<!\n)停赛：", "\n停赛：", t)
+    t = _MOOD_MARKS.sub(lambda mm: "\n" + mm.group(1), t)
+    t = _MOOD_AFTER_LIST.sub(lambda mm: "\n" + mm.group(1), t)
+    lines = [_mood_tail(ln.strip(" 　")) for ln in t.split("\n")]
+    lines = _mood_fix([ln for ln in lines if ln])
+    out = []
+    for ln in lines:
+        # 名单行里的「／」是源站「无」的写法，直接读会误解成斜杠
+        if any(mk in ln[:10] for mk in _MOOD_LABELS):
+            ln = ln.replace("：／", "：无")
+        out.append(ln)
+    # 源站正文本身在预览处截断，末尾没有句读说明没写完，补省略号免得像断字
+    if out and not out[-1].endswith(("。", "；", "！", "？", "）", "」", "…")):
+        out[-1] += "…"
+    return "\n".join(out)
 
 
 def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
@@ -464,9 +533,10 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
     # 网易赛程开赛时间（match_times.json）优先，仅套用窗口内日期
     if times_idx and date in (times_days or set()):
         kickoff = str(times_idx.get(code, "") or "") or kickoff
-    # 赛前环境：伤停（三源合并）/ 天气（按编号）/ 裁判（对阵模糊匹配），仅当日/近2日
+    # 赛前环境：伤停（四源合并）/ 天气（按编号）/ 裁判（对阵模糊匹配），仅当日/近2日
     if env:
-        # 伤停三源：lineups（编号，五大联赛+欧战）> injuries（队名，德甲/荷甲）> hkjc（编号，补日韩/沙特等）
+        # 伤停四源：lineups（编号，五大联赛+欧战）> injuries（队名，德甲/荷甲）
+        #        > hkjc（编号，港马会简报）> injuries_extra（队名，7M 军情 / lineupstoday）
         # 同队同类字段先到先得，逐类补空
         def _inj_norm(rec: dict | None, out_k="out", doubt_k="doubt", susp_k="susp") -> dict | None:
             if not rec:
@@ -484,6 +554,8 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
         inj_all = env.get("inj") or {}
         hk_all = env.get("hkjc") or {}
         hk_one = hk_all.get(code) if env.get("hkjc_date") == date else None
+        ex_all = env.get("extra_inj") or {}
+        ex_ok = env.get("extra_date") == date
         merged: dict[str, dict] = {}
         for side_key, team_name in (("home", home), ("away", away)):
             cands = [
@@ -491,6 +563,8 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                 _inj_norm(inj_all.get(team_name), "out", "doubtful", "suspended")
                 if env.get("env_date") == date else None,
                 _inj_norm((hk_one or {}).get(side_key)),
+                _inj_norm(ex_all.get(team_name) or ex_all.get(TEAM_ALIAS.get(team_name, "")))
+                if ex_ok else None,
             ]
             acc = {"out": [], "doubtful": [], "suspended": []}
             for c in cands:
@@ -503,6 +577,13 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                 merged[side_key] = acc
         if merged:
             extras["injuries"] = merged
+        # 赛前军情（7M 联赛稿，按场次编号）：优先于结构化伤停，单独成块展示
+        if env.get("extra_date") == date:
+            mo = (env.get("extra_moods") or {}).get(code)
+            if mo:
+                txt = _mood_clean(str(mo.get("text") or ""))
+                if txt:
+                    extras["mood"] = txt
         if env.get("weather_date") == date:
             w = (env.get("weather") or {}).get(code)
             if w:

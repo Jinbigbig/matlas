@@ -212,6 +212,24 @@ def _injury_panel(m: Match) -> str:
     return C.panel("伤停与缺阵", C.table(["球队", "球员", "原因", "状态"], rows))
 
 
+_MOOD_TAG = ("停赛：", "上阵成疑：", "成疑：", "受伤／缺阵：", "受伤：", "缺阵：")
+
+
+def _mood_panel(m: Match) -> str:
+    """赛前军情（extras.mood，7M 联赛稿，按场次编号匹配）。"""
+    txt = str((m.extras or {}).get("mood") or "").strip()
+    if not txt:
+        return ""
+    parts = []
+    for ln in txt.split("\n"):
+        ln = ln.strip()
+        if not ln:
+            continue
+        cls = ' class="mk"' if any(t in ln[:10] for t in _MOOD_TAG) else ""
+        parts.append(f"<p{cls}>{C.esc(ln)}</p>")
+    return C.panel("赛前军情", '<div class="mood-text">' + "".join(parts) + "</div>")
+
+
 def _weather_panel(m: Match) -> str:
     """比赛当地比赛时段天气（extras.weather，import 按日期防错配）。"""
     w = (m.extras or {}).get("weather")
@@ -484,6 +502,7 @@ def render_match(cfg: Config, m: Match) -> str:
         _h2h_panel(m),          # 3. ⚔️ 历史交锋数据
         _form_panel(m),         # 4. 📈 球队状态（近期战绩）
         _injury_panel(m),       # 5. ⚠️ 核心球员缺阵影响
+        _mood_panel(m),         # 5.1 📰 赛前军情（7M 联赛稿）
         _weather_panel(m),      # 5.5 🌤 比赛地天气
         _referee_panel(m),      # 5.6 🟨 主裁判执法数据
         _odds_panel(m),         # 市场数据
