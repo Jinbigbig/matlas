@@ -1375,7 +1375,7 @@ def render_preview_index(cfg: Config, ordered: list[Day]) -> str:
         )
     body = (
         f"<h1 class='page-h1'>{L.ICON_ARCHIVE} 每日赛事前瞻</h1>"
-        '<p class="pv-lead">每日 AI 报告列表（当前跳转原项目报告页，新窗口打开）。</p>'
+        '<p class="pv-lead">每日 AI 报告列表。</p>'
         f'<div class="pv-grid">{"".join(cards)}</div>'
     )
     return L.page(

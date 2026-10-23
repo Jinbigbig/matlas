@@ -99,6 +99,7 @@ a.fp-opt.active { background: var(--accent); color: #fff; border-color: var(--ac
 
 /* ---------- 独立页面：数据统计 / 功能 / 我的 ---------- */
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+.stats-main { grid-template-columns: repeat(3, 1fr); }
 .stat-card { background: #fff; border: 1px solid var(--rule); border-radius: 10px;
   padding: 18px 12px; text-align: center; }
 .stat-num { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
