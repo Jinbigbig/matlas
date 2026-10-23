@@ -553,6 +553,8 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .odds-m-head a:hover { color: var(--accent); }
 .odds-code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11px; font-weight: 500;
   background: #f1f5f9; padding: 2px 7px; border-radius: 5px; color: #6b7280; }
+.odds-time { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11.5px; font-weight: 700;
+  color: #ef4444; background: #fff1f2; padding: 2px 7px; border-radius: 5px; }
 .odds-lg { font-size: 11px; font-weight: 600; background: #eff6ff; color: var(--accent);
   padding: 2px 7px; border-radius: 5px; }
 .odds-res { margin-left: auto; font-size: 12px; color: #16a34a; font-weight: 700; }
@@ -658,6 +660,48 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .cr-site { font-size: 11px; color: #16a34a; background: #f0fdf4;
   border-radius: 10px; padding: 2px 8px; }
 .cr-site.cr-none { color: #d97706; background: #fffbeb; }
+
+/* ---------- 每日赛事前瞻（独立模块 preview/，列表页 + 报告页备用样式） ---------- */
+.pv-lead { font-size: 13.5px; color: #6b7280; margin: 0 0 14px; }
+.pv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.pv-day { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; text-decoration: none;
+  color: inherit; transition: transform .12s ease, box-shadow .12s ease; }
+.pv-day:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(15,23,42,0.10); }
+.pv-d { font-size: 16px; font-weight: 800; color: #111; }
+.pv-w { font-size: 12px; color: var(--accent); font-weight: 700; }
+.pv-n { font-size: 12.5px; color: #374151; font-weight: 600; }
+.pv-lg { font-size: 11.5px; color: #9ca3af; }
+.pv-go { font-size: 12px; color: var(--accent); margin-top: 4px; font-weight: 600; }
+.pv-back { display: inline-block; font-size: 13px; color: #6b7280; text-decoration: none; margin-bottom: 10px; }
+.pv-back:hover { color: var(--accent); }
+.pv-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 13px;
+  color: #6b7280; background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 12px 16px; margin-bottom: 6px; }
+.pv-head .pv-w { font-size: 14px; }
+.pv-h2 { font-size: 15.5px; margin: 18px 0 10px; color: #111; }
+.pv-table td i { font-style: normal; color: #9ca3af; font-size: 11px; margin-left: 3px; }
+.pv-lg2 { font-size: 11px; color: #9ca3af; }
+.pv-table .pv-lg2 { display: block; font-size: 10.5px; }
+.pv-tm { font-family: 'SFMono-Regular', Consolas, monospace; font-weight: 700; color: #ef4444; white-space: nowrap; }
+.pv-act { font-weight: 700; color: #111; white-space: nowrap; }
+.pv-conf { font-size: 11px; font-weight: 700; border-radius: 10px; padding: 2px 9px; white-space: nowrap; }
+.pv-c-high { background: #fee2e2; color: #dc2626; }
+.pv-c-medium { background: #fef3c7; color: #d97706; }
+.pv-c-low { background: #f1f5f9; color: #64748b; }
+.pv-c-none { background: #f1f5f9; color: #9ca3af; }
+.pv-hot { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  padding: 12px 16px; margin-bottom: 10px; }
+.pv-hot-h { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.pv-hot-vs { font-size: 14px; color: #111; }
+.pv-hot-vs i { font-style: normal; color: #94a3b8; font-size: 11px; margin: 0 4px; }
+.pv-more { margin-left: auto; font-size: 12.5px; color: var(--accent); text-decoration: none; white-space: nowrap; }
+.pv-pick { font-size: 13.5px; color: #374151; margin: 8px 0 4px; }
+.pv-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+.pv-chip { font-size: 12px; color: #374151; background: #f8f9fc; border: 1px solid #eef0f4;
+  border-radius: 14px; padding: 4px 10px; }
+.pv-chip b { color: #6b7280; font-weight: 600; margin-right: 4px; }
+.pv-chip i { font-style: normal; color: #9ca3af; }
 .bk-combos { background: #fafbfc; border: 1px solid #eef0f4; border-radius: 10px;
   padding: 10px 12px; font-size: 12px; color: #374151; max-height: 300px; overflow-y: auto; }
 .bk-combos b { display: block; margin-bottom: 6px; color: #111; }
