@@ -6,7 +6,7 @@
 <title>投注 - Matlas</title>
 <meta name="description" content="足彩投注：竞彩式赔率格选号、投注篮计注算奖、载入赛果自动结算与个人盈亏汇总">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/bets.html">
-<link rel="stylesheet" href="assets/style.css?v=1792728939">
+<link rel="stylesheet" href="assets/style.css?v=1792729364">
 <meta property="og:type" content="article">
 <meta property="og:title" content="投注 - Matlas">
 <meta property="og:description" content="足彩投注：竞彩式赔率格选号、投注篮计注算奖、载入赛果自动结算与个人盈亏汇总">
@@ -217,7 +217,27 @@
         return s ? '<div class="nb-ex-sec"><span class="nb-ex-t">' + title
           + '</span><div class="nb-cells">' + s + "</div></div>" : "";
       }
-      ex += kvSec("比分", of.score, "score") + kvSec("总进球", of.goals, "goals") + kvSec("半全场", of.htft, "htft");
+      function scoreSecs(src, mk) {
+        // 比分按 胜/平/负 三组分行（网易布局）
+        var g = {h: [], d: [], a: []};
+        Object.keys(src || {}).forEach(function (k) {
+          if (!src[k]) return;
+          var mm = k.match(/^(\d+):(\d+)$/);
+          var grp;
+          if (mm) { var x = +mm[1], y = +mm[2]; grp = x > y ? "h" : x < y ? "a" : "d"; }
+          else grp = k.indexOf("胜") >= 0 ? "h" : k.indexOf("平") >= 0 ? "d" : "a";
+          g[grp].push(k);
+        });
+        var t = {h: "胜比分", d: "平比分", a: "负比分"};
+        return ["h", "d", "a"].map(function (gk) {
+          if (!g[gk].length) return "";
+          return '<div class="nb-ex-sec"><span class="nb-ex-t">' + t[gk]
+            + '</span><div class="nb-cells">'
+            + g[gk].map(function (kk) { return cell(r.id, mk, kk, src[kk]); }).join("")
+            + "</div></div>";
+        }).join("");
+      }
+      ex += scoreSecs(of.score, "score") + kvSec("总进球", of.goals, "goals") + kvSec("半全场", of.htft, "htft");
       html += '<div class="nb-match">' + head
         + '<div class="nb-ex" id="nb-ex-' + i + '" style="display:none">' + ex + "</div></div>";
     });
