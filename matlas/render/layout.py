@@ -513,7 +513,7 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .stats-main .stat-card .stat-num { font-size: 30px; font-weight: 800; color: #111; }
 .stats-main .stat-card .stat-lbl { font-size: 13px; color: #6b7280; margin-top: 2px; }
 .stats-box { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  padding: 16px; min-width: 0; }
+  padding: 16px; min-width: 0; margin: 16px 0; }
 .stats-box h3 { margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #111; }
 .stats-box .history-table { margin-top: 8px; }
 .insight-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
@@ -532,6 +532,7 @@ svg.itrend { width: 100%; height: auto; display: block; margin-inline: auto; max
 .insight-chip { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 999px; padding: 6px 14px; font-size: 13px; color: #374151; }
 .insight-chip b { color: #111; }
 .stats-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.stats-duo .stats-box { margin: 0; }
 @media (max-width: 1000px) { .stats-duo { grid-template-columns: 1fr; } }
 .dim-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 @media (max-width: 640px) { .dim-grid { grid-template-columns: repeat(2, 1fr); } }
