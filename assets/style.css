@@ -655,8 +655,7 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .cr-list { display: flex; flex-direction: column; gap: 6px; }
 .cr-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
   background: #f8fafc; border-radius: 8px; padding: 6px 10px; }
-.cr-vs { font-size: 13px; color: #111; min-width: 190px; }
-.cr-vs i { font-style: normal; color: #94a3b8; font-size: 11px; margin: 0 4px; }
+.cr-vs i { margin: 0; }
 .cr-in { font-size: 12px; color: #6b7280; white-space: nowrap; }
 .cr-n { width: 40px; text-align: center; font-size: 13px; padding: 4px 2px;
   border: 1px solid var(--rule); border-radius: 6px; }
@@ -745,10 +744,20 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
   background: #f1f5f9; border-radius: 4px; padding: 2px 6px; white-space: nowrap; }
 .nb-time { font-size: 12px; color: #6b7280; white-space: nowrap; }
 .nb-time:empty { display: none; }
-.nb-vs { font-size: 13.5px; color: #111; min-width: 190px; }
-.nb-vs b { font-weight: 700; }
-.nb-vs i { font-style: normal; color: #94a3b8; font-size: 11px; margin: 0 6px; }
+/* 主客队占位一致：主队右对齐定宽 → VS 居中 → 客队左对齐，上下 VS 对齐 */
+.nb-vs, .cr-vs, .odds-vs { display: inline-flex; align-items: center; min-width: 190px;
+  font-size: 13.5px; color: #111; }
+.nb-vs b, .cr-vs b, .odds-vs b { font-weight: 700; }
+.nb-vs i, .cr-vs i, .odds-vs i { flex: none; width: 40px; text-align: center;
+  font-style: normal; color: #94a3b8; font-size: 11px; }
+.nb-vs b:first-of-type, .cr-vs b:first-of-type, .odds-vs b:first-of-type {
+  flex: none; width: 96px; text-align: right; overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap; }
+.nb-vs b:last-of-type, .cr-vs b:last-of-type, .odds-vs b:last-of-type {
+  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
 .nb-done { font-size: 12px; color: #dc2626; background: #fff1f2; border-radius: 10px; padding: 2px 8px; }
+.nb-time { font-size: 12px; color: #6b7280; white-space: nowrap; }
+.nb-time:empty { display: none; }
 .nb-plays { margin-left: auto; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
 .nb-blk { display: flex; align-items: center; gap: 6px; }
 .nb-blk-t { font-size: 11px; color: #9ca3af; white-space: nowrap; width: 52px; text-align: right; }

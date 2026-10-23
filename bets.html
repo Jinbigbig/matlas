@@ -6,7 +6,7 @@
 <title>投注 - Matlas</title>
 <meta name="description" content="足彩投注：竞彩式赔率格选号、投注篮计注算奖、载入赛果自动结算与个人盈亏汇总">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/bets.html">
-<link rel="stylesheet" href="assets/style.css?v=1792724004">
+<link rel="stylesheet" href="assets/style.css?v=1792724536">
 <meta property="og:type" content="article">
 <meta property="og:title" content="投注 - Matlas">
 <meta property="og:description" content="足彩投注：竞彩式赔率格选号、投注篮计注算奖、载入赛果自动结算与个人盈亏汇总">
@@ -421,7 +421,7 @@
       return '<div class="cr-row" data-mid="' + r.id + '">'
         + '<span class="nb-code">' + esc(r.c) + "</span>"
         + '<span class="bf-lg ' + lgCls(r.lg) + '">' + esc(r.lg) + "</span>"
-        + '<span class="cr-vs">' + esc(r.h) + " <i>VS</i> " + esc(r.a) + "</span>"
+        + '<span class="cr-vs"><b>' + esc(r.h) + "</b><i>VS</i><b>" + esc(r.a) + "</b></span>"
         + '<span class="cr-in">全场 <input class="cr-n" data-k="gh" value="' + v("gh", r.gh) + '">:<input class="cr-n" data-k="ga" value="' + v("ga", r.ga) + '"></span>'
         + '<span class="cr-in">半场 <input class="cr-n" data-k="hh" value="' + v("hh", r.hh) + '">:<input class="cr-n" data-k="ha" value="' + v("ha", r.ha) + '"></span>'
         + (site ? '<span class="cr-site">站内 ' + r.gh + "-" + r.ga + "</span>"

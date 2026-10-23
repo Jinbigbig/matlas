@@ -6,7 +6,7 @@
 <title>赔率 - Matlas</title>
 <meta name="description" content="竞彩全玩法赔率快照：胜平负、让球、比分、总进球、半全场，完赛对照高亮">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/odds.html">
-<link rel="stylesheet" href="assets/style.css?v=1792724004">
+<link rel="stylesheet" href="assets/style.css?v=1792724536">
 <meta property="og:type" content="article">
 <meta property="og:title" content="赔率 - Matlas">
 <meta property="og:description" content="竞彩全玩法赔率快照：胜平负、让球、比分、总进球、半全场，完赛对照高亮">
@@ -55,7 +55,7 @@
         + (r.c ? '<span class="odds-code">' + r.c + "</span>" : "")
         + (r.tm ? '<span class="odds-time">' + r.tm + "</span>" : "")
         + (r.lg ? '<span class="odds-lg">' + r.lg + "</span>" : "")
-        + '<span class="odds-vs"><a href="matches/' + r.id + '.html">' + r.h + " vs " + r.a + "</a></span>"
+        + '<span class="odds-vs"><a href="matches/' + r.id + '.html"><b>' + r.h + "</b><i>VS</i><b>" + r.a + "</b></a></span>"
         + (done ? '<span class="odds-res">赛果 ' + r.gh + "-" + r.ga
           + (r.hh !== null && r.hh !== undefined ? " (半 " + r.hh + "-" + r.ha + ")" : "") + "</span>" : "")
         + "</div>";
