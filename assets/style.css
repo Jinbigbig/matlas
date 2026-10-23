@@ -513,7 +513,8 @@ svg.itrend { width: 100%; height: auto; display: block; margin-inline: auto; max
 .insight-chips { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
 .insight-chip { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 999px; padding: 6px 14px; font-size: 13px; color: #374151; }
 .insight-chip b { color: #111; }
-.stats-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+.stats-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;
+  margin: 16px 0; }
 .stats-duo .stats-box { margin: 0; }
 @media (max-width: 1000px) { .stats-duo { grid-template-columns: 1fr; } }
 .dim-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
