@@ -36,7 +36,7 @@ LINEUPS_JSON = Path("C:/Users/Jin/jinbet/lineups.json")
 HKJC_JSON = Path("C:/Users/Jin/jinbet/hkjc.json")
 # 补充源：7M 联赛军情（港式中文）+ lineupstoday 联赛伤停汇总页（jinbet/_fetch_injuries_extra.py）
 INJURIES_EXTRA_JSON = Path("C:/Users/Jin/jinbet/injuries_extra.json")
-# 盘口时序（jinbet/_fetch_odds_ticks.py 每 2 小时累积）：同一场多次快照才画得出来
+# 盘口时序（jinbet/_fetch_odds_ticks.py 每日 11:10 / 14:00 / 19:00 三点采集）：同一场多次快照才画得出来
 ODDS_TICKS_JSON = Path("C:/Users/Jin/jinbet/odds_ticks.json")
 WEATHER_JSON = Path("C:/Users/Jin/jinbet/weather.json")
 REFEREE_JSON = Path("C:/Users/Jin/jinbet/referee.json")
@@ -320,6 +320,29 @@ def _name_match(a: str | None, b: str | None) -> bool:
     return bool(a and b and len(a) >= 2 and len(b) >= 2 and (a in b or b in a))
 
 
+def _ticks_for(env: dict, date: str, home: str, away: str) -> list:
+    """取某场的盘口时序：先精确命中，再按主客队名双向包含兜底。
+
+    时序的 key 用竞彩原始队名（门兴格拉德巴赫），站点用简称（门兴），
+    不做兜底会有一半场次对不上。
+    """
+    ticks = env.get("odds_ticks") or {}
+    if not ticks or not date:
+        return []
+    hit = ticks.get(f"{date}_{home}_{away}")
+    if hit:
+        return hit
+    for k, v in ticks.items():
+        if not str(k).startswith(date + "_"):
+            continue
+        parts = str(k)[len(date) + 1:].split("_")
+        if len(parts) != 2:
+            continue
+        if _name_match(home, parts[0]) and _name_match(away, parts[1]):
+            return v
+    return []
+
+
 # 7M 军情正文的字段标记：一次匹配（长的在前），避免「受伤／缺阵：」被二次切碎
 # 单个「受伤：」「缺阵：」也切，切完若把队名甩到上一行末尾，再由 _mood_fix 搬回来
 _MOOD_MARKS = re.compile(r"(受伤／缺阵：|上阵成疑：|成疑：|受伤：|缺阵：)")
@@ -589,8 +612,8 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                 txt = _mood_clean(str(mo.get("text") or ""))
                 if txt:
                     extras["mood"] = txt
-        tk = (env.get("odds_ticks") or {}).get(f"{date}_{home}_{away}")
-        if tk and len(tk) >= 2:
+        tk = _ticks_for(env, date, home, away)
+        if len(tk) >= 2:
             extras["odds_ticks"] = tk[-12:]
         if env.get("weather_date") == date:
             w = (env.get("weather") or {}).get(code)

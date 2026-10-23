@@ -210,7 +210,6 @@ def compute(days: list[Day], history: list[dict] | None = None) -> int:
 # ---------------------------------------------------------------- 球队看板
 
 
-MIN_SAMPLE = 3      # 少于此场次的队，六维接近联赛均值，页面要标注样本不足
 SERIES_N = 10       # 球队页走势图窗口
 
 
@@ -280,7 +279,6 @@ def team_board(days: list[Day]) -> dict[str, dict]:
             / (3 * len(b["form"])), 1) if b["form"] else 0.0
         vals = b["metrics"].values() if b["metrics"] else []
         b["power"] = round(sum(vals) / len(vals)) if vals else None
-        b["thin"] = b["matches"] < MIN_SAMPLE
         b["series"] = b["series"][-SERIES_N:]
         b["form"] = b["form"][-10:]
     return board

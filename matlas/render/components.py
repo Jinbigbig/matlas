@@ -492,7 +492,8 @@ def radar_one(
 RES_COLOR = {"w": "#ef4444", "d": "#9ca3af", "l": "#10b981"}
 
 
-def odds_trend_svg(points: Sequence[dict], *, w: int = 660, h: int = 240) -> str:
+def odds_trend_svg(points: Sequence[dict], *, w: int = 660, h: int = 240,
+                   price_label: str = "获胜赔率") -> str:
     """赔率与让球走势：左轴该队获胜赔率（实线），右轴让球值（虚线阶梯）。
 
     points: [{label, price, hcp, res}]，price/hcp 可为 None。
@@ -578,15 +579,15 @@ def odds_trend_svg(points: Sequence[dict], *, w: int = 660, h: int = 240) -> str
             f'fill="{MUTED}">{esc(points[i].get("label", ""))}</text>'
         )
     parts.append("</svg>")
-    legend = (
-        '<div class="legend">'
-        f'<span><i style="background:{HOME_COLOR}"></i>获胜赔率（左轴）</span>'
-        + (f'<span><i style="background:{AWAY_COLOR}"></i>让球（右轴）</span>' if hcps else "")
-        + '<span><i style="background:#ef4444"></i>胜</span>'
-        '<span><i style="background:#9ca3af"></i>平</span>'
-        '<span><i style="background:#10b981"></i>负</span>'
-        "</div>"
-    )
+    items = [f'<span><i style="background:{HOME_COLOR}"></i>{esc(price_label)}</span>']
+    if hcps:
+        items.append(f'<span><i style="background:{AWAY_COLOR}"></i>让球</span>')
+    # 赛果着色只在球队走势里出现（盘口时序没有 res），没有就不摆图例
+    if any(p.get("res") for p in points):
+        items += ['<span><i style="background:#ef4444"></i>胜</span>',
+                  '<span><i style="background:#9ca3af"></i>平</span>',
+                  '<span><i style="background:#10b981"></i>负</span>']
+    legend = '<div class="legend">' + "".join(items) + "</div>"
     return legend + "".join(parts)
 
 

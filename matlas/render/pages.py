@@ -98,39 +98,53 @@ def _odds_panel(m: Match) -> str:
     return C.panel("市场数据", body) if body.strip() else ""
 
 
+def _tick_hcp(p: dict) -> str | None:
+    """快照里的主让球档位（让球数组首项）。"""
+    rq = p.get("让球") or []
+    if rq:
+        v = rq[0].get("handicap")
+        if v not in (None, ""):
+            return str(v)
+    return None
+
+
 def _odds_tick_panel(m: Match) -> str:
-    """盘口变化：同一场多次赔率快照（jinbet 每 2 小时累积），至少 2 点才画。"""
+    """盘口变化：同场多次快照（11:10 初盘 / 14:00 / 19:00），至少 2 点才画。"""
     tk = (m.extras or {}).get("odds_ticks") or []
     if len(tk) < 2:
         return ""
     pts = []
     for p in tk:
-        hcp = None
-        rq = p.get("让球") or []
-        if rq and rq[0].get("handicap") not in (None, ""):
-            try:
-                hcp = float(rq[0]["handicap"])
-            except (TypeError, ValueError):
-                hcp = None
+        hcp = _tick_hcp(p)
+        try:
+            hcp_val = float(hcp) if hcp is not None else None
+        except (TypeError, ValueError):
+            hcp_val = None
         pts.append({"label": str(p.get("t", ""))[-5:], "price": p.get("胜"),
-                    "hcp": hcp, "res": None})
-    chart = C.odds_trend_svg(pts)
+                    "hcp": hcp_val, "res": None})
+    chart = C.odds_trend_svg(pts, price_label="主胜赔率")
     if not chart:
         return ""
-    first, last = tk[0], tk[-1]
 
-    def _shift(a, b) -> str:
-        if isinstance(a, (int, float)) and isinstance(b, (int, float)):
-            return f"{a:g} → {b:g}（{b - a:+.2f}）"
-        return f"{a if a is not None else '—'} → {b if b is not None else '—'}"
-
-    rows = [["主胜赔率", _shift(first.get("胜"), last.get("胜"))]]
-    h1 = next((r.get("handicap") for r in (first.get("让球") or []) if r.get("handicap")), None)
-    h2 = next((r.get("handicap") for r in (last.get("让球") or []) if r.get("handicap")), None)
-    if h1 or h2:
-        rows.append(["让球", f"{h1 or '—'} → {h2 or '—'}"])
-    rows.append(["快照", f"{len(tk)} 次（{first.get('t', '')} 起）"])
-    return C.panel("盘口变化", chart + C.table(["项目", "初盘 → 最新"], rows))
+    base_price = tk[0].get("胜")
+    base_hcp = _tick_hcp(tk[0])
+    rows = []
+    for i, p in enumerate(tk):
+        t = str(p.get("t", ""))[-5:]
+        price = p.get("胜")
+        hcp = _tick_hcp(p)
+        price_txt = f"{price:.2f}" if isinstance(price, (int, float)) else "—"
+        if i == 0:
+            rows.append([f"{t} 初盘", price_txt, hcp or "—", "—"])
+            continue
+        bits = []
+        if isinstance(price, (int, float)) and isinstance(base_price, (int, float)):
+            d = price - base_price
+            bits.append(f"主胜 {d:+.2f}")
+        if hcp != base_hcp:
+            bits.append(f"让球 {base_hcp or '—'}→{hcp or '—'}")
+        rows.append([t, price_txt, hcp or "—", " · ".join(bits) or "未变"])
+    return C.panel("盘口变化", chart + C.table(["时点", "主胜", "让球", "较初盘"], rows))
 
 
 def _standings_panel(m: Match) -> str:
@@ -2674,12 +2688,10 @@ def _team_depth_blocks(team_name: str, b: dict, matches: list[Match]) -> str:
         axes = [zh for _, zh in Metrics.AXES]
         vals = met.values()
         radar = C.radar_one(vals, axes, team_name, size=300)
-        thin = ('<p class="panel-hint">样本不足，六维向联赛均值收缩</p>'
-                if b.get("thin") else "")
         power = b.get("power")
         head = (f'<p class="sub">综合战力 <b>{power}</b> · 联赛内分位 0–100</p>'
                 if power is not None else "")
-        out.append(C.panel("六维战力", radar + head + thin))
+        out.append(C.panel("六维战力", radar + head))
 
     series = b.get("series") or []
     if len(series) >= 2:
@@ -2725,13 +2737,12 @@ def render_depth(cfg: Config, days: list[Day], board: dict[str, dict]) -> str:
     cards = []
     for b in rows:
         mini = C.radar_one(b["metrics"].values(), axes, b["name"], size=88, small=True)
-        thin = ' <span class="mini">样本不足</span>' if b["thin"] else ""
-        line = f'场均进 {b["gf_avg"]:.2f} 失 {b["ga_avg"]:.2f} · 已收录 {b["matches"]} 场'
+        line = f'进 {b["gf_avg"]:.2f} 失 {b["ga_avg"]:.2f} · {b["matches"]} 场'
         cards.append(
             f'<a class="dt-card" href="../teams/{b["name"]}.html" data-lg="{C.esc(b["league"])}">'
             f'<span class="dt-radar">{mini}</span>'
             '<span class="dt-main">'
-            f'<span class="dt-name">{C.esc(b["name"])}{thin}</span>'
+            f'<span class="dt-name">{C.esc(b["name"])}</span>'
             f'<span class="dt-lg">{C.esc(b["league"])}</span>'
             f'<span class="dt-line">{line}</span>'
             "</span>"
