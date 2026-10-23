@@ -1833,21 +1833,27 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
           + pill("负", row["负"], rw === "负", "s-a");
       });
       html += sec("让球", rq);
-      // 比分（主胜组 / 平组 / 客胜组）
-      var sc = "";
-      Object.keys(of.score || {}).forEach(function (k) {
-        var v = of.score[k], cls = "", hit = false;
+      // 比分：胜比分 / 平比分 / 负比分 三组分行（网易布局）
+      function scoreGroup(k) {
         var mm = k.match(/^(\\d+):(\\d+)$/);
-        if (mm) {
-          var x = +mm[1], y = +mm[2];
-          cls = x > y ? "s-h" : x < y ? "s-a" : "s-d";
-          hit = done && r.gh === x && r.ga === y;
-        } else {
-          cls = k.indexOf("胜") === 0 ? "s-h" : k.indexOf("负") === 0 ? "s-a" : "s-d";
-        }
-        sc += pill(k, v, hit, cls);
+        if (mm) { var x = +mm[1], y = +mm[2]; return x > y ? "h" : x < y ? "a" : "d"; }
+        return k.indexOf("胜") >= 0 ? "h" : k.indexOf("平") >= 0 ? "d" : k.indexOf("负") >= 0 ? "a" : "d";
+      }
+      var scG = {h: [], d: [], a: []};
+      Object.keys(of.score || {}).forEach(function (k) {
+        if (of.score[k]) scG[scoreGroup(k)].push(k);
       });
-      html += sec("比分", sc);
+      var scT = {h: "胜比分", d: "平比分", a: "负比分"};
+      ["h", "d", "a"].forEach(function (gk) {
+        var s = "";
+        scG[gk].forEach(function (k) {
+          var v = of.score[k], hit = false, cls = gk === "h" ? "s-h" : gk === "a" ? "s-a" : "s-d";
+          var mm = k.match(/^(\\d+):(\\d+)$/);
+          if (mm) hit = done && r.gh === +mm[1] && r.ga === +mm[2];
+          s += pill(k, v, hit, cls);
+        });
+        if (s) html += sec(scT[gk], s);
+      });
       // 总进球
       var gl = "", tg = done ? r.gh + r.ga : null;
       Object.keys(of.goals || {}).forEach(function (k) {
@@ -2138,7 +2144,27 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         return s ? '<div class="nb-ex-sec"><span class="nb-ex-t">' + title
           + '</span><div class="nb-cells">' + s + "</div></div>" : "";
       }
-      ex += kvSec("比分", of.score, "score") + kvSec("总进球", of.goals, "goals") + kvSec("半全场", of.htft, "htft");
+      function scoreSecs(src, mk) {
+        // 比分按 胜/平/负 三组分行（网易布局）
+        var g = {h: [], d: [], a: []};
+        Object.keys(src || {}).forEach(function (k) {
+          if (!src[k]) return;
+          var mm = k.match(/^(\\d+):(\\d+)$/);
+          var grp;
+          if (mm) { var x = +mm[1], y = +mm[2]; grp = x > y ? "h" : x < y ? "a" : "d"; }
+          else grp = k.indexOf("胜") >= 0 ? "h" : k.indexOf("平") >= 0 ? "d" : "a";
+          g[grp].push(k);
+        });
+        var t = {h: "胜比分", d: "平比分", a: "负比分"};
+        return ["h", "d", "a"].map(function (gk) {
+          if (!g[gk].length) return "";
+          return '<div class="nb-ex-sec"><span class="nb-ex-t">' + t[gk]
+            + '</span><div class="nb-cells">'
+            + g[gk].map(function (kk) { return cell(r.id, mk, kk, src[kk]); }).join("")
+            + "</div></div>";
+        }).join("");
+      }
+      ex += scoreSecs(of.score, "score") + kvSec("总进球", of.goals, "goals") + kvSec("半全场", of.htft, "htft");
       html += '<div class="nb-match">' + head
         + '<div class="nb-ex" id="nb-ex-' + i + '" style="display:none">' + ex + "</div></div>";
     });
