@@ -28,6 +28,8 @@ RES_DIR = Path("C:/Users/Jin/jinbet/results_history")
 # 引擎全量赛果库（results_history 归档缺失时回退）：key = {date}_{主}_{客}
 RESULTS_DATA_JSON = Path("C:/Users/Jin/jinbet/results_data.json")
 ODDS_JSON = Path("C:/Users/Jin/jinbet/odds_data.json")
+# 网易竞彩赛程开赛时间（jinbet/_fetch_match_times.py 抓取维护）
+MATCH_TIMES_JSON = Path("C:/Users/Jin/jinbet/match_times.json")
 _results_data_cache: dict | None = None
 OUT_DIR = Path("C:/Users/Jin/matlas/data/days")
 
@@ -196,7 +198,9 @@ def _direction_hit(top_label: str, win_flag: str) -> bool | None:
 def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                   standings: dict | None = None,
                   net_form: dict | None = None,
-                  odds_idx: dict | None = None) -> dict:
+                  odds_idx: dict | None = None,
+                  times_idx: dict | None = None,
+                  times_days: set | None = None) -> dict:
     standings = standings or {}
     net_form = net_form or {}
     code = str(m.get("id", "")).strip()
@@ -336,11 +340,15 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
     if code in net_form:
         extras["form_net"] = net_form[code]
     # 竞彩全玩法赔率快照（胜平负/让球多行/比分/总进球/半全场），赔率页与投注页用
+    kickoff = ""
     if odds_idx:
         of = odds_idx.get((date, code)) or odds_idx.get((date, home, away))
         if of:
             extras["odds_full"] = of
-
+            kickoff = str(of.get("kickoff", "") or "")
+    # 网易赛程开赛时间（match_times.json）优先，仅套用窗口内日期
+    if times_idx and date in (times_days or set()):
+        kickoff = str(times_idx.get(code, "") or "") or kickoff
     def _team_side(name: str) -> dict:
         """队侧槽位：积分榜命中则填 rank/points/played/win/draw/loss。"""
         side = {"name": name, "league": league}
@@ -359,7 +367,7 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
         "day": date,
         "code": code,
         "competition": league,
-        "kickoff": "",
+        "kickoff": kickoff,
         "home": _team_side(home),
         "away": _team_side(away),
         "forecasts": forecasts,
@@ -374,6 +382,25 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
     if result:
         out["result"] = result
     return out
+
+
+def _load_match_times() -> tuple[set, dict]:
+    """开赛时间索引（match_times.json，编号 -> ko 完整时间）。
+
+    times 仅以编号（周X001）为键、跨周会重复，因此只允许套用在
+    payload.date ± 1 天内的场次，防跨周脏数据。
+    """
+    try:
+        d = json.loads(MATCH_TIMES_JSON.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set(), {}
+    import datetime as _dt
+
+    base = _dt.date.fromisoformat(str(d.get("date", "")))
+    days = {str(base + _dt.timedelta(days=off)) for off in (-1, 0, 1)}
+    times = {str(k): str((v or {}).get("ko", ""))
+             for k, v in (d.get("times") or {}).items()}
+    return days, times
 
 
 def _load_odds_index() -> dict[tuple, dict]:
@@ -399,6 +426,7 @@ def _load_odds_index() -> dict[tuple, dict]:
             "score": item.get("比分") or {},
             "goals": item.get("总进球") or {},
             "htft": item.get("半全场") or {},
+            "kickoff": str(item.get("matchTime", "") or "")[:5],
         }
         num = str(item.get("matchNumStr", "")).strip()
         if num:
@@ -414,6 +442,7 @@ def main() -> None:
     standings = _load_standings()
     net_form = _load_net_form()
     odds_idx = _load_odds_index()
+    times_days, times_idx = _load_match_times()
     n_days = n_matches = n_results = 0
     for d in sorted(PRED_DIR.iterdir()):
         if len(d.name) != 10 or not d.is_dir():
@@ -429,7 +458,8 @@ def main() -> None:
         for i, m in enumerate(s.get("matches", [])):
             cm = convert_match(date, m, by_code, by_name,
                                standings=standings, net_form=net_form,
-                               odds_idx=odds_idx)
+                               odds_idx=odds_idx,
+                               times_idx=times_idx, times_days=times_days)
             if not cm["match_id"] or cm["match_id"] in seen:
                 cm["match_id"] = f"{date}-{i + 1:03d}"
             seen.add(cm["match_id"])

@@ -1327,6 +1327,177 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
     )
 
 
+# ---------------------------------------------------------------- 每日赛事前瞻（独立模块 preview/，纯列表）
+
+
+def _pv_sort_key(m: Match):
+    """按编号里的数字排序（周四002 → 2），无编号的排最后。"""
+    import re as _re
+
+    mm = _re.search(r"(\d+)", m.code or "")
+    return (int(mm.group(1)) if mm else 999, m.kickoff or "")
+
+
+def _pv_wd(date: str) -> str:
+    try:
+        from datetime import date as _date
+
+        y, mo, dy = (int(x) for x in date.split("-"))
+        return "周" + "一二三四五六日"[_date(y, mo, dy).weekday()]
+    except Exception:
+        return ""
+
+
+def render_preview_index(cfg: Config, ordered: list[Day]) -> str:
+    """📅 每日赛事前瞻（独立模块 preview/）：**列表页**。
+
+    只做 AI 报告入口列表：每日一条（日期 / 星期 / 场次 / 覆盖联赛）。
+    报告页暂用原项目（jinbet predictions）的已发布链接，后续可切换为
+    站内 preview/YYYY-MM-DD.html（render_preview_day 已备好未接线）。
+    列表页本身不复刻报告内容。
+    """
+    base = cfg.base_url.rstrip("/")
+    ext = "https://jinbigbig.github.io/jinbet/predictions"
+    days = [d for d in reversed(ordered) if d.matches]
+    cards = []
+    for d in days:
+        lgs: list[str] = []
+        for m in d.matches:
+            if m.competition and m.competition not in lgs:
+                lgs.append(m.competition)
+        lg_txt = "、".join(lgs[:3]) + ("等" if len(lgs) > 3 else "")
+        cards.append(
+            f'<a class="pv-day" href="{ext}/{d.date}/" target="_blank" rel="noopener">'
+            f'<span class="pv-d">{d.date}</span><span class="pv-w">{_pv_wd(d.date)}</span>'
+            f'<span class="pv-n">共 {len(d.matches)} 场</span>'
+            f'<span class="pv-lg">{C.esc(lg_txt)}</span>'
+            f'<span class="pv-go">打开 AI 报告 ↗</span></a>'
+        )
+    body = (
+        f"<h1 class='page-h1'>{L.ICON_ARCHIVE} 每日赛事前瞻</h1>"
+        '<p class="pv-lead">每日 AI 报告列表（当前跳转原项目报告页，新窗口打开）。</p>'
+        f'<div class="pv-grid">{"".join(cards)}</div>'
+    )
+    return L.page(
+        cfg, title="每日赛事前瞻",
+        description="每日赛事前瞻列表：AI 报告逐日留档，方向、比分、总进球首选与信心分层",
+        body=body, canonical=f"{base}/preview/", depth=1,
+    )
+
+
+def render_preview_day(cfg: Config, d: Day, prev: Day | None = None) -> str:
+    """📅 单日 AI 报告页（preview/YYYY-MM-DD.html，独立静态页存进项目）。
+
+    打开方式与 jinbet predictions 一致：列表页点开日期 → 当日报告成页留档。
+    内容：当日总览表（按编号排序）+ 重点场次主推 + 前日回顾 + 免责声明；
+    前瞻只含赛前可得信息（forecasts / main_pick / confidence），回顾用已回填赛果。
+    """
+    base = cfg.base_url.rstrip("/")
+    ms = sorted(d.matches, key=_pv_sort_key)
+    n = len(ms)
+    lgs = sorted({m.competition for m in ms if m.competition})
+
+    def fc(m: Match, kind: str) -> str:
+        fs = m.forecasts_of(kind)
+        if not fs:
+            return "—"
+        return f"{C.esc(fs[0].label)} <i>{fs[0].prob * 100:.0f}%</i>"
+
+    rows = []
+    for m in ms:
+        rows.append(
+            "<tr>"
+            f"<td><b>{C.esc(m.code)}</b><span class='pv-lg2'>{C.esc(m.competition)}</span></td>"
+            f"<td class='pv-tm'>{C.esc((m.kickoff or '')[-5:] or '—')}</td>"
+            f"<td><a class='team-link' href='../matches/{m.match_id}.html'>"
+            f"<b>{C.esc(m.home.name)}</b> vs <b>{C.esc(m.away.name)}</b></a></td>"
+            f"<td>{fc(m, 'direction')}</td><td>{fc(m, 'score')}</td><td>{fc(m, 'goals')}</td>"
+            f"<td><span class='pv-conf pv-c-{m.confidence}'>{C.esc(m.confidence_label)}</span></td>"
+            "</tr>"
+        )
+    overview = (
+        '<div class="bets-twrap"><table class="bets-table pv-table"><thead><tr>'
+        "<th>编号 · 联赛</th><th>开赛</th><th>对阵</th><th>方向首选</th>"
+        "<th>比分首选</th><th>总进球</th><th>信心</th>"
+        "</tr></thead><tbody>" + "".join(rows) + "</tbody></table></div>"
+    )
+
+    hot = [m for m in ms if m.main_pick or m.confidence == "high"]
+    hot_cards = ""
+    for m in hot:
+        hl = m.headline
+        titles = {"direction": "方向", "score": "比分", "goals": "进球", "htft": "半全场"}
+        chips = "".join(
+            f'<span class="pv-chip"><b>{t}</b>{C.esc(hl[k].label)} <i>{hl[k].prob * 100:.0f}%</i></span>'
+            for k, t in titles.items() if hl.get(k)
+        )
+        hot_cards += (
+            '<div class="pv-hot">'
+            f'<div class="pv-hot-h"><span class="nb-code">{C.esc(m.code)}</span>'
+            f'<span class="pv-hot-vs"><b>{C.esc(m.home.name)}</b> <i>VS</i> <b>{C.esc(m.away.name)}</b></span>'
+            f'<span class="pv-conf pv-c-{m.confidence}">{C.esc(m.confidence_label)}</span>'
+            f'<a class="pv-more" href="../matches/{m.match_id}.html">完整分析 →</a></div>'
+            + (f'<p class="pv-pick">{C.esc(m.main_pick)}</p>' if m.main_pick else "")
+            + (f'<div class="pv-chips">{chips}</div>' if chips else "")
+            + "</div>"
+        )
+
+    review = ""
+    if prev:
+        pms = sorted(prev.matches, key=_pv_sort_key)
+
+        def mk(x: bool | None) -> str:
+            if x is None:
+                return ""
+            return ' <b class="hit-y">✓</b>' if x else ' <b class="hit-n">✗</b>'
+
+        rrows = []
+        for m in pms:
+            r = m.result
+            if not (r and r.full_score):
+                continue
+            d1 = m.forecasts_of("direction")
+            s1 = m.forecasts_of("score")
+            rrows.append(
+                "<tr>"
+                f"<td><b>{C.esc(m.code)}</b><span class='pv-lg2'>{C.esc(m.competition)}</span></td>"
+                f"<td>{C.esc(m.home.name)} vs {C.esc(m.away.name)}</td>"
+                f"<td>{C.esc(d1[0].label) if d1 else '—'}{mk(r.direction_hit)}</td>"
+                f"<td>{C.esc(s1[0].label) if s1 else '—'}{mk(r.score_hit)}</td>"
+                f"<td class='pv-act'>{C.esc(r.full_score)}</td>"
+                "</tr>"
+            )
+        if rrows:
+            done = sum(1 for m in pms if m.result and m.result.full_score)
+            hit = sum(1 for m in pms if m.result and m.result.direction_hit)
+            review = (
+                f'<h2 class="pv-h2">📅 前日回顾（{prev.date} 落地 {done} 场 · 方向命中 {hit}）</h2>'
+                '<div class="bets-twrap"><table class="bets-table pv-table"><thead><tr>'
+                "<th>编号 · 联赛</th><th>对阵</th><th>方向首选</th><th>比分首选</th><th>实际</th>"
+                "</tr></thead><tbody>" + "".join(rrows) + "</tbody></table></div>"
+            )
+
+    body = (
+        f"<h1 class='page-h1'>{L.ICON_ARCHIVE} {d.date} 赛事前瞻报告</h1>"
+        '<a class="pv-back" href="index.html">← 返回前瞻列表</a>'
+        '<div class="pv-head">'
+        f'<span class="pv-w">{_pv_wd(d.date)}</span>'
+        f"<span>{n} 场比赛 · {len(lgs)} 项赛事（{'、'.join(lgs[:4])}{'等' if len(lgs) > 4 else ''}）</span>"
+        "<span>首选概率为站内模型输出，仅供分析参考</span>"
+        "</div>"
+        f'<h2 class="pv-h2">🎯 当日前瞻总览（{n} 场，按编号排序）</h2>'
+        + overview
+        + (f'<h2 class="pv-h2">📌 重点场次（{len(hot)} 场）</h2>' + hot_cards if hot_cards else "")
+        + review
+        + '<div class="disclaimer">本报告由站内模型自动生成，仅供数据分析参考，不构成投注建议。理性购彩，量力而行。</div>'
+    )
+    return L.page(
+        cfg, title=f"{d.date} 赛事前瞻报告",
+        description=f"{d.date} 竞彩赛事前瞻报告：{n} 场比赛方向、比分、总进球首选与信心分层，附前日复盘",
+        body=body, canonical=f"{base}/preview/{d.date}.html", depth=1,
+    )
+
+
 def render_features(cfg: Config) -> str:
     """功能页：站点功能清单。只列已上线的能力，每条给真实入口。
 
@@ -1334,7 +1505,7 @@ def render_features(cfg: Config) -> str:
     """
     base = cfg.base_url.rstrip("/")
     items = [
-        (L.ICON_SPORTS, "每日赛事前瞻", "当日全部赛事的结构化量化分析与 AI 置信度", f"{base}/"),
+        (L.ICON_SPORTS, "每日赛事前瞻", "每日 AI 报告列表，逐日留档可回溯", f"{base}/preview/"),
         (L.ICON_ARCHIVE, "历史归档", "逐日留档，结论带哈希指纹，不删不改可核验", f"{base}/days/"),
         (L.ICON_TROPHY, "赛事 / 球队 Top 榜", "按已结算场次统计联赛与球队的方向命中率", f"{base}/"),
         (L.ICON_SEARCH, "站内搜索", "按队名、联赛、编号检索历史赛事", f"{base}/search.html"),
@@ -1511,6 +1682,7 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
       var of = r.of, done = r.gh !== null && r.gh !== undefined;
       var head = '<div class="odds-m-head">'
         + (r.c ? '<span class="odds-code">' + r.c + "</span>" : "")
+        + (r.tm ? '<span class="odds-time">' + r.tm + "</span>" : "")
         + (r.lg ? '<span class="odds-lg">' + r.lg + "</span>" : "")
         + '<span class="odds-vs"><a href="matches/' + r.id + '.html">' + r.h + " vs " + r.a + "</a></span>"
         + (done ? '<span class="odds-res">赛果 ' + r.gh + "-" + r.ga
