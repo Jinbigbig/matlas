@@ -165,9 +165,10 @@ def _form_panel(m: Match) -> str:
             return ""
         n = len(outcomes)
         return (
+            '<div class="nf-block">'
             f"<h3>{C.esc(key_map[key])}</h3>{C.form_dots(outcomes)}"
             f'<p class="sub">近 {n} 场 进 {gf_sum} 失 {ga_sum}'
-            f"（场均 {gf_sum / n:.1f} / {ga_sum / n:.1f}）</p>"
+            f"（场均 {gf_sum / n:.1f} / {ga_sum / n:.1f}）</p></div>"
         )
 
     key_map = {"home_7": f"{m.home.name} 近期", "home_home": f"{m.home.name} 近期主场",
