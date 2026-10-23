@@ -1815,7 +1815,8 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         '<div class="cr-bar">'
         + _date_input(dates, dates[0] if dates else "", "bets")
         + '<button id="cr-load" type="button" class="bt-mini">📅 载入当日比赛</button>'
-        '<button id="cr-save" type="button" class="bt-gold">💾 保存自定义赛果并结算</button>'
+        '<button id="cr-save" type="button" class="bt-go">💾 保存自定义赛果并结算</button>'
+        '<a class="nb-bk-clear" id="cr-clear">清空</a>'
         '<span id="cr-msg" class="sub"></span>'
         "</div>"
         '<div id="cr-list" class="cr-list"></div></div>'
@@ -1992,12 +1993,14 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         + '<span class="nb-time">' + esc(r.tm || "") + "</span>"
         + '<span class="nb-vs"><b>' + esc(r.h) + "</b><i>VS</i><b>" + esc(r.a) + "</b></span>"
         + (done ? '<span class="nb-done">赛果 ' + r.gh + "-" + r.ga + "</span>" : "");
-      head += '<div class="nb-blk"><span class="nb-blk-t">胜平负</span><div class="nb-cells">'
+      var plays = '<div class="nb-plays">'
+        + '<div class="nb-blk"><span class="nb-blk-t">胜平负</span><div class="nb-cells">'
         + threeCells(r.id, "spf", of.spf || {}, false) + "</div></div>";
       if ((of.rq || []).length) {
-        head += '<div class="nb-blk"><span class="nb-blk-t">让球' + of.rq[0].handicap
+        plays += '<div class="nb-blk"><span class="nb-blk-t">让球' + of.rq[0].handicap
           + '</span><div class="nb-cells">' + threeCells(r.id, "rq", of.rq[0], true) + "</div></div>";
       }
+      head += plays + "</div>";
       head += "</div>";
       var ex = "";
       (of.rq || []).slice(1).forEach(function (row) {
@@ -2217,6 +2220,24 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     }).join("");
   }
   $("cr-load").addEventListener("click", renderCR);
+  function crSettleAll() {
+    var games = 0;
+    var ts = load();
+    ts.forEach(function (t) {
+      t.games.forEach(function (g) {
+        var r = rowOf(g.mid);
+        if (r && r.gh !== null && r.gh !== undefined) {
+          g.result = r.gh + "-" + r.ga;
+          g.resHalf = (r.hh !== null && r.hh !== undefined) ? r.hh + "-" + r.ha : "";
+          g.isWin = (g.picks || []).some(function (p) { return legRes(p, r) === "win"; });
+          games += 1;
+        }
+      });
+    });
+    localStorage.setItem(LS, JSON.stringify(ts));
+    render();
+    return games;
+  }
   $("cr-save").addEventListener("click", function () {
     var n = 0;
     $("cr-list").querySelectorAll(".cr-row").forEach(function (row) {
@@ -2232,22 +2253,20 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
       else { CRS[mid] = { gh: gh, ga: ga, hh: hh, ha: ha }; n += 1; }
     });
     saveCRS();
-    // 立即按最新赛果（自定义优先）重算全部票
-    var ts = load(), games = 0;
-    ts.forEach(function (t) {
-      t.games.forEach(function (g) {
-        var r = rowOf(g.mid);
-        if (r && r.gh !== null && r.gh !== undefined) {
-          g.result = r.gh + "-" + r.ga;
-          g.resHalf = (r.hh !== null && r.hh !== undefined) ? r.hh + "-" + r.ha : "";
-          g.isWin = (g.picks || []).some(function (p) { return legRes(p, r) === "win"; });
-          games += 1;
-        }
-      });
+    var games = crSettleAll();
+    $("cr-msg").textContent = "✅ 已保存 " + n + " 场赛果并重新结算 " + games + " 场（自定义优先于站内）";
+    renderCR();
+  });
+  $("cr-clear").addEventListener("click", function () {
+    if (!crDate) return;
+    var d = crDate.value;
+    var n = 0;
+    DATA.rows.forEach(function (r) {
+      if (r.d === d && CRS[r.id]) { delete CRS[r.id]; n += 1; }
     });
-    localStorage.setItem(LS, JSON.stringify(ts));
-    render();
-    $("cr-msg").textContent = "✅ 已保存 " + n + " 场赛果并重新结算（自定义优先于站内）";
+    saveCRS();
+    crSettleAll();
+    $("cr-msg").textContent = n ? "🗑 已清空当日 " + n + " 场自定义赛果并重新结算" : "当日没有已保存的自定义赛果";
     renderCR();
   });
 
