@@ -192,6 +192,71 @@ def _result_index(raw: dict) -> tuple[dict[str, dict], dict[tuple[str, str], dic
     return by_code, by_name
 
 
+def _ensure_results_cache() -> dict:
+    """results_data.json 全量赛果库缓存（H2H 与 history 池共用）。"""
+    global _results_data_cache
+    if _results_data_cache is None:
+        try:
+            _results_data_cache = json.loads(RESULTS_DATA_JSON.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            _results_data_cache = {}
+    return _results_data_cache
+
+
+def _h2h_index() -> dict:
+    """历史交锋索引：全量赛果库按两队无序对聚合，日期升序。"""
+    idx: dict[tuple[str, str], list[dict]] = {}
+    for key, rec in _ensure_results_cache().items():
+        if not isinstance(rec, dict):
+            continue
+        try:
+            gf, ga = (int(x) for x in str(rec.get("fullScore", "")).split(":"))
+        except ValueError:
+            continue
+        h, a = _NAME_NORM(rec.get("home", "")), _NAME_NORM(rec.get("away", ""))
+        if not h or not a:
+            continue
+        idx.setdefault(tuple(sorted((h, a))), []).append({
+            "date": key.split("_", 1)[0],
+            "competition": str(rec.get("league", "")),
+            "home": str(rec.get("home", "")),
+            "away": str(rec.get("away", "")),
+            "gf": gf, "ga": ga,
+        })
+    for v in idx.values():
+        v.sort(key=lambda e: e["date"])
+    return idx
+
+
+def _history_pool() -> list[dict]:
+    """历史赛果池（喂给六维战力 power.compute 做先例样本，含去水胜率）。"""
+    out: list[dict] = []
+    for key, rec in _ensure_results_cache().items():
+        if not isinstance(rec, dict):
+            continue
+        try:
+            gf, ga = (int(x) for x in str(rec.get("fullScore", "")).split(":"))
+        except ValueError:
+            continue
+        try:
+            oh, od, oa = float(rec.get("胜")), float(rec.get("平")), float(rec.get("负"))
+        except (TypeError, ValueError):
+            oh = od = oa = None
+        if oh and od and oa:
+            s = 1 / oh + 1 / od + 1 / oa
+            ph, pa = (1 / oh) / s, (1 / oa) / s
+        else:
+            ph = pa = None
+        out.append({
+            "date": key.split("_", 1)[0],
+            "competition": str(rec.get("league", "")),
+            "home": str(rec.get("home", "")),
+            "away": str(rec.get("away", "")),
+            "gf": gf, "ga": ga, "ph": ph, "pa": pa,
+        })
+    return out
+
+
 def _direction_hit(top_label: str, win_flag: str) -> bool | None:
     if not top_label or not win_flag:
         return None
@@ -239,7 +304,8 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                   odds_idx: dict | None = None,
                   times_idx: dict | None = None,
                   times_days: set | None = None,
-                  env: dict | None = None) -> dict:
+                  env: dict | None = None,
+                  h2h_idx: dict | None = None) -> dict:
     standings = standings or {}
     net_form = net_form or {}
     code = str(m.get("id", "")).strip()
@@ -464,6 +530,14 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                              "reason": str(p.get("reason", "")), "status": "doubt"})
     if inj_rows:
         out["injuries"] = inj_rows
+    # 历史交锋：全量赛果库中两队交手记录（任意主客，按当时主客呈现），本场前最近 5 场
+    if h2h_idx:
+        pair = tuple(sorted((_NAME_NORM(home), _NAME_NORM(away))))
+        meets = [e for e in h2h_idx.get(pair, []) if e["date"] < date]
+        if meets:
+            out["h2h"] = [{"date": e["date"], "competition": e["competition"],
+                           "home": e["home"], "away": e["away"],
+                           "score": f'{e["gf"]}-{e["ga"]}'} for e in meets[-5:]]
     return out
 
 
@@ -527,6 +601,8 @@ def main() -> None:
     odds_idx = _load_odds_index()
     times_days, times_idx = _load_match_times()
     env = _load_env()
+    h2h_idx = _h2h_index()
+    history = _history_pool()
     n_days = n_matches = n_results = 0
     for d in sorted(PRED_DIR.iterdir()):
         if len(d.name) != 10 or not d.is_dir():
@@ -544,7 +620,7 @@ def main() -> None:
                                standings=standings, net_form=net_form,
                                odds_idx=odds_idx,
                                times_idx=times_idx, times_days=times_days,
-                               env=env)
+                               env=env, h2h_idx=h2h_idx)
             if not cm["match_id"] or cm["match_id"] in seen:
                 cm["match_id"] = f"{date}-{i + 1:03d}"
             seen.add(cm["match_id"])
@@ -563,6 +639,17 @@ def main() -> None:
                 json.dumps(day, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
             )
         print(f"{date}: {len(matches)} 场 / 回填赛果 {sum(1 for x in matches if x.get('result'))}")
+    if not dry:
+        # 历史赛果池（六维战力先例样本）；放 data/ 根目录，避免被 load_days 当交易日读取
+        (OUT_DIR.parent / "history.json").write_text(
+            json.dumps(history, ensure_ascii=False) + "\n", encoding="utf-8"
+        )
+        n_h2h = sum(
+            1 for p in OUT_DIR.glob("*.json")
+            for mm in json.loads(p.read_text(encoding="utf-8")).get("matches", [])
+            if mm.get("h2h")
+        )
+        print(f"[i] history 池 {len(history)} 条 → data/history.json；含历史交锋场次 {n_h2h}")
     print(f"\n{'[dry-run] ' if dry else ''}共 {n_days} 个交易日 / {n_matches} 场 / 赛果 {n_results} 场")
 
 

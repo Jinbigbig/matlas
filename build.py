@@ -12,6 +12,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 import traceback
 from datetime import datetime, timezone
@@ -46,8 +47,15 @@ def build(cfg: Config, *, strict: bool = False, reference_date: str | None = Non
     filled = logos.apply(days)
     print(f"[i] 队徽：{filled} 处按队名补齐（assets/logo/teams，共 {len(logos.TEAM_CREST)} 个队名可查）")
 
-    drawn = power.compute(days)
-    print(f"[i] 六维战力：{drawn} 场出图（历史赛果自算，样本不足向联赛均值收缩）")
+    history: list = []
+    history_path = cfg.data_dir / "history.json"
+    if history_path.exists():
+        try:
+            history = json.loads(history_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            history = []
+    drawn = power.compute(days, history=history)
+    print(f"[i] 六维战力：{drawn} 场出图（历史赛果自算，样本不足向联赛均值收缩；外补先例 {len(history)} 条）")
 
     if reference_date:
         try:
