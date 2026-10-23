@@ -201,7 +201,7 @@ def _injury_panel(m: Match) -> str:
     if not m.injuries:
         return C.panel(
             "伤停与缺阵",
-            '<p class="panel-empty">伤停数据源尚未接入，框架已预留，数据补齐后自动展示。</p>',
+            '<p class="panel-empty">本场暂无伤停与缺阵记录</p>',
         )
     rows = []
     for inj in m.injuries:
