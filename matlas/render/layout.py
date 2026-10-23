@@ -516,6 +516,9 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
   padding: 16px; min-width: 0; }
 .stats-box h3 { margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #111; }
 .stats-box .history-table { margin-top: 8px; }
+.insight-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.insight-list li { font-size: 13.5px; color: #374151; background: #f8fafc; border-radius: 8px; padding: 8px 12px; }
+.insight-list li b { color: #111; }
 .stats-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
 @media (max-width: 1000px) { .stats-duo { grid-template-columns: 1fr; } }
 .dim-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
@@ -684,6 +687,18 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 
 /* ---------- 每日赛事前瞻（独立模块 preview/，列表页 + 报告页备用样式） ---------- */
 .pv-lead { font-size: 13.5px; color: #6b7280; margin: 0 0 14px; }
+.pv-tree { display: flex; flex-direction: column; gap: 10px; }
+.pv-year, .pv-month { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.pv-year summary, .pv-month summary { cursor: pointer; padding: 11px 16px; font-size: 14px;
+  font-weight: 700; color: #111; list-style: none; display: flex; align-items: center; gap: 8px; }
+.pv-year summary::-webkit-details-marker, .pv-month summary::-webkit-details-marker { display: none; }
+.pv-year summary::before, .pv-month summary::before { content: "▸"; color: #94a3b8; font-size: 12px; }
+.pv-year[open] > summary::before, .pv-month[open] > summary::before { content: "▾"; }
+.pv-year summary i, .pv-month summary i { font-style: normal; font-weight: 400;
+  font-size: 12px; color: #9ca3af; }
+.pv-month { margin: 0 10px 10px; background: #f8fafc; box-shadow: none; }
+.pv-year[open] > summary, .pv-month[open] > summary { border-bottom: 1px solid #f1f5f9; }
+.pv-month > .pv-grid { padding: 10px; }
 .pv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
 .pv-day { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; text-decoration: none;

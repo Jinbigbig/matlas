@@ -1303,6 +1303,53 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         + "</div>"
     )
 
+    # ---- 洞察总结：把上方各板块数字聚成一句话结论 ----
+    insights: list[str] = []
+    if settled:
+        insights.append(
+            f'🎯 已结算 <b>{len(settled)}</b> 场，方向命中 <b>{hit}</b> 场，'
+            f'整体命中率 <span class="pct"><b>{acc:.1f}%</b></span>'
+        )
+    dim_ok = [(zh, _dim(name)[0] / _dim(name)[1] * 100, _dim(name)[1])
+              for name, zh in dims if _dim(name)[1] >= 5]
+    if dim_ok:
+        best = max(dim_ok, key=lambda x: x[1])
+        worst = min(dim_ok, key=lambda x: x[1])
+        insights.append(f'📌 四维最稳：「{best[0]}」<span class="pct"><b>{best[1]:.1f}%</b></span>（{best[2]} 场）')
+        if best is not worst and worst[0] != best[0]:
+            insights.append(f'⚠️ 待提升：「{worst[0]}」<span class="pct"><b>{worst[1]:.1f}%</b></span>（{worst[2]} 场）')
+    by_day_acc = []
+    for d in ordered:
+        dd = [m for m in d.matches if m.result and m.result.full_score]
+        if dd:
+            by_day_acc.append((sum(1 for m in dd if m.result.direction_hit), len(dd)))
+    if len(by_day_acc) >= 6:
+        rh = sum(x[0] for x in by_day_acc[-5:])
+        rn = sum(x[1] for x in by_day_acc[-5:])
+        ph = sum(x[0] for x in by_day_acc[:-5])
+        pn = sum(x[1] for x in by_day_acc[:-5])
+        ra, pa = rh / rn * 100, ph / pn * 100
+        trend = "↗ 走高" if ra > pa + 2 else ("↘ 走低" if ra < pa - 2 else "→ 持平")
+        insights.append(
+            f'📈 近 5 个比赛日 <span class="pct"><b>{ra:.1f}%</b></span>'
+            f'（此前 <span class="pct"><b>{pa:.1f}%</b></span>）{trend}'
+        )
+    by_lg_acc: dict[str, tuple[int, int]] = {}
+    for m in settled:
+        if m.competition:
+            h2, n2 = by_lg_acc.get(m.competition, (0, 0))
+            by_lg_acc[m.competition] = (h2 + (1 if m.result.direction_hit else 0), n2 + 1)
+    lg_ok = [(k, v[0] / v[1] * 100, v[1]) for k, v in by_lg_acc.items() if v[1] >= 5]
+    if lg_ok:
+        blg = max(lg_ok, key=lambda x: x[1])
+        insights.append(f'🏆 表现最佳赛事：「{C.esc(blg[0])}」<span class="pct"><b>{blg[1]:.1f}%</b></span>（{blg[2]} 场）')
+    insight_box = ""
+    if insights:
+        insight_box = (
+            '<div class="stats-box insight-box"><h3>🧾 洞察总结</h3>'
+            '<ul class="insight-list">' + "".join(f"<li>{x}</li>" for x in insights) + "</ul></div>"
+        )
+
     body = (
         f"<h1 class='page-h1'>{L.ICON_DATA} 数据统计</h1>"
         '<div class="stats-grid stats-main">'
@@ -1310,7 +1357,8 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         f'<div class="stat-card"><div class="pct stat-num">{acc:.1f}%</div><div class="stat-lbl">🎯 整体准确率</div></div>'
         f'<div class="stat-card"><div class="pct stat-num">{hit}</div><div class="stat-lbl">✅ 命中场次</div></div>'
         "</div>"
-        '<div class="stats-box"><h3>🔍 单项维度准确率</h3>'
+        + insight_box
+        + '<div class="stats-box"><h3>🔍 单项维度准确率</h3>'
         f'<div class="dim-grid">{dim_cards}</div></div>'
         f'<div class="stats-duo">{trend_box}{search_box}</div>'
         f'<div class="stats-duo">{league_box}{team_box}</div>'
@@ -1359,24 +1407,50 @@ def render_preview_index(cfg: Config, ordered: list[Day]) -> str:
     base = cfg.base_url.rstrip("/")
     ext = "https://jinbigbig.github.io/jinbet/predictions"
     days = [d for d in reversed(ordered) if d.matches]
-    cards = []
-    for d in days:
+
+    # 按年→月分组，<details> 原生展开收起；最新年/月默认展开
+    def card(d: Day) -> str:
         lgs: list[str] = []
         for m in d.matches:
             if m.competition and m.competition not in lgs:
                 lgs.append(m.competition)
         lg_txt = "、".join(lgs[:3]) + ("等" if len(lgs) > 3 else "")
-        cards.append(
+        return (
             f'<a class="pv-day" href="{ext}/{d.date}/" target="_blank" rel="noopener">'
             f'<span class="pv-d">{d.date}</span><span class="pv-w">{_pv_wd(d.date)}</span>'
             f'<span class="pv-n">共 {len(d.matches)} 场</span>'
             f'<span class="pv-lg">{C.esc(lg_txt)}</span>'
             f'<span class="pv-go">打开 AI 报告 ↗</span></a>'
         )
+
+    years: dict[str, dict[str, list[Day]]] = {}
+    for d in days:
+        y, mo = d.date[:4], d.date[5:7]
+        years.setdefault(y, {}).setdefault(mo, []).append(d)
+    top_year = next(iter(years))
+    top_month = next(iter(years[top_year]))
+    year_blocks = []
+    for y, months in years.items():
+        month_blocks = []
+        for mo, mds in months.items():
+            open_m = ' open' if (y == top_year and mo == top_month) else ''
+            month_blocks.append(
+                f'<details class="pv-month"{open_m}>'
+                f'<summary>{int(mo)} 月 <i>{len(mds)} 天报告</i></summary>'
+                f'<div class="pv-grid">{"".join(card(d) for d in mds)}</div>'
+                f"</details>"
+            )
+        open_y = ' open' if y == top_year else ''
+        year_blocks.append(
+            f'<details class="pv-year"{open_y}>'
+            f'<summary>{y} 年 <i>{sum(len(v) for v in months.values())} 天报告</i></summary>'
+            + "".join(month_blocks)
+            + "</details>"
+        )
     body = (
         f"<h1 class='page-h1'>{L.ICON_ARCHIVE} 每日赛事前瞻</h1>"
         '<p class="pv-lead">每日 AI 报告列表。</p>'
-        f'<div class="pv-grid">{"".join(cards)}</div>'
+        '<div class="pv-tree">' + "".join(year_blocks) + "</div>"
     )
     return L.page(
         cfg, title="每日赛事前瞻",
