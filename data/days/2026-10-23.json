@@ -252,7 +252,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 1.652,
     "lam_away": 1.533,
@@ -709,9 +709,46 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "桑麦邦",
+     "reason": "足踝",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "史唐普夫",
+     "reason": "骨盆",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "高卡治",
+     "reason": "肌肉",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "奥利华奥臣",
+     "reason": "腿筋",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "罗渣里奥",
+     "reason": "肌肉",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "费沙贺恩比",
+     "reason": "跟腱",
+     "status": "out"
+    }
+   ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 1.092,
     "lam_away": 1.385,
@@ -1004,6 +1041,46 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "桑麦邦",
+        "reason": "足踝"
+       },
+       {
+        "name": "史唐普夫",
+        "reason": "骨盆"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "高卡治",
+        "reason": "肌肉"
+       },
+       {
+        "name": "奥利华奥臣",
+        "reason": "腿筋"
+       }
+      ],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "罗渣里奥",
+        "reason": "肌肉"
+       },
+       {
+        "name": "费沙贺恩比",
+        "reason": "跟腱"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
+    "mood": "波鸿的史唐普夫列入伤兵名单。沃夫斯堡的韦伦雷特治好膝伤，可以复出。维兰斯仍未在今季上阵，伤情不详。\n波鸿停赛：无\n上阵成疑：高卡治（肌肉）、奥利华奥臣（腿筋）\n受伤／缺阵：桑麦邦（足踝）、史唐普夫（骨盆）\n沃夫斯堡停赛：无\n上阵成疑：无\n受伤／缺阵：罗渣里奥（肌肉）、费沙贺恩比（跟腱）、维兰斯（不详）\n波鸿上轮作客两球净负凯泽斯劳滕，联赛近3轮全败。他们开季至今攻力疲弱…",
     "weather": {
      "t_min": 9.2,
      "t_max": 11.5,
@@ -1332,10 +1409,28 @@
      "player": "华伦甘文斯",
      "reason": "不详",
      "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "布苏拿锡",
+     "reason": "膝伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "诺亚约翰",
+     "reason": "不详",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "美斯高拿度",
+     "reason": "",
+     "status": "doubt"
     }
    ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 1.778,
     "lam_away": 1.361,
@@ -1616,10 +1711,24 @@
         "reason": "不详"
        }
       ],
-      "doubtful": [],
+      "doubtful": [
+       {
+        "name": "布苏拿锡",
+        "reason": "膝伤"
+       },
+       {
+        "name": "诺亚约翰",
+        "reason": "不详"
+       },
+       {
+        "name": "美斯高拿度",
+        "reason": ""
+       }
+      ],
       "suspended": []
      }
     },
+    "mood": "埃夫斯堡前锋柏费克数周前手腕骨折后已无大碍，今仗可重新候命，但需佩戴保护套上阵。他在上周对天狼星一役已曾于补时阶段后备入替。马尔默前锋迪亚高加西亚已摆脱伤病困扰，上周对赫根时后备上阵踢了35分钟，今场将可继续披甲。\n埃夫斯堡停赛：无\n上阵成疑：列治拿（腹股沟）、马古斯洛顿（不详）\n受伤／缺阵：无\n马尔默停赛：无\n成疑：布苏拿锡（膝伤）、诺亚约翰（不详）",
     "weather": {
      "t_min": 8.2,
      "t_max": 9.7,
@@ -1924,7 +2033,7 @@
     }
    ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 2.276,
     "lam_away": 1.243,
@@ -2490,9 +2599,22 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Mats Seuntjens",
+     "reason": "Injury",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Yvandro Borges Sanches",
+     "reason": "Torn cruciate ligament",
+     "status": "out"
+    }
+   ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 1.747,
     "lam_away": 1.773,
@@ -2728,6 +2850,28 @@
       "负负": "3.95"
      },
      "kickoff": ""
+    },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "Mats Seuntjens",
+        "reason": "Injury"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Yvandro Borges Sanches",
+        "reason": "Torn cruciate ligament"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
     },
     "weather": {
      "t_min": 11.3,
@@ -3168,7 +3312,7 @@
     }
    ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 2.397,
     "lam_away": 0.82,
@@ -3579,6 +3723,7 @@
       "suspended": []
      }
     },
+    "mood": "斯图加特上轮联赛占得上风，但全场5次中目标射门均无功而还，门前把握力有待改善。门将丹尼士施文只曾作出2次扑救，球队久攻不下之余，更在完场前失守，惨被绝杀。门兴上轮联赛埋门次数不及对手，开赛早段亦已先落后；战至下半场早段凭翼锋华尔莫耶建功一度扳平，奈何追和后不久又告失守，最终力拚仅败。\n斯图加特受伤：米图斯达特（后卫）、尼高拉斯拿堤（中场）",
     "weather": {
      "t_min": 9.6,
      "t_max": 14.3,
@@ -4000,7 +4145,7 @@
     }
    ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 1.93,
     "lam_away": 1.475,
@@ -4733,7 +4878,7 @@
     }
    ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 1.462,
     "lam_away": 1.245,
@@ -5003,6 +5148,7 @@
       "suspended": []
      }
     },
+    "mood": "布雷斯特上仗联赛沿用「4-2-3-1」阵式，箭头阿佐基及翼锋柏夫马普表现一般；反而另一翼锋森巴巴尔迪先开纪录，连续2场联赛有进帐，加上门将沙尔域克屡救险胜，就算下半场失守，但最终成功保住1分。尼斯上仗联赛排出「3-4-2-1」阵式，华希出任单箭头，加菲亚希恩与穆罕默德艾穆拉则后上支援，效果平平；虽然华希接应右翼卫约拿芬卡拉奥斯妙传先开纪录，但后防不稳最终反…",
     "weather": {
      "t_min": 7.7,
      "t_max": 11.9,
@@ -5385,7 +5531,7 @@
     }
    ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 1.395,
     "lam_away": 1.54,
@@ -5821,6 +5967,7 @@
       "suspended": []
      }
     },
+    "mood": "伊普斯上仗联赛排「4-2-3-1」阵式，艾马臣哥利亚挂帅，前田大然、祖利奥安斯素及艾布尔奥达拉后上支援攻坚。球队无惧强敌，跟对手抢攻，并一度由前田大然攻入扳平球；但门将华顿全场作出4次扑救，仍要三度失手，最终由后备出场的锋将施安费林明射入12码，追近比分终场。诺丁汉上仗联赛排「3-4-2-1」阵式，利安戴纳挂帅，丹尼杜耶及尼高拉斯杜明高斯辅助攻坚。",
     "weather": {
      "t_min": 8.1,
      "t_max": 10.0,
@@ -6112,7 +6259,7 @@
     }
    ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 1.656,
     "lam_away": 2.372,
@@ -6784,7 +6931,7 @@
     }
    ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 1.848,
     "lam_away": 0.929,
@@ -7446,7 +7593,7 @@
     }
    ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:33:03+08:00",
+   "generated_at": "2026-10-23T16:04:01+08:00",
    "extras": {
     "lam_home": 1.852,
     "lam_away": 0.962,
@@ -7677,6 +7824,7 @@
       "suspended": []
      }
     },
+    "mood": "吉马良斯上轮联赛撼本菲卡，惨被围攻，全场居然无法取得任何中目标射门，锋力疲弱。门将奥利维亚施治只曾作出3次扑救，球队终在上、下半场中段先后失守，败阵而回。马里迪莫上轮联赛撼波尔图，全程挨打，但上半场中段却凭中坚加保亚沙拉尔先开纪录。不过，球队领先后无以为继，门将维伊迪斯全场虽已作出6次扑救，表现神勇；奈何仍在上、下半场尾段先后失守，反胜为败，主场抢分失败。",
     "weather": {
      "t_min": 7.6,
      "t_max": 15.5,
