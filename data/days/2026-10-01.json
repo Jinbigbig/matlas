@@ -34,11 +34,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 6,
-    "defence": 97,
-    "control": 87,
-    "form": 87,
-    "value": 3,
+    "attack": 3,
+    "defence": 68,
+    "control": 19,
+    "form": 29,
+    "value": 52,
     "motivation": 87,
     "AXES": [
      [
@@ -68,11 +68,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 23,
-    "defence": 13,
-    "control": 10,
-    "form": 16,
-    "value": 16,
+    "attack": 71,
+    "defence": 26,
+    "control": 65,
+    "form": 68,
+    "value": 42,
     "motivation": 16,
     "AXES": [
      [
@@ -99,6 +99,26 @@
       "motivation",
       "战意"
      ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     0.0,
+     1.0,
+     0.0,
+     1.0
+    ],
+    "away": [
+     1.0,
+     3.0,
+     6.0,
+     0.0
     ]
    },
    "forecasts": [
@@ -209,7 +229,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-23T13:42:46+08:00",
+   "generated_at": "2026-10-23T13:52:52+08:00",
    "extras": {
     "lam_home": 1.122,
     "lam_away": 1.93,
