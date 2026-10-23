@@ -1684,7 +1684,7 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
         + (r.c ? '<span class="odds-code">' + r.c + "</span>" : "")
         + (r.tm ? '<span class="odds-time">' + r.tm + "</span>" : "")
         + (r.lg ? '<span class="odds-lg">' + r.lg + "</span>" : "")
-        + '<span class="odds-vs"><a href="matches/' + r.id + '.html">' + r.h + " vs " + r.a + "</a></span>"
+        + '<span class="odds-vs"><a href="matches/' + r.id + '.html"><b>' + r.h + "</b><i>VS</i><b>" + r.a + "</b></a></span>"
         + (done ? '<span class="odds-res">赛果 ' + r.gh + "-" + r.ga
           + (r.hh !== null && r.hh !== undefined ? " (半 " + r.hh + "-" + r.ha + ")" : "") + "</span>" : "")
         + "</div>";
@@ -2217,7 +2217,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
       return '<div class="cr-row" data-mid="' + r.id + '">'
         + '<span class="nb-code">' + esc(r.c) + "</span>"
         + '<span class="bf-lg ' + lgCls(r.lg) + '">' + esc(r.lg) + "</span>"
-        + '<span class="cr-vs">' + esc(r.h) + " <i>VS</i> " + esc(r.a) + "</span>"
+        + '<span class="cr-vs"><b>' + esc(r.h) + "</b><i>VS</i><b>" + esc(r.a) + "</b></span>"
         + '<span class="cr-in">全场 <input class="cr-n" data-k="gh" value="' + v("gh", r.gh) + '">:<input class="cr-n" data-k="ga" value="' + v("ga", r.ga) + '"></span>'
         + '<span class="cr-in">半场 <input class="cr-n" data-k="hh" value="' + v("hh", r.hh) + '">:<input class="cr-n" data-k="ha" value="' + v("ha", r.ha) + '"></span>'
         + (site ? '<span class="cr-site">站内 ' + r.gh + "-" + r.ga + "</span>"
