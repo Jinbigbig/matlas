@@ -350,7 +350,8 @@ svg.trend { width: 100%; height: auto; display: block; margin-top: 0.25rem; max-
 .dt-main { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
 .dt-name { font-weight: 600; font-size: 0.95rem; }
 .dt-lg { font-size: 0.78rem; color: var(--muted); }
-.dt-line { font-size: 0.8rem; color: var(--muted); }
+.dt-line { font-size: 0.8rem; color: var(--muted); white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; }
 .dt-power { font-size: 1.15rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
 .dt-power small { display: block; font-size: 0.62rem; font-weight: 400; color: var(--muted); text-align: right; }
 
