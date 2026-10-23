@@ -335,6 +335,24 @@ table.ref-table .hit { margin-left: 0.25rem; }
 svg.radar, svg.mom { width: 100%; height: auto; display: block; margin-top: 0.25rem; margin-inline: auto; }
 svg.radar { max-width: 340px; }
 svg.mom { max-width: 620px; }
+svg.trend { width: 100%; height: auto; display: block; margin-top: 0.25rem; max-width: 660px; }
+
+/* ---------- 深度数据：联赛筛选 + 球队六维卡 ---------- */
+.depth-tools { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 14px; }
+.depth-tools select { font: inherit; padding: 6px 10px; border: 1px solid var(--rule); border-radius: 8px;
+  background: var(--bg2); color: var(--ink); }
+.depth-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.dt-card { display: grid; grid-template-columns: 84px 1fr auto; align-items: center; gap: 12px;
+  padding: 12px 14px; border: 1px solid var(--rule); border-radius: 12px; background: var(--bg2);
+  color: inherit; text-decoration: none; transition: border-color 0.15s, box-shadow 0.15s; }
+.dt-card:hover { border-color: var(--accent); box-shadow: 0 2px 10px rgba(17, 24, 39, 0.06); }
+.dt-radar svg { width: 84px; height: 84px; display: block; }
+.dt-main { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.dt-name { font-weight: 600; font-size: 0.95rem; }
+.dt-lg { font-size: 0.78rem; color: var(--muted); }
+.dt-line { font-size: 0.8rem; color: var(--muted); }
+.dt-power { font-size: 1.15rem; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.dt-power small { display: block; font-size: 0.62rem; font-weight: 400; color: var(--muted); text-align: right; }
 
 /* ---------- 比赛卡片：结构与样式照搬 qiuxiaoce .match-card ---------- */
 .match-card {
