@@ -1405,7 +1405,6 @@ def render_preview_index(cfg: Config, ordered: list[Day]) -> str:
     列表页本身不复刻报告内容。
     """
     base = cfg.base_url.rstrip("/")
-    ext = "https://jinbigbig.github.io/jinbet/predictions"
     days = [d for d in reversed(ordered) if d.matches]
 
     # 按年→月分组，<details> 原生展开收起；最新年/月默认展开
@@ -1416,11 +1415,11 @@ def render_preview_index(cfg: Config, ordered: list[Day]) -> str:
                 lgs.append(m.competition)
         lg_txt = "、".join(lgs[:3]) + ("等" if len(lgs) > 3 else "")
         return (
-            f'<a class="pv-day" href="{ext}/{d.date}/" target="_blank" rel="noopener">'
+            f'<a class="pv-day" href="{d.date}.html">'
             f'<span class="pv-d">{d.date}</span><span class="pv-w">{_pv_wd(d.date)}</span>'
             f'<span class="pv-n">共 {len(d.matches)} 场</span>'
             f'<span class="pv-lg">{C.esc(lg_txt)}</span>'
-            f'<span class="pv-go">打开 AI 报告 ↗</span></a>'
+            f'<span class="pv-go">打开 AI 报告 →</span></a>'
         )
 
     years: dict[str, dict[str, list[Day]]] = {}
@@ -1475,7 +1474,7 @@ def render_preview_day(cfg: Config, d: Day, prev: Day | None = None) -> str:
         fs = m.forecasts_of(kind)
         if not fs:
             return "—"
-        return f"{C.esc(fs[0].label)} <i>{fs[0].prob * 100:.0f}%</i>"
+        return f'{C.esc(fs[0].label)} <i><span class="pct">{fs[0].prob * 100:.0f}%</span></i>'
 
     rows = []
     for m in ms:
@@ -1502,7 +1501,7 @@ def render_preview_day(cfg: Config, d: Day, prev: Day | None = None) -> str:
         hl = m.headline
         titles = {"direction": "方向", "score": "比分", "goals": "进球", "htft": "半全场"}
         chips = "".join(
-            f'<span class="pv-chip"><b>{t}</b>{C.esc(hl[k].label)} <i>{hl[k].prob * 100:.0f}%</i></span>'
+            f'<span class="pv-chip"><b>{t}</b>{C.esc(hl[k].label)} <i><span class="pct">{hl[k].prob * 100:.0f}%</span></i></span>'
             for k, t in titles.items() if hl.get(k)
         )
         hot_cards += (
@@ -1514,6 +1513,57 @@ def render_preview_day(cfg: Config, d: Day, prev: Day | None = None) -> str:
             + (f'<p class="pv-pick">{C.esc(m.main_pick)}</p>' if m.main_pick else "")
             + (f'<div class="pv-chips">{chips}</div>' if chips else "")
             + "</div>"
+        )
+
+    # ---- 赛前环境：伤停 / 天气 / 裁判（当日快照，import 按 date 防错配）----
+    env_cards = ""
+    for m in ms:
+        ex = m.extras or {}
+        lines: list[str] = []
+        w = ex.get("weather")
+        if w:
+            grade = {"ok": "✅ 适宜", "watch": "⚠️ 需留意", "bad": "🌧 恶劣"}.get(w.get("grade"), "")
+            lines.append(
+                f'🌤 天气 · {C.esc(w.get("city", ""))} {w.get("t_min")}~{w.get("t_max")}℃ · '
+                f'降雨 <span class="pct">{w.get("pop")}%</span> · 风速 {w.get("wind")}km/h {grade}')
+        r = ex.get("referee")
+        if r:
+            stat = ""
+            if r.get("h") is not None:
+                stat = (f'近20场主队 {r["h"]}胜{r["d"]}平{r["a"]}负 · '
+                        f'黄牌 {r.get("yellow", "?")} · 红牌 {r.get("red", "?")} · 点球 {r.get("pen", "?")}')
+            lines.append(
+                f'🟨 裁判 · {C.esc(r["ref"])}（{C.esc(r.get("nation") or "")}'
+                + (f'{r["age"]}岁' if r.get("age") else "") + f'）{stat}')
+        inj = ex.get("injuries")
+        if inj:
+            def _names(side: dict | None) -> str:
+                if not side:
+                    return ""
+                ppl = [f'{p.get("name", "")}（{p.get("reason", "")}）'.replace("（）", "")
+                       for p in (side.get("out") or []) + (side.get("doubtful") or [])]
+                return "、".join(ppl)
+            hn, an = _names(inj.get("home")), _names(inj.get("away"))
+            if hn or an:
+                parts = []
+                if hn:
+                    parts.append(f'{C.esc(m.home.name)}：{C.esc(hn)}')
+                if an:
+                    parts.append(f'{C.esc(m.away.name)}：{C.esc(an)}')
+                lines.append("🏥 伤停 · " + "；".join(parts))
+        if lines:
+            env_cards += (
+                '<div class="pv-env">'
+                f'<div class="pv-env-h"><span class="nb-code">{C.esc(m.code)}</span>'
+                f'<span class="pv-env-vs"><b>{C.esc(m.home.name)}</b> <i>VS</i> <b>{C.esc(m.away.name)}</b></span></div>'
+                + "".join(f'<div class="pv-env-row">{x}</div>' for x in lines)
+                + "</div>"
+            )
+    env_box = ""
+    if env_cards:
+        env_box = (
+            '<h2 class="pv-h2">🧭 赛前环境（伤停 / 天气 / 裁判）</h2>'
+            f'<div class="pv-envs">{env_cards}</div>'
         )
 
     review = ""
@@ -1561,6 +1611,7 @@ def render_preview_day(cfg: Config, d: Day, prev: Day | None = None) -> str:
         "</div>"
         f'<h2 class="pv-h2">🎯 当日前瞻总览（{n} 场，按编号排序）</h2>'
         + overview
+        + env_box
         + (f'<h2 class="pv-h2">📌 重点场次（{len(hot)} 场）</h2>' + hot_cards if hot_cards else "")
         + review
         + '<div class="disclaimer">本报告由站内模型自动生成，仅供数据分析参考，不构成投注建议。理性购彩，量力而行。</div>'

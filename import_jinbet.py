@@ -30,6 +30,10 @@ RESULTS_DATA_JSON = Path("C:/Users/Jin/jinbet/results_data.json")
 ODDS_JSON = Path("C:/Users/Jin/jinbet/odds_data.json")
 # 网易竞彩赛程开赛时间（jinbet/_fetch_match_times.py 抓取维护）
 MATCH_TIMES_JSON = Path("C:/Users/Jin/jinbet/match_times.json")
+# 赛前环境三件套（jinbet/_fetch_* 产出，缺失自动跳过）
+INJURIES_JSON = Path("C:/Users/Jin/jinbet/injuries.json")
+WEATHER_JSON = Path("C:/Users/Jin/jinbet/weather.json")
+REFEREE_JSON = Path("C:/Users/Jin/jinbet/referee.json")
 _results_data_cache: dict | None = None
 OUT_DIR = Path("C:/Users/Jin/matlas/data/days")
 
@@ -195,12 +199,47 @@ def _direction_hit(top_label: str, win_flag: str) -> bool | None:
     return None if want is None else want == win_flag
 
 
+def _load_env() -> dict:
+    """赛前环境：伤停（按队）/ 天气（按编号）/ 裁判（对阵模糊匹配）。
+
+    各 json 均为当日快照，附带日期防错配：天气/伤停仅注入 date==快照日；
+    裁判文章提前 1-3 天发布，注入 ref_date 与场次日期差 ≤2 天的场次。
+    """
+    env: dict = {"inj": {}, "weather": {}, "refs": []}
+
+    def _read(p: Path):
+        try:
+            return json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            return None
+
+    d = _read(INJURIES_JSON)
+    if d:
+        env["inj"] = d.get("teams") or {}
+        env["env_date"] = str(d.get("updated", ""))[:10]
+    d = _read(WEATHER_JSON)
+    if d:
+        env["weather"] = d.get("matches") or {}
+        env["weather_date"] = str(d.get("date", ""))[:10]
+    d = _read(REFEREE_JSON)
+    if d:
+        env["refs"] = d.get("matches") or []
+        env["ref_date"] = str(d.get("updated", ""))[:10]
+    return env
+
+
+def _name_match(a: str | None, b: str | None) -> bool:
+    """队名双向包含匹配（竞彩简称 ↔ 文章全/简称）。"""
+    return bool(a and b and len(a) >= 2 and len(b) >= 2 and (a in b or b in a))
+
+
 def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                   standings: dict | None = None,
                   net_form: dict | None = None,
                   odds_idx: dict | None = None,
                   times_idx: dict | None = None,
-                  times_days: set | None = None) -> dict:
+                  times_days: set | None = None,
+                  env: dict | None = None) -> dict:
     standings = standings or {}
     net_form = net_form or {}
     code = str(m.get("id", "")).strip()
@@ -349,6 +388,37 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
     # 网易赛程开赛时间（match_times.json）优先，仅套用窗口内日期
     if times_idx and date in (times_days or set()):
         kickoff = str(times_idx.get(code, "") or "") or kickoff
+    # 赛前环境：伤停（按队名）/ 天气（按编号）/ 裁判（对阵模糊匹配），仅当日/近2日
+    if env:
+        same_day = env.get("env_date") == date
+        if same_day:
+            inj = env.get("inj") or {}
+            hi, ai = inj.get(home), inj.get(away)
+            if hi or ai:
+                extras["injuries"] = {"home": hi or None, "away": ai or None}
+        if env.get("weather_date") == date:
+            w = (env.get("weather") or {}).get(code)
+            if w:
+                extras["weather"] = {k: w[k] for k in
+                                     ("t_min", "t_max", "pop", "rain", "wind", "grade", "city")
+                                     if k in w}
+        try:
+            from datetime import date as _dd
+            ref_ok = env.get("ref_date") and abs(
+                (_dd.fromisoformat(date) - _dd.fromisoformat(env["ref_date"])).days) <= 2
+        except Exception:
+            ref_ok = False
+        if ref_ok:
+            for r in env.get("refs") or []:
+                if _name_match(r.get("home"), home) and _name_match(r.get("away"), away):
+                    nat = str(r.get("nation") or "").rstrip("籍") or None
+                    extras["referee"] = {k: r[k] for k in
+                                         ("ref", "age", "h", "d", "a",
+                                          "yellow", "red", "pen")
+                                         if r.get(k) is not None}
+                    if nat:
+                        extras["referee"]["nation"] = nat
+                    break
     def _team_side(name: str) -> dict:
         """队侧槽位：积分榜命中则填 rank/points/played/win/draw/loss。"""
         side = {"name": name, "league": league}
@@ -443,6 +513,7 @@ def main() -> None:
     net_form = _load_net_form()
     odds_idx = _load_odds_index()
     times_days, times_idx = _load_match_times()
+    env = _load_env()
     n_days = n_matches = n_results = 0
     for d in sorted(PRED_DIR.iterdir()):
         if len(d.name) != 10 or not d.is_dir():
@@ -459,7 +530,8 @@ def main() -> None:
             cm = convert_match(date, m, by_code, by_name,
                                standings=standings, net_form=net_form,
                                odds_idx=odds_idx,
-                               times_idx=times_idx, times_days=times_days)
+                               times_idx=times_idx, times_days=times_days,
+                               env=env)
             if not cm["match_id"] or cm["match_id"] in seen:
                 cm["match_id"] = f"{date}-{i + 1:03d}"
             seen.add(cm["match_id"])
