@@ -1462,6 +1462,7 @@ def _odds_payload(ordered: list[Day]) -> tuple[list, list]:
             rows.append({
                 "d": d.date, "id": m.match_id, "c": m.code or "",
                 "lg": m.competition or "", "h": m.home.name, "a": m.away.name,
+                "tm": (m.kickoff or "")[-5:],
                 "gh": gh, "ga": ga, "hh": hh, "ha": ha, "of": of,
             })
     rows.reverse()
@@ -1580,12 +1581,15 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
 
 
 def render_bets(cfg: Config, ordered: list[Day]) -> str:
-    """🎯记录本：对照原工具「足彩记录」重做。
+    """🎯记录本：赛程区照网易彩票竞彩页重做（赔率格点选 + 投注篮）。
 
-    统计卡（总票数/总投注/中奖/净收益）+ 个人汇总 + 状态筛选 + 主表格 +
-    添加表单（过关方式 / 人员与倍数 / 场次玩法与选项 / 计算注数与 SP）；
-    记录存浏览器 localStorage，内嵌全量赛果自动结算（胜平负/让球/总进球/
-    比分/半全场）。静态站不含贴图上传与 AI 预测模块。
+    左侧按日历日期列出当日场次：编号/联赛徽章/开赛时间/对阵 + 胜平负与
+    让球赔率格（点击选号，选中红底高亮；胜平负/让球同玩法单选，比分/总
+    进球/半全场可多选）+「更多玩法」展开让球其余盘口/比分/总进球/半全场；
+    右侧 sticky 投注篮：已选清单可删、过关方式 chips（场数不足自动禁用）、
+    倍数 −/+、人员与倍数，实时算注数/金额/预计奖金区间后保存为投注票。
+    下方沿用记录区：统计卡、个人汇总、载入赛果自动结算（五玩法判定与
+    组合逻辑同原工具足彩记录）。记录存浏览器 localStorage。
     """
     import json as _json
 
@@ -1593,42 +1597,46 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     dates, rows = _odds_payload(ordered)
     data_js = _json.dumps({"dates": dates, "rows": rows},
                           ensure_ascii=False, separators=(",", ":"))
-    pass_modes = ("单关", "2串1", "3串1", "4串1", "5串1", "6串1")
-    persons = "ABCDEF"
+    person_opts = "ABCDEF"
     body = (
         f"<h1 class='page-h1'>{L.ICON_ACTIVITY} 投注</h1>"
+        '<div class="nb-layout">'
+        '<div class="nb-main">'
+        '<div class="nb-topbar">'
+        + _date_input(dates, dates[0] if dates else "", "bets")
+        + '<span class="nb-day" id="nb-day"></span>'
+        '<span class="nb-count" id="nb-count"></span>'
+        "</div>"
+        '<div id="nb-list"></div>'
+        "</div>"
+        '<div class="nb-basket">'
+        '<div class="nb-bk-t">已选 <span class="sub" id="nb-bk-n"></span>'
+        '<a class="nb-bk-clear" id="nb-clear">清空</a></div>'
+        '<div class="nb-bk-list" id="nb-bk-list"></div>'
+        '<div class="nb-lab">过关方式</div>'
+        '<div class="nb-pass" id="nb-pass"></div>'
+        '<div class="nb-mult">倍数 '
+        '<button type="button" id="nb-minus">−</button>'
+        '<input id="nb-mult" type="number" value="1" min="1" step="1">'
+        '<button type="button" id="nb-plus">＋</button></div>'
+        '<div class="nb-pers">'
+        '<div id="bk-persons" class="bf-persons"></div>'
+        '<div class="bf-addperson"><select id="bk-psel"><option value="">— 人员 —</option>'
+        + "".join(f"<option>{p}</option>" for p in person_opts)
+        + '<option value="__c__">自定义</option></select>'
+        '<input id="bk-pname" placeholder="名称" style="display:none;width:70px">'
+        '<input id="bk-pmult" type="number" value="1" min="0" step="any" style="width:60px">'
+        '<button id="bk-padd" type="button" class="bt-mini">添加</button></div>'
+        "</div>"
+        '<div class="nb-sum"><span>注数</span><b id="nb-n">0</b></div>'
+        '<div class="nb-sum"><span>金额(元)</span><b id="nb-amt">0</b></div>'
+        '<div class="nb-prize"><span>预计奖金(元)</span><b id="nb-prize">0.00</b></div>'
+        '<button class="nb-save" id="nb-save" type="button">保 存</button>'
+        '<div class="nb-msg" id="nb-msg"></div>'
+        "</div>"
+        "</div>"
         '<div class="bets-stats" id="bk-stats"></div>'
         '<div class="bets-card"><h3>👤 个人投注与中奖汇总</h3><div id="bk-person"></div></div>'
-        '<div class="bets-card"><h3>➕ 添加投注记录</h3><div class="bets-form">'
-        '<div class="bf-row"><label>过关方式</label><div id="bk-pass" class="bf-chips">'
-        + "".join(
-            f'<label class="bf-check"><input type="checkbox" value="{v}">{v}</label>'
-            for v in pass_modes
-        )
-        + '</div></div>'
-        '<div class="bf-row"><label>人员与倍数</label>'
-        '<div id="bk-persons" class="bf-persons"></div>'
-        '<div class="bf-addperson"><select id="bk-psel">'
-        f'<option value="">— 选择 —</option>'
-        + "".join(f"<option>{p}</option>" for p in persons)
-        + '<option value="__c__">自定义</option></select>'
-        '<input id="bk-pname" placeholder="名称" style="display:none" width="8">'
-        '<input id="bk-pmult" type="number" value="1" min="0" step="any" style="width:70px">'
-        '<button id="bk-padd" type="button" class="bt-mini">添加</button>'
-        "</div></div>"
-        '<div class="bf-row"><label>场次</label>'
-        '<div class="bf-schedule"><input type="date" class="date-cal" id="bk-date" '
-        f'data-mode="bets" value="{dates[0]}" min="{min(dates)}" max="{max(dates)}" '
-        f"data-dates='{_json.dumps(dates, separators=(',', ':'))}'" + ">"
-        '<div id="bk-games" class="bf-games"></div></div>'
-        '<div class="bf-actions"><button id="bk-calc" type="button" class="bt-gold">⚡ 计算注数 & 金额</button>'
-        '<span class="bf-sp">注数 <b id="bk-n">—</b></span>'
-        '<span class="bf-sp">SP范围 <b id="bk-sp">—</b></span>'
-        '<span class="bf-sp">总倍数 <b id="bk-mult">—</b></span>'
-        '<span class="bf-sp">金额(元) <b id="bk-amt">—</b></span>'
-        '<button id="bk-save" type="button" class="bt-go">保存</button></div>'
-        '<div id="bk-combos" class="bk-combos"></div>'
-        "</div></div>"
         '<div class="bets-actions"><button id="bk-loadres" type="button" class="bt-go">📥 载入赛果并结算</button>'
         '<span id="bk-loadres-msg" class="sub"></span></div>'
         '<div class="bets-filter"><label>🔍 状态筛选：</label>'
@@ -1642,39 +1650,17 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         '<p class="bets-foot">记录保存在本浏览器；赛果由站内已回填数据自动结算。</p>'
         "<script>\n(function () {\n"
         f"  var DATA = {data_js};\n"
-        '''  var IDX = {};
-  DATA.rows.forEach(function (r) { IDX[r.id] = r; });
-  var $ = function (id) { return document.getElementById(id); };
+        '''  var $ = function (id) { return document.getElementById(id); };
   function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
   var LS = "matlas_tickets_v1";
   var MK_ZH = { spf: "胜平负", rq: "让球", goals: "总进球", score: "比分", htft: "半全场" };
+  var MODES = ["单关", "2串1", "3串1", "4串1", "5串1", "6串1", "7串1", "8串1"];
+  var IDX = {};
+  DATA.rows.forEach(function (r) { IDX[r.id] = r; });
 
-  // ---- 存储 ----
+  // ---- 存储与结算（同原工具足彩记录） ----
   function load() { try { return JSON.parse(localStorage.getItem(LS)) || []; } catch (e) { return []; } }
   function save(t) { localStorage.setItem(LS, JSON.stringify(t)); render(); }
-
-  // ---- 选项构造：玩法 → [{opt, odds, line, pick}] ----
-  function optionsOf(of, mk) {
-    var out = [];
-    if (!of) return out;
-    if (mk === "spf") {
-      [["胜", of.spf && of.spf["胜"]], ["平", of.spf && of.spf["平"]], ["负", of.spf && of.spf["负"]]].forEach(function (x) {
-        if (x[1]) out.push({ mk: mk, opt: x[0], odds: +x[1] });
-      });
-    } else if (mk === "rq") {
-      (of.rq || []).forEach(function (row) {
-        [["胜", row["胜"]], ["平", row["平"]], ["负", row["负"]]].forEach(function (x) {
-          if (x[1]) out.push({ mk: mk, opt: "让球" + row.handicap + " " + x[0], odds: +x[1], line: parseFloat(row.handicap), pick: x[0] });
-        });
-      });
-    } else {
-      var src = mk === "goals" ? of.goals : mk === "score" ? of.score : of.htft;
-      Object.keys(src || {}).forEach(function (k) {
-        if (src[k]) out.push({ mk: mk, opt: k, odds: +src[k] });
-      });
-    }
-    return out;
-  }
   function legRes(p, row) {
     if (!row || row.gh === null || row.gh === undefined) return "pending";
     var gh = row.gh, ga = row.ga;
@@ -1683,7 +1669,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
       var adj = gh + p.line;
       return p.pick === (adj > ga ? "胜" : adj < ga ? "负" : "平") ? "win" : "lose";
     }
-    if (p.mk === "goals") { var t = gh + ga; return (p.opt === "7+" ? t >= 7 : +p.opt === t) ? "win" : "lose"; }
+    if (p.mk === "goals") { var t2 = gh + ga; return (p.opt === "7+" ? t2 >= 7 : +p.opt === t2) ? "win" : "lose"; }
     if (p.mk === "score") return p.opt === gh + ":" + ga ? "win" : "lose";
     if (p.mk === "htft") {
       var h = row.hh > row.ha ? "胜" : row.hh < row.ha ? "负" : "平";
@@ -1731,18 +1717,211 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
       if (win) winSp += c.sp;
     });
     var mult = (t.persons || []).reduce(function (a, p) { return a + (+p.mult || 0); }, 0);
-    var winAmt = 2 * mult * winSp;
+    var gm = t.gmult || 1;
+    var winAmt = 2 * mult * gm * winSp;
     var status = winAmt > 0 ? "win" : anyPending ? "pending" : "lose";
-    return { betCount: cs.length, winAmt: winAmt, status: status, spMin: cs.length ? Math.min.apply(null, cs.map(function (c) { return c.sp; })) : 0, spMax: cs.length ? Math.max.apply(null, cs.map(function (c) { return c.sp; })) : 0 };
+    return { betCount: cs.length, winAmt: winAmt, status: status,
+      spMin: cs.length ? Math.min.apply(null, cs.map(function (c) { return c.sp; })) : 0,
+      spMax: cs.length ? Math.max.apply(null, cs.map(function (c) { return c.sp; })) : 0 };
   }
+  function lgCls(lg) {
+    lg = lg || "";
+    if (lg.indexOf("欧冠") >= 0) return "lg-ucl";
+    if (lg.indexOf("欧罗巴") >= 0 || lg.indexOf("欧联") >= 0) return "lg-uel";
+    if (lg.indexOf("欧协") >= 0) return "lg-uecl";
+    if (lg.indexOf("解放者") >= 0) return "lg-lib";
+    if (lg.indexOf("日职") >= 0) return "lg-j1";
+    if (lg.indexOf("英超") >= 0) return "lg-epl";
+    var h = 0;
+    for (var i = 0; i < lg.length; i++) h = (h * 31 + lg.charCodeAt(i)) % 5;
+    return "lg-c" + h;
+  }
+  function pickName(p) { return p.mk === "rq" ? "让球(" + p.line + ") " + p.pick : MK_ZH[p.mk] + " " + p.opt; }
 
-  // ---- 添加表单 ----
-  var games = [];   // [{mid, mk, picks:[{mk,opt,odds,line,pick}]}]
-  var persons = []; // [{name, mult}]
-  function totalMult() { return persons.reduce(function (a, p) { return a + (+p.mult || 0); }, 0); }
+  // ===== 选号区：场次列表 + 赔率格点选 =====
+  var picks = {}; // "mid|mk|opt" -> {mid, mk, opt, odds, line, pick}
+  function pKey(p) { return p.mid + "|" + p.mk + "|" + p.opt; }
+  function snapD(v) {
+    if (DATA.dates.indexOf(v) >= 0) return v;
+    var prev = null, next = null;
+    DATA.dates.forEach(function (d) {
+      if (d < v && (prev === null || d > prev)) prev = d;
+      if (d > v && (next === null || d < next)) next = d;
+    });
+    return prev || next || v;
+  }
+  var cal = document.querySelector(".nb-topbar .date-cal");
+  if (cal) cal.addEventListener("change", function () {
+    var t = snapD(this.value); this.value = t; renderMatches(t);
+  });
+  function dayWk(d) {
+    try { return "周" + "日一二三四五六".charAt(new Date(d + "T12:00:00").getDay()); } catch (e) { return ""; }
+  }
+  function cell(mid, mk, opt, odds, line, pick) {
+    var cls = picks[mid + "|" + mk + "|" + opt] ? " on" : "";
+    var a = '<a class="nb-cell' + cls + '" data-mid="' + mid + '" data-mk="' + mk + '" data-opt="' + esc(opt) + '"';
+    if (odds !== undefined && odds !== null) a += ' data-odds="' + odds + '"';
+    if (line !== undefined && line !== null) a += ' data-line="' + line + '" data-pick="' + esc(pick || "") + '"';
+    return a + "><b>" + esc(pick || opt) + "</b><i>"
+      + (odds !== undefined && odds !== null ? (+odds).toFixed(2) : "-") + "</i></a>";
+  }
+  function threeCells(mid, mk, row, withLine) {
+    var s = "";
+    ["胜", "平", "负"].forEach(function (w) {
+      if (row[w]) s += cell(mid, mk, withLine ? "让" + row.handicap + " " + w : w, row[w],
+        withLine ? parseFloat(row.handicap) : null, w);
+    });
+    return s;
+  }
+  function renderMatches(d) {
+    var list = DATA.rows.filter(function (r) { return r.d === d; });
+    $("nb-day").textContent = d + " " + dayWk(d);
+    $("nb-count").textContent = list.length + "场比赛";
+    if (!list.length) { $("nb-list").innerHTML = '<p class="sub">当日无盘口数据。</p>'; return; }
+    var html = "";
+    list.forEach(function (r, i) {
+      var of = r.of, done = r.gh !== null && r.gh !== undefined;
+      var head = '<div class="nb-mrow">'
+        + '<span class="nb-code">' + esc(r.c) + "</span>"
+        + '<span class="bf-lg ' + lgCls(r.lg) + '">' + esc(r.lg) + "</span>"
+        + '<span class="nb-time">' + esc(r.tm || "") + "</span>"
+        + '<span class="nb-vs"><b>' + esc(r.h) + "</b><i>VS</i><b>" + esc(r.a) + "</b></span>"
+        + (done ? '<span class="nb-done">赛果 ' + r.gh + "-" + r.ga + "</span>" : "");
+      head += '<div class="nb-blk"><span class="nb-blk-t">胜平负</span><div class="nb-cells">'
+        + threeCells(r.id, "spf", of.spf || {}, false) + "</div></div>";
+      if ((of.rq || []).length) {
+        head += '<div class="nb-blk"><span class="nb-blk-t">让球' + of.rq[0].handicap
+          + '</span><div class="nb-cells">' + threeCells(r.id, "rq", of.rq[0], true) + "</div></div>";
+      }
+      head += '<button type="button" class="nb-more" data-i="' + i + '">更多玩法 ▾</button></div>';
+      var ex = "";
+      (of.rq || []).slice(1).forEach(function (row) {
+        ex += '<div class="nb-ex-sec"><span class="nb-ex-t">让球' + row.handicap
+          + '</span><div class="nb-cells">' + threeCells(r.id, "rq", row, true) + "</div></div>";
+      });
+      function kvSec(title, src, mk) {
+        var s = "";
+        Object.keys(src || {}).forEach(function (k) { if (src[k]) s += cell(r.id, mk, k, src[k]); });
+        return s ? '<div class="nb-ex-sec"><span class="nb-ex-t">' + title
+          + '</span><div class="nb-cells">' + s + "</div></div>" : "";
+      }
+      ex += kvSec("比分", of.score, "score") + kvSec("总进球", of.goals, "goals") + kvSec("半全场", of.htft, "htft");
+      html += '<div class="nb-match">' + head
+        + '<div class="nb-ex" id="nb-ex-' + i + '" style="display:none">' + ex + "</div></div>";
+    });
+    $("nb-list").innerHTML = html;
+  }
+  function toggleCell(c) {
+    var mid = c.getAttribute("data-mid"), mk = c.getAttribute("data-mk"), opt = c.getAttribute("data-opt");
+    var od = c.getAttribute("data-odds");
+    if (od === null) return;
+    var key = mid + "|" + mk + "|" + opt;
+    var had = !!picks[key];
+    if (mk === "spf" || mk === "rq") {
+      // 同玩法单选：先清掉该场该玩法的已选，再按需加入
+      Object.keys(picks).forEach(function (k) { if (k.indexOf(mid + "|" + mk + "|") === 0) delete picks[k]; });
+      if (!had) picks[key] = { mid: mid, mk: mk, opt: opt, odds: +od,
+        line: c.getAttribute("data-line") !== null ? parseFloat(c.getAttribute("data-line")) : undefined,
+        pick: c.getAttribute("data-pick") || undefined };
+    } else if (had) delete picks[key];
+    else picks[key] = { mid: mid, mk: mk, opt: opt, odds: +od };
+    syncCells(); renderBasket();
+  }
+  function syncCells() {
+    document.querySelectorAll("#nb-list .nb-cell").forEach(function (c) {
+      c.classList.toggle("on", !!picks[c.getAttribute("data-mid") + "|" + c.getAttribute("data-mk") + "|" + c.getAttribute("data-opt")]);
+    });
+  }
+  $("nb-list").addEventListener("click", function (e) {
+    var c = e.target.closest(".nb-cell");
+    if (c) { toggleCell(c); return; }
+    var mb = e.target.closest(".nb-more");
+    if (mb) {
+      var ex = document.getElementById("nb-ex-" + mb.getAttribute("data-i"));
+      if (ex) {
+        var open = ex.style.display !== "none";
+        ex.style.display = open ? "none" : "block";
+        mb.textContent = open ? "更多玩法 ▾" : "收起 ▴";
+      }
+    }
+  });
+
+  // ===== 投注篮 =====
+  function basketGames() {
+    var by = {};
+    Object.keys(picks).forEach(function (k) { var p = picks[k]; (by[p.mid] || (by[p.mid] = [])).push(p); });
+    return DATA.rows.filter(function (r) { return by[r.id]; })
+      .map(function (r) { return { mid: r.id, picks: by[r.id] }; });
+  }
+  var checkedModes = [];
+  function validModes() { var n = basketGames().length; return checkedModes.filter(function (m) { return kOf(m) <= n; }); }
+  function renderPass() {
+    var n = basketGames().length;
+    $("nb-pass").innerHTML = MODES.map(function (m) {
+      var dis = !n || n < kOf(m);
+      return '<label class="' + (dis ? "dis" : "") + '"><input type="checkbox" value="' + m + '"'
+        + (checkedModes.indexOf(m) >= 0 ? " checked" : "") + ">" + m + "</label>";
+    }).join("");
+    $("nb-pass").querySelectorAll("input").forEach(function (x) {
+      x.addEventListener("change", function () {
+        if (x.checked) { if (checkedModes.indexOf(x.value) < 0) checkedModes.push(x.value); }
+        else checkedModes = checkedModes.filter(function (mm) { return mm !== x.value; });
+        updateSum();
+      });
+    });
+  }
+  function renderBasket() {
+    var gs = basketGames(), items = [];
+    gs.forEach(function (g) {
+      var r = IDX[g.mid];
+      g.picks.forEach(function (p) {
+        items.push('<div class="nb-bk-item"><span class="m">' + esc(r ? r.c : "") + "</span>"
+          + esc(pickName(p)) + '<span class="o">@' + (+p.odds).toFixed(2)
+          + '</span><a data-k="' + esc(pKey(p)) + '" title="删除">✕</a></div>');
+      });
+    });
+    $("nb-bk-list").innerHTML = items.join("") || '<div class="nb-bk-empty">点击左侧赔率格选号</div>';
+    $("nb-bk-list").querySelectorAll("a[data-k]").forEach(function (a) {
+      a.addEventListener("click", function () { delete picks[a.getAttribute("data-k")]; syncCells(); renderBasket(); });
+    });
+    $("nb-bk-n").textContent = gs.length ? "（" + gs.length + " 场）" : "";
+    if (gs.length) {
+      checkedModes = checkedModes.filter(function (m) { return kOf(m) <= gs.length; });
+      if (!checkedModes.length) checkedModes.push(gs.length === 1 ? "单关" : Math.min(gs.length, 8) + "串1");
+    }
+    renderPass();
+    updateSum();
+  }
+  function updateSum() {
+    var gs = basketGames(), modes = validModes();
+    var mult = Math.max(1, Math.round(+$("nb-mult").value || 1));
+    var n = 0, spMin = 0, spMax = 0;
+    if (gs.length && modes.length) {
+      var cs = combosOf({ passModes: modes, games: gs });
+      n = cs.length;
+      if (n) {
+        spMin = Math.min.apply(null, cs.map(function (c) { return c.sp; }));
+        spMax = cs.reduce(function (a, c) { return a + c.sp; }, 0);
+      }
+    }
+    $("nb-n").textContent = n;
+    $("nb-amt").textContent = (2 * mult * n).toFixed(0);
+    $("nb-prize").textContent = n ? (2 * mult * spMin).toFixed(2) + " ~ " + (2 * mult * spMax).toFixed(2) : "0.00";
+  }
+  $("nb-minus").addEventListener("click", function () {
+    $("nb-mult").value = Math.max(1, Math.round(+$("nb-mult").value || 1) - 1); updateSum();
+  });
+  $("nb-plus").addEventListener("click", function () {
+    $("nb-mult").value = Math.round(+$("nb-mult").value || 1) + 1; updateSum();
+  });
+  $("nb-mult").addEventListener("change", updateSum);
+  $("nb-clear").addEventListener("click", function () { picks = {}; checkedModes = []; syncCells(); renderBasket(); });
+
+  // ---- 人员与倍数 ----
+  var persons = [];
   function renderPersons() {
     $("bk-persons").innerHTML = persons.map(function (p, i) {
-      return '<span class="bf-person">' + p.name + ' × <input type="number" value="' + p.mult
+      return '<span class="bf-person">' + esc(p.name) + ' × <input type="number" value="' + p.mult
         + '" min="0" step="any" data-i="' + i + '" class="bf-pmult"> <a class="bf-pdel" data-i="' + i + '">✕</a></span>';
     }).join("") || '<span class="sub">尚未添加人员</span>';
     $("bk-persons").querySelectorAll(".bf-pdel").forEach(function (a) {
@@ -1763,88 +1942,26 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     if (name && !persons.some(function (p) { return p.name === name; })) persons.push({ name: name, mult: +$("bk-pmult").value || 0 });
     $("bk-pname").value = ""; renderPersons();
   });
-  // 日期为日历控件（服务端内嵌可选范围），此处不再填充
-  function lgCls(lg) {
-    lg = lg || "";
-    if (lg.indexOf("欧冠") >= 0) return "lg-ucl";
-    if (lg.indexOf("欧罗巴") >= 0 || lg.indexOf("欧联") >= 0) return "lg-uel";
-    if (lg.indexOf("欧协") >= 0) return "lg-uecl";
-    if (lg.indexOf("解放者") >= 0) return "lg-lib";
-    if (lg.indexOf("日职") >= 0) return "lg-j1";
-    if (lg.indexOf("英超") >= 0) return "lg-epl";
-    var h = 0;
-    for (var i = 0; i < lg.length; i++) h = (h * 31 + lg.charCodeAt(i)) % 5;
-    return "lg-c" + h;
-  }
-  function renderGames() {
-    var list = games.length ? games.map(function (g, i) {
-      var r = IDX[g.mid];
-      var opts = optionsOf(r.of, g.mk);
-      var optSel = '<select class="bf-osel" data-g="' + i + '">'
-        + (opts.length
-          ? opts.map(function (p) { return '<option value="' + p.opt + '">' + p.opt + " @" + p.odds.toFixed(2) + "</option>"; }).join("")
-          : '<option value="">无可用选项</option>')
-        + "</select>";
-      var mkSel = Object.keys(MK_ZH).map(function (k) {
-        return '<option value="' + k + '"' + (g.mk === k ? " selected" : "") + ">" + MK_ZH[k] + "</option>";
-      }).join("");
-      var done = r.gh !== null && r.gh !== undefined;
-      var picks = (g.picks || []).map(function (p, j) {
-        return '<span class="bf-pick">' + MK_ZH[p.mk] + " " + esc(p.opt) + " @" + p.odds.toFixed(2)
-          + ' <a class="bf-pdel" data-g="' + i + '" data-j="' + j + '">✕</a></span>';
-      }).join("");
-      return '<div class="bf-game">'
-        + '<span class="bf-lg ' + lgCls(r.lg) + '">' + esc(r.lg) + "</span>"
-        + '<span class="bf-code">' + r.c + "</span>"
-        + '<span class="bf-vs"><b>' + esc(r.h) + "</b> vs <b>" + esc(r.a) + "</b></span>"
-        + (done ? '<span class="bf-done">赛果 ' + r.gh + "-" + r.ga + "</span>" : "")
-        + '<select class="bf-mk" data-g="' + i + '">' + mkSel + "</select>"
-        + optSel
-        + '<button type="button" class="bf-addopt" data-g="' + i + '">＋添加' + MK_ZH[g.mk] + "选项</button>"
-        + '<a class="bf-gdel" data-g="' + i + '" title="删除本场">✕</a>'
-        + (picks ? '<div class="bf-picks">' + picks + "</div>" : "")
-        + "</div>";
-    }).join("") : '<p class="sub">点「＋ 添加场次」载入所选日期的全部比赛，再逐场添加选项。</p>';
-    $("bk-games").innerHTML = list
-      + '<button type="button" id="bk-addgames" class="bf-addgames">＋ 添加场次</button>';
-    $("bk-games").querySelectorAll(".bf-mk").forEach(function (sel) {
-      sel.addEventListener("change", function () {
-        games[+sel.getAttribute("data-g")].mk = sel.value; renderGames();
-      });
-    });
-    $("bk-games").querySelectorAll(".bf-gdel").forEach(function (a) {
-      a.addEventListener("click", function () { games.splice(+a.getAttribute("data-g"), 1); renderGames(); });
-    });
-    // ＋添加选项：把当前选中的玩法选项加入该场（可多选项，支持跨玩法）
-    $("bk-games").querySelectorAll(".bf-addopt").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var i = +btn.getAttribute("data-g");
-        var g = games[i];
-        var sel = $("bk-games").querySelector('.bf-osel[data-g="' + i + '"]');
-        var p = optionsOf(IDX[g.mid].of, g.mk).filter(function (x) { return x.opt === sel.value; })[0];
-        if (!p) return;
-        if (!g.picks.some(function (x) { return x.mk === p.mk && x.opt === p.opt; })) g.picks.push(p);
-        renderGames();
-      });
-    });
-    $("bk-games").querySelectorAll(".bf-pdel").forEach(function (a) {
-      a.addEventListener("click", function () {
-        var g = games[+a.getAttribute("data-g")];
-        g.picks.splice(+a.getAttribute("data-j"), 1); renderGames();
-      });
-    });
-    var add = document.getElementById("bk-addgames");
-    add.addEventListener("click", function () {
-      var d = $("bk-date").value;
-      var added = 0;
-      DATA.rows.filter(function (r) { return r.d === d; }).forEach(function (r) {
-        if (!games.some(function (g) { return g.mid === r.id; })) { games.push({ mid: r.id, mk: "spf", picks: [] }); added += 1; }
-      });
-      renderGames();
-      if (!added) add.textContent = "该日期场次已全部载入";
-    });
-  }
-  // 📥 载入赛果并结算：按场次匹配站内赛果 → 逐腿判定 → 重算全部票（jinbet 同款逻辑）
+
+  // ---- 保存投注票 ----
+  $("nb-save").addEventListener("click", function () {
+    var gs = basketGames(), modes = validModes();
+    var bad = [];
+    if (!modes.length) bad.push("过关方式");
+    if (!persons.length) bad.push("人员");
+    if (!gs.length) bad.push("选号");
+    var msg = $("nb-msg");
+    if (bad.length) { msg.style.color = "#dc2626"; msg.textContent = "请补全：" + bad.join("、"); return; }
+    var t = { ts: Date.now(), passModes: modes, persons: persons.slice(),
+      gmult: Math.max(1, Math.round(+$("nb-mult").value || 1)),
+      games: JSON.parse(JSON.stringify(gs)) };
+    var all = load(); all.unshift(t); save(all);
+    picks = {}; checkedModes = []; syncCells(); renderBasket();
+    msg.style.color = "#16a34a";
+    msg.textContent = "✅ 已保存 " + t.gmult + " 倍，共 " + combosOf(t).length + " 注，见下方记录";
+  });
+
+  // ---- 📥 载入赛果并结算（按场次匹配站内赛果 → 逐腿判定 → 重算全部票） ----
   $("bk-loadres").addEventListener("click", function () {
     var ts = load(), matched = 0, tickets = 0;
     ts.forEach(function (t) {
@@ -1866,48 +1983,8 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
       ? "✅ 已为 " + tickets + " 票匹配 " + matched + " 场赛果并重新结算"
       : "暂无已保存的票";
   });
-  // 只统计已添加选项的场次：批量载入后未加选项的场次在计算/保存时自动忽略
-  function pickGames() { return games.filter(function (g) { return g.picks.length; }); }
-  $("bk-calc").addEventListener("click", function () {
-    var modes = Array.prototype.slice.call($("bk-pass").querySelectorAll("input:checked")).map(function (x) { return x.value; });
-    var used = pickGames();
-    var bad = [];
-    if (!modes.length) bad.push("过关方式");
-    if (!persons.length) bad.push("人员");
-    if (!used.length) bad.push("场次选项");
-    if (bad.length) { $("bk-combos").innerHTML = '<p class="sub">请补全：' + bad.join("、") + "</p>"; return; }
-    var t = { passModes: modes, persons: persons, games: used };
-    var cs = combosOf(t);
-    var sps = cs.map(function (c) { return c.sp; });
-    var n = cs.length, mult = totalMult();
-    $("bk-n").textContent = n;
-    $("bk-mult").textContent = mult;
-    $("bk-sp").textContent = n ? Math.min.apply(null, sps).toFixed(2) + " ~ " + Math.max.apply(null, sps).toFixed(2) : "—";
-    $("bk-amt").textContent = (2 * mult * n).toFixed(1);
-    $("bk-combos").innerHTML = "<b>各过关组合明细（每注SP）</b>" + cs.map(function (c) {
-      return '<div class="bk-combo">' + c.mode + "："
-        + c.legs.map(function (p) {
-          var r = IDX[p.mid];
-          return r.c + " " + MK_ZH[p.mk] + " " + p.opt + " @" + p.odds;
-        }).join(" × ") + " → SP " + c.sp.toFixed(2) + "</div>";
-    }).join("")
-    + (games.length > used.length ? '<p class="sub">已忽略 ' + (games.length - used.length) + " 场未添加选项的场次。</p>" : "");
-  });
-  $("bk-save").addEventListener("click", function () {
-    var modes = Array.prototype.slice.call($("bk-pass").querySelectorAll("input:checked")).map(function (x) { return x.value; });
-    var used = pickGames();
-    if (!modes.length || !persons.length || !used.length) {
-      $("bk-combos").innerHTML = '<p class="sub">请先补全过关方式、人员，并至少给一场添加选项（点「计算注数 & 金额」可预览）。</p>'; return;
-    }
-    var ignored = games.length - used.length;
-    var t = { ts: Date.now(), passModes: modes, persons: persons.slice(), games: JSON.parse(JSON.stringify(used)) };
-    var all = load(); all.unshift(t); save(all);
-    games = []; renderGames();
-    $("bk-combos").innerHTML = ignored ? '<p class="sub">✅ 已保存；忽略 ' + ignored + " 场未添加选项的场次。</p>" : "";
-    ["bk-n", "bk-sp", "bk-mult", "bk-amt"].forEach(function (id) { $(id).textContent = "—"; });
-  });
 
-  // ---- 列表与结算 ----
+  // ---- 记录区：统计 / 个人汇总 / 明细表 ----
   function render() {
     var ts = load(), st = $("bk-st").value;
     var shown = ts.map(function (t) { return { t: t, s: settle(t) }; })
@@ -1917,11 +1994,12 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     ts.forEach(function (t) {
       var s = settle(t);
       var mult = (t.persons || []).reduce(function (a, p) { return a + (+p.mult || 0); }, 0);
-      totAmt += 2 * mult * s.betCount; totWin += s.winAmt;
+      var gm = t.gmult || 1;
+      totAmt += 2 * mult * gm * s.betCount; totWin += s.winAmt;
       if (s.status === "pending") pending += 1;
       t.persons.forEach(function (p) {
         var b = byPerson[p.name] || (byPerson[p.name] = { amt: 0, win: 0 });
-        b.amt += 2 * (+p.mult || 0) * s.betCount;
+        b.amt += 2 * (+p.mult || 0) * gm * s.betCount;
         b.win += s.winAmt ? s.winAmt * (+p.mult || 0) / mult : 0;
       });
     });
@@ -1937,12 +2015,14 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
       ? '<table class="bets-table bt-small"><thead><tr><th>人员</th><th>投注(元)</th><th>中奖(元)</th><th>净收益(元)</th></tr></thead><tbody>'
         + pk.map(function (k) {
           var b = byPerson[k], net = b.win - b.amt;
-          return "<tr><td><b>" + k + "</b></td><td>" + b.amt.toFixed(1) + "</td><td>" + b.win.toFixed(1)
+          return "<tr><td><b>" + esc(k) + "</b></td><td>" + b.amt.toFixed(1) + "</td><td>" + b.win.toFixed(1)
             + '</td><td class="' + (net >= 0 ? "pnl-pos" : "pnl-neg") + '">' + (net >= 0 ? "+" : "") + net.toFixed(1) + "</td></tr>";
         }).join("") + "</tbody></table>"
       : '<p class="sub">暂无记录。</p>';
     $("bk-tbody").innerHTML = shown.length ? shown.map(function (x, i) {
       var t = x.t, s = x.s;
+      var mult = (t.persons || []).reduce(function (a, p) { return a + (+p.mult || 0); }, 0);
+      var gm = t.gmult || 1;
       var detail = t.games.map(function (g) {
         var r = IDX[g.mid];
         var done = r && r.gh !== null && r.gh !== undefined;
@@ -1951,14 +2031,13 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
           var win = (g.picks || []).some(function (p) { return legRes(p, r) === "win"; });
           mark = ' <b class="' + (win ? "hit-y" : "hit-n") + '">' + (win ? "✓" : "✗") + "</b> <span class='bf-res'>" + r.gh + "-" + r.ga + "</span>";
         }
-        return (r ? r.c + " " : "") + esc(MK_ZH[g.mk]) + " " + g.picks.map(function (p) { return esc(p.opt); }).join("/") + mark;
+        return (r ? r.c + " " : "") + g.picks.map(function (p) { return esc(pickName(p)); }).join("/") + mark;
       }).join("<br>");
-      var mult = (t.persons || []).reduce(function (a, p) { return a + (+p.mult || 0); }, 0);
       return "<tr><td>" + (i + 1) + "</td><td>" + detail + "</td><td>" + t.passModes.join("+") + "</td><td>"
-        + s.betCount + "</td><td>" + mult + "</td><td>" + s.spMin.toFixed(2) + " ~ " + s.spMax.toFixed(2)
-        + "</td><td>" + (2 * mult * s.betCount).toFixed(1) + "</td><td>" + s.winAmt.toFixed(1) + "</td><td>"
+        + s.betCount + "</td><td>" + (mult * gm) + "</td><td>" + s.spMin.toFixed(2) + " ~ " + s.spMax.toFixed(2)
+        + "</td><td>" + (2 * mult * gm * s.betCount).toFixed(1) + "</td><td>" + s.winAmt.toFixed(1) + "</td><td>"
         + badge[s.status] + '</td><td><a class="bt-del" data-ts="' + t.ts + '">删除</a></td></tr>';
-    }).join("") : '<tr><td colspan="10"><p class="sub">暂无记录，用上方表单添加第一注。</p></td></tr>';
+    }).join("") : '<tr><td colspan="10"><p class="sub">暂无记录，在上方选号后点「保 存」。</p></td></tr>';
     $("bk-tbody").querySelectorAll(".bt-del").forEach(function (a) {
       a.addEventListener("click", function () {
         save(load().filter(function (x) { return String(x.ts) !== a.getAttribute("data-ts"); }));
@@ -1967,15 +2046,17 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
   }
   $("bk-st").addEventListener("change", render);
   renderPersons();
-  renderGames();
+  if (DATA.dates.length) renderMatches(DATA.dates[0]);
+  renderBasket();
   render();
 })();
 </script>'''
     )
     return L.page(
-        cfg, title="投注", description="足彩投注记录：过关方式、人员倍数、自动结算与个人盈亏汇总",
+        cfg, title="投注", description="足彩投注：竞彩式赔率格选号、投注篮计注算奖、载入赛果自动结算与个人盈亏汇总",
         body=body, canonical=f"{base}/bets.html", depth=0,
     )
+
 
 def _lt_header(name: str, *, logo: str, meta: str, ph_char: str = "") -> str:
     """联赛/球队专题页头部（对齐对方 .lt-header：徽章 + 标题 + 统计行）。"""

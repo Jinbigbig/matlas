@@ -681,6 +681,82 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .bt-del { color: #dc2626; font-size: 12px; text-decoration: none; cursor: pointer; }
 .bets-foot { font-size: 12px; color: #9ca3af; margin: 10px 2px; }
 
+/* ---------- 投注页：竞彩式选号区（赔率格点选 + 右侧投注篮） ---------- */
+.nb-layout { display: flex; align-items: flex-start; gap: 14px; margin: 14px 0 4px; }
+.nb-main { flex: 1; min-width: 0; background: #fff; border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); padding: 14px 16px; }
+.nb-topbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding-bottom: 10px; border-bottom: 1px solid #f1f5f9; }
+.nb-day { font-size: 15px; font-weight: 700; color: #111; }
+.nb-count { font-size: 12px; color: #6b7280; }
+.nb-match { border-bottom: 1px dashed #eef2f7; padding: 12px 0; }
+.nb-match:last-child { border-bottom: none; }
+.nb-mrow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.nb-code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11px; color: #64748b;
+  background: #f1f5f9; border-radius: 4px; padding: 2px 6px; white-space: nowrap; }
+.nb-time { font-size: 12px; color: #6b7280; white-space: nowrap; }
+.nb-vs { font-size: 13.5px; color: #111; min-width: 190px; }
+.nb-vs b { font-weight: 700; }
+.nb-vs i { font-style: normal; color: #94a3b8; font-size: 11px; margin: 0 6px; }
+.nb-done { font-size: 12px; color: #dc2626; background: #fff1f2; border-radius: 10px; padding: 2px 8px; }
+.nb-blk { display: flex; align-items: center; gap: 6px; }
+.nb-blk-t { font-size: 11px; color: #9ca3af; white-space: nowrap; min-width: 46px; text-align: right; }
+.nb-cells { display: flex; gap: 4px; flex-wrap: wrap; }
+.nb-cell { min-width: 54px; text-align: center; border: 1px solid #e5e7eb; border-radius: 6px;
+  background: #fff; padding: 4px 6px; cursor: pointer; user-select: none; line-height: 1.25; }
+.nb-cell b { display: block; font-size: 11px; color: #6b7280; font-weight: 600; }
+.nb-cell i { display: block; font-style: normal; font-size: 13px; font-weight: 700; color: #111; }
+.nb-cell:hover { border-color: #ef4444; }
+.nb-cell.on { background: #ef4444; border-color: #ef4444; }
+.nb-cell.on b, .nb-cell.on i { color: #fff; }
+.nb-more { font-size: 12px; color: #2563eb; background: none; border: none; cursor: pointer;
+  white-space: nowrap; padding: 4px 2px; }
+.nb-more:hover { color: #ef4444; }
+.nb-ex { display: none; margin-top: 10px; padding: 8px 12px; background: #f8fafc; border-radius: 8px; }
+.nb-ex-sec { display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap; padding: 6px 0; }
+.nb-ex-sec + .nb-ex-sec { border-top: 1px dashed #e8edf3; }
+/* 投注篮 */
+.nb-basket { flex: none; width: 300px; background: #fff; border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); padding: 14px; position: sticky; top: 70px; }
+.nb-bk-t { display: flex; justify-content: space-between; align-items: center;
+  font-size: 14px; font-weight: 700; color: #111; margin-bottom: 8px; }
+.nb-bk-t .sub { margin: 0; font-weight: 400; }
+.nb-bk-clear { font-size: 12px; color: #9ca3af; cursor: pointer; font-weight: 400; text-decoration: none; }
+.nb-bk-clear:hover { color: #ef4444; }
+.nb-bk-list { max-height: 250px; overflow-y: auto; margin-bottom: 10px; }
+.nb-bk-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #374151;
+  padding: 5px 0; border-bottom: 1px dashed #f1f5f9; }
+.nb-bk-item .m { color: #6b7280; white-space: nowrap; }
+.nb-bk-item .o { color: #ef4444; font-weight: 700; margin-left: auto; white-space: nowrap; }
+.nb-bk-item a { color: #dc2626; cursor: pointer; text-decoration: none; }
+.nb-bk-empty { font-size: 12px; color: #9ca3af; padding: 14px 0; text-align: center; }
+.nb-lab { font-size: 12px; color: #6b7280; font-weight: 600; margin-bottom: 6px; }
+.nb-pass { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.nb-pass label { font-size: 12px; color: #374151; background: #f8f9fc; border: 1px solid #eef0f4;
+  border-radius: 14px; padding: 4px 10px; cursor: pointer; }
+.nb-pass label:has(input:checked) { background: #ef4444; border-color: #ef4444; color: #fff; font-weight: 600; }
+.nb-pass label.dis { opacity: 0.4; pointer-events: none; }
+.nb-pass input { display: none; }
+.nb-mult { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #6b7280; margin-bottom: 10px; }
+.nb-mult button { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--rule);
+  background: #f8f9fc; font-size: 14px; cursor: pointer; line-height: 1; padding: 0; }
+.nb-mult input { width: 52px; text-align: center; font-size: 13px; padding: 4px;
+  border: 1px solid var(--rule); border-radius: 6px; }
+.nb-sum { display: flex; justify-content: space-between; font-size: 12.5px; color: #374151; padding: 3px 0; }
+.nb-sum b { color: #111; }
+.nb-prize { background: #fff7f7; border-radius: 8px; padding: 8px 10px; margin: 8px 0;
+  font-size: 12.5px; color: #374151; display: flex; justify-content: space-between; align-items: center; }
+.nb-prize b { color: #ef4444; font-size: 14px; }
+.nb-pers { margin-bottom: 10px; }
+.nb-save { width: 100%; border: none; background: #ef4444; color: #fff; font-size: 14px;
+  font-weight: 700; border-radius: 8px; padding: 10px 0; cursor: pointer; }
+.nb-save:hover { background: #dc2626; }
+.nb-msg { font-size: 12px; color: #16a34a; margin-top: 6px; min-height: 16px; }
+@media (max-width: 960px) {
+  .nb-layout { flex-direction: column; }
+  .nb-basket { width: 100%; position: static; }
+}
+
 /* ---------- 联赛 / 球队专题页：头部对齐对方 .lt-header（徽章 + 标题 + 统计） ---------- */
 .lt-header { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   padding: 22px 24px; display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
@@ -1019,7 +1095,9 @@ function snapDate(arr, v) {{
 document.addEventListener("change", function (e) {{
   var c = e.target.closest(".date-cal");
   if (!c || !c.value) return;
-  var dates = JSON.parse(c.getAttribute("data-dates"));
+  var dattr = c.getAttribute("data-dates");
+  if (!dattr) return;
+  var dates = JSON.parse(dattr);
   var t = snapDate(dates, c.value);
   c.value = t;
   var mode = c.getAttribute("data-mode");
