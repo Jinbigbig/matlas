@@ -380,11 +380,11 @@ def _form_panel(m: Match) -> str:
 
 
 def _h2h_panel(m: Match) -> str:
-    """历史交锋：两队交手明细（自产聚合，含半全场）；无记录时出占位。"""
+    """历史交锋：两队交手明细（自产聚合 + 全量赛果库）；无记录时出占位。"""
     if not m.h2h:
         return C.panel(
             "历史交锋",
-            '<p class="panel-empty">两队在本站收录期内暂无交手记录，数据积累后自动展示。</p>',
+            '<p class="panel-empty">两队在本站赛果库 2025-12 以来暂无交手记录。</p>',
         )
     rows = []
     for h in m.h2h:

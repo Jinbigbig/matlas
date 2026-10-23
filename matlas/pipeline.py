@@ -89,7 +89,11 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
             m.recent_home = list(reversed(home_hist))   # 新 -> 旧
             m.recent_away = list(reversed(away_hist))
             pair = tuple(sorted((m.home.name, m.away.name)))
-            m.h2h = list(reversed(hist_h2h.get(pair, [])))[-6:]
+            # 交锋 = import 侧预算的全量赛果库（已按赛前日期截断）+ 站内已结算，去重后新→旧
+            merged = {(h.date, h.home, h.away): h for h in (m.h2h or [])}
+            for h in hist_h2h.get(pair, []):
+                merged[(h.date, h.home, h.away)] = h
+            m.h2h = sorted(merged.values(), key=lambda h: h.date, reverse=True)[:6]
             if not (m.result and m.result.full_score):
                 continue
             try:
