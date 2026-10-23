@@ -689,7 +689,6 @@ def render_match(cfg: Config, m: Match) -> str:
         body="".join(body_parts),
         canonical=url,
         jsonld=jsonld,
-        nav_day=m.day,
         depth=1,
     )
 
@@ -1251,7 +1250,7 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
     ]
     return L.page(
         cfg, title=h1, description=desc, body=body, canonical=rel_url,
-        jsonld=jsonld, nav_day=day.date,
+        jsonld=jsonld,
         depth=0 if is_today else 1,
     )
 
@@ -1311,7 +1310,7 @@ def render_archive_index(cfg: Config, days: list[str],
     )
     return L.page(
         cfg, title="历史归档", description="按日期、联赛、球队归档的全部赛事分析",
-        body=body, canonical=f"{base}/days/", nav_day="", depth=1,
+        body=body, canonical=f"{base}/days/", depth=1,
     )
 
 

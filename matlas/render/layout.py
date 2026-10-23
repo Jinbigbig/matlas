@@ -960,7 +960,8 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
   gap: 2px; color: #6b7280; text-decoration: none; flex: 1; padding: 6px 0; }
 .v4-nav-item:hover { text-decoration: none; }
 .v4-nav-item.active { color: #2563eb; }
-.v4-nav-icon { font-size: 20px; line-height: 1; }
+.v4-nav-icon { font-size: 20px; line-height: 1; display: flex; align-items: center; }
+.v4-nav-icon svg { width: 21px; height: 21px; }
 .v4-nav-lbl { font-size: 10px; }
 
 @media (max-width: 768px) {
@@ -1146,7 +1147,6 @@ def page(
     body: str,
     canonical: str,
     jsonld: list[dict[str, Any]] | None = None,
-    nav_day: str = "",
     depth: int = 0,
 ) -> str:
     """页面外壳。
@@ -1159,12 +1159,23 @@ def page(
     base = cfg.base_url.rstrip("/")
     pre = "../" * depth
     home = pre or "./"
-    nav_extra = f'<a href="{pre}days/{nav_day}.html">当日归档</a>' if nav_day else ""
-    nav_extra_bottom = (
-        f'<a class="v4-nav-item" href="{pre}days/{nav_day}.html">'
-        '<span class="v4-nav-icon">📊</span><span class="v4-nav-lbl">当日</span></a>'
-        if nav_day
-        else ""
+    # 底部导航与桌面同口径：赛事 / 数据 / 功能 / 我的（当前页高亮）
+    _path = canonical.split("?")[0].rstrip("/").rsplit("/", 1)[-1]
+    _tab = {"data.html": "数据", "features.html": "功能", "me.html": "我的"}.get(_path, "赛事")
+
+    def _tab_item(label: str, href: str, icon: str) -> str:
+        cls = " active" if label == _tab else ""
+        return (f'<a class="v4-nav-item{cls}" href="{href}">'
+                f'<span class="v4-nav-icon">{icon}</span>'
+                f'<span class="v4-nav-lbl">{label}</span></a>')
+
+    bottom_nav = (
+        '<nav class="v4-bottom-nav-global">'
+        + _tab_item("赛事", home, ICON_SPORTS)
+        + _tab_item("数据", f"{pre}data.html", ICON_DATA)
+        + _tab_item("功能", f"{pre}features.html", ICON_FUNCT)
+        + _tab_item("我的", f"{pre}me.html", ICON_USER)
+        + "</nav>"
     )
     head_title = title if title.endswith(cfg.site_name) else f"{title} - {cfg.site_name}"
     return f"""<!DOCTYPE html>
@@ -1207,15 +1218,7 @@ def page(
   <p>{C.esc(cfg.site_name)} · {C.esc(cfg.site_tagline)}</p>
 </div></footer>
 <a class="back-top" id="back-top" href="#" aria-label="回顶部">{ICON_TOP}</a>
-<nav class="v4-bottom-nav-global">
-  <a class="v4-nav-item active" href="{home}">
-    <span class="v4-nav-icon">{ICON_HOME}</span><span class="v4-nav-lbl">今日</span></a>
-  <a class="v4-nav-item" href="{pre}days/">
-    <span class="v4-nav-icon">{ICON_ARCHIVE}</span><span class="v4-nav-lbl">归档</span></a>
-  {nav_extra_bottom}
-  <a class="v4-nav-item" href="{pre}llms.txt">
-    <span class="v4-nav-icon">{ICON_DOC}</span><span class="v4-nav-lbl">索引</span></a>
-</nav>
+{bottom_nav}
 <script>
 (function () {{
   var btn = document.getElementById("back-top");
