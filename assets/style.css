@@ -640,7 +640,24 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .bf-res { font-family: 'SFMono-Regular', Consolas, monospace; color: #6b7280; }
 .hit-y { color: #dc2626; }
 .hit-n { color: #9ca3af; }
-.bets-actions { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; }
+.bets-actions { display: flex; align-items: center; gap: 10px; margin: 14px 0 10px; }
+.bets-actions .sub { margin: 0; line-height: 1.6; }
+.bets-actions button { line-height: 1.4; flex: none; }
+
+/* ---------- 投注页：自定义赛果结算 ---------- */
+.cr-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.cr-bar .sub { margin: 0; }
+.cr-list { display: flex; flex-direction: column; gap: 6px; }
+.cr-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  background: #f8fafc; border-radius: 8px; padding: 6px 10px; }
+.cr-vs { font-size: 13px; color: #111; min-width: 170px; }
+.cr-vs i { font-style: normal; color: #94a3b8; font-size: 11px; margin: 0 4px; }
+.cr-in { font-size: 12px; color: #6b7280; white-space: nowrap; }
+.cr-n { width: 40px; text-align: center; font-size: 13px; padding: 4px 2px;
+  border: 1px solid var(--rule); border-radius: 6px; }
+.cr-site { font-size: 11px; color: #16a34a; background: #f0fdf4;
+  border-radius: 10px; padding: 2px 8px; }
+.cr-site.cr-none { color: #d97706; background: #fffbeb; }
 .bk-combos { background: #fafbfc; border: 1px solid #eef0f4; border-radius: 10px;
   padding: 10px 12px; font-size: 12px; color: #374151; max-height: 300px; overflow-y: auto; }
 .bk-combos b { display: block; margin-bottom: 6px; color: #111; }
@@ -674,6 +691,9 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .nb-match { border-bottom: 1px dashed #eef2f7; padding: 12px 0; }
 .nb-match:last-child { border-bottom: none; }
 .nb-mrow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.nb-mleft { flex: none; width: 78px; display: flex; flex-direction: column;
+  align-items: flex-start; gap: 5px; }
+.nb-mleft .nb-more { padding: 0; font-size: 11px; }
 .nb-code { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 11px; color: #64748b;
   background: #f1f5f9; border-radius: 4px; padding: 2px 6px; white-space: nowrap; }
 .nb-time { font-size: 12px; color: #6b7280; white-space: nowrap; }
