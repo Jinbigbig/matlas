@@ -347,10 +347,10 @@ table.ref-table .hit { margin-left: 0.25rem; }
 
 /* ---------- 图表 ---------- */
 .legend { display: flex; gap: 1.1rem; flex-wrap: wrap; font-size: 0.8rem; color: var(--muted);
-  margin: 0.25rem 0 0.5rem; }
+  margin: 0.25rem 0 0.5rem; justify-content: center; }
 .legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
 .legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
-svg.radar, svg.mom { width: 100%; height: auto; display: block; margin-top: 0.25rem; }
+svg.radar, svg.mom { width: 100%; height: auto; display: block; margin-top: 0.25rem; margin-inline: auto; }
 svg.radar { max-width: 340px; }
 svg.mom { max-width: 620px; }
 
