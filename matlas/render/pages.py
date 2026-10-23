@@ -1819,14 +1819,14 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         '<a class="nb-bk-clear" id="cr-clear">清空</a>'
         '<span id="cr-msg" class="sub"></span>'
         "</div>"
-        '<div id="cr-list" class="cr-list"></div></div>'
+        '<div id="cr-list" class="cr-list"><p class="sub">默认不显示。点「📅 载入当日比赛」拉取场次后手动填写比分。</p></div></div>'
         '<div class="bets-filter"><label>🔍 状态筛选：</label>'
         '<select id="bk-st"><option value="all">全部</option>'
         '<option value="pending">⏳ 待开奖</option><option value="win">✅ 中奖</option>'
         '<option value="lose">❌ 未中奖</option></select></div>'
         '<div class="bets-twrap"><table class="bets-table"><thead><tr>'
         "<th>#</th><th>场次详情</th><th>过关方式</th><th>注数</th><th>总倍数</th>"
-        "<th>SP范围</th><th>投注(元)</th><th>中奖(元)</th><th>状态</th><th>操作</th>"
+        "<th>预计中奖(元)</th><th>投注(元)</th><th>中奖(元)</th><th>状态</th><th>操作</th>"
         '</tr></thead><tbody id="bk-tbody"></tbody></table></div>'
         '<p class="bets-foot">记录保存在本浏览器；赛果由站内已回填数据自动结算。</p>'
         "<script>\n(function () {\n"
@@ -1904,7 +1904,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     var status = winAmt > 0 ? "win" : anyPending ? "pending" : "lose";
     return { betCount: cs.length, winAmt: winAmt, status: status,
       spMin: cs.length ? Math.min.apply(null, cs.map(function (c) { return c.sp; })) : 0,
-      spMax: cs.length ? Math.max.apply(null, cs.map(function (c) { return c.sp; })) : 0 };
+      spMax: cs.reduce(function (a, c) { return a + c.sp; }, 0) };
   }
   function lgCls(lg) {
     lg = lg || "";
@@ -2290,7 +2290,8 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
       totAmt += 2 * mult * gm * s.betCount; totWin += s.winAmt;
       if (s.status === "pending") pending += 1;
       t.persons.forEach(function (p) {
-        var b = byPerson[p.name] || (byPerson[p.name] = { amt: 0, win: 0 });
+        var b = byPerson[p.name] || (byPerson[p.name] = { amt: 0, win: 0, n: 0 });
+        b.n += 1;
         b.amt += 2 * (+p.mult || 0) * gm * s.betCount;
         b.win += s.winAmt ? s.winAmt * (+p.mult || 0) / mult : 0;
       });
@@ -2304,10 +2305,10 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
       + '<div class="stat-card"><div class="stat-num ' + (pnl >= 0 ? "pnl-pos" : "pnl-neg") + '">' + (pnl >= 0 ? "+" : "") + pnl.toFixed(1) + '</div><div class="stat-lbl">📈 净收益(元)</div></div>';
     var pk = Object.keys(byPerson);
     $("bk-person").innerHTML = pk.length
-      ? '<table class="bets-table bt-small"><thead><tr><th>人员</th><th>投注(元)</th><th>中奖(元)</th><th>净收益(元)</th></tr></thead><tbody>'
+      ? '<table class="bets-table bt-small"><thead><tr><th>人员</th><th>票数(张)</th><th>投注(元)</th><th>中奖(元)</th><th>净收益(元)</th></tr></thead><tbody>'
         + pk.map(function (k) {
           var b = byPerson[k], net = b.win - b.amt;
-          return "<tr><td><b>" + esc(k) + "</b></td><td>" + b.amt.toFixed(1) + "</td><td>" + b.win.toFixed(1)
+          return "<tr><td><b>" + esc(k) + "</b></td><td>" + b.n + "</td><td>" + b.amt.toFixed(1) + "</td><td>" + b.win.toFixed(1)
             + '</td><td class="' + (net >= 0 ? "pnl-pos" : "pnl-neg") + '">' + (net >= 0 ? "+" : "") + net.toFixed(1) + "</td></tr>";
         }).join("") + "</tbody></table>"
       : '<p class="sub">暂无记录。</p>';
@@ -2326,7 +2327,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         return (r ? r.c + " " : "") + g.picks.map(function (p) { return esc(pickName(p)); }).join("/") + mark;
       }).join("<br>");
       return "<tr><td>" + (i + 1) + "</td><td>" + detail + "</td><td>" + t.passModes.join("+") + "</td><td>"
-        + (s.betCount * mult) + "</td><td>" + (mult * gm) + "</td><td>" + s.spMin.toFixed(2) + " ~ " + s.spMax.toFixed(2)
+        + (s.betCount * mult) + "</td><td>" + (mult * gm) + "</td><td>" + (2 * mult * gm * s.spMin).toFixed(2) + " ~ " + (2 * mult * gm * s.spMax).toFixed(2)
         + "</td><td>" + (2 * mult * gm * s.betCount).toFixed(1) + "</td><td>" + s.winAmt.toFixed(1) + "</td><td>"
         + badge[s.status] + '</td><td><a class="bt-del" data-ts="' + t.ts + '">删除</a></td></tr>';
     }).join("") : '<tr><td colspan="10"><p class="sub">暂无记录，在上方选号后点「保 存」。</p></td></tr>';
@@ -2341,7 +2342,6 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
   if (DATA.dates.length) renderMatches(DATA.dates[0]);
   renderBasket();
   render();
-  renderCR();
 })();
 </script>'''
     )
