@@ -354,7 +354,7 @@ def _h2h_panel(m: Match) -> str:
     if not m.h2h:
         return C.panel(
             "历史交锋",
-            '<p class="panel-empty">两队在本站赛果库 2025-12 以来暂无交手记录。</p>',
+            '<p class="panel-empty">两队在本站赛果库暂无交手记录。</p>',
         )
     rows = []
     for h in m.h2h:
