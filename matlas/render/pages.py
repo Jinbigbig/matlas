@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import replace
-from typing import Any, Sequence
+from typing import Any
 
 from ..config import Config
 from ..models import Match, Day, Metrics, Momentum, Odds, sort_matches
@@ -51,33 +51,6 @@ def _picks(m: Match) -> str:
             f'<div style="margin-top:6px">{extra}</div></div>'
         )
     return f'<div class="picks4">{"".join(cells)}</div>' if cells else ""
-
-
-def _odds_chips(pairs: Sequence[tuple[str, str]]) -> str:
-    cells = "".join(
-        f'<span class="of-chip">{C.esc(k)}<b>{C.esc(v)}</b></span>'
-        for k, v in pairs if v not in (None, "")
-    )
-    return f'<div class="of-chips">{cells}</div>' if cells else ""
-
-
-def _odds_full_block(of: dict) -> str:
-    """全玩法赔率：进球数 / 半全场 / 比分。"""
-    secs = []
-    goals = of.get("goals") or {}
-    if goals:
-        secs.append('<div class="of-sec"><div class="of-h">进球数</div>'
-                    + _odds_chips([(str(k) if str(k).endswith("+") else f"{k} 球", str(v))
-                                   for k, v in goals.items()]) + "</div>")
-    htft = of.get("htft") or {}
-    if htft:
-        secs.append('<div class="of-sec"><div class="of-h">半全场</div>'
-                    + _odds_chips([(str(k), str(v)) for k, v in htft.items()]) + "</div>")
-    score = of.get("score") or {}
-    if score:
-        secs.append('<div class="of-sec"><div class="of-h">比分</div>'
-                    + _odds_chips([(str(k), str(v)) for k, v in score.items()]) + "</div>")
-    return "".join(secs)
 
 
 def _tick_hcp(p: dict) -> str | None:
@@ -205,9 +178,6 @@ def _odds_panel(m: Match) -> str:
             f"小 {o.under:g}" if o.under else "—",
         ])
     body += grid + (C.table(["市场", m.home.name, "平", m.away.name], rows) if rows else "")
-
-    if of:
-        body += _odds_full_block(of)
     body += _odds_trend(m)
 
     if not body.strip():
