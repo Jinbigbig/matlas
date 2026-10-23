@@ -243,11 +243,6 @@ h1.match-teams { justify-content: center; gap: 1rem; margin: 0.5rem 0 0.25rem; }
 /* 全玩法与赔率时序：小节标题 + 赔率药丸 */
 .of-sec { margin: 1rem 0 0.25rem; }
 .of-h { font-size: 0.8rem; font-weight: 700; color: var(--gray-700); margin-bottom: 0.5rem; }
-.of-chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.of-chip { display: inline-flex; align-items: baseline; gap: 5px; font-size: 0.78rem;
-  color: var(--gray-700); background: var(--gray-50); border: 1px solid var(--gray-200);
-  border-radius: 7px; padding: 2px 8px; font-family: 'SFMono-Regular', Consolas, monospace; }
-.of-chip b { color: var(--ink); font-weight: 700; }
 .of-sec table { margin-top: 0.5rem; }
 
 /* ---------- 表格 ---------- */
@@ -1006,8 +1001,6 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
   .odds-grid { gap: 0.35rem; }
   .odds-item { padding: 0.55rem 0.25rem; }
   .odds-item .value { font-size: 1rem; }
-  .of-chips { gap: 4px; }
-  .of-chip { font-size: 0.72rem; padding: 1px 6px; }
   .of-sec table { font-size: 0.75rem; }
   .match-teams { font-size: 0.92rem; gap: 0.4rem; }
   .crest { width: 22px; height: 22px; }
