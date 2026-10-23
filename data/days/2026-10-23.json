@@ -252,7 +252,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 1.652,
     "lam_away": 1.533,
@@ -711,7 +711,7 @@
    ],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 1.092,
     "lam_away": 1.385,
@@ -1302,9 +1302,40 @@
      "half_ft": "平/平"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "列治拿",
+     "reason": "腹股沟",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "马古斯洛顿",
+     "reason": "不详",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "邦图斯赞臣",
+     "reason": "十字靭带",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "奥斯卡施奥斯坦",
+     "reason": "",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "华伦甘文斯",
+     "reason": "不详",
+     "status": "out"
+    }
+   ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 1.778,
     "lam_away": 1.361,
@@ -1554,6 +1585,40 @@
        "ga": 1
       }
      ]
+    },
+    "injuries": {
+     "home": {
+      "out": [],
+      "doubtful": [
+       {
+        "name": "列治拿",
+        "reason": "腹股沟"
+       },
+       {
+        "name": "马古斯洛顿",
+        "reason": "不详"
+       }
+      ],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "邦图斯赞臣",
+        "reason": "十字靭带"
+       },
+       {
+        "name": "奥斯卡施奥斯坦",
+        "reason": ""
+       },
+       {
+        "name": "华伦甘文斯",
+        "reason": "不详"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
     },
     "weather": {
      "t_min": 8.2,
@@ -1859,7 +1924,7 @@
     }
    ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 2.276,
     "lam_away": 1.243,
@@ -2132,21 +2197,18 @@
     },
     "injuries": {
      "home": {
-      "league": "荷甲",
       "out": [
        {
         "name": "Eus Waayers",
-        "reason": "伤情未明",
-        "since": "2026-09-18"
+        "reason": "伤情未明"
        },
        {
         "name": "Pim Saathof",
-        "reason": "膝伤",
-        "since": "2025-05-31",
-        "back": "2027-01-01"
+        "reason": "膝伤"
        }
       ],
-      "doubtful": []
+      "doubtful": [],
+      "suspended": []
      }
     },
     "weather": {
@@ -2430,7 +2492,7 @@
    ],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 1.747,
     "lam_away": 1.773,
@@ -3034,85 +3096,79 @@
    "injuries": [
     {
      "team": "home",
-     "player": "Diehl",
-     "reason": "大腿",
+     "player": "Justin Diehl",
+     "reason": "肌肉伤",
      "status": "out"
     },
     {
      "team": "home",
-     "player": "Malanga",
-     "reason": "腹肌",
-     "status": "out"
+     "player": "Dan-Axel Zagadou",
+     "reason": "肌肉伤",
+     "status": "doubt"
     },
     {
      "team": "home",
-     "player": "Nartey",
-     "reason": "肌肉",
-     "status": "out"
+     "player": "Josha Vagnoman",
+     "reason": "伤情",
+     "status": "doubt"
     },
     {
      "team": "home",
-     "player": "Tomás",
-     "reason": "肌肉",
-     "status": "out"
+     "player": "Tiago Tomás",
+     "reason": "肌肉伤",
+     "status": "doubt"
     },
     {
-     "team": "home",
-     "player": "Vagnoman",
-     "reason": "腿筋",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Zagadou",
-     "reason": "腿筋",
+     "team": "away",
+     "player": "Enzo Leopold",
+     "reason": "膝伤",
      "status": "out"
     },
     {
      "team": "away",
-     "player": "Castrop",
-     "reason": "肩",
+     "player": "Fritz Fleck",
+     "reason": "肌肉伤",
      "status": "out"
     },
     {
      "team": "away",
-     "player": "Honorat",
-     "reason": "肌肉",
+     "player": "Jan Leszczyński",
+     "reason": "膝伤",
      "status": "out"
     },
     {
      "team": "away",
-     "player": "Itakura",
-     "reason": "肌肉",
+     "player": "Tim Kleindienst",
+     "reason": "肌肉伤",
      "status": "out"
     },
     {
      "team": "away",
-     "player": "Kleindienst",
-     "reason": "肌肉",
-     "status": "out"
+     "player": "Franck Honorat",
+     "reason": "肌肉伤",
+     "status": "doubt"
     },
     {
      "team": "away",
-     "player": "Leopold",
-     "reason": "膝",
-     "status": "out"
+     "player": "Isac Lidberg",
+     "reason": "大腿伤",
+     "status": "doubt"
     },
     {
      "team": "away",
-     "player": "Leszczyński",
-     "reason": "膝",
-     "status": "out"
+     "player": "Ko Itakura",
+     "reason": "踝伤",
+     "status": "doubt"
     },
     {
      "team": "away",
-     "player": "Lidberg",
-     "reason": "肌肉",
-     "status": "out"
+     "player": "Nikolas-Gerrit Kühn",
+     "reason": "肌肉伤",
+     "status": "doubt"
     }
    ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 2.397,
     "lam_away": 0.82,
@@ -3461,68 +3517,66 @@
     },
     "injuries": {
      "home": {
-      "league": "德甲",
       "out": [
        {
-        "name": "Diehl",
-        "reason": "大腿"
-       },
-       {
-        "name": "Malanga",
-        "reason": "腹肌"
-       },
-       {
-        "name": "Nartey",
-        "reason": "肌肉"
-       },
-       {
-        "name": "Tomás",
-        "reason": "肌肉"
-       },
-       {
-        "name": "Vagnoman",
-        "reason": "腿筋"
-       },
-       {
-        "name": "Zagadou",
-        "reason": "腿筋"
+        "name": "Justin Diehl",
+        "reason": "肌肉伤"
        }
       ],
-      "doubtful": []
+      "doubtful": [
+       {
+        "name": "Dan-Axel Zagadou",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Josha Vagnoman",
+        "reason": "伤情"
+       },
+       {
+        "name": "Tiago Tomás",
+        "reason": "肌肉伤"
+       }
+      ],
+      "suspended": []
      },
      "away": {
-      "league": "德甲",
       "out": [
        {
-        "name": "Castrop",
-        "reason": "肩"
+        "name": "Enzo Leopold",
+        "reason": "膝伤"
        },
        {
-        "name": "Honorat",
-        "reason": "肌肉"
+        "name": "Fritz Fleck",
+        "reason": "肌肉伤"
        },
        {
-        "name": "Itakura",
-        "reason": "肌肉"
+        "name": "Jan Leszczyński",
+        "reason": "膝伤"
        },
        {
-        "name": "Kleindienst",
-        "reason": "肌肉"
-       },
-       {
-        "name": "Leopold",
-        "reason": "膝"
-       },
-       {
-        "name": "Leszczyński",
-        "reason": "膝"
-       },
-       {
-        "name": "Lidberg",
-        "reason": "肌肉"
+        "name": "Tim Kleindienst",
+        "reason": "肌肉伤"
        }
       ],
-      "doubtful": []
+      "doubtful": [
+       {
+        "name": "Franck Honorat",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Isac Lidberg",
+        "reason": "大腿伤"
+       },
+       {
+        "name": "Ko Itakura",
+        "reason": "踝伤"
+       },
+       {
+        "name": "Nikolas-Gerrit Kühn",
+        "reason": "肌肉伤"
+       }
+      ],
+      "suspended": []
      }
     },
     "weather": {
@@ -3889,9 +3943,64 @@
      "half_ft": "客/平"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Emirhan İlkhan",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Franco Israel",
+     "reason": "肩伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Ricardo Rodríguez",
+     "reason": "大腿伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Niccolò Fortini",
+     "reason": "大腿伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Jan Ziółkowski",
+     "reason": "足伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Matteo Pessina",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Exequiel Zeballos",
+     "reason": "膝伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Idrissa Touré",
+     "reason": "膝伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Yvan Maye",
+     "reason": "肌肉伤",
+     "status": "doubt"
+    }
+   ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 1.93,
     "lam_away": 1.475,
@@ -4207,6 +4316,58 @@
       "负负": "5.6"
      },
      "kickoff": ""
+    },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "Emirhan İlkhan",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Franco Israel",
+        "reason": "肩伤"
+       },
+       {
+        "name": "Ricardo Rodríguez",
+        "reason": "大腿伤"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Niccolò Fortini",
+        "reason": "大腿伤"
+       }
+      ],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Jan Ziółkowski",
+        "reason": "足伤"
+       },
+       {
+        "name": "Matteo Pessina",
+        "reason": "膝伤"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Exequiel Zeballos",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Idrissa Touré",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Yvan Maye",
+        "reason": "肌肉伤"
+       }
+      ],
+      "suspended": []
+     }
     },
     "weather": {
      "t_min": 9.2,
@@ -4527,9 +4688,52 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Brendan Chardonnet",
+     "reason": "小腿伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Raphaël Le Guen",
+     "reason": "骨折",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Giovani Versini",
+     "reason": "腿伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Ali Abdi",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Antoine Mendy",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Laurent Abergel",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Moïse Lumpungu",
+     "reason": "腿伤",
+     "status": "out"
+    }
+   ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 1.462,
     "lam_away": 1.245,
@@ -4755,6 +4959,49 @@
        "ga": 1
       }
      ]
+    },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "Brendan Chardonnet",
+        "reason": "小腿伤"
+       },
+       {
+        "name": "Raphaël Le Guen",
+        "reason": "骨折"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Giovani Versini",
+        "reason": "腿伤"
+       }
+      ],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Ali Abdi",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Antoine Mendy",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Laurent Abergel",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Moïse Lumpungu",
+        "reason": "腿伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
     },
     "weather": {
      "t_min": 7.7,
@@ -5111,9 +5358,34 @@
      "half_ft": "平/平"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Saša Lukić",
+     "reason": "腹股沟伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Jack Taylor",
+     "reason": "膝伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Igor Jesus",
+     "reason": "小腿伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Nicolò Savona",
+     "reason": "膝伤",
+     "status": "out"
+    }
+   ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 1.395,
     "lam_away": 1.54,
@@ -5518,6 +5790,37 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "Saša Lukić",
+        "reason": "腹股沟伤"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Jack Taylor",
+        "reason": "膝伤"
+       }
+      ],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Igor Jesus",
+        "reason": "小腿伤"
+       },
+       {
+        "name": "Nicolò Savona",
+        "reason": "膝伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "weather": {
      "t_min": 8.1,
      "t_max": 10.0,
@@ -5782,9 +6085,34 @@
      "half_ft": "客/平"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Chris Forino",
+     "reason": "腹股沟伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Alfie Jones",
+     "reason": "小腿伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Dávid Strelec",
+     "reason": "伤情",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Rokas Pukštas",
+     "reason": "伤情",
+     "status": "out"
+    }
+   ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 1.656,
     "lam_away": 2.372,
@@ -6016,6 +6344,36 @@
       "负负": "2"
      },
      "kickoff": ""
+    },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "Chris Forino",
+        "reason": "腹股沟伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Alfie Jones",
+        "reason": "小腿伤"
+       },
+       {
+        "name": "Dávid Strelec",
+        "reason": "伤情"
+       },
+       {
+        "name": "Rokas Pukštas",
+        "reason": "伤情"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
     },
     "weather": {
      "t_min": 6.9,
@@ -6381,9 +6739,52 @@
      "half_ft": "主/平"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Mikel Rodríguez Ulacia",
+     "reason": "踝伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Facundo Garcés",
+     "reason": "停赛",
+     "status": "suspended"
+    },
+    {
+     "team": "away",
+     "player": "Aaron Ochoa",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Julen Lobete",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Diego Murillo",
+     "reason": "膝伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Juan Cruz",
+     "reason": "肌肉伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Joaquín Muñoz",
+     "reason": "小腿伤",
+     "status": "doubt"
+    }
+   ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 1.848,
     "lam_away": 0.929,
@@ -6700,6 +7101,50 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "Mikel Rodríguez Ulacia",
+        "reason": "踝伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": [
+       {
+        "name": "Facundo Garcés",
+        "reason": "停赛"
+       }
+      ]
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Aaron Ochoa",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Julen Lobete",
+        "reason": "膝伤"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Diego Murillo",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Juan Cruz",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Joaquín Muñoz",
+        "reason": "小腿伤"
+       }
+      ],
+      "suspended": []
+     }
+    },
     "weather": {
      "t_min": 10.1,
      "t_max": 13.5,
@@ -6980,9 +7425,28 @@
      "half_ft": "客/客"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "古尔",
+     "reason": "门将",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "古斯达禾根夏",
+     "reason": "前锋",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "辛迪亚高佩雷斯",
+     "reason": "中场",
+     "status": "out"
+    }
+   ],
    "source_url": "",
-   "generated_at": "2026-10-23T15:28:23+08:00",
+   "generated_at": "2026-10-23T15:33:03+08:00",
    "extras": {
     "lam_home": 1.852,
     "lam_away": 0.962,
@@ -7186,6 +7650,32 @@
       "负负": "8.75"
      },
      "kickoff": ""
+    },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "古尔",
+        "reason": "门将"
+       },
+       {
+        "name": "古斯达禾根夏",
+        "reason": "前锋"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "辛迪亚高佩雷斯",
+        "reason": "中场"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
     },
     "weather": {
      "t_min": 7.6,
