@@ -1835,7 +1835,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
   function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
   var LS = "matlas_tickets_v1";
   var MK_ZH = { spf: "胜平负", rq: "让球", goals: "总进球", score: "比分", htft: "半全场" };
-  var MODES = ["单关", "2串1", "3串1", "4串1", "5串1", "6串1", "7串1", "8串1"];
+  var MODES = ["单关", "2关", "3关", "4关", "5关", "6关", "7关", "8关"];
   var IDX = {};
   DATA.rows.forEach(function (r) { IDX[r.id] = r; });
 
@@ -2095,7 +2095,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     $("nb-bk-n").textContent = gs.length ? "（" + gs.length + " 场）" : "";
     if (gs.length) {
       checkedModes = checkedModes.filter(function (m) { return kOf(m) <= gs.length; });
-      if (!checkedModes.length) checkedModes.push(gs.length === 1 ? "单关" : Math.min(gs.length, 8) + "串1");
+      if (!checkedModes.length) checkedModes.push(gs.length === 1 ? "单关" : Math.min(gs.length, 8) + "关");
     }
     renderPass();
     updateSum();
@@ -2103,6 +2103,9 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
   function updateSum() {
     var gs = basketGames(), modes = validModes();
     var mult = Math.max(1, Math.round(+$("nb-mult").value || 1));
+    // 人员倍数：每人一份票，注数与金额同步放大（无人员时按 1 份展示）
+    var psum = persons.reduce(function (a, p) { return a + (+p.mult || 0); }, 0);
+    var factor = persons.length ? psum : 1;
     var n = 0, spMin = 0, spMax = 0;
     if (gs.length && modes.length) {
       var cs = combosOf({ passModes: modes, games: gs });
@@ -2112,9 +2115,10 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         spMax = cs.reduce(function (a, c) { return a + c.sp; }, 0);
       }
     }
-    $("nb-n").textContent = n;
-    $("nb-amt").textContent = (2 * mult * n).toFixed(0);
-    $("nb-prize").textContent = n ? (2 * mult * spMin).toFixed(2) + " ~ " + (2 * mult * spMax).toFixed(2) : "0.00";
+    var nShow = n * factor;
+    $("nb-n").textContent = nShow;
+    $("nb-amt").textContent = (2 * factor * mult * n).toFixed(0);
+    $("nb-prize").textContent = n ? (2 * factor * mult * spMin).toFixed(2) + " ~ " + (2 * factor * mult * spMax).toFixed(2) : "0.00";
   }
   $("nb-minus").addEventListener("click", function () {
     $("nb-mult").value = Math.max(1, Math.round(+$("nb-mult").value || 1) - 1); updateSum();
@@ -2133,11 +2137,11 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         + '" min="0" step="any" data-i="' + i + '" class="bf-pmult"> <a class="bf-pdel" data-i="' + i + '">✕</a></span>';
     }).join("") || '<span class="sub">尚未添加人员</span>';
     $("bk-persons").querySelectorAll(".bf-pdel").forEach(function (a) {
-      a.addEventListener("click", function () { persons.splice(+a.getAttribute("data-i"), 1); renderPersons(); });
-    });
+      a.addEventListener("click", function () { persons.splice(+a.getAttribute("data-i"), 1); renderPersons(); });    });
     $("bk-persons").querySelectorAll(".bf-pmult").forEach(function (inp) {
-      inp.addEventListener("change", function () { persons[+inp.getAttribute("data-i")].mult = +inp.value || 0; });
+      inp.addEventListener("change", function () { persons[+inp.getAttribute("data-i")].mult = +inp.value || 0; updateSum(); });
     });
+    updateSum();
   }
   $("bk-psel").addEventListener("change", function () {
     var v = this.value;
@@ -2165,8 +2169,10 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
       games: JSON.parse(JSON.stringify(gs)) };
     var all = load(); all.unshift(t); save(all);
     picks = {}; checkedModes = []; syncCells(); renderBasket();
+    var psum = (t.persons || []).reduce(function (a, p) { return a + (+p.mult || 0); }, 0);
     msg.style.color = "#16a34a";
-    msg.textContent = "✅ 已保存 " + t.gmult + " 倍，共 " + combosOf(t).length + " 注，见下方记录";
+    msg.textContent = "✅ 已保存 " + t.gmult + " 倍 × " + (t.persons.length ? psum : 1) + " 份，共 "
+      + (combosOf(t).length * (t.persons.length ? psum : 1)) + " 注，见下方记录";
   });
 
   // ---- 📥 载入赛果并结算（按场次匹配站内赛果 → 逐腿判定 → 重算全部票） ----
@@ -2320,7 +2326,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         return (r ? r.c + " " : "") + g.picks.map(function (p) { return esc(pickName(p)); }).join("/") + mark;
       }).join("<br>");
       return "<tr><td>" + (i + 1) + "</td><td>" + detail + "</td><td>" + t.passModes.join("+") + "</td><td>"
-        + s.betCount + "</td><td>" + (mult * gm) + "</td><td>" + s.spMin.toFixed(2) + " ~ " + s.spMax.toFixed(2)
+        + (s.betCount * mult) + "</td><td>" + (mult * gm) + "</td><td>" + s.spMin.toFixed(2) + " ~ " + s.spMax.toFixed(2)
         + "</td><td>" + (2 * mult * gm * s.betCount).toFixed(1) + "</td><td>" + s.winAmt.toFixed(1) + "</td><td>"
         + badge[s.status] + '</td><td><a class="bt-del" data-ts="' + t.ts + '">删除</a></td></tr>';
     }).join("") : '<tr><td colspan="10"><p class="sub">暂无记录，在上方选号后点「保 存」。</p></td></tr>';
