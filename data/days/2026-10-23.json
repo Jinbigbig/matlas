@@ -1,0 +1,5092 @@
+{
+ "date": "2026-10-23",
+ "note": "数据源：jinbet 每日预测快照，赛果赛后回填。",
+ "matches": [
+  {
+   "match_id": "2026-10-23-001",
+   "day": "2026-10-23",
+   "code": "周五001",
+   "competition": "澳超",
+   "kickoff": "2026-10-23 17:00",
+   "home": {
+    "name": "布里斯班",
+    "league": "澳超"
+   },
+   "away": {
+    "name": "珀斯",
+    "league": "澳超"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.344,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.332,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.324,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.148,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.101,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.074,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.072,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.06,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.055,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.148,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.146,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.115,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.247,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.212,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.132,
+     "rank": 3
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.652,
+    "lam_away": 1.533,
+    "lam_total": 3.185,
+    "upset_prob": 61.2,
+    "upset_level": "高",
+    "rq_best_ev": 1.007,
+    "rq_best_odds": 1.64,
+    "data_n": {
+     "home": 12,
+     "away": 13
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 13.2
+    },
+    "htft_half": {
+     "home": 32.7,
+     "draw": 37.7,
+     "away": 29.5
+    },
+    "htft_cells": {
+     "主/主": 24.7,
+     "主/平": 5.4,
+     "主/客": 2.6,
+     "平/主": 13.2,
+     "平/平": 12.6,
+     "平/客": 11.9,
+     "客/主": 2.9,
+     "客/平": 5.4,
+     "客/客": 21.2
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      }
+     ]
+    }
+   },
+   "odds": {
+    "home": 1.98,
+    "draw": 3.35,
+    "away": 3.07,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   },
+   "h2h": [
+    {
+     "date": "2026-01-16",
+     "competition": "澳超",
+     "home": "布里斯班",
+     "away": "珀斯",
+     "score": "2-1"
+    },
+    {
+     "date": "2026-02-28",
+     "competition": "澳超",
+     "home": "珀斯",
+     "away": "布里斯班",
+     "score": "1-1"
+    }
+   ]
+  },
+  {
+   "match_id": "2026-10-23-002",
+   "day": "2026-10-23",
+   "code": "周五002",
+   "competition": "德乙",
+   "kickoff": "2026-10-24 00:30",
+   "home": {
+    "name": "波鸿",
+    "league": "德乙"
+   },
+   "away": {
+    "name": "沃夫斯堡",
+    "league": "德乙"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.387,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.342,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.271,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.159,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.094,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.085,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.084,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.082,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.074,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.168,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.159,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "0 球",
+     "prob": 0.085,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.259,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.169,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.167,
+     "rank": 3
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.092,
+    "lam_away": 1.385,
+    "lam_total": 2.476,
+    "upset_prob": 59.2,
+    "upset_level": "高",
+    "rq_best_ev": 1.082,
+    "rq_best_odds": 1.86,
+    "data_n": {
+     "home": 10,
+     "away": 21
+    },
+    "headline": {
+     "score": "1:2",
+     "prob": 11.4
+    },
+    "htft_half": {
+     "home": 23.9,
+     "draw": 43.7,
+     "away": 32.5
+    },
+    "htft_cells": {
+     "主/主": 16.7,
+     "主/平": 4.9,
+     "主/客": 2.2,
+     "平/主": 11.2,
+     "平/平": 16.9,
+     "平/客": 15.5,
+     "客/主": 1.6,
+     "客/平": 4.9,
+     "客/客": 25.9
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 5,
+       "ga": 1
+      },
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 6
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 8
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "3.35",
+      "平": "3.95",
+      "负": "1.73"
+     },
+     "rq": [
+      {
+       "handicap": "+1",
+       "胜": "1.86",
+       "平": "3.8",
+       "负": "3.05"
+      }
+     ],
+     "score": {
+      "1:0": "16",
+      "2:0": "20",
+      "2:1": "9.5",
+      "3:0": "35",
+      "3:1": "18",
+      "3:2": "20",
+      "4:0": "90",
+      "4:1": "50",
+      "4:2": "50",
+      "5:0": "250",
+      "5:1": "150",
+      "5:2": "175",
+      "胜其他": "45",
+      "0:0": "24",
+      "1:1": "7.7",
+      "2:2": "10",
+      "3:3": "29",
+      "平其他": "150",
+      "0:1": "12",
+      "0:2": "13",
+      "1:2": "7.25",
+      "0:3": "21",
+      "1:3": "11.5",
+      "2:3": "15",
+      "0:4": "50",
+      "1:4": "27",
+      "2:4": "30",
+      "0:5": "125",
+      "1:5": "65",
+      "2:5": "85",
+      "负其他": "33"
+     },
+     "goals": {
+      "0": "24",
+      "1": "7.7",
+      "2": "4.3",
+      "3": "3.5",
+      "4": "4.25",
+      "5": "6.35",
+      "6": "10.5",
+      "7+": "13"
+     },
+     "htft": {
+      "胜胜": "5.2",
+      "胜平": "13",
+      "胜负": "17",
+      "平胜": "8.4",
+      "平平": "7.75",
+      "平负": "5",
+      "负胜": "24",
+      "负平": "13",
+      "负负": "2.78"
+     },
+     "kickoff": ""
+    }
+   },
+   "odds": {
+    "home": 3.35,
+    "draw": 3.95,
+    "away": 1.73,
+    "handicap": 1.0
+   },
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球胜",
+    "prob": null,
+    "hit": null
+   }
+  },
+  {
+   "match_id": "2026-10-23-003",
+   "day": "2026-10-23",
+   "code": "周五003",
+   "competition": "瑞超",
+   "kickoff": "2026-10-24 01:00",
+   "home": {
+    "name": "埃夫斯堡",
+    "league": "瑞超"
+   },
+   "away": {
+    "name": "马尔默",
+    "league": "瑞超"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.477,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.27,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.253,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.13,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.089,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.079,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.076,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.067,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.059,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.209,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.148,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.076,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.293,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.171,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.15,
+     "rank": 3
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.778,
+    "lam_away": 1.361,
+    "lam_total": 3.139,
+    "upset_prob": 58.1,
+    "upset_level": "高",
+    "rq_best_ev": 1.005,
+    "rq_best_odds": 1.75,
+    "data_n": {
+     "home": 16,
+     "away": 20
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 12.8
+    },
+    "htft_half": {
+     "home": 36.7,
+     "draw": 37.8,
+     "away": 25.5
+    },
+    "htft_cells": {
+     "主/主": 29.3,
+     "主/平": 5.3,
+     "主/客": 2.2,
+     "平/主": 15.0,
+     "平/平": 12.6,
+     "平/客": 10.2,
+     "客/主": 3.1,
+     "客/平": 5.3,
+     "客/客": 17.1
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      }
+     ]
+    }
+   },
+   "odds": {
+    "home": 1.85,
+    "draw": 3.55,
+    "away": 3.25,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   },
+   "h2h": [
+    {
+     "date": "2026-07-26",
+     "competition": "瑞超",
+     "home": "埃夫斯堡",
+     "away": "马尔默",
+     "score": "2-1"
+    }
+   ]
+  },
+  {
+   "match_id": "2026-10-23-004",
+   "day": "2026-10-23",
+   "code": "周五004",
+   "competition": "荷甲",
+   "kickoff": "2026-10-24 02:00",
+   "home": {
+    "name": "前进之鹰",
+    "league": "荷甲"
+   },
+   "away": {
+    "name": "斯达",
+    "league": "荷甲"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.616,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.233,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.151,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.1,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.094,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.08,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.079,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "3-1",
+     "prob": 0.075,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.067,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.173,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.155,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.1,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.398,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.17,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.113,
+     "rank": 3
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 2.276,
+    "lam_away": 1.243,
+    "lam_total": 3.519,
+    "upset_prob": 39.9,
+    "upset_level": "低",
+    "rq_best_ev": 1.11,
+    "rq_best_odds": 2.55,
+    "data_n": {
+     "home": 14,
+     "away": 25
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 11.7
+    },
+    "htft_half": {
+     "home": 46.2,
+     "draw": 34.1,
+     "away": 19.8
+    },
+    "htft_cells": {
+     "主/主": 39.8,
+     "主/平": 4.7,
+     "主/客": 1.7,
+     "平/主": 17.0,
+     "平/平": 10.1,
+     "平/客": 6.9,
+     "客/主": 3.8,
+     "客/平": 4.7,
+     "客/客": 11.3
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 5
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 5
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 3,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      }
+     ]
+    },
+    "injuries": {
+     "home": {
+      "league": "荷甲",
+      "out": [
+       {
+        "name": "Eus Waayers",
+        "reason": "伤情未明",
+        "since": "2026-09-18"
+       },
+       {
+        "name": "Pim Saathof",
+        "reason": "膝伤",
+        "since": "2025-05-31",
+        "back": "2027-01-01"
+       }
+      ],
+      "doubtful": []
+     },
+     "away": null
+    }
+   },
+   "odds": {
+    "home": 1.38,
+    "draw": 4.42,
+    "away": 5.6,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   },
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Eus Waayers",
+     "reason": "伤情未明",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Pim Saathof",
+     "reason": "膝伤",
+     "status": "out"
+    }
+   ],
+   "h2h": [
+    {
+     "date": "2026-02-05",
+     "competition": "荷兰杯",
+     "home": "前进之鹰",
+     "away": "斯达",
+     "score": "1-2"
+    },
+    {
+     "date": "2026-02-08",
+     "competition": "荷甲",
+     "home": "斯达",
+     "away": "前进之鹰",
+     "score": "1-1"
+    }
+   ]
+  },
+  {
+   "match_id": "2026-10-23-005",
+   "day": "2026-10-23",
+   "code": "周五005",
+   "competition": "荷乙",
+   "kickoff": "2026-10-24 02:00",
+   "home": {
+    "name": "布雷达",
+    "league": "荷乙"
+   },
+   "away": {
+    "name": "赫拉克勒",
+    "league": "荷乙"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.373,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.335,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.292,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.121,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.094,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.077,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.072,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.05,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "1-3",
+     "prob": 0.046,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.149,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.14,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.121,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.24,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.233,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "平/客",
+     "prob": 0.123,
+     "rank": 3
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.747,
+    "lam_away": 1.773,
+    "lam_total": 3.52,
+    "upset_prob": 61.1,
+    "upset_level": "高",
+    "rq_best_ev": 0.923,
+    "rq_best_odds": 1.46,
+    "data_n": {
+     "home": 10,
+     "away": 10
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 10.1
+    },
+    "htft_half": {
+     "home": 31.9,
+     "draw": 35.5,
+     "away": 32.6
+    },
+    "htft_cells": {
+     "主/主": 23.3,
+     "主/平": 5.5,
+     "主/客": 3.1,
+     "平/主": 12.0,
+     "平/平": 11.2,
+     "平/客": 12.3,
+     "客/主": 3.0,
+     "客/平": 5.5,
+     "客/客": 24.0
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "2.33",
+      "平": "3.65",
+      "负": "2.35"
+     },
+     "rq": [
+      {
+       "handicap": "-1",
+       "胜": "4.75",
+       "平": "4.3",
+       "负": "1.46"
+      }
+     ],
+     "score": {
+      "1:0": "13",
+      "2:0": "15.5",
+      "2:1": "8",
+      "3:0": "24",
+      "3:1": "16",
+      "3:2": "18",
+      "4:0": "50",
+      "4:1": "31",
+      "4:2": "40",
+      "5:0": "110",
+      "5:1": "85",
+      "5:2": "90",
+      "胜其他": "30",
+      "0:0": "23",
+      "1:1": "7.75",
+      "2:2": "10.5",
+      "3:3": "29",
+      "平其他": "110",
+      "0:1": "14",
+      "0:2": "16",
+      "1:2": "8.5",
+      "0:3": "26",
+      "1:3": "17",
+      "2:3": "19",
+      "0:4": "55",
+      "1:4": "37",
+      "2:4": "45",
+      "0:5": "120",
+      "1:5": "90",
+      "2:5": "120",
+      "负其他": "31"
+     },
+     "goals": {
+      "0": "23",
+      "1": "7.5",
+      "2": "4.3",
+      "3": "3.4",
+      "4": "4.4",
+      "5": "6.5",
+      "6": "10.5",
+      "7+": "13.5"
+     },
+     "htft": {
+      "胜胜": "3.65",
+      "胜平": "13",
+      "胜负": "22",
+      "平胜": "6",
+      "平平": "6.5",
+      "平负": "6.5",
+      "负胜": "19",
+      "负平": "13",
+      "负负": "3.95"
+     },
+     "kickoff": ""
+    }
+   },
+   "odds": {
+    "home": 2.33,
+    "draw": 3.65,
+    "away": 2.35,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   }
+  },
+  {
+   "match_id": "2026-10-23-006",
+   "day": "2026-10-23",
+   "code": "周五006",
+   "competition": "德甲",
+   "kickoff": "2026-10-24 02:30",
+   "home": {
+    "name": "斯图加特",
+    "league": "德甲",
+    "rank": 13,
+    "points": 6,
+    "played": 6,
+    "win": 2,
+    "draw": 0,
+    "loss": 4
+   },
+   "away": {
+    "name": "门兴",
+    "league": "德甲",
+    "rank": 18,
+    "points": 0,
+    "played": 6,
+    "win": 0,
+    "draw": 0,
+    "loss": 6
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.745,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.178,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.077,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.116,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.101,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.1,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.089,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.082,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "3-1",
+     "prob": 0.08,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.198,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.189,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.101,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.493,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.198,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.097,
+     "rank": 3
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 2.397,
+    "lam_away": 0.82,
+    "lam_total": 3.217,
+    "upset_prob": 32.4,
+    "upset_level": "低",
+    "rq_best_ev": 1.385,
+    "rq_best_odds": 3.45,
+    "data_n": {
+     "home": 25,
+     "away": 23
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 11.3
+    },
+    "htft_half": {
+     "home": 53.6,
+     "draw": 33.8,
+     "away": 12.6
+    },
+    "htft_cells": {
+     "主/主": 49.3,
+     "主/平": 3.5,
+     "主/客": 0.8,
+     "平/主": 19.8,
+     "平/平": 9.7,
+     "平/客": 4.3,
+     "客/主": 3.2,
+     "客/平": 3.5,
+     "客/客": 5.9
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 5
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 4
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 5
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 4
+      },
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 3,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 5
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      }
+     ]
+    },
+    "injuries": {
+     "home": {
+      "league": "德甲",
+      "out": [
+       {
+        "name": "Diehl",
+        "reason": "大腿"
+       },
+       {
+        "name": "Malanga",
+        "reason": "腹肌"
+       },
+       {
+        "name": "Nartey",
+        "reason": "肌肉"
+       },
+       {
+        "name": "Tomás",
+        "reason": "肌肉"
+       },
+       {
+        "name": "Vagnoman",
+        "reason": "腿筋"
+       },
+       {
+        "name": "Zagadou",
+        "reason": "腿筋"
+       }
+      ],
+      "doubtful": []
+     },
+     "away": {
+      "league": "德甲",
+      "out": [
+       {
+        "name": "Castrop",
+        "reason": "肩"
+       },
+       {
+        "name": "Honorat",
+        "reason": "肌肉"
+       },
+       {
+        "name": "Itakura",
+        "reason": "肌肉"
+       },
+       {
+        "name": "Kleindienst",
+        "reason": "肌肉"
+       },
+       {
+        "name": "Leopold",
+        "reason": "膝"
+       },
+       {
+        "name": "Leszczyński",
+        "reason": "膝"
+       },
+       {
+        "name": "Lidberg",
+        "reason": "肌肉"
+       }
+      ],
+      "doubtful": []
+     }
+    },
+    "weather": {
+     "t_min": 9.6,
+     "t_max": 14.3,
+     "pop": 15,
+     "rain": 0.2,
+     "wind": 21.3,
+     "grade": "ok",
+     "city": "斯图加特"
+    }
+   },
+   "odds": {
+    "home": 1.21,
+    "draw": 5.78,
+    "away": 7.7,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   },
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Diehl",
+     "reason": "大腿",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Malanga",
+     "reason": "腹肌",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Nartey",
+     "reason": "肌肉",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Tomás",
+     "reason": "肌肉",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Vagnoman",
+     "reason": "腿筋",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Zagadou",
+     "reason": "腿筋",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Castrop",
+     "reason": "肩",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Honorat",
+     "reason": "肌肉",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Itakura",
+     "reason": "肌肉",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Kleindienst",
+     "reason": "肌肉",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Leopold",
+     "reason": "膝",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Leszczyński",
+     "reason": "膝",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Lidberg",
+     "reason": "肌肉",
+     "status": "out"
+    }
+   ],
+   "h2h": [
+    {
+     "date": "2026-01-25",
+     "competition": "德甲",
+     "home": "斯图加特",
+     "away": "门兴",
+     "score": "3-0"
+    }
+   ]
+  },
+  {
+   "match_id": "2026-10-23-007",
+   "day": "2026-10-23",
+   "code": "周五007",
+   "competition": "意甲",
+   "kickoff": "2026-10-24 02:45",
+   "home": {
+    "name": "都灵",
+    "league": "意甲",
+    "rank": 10,
+    "points": 10,
+    "played": 7,
+    "win": 3,
+    "draw": 1,
+    "loss": 3
+   },
+   "away": {
+    "name": "蒙扎",
+    "league": "意甲",
+    "rank": 14,
+    "points": 7,
+    "played": 7,
+    "win": 2,
+    "draw": 1,
+    "loss": 4
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.442,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.291,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.267,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.116,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.093,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.078,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.066,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.066,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.055,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.159,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.121,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.116,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.303,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.173,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.147,
+     "rank": 3
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.93,
+    "lam_away": 1.475,
+    "lam_total": 3.405,
+    "upset_prob": 58.3,
+    "upset_level": "高",
+    "rq_best_ev": 0.998,
+    "rq_best_odds": 1.7,
+    "data_n": {
+     "home": 25,
+     "away": 8
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 13.3
+    },
+    "htft_half": {
+     "home": 38.0,
+     "draw": 36.0,
+     "away": 26.1
+    },
+    "htft_cells": {
+     "主/主": 30.3,
+     "主/平": 5.3,
+     "主/客": 2.4,
+     "平/主": 14.7,
+     "平/平": 11.4,
+     "平/客": 9.9,
+     "客/主": 3.4,
+     "客/平": 5.3,
+     "客/客": 17.3
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 6
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 6
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "1.89",
+      "平": "3.3",
+      "负": "3.37"
+     },
+     "rq": [
+      {
+       "handicap": "-1",
+       "胜": "3.8",
+       "平": "3.6",
+       "负": "1.7"
+      }
+     ],
+     "score": {
+      "1:0": "7.25",
+      "2:0": "9",
+      "2:1": "7.25",
+      "3:0": "16",
+      "3:1": "14",
+      "3:2": "22",
+      "4:0": "40",
+      "4:1": "40",
+      "4:2": "60",
+      "5:0": "120",
+      "5:1": "120",
+      "5:2": "175",
+      "胜其他": "60",
+      "0:0": "12",
+      "1:1": "6.2",
+      "2:2": "12.5",
+      "3:3": "60",
+      "平其他": "350",
+      "0:1": "10",
+      "0:2": "18",
+      "1:2": "9.5",
+      "0:3": "50",
+      "1:3": "27",
+      "2:3": "30",
+      "0:4": "150",
+      "1:4": "90",
+      "2:4": "100",
+      "0:5": "500",
+      "1:5": "350",
+      "2:5": "500",
+      "负其他": "150"
+     },
+     "goals": {
+      "0": "12",
+      "1": "4.7",
+      "2": "3.45",
+      "3": "3.65",
+      "4": "5.3",
+      "5": "9",
+      "6": "18",
+      "7+": "26"
+     },
+     "htft": {
+      "胜胜": "3.05",
+      "胜平": "14",
+      "胜负": "30",
+      "平胜": "4.55",
+      "平平": "5.8",
+      "平负": "7.5",
+      "负胜": "22",
+      "负平": "14",
+      "负负": "5.6"
+     },
+     "kickoff": ""
+    },
+    "weather": {
+     "t_min": 9.2,
+     "t_max": 13.1,
+     "pop": 8,
+     "rain": 0.0,
+     "wind": 4.0,
+     "grade": "ok",
+     "city": "都灵"
+    }
+   },
+   "odds": {
+    "home": 1.89,
+    "draw": 3.3,
+    "away": 3.37,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   },
+   "h2h": [
+    {
+     "date": "2026-09-01",
+     "competition": "意大利杯",
+     "home": "蒙扎",
+     "away": "都灵",
+     "score": "1-0"
+    }
+   ]
+  },
+  {
+   "match_id": "2026-10-23-008",
+   "day": "2026-10-23",
+   "code": "周五008",
+   "competition": "法甲",
+   "kickoff": "2026-10-24 02:45",
+   "home": {
+    "name": "布雷斯特",
+    "league": "法甲",
+    "rank": 10,
+    "points": 9,
+    "played": 7,
+    "win": 2,
+    "draw": 3,
+    "loss": 2
+   },
+   "away": {
+    "name": "尼斯",
+    "league": "法甲",
+    "rank": 13,
+    "points": 8,
+    "played": 7,
+    "win": 2,
+    "draw": 2,
+    "loss": 3
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.402,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.31,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.288,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.136,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.089,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.089,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.087,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.069,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.063,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.158,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.136,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "0 球",
+     "prob": 0.089,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.252,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.186,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.153,
+     "rank": 3
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.462,
+    "lam_away": 1.245,
+    "lam_total": 2.707,
+    "upset_prob": 63.9,
+    "upset_level": "高",
+    "rq_best_ev": 0.993,
+    "rq_best_odds": 1.56,
+    "data_n": {
+     "home": 9,
+     "away": 23
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 11.0
+    },
+    "htft_half": {
+     "home": 32.3,
+     "draw": 41.5,
+     "away": 26.2
+    },
+    "htft_cells": {
+     "主/主": 25.2,
+     "主/平": 5.2,
+     "主/客": 2.0,
+     "平/主": 14.6,
+     "平/平": 15.3,
+     "平/客": 11.7,
+     "客/主": 2.4,
+     "客/平": 5.2,
+     "客/客": 18.6
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ]
+    },
+    "weather": {
+     "t_min": 7.7,
+     "t_max": 11.9,
+     "pop": 0,
+     "rain": 0.0,
+     "wind": 6.8,
+     "grade": "ok",
+     "city": "布雷斯特"
+    }
+   },
+   "odds": {
+    "home": 2.07,
+    "draw": 3.35,
+    "away": 2.88,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   },
+   "h2h": [
+    {
+     "date": "2026-02-01",
+     "competition": "法甲",
+     "home": "布雷斯特",
+     "away": "尼斯",
+     "score": "2-2"
+    }
+   ]
+  },
+  {
+   "match_id": "2026-10-23-009",
+   "day": "2026-10-23",
+   "code": "周五009",
+   "competition": "英超",
+   "kickoff": "2026-10-24 03:00",
+   "home": {
+    "name": "伊普斯",
+    "league": "英超",
+    "rank": 10,
+    "points": 9,
+    "played": 7,
+    "win": 3,
+    "draw": 0,
+    "loss": 4
+   },
+   "away": {
+    "name": "诺丁汉",
+    "league": "英超",
+    "rank": 19,
+    "points": 5,
+    "played": 7,
+    "win": 1,
+    "draw": 2,
+    "loss": 4
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.349,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.347,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.304,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.156,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.09,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.082,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.075,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.072,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.067,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.156,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.142,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.09,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.246,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.203,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.139,
+     "rank": 3
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.395,
+    "lam_away": 1.54,
+    "lam_total": 2.935,
+    "upset_prob": 61.1,
+    "upset_level": "高",
+    "rq_best_ev": 0.926,
+    "rq_best_odds": 1.54,
+    "data_n": {
+     "home": 20,
+     "away": 25
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 13.2
+    },
+    "htft_half": {
+     "home": 28.2,
+     "draw": 39.6,
+     "away": 32.2
+    },
+    "htft_cells": {
+     "主/主": 20.3,
+     "主/平": 5.3,
+     "主/客": 2.6,
+     "平/主": 12.0,
+     "平/平": 13.9,
+     "平/客": 13.8,
+     "客/主": 2.3,
+     "客/平": 5.3,
+     "客/客": 24.6
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 4
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 5
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 5
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 5,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "2.86",
+      "平": "3.25",
+      "负": "2.12"
+     },
+     "rq": [
+      {
+       "handicap": "+1",
+       "胜": "1.54",
+       "平": "3.9",
+       "负": "4.5"
+      }
+     ],
+     "score": {
+      "1:0": "10.5",
+      "2:0": "15",
+      "2:1": "8.5",
+      "3:0": "32",
+      "3:1": "20",
+      "3:2": "25",
+      "4:0": "90",
+      "4:1": "60",
+      "4:2": "80",
+      "5:0": "400",
+      "5:1": "200",
+      "5:2": "250",
+      "胜其他": "80",
+      "0:0": "14",
+      "1:1": "6",
+      "2:2": "10.5",
+      "3:3": "45",
+      "平其他": "250",
+      "0:1": "9.5",
+      "0:2": "12",
+      "1:2": "7.5",
+      "0:3": "21",
+      "1:3": "15",
+      "2:3": "21",
+      "0:4": "50",
+      "1:4": "40",
+      "2:4": "60",
+      "0:5": "175",
+      "1:5": "100",
+      "2:5": "200",
+      "负其他": "55"
+     },
+     "goals": {
+      "0": "14",
+      "1": "5.5",
+      "2": "3.45",
+      "3": "3.4",
+      "4": "5",
+      "5": "8.5",
+      "6": "17",
+      "7+": "25"
+     },
+     "htft": {
+      "胜胜": "4.8",
+      "胜平": "13.5",
+      "胜负": "22",
+      "平胜": "6.5",
+      "平平": "5.3",
+      "平负": "5.2",
+      "负胜": "28",
+      "负平": "13.5",
+      "负负": "3.55"
+     },
+     "kickoff": ""
+    }
+   },
+   "odds": {
+    "home": 2.86,
+    "draw": 3.25,
+    "away": 2.12,
+    "handicap": 1.0
+   },
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球胜",
+    "prob": null,
+    "hit": null
+   }
+  },
+  {
+   "match_id": "2026-10-23-010",
+   "day": "2026-10-23",
+   "code": "周五010",
+   "competition": "英冠",
+   "kickoff": "2026-10-24 03:00",
+   "home": {
+    "name": "博尔顿",
+    "league": "英冠"
+   },
+   "away": {
+    "name": "米堡",
+    "league": "英冠"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.504,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.261,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.235,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.099,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.098,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.086,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-3",
+     "prob": 0.065,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.055,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.052,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.154,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.151,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.15,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.349,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.158,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "平/客",
+     "prob": 0.147,
+     "rank": 3
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.656,
+    "lam_away": 2.372,
+    "lam_total": 4.027,
+    "upset_prob": 44.6,
+    "upset_level": "中",
+    "rq_best_ev": 1.22,
+    "rq_best_odds": 2.4,
+    "data_n": {
+     "home": 3,
+     "away": 20
+    },
+    "headline": {
+     "score": "1:2",
+     "prob": 12.1
+    },
+    "htft_half": {
+     "home": 25.2,
+     "draw": 32.1,
+     "away": 42.7
+    },
+    "htft_cells": {
+     "主/主": 15.8,
+     "主/平": 5.2,
+     "主/客": 4.2,
+     "平/主": 8.4,
+     "平/平": 9.1,
+     "平/客": 14.7,
+     "客/主": 2.6,
+     "客/平": 5.2,
+     "客/客": 34.9
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 3
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "5.15",
+      "平": "4.35",
+      "负": "1.42"
+     },
+     "rq": [
+      {
+       "handicap": "+1",
+       "胜": "2.4",
+       "平": "3.85",
+       "负": "2.21"
+      }
+     ],
+     "score": {
+      "1:0": "19",
+      "2:0": "32",
+      "2:1": "13.5",
+      "3:0": "90",
+      "3:1": "38",
+      "3:2": "35",
+      "4:0": "300",
+      "4:1": "150",
+      "4:2": "100",
+      "5:0": "700",
+      "5:1": "500",
+      "5:2": "500",
+      "胜其他": "100",
+      "0:0": "23",
+      "1:1": "8.25",
+      "2:2": "12",
+      "3:3": "40",
+      "平其他": "175",
+      "0:1": "9.75",
+      "0:2": "8.5",
+      "1:2": "6.75",
+      "0:3": "11.5",
+      "1:3": "9.5",
+      "2:3": "16",
+      "0:4": "20",
+      "1:4": "18",
+      "2:4": "32",
+      "0:5": "50",
+      "1:5": "40",
+      "2:5": "75",
+      "负其他": "19"
+     },
+     "goals": {
+      "0": "23",
+      "1": "7.4",
+      "2": "4.45",
+      "3": "3.2",
+      "4": "4.15",
+      "5": "6.75",
+      "6": "12",
+      "7+": "15"
+     },
+     "htft": {
+      "胜胜": "9.25",
+      "胜平": "17",
+      "胜负": "19",
+      "平胜": "12.5",
+      "平平": "7.3",
+      "平负": "4.3",
+      "负胜": "38",
+      "负平": "17",
+      "负负": "2"
+     },
+     "kickoff": ""
+    }
+   },
+   "odds": {
+    "home": 5.15,
+    "draw": 4.35,
+    "away": 1.42,
+    "handicap": 1.0
+   },
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球胜",
+    "prob": null,
+    "hit": null
+   }
+  },
+  {
+   "match_id": "2026-10-23-011",
+   "day": "2026-10-23",
+   "code": "周五011",
+   "competition": "西甲",
+   "kickoff": "2026-10-24 03:00",
+   "home": {
+    "name": "阿拉维斯",
+    "league": "西甲",
+    "rank": 7,
+    "points": 11,
+    "played": 9,
+    "win": 3,
+    "draw": 2,
+    "loss": 4
+   },
+   "away": {
+    "name": "马拉加",
+    "league": "西甲",
+    "rank": 20,
+    "points": 4,
+    "played": 9,
+    "win": 0,
+    "draw": 4,
+    "loss": 5
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.631,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.245,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.123,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.127,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.127,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.108,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.106,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.069,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "3-1",
+     "prob": 0.063,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.233,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.177,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.127,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.375,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.187,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.137,
+     "rank": 3
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.848,
+    "lam_away": 0.929,
+    "lam_total": 2.777,
+    "upset_prob": 44.8,
+    "upset_level": "中",
+    "rq_best_ev": 0.955,
+    "rq_best_odds": 2.2,
+    "data_n": {
+     "home": 25,
+     "away": 9
+    },
+    "headline": {
+     "score": "1:0",
+     "prob": 14.0
+    },
+    "htft_half": {
+     "home": 43.1,
+     "draw": 39.5,
+     "away": 17.4
+    },
+    "htft_cells": {
+     "主/主": 37.5,
+     "主/平": 4.4,
+     "主/客": 1.2,
+     "平/主": 18.7,
+     "平/平": 13.7,
+     "平/客": 7.2,
+     "客/主": 2.8,
+     "客/平": 4.4,
+     "客/客": 10.2
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 5
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "1.52",
+      "平": "3.6",
+      "负": "5.15"
+     },
+     "rq": [
+      {
+       "handicap": "-1",
+       "胜": "2.8",
+       "平": "3.15",
+       "负": "2.2"
+      }
+     ],
+     "score": {
+      "1:0": "6",
+      "2:0": "6.5",
+      "2:1": "7",
+      "3:0": "11",
+      "3:1": "12",
+      "3:2": "27",
+      "4:0": "25",
+      "4:1": "30",
+      "4:2": "75",
+      "5:0": "90",
+      "5:1": "90",
+      "5:2": "150",
+      "胜其他": "50",
+      "0:0": "10.5",
+      "1:1": "6.25",
+      "2:2": "15",
+      "3:3": "80",
+      "平其他": "500",
+      "0:1": "12",
+      "0:2": "29",
+      "1:2": "14",
+      "0:3": "75",
+      "1:3": "50",
+      "2:3": "50",
+      "0:4": "300",
+      "1:4": "200",
+      "2:4": "300",
+      "0:5": "600",
+      "1:5": "500",
+      "2:5": "500",
+      "负其他": "300"
+     },
+     "goals": {
+      "0": "10.5",
+      "1": "4.3",
+      "2": "3.15",
+      "3": "3.6",
+      "4": "6",
+      "5": "11.5",
+      "6": "23",
+      "7+": "30"
+     },
+     "htft": {
+      "胜胜": "2.5",
+      "胜平": "16",
+      "胜负": "40",
+      "平胜": "3.9",
+      "平平": "5",
+      "平负": "11",
+      "负胜": "22",
+      "负平": "16",
+      "负负": "9"
+     },
+     "kickoff": ""
+    },
+    "weather": {
+     "t_min": 10.1,
+     "t_max": 13.5,
+     "pop": 0,
+     "rain": 0.0,
+     "wind": 18.6,
+     "grade": "ok",
+     "city": "维多利亚"
+    }
+   },
+   "odds": {
+    "home": 1.52,
+    "draw": 3.6,
+    "away": 5.15,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   }
+  },
+  {
+   "match_id": "2026-10-23-012",
+   "day": "2026-10-23",
+   "code": "周五012",
+   "competition": "葡超",
+   "kickoff": "2026-10-24 03:45",
+   "home": {
+    "name": "吉马良斯",
+    "league": "葡超"
+   },
+   "away": {
+    "name": "马里迪莫",
+    "league": "葡超"
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.589,
+     "rank": 1
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.268,
+     "rank": 2
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.144,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.111,
+     "rank": 1
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.109,
+     "rank": 2
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.105,
+     "rank": 3
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.096,
+     "rank": 4
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.076,
+     "rank": 5
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.067,
+     "rank": 6
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.207,
+     "rank": 1
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.172,
+     "rank": 2
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.109,
+     "rank": 3
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.37,
+     "rank": 1
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.184,
+     "rank": 2
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.135,
+     "rank": 3
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "extras": {
+    "lam_home": 1.852,
+    "lam_away": 0.962,
+    "lam_total": 2.814,
+    "upset_prob": 54.0,
+    "upset_level": "高",
+    "rq_best_ev": 1.308,
+    "rq_best_odds": 2.25,
+    "data_n": {
+     "home": 11,
+     "away": 5
+    },
+    "headline": {
+     "score": "1:0",
+     "prob": 15.0
+    },
+    "htft_half": {
+     "home": 42.7,
+     "draw": 39.3,
+     "away": 18.0
+    },
+    "htft_cells": {
+     "主/主": 37.0,
+     "主/平": 4.5,
+     "主/客": 1.3,
+     "平/主": 18.4,
+     "平/平": 13.5,
+     "平/客": 7.4,
+     "客/主": 2.9,
+     "客/平": 4.5,
+     "客/客": 10.6
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 5
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 5
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "1.49",
+      "平": "3.65",
+      "负": "5.45"
+     },
+     "rq": [
+      {
+       "handicap": "-1",
+       "胜": "2.76",
+       "平": "3.1",
+       "负": "2.25"
+      }
+     ],
+     "score": {
+      "1:0": "6",
+      "2:0": "6.8",
+      "2:1": "6.5",
+      "3:0": "11",
+      "3:1": "12",
+      "3:2": "26",
+      "4:0": "24",
+      "4:1": "29",
+      "4:2": "60",
+      "5:0": "80",
+      "5:1": "80",
+      "5:2": "200",
+      "胜其他": "50",
+      "0:0": "11",
+      "1:1": "6.5",
+      "2:2": "16",
+      "3:3": "90",
+      "平其他": "550",
+      "0:1": "11.5",
+      "0:2": "27",
+      "1:2": "13",
+      "0:3": "90",
+      "1:3": "50",
+      "2:3": "60",
+      "0:4": "400",
+      "1:4": "250",
+      "2:4": "350",
+      "0:5": "850",
+      "1:5": "750",
+      "2:5": "750",
+      "负其他": "400"
+     },
+     "goals": {
+      "0": "11",
+      "1": "4.6",
+      "2": "3.15",
+      "3": "3.55",
+      "4": "5.7",
+      "5": "11",
+      "6": "21",
+      "7+": "30"
+     },
+     "htft": {
+      "胜胜": "2.15",
+      "胜平": "18",
+      "胜负": "50",
+      "平胜": "4.2",
+      "平平": "5.6",
+      "平负": "11.5",
+      "负胜": "25",
+      "负平": "18",
+      "负负": "8.75"
+     },
+     "kickoff": ""
+    }
+   },
+   "odds": {
+    "home": 1.49,
+    "draw": 3.65,
+    "away": 5.45,
+    "handicap": -1.0
+   },
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负",
+    "prob": null,
+    "hit": null
+   }
+  }
+ ]
+}

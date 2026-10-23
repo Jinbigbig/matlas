@@ -1330,51 +1330,55 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         + "</div>"
     )
 
-    # ---- 洞察总结：把上方各板块数字聚成一句话结论 ----
-    insights: list[str] = []
-    if settled:
-        insights.append(
-            f'🎯 已结算 <b>{len(settled)}</b> 场，方向命中 <b>{hit}</b> 场，'
-            f'整体命中率 <span class="pct"><b>{acc:.1f}%</b></span>'
-        )
-    dim_ok = [(zh, _dim(name)[0] / _dim(name)[1] * 100, _dim(name)[1])
-              for name, zh in dims if _dim(name)[1] >= 5]
-    if dim_ok:
-        best = max(dim_ok, key=lambda x: x[1])
-        worst = min(dim_ok, key=lambda x: x[1])
-        insights.append(f'📌 四维最稳：「{best[0]}」<span class="pct"><b>{best[1]:.1f}%</b></span>（{best[2]} 场）')
-        if best is not worst and worst[0] != best[0]:
-            insights.append(f'⚠️ 待提升：「{worst[0]}」<span class="pct"><b>{worst[1]:.1f}%</b></span>（{worst[2]} 场）')
-    by_day_acc = []
+    # ---- 洞察总结：每日命中率线图 + 维度横条 + 结论 chips（居中） ----
+    day_acc = []
     for d in ordered:
         dd = [m for m in d.matches if m.result and m.result.full_score]
         if dd:
-            by_day_acc.append((sum(1 for m in dd if m.result.direction_hit), len(dd)))
-    if len(by_day_acc) >= 6:
-        rh = sum(x[0] for x in by_day_acc[-5:])
-        rn = sum(x[1] for x in by_day_acc[-5:])
-        ph = sum(x[0] for x in by_day_acc[:-5])
-        pn = sum(x[1] for x in by_day_acc[:-5])
-        ra, pa = rh / rn * 100, ph / pn * 100
-        trend = "↗ 走高" if ra > pa + 2 else ("↘ 走低" if ra < pa - 2 else "→ 持平")
-        insights.append(
-            f'📈 近 5 个比赛日 <span class="pct"><b>{ra:.1f}%</b></span>'
-            f'（此前 <span class="pct"><b>{pa:.1f}%</b></span>）{trend}'
-        )
+            day_acc.append((d.date[5:], sum(1 for m in dd if m.result.direction_hit) / len(dd) * 100, len(dd)))
+    dim_ok = [(zh, _dim(name)[0] / _dim(name)[1] * 100, _dim(name)[1])
+              for name, zh in dims if _dim(name)[1] >= 5]
     by_lg_acc: dict[str, tuple[int, int]] = {}
     for m in settled:
         if m.competition:
             h2, n2 = by_lg_acc.get(m.competition, (0, 0))
             by_lg_acc[m.competition] = (h2 + (1 if m.result.direction_hit else 0), n2 + 1)
     lg_ok = [(k, v[0] / v[1] * 100, v[1]) for k, v in by_lg_acc.items() if v[1] >= 5]
+
+    viz: list[str] = []
+    if len(day_acc) >= 2:
+        trend = C.line_svg(
+            [x[0] for x in day_acc], [x[1] for x in day_acc],
+            baseline=33.3, baseline_label="随机基线 33.3",
+        )
+        if trend:
+            viz.append('<div class="insight-block"><h4>每日命中率走势</h4>' + trend + "</div>")
+    if dim_ok:
+        bars = "".join(
+            f'<div class="hbar-row"><span class="hbar-label">{C.esc(zh)}</span>'
+            f'<span class="hbar-track"><span class="hbar-fill" style="width:{p:.1f}%"></span></span>'
+            f'<span class="hbar-num"><span class="pct">{p:.1f}%</span></span></div>'
+            for zh, p, _n in dim_ok
+        )
+        viz.append('<div class="insight-block"><h4>单项维度准确率</h4>' + bars + "</div>")
+    chips: list[str] = []
+    if settled:
+        chips.append(
+            f'🎯 已结算 <b>{len(settled)}</b> 场 · 命中 <b>{hit}</b> 场 · '
+            f'整体 <span class="pct"><b>{acc:.1f}%</b></span>'
+        )
     if lg_ok:
         blg = max(lg_ok, key=lambda x: x[1])
-        insights.append(f'🏆 表现最佳赛事：「{C.esc(blg[0])}」<span class="pct"><b>{blg[1]:.1f}%</b></span>（{blg[2]} 场）')
+        chips.append(f'🏆 表现最佳赛事：「{C.esc(blg[0])}」<span class="pct"><b>{blg[1]:.1f}%</b></span>（{blg[2]} 场）')
     insight_box = ""
-    if insights:
+    if viz or chips:
+        chip_html = (
+            '<div class="insight-chips">' + "".join(f'<span class="insight-chip">{x}</span>' for x in chips) + "</div>"
+            if chips else ""
+        )
         insight_box = (
             '<div class="stats-box insight-box"><h3>🧾 洞察总结</h3>'
-            '<ul class="insight-list">' + "".join(f"<li>{x}</li>" for x in insights) + "</ul></div>"
+            '<div class="insight-viz">' + "".join(viz) + chip_html + "</div></div>"
         )
 
     body = (

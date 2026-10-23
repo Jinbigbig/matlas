@@ -366,7 +366,59 @@ def momentum_svg(
     return legend + "".join(parts)
 
 
-# ---------------------------------------------------------------- 主推 / 风险 / 对照
+def line_svg(
+    labels: Sequence[str],
+    values: Sequence[float],
+    *,
+    w: int = 620,
+    h: int = 200,
+    baseline: float | None = None,
+    baseline_label: str = "",
+    color: str = "#2563eb",
+) -> str:
+    """单序列折线走势图（纯 SVG，居中）。标签/数值不带 % 号，调用方自行处理单位。"""
+    n = len(values)
+    if n < 2 or len(labels) != n:
+        return ""
+    pad_l, pad_r, pad_t, pad_b = 38, 12, 12, 26
+
+    def _x(i: int) -> float:
+        return pad_l + (w - pad_l - pad_r) * i / (n - 1)
+
+    def _y(v: float) -> float:
+        return pad_t + (h - pad_t - pad_b) * (1 - max(0.0, min(100.0, v)) / 100)
+
+    parts = [f'<svg class="itrend" viewBox="0 0 {w} {h}" role="img">']
+    for gv, gl in ((0, "0"), (50, "50"), (100, "100")):
+        y = _y(gv)
+        parts.append(
+            f'<line x1="{pad_l}" y1="{y:.1f}" x2="{w - pad_r}" y2="{y:.1f}" stroke="#e5e7eb" stroke-width="1"/>'
+        )
+        parts.append(
+            f'<text x="{pad_l - 6}" y="{y + 3.5:.1f}" text-anchor="end" font-size="10" fill="{MUTED}">{gl}</text>'
+        )
+    if baseline is not None:
+        y = _y(baseline)
+        parts.append(
+            f'<line x1="{pad_l}" y1="{y:.1f}" x2="{w - pad_r}" y2="{y:.1f}" stroke="#f59e0b" '
+            'stroke-width="1" stroke-dasharray="4 4"/>'
+        )
+        if baseline_label:
+            parts.append(
+                f'<text x="{w - pad_r}" y="{y - 4:.1f}" text-anchor="end" font-size="10" fill="#b45309">{esc(baseline_label)}</text>'
+            )
+    pts = " ".join(f"{_x(i):.1f},{_y(v):.1f}" for i, v in enumerate(values))
+    area = f"{_x(0):.1f},{_y(0):.1f} {pts} {_x(n - 1):.1f},{_y(0):.1f}"
+    parts.append(f'<polygon points="{area}" fill="rgba(37,99,235,.10)"/>')
+    parts.append(f'<polyline points="{pts}" fill="none" stroke="{color}" stroke-width="2"/>')
+    for i, v in enumerate(values):
+        parts.append(f'<circle cx="{_x(i):.1f}" cy="{_y(v):.1f}" r="3" fill="{color}"/>')
+    for i in sorted({0, n // 2, n - 1}):
+        parts.append(
+            f'<text x="{_x(i):.1f}" y="{h - 8}" text-anchor="middle" font-size="10" fill="{MUTED}">{esc(labels[i])}</text>'
+        )
+    parts.append("</svg>")
+    return "".join(parts)
 
 
 def main_pick_bar(text: str, *, tag: str = "", hit: bool | None = None) -> str:
