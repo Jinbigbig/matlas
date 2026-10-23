@@ -632,7 +632,8 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .bf-game { display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
   background: #fff; border: 1px solid #eef0f4; border-radius: 10px; padding: 9px 12px; }
 .bf-lg { flex: none; font-size: 11px; font-weight: 700; color: #fff;
-  padding: 3px 8px; border-radius: 6px; }
+  padding: 3px 0; border-radius: 6px; width: 64px; text-align: center;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; box-sizing: border-box; }
 .lg-ucl { background: #1d4ed8; } .lg-uel { background: #ea580c; }
 .lg-uecl { background: #059669; } .lg-lib { background: #0d9488; }
 .lg-j1 { background: #2563eb; } .lg-epl { background: #7c3aed; }
@@ -672,7 +673,7 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .cr-list { display: flex; flex-direction: column; gap: 6px; }
 .cr-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
   background: #f8fafc; border-radius: 8px; padding: 6px 10px; }
-.cr-vs { font-size: 13px; color: #111; min-width: 170px; }
+.cr-vs { font-size: 13px; color: #111; min-width: 190px; }
 .cr-vs i { font-style: normal; color: #94a3b8; font-size: 11px; margin: 0 4px; }
 .cr-in { font-size: 12px; color: #6b7280; white-space: nowrap; }
 .cr-n { width: 40px; text-align: center; font-size: 13px; padding: 4px 2px;
@@ -762,8 +763,6 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
   background: #f1f5f9; border-radius: 4px; padding: 2px 6px; white-space: nowrap; }
 .nb-time { font-size: 12px; color: #6b7280; white-space: nowrap; }
 .nb-time:empty { display: none; }
-.nb-mrow .bf-lg { width: 64px; text-align: center; padding: 3px 0;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; box-sizing: border-box; }
 .nb-vs { font-size: 13.5px; color: #111; min-width: 190px; }
 .nb-vs b { font-weight: 700; }
 .nb-vs i { font-style: normal; color: #94a3b8; font-size: 11px; margin: 0 6px; }
@@ -785,6 +784,9 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .nb-ex { display: none; margin-top: 10px; padding: 8px 12px; background: #f8fafc; border-radius: 8px; }
 .nb-ex-sec { display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap; padding: 6px 0; }
 .nb-ex-sec + .nb-ex-sec { border-top: 1px dashed #e8edf3; }
+.nb-ex-t { flex: none; font-size: 11px; color: #9ca3af; white-space: nowrap;
+  width: 52px; text-align: right; padding-top: 5px; box-sizing: border-box; }
+.nb-ex-sec .nb-cells { flex: 1; min-width: 0; }
 /* 投注篮 */
 .nb-basket { flex: none; width: 300px; background: #fff; border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06); padding: 14px; position: sticky; top: 70px; }
