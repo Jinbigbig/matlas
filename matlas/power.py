@@ -205,3 +205,82 @@ def compute(days: list[Day], history: list[dict] | None = None) -> int:
             if m.metrics_home and m.metrics_away:
                 drawn += 1
     return drawn
+
+
+# ---------------------------------------------------------------- 球队看板
+
+
+MIN_SAMPLE = 3      # 少于此场次的队，六维接近联赛均值，页面要标注样本不足
+SERIES_N = 10       # 球队页走势图窗口
+
+
+def _outcome(gf: int, ga: int) -> str:
+    return "w" if gf > ga else ("d" if gf == ga else "l")
+
+
+def team_board(days: list[Day]) -> dict[str, dict]:
+    """按球队聚合：最新六维 + 已结算样本 + 近 10 场赔率/让球走势。
+
+    六维直接取该队最后一次出场时的战力（窗口即近 10 场，与单场页同口径），
+    走势按该队视角取市场赔率与让球（客队让球值取反）。
+    """
+    ordered = sorted((d for d in days if d.matches), key=lambda d: d.date)
+    board: dict[str, dict] = {}
+
+    def slot(name: str, league: str) -> dict:
+        b = board.get(name)
+        if b is None:
+            b = board[name] = {
+                "name": name, "league": league,
+                "metrics": None, "matches": 0, "settled": 0,
+                "gf": 0, "ga": 0, "form": [], "series": [],
+            }
+        return b
+
+    for day in ordered:
+        for m in day.matches:
+            score = _parse_score(m.result.full_score) if m.result else None
+            for side, name in (("home", m.home.name), ("away", m.away.name)):
+                if not name:
+                    continue
+                b = slot(name, m.competition)
+                b["league"] = m.competition or b["league"]
+                b["matches"] += 1
+                met = m.metrics_home if side == "home" else m.metrics_away
+                if met is not None:
+                    b["metrics"] = met
+                if not score:
+                    continue
+                gf, ga = score if side == "home" else (score[1], score[0])
+                b["settled"] += 1
+                b["gf"] += gf
+                b["ga"] += ga
+                b["form"].append(_outcome(gf, ga))
+                # 市场端：该队获胜赔率 + 该队让球（负为让出）
+                price = hcp = None
+                if m.odds:
+                    price = m.odds.home if side == "home" else m.odds.away
+                    if m.odds.handicap is not None:
+                        hcp = m.odds.handicap if side == "home" else -m.odds.handicap
+                b["series"].append({
+                    "date": m.day, "code": m.code, "id": m.match_id,
+                    "opp": m.away.name if side == "home" else m.home.name,
+                    "ha": side, "gf": gf, "ga": ga,
+                    "res": _outcome(gf, ga),
+                    "price": round(price, 2) if isinstance(price, (int, float)) else None,
+                    "hcp": hcp,
+                })
+
+    for b in board.values():
+        n = b["settled"]
+        b["gf_avg"] = round(b["gf"] / n, 2) if n else 0.0
+        b["ga_avg"] = round(b["ga"] / n, 2) if n else 0.0
+        b["pts_rate"] = round(
+            100 * sum(3 if r in ("w",) else 1 if r == "d" else 0 for r in b["form"])
+            / (3 * len(b["form"])), 1) if b["form"] else 0.0
+        vals = b["metrics"].values() if b["metrics"] else []
+        b["power"] = round(sum(vals) / len(vals)) if vals else None
+        b["thin"] = b["matches"] < MIN_SAMPLE
+        b["series"] = b["series"][-SERIES_N:]
+        b["form"] = b["form"][-10:]
+    return board

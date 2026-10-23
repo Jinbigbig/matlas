@@ -36,6 +36,8 @@ LINEUPS_JSON = Path("C:/Users/Jin/jinbet/lineups.json")
 HKJC_JSON = Path("C:/Users/Jin/jinbet/hkjc.json")
 # 补充源：7M 联赛军情（港式中文）+ lineupstoday 联赛伤停汇总页（jinbet/_fetch_injuries_extra.py）
 INJURIES_EXTRA_JSON = Path("C:/Users/Jin/jinbet/injuries_extra.json")
+# 盘口时序（jinbet/_fetch_odds_ticks.py 每 2 小时累积）：同一场多次快照才画得出来
+ODDS_TICKS_JSON = Path("C:/Users/Jin/jinbet/odds_ticks.json")
 WEATHER_JSON = Path("C:/Users/Jin/jinbet/weather.json")
 REFEREE_JSON = Path("C:/Users/Jin/jinbet/referee.json")
 _results_data_cache: dict | None = None
@@ -294,6 +296,9 @@ def _load_env() -> dict:
     if d:
         env["hkjc"] = d.get("matches") or {}
         env["hkjc_date"] = str(d.get("date", ""))[:10]
+    d = _read(ODDS_TICKS_JSON)
+    if d:
+        env["odds_ticks"] = d.get("ticks") or {}
     d = _read(INJURIES_EXTRA_JSON)
     if d:
         env["extra_inj"] = d.get("teams") or {}
@@ -584,6 +589,9 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                 txt = _mood_clean(str(mo.get("text") or ""))
                 if txt:
                     extras["mood"] = txt
+        tk = (env.get("odds_ticks") or {}).get(f"{date}_{home}_{away}")
+        if tk and len(tk) >= 2:
+            extras["odds_ticks"] = tk[-12:]
         if env.get("weather_date") == date:
             w = (env.get("weather") or {}).get(code)
             if w:

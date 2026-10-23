@@ -98,6 +98,41 @@ def _odds_panel(m: Match) -> str:
     return C.panel("市场数据", body) if body.strip() else ""
 
 
+def _odds_tick_panel(m: Match) -> str:
+    """盘口变化：同一场多次赔率快照（jinbet 每 2 小时累积），至少 2 点才画。"""
+    tk = (m.extras or {}).get("odds_ticks") or []
+    if len(tk) < 2:
+        return ""
+    pts = []
+    for p in tk:
+        hcp = None
+        rq = p.get("让球") or []
+        if rq and rq[0].get("handicap") not in (None, ""):
+            try:
+                hcp = float(rq[0]["handicap"])
+            except (TypeError, ValueError):
+                hcp = None
+        pts.append({"label": str(p.get("t", ""))[-5:], "price": p.get("胜"),
+                    "hcp": hcp, "res": None})
+    chart = C.odds_trend_svg(pts)
+    if not chart:
+        return ""
+    first, last = tk[0], tk[-1]
+
+    def _shift(a, b) -> str:
+        if isinstance(a, (int, float)) and isinstance(b, (int, float)):
+            return f"{a:g} → {b:g}（{b - a:+.2f}）"
+        return f"{a if a is not None else '—'} → {b if b is not None else '—'}"
+
+    rows = [["主胜赔率", _shift(first.get("胜"), last.get("胜"))]]
+    h1 = next((r.get("handicap") for r in (first.get("让球") or []) if r.get("handicap")), None)
+    h2 = next((r.get("handicap") for r in (last.get("让球") or []) if r.get("handicap")), None)
+    if h1 or h2:
+        rows.append(["让球", f"{h1 or '—'} → {h2 or '—'}"])
+    rows.append(["快照", f"{len(tk)} 次（{first.get('t', '')} 起）"])
+    return C.panel("盘口变化", chart + C.table(["项目", "初盘 → 最新"], rows))
+
+
 def _standings_panel(m: Match) -> str:
     labels, hv, av = [], [], []
     for team, store in ((m.home, hv), (m.away, av)):
@@ -506,6 +541,7 @@ def render_match(cfg: Config, m: Match) -> str:
         _weather_panel(m),      # 5.5 🌤 比赛地天气
         _referee_panel(m),      # 5.6 🟨 主裁判执法数据
         _odds_panel(m),         # 市场数据
+        _odds_tick_panel(m),    # 盘口变化（多次快照累积后自动出现）
         _handicap_panel(m),     # 7. 🤔 让步可信度分析
         _model_panel(m),        # 8. 🧠 模型视角
         C.panel("综合赛果推演", picks) if picks else "",   # 9. 🎯
@@ -1686,7 +1722,7 @@ def render_features(cfg: Config) -> str:
         (L.ICON_ARCHIVE, "历史归档", "逐日留档，结论带哈希指纹，不删不改可核验", f"{base}/days/"),
         (L.ICON_TROPHY, "赛事 / 球队 Top 榜", "按已结算场次统计联赛与球队的方向命中率", f"{base}/"),
         (L.ICON_SEARCH, "站内搜索", "按队名、联赛、编号检索历史赛事", f"{base}/search.html"),
-        (L.ICON_ACTIVITY, "单场深度数据", "六维雷达、0-90' 动量曲线、赔率与让球面板", f"{base}/days/"),
+        (L.ICON_ACTIVITY, "深度数据", "各联赛球队六维战力、赔率与让球走势", f"{base}/depth/"),
         (L.ICON_TREND, "赔率", "竞彩赔率快照按日浏览，完赛场次附赛果对照", f"{base}/odds.html"),
         (L.ICON_CPU, "投注", "投注记录本地留存，赛果自动结算与盈亏统计", f"{base}/bets.html"),
         (L.ICON_CPU, "机器可读数据", "llms.txt / dataset.json，供 LLM 与工具直接消费", f"{base}/llms.txt"),
@@ -2601,13 +2637,11 @@ def render_league(cfg: Config, league: str, matches: list[Match],
 
 
 def render_team(cfg: Config, team_name: str, matches: list[Match],
-                stats: tuple[int, int] | None = None) -> str:
-    """球队专题页：头部（队徽+队名+统计）+ 该队全部已收录场次列表。"""
+                stats: tuple[int, int] | None = None,
+                board: dict | None = None) -> str:
+    """球队专题页：六维战力 + 市场走势 + 该队全部已收录场次列表。"""
     base = cfg.base_url.rstrip("/")
     ordered = sorted(matches, key=lambda m: (m.day, m.code or ""), reverse=True)
-    cards = "".join(_card(cfg, m, pre="../") for m in ordered[:60]) or (
-        '<p class="sub">该球队暂无已收录场次。</p>'
-    )
     hit, total = stats or (0, 0)
     acc = (hit / total * 100) if total else 0.0
     meta = (
@@ -2617,11 +2651,125 @@ def render_team(cfg: Config, team_name: str, matches: list[Match],
         else f"已收录 <b>{len(matches)}</b> 场 · 赛果回填后自动统计命中率"
     )
     logo = logos.crest_url(team_name)
+    blocks = _team_depth_blocks(team_name, board or {}, ordered)
+    cards = "".join(_card(cfg, m, pre="../") for m in ordered[:60]) or (
+        '<p class="sub">该球队暂无已收录场次。</p>'
+    )
     body = (
         _lt_header(team_name, logo=logo, meta=meta)
-        + f'<div class="cards">{cards}</div>'
+        + blocks
+        + '<div class="cards">' + cards + "</div>"
     )
     return L.page(
         cfg, title=f"{team_name} 赛事专题", description=f"{team_name} 全部已收录场次的方向命中率与逐场分析",
         body=body, canonical=f"{base}/teams/{team_name}.html", depth=1,
+    )
+
+
+def _team_depth_blocks(team_name: str, b: dict, matches: list[Match]) -> str:
+    """球队深度块：六维雷达 + 六轴数值 + 市场赔率/让球走势 + 近况。"""
+    out = []
+    met = b.get("metrics")
+    if met:
+        axes = [zh for _, zh in Metrics.AXES]
+        vals = met.values()
+        radar = C.radar_one(vals, axes, team_name, size=300)
+        thin = ('<p class="panel-hint">样本不足，六维向联赛均值收缩</p>'
+                if b.get("thin") else "")
+        power = b.get("power")
+        head = (f'<p class="sub">综合战力 <b>{power}</b> · 联赛内分位 0–100</p>'
+                if power is not None else "")
+        out.append(C.panel("六维战力", radar + head + thin))
+
+    series = b.get("series") or []
+    if len(series) >= 2:
+        pts = [{"label": s["date"][5:], "price": s.get("price"),
+                "hcp": s.get("hcp"), "res": s.get("res")} for s in series]
+        chart = C.odds_trend_svg(pts)
+        if chart:
+            rows = []
+            for s in reversed(series):
+                res = {"w": "胜", "d": "平", "l": "负"}[s["res"]]
+                price = f'{s["price"]:g}' if s.get("price") else "—"
+                hcp = f'{s["hcp"]:+g}' if isinstance(s.get("hcp"), (int, float)) else "—"
+                rows.append([s["date"][5:], f'{s["opp"]}（{"主" if s["ha"] == "home" else "客"}）',
+                             f'{s["gf"]}-{s["ga"]}', res, price, hcp])
+            out.append(C.panel(
+                "市场走势",
+                chart + C.table(["日期", "对手", "比分", "结果", "获胜赔率", "让球"], rows),
+            ))
+
+    if b.get("form"):
+        n = len(b["form"])
+        line = (f'近 {n} 场 {b["form"].count("w")}胜 {b["form"].count("d")}平 '
+                f'{b["form"].count("l")}负 · 场均进 {b["gf_avg"]:g} 失 {b["ga_avg"]:g}')
+        out.append(C.panel("近期战绩", C.form_dots(b["form"]) + f'<p class="sub">{line}</p>'))
+    return "".join(out)
+
+
+def render_depth(cfg: Config, days: list[Day], board: dict[str, dict]) -> str:
+    """深度数据：各联赛各球队六维战力总览，点卡片进球队页看走势。"""
+    base = cfg.base_url.rstrip("/")
+    axes = [zh for _, zh in Metrics.AXES]
+    rows = [b for b in board.values() if b.get("metrics")]
+    lg_count: dict[str, int] = {}
+    for b in rows:
+        lg_count[b["league"]] = lg_count.get(b["league"], 0) + 1
+    zones = sorted(lg_count.items(), key=lambda kv: (-kv[1], kv[0]))
+    # 联赛成块（队多的在前）+ 组内按综合战力降序：全部视图自然分组，选联赛后仍是战力榜
+    rows.sort(key=lambda b: (-lg_count[b["league"]], b["league"],
+                             -(b.get("power") or 0), b["name"]))
+    opts = "".join(
+        f'<option value="{C.esc(z)}">{C.esc(z)}（{n}）</option>' for z, n in zones)
+
+    cards = []
+    for b in rows:
+        mini = C.radar_one(b["metrics"].values(), axes, b["name"], size=88, small=True)
+        thin = ' <span class="mini">样本不足</span>' if b["thin"] else ""
+        line = f'场均进 {b["gf_avg"]:.2f} 失 {b["ga_avg"]:.2f} · 已收录 {b["matches"]} 场'
+        cards.append(
+            f'<a class="dt-card" href="../teams/{b["name"]}.html" data-lg="{C.esc(b["league"])}">'
+            f'<span class="dt-radar">{mini}</span>'
+            '<span class="dt-main">'
+            f'<span class="dt-name">{C.esc(b["name"])}{thin}</span>'
+            f'<span class="dt-lg">{C.esc(b["league"])}</span>'
+            f'<span class="dt-line">{line}</span>'
+            "</span>"
+            f'<span class="dt-power">{b["power"]}<small>战力</small></span>'
+            "</a>"
+        )
+    body = (
+        f"<h1 class='page-h1'>{L.ICON_ACTIVITY} 深度数据</h1>"
+        f'<p class="sub">{len(rows)} 支球队 · {len(zones)} 项赛事 · '
+        "六维战力为联赛内分位（0–100），点球队看赔率与让球走势</p>"
+        '<div class="depth-tools">'
+        f'<select id="dt-lg" aria-label="按赛事筛选"><option value="">全部赛事</option>{opts}</select>'
+        '<span class="sub" id="dt-count"></span>'
+        f'<span class="sub" style="margin-left:auto">按综合战力排序</span>'
+        "</div>"
+        '<div class="depth-grid" id="depth-grid">' + "".join(cards) + "</div>"
+        """<script>
+(function () {
+  var sel = document.getElementById("dt-lg");
+  var grid = document.getElementById("depth-grid");
+  var cnt = document.getElementById("dt-count");
+  var cards = [].slice.call(grid.querySelectorAll(".dt-card"));
+  function apply() {
+    var v = sel.value, n = 0;
+    for (var i = 0; i < cards.length; i++) {
+      var ok = !v || cards[i].getAttribute("data-lg") === v;
+      cards[i].style.display = ok ? "" : "none";
+      if (ok) n++;
+    }
+    cnt.textContent = "共 " + n + " 支球队";
+  }
+  sel.addEventListener("change", apply);
+  apply();
+})();
+</script>"""
+    )
+    return L.page(
+        cfg, title="深度数据",
+        description=f"{len(rows)} 支球队六维战力、赔率与让球走势，按赛事分类浏览",
+        body=body, canonical=f"{base}/depth/", depth=1,
     )

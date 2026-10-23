@@ -421,6 +421,175 @@ def line_svg(
     return "".join(parts)
 
 
+def radar_one(
+    vals: Sequence[float],
+    axes: Sequence[str],
+    name: str,
+    *,
+    size: int = 280,
+    max_val: float = 100.0,
+    small: bool = False,
+    color: str = HOME_COLOR,
+) -> str:
+    """单队六维雷达。small=True 用于总览卡（无轴标签、无刻度文字）。"""
+    n = len(axes)
+    if n < 3 or len(vals) != n:
+        return ""
+    cx = cy = size / 2
+    r = size / 2 - (6 if small else 56)
+
+    def pt(i: int, ratio: float) -> tuple[float, float]:
+        ang = -math.pi / 2 + 2 * math.pi * i / n
+        return cx + r * ratio * math.cos(ang), cy + r * ratio * math.sin(ang)
+
+    parts = [
+        f'<svg class="radar{" radar-sm" if small else ""}" viewBox="0 0 {size} {size}" '
+        f'role="img" aria-label="{esc(name)} 六维战力">'
+    ]
+    rings = (1.0,) if small else (0.25, 0.5, 0.75, 1.0)
+    for ring in rings:
+        poly = " ".join(f"{x:.1f},{y:.1f}" for x, y in (pt(i, ring) for i in range(n)))
+        parts.append(f'<polygon points="{poly}" fill="none" stroke="{LINE}" stroke-width="1"/>')
+    if not small:
+        for i in range(n):
+            x, y = pt(i, 1.0)
+            parts.append(
+                f'<line x1="{cx}" y1="{cy}" x2="{x:.1f}" y2="{y:.1f}" stroke="{LINE}" stroke-width="1"/>'
+            )
+
+    poly = " ".join(
+        f"{x:.1f},{y:.1f}"
+        for x, y in (pt(i, max(0.0, min(1.0, v / max_val))) for i, v in enumerate(vals))
+    )
+    parts.append(
+        f'<polygon points="{poly}" fill="{color}" fill-opacity="0.16" '
+        f'stroke="{color}" stroke-width="{1.4 if small else 1.8}"/>'
+    )
+    if not small:
+        for i, v in enumerate(vals):
+            x, y = pt(i, max(0.0, min(1.0, v / max_val)))
+            parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.6" fill="{color}"/>')
+        for i, ax in enumerate(axes):
+            x, y = pt(i, 1.16)
+            anchor = "middle"
+            if x > cx + 6:
+                anchor = "start"
+            elif x < cx - 6:
+                anchor = "end"
+            parts.append(
+                f'<text x="{x:.1f}" y="{y:.1f}" text-anchor="{anchor}" dominant-baseline="central" '
+                f'font-size="12" fill="{MUTED}">{esc(ax)}</text>'
+            )
+            vx, vy = pt(i, 1.16)
+            parts.append(
+                f'<text x="{vx:.1f}" y="{vy + 14:.1f}" text-anchor="{anchor}" '
+                f'dominant-baseline="central" font-size="11" fill="{INK}" font-weight="600">{vals[i]:.0f}</text>'
+            )
+    parts.append("</svg>")
+    return "".join(parts)
+
+
+RES_COLOR = {"w": "#ef4444", "d": "#9ca3af", "l": "#10b981"}
+
+
+def odds_trend_svg(points: Sequence[dict], *, w: int = 660, h: int = 240) -> str:
+    """赔率与让球走势：左轴该队获胜赔率（实线），右轴让球值（虚线阶梯）。
+
+    points: [{label, price, hcp, res}]，price/hcp 可为 None。
+    """
+    n = len(points)
+    if n < 2:
+        return ""
+    prices = [p["price"] for p in points if isinstance(p.get("price"), (int, float))]
+    hcps = [p["hcp"] for p in points if isinstance(p.get("hcp"), (int, float))]
+    if len(prices) < 2:
+        return ""
+    pad_l, pad_r, pad_t, pad_b = 46, 46, 16, 30
+    iw, ih = w - pad_l - pad_r, h - pad_t - pad_b
+
+    pmin, pmax = min(prices), max(prices)
+    if pmax - pmin < 0.2:
+        pmin, pmax = pmin - 0.1, pmax + 0.1
+    span = (pmax - pmin) * 0.14
+    pmin, pmax = pmin - span, pmax + span
+    hmin = min(hcps) - 0.25 if hcps else -1.0
+    hmax = max(hcps) + 0.25 if hcps else 1.0
+    if hmax - hmin < 1.0:
+        mid = (hmax + hmin) / 2
+        hmin, hmax = mid - 0.5, mid + 0.5
+
+    def x(i: int) -> float:
+        return pad_l + iw * i / (n - 1)
+
+    def y_price(v: float) -> float:
+        return pad_t + ih * (1 - (v - pmin) / (pmax - pmin))
+
+    def y_hcp(v: float) -> float:
+        return pad_t + ih * (1 - (v - hmin) / (hmax - hmin))
+
+    parts = [f'<svg class="trend" viewBox="0 0 {w} {h}" role="img" aria-label="赔率与让球走势">']
+    for frac in (0.0, 0.5, 1.0):
+        y = pad_t + ih * frac
+        parts.append(
+            f'<line x1="{pad_l}" y1="{y:.1f}" x2="{w - pad_r}" y2="{y:.1f}" stroke="{LINE}" stroke-width="1"/>'
+        )
+        pv = pmax - (pmax - pmin) * frac
+        parts.append(
+            f'<text x="{pad_l - 6}" y="{y:.1f}" text-anchor="end" dominant-baseline="central" '
+            f'font-size="10" fill="{MUTED}">{pv:.2f}</text>'
+        )
+        if hcps:
+            hv = hmax - (hmax - hmin) * frac
+            parts.append(
+                f'<text x="{w - pad_r + 6}" y="{y:.1f}" text-anchor="start" dominant-baseline="central" '
+                f'font-size="10" fill="{MUTED}">{hv:+.1f}</text>'
+            )
+
+    if hcps:
+        pts = []
+        for i, p in enumerate(points):
+            if not isinstance(p.get("hcp"), (int, float)):
+                continue
+            pts.append((x(i), y_hcp(p["hcp"])))
+        if len(pts) >= 2:
+            d = " ".join(f"{px:.1f},{py:.1f}" for px, py in pts)
+            parts.append(
+                f'<polyline points="{d}" fill="none" stroke="{AWAY_COLOR}" stroke-width="1.8" '
+                'stroke-dasharray="5 4"/>'
+            )
+            for px, py in pts:
+                parts.append(
+                    f'<rect x="{px - 3:.1f}" y="{py - 3:.1f}" width="6" height="6" fill="{AWAY_COLOR}"/>'
+                )
+
+    seq = [(x(i), y_price(p["price"]), p) for i, p in enumerate(points)
+           if isinstance(p.get("price"), (int, float))]
+    d = " ".join(f"{px:.1f},{py:.1f}" for px, py, _ in seq)
+    parts.append(f'<polyline points="{d}" fill="none" stroke="{HOME_COLOR}" stroke-width="2"/>')
+    for px, py, p in seq:
+        parts.append(
+            f'<circle cx="{px:.1f}" cy="{py:.1f}" r="3.4" fill="#ffffff" '
+            f'stroke="{RES_COLOR.get(p.get("res"), HOME_COLOR)}" stroke-width="2"/>'
+        )
+    idx = list(range(n)) if n <= 9 else sorted({0, n // 2, n - 1})
+    for i in idx:
+        parts.append(
+            f'<text x="{x(i):.1f}" y="{h - 8}" text-anchor="middle" font-size="10" '
+            f'fill="{MUTED}">{esc(points[i].get("label", ""))}</text>'
+        )
+    parts.append("</svg>")
+    legend = (
+        '<div class="legend">'
+        f'<span><i style="background:{HOME_COLOR}"></i>获胜赔率（左轴）</span>'
+        + (f'<span><i style="background:{AWAY_COLOR}"></i>让球（右轴）</span>' if hcps else "")
+        + '<span><i style="background:#ef4444"></i>胜</span>'
+        '<span><i style="background:#9ca3af"></i>平</span>'
+        '<span><i style="background:#10b981"></i>负</span>'
+        "</div>"
+    )
+    return legend + "".join(parts)
+
+
 def main_pick_bar(text: str, *, tag: str = "", hit: bool | None = None) -> str:
     """一句话主推。整页视觉重心之一，放在四宫格上方。
 

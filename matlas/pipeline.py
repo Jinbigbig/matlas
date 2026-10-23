@@ -13,6 +13,7 @@ from .config import Config
 from .models import Day, Match
 from .render import layout as L
 from .render import pages as P
+from . import power
 from . import seo
 from .source.base import DataSource
 
@@ -48,6 +49,7 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
     ranking = P.compute_ranking(ordered)
     team_ranking = P.compute_team_ranking(ordered)
     dates_desc = [d.date for d in reversed(ordered)]  # 筛选面板时间行：最新在前
+    board = power.team_board(ordered)   # 球队级六维 + 赔率/让球走势（深度页与球队页共用）
     # 右栏「AI 预测」卡：最近 6 个交易日的报告预测首选（最新在前）
     ai_digest = P.build_ai_digest(ordered)
 
@@ -149,6 +151,7 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
     L.write(cfg, "odds.html", P.render_odds(cfg, ordered))
     L.write(cfg, "bets.html", P.render_bets(cfg, ordered))
     L.write(cfg, "preview/index.html", P.render_preview_index(cfg, ordered))
+    L.write(cfg, "depth/index.html", P.render_depth(cfg, ordered, board))
     L.write(cfg, "features.html", P.render_features(cfg))
     L.write(cfg, "me.html", P.render_me(cfg))
     L.write(cfg, "search.html", P.render_search(cfg, ordered))
@@ -161,7 +164,8 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
     for tm, ms in sorted(tm_matches.items()):
         if not tm:
             continue
-        L.write(cfg, f"teams/{tm}.html", P.render_team(cfg, tm, ms, _dir_stats(ms)))
+        L.write(cfg, f"teams/{tm}.html",
+                P.render_team(cfg, tm, ms, _dir_stats(ms), board=board.get(tm)))
         stats["files"] += 1
 
     # 4. 静态资源（队徽）
