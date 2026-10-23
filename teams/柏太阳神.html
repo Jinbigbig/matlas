@@ -6,7 +6,7 @@
 <title>柏太阳神 赛事专题 - Matlas</title>
 <meta name="description" content="柏太阳神 全部已收录场次的方向命中率与逐场分析">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/teams/柏太阳神.html">
-<link rel="stylesheet" href="../assets/style.css?v=1792678408">
+<link rel="stylesheet" href="../assets/style.css?v=1792719114">
 <meta property="og:type" content="article">
 <meta property="og:title" content="柏太阳神 赛事专题 - Matlas">
 <meta property="og:description" content="柏太阳神 全部已收录场次的方向命中率与逐场分析">
@@ -83,7 +83,9 @@ function snapDate(arr, v) {
 document.addEventListener("change", function (e) {
   var c = e.target.closest(".date-cal");
   if (!c || !c.value) return;
-  var dates = JSON.parse(c.getAttribute("data-dates"));
+  var dattr = c.getAttribute("data-dates");
+  if (!dattr) return;
+  var dates = JSON.parse(dattr);
   var t = snapDate(dates, c.value);
   c.value = t;
   var mode = c.getAttribute("data-mode");
