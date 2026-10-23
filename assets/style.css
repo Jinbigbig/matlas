@@ -501,6 +501,18 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .insight-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .insight-list li { font-size: 13.5px; color: #374151; background: #f8fafc; border-radius: 8px; padding: 8px 12px; }
 .insight-list li b { color: #111; }
+/* 洞察总结：线图 + 横条 + chips，整体居中 */
+.insight-viz { max-width: 660px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+.insight-block h4 { margin: 0 0 8px; font-size: 13px; color: var(--muted); text-align: center; font-weight: 600; }
+svg.itrend { width: 100%; height: auto; display: block; margin-inline: auto; max-width: 620px; }
+.hbar-row { display: flex; align-items: center; gap: 10px; font-size: 13px; margin: 6px 0; }
+.hbar-label { width: 76px; flex: none; text-align: right; color: #374151; }
+.hbar-track { flex: 1; height: 14px; background: #eef2f7; border-radius: 7px; overflow: hidden; }
+.hbar-fill { display: block; height: 100%; background: linear-gradient(90deg, #2563eb, #60a5fa); border-radius: 7px; }
+.hbar-num { width: 58px; flex: none; font-weight: 600; color: #111; }
+.insight-chips { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.insight-chip { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 999px; padding: 6px 14px; font-size: 13px; color: #374151; }
+.insight-chip b { color: #111; }
 .stats-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
 @media (max-width: 1000px) { .stats-duo { grid-template-columns: 1fr; } }
 .dim-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }

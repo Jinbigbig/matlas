@@ -230,7 +230,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.405,
     "lam_away": 0.995,
@@ -514,7 +514,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 2.065,
     "lam_away": 0.788,
@@ -637,12 +637,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 16,
+    "attack": 17,
     "defence": 86,
     "control": 54,
-    "form": 9,
-    "value": 79,
-    "motivation": 36,
+    "form": 11,
+    "value": 80,
+    "motivation": 37,
     "AXES": [
      [
       "attack",
@@ -674,9 +674,9 @@
     "attack": 5,
     "defence": 33,
     "control": 6,
-    "form": 8,
+    "form": 10,
     "value": 2,
-    "motivation": 7,
+    "motivation": 8,
     "AXES": [
      [
       "attack",
@@ -862,7 +862,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.538,
     "lam_away": 0.664,
@@ -973,12 +973,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 91,
-    "defence": 87,
-    "control": 91,
-    "form": 70,
+    "attack": 92,
+    "defence": 88,
+    "control": 92,
+    "form": 68,
     "value": 100,
-    "motivation": 74,
+    "motivation": 72,
     "AXES": [
      [
       "attack",
@@ -1008,11 +1008,11 @@
    },
    "metrics_away": {
     "attack": 48,
-    "defence": 52,
-    "control": 43,
-    "form": 43,
-    "value": 17,
-    "motivation": 48,
+    "defence": 48,
+    "control": 40,
+    "form": 40,
+    "value": 16,
+    "motivation": 44,
     "AXES": [
      [
       "attack",
@@ -1178,7 +1178,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 2.601,
     "lam_away": 0.861,
@@ -1424,7 +1424,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.645,
     "lam_away": 1.337,
@@ -1465,12 +1465,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 30,
+    "attack": 31,
     "defence": 8,
-    "control": 19,
+    "control": 21,
     "form": 38,
-    "value": 27,
-    "motivation": 19,
+    "value": 28,
+    "motivation": 18,
     "AXES": [
      [
       "attack",
@@ -1502,9 +1502,9 @@
     "attack": 0,
     "defence": 5,
     "control": 3,
-    "form": 8,
+    "form": 10,
     "value": 5,
-    "motivation": 27,
+    "motivation": 28,
     "AXES": [
      [
       "attack",
@@ -1690,7 +1690,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 2.258,
     "lam_away": 1.231,
@@ -1813,9 +1813,9 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 15,
-    "defence": 53,
-    "control": 34,
+    "attack": 14,
+    "defence": 54,
+    "control": 33,
     "form": 67,
     "value": 38,
     "motivation": 9,
@@ -1847,10 +1847,10 @@
     ]
    },
    "metrics_away": {
-    "attack": 61,
+    "attack": 59,
     "defence": 9,
     "control": 20,
-    "form": 34,
+    "form": 33,
     "value": 0,
     "motivation": 7,
     "AXES": [
@@ -2038,7 +2038,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.314,
     "lam_away": 1.34,
@@ -2133,6 +2133,12 @@
     "slug": "",
     "league": "法甲",
     "country": "",
+    "rank": 4,
+    "points": 14,
+    "played": 7,
+    "win": 4,
+    "draw": 2,
+    "loss": 1,
     "form": "",
     "logo": "assets/logo/teams/79.png"
    },
@@ -2141,6 +2147,12 @@
     "slug": "",
     "league": "法甲",
     "country": "",
+    "rank": 17,
+    "points": 4,
+    "played": 7,
+    "win": 1,
+    "draw": 1,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/110.png"
    },
@@ -2149,12 +2161,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 38,
-    "defence": 83,
-    "control": 81,
-    "form": 36,
+    "attack": 41,
+    "defence": 84,
+    "control": 82,
+    "form": 37,
     "value": 94,
-    "motivation": 51,
+    "motivation": 53,
     "AXES": [
      [
       "attack",
@@ -2183,12 +2195,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 51,
+    "attack": 53,
     "defence": 6,
-    "control": 15,
-    "form": 28,
-    "value": 38,
-    "motivation": 11,
+    "control": 14,
+    "form": 29,
+    "value": 41,
+    "motivation": 10,
     "AXES": [
      [
       "attack",
@@ -2374,7 +2386,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 2.073,
     "lam_away": 0.845,
@@ -2497,10 +2509,10 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 48,
+    "attack": 49,
     "defence": 36,
-    "control": 51,
-    "form": 33,
+    "control": 52,
+    "form": 35,
     "value": 89,
     "motivation": 85,
     "AXES": [
@@ -2532,11 +2544,11 @@
    },
    "metrics_away": {
     "attack": 5,
-    "defence": 8,
+    "defence": 9,
     "control": 3,
-    "form": 42,
+    "form": 44,
     "value": 4,
-    "motivation": 12,
+    "motivation": 13,
     "AXES": [
      [
       "attack",
@@ -2731,7 +2743,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 2.463,
     "lam_away": 0.931,
@@ -2784,12 +2796,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 57,
+    "attack": 58,
     "defence": 43,
     "control": 50,
-    "form": 28,
-    "value": 37,
-    "motivation": 79,
+    "form": 29,
+    "value": 39,
+    "motivation": 80,
     "AXES": [
      [
       "attack",
@@ -2822,7 +2834,7 @@
     "defence": 91,
     "control": 97,
     "form": 97,
-    "value": 93,
+    "value": 94,
     "motivation": 97,
     "AXES": [
      [
@@ -3018,7 +3030,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 0.756,
     "lam_away": 2.988,
@@ -3344,7 +3356,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.402,
     "lam_away": 2.461,
@@ -3377,6 +3389,12 @@
     "slug": "",
     "league": "法甲",
     "country": "",
+    "rank": 8,
+    "points": 10,
+    "played": 7,
+    "win": 3,
+    "draw": 1,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/116.png"
    },
@@ -3385,12 +3403,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 26,
+    "attack": 29,
     "defence": 98,
-    "control": 77,
-    "form": 70,
-    "value": 34,
-    "motivation": 43,
+    "control": 78,
+    "form": 71,
+    "value": 37,
+    "motivation": 45,
     "AXES": [
      [
       "attack",
@@ -3420,11 +3438,11 @@
    },
    "metrics_away": {
     "attack": 96,
-    "defence": 36,
-    "control": 83,
-    "form": 60,
-    "value": 89,
-    "motivation": 62,
+    "defence": 37,
+    "control": 84,
+    "form": 61,
+    "value": 90,
+    "motivation": 63,
     "AXES": [
      [
       "attack",
@@ -3609,7 +3627,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.162,
     "lam_away": 2.161,
@@ -3733,9 +3751,9 @@
    },
    "metrics_home": {
     "attack": 92,
-    "defence": 45,
+    "defence": 46,
     "control": 87,
-    "form": 55,
+    "form": 56,
     "value": 91,
     "motivation": 86,
     "AXES": [
@@ -3767,7 +3785,7 @@
    },
    "metrics_away": {
     "attack": 77,
-    "defence": 88,
+    "defence": 89,
     "control": 94,
     "form": 90,
     "value": 96,
@@ -3975,7 +3993,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.478,
     "lam_away": 1.812,
@@ -4092,11 +4110,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 66,
-    "defence": 62,
+    "attack": 67,
+    "defence": 63,
     "control": 73,
     "form": 85,
-    "value": 74,
+    "value": 75,
     "motivation": 92,
     "AXES": [
      [
@@ -4316,7 +4334,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.039,
     "lam_away": 3.161,
@@ -4439,12 +4457,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 52,
-    "defence": 53,
+    "attack": 51,
+    "defence": 54,
     "control": 64,
-    "form": 36,
+    "form": 35,
     "value": 78,
-    "motivation": 75,
+    "motivation": 76,
     "AXES": [
      [
       "attack",
@@ -4473,11 +4491,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 15,
-    "defence": 13,
+    "attack": 14,
+    "defence": 14,
     "control": 12,
     "form": 31,
-    "value": 31,
+    "value": 32,
     "motivation": 25,
     "AXES": [
      [
@@ -4673,7 +4691,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.581,
     "lam_away": 0.959,
@@ -4800,8 +4818,8 @@
     "defence": 74,
     "control": 21,
     "form": 50,
-    "value": 60,
-    "motivation": 57,
+    "value": 61,
+    "motivation": 58,
     "AXES": [
      [
       "attack",
@@ -4833,7 +4851,7 @@
     "attack": 89,
     "defence": 57,
     "control": 88,
-    "form": 82,
+    "form": 83,
     "value": 10,
     "motivation": 91,
     "AXES": [
@@ -5011,7 +5029,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.396,
     "lam_away": 1.455,
@@ -5123,11 +5141,11 @@
    },
    "metrics_home": {
     "attack": 100,
-    "defence": 87,
+    "defence": 88,
     "control": 100,
     "form": 94,
     "value": 6,
-    "motivation": 87,
+    "motivation": 88,
     "AXES": [
      [
       "attack",
@@ -5156,11 +5174,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 6,
-    "defence": 55,
-    "control": 32,
-    "form": 52,
-    "value": 68,
+    "attack": 9,
+    "defence": 58,
+    "control": 36,
+    "form": 55,
+    "value": 70,
     "motivation": 42,
     "AXES": [
      [
@@ -5346,7 +5364,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 2.784,
     "lam_away": 0.659,
@@ -5388,10 +5406,10 @@
    },
    "metrics_home": {
     "attack": 95,
-    "defence": 54,
+    "defence": 56,
     "control": 92,
     "form": 92,
-    "value": 86,
+    "value": 87,
     "motivation": 97,
     "AXES": [
      [
@@ -5421,12 +5439,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 32,
-    "defence": 70,
-    "control": 46,
-    "form": 27,
-    "value": 54,
-    "motivation": 76,
+    "attack": 33,
+    "defence": 72,
+    "control": 49,
+    "form": 28,
+    "value": 56,
+    "motivation": 77,
     "AXES": [
      [
       "attack",
@@ -5602,7 +5620,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 3.124,
     "lam_away": 0.942,
@@ -5725,12 +5743,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 52,
-    "defence": 39,
+    "attack": 51,
+    "defence": 40,
     "control": 51,
     "form": 31,
     "value": 46,
-    "motivation": 29,
+    "motivation": 30,
     "AXES": [
      [
       "attack",
@@ -5759,7 +5777,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 52,
+    "attack": 51,
     "defence": 99,
     "control": 82,
     "form": 81,
@@ -5950,7 +5968,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 0.933,
     "lam_away": 1.935,
@@ -5975,6 +5993,12 @@
     "slug": "",
     "league": "法甲",
     "country": "",
+    "rank": 10,
+    "points": 9,
+    "played": 7,
+    "win": 2,
+    "draw": 3,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/106.png"
    },
@@ -5983,6 +6007,12 @@
     "slug": "",
     "league": "法甲",
     "country": "",
+    "rank": 2,
+    "points": 14,
+    "played": 7,
+    "win": 4,
+    "draw": 2,
+    "loss": 1,
     "form": "",
     "logo": "assets/logo/teams/85.png"
    },
@@ -5991,12 +6021,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 36,
-    "defence": 28,
-    "control": 23,
-    "form": 23,
+    "attack": 39,
+    "defence": 27,
+    "control": 24,
+    "form": 24,
     "value": 0,
-    "motivation": 19,
+    "motivation": 20,
     "AXES": [
      [
       "attack",
@@ -6026,10 +6056,10 @@
    },
    "metrics_away": {
     "attack": 98,
-    "defence": 36,
-    "control": 91,
-    "form": 51,
-    "value": 87,
+    "defence": 37,
+    "control": 92,
+    "form": 53,
+    "value": 88,
     "motivation": 98,
     "AXES": [
      [
@@ -6216,7 +6246,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 0.851,
     "lam_away": 2.597,
@@ -6344,7 +6374,7 @@
     "control": 33,
     "form": 50,
     "value": 62,
-    "motivation": 70,
+    "motivation": 71,
     "AXES": [
      [
       "attack",
@@ -6373,12 +6403,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 26,
+    "attack": 27,
     "defence": 43,
-    "control": 26,
+    "control": 27,
     "form": 50,
     "value": 85,
-    "motivation": 81,
+    "motivation": 82,
     "AXES": [
      [
       "attack",
@@ -6573,7 +6603,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.802,
     "lam_away": 2.179,
@@ -6614,12 +6644,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 19,
-    "defence": 71,
-    "control": 52,
-    "form": 10,
-    "value": 84,
-    "motivation": 16,
+    "attack": 21,
+    "defence": 73,
+    "control": 55,
+    "form": 9,
+    "value": 85,
+    "motivation": 18,
     "AXES": [
      [
       "attack",
@@ -6648,12 +6678,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 77,
-    "defence": 55,
-    "control": 77,
-    "form": 87,
-    "value": 26,
-    "motivation": 74,
+    "attack": 79,
+    "defence": 58,
+    "control": 79,
+    "form": 88,
+    "value": 27,
+    "motivation": 76,
     "AXES": [
      [
       "attack",
@@ -6829,7 +6859,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 0.975,
     "lam_away": 2.233,
@@ -7165,7 +7195,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 2.339,
     "lam_away": 0.628,
@@ -7485,7 +7515,7 @@
     "settled_at": "2026-09-13"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T13:52:52+08:00",
+   "generated_at": "2026-10-23T14:05:27+08:00",
    "extras": {
     "lam_home": 1.907,
     "lam_away": 1.36,
