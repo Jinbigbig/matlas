@@ -681,6 +681,14 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .pv-month { margin: 0 10px 10px; background: #f8fafc; box-shadow: none; }
 .pv-year[open] > summary, .pv-month[open] > summary { border-bottom: 1px solid #f1f5f9; }
 .pv-month > .pv-grid { padding: 10px; }
+.pv-envs { display: flex; flex-direction: column; gap: 10px; }
+.pv-env { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); padding: 10px 14px; }
+.pv-env-h { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+.pv-env-vs { font-size: 13.5px; color: #111; }
+.pv-env-vs b { font-weight: 700; }
+.pv-env-vs i { font-style: normal; color: #94a3b8; font-size: 11px; margin: 0 6px; }
+.pv-env-row { font-size: 13px; color: #374151; background: #f8fafc; border-radius: 8px;
+  padding: 6px 10px; margin-top: 4px; line-height: 1.6; }
 .pv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
 .pv-day { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; text-decoration: none;
