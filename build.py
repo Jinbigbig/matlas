@@ -24,6 +24,7 @@ from matlas.config import Config, DEFAULT_BASE_URL  # noqa: E402
 from matlas.pipeline import render, stamp  # noqa: E402
 from matlas.rules import check_site, report  # noqa: E402
 from matlas import logos  # noqa: E402
+from matlas import power  # noqa: E402
 from matlas import slots as slot_registry  # noqa: E402
 from matlas.source.base import LocalDirSource, merge_reference  # noqa: E402
 
@@ -44,6 +45,9 @@ def build(cfg: Config, *, strict: bool = False, reference_date: str | None = Non
 
     filled = logos.apply(days)
     print(f"[i] 队徽：{filled} 处按队名补齐（assets/logo/teams，共 {len(logos.TEAM_CREST)} 个队名可查）")
+
+    drawn = power.compute(days)
+    print(f"[i] 六维战力：{drawn} 场出图（历史赛果自算，先例不足的场次维持占位）")
 
     if reference_date:
         try:
