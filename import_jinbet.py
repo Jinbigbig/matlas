@@ -30,8 +30,10 @@ RESULTS_DATA_JSON = Path("C:/Users/Jin/jinbet/results_data.json")
 ODDS_JSON = Path("C:/Users/Jin/jinbet/odds_data.json")
 # 网易竞彩赛程开赛时间（jinbet/_fetch_match_times.py 抓取维护）
 MATCH_TIMES_JSON = Path("C:/Users/Jin/jinbet/match_times.json")
-# 赛前环境三件套（jinbet/_fetch_* 产出，缺失自动跳过）
+# 赛前环境（jinbet/_fetch_* 产出，缺失自动跳过）
 INJURIES_JSON = Path("C:/Users/Jin/jinbet/injuries.json")
+LINEUPS_JSON = Path("C:/Users/Jin/jinbet/lineups.json")
+HKJC_JSON = Path("C:/Users/Jin/jinbet/hkjc.json")
 WEATHER_JSON = Path("C:/Users/Jin/jinbet/weather.json")
 REFEREE_JSON = Path("C:/Users/Jin/jinbet/referee.json")
 _results_data_cache: dict | None = None
@@ -282,6 +284,14 @@ def _load_env() -> dict:
     if d:
         env["inj"] = d.get("teams") or {}
         env["env_date"] = str(d.get("updated", ""))[:10]
+    d = _read(LINEUPS_JSON)
+    if d:
+        env["lineups"] = d.get("matches") or {}
+        env["lineups_date"] = str(d.get("date", ""))[:10]
+    d = _read(HKJC_JSON)
+    if d:
+        env["hkjc"] = d.get("matches") or {}
+        env["hkjc_date"] = str(d.get("date", ""))[:10]
     d = _read(WEATHER_JSON)
     if d:
         env["weather"] = d.get("matches") or {}
@@ -454,14 +464,45 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
     # 网易赛程开赛时间（match_times.json）优先，仅套用窗口内日期
     if times_idx and date in (times_days or set()):
         kickoff = str(times_idx.get(code, "") or "") or kickoff
-    # 赛前环境：伤停（按队名）/ 天气（按编号）/ 裁判（对阵模糊匹配），仅当日/近2日
+    # 赛前环境：伤停（三源合并）/ 天气（按编号）/ 裁判（对阵模糊匹配），仅当日/近2日
     if env:
-        same_day = env.get("env_date") == date
-        if same_day:
-            inj = env.get("inj") or {}
-            hi, ai = inj.get(home), inj.get(away)
-            if hi or ai:
-                extras["injuries"] = {"home": hi or None, "away": ai or None}
+        # 伤停三源：lineups（编号，五大联赛+欧战）> injuries（队名，德甲/荷甲）> hkjc（编号，补日韩/沙特等）
+        # 同队同类字段先到先得，逐类补空
+        def _inj_norm(rec: dict | None, out_k="out", doubt_k="doubt", susp_k="susp") -> dict | None:
+            if not rec:
+                return None
+            got: dict[str, list] = {}
+            for key, src in (("out", out_k), ("doubtful", doubt_k), ("suspended", susp_k)):
+                got[key] = [{"name": str(p.get("name", "")).strip(),
+                             "reason": str(p.get("reason") or "").strip()}
+                            for p in (rec.get(src) or [])
+                            if str(p.get("name", "")).strip()]
+            return got if any(got.values()) else None
+
+        lu = env.get("lineups") or {}
+        lu_one = lu.get(code) if env.get("lineups_date") == date else None
+        inj_all = env.get("inj") or {}
+        hk_all = env.get("hkjc") or {}
+        hk_one = hk_all.get(code) if env.get("hkjc_date") == date else None
+        merged: dict[str, dict] = {}
+        for side_key, team_name in (("home", home), ("away", away)):
+            cands = [
+                _inj_norm((lu_one or {}).get(side_key)),
+                _inj_norm(inj_all.get(team_name), "out", "doubtful", "suspended")
+                if env.get("env_date") == date else None,
+                _inj_norm((hk_one or {}).get(side_key)),
+            ]
+            acc = {"out": [], "doubtful": [], "suspended": []}
+            for c in cands:
+                if not c:
+                    continue
+                for k in acc:
+                    if not acc[k] and c.get(k):
+                        acc[k] = c[k]
+            if any(acc.values()):
+                merged[side_key] = acc
+        if merged:
+            extras["injuries"] = merged
         if env.get("weather_date") == date:
             w = (env.get("weather") or {}).get(code)
             if w:
@@ -520,14 +561,12 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
     # 顶层伤停列表（单场页 _injury_panel 按此渲染；extras 里的结构化副本供其他页用）
     inj_rows = []
     inj_ex = extras.get("injuries") or {}
-    for side_key, status in (("home", "out"), ("away", "out")):
+    for side_key in ("home", "away"):
         side = inj_ex.get(side_key) or {}
-        for p in side.get("out") or []:
-            inj_rows.append({"team": side_key, "player": str(p.get("name", "")),
-                             "reason": str(p.get("reason", "")), "status": status})
-        for p in side.get("doubtful") or []:
-            inj_rows.append({"team": side_key, "player": str(p.get("name", "")),
-                             "reason": str(p.get("reason", "")), "status": "doubt"})
+        for key, status in (("out", "out"), ("doubtful", "doubt"), ("suspended", "suspended")):
+            for p in side.get(key) or []:
+                inj_rows.append({"team": side_key, "player": str(p.get("name", "")),
+                                 "reason": str(p.get("reason", "")), "status": status})
     if inj_rows:
         out["injuries"] = inj_rows
     # 历史交锋：全量赛果库中两队交手记录（任意主客，按当时主客呈现），本场前最近 5 场
