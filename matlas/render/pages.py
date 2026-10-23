@@ -2,10 +2,11 @@
 
 from __future__ import annotations
 
-from typing import Any
+from dataclasses import replace
+from typing import Any, Sequence
 
 from ..config import Config
-from ..models import Match, Day, Metrics, Momentum, sort_matches
+from ..models import Match, Day, Metrics, Momentum, Odds, sort_matches
 from .. import logos
 from . import components as C
 from . import layout as L
@@ -52,50 +53,31 @@ def _picks(m: Match) -> str:
     return f'<div class="picks4">{"".join(cells)}</div>' if cells else ""
 
 
-def _odds_panel(m: Match) -> str:
-    """市场数据：jinbet 同款三列赔率格 + 完整盘口表。"""
-    o = m.odds
-    if not o:
-        return ""
-    imp = o.implied() or {}
-    grid_rows: list[tuple[str, str, str]] = []
-    if o.home and o.draw and o.away:
-        grid_rows = [
-            (f"{m.home.name} 胜", f"{o.home:g}", "win"),
-            ("平", f"{o.draw:g}", "draw"),
-            (f"{m.away.name} 胜", f"{o.away:g}", "loss"),
-        ]
-    grid = C.odds_grid(grid_rows)
+def _odds_chips(pairs: Sequence[tuple[str, str]]) -> str:
+    cells = "".join(
+        f'<span class="of-chip">{C.esc(k)}<b>{C.esc(v)}</b></span>'
+        for k, v in pairs if v not in (None, "")
+    )
+    return f'<div class="of-chips">{cells}</div>' if cells else ""
 
-    rows = []
-    if o.home and o.draw and o.away:
-        rows.append(["胜平负", f"{o.home:g}", f"{o.draw:g}", f"{o.away:g}"])
-    if imp:
-        # §3.2：概率一律走 prob_tag，不裸写百分比
-        rows.append([
-            "去水概率",
-            C.prob_tag(imp["home"]),
-            C.prob_tag(imp["draw"]),
-            C.prob_tag(imp["away"]),
-        ])
-    if o.handicap is not None and (o.handicap_home or o.handicap_away):
-        rows.append([
-            f"让球 {o.handicap:+g}".replace("+0", "0"),
-            f"{o.handicap_home:g}" if o.handicap_home else "—",
-            "—",
-            f"{o.handicap_away:g}" if o.handicap_away else "—",
-        ])
-    if o.total is not None and (o.over or o.under):
-        rows.append([
-            f"进球数 {o.total:g}",
-            f"大 {o.over:g}" if o.over else "—",
-            "—",
-            f"小 {o.under:g}" if o.under else "—",
-        ])
-    body = grid + (C.table(["市场", m.home.name, "平", m.away.name], rows) if rows else "")
-    if o.bookmaker:
-        body += f'<p class="panel-hint">来源：{C.esc(o.bookmaker)}</p>'
-    return C.panel("市场数据", body) if body.strip() else ""
+
+def _odds_full_block(of: dict) -> str:
+    """全玩法赔率：进球数 / 半全场 / 比分。"""
+    secs = []
+    goals = of.get("goals") or {}
+    if goals:
+        secs.append('<div class="of-sec"><div class="of-h">进球数</div>'
+                    + _odds_chips([(str(k) if str(k).endswith("+") else f"{k} 球", str(v))
+                                   for k, v in goals.items()]) + "</div>")
+    htft = of.get("htft") or {}
+    if htft:
+        secs.append('<div class="of-sec"><div class="of-h">半全场</div>'
+                    + _odds_chips([(str(k), str(v)) for k, v in htft.items()]) + "</div>")
+    score = of.get("score") or {}
+    if score:
+        secs.append('<div class="of-sec"><div class="of-h">比分</div>'
+                    + _odds_chips([(str(k), str(v)) for k, v in score.items()]) + "</div>")
+    return "".join(secs)
 
 
 def _tick_hcp(p: dict) -> str | None:
@@ -108,43 +90,131 @@ def _tick_hcp(p: dict) -> str | None:
     return None
 
 
-def _odds_tick_panel(m: Match) -> str:
-    """盘口变化：同场多次快照（11:10 初盘 / 14:00 / 19:00），至少 2 点才画。"""
+def _tick_num(v) -> float | None:
+    try:
+        return float(v) if v not in (None, "") else None
+    except (TypeError, ValueError):
+        return None
+
+
+def _odds_trend(m: Match) -> str:
+    """赔率时序：11:10 初盘 / 14:00 / 19:00 三次快照，胜平负三线 + 让球。"""
     tk = (m.extras or {}).get("odds_ticks") or []
-    if len(tk) < 2:
+    if not tk:
         return ""
     pts = []
     for p in tk:
-        hcp = _tick_hcp(p)
-        try:
-            hcp_val = float(hcp) if hcp is not None else None
-        except (TypeError, ValueError):
-            hcp_val = None
-        pts.append({"label": str(p.get("t", ""))[-5:], "price": p.get("胜"),
-                    "hcp": hcp_val, "res": None})
-    chart = C.odds_trend_svg(pts, price_label="主胜赔率")
+        pts.append({
+            "label": str(p.get("t", ""))[-5:],
+            "home": _tick_num(p.get("胜")),
+            "draw": _tick_num(p.get("平")),
+            "away": _tick_num(p.get("负")),
+            "hcp": _tick_num(_tick_hcp(p)),
+        })
+    chart = C.odds_lines_svg(pts)
     if not chart:
         return ""
 
-    base_price = tk[0].get("胜")
-    base_hcp = _tick_hcp(tk[0])
+    base = pts[0]
     rows = []
-    for i, p in enumerate(tk):
-        t = str(p.get("t", ""))[-5:]
-        price = p.get("胜")
-        hcp = _tick_hcp(p)
-        price_txt = f"{price:.2f}" if isinstance(price, (int, float)) else "—"
+    for i, p in enumerate(pts):
+        hcp_txt = f"{p['hcp']:+g}" if p["hcp"] is not None else "—"
+        hcp_txt = hcp_txt.replace("+0", "0")
+        cells = [f"{v:.2f}" if v is not None else "—"
+                 for v in (p["home"], p["draw"], p["away"])]
         if i == 0:
-            rows.append([f"{t} 初盘", price_txt, hcp or "—", "—"])
+            rows.append([f"{p['label']} 初盘", *cells, hcp_txt, "—"])
             continue
         bits = []
-        if isinstance(price, (int, float)) and isinstance(base_price, (int, float)):
-            d = price - base_price
-            bits.append(f"主胜 {d:+.2f}")
-        if hcp != base_hcp:
-            bits.append(f"让球 {base_hcp or '—'}→{hcp or '—'}")
-        rows.append([t, price_txt, hcp or "—", " · ".join(bits) or "未变"])
-    return C.panel("盘口变化", chart + C.table(["时点", "主胜", "让球", "较初盘"], rows))
+        for key, lab in (("home", "主胜"), ("draw", "平"), ("away", "客胜")):
+            if p[key] is not None and base[key] is not None and abs(p[key] - base[key]) >= 0.005:
+                bits.append(f"{lab} {p[key] - base[key]:+.2f}")
+        if p["hcp"] != base["hcp"]:
+            b_h = f"{base['hcp']:+g}".replace("+0", "0") if base["hcp"] is not None else "—"
+            bits.insert(0, f"让球 {b_h}→{hcp_txt}")
+        rows.append([p["label"], *cells, hcp_txt, " · ".join(bits) or "未变"])
+    table = C.table(["时点", "主胜", "平", "客胜", "让球", "较初盘"], rows)
+    return ('<div class="of-sec"><div class="of-h">赔率变化</div>'
+            + chart + table + "</div>")
+
+
+def _odds_panel(m: Match) -> str:
+    """赔率数据：胜平负格 + 盘口表 + 全玩法 + 时序变化曲线。"""
+    o = m.odds
+    tk = (m.extras or {}).get("odds_ticks") or []
+    of = (m.extras or {}).get("odds_full") or {}
+    # 表头数字取最新快照，与下方曲线同一口径
+    last = tk[-1] if tk else {}
+    nh, nd, na = (_tick_num(last.get("胜")), _tick_num(last.get("平")),
+                  _tick_num(last.get("负")))
+    if nh and nd and na:
+        o = replace(o, home=nh, draw=nd, away=na) if o else Odds(home=nh, draw=nd, away=na)
+    # 无基础赔率的场次，胜平负取全玩法里的 spf
+    if not (o and o.home and o.draw and o.away):
+        spf = of.get("spf") or {}
+        sh, sd, sa = (_tick_num(spf.get("胜")), _tick_num(spf.get("平")),
+                      _tick_num(spf.get("负")))
+        if sh and sd and sa:
+            o = replace(o, home=sh, draw=sd, away=sa) if o else Odds(home=sh, draw=sd, away=sa)
+    rq = ((last.get("让球") or [None])[0]
+          or (of.get("rq") or [None])[0]
+          or {})
+    hcp_val = _tick_num(rq.get("handicap"))
+    if hcp_val is not None:
+        if not o:
+            o = Odds()
+        o = replace(o, handicap=hcp_val,
+                    handicap_home=_tick_num(rq.get("胜")),
+                    handicap_away=_tick_num(rq.get("负")))
+    rq_draw = _tick_num(rq.get("平"))
+
+    body = ""
+    imp = (o.implied() or {}) if o else {}
+    grid_rows: list[tuple[str, str, str]] = []
+    if o and o.home and o.draw and o.away:
+        grid_rows = [
+            (f"{m.home.name} 胜", f"{o.home:.2f}", "win"),
+            ("平", f"{o.draw:.2f}", "draw"),
+            (f"{m.away.name} 胜", f"{o.away:.2f}", "loss"),
+        ]
+    grid = C.odds_grid(grid_rows)
+
+    rows = []
+    if o and o.home and o.draw and o.away:
+        rows.append(["胜平负", f"{o.home:.2f}", f"{o.draw:.2f}", f"{o.away:.2f}"])
+    if imp:
+        # §3.2：概率一律走 prob_tag，不裸写百分比
+        rows.append([
+            "去水概率",
+            C.prob_tag(imp["home"]),
+            C.prob_tag(imp["draw"]),
+            C.prob_tag(imp["away"]),
+        ])
+    if o and o.handicap is not None and (o.handicap_home or o.handicap_away):
+        rows.append([
+            f"让球 {o.handicap:+g}".replace("+0", "0"),
+            f"{o.handicap_home:.2f}" if o.handicap_home else "—",
+            f"{rq_draw:.2f}" if rq_draw else "—",
+            f"{o.handicap_away:.2f}" if o.handicap_away else "—",
+        ])
+    if o and o.total is not None and (o.over or o.under):
+        rows.append([
+            f"进球数 {o.total:g}",
+            f"大 {o.over:g}" if o.over else "—",
+            "—",
+            f"小 {o.under:g}" if o.under else "—",
+        ])
+    body += grid + (C.table(["市场", m.home.name, "平", m.away.name], rows) if rows else "")
+
+    if of:
+        body += _odds_full_block(of)
+    body += _odds_trend(m)
+
+    if not body.strip():
+        return ""
+    if o and o.bookmaker:
+        body += f'<p class="panel-hint">来源：{C.esc(o.bookmaker)}</p>'
+    return C.panel("赔率数据", body)
 
 
 # 各联赛的分区线（名次 = 分界），形势分析用它给出「关键线还差几分」
@@ -621,6 +691,7 @@ def render_match(cfg: Config, m: Match) -> str:
         f'<p class="sub" style="text-align:center;margin:0">{C.esc(meta)}{cold}{sample}</p>',
         "</div>",
         "</div>",
+        _odds_panel(m),         # 赔率数据（含时序变化，放在情报速览之前）
         _intel_panel(m),        # 1. 📌 赛前情报速览
         _main_pick_block(m),    # 一句话主推（有才出现）
         _compare_panel(m),      # 2. 🔍 核心数据对比
@@ -630,8 +701,6 @@ def render_match(cfg: Config, m: Match) -> str:
         _mood_panel(m),         # 5.1 📰 赛前军情（7M 联赛稿）
         _weather_panel(m),      # 5.5 🌤 比赛地天气
         _referee_panel(m),      # 5.6 🟨 主裁判执法数据
-        _odds_panel(m),         # 市场数据
-        _odds_tick_panel(m),    # 盘口变化（多次快照累积后自动出现）
         _handicap_panel(m),     # 7. 🤔 让步可信度分析
         _model_panel(m),        # 8. 🧠 模型视角
         C.panel("综合赛果推演", picks) if picks else "",   # 9. 🎯

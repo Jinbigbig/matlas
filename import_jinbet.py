@@ -622,7 +622,8 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                 if txt:
                     extras["mood"] = txt
         tk = _ticks_for(env, date, home, away)
-        if len(tk) >= 2:
+        if tk:
+            # 11:10 初盘先落一个点，14:00 / 19:00 追加后自然连成曲线
             extras["odds_ticks"] = tk[-12:]
         if env.get("weather_date") == date:
             w = (env.get("weather") or {}).get(code)

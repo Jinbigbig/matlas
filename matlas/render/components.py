@@ -591,6 +591,103 @@ def odds_trend_svg(points: Sequence[dict], *, w: int = 660, h: int = 240,
     return legend + "".join(parts)
 
 
+ODDS_SERIES = (
+    ("home", "主胜", "#10b981"),
+    ("draw", "平", "#f59e0b"),
+    ("away", "客胜", "#dc2626"),
+)
+
+
+def odds_lines_svg(points: Sequence[dict], *, w: int = 660, h: int = 250) -> str:
+    """胜平负三条赔率曲线 + 让球档位（右轴虚线阶梯）。
+
+    points: [{label, home, draw, away, hcp}]，任一值可为 None。
+    只有 1 个时点时也画（初盘那一秒），随快照累积自动连成曲线。
+    """
+    n = len(points)
+    if not n:
+        return ""
+    if n == 1:
+        h = min(h, 180)
+    vals = [p[k] for p in points for k, _, _ in ODDS_SERIES
+            if isinstance(p.get(k), (int, float))]
+    if not vals:
+        return ""
+    hcps = [p["hcp"] for p in points if isinstance(p.get("hcp"), (int, float))]
+
+    pad_l, pad_r, pad_t, pad_b = 48, 46, 18, 30
+    iw, ih = w - pad_l - pad_r, h - pad_t - pad_b
+    pmin, pmax = min(vals), max(vals)
+    if pmax - pmin < 0.2:
+        pmin, pmax = pmin - 0.1, pmax + 0.1
+    span = (pmax - pmin) * 0.16
+    pmin, pmax = pmin - span, pmax + span
+    hmin = min(hcps) - 0.25 if hcps else -1.0
+    hmax = max(hcps) + 0.25 if hcps else 1.0
+    if hmax - hmin < 1.0:
+        mid = (hmax + hmin) / 2
+        hmin, hmax = mid - 0.5, mid + 0.5
+
+    def x(i: int) -> float:
+        return pad_l + iw / 2 if n == 1 else pad_l + iw * i / (n - 1)
+
+    def y_price(v: float) -> float:
+        return pad_t + ih * (1 - (v - pmin) / (pmax - pmin))
+
+    def y_hcp(v: float) -> float:
+        return pad_t + ih * (1 - (v - hmin) / (hmax - hmin))
+
+    parts = [f'<svg class="trend" viewBox="0 0 {w} {h}" role="img" aria-label="赔率时序变化">']
+    for frac in (0.0, 0.5, 1.0):
+        y = pad_t + ih * frac
+        parts.append(f'<line x1="{pad_l}" y1="{y:.1f}" x2="{w - pad_r}" y2="{y:.1f}" '
+                     f'stroke="{LINE}" stroke-width="1"/>')
+        pv = pmax - (pmax - pmin) * frac
+        parts.append(f'<text x="{pad_l - 6}" y="{y:.1f}" text-anchor="end" '
+                     f'dominant-baseline="central" font-size="10" fill="{MUTED}">{pv:.2f}</text>')
+        if hcps:
+            hv = hmax - (hmax - hmin) * frac
+            parts.append(f'<text x="{w - pad_r + 6}" y="{y:.1f}" text-anchor="start" '
+                         f'dominant-baseline="central" font-size="10" fill="{MUTED}">{hv:+.1f}</text>')
+    if n == 1:
+        parts.append(f'<line x1="{x(0):.1f}" y1="{pad_t}" x2="{x(0):.1f}" y2="{pad_t + ih:.1f}" '
+                     f'stroke="{LINE}" stroke-width="1" stroke-dasharray="3 4"/>')
+
+    if hcps:
+        seq = [(x(i), y_hcp(p["hcp"])) for i, p in enumerate(points)
+               if isinstance(p.get("hcp"), (int, float))]
+        if len(seq) >= 2:
+            d = " ".join(f"{px:.1f},{py:.1f}" for px, py in seq)
+            parts.append(f'<polyline points="{d}" fill="none" stroke="#6b7280" stroke-width="1.6" '
+                         'stroke-dasharray="5 4"/>')
+        for px, py in seq:
+            parts.append(f'<rect x="{px - 3:.1f}" y="{py - 3:.1f}" width="6" height="6" fill="#6b7280"/>')
+
+    for key, _lab, color in ODDS_SERIES:
+        seq = [(x(i), y_price(p[key]), p[key]) for i, p in enumerate(points)
+               if isinstance(p.get(key), (int, float))]
+        if not seq:
+            continue
+        if len(seq) >= 2:
+            d = " ".join(f"{px:.1f},{py:.1f}" for px, py, _ in seq)
+            parts.append(f'<polyline points="{d}" fill="none" stroke="{color}" stroke-width="2"/>')
+        for px, py, v in seq:
+            parts.append(f'<circle cx="{px:.1f}" cy="{py:.1f}" r="3.4" fill="#ffffff" '
+                         f'stroke="{color}" stroke-width="2"/>')
+            if n <= 3:
+                parts.append(f'<text x="{px:.1f}" y="{py - 9:.1f}" text-anchor="middle" '
+                             f'font-size="10" font-weight="600" fill="{color}">{v:.2f}</text>')
+
+    for i in range(n):
+        parts.append(f'<text x="{x(i):.1f}" y="{h - 8}" text-anchor="middle" font-size="10" '
+                     f'fill="{MUTED}">{esc(points[i].get("label", ""))}</text>')
+    parts.append("</svg>")
+    items = [f'<span><i style="background:{c}"></i>{esc(lab)}</span>' for _k, lab, c in ODDS_SERIES]
+    if hcps:
+        items.append('<span><i style="background:#6b7280"></i>让球</span>')
+    return '<div class="legend">' + "".join(items) + "</div>" + "".join(parts)
+
+
 def main_pick_bar(text: str, *, tag: str = "", hit: bool | None = None) -> str:
     """一句话主推。整页视觉重心之一，放在四宫格上方。
 
