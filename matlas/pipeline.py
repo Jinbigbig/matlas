@@ -6,6 +6,7 @@
 
 from __future__ import annotations
 
+import json
 import shutil
 from datetime import datetime, timezone
 
@@ -49,7 +50,15 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
     ranking = P.compute_ranking(ordered)
     team_ranking = P.compute_team_ranking(ordered)
     dates_desc = [d.date for d in reversed(ordered)]  # 筛选面板时间行：最新在前
-    board = power.team_board(ordered)   # 球队级六维 + 赔率/让球走势（深度页与球队页共用）
+    # 全量历史赛果（jinbet 3534 场，2025-12 起）：深度页的场次/进失球/近期状态用真实总量
+    hist: list = []
+    _hp = cfg.data_dir / "history.json"
+    if _hp.exists():
+        try:
+            hist = json.loads(_hp.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            hist = []
+    board = power.team_board(ordered, hist)   # 球队级六维 + 赔率/让球走势（深度页与球队页共用）
     # 右栏「AI 预测」卡：最近 6 个交易日的报告预测首选（最新在前）
     ai_digest = P.build_ai_digest(ordered)
 

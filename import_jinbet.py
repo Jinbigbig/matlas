@@ -535,6 +535,15 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
     confidence = {5: "high", 4: "high", 3: "medium", 2: "low", 1: "low"}.get(int(stars), "none")
 
     extras = {}
+    # 整榜快照：形势分析要算「赢/平/负后的名次区间」，必须有全联赛而非只有两队
+    _tbl = standings.get(league) or {}
+    if len(_tbl) >= 8:
+        _rows = [{"rank": r["rank"], "name": name, "pts": r["pts"], "p": r.get("p")}
+                 for name, r in _tbl.items()
+                 if r.get("rank") and r.get("pts") is not None]
+        if len(_rows) >= 8:
+            _rows.sort(key=lambda x: x["rank"])
+            extras["table"] = _rows
     for k in ("lam_home", "lam_away", "lam_total", "upset_prob", "upset_level",
               "rq_best_ev", "rq_best_odds"):
         if m.get(k) is not None:

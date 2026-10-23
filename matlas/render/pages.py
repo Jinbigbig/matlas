@@ -147,6 +147,82 @@ def _odds_tick_panel(m: Match) -> str:
     return C.panel("盘口变化", chart + C.table(["时点", "主胜", "让球", "较初盘"], rows))
 
 
+# 各联赛的分区线（名次 = 分界），形势分析用它给出「关键线还差几分」
+_SITUATION_ZONES = {
+    "英超": ((4, "欧冠线"), (17, "保级线")),
+    "西甲": ((4, "欧冠线"), (17, "保级线")),
+    "意甲": ((4, "欧冠线"), (17, "保级线")),
+    "德甲": ((4, "欧冠线"), (15, "保级线")),
+    "法甲": ((4, "欧冠线"), (15, "保级线")),
+    "欧冠": ((8, "直接晋级线"), (24, "附加赛线")),
+}
+
+
+def _table_row(table: list[dict], name: str) -> dict | None:
+    """在整榜里找该队（站点简称 ↔ 榜上全称双向包含）。"""
+    for t in table:
+        n = str(t.get("name") or "")
+        if n and (n == name or name in n or n in name):
+            return t
+    return None
+
+
+def _rank_range(table: list[dict], name: str, pts: int) -> tuple[int, int]:
+    """新积分下的名次区间（最好~最差）。
+
+    最好：其余队本轮不再得分，只按当前积分排；
+    最差：当前积分落后 3 分以内的队本轮全赢，凭净胜球压过本队。
+    """
+    others = [t for t in table if t.get("name") != name]
+    best = sum(1 for t in others if t["pts"] > pts) + 1
+    worst = sum(1 for t in others if t["pts"] >= pts - 3) + 1
+    return best, max(best, worst)
+
+
+def _situation_panel(m: Match) -> str:
+    """形势分析：本场三种结果分别把两队推到什么名次。"""
+    table = (m.extras or {}).get("table") or []
+    if len(table) < 8:
+        return ""
+    h_row = _table_row(table, m.home.name)
+    a_row = _table_row(table, m.away.name)
+    if not h_row or not a_row:
+        return ""
+    blocks = []
+    for team, row in ((m.home, h_row), (m.away, a_row)):
+        outs = []
+        for lab, add in (("赢", 3), ("平", 1), ("负", 0)):
+            pts = row["pts"] + add
+            best, worst = _rank_range(table, row["name"], pts)
+            tail = "" if best == worst else f"<i>最差 {worst}</i>"
+            outs.append(f'<div class="sit-out"><b>{lab}</b>{pts} 分 · 第 {best} 名{tail}</div>')
+        blocks.append(
+            '<div class="sit-card">'
+            f'<div class="sit-head">{C.esc(team.name)}'
+            f'<span>第 {row["rank"]} · {row["pts"]} 分</span></div>'
+            + "".join(outs) + "</div>"
+        )
+    body = f'<div class="sit-grid">{"".join(blocks)}</div>'
+
+    notes = []
+    segs = []
+    for pos, meaning in (_SITUATION_ZONES.get(m.competition) or ()):
+        line = next((t for t in table if t["rank"] == pos), None)
+        if line:
+            segs.append(f'第 {pos} 名 {line["pts"]} 分（{meaning}）')
+    if segs:
+        notes.append("关键线：" + " · ".join(segs))
+    near = [t for t in table
+            if abs(t["rank"] - h_row["rank"]) <= 2
+            and t.get("name") not in (h_row.get("name"), a_row.get("name"))]
+    if near:
+        notes.append("名次相邻：" + "、".join(
+            f'{t["name"]} 第 {t["rank"]} 名 {t["pts"]} 分' for t in near[:4]))
+    if notes:
+        body += "".join(f'<p class="sub">{C.esc(x)}</p>' for x in notes)
+    return C.panel("形势分析", body)
+
+
 def _standings_panel(m: Match) -> str:
     labels, hv, av = [], [], []
     for team, store in ((m.home, hv), (m.away, av)):
@@ -561,6 +637,7 @@ def render_match(cfg: Config, m: Match) -> str:
         C.panel("综合赛果推演", picks) if picks else "",   # 9. 🎯
         _charts_panel(m),       # 战力对照（雷达/动量，有数据才画）
         _standings_panel(m),    # 积分排名（有数据才画）
+        _situation_panel(m),    # 形势分析（有整榜才画）
         _reference_panel(m),    # 外部对照（有才出现）
         _ledger(m),
     ]
@@ -2711,11 +2788,13 @@ def _team_depth_blocks(team_name: str, b: dict, matches: list[Match]) -> str:
                 chart + C.table(["日期", "对手", "比分", "结果", "获胜赔率", "让球"], rows),
             ))
 
-    if b.get("form"):
-        n = len(b["form"])
-        line = (f'近 {n} 场 {b["form"].count("w")}胜 {b["form"].count("d")}平 '
-                f'{b["form"].count("l")}负 · 场均进 {b["gf_avg"]:g} 失 {b["ga_avg"]:g}')
-        out.append(C.panel("近期战绩", C.form_dots(b["form"]) + f'<p class="sub">{line}</p>'))
+    if b.get("recent"):
+        rec = b["recent"]
+        n = len(rec)
+        res = [x["res"] for x in rec]
+        line = (f'近 {n} 场 {res.count("w")}胜 {res.count("d")}平 {res.count("l")}负 · '
+                f'场均进 {sum(x["gf"] for x in rec) / n:.2f} 失 {sum(x["ga"] for x in rec) / n:.2f}')
+        out.append(C.panel("近期战绩", C.form_dots(res) + f'<p class="sub">{line}</p>'))
     return "".join(out)
 
 
@@ -2737,7 +2816,8 @@ def render_depth(cfg: Config, days: list[Day], board: dict[str, dict]) -> str:
     cards = []
     for b in rows:
         mini = C.radar_one(b["metrics"].values(), axes, b["name"], size=88, small=True)
-        line = f'进 {b["gf_avg"]:.2f} 失 {b["ga_avg"]:.2f} · {b["matches"]} 场'
+        total = b["settled"] or b["matches"]
+        line = f'进 {b["gf_avg"]:.2f} 失 {b["ga_avg"]:.2f} · {total} 场'
         cards.append(
             f'<a class="dt-card" href="../teams/{b["name"]}.html" data-lg="{C.esc(b["league"])}">'
             f'<span class="dt-radar">{mini}</span>'

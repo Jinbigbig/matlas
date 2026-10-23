@@ -217,11 +217,18 @@ def _outcome(gf: int, ga: int) -> str:
     return "w" if gf > ga else ("d" if gf == ga else "l")
 
 
-def team_board(days: list[Day]) -> dict[str, dict]:
-    """按球队聚合：最新六维 + 已结算样本 + 近 10 场赔率/让球走势。
+def _same_team(a: str | None, b: str | None) -> bool:
+    """队名双向包含匹配（历史库用竞彩全称，站点多用简称）。"""
+    return bool(a and b and len(a) >= 2 and len(b) >= 2 and (a in b or b in a))
 
-    六维直接取该队最后一次出场时的战力（窗口即近 10 场，与单场页同口径），
-    走势按该队视角取市场赔率与让球（客队让球值取反）。
+
+def team_board(days: list[Day], history: list[dict] | None = None) -> dict[str, dict]:
+    """按球队聚合：最新六维 + 全量真实战绩 + 站内赔率/让球走势。
+
+    history：jinbet 全量赛果库（data/history.json）。场次、进失球、近期状态按
+    「站内 + 历史」全量统计——这些都是已完赛的真实结果，不该只算站内收录的那几周。
+    六维取该队最后一次站内出场的战力（compute 已把 history 并入滚动窗口）；
+    赔率与让球只有站内场次有，走势仍按站内。
     """
     ordered = sorted((d for d in days if d.matches), key=lambda d: d.date)
     board: dict[str, dict] = {}
@@ -232,7 +239,7 @@ def team_board(days: list[Day]) -> dict[str, dict]:
             b = board[name] = {
                 "name": name, "league": league,
                 "metrics": None, "matches": 0, "settled": 0,
-                "gf": 0, "ga": 0, "form": [], "series": [],
+                "gf": 0, "ga": 0, "form": [], "recent": [], "series": [],
             }
         return b
 
@@ -251,10 +258,6 @@ def team_board(days: list[Day]) -> dict[str, dict]:
                 if not score:
                     continue
                 gf, ga = score if side == "home" else (score[1], score[0])
-                b["settled"] += 1
-                b["gf"] += gf
-                b["ga"] += ga
-                b["form"].append(_outcome(gf, ga))
                 # 市场端：该队获胜赔率 + 该队让球（负为让出）
                 price = hcp = None
                 if m.odds:
@@ -270,6 +273,65 @@ def team_board(days: list[Day]) -> dict[str, dict]:
                     "hcp": hcp,
                 })
 
+    # 全量真实赛果线：站内已结算 + 历史库，按「日期 + 双方」去重（站内优先）
+    seats = {(m.day, frozenset((m.home.name, m.away.name)))
+             for d in ordered for m in d.matches if m.home.name and m.away.name}
+    names = set(board)
+    alias: dict[str, str | None] = {}
+
+    def resolve(n: str) -> str | None:
+        if n in alias:
+            return alias[n]
+        if n in names:
+            alias[n] = n
+        else:
+            alias[n] = next((s for s in names if _same_team(n, s)), None)
+        return alias[n]
+
+    events: list[tuple[str, str, str, int, int]] = []
+    for d in ordered:
+        for m in d.matches:
+            score = _parse_score(m.result.full_score) if m.result else None
+            if score and m.home.name and m.away.name:
+                events.append((m.day, m.home.name, m.away.name, score[0], score[1]))
+    for h in (history or []):
+        try:
+            gf, ga = int(h["gf"]), int(h["ga"])
+        except (KeyError, TypeError, ValueError):
+            continue
+        date = str(h.get("date") or "")
+        hp, ap = str(h.get("home") or ""), str(h.get("away") or "")
+        home, away = resolve(hp), resolve(ap)
+        # 对手不在站点池里也照样给本方计场次——历史的真实结果不该因为对面陌生就丢掉
+        if not home and not away:
+            continue
+        home, away = home or hp, away or ap
+        if (date, frozenset((home, away))) in seats:
+            continue
+        events.append((date, home, away, gf, ga))
+
+    events.sort(key=lambda e: e[0])
+    seen: set[tuple[str, frozenset]] = set()
+    for date, home, away, gf, ga in events:
+        pair = (date, frozenset((home, away)))
+        if pair in seen:          # 同场镜像/重复记录只计一次
+            continue
+        seen.add(pair)
+        for name, g_for, g_against in ((home, gf, ga), (away, ga, gf)):
+            b = board.get(name)
+            if b is None:
+                continue
+            b["settled"] += 1
+            b["gf"] += g_for
+            b["ga"] += g_against
+            b["form"].append(_outcome(g_for, g_against))
+            b["recent"].append({
+                "date": date, "opp": away if name == home else home,
+                "ha": "home" if name == home else "away",
+                "gf": g_for, "ga": g_against,
+                "res": _outcome(g_for, g_against),
+            })
+
     for b in board.values():
         n = b["settled"]
         b["gf_avg"] = round(b["gf"] / n, 2) if n else 0.0
@@ -281,4 +343,5 @@ def team_board(days: list[Day]) -> dict[str, dict]:
         b["power"] = round(sum(vals) / len(vals)) if vals else None
         b["series"] = b["series"][-SERIES_N:]
         b["form"] = b["form"][-10:]
+        b["recent"] = b["recent"][-10:]
     return board
