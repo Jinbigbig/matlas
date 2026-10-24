@@ -38,8 +38,20 @@ if [ "$CUR" != "gh-pages" ]; then
   exit 1
 fi
 if [ -n "$(git status --porcelain)" ]; then
-  echo "[!] main 工作区有未提交改动，先提交再发布（产物不应夹带源码改动）。" >&2
-  exit 1
+  # 数据变动（import 产物）允许自动提交：定时任务只跑 import+build+publish，
+  # 不允许人工 commit，若这里硬性拒绝，每天 08:00/14:00/19:00 的发布会全部卡住。
+  OTHER="$(git status --porcelain | grep -v '^.. data/' || true)"
+  if [ -n "$OTHER" ]; then
+    echo "[!] main 工作区有未提交的源码改动，先提交再发布（产物不应夹带源码改动）。" >&2
+    echo "$OTHER" >&2
+    exit 1
+  fi
+  echo "[1.5/4] 自动提交 data/ 数据变动（import 产物）"
+  git add data
+  git -c user.name="$(git -C "$ROOT" config user.name)" \
+      -c user.email="$(git -C "$ROOT" config user.email)" \
+      commit -q -m "data: $(date +%Y-%m-%d) 定时任务导入快照"
+  echo "      → $(git rev-parse --short HEAD)"
 fi
 
 echo "[2/4] 清空产物工作树（保留 .git）"
