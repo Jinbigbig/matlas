@@ -90,9 +90,9 @@ a.fp-opt.active { background: var(--accent); color: #fff; border-color: var(--ac
 .date-cal::-webkit-calendar-picker-indicator { cursor: pointer; opacity: 0.55; }
 .v4-date-nav { display: flex; align-items: center; gap: 8px; min-width: 0; }
 .v4-day-arrow { display: flex; align-items: center; justify-content: center;
-  width: 26px; height: 26px; border-radius: 50%; border: 1px solid #e5e7eb;
-  background: #fff; color: #4b5563; font-size: 15px; line-height: 1;
-  text-decoration: none; flex: none; }
+  width: 28px; height: 28px; border-radius: 50%; border: 1px solid #e5e7eb;
+  background: #fff; color: #4b5563; line-height: 1; text-decoration: none; flex: none; }
+.v4-day-arrow svg { width: 16px; height: 16px; display: block; }
 .v4-day-arrow:hover { color: var(--accent); border-color: #93c5fd; text-decoration: none; }
 .v4-day-arrow.off { opacity: 0.35; pointer-events: none; }
 .note-line { color: #9ca3af; font-size: 12px; margin: -4px 0 10px; }
@@ -355,8 +355,8 @@ table.ref-table .hit { margin-left: 0.25rem; }
 .legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
 .legend i { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
 svg.radar, svg.mom { width: 100%; height: auto; display: block; margin-top: 0.25rem; margin-inline: auto; }
-svg.radar { max-width: 340px; }
-svg.mom { max-width: 620px; }
+svg.radar { max-width: 460px; }
+svg.mom { max-width: 100%; }
 svg.trend { width: 100%; height: auto; display: block; margin-top: 0.25rem; max-width: 100%; }
 .chart-narrow { display: none; }
 @media (max-width: 768px) { .chart-wide { display: none; } .chart-narrow { display: block; } }
@@ -1074,6 +1074,12 @@ ICON_CALENDAR = (  # 日期
 )
 ICON_FILTER = (  # 筛选：漏斗
     f'<svg {_ICON_ATTRS}><path d="M3 5h18l-7 8.5V19l-4 2.5v-8z"></path></svg>'
+)
+ICON_CHEV_L = (  # 前一天
+    f'<svg {_ICON_ATTRS}><path d="M15 19l-7-7 7-7"></path></svg>'
+)
+ICON_CHEV_R = (  # 后一天
+    f'<svg {_ICON_ATTRS}><path d="M9 5l7 7-7 7"></path></svg>'
 )
 ICON_TROPHY = (  # 赛事Top：奖杯
     f'<svg {_ICON_ATTRS}><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>'

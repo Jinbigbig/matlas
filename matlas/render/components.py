@@ -317,7 +317,8 @@ def momentum_svg(
     """进球威胁度随时间变化。两条线用色 + 虚实 + 端点标记三重区分。"""
     if len(labels) < 2 or len(home) != len(labels) or len(away) != len(labels):
         return ""
-    pad_l, pad_r, pad_t, pad_b = 34, 12, 14, 26
+    # 右侧留 26：末点圆点 + 端点队名 + 最后一个时间标签都要落在画布内
+    pad_l, pad_r, pad_t, pad_b = 34, 26, 14, 26
     iw, ih = w - pad_l - pad_r, h - pad_t - pad_b
     top = max(1.0, max(home), max(away)) * 1.15
 

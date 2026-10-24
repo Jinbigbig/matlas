@@ -444,16 +444,18 @@ def _charts_panel(m: Match) -> str:
     axes = [zh for _, zh in Metrics.AXES]
     radar = C.radar_svg(
         m.metrics_home.values(), m.metrics_away.values(), axes,
-        m.home.name, m.away.name,
+        m.home.name, m.away.name, size=440,
     )
     mom = ""
     if m.momentum and len(m.momentum.labels) >= 2:
+        args = (m.momentum.labels, m.momentum.home, m.momentum.away,
+                m.home.name, m.away.name)
+        wide = C.momentum_svg(*args, w=1000, h=230)
+        narrow = C.momentum_svg(*args, w=560, h=200)
         mom = (
             '<div style="margin-top:22px"><h3>进球威胁度走势</h3>'
-            + C.momentum_svg(
-                m.momentum.labels, m.momentum.home, m.momentum.away,
-                m.home.name, m.away.name,
-            )
+            f'<div class="chart-wide">{wide}</div>'
+            f'<div class="chart-narrow">{narrow}</div>'
             + "</div>"
         )
     return C.panel(
@@ -1079,9 +1081,9 @@ def _ai_card(digest: list[tuple], pre: str = "") -> str:
     bar = (
         '<div class="v4-filter-bar ai-bar">'
         '<div class="v4-date-nav">'
-        '<a class="v4-day-arrow" href="#" data-aid-step="1" aria-label="前一天">‹</a>'
+        f'<a class="v4-day-arrow" href="#" data-aid-step="1" aria-label="前一天">{L.ICON_CHEV_L}</a>'
         f'<div class="v4-date">{L.ICON_CALENDAR} {"".join(date_spans)}</div>'
-        '<a class="v4-day-arrow" href="#" data-aid-step="-1" aria-label="后一天">›</a>'
+        f'<a class="v4-day-arrow" href="#" data-aid-step="-1" aria-label="后一天">{L.ICON_CHEV_R}</a>'
         "</div>"
         '<label class="v4-filter-btn" for="afp-toggle">'
         f'<span>{L.ICON_FILTER} 筛选</span></label>'
@@ -1189,15 +1191,16 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
         idx = dates.index(day.date) if day.date in dates else -1
         prev_d = dates[idx + 1] if 0 <= idx < len(dates) - 1 else None  # 更早一天
         next_d = dates[idx - 1] if idx > 0 else None  # 更晚一天
-        arrow = lambda d, ch: (
-            f'<a class="v4-day-arrow" href="{pre_d}days/{d}.html" '
-            f'aria-label="{ch}一天">{ch}</a>'
-            if d else f'<span class="v4-day-arrow off">{ch}</span>'
-        )
+        def arrow(d, label, icon):
+            if d:
+                return (f'<a class="v4-day-arrow" href="{pre_d}days/{d}.html" '
+                        f'aria-label="{label}">{icon}</a>')
+            return f'<span class="v4-day-arrow off" aria-hidden="true">{icon}</span>'
+
         arrows = (
-            f'{arrow(prev_d, "‹")}'
+            f'{arrow(prev_d, "前一天", L.ICON_CHEV_L)}'
             f'<div class="v4-date">{L.ICON_CALENDAR} {date_lab} ({len(ms)}场)</div>'
-            f'{arrow(next_d, "›")}'
+            f'{arrow(next_d, "后一天", L.ICON_CHEV_R)}'
         )
         time_row = (
             '<div class="fp-row"><div class="fp-label">时间:</div>'
@@ -2808,7 +2811,7 @@ def _team_depth_blocks(team_name: str, b: dict, matches: list[Match]) -> str:
     if met:
         axes = [zh for _, zh in Metrics.AXES]
         vals = met.values()
-        radar = C.radar_one(vals, axes, team_name, size=300)
+        radar = C.radar_one(vals, axes, team_name, size=440)
         power = b.get("power")
         head = (f'<p class="sub">综合战力 <b>{power}</b> · 联赛内分位 0–100</p>'
                 if power is not None else "")
