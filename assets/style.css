@@ -339,7 +339,9 @@ table.ref-table .hit { margin-left: 0.25rem; }
 svg.radar, svg.mom { width: 100%; height: auto; display: block; margin-top: 0.25rem; margin-inline: auto; }
 svg.radar { max-width: 340px; }
 svg.mom { max-width: 620px; }
-svg.trend { width: 100%; height: auto; display: block; margin-top: 0.25rem; max-width: 660px; }
+svg.trend { width: 100%; height: auto; display: block; margin-top: 0.25rem; max-width: 100%; }
+.chart-narrow { display: none; }
+@media (max-width: 768px) { .chart-wide { display: none; } .chart-narrow { display: block; } }
 
 /* ---------- 深度数据：联赛筛选 + 球队六维卡 ---------- */
 .depth-tools { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 0 0 14px; }
