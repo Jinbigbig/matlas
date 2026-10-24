@@ -598,7 +598,7 @@ ODDS_SERIES = (
 )
 
 
-def odds_lines_svg(points: Sequence[dict], *, w: int = 660, h: int = 250) -> str:
+def odds_lines_svg(points: Sequence[dict], *, w: int = 1000, h: int = 250) -> str:
     """胜平负三条赔率曲线 + 让球档位（右轴虚线阶梯）。
 
     points: [{label, home, draw, away, hcp}]，任一值可为 None。
@@ -685,7 +685,15 @@ def odds_lines_svg(points: Sequence[dict], *, w: int = 660, h: int = 250) -> str
     items = [f'<span><i style="background:{c}"></i>{esc(lab)}</span>' for _k, lab, c in ODDS_SERIES]
     if hcps:
         items.append('<span><i style="background:#6b7280"></i>让球</span>')
-    return '<div class="legend">' + "".join(items) + "</div>" + "".join(parts)
+    return "".join(parts)
+
+
+def odds_lines_legend(has_hcp: bool = True) -> str:
+    """胜平负 + 让球的图例条（与 odds_lines_svg 同一套配色）。"""
+    items = [f'<span><i style="background:{c}"></i>{esc(lab)}</span>' for _k, lab, c in ODDS_SERIES]
+    if has_hcp:
+        items.append('<span><i style="background:#6b7280"></i>让球</span>')
+    return '<div class="legend">' + "".join(items) + "</div>"
 
 
 def main_pick_bar(text: str, *, tag: str = "", hit: bool | None = None) -> str:

@@ -84,9 +84,13 @@ def _odds_trend(m: Match) -> str:
             "away": _tick_num(p.get("负")),
             "hcp": _tick_num(_tick_hcp(p)),
         })
-    chart = C.odds_lines_svg(pts)
-    if not chart:
+    # 桌面铺满面板、移动端用 620 宽的紧凑版：同一份 SVG 只换 viewBox 会让小屏字号过小，故按屏宽切换
+    wide = C.odds_lines_svg(pts, w=1000)
+    compact = C.odds_lines_svg(pts, w=620)
+    if not compact:
         return ""
+    chart = (f'<div class="chart-wide">{wide}</div>'
+             f'<div class="chart-narrow">{compact}</div>')
 
     base = pts[0]
     rows = []
@@ -107,7 +111,9 @@ def _odds_trend(m: Match) -> str:
             bits.insert(0, f"让球 {b_h}→{hcp_txt}")
         rows.append([p["label"], *cells, hcp_txt, " · ".join(bits) or "未变"])
     table = C.table(["时点", "主胜", "平", "客胜", "让球", "较初盘"], rows)
+    has_hcp = any(p["hcp"] is not None for p in pts)
     return ('<div class="of-sec"><div class="of-h">赔率变化</div>'
+            + C.odds_lines_legend(has_hcp)
             + chart + table + "</div>")
 
 
