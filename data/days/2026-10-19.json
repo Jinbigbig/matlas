@@ -17,10 +17,10 @@
     "country": "",
     "rank": 14,
     "points": 7,
-    "played": 7,
+    "played": 8,
     "win": 2,
     "draw": 1,
-    "loss": 4,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/1579.png"
    },
@@ -46,12 +46,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 71,
+    "attack": 69,
     "defence": 2,
     "control": 15,
-    "form": 44,
-    "value": 12,
-    "motivation": 8,
+    "form": 43,
+    "value": 11,
+    "motivation": 7,
     "AXES": [
      [
       "attack",
@@ -80,7 +80,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 31,
+    "attack": 30,
     "defence": 88,
     "control": 71,
     "form": 73,
@@ -125,14 +125,14 @@
      "T-1"
     ],
     "home": [
-     1.0,
      2.0,
      1.0,
      1.0,
      2.0,
      2.0,
      1.0,
-     4.0
+     4.0,
+     2.0
     ],
     "away": [
      2.0,
@@ -325,7 +325,7 @@
     "settled_at": "2026-10-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -372,19 +372,19 @@
      },
      {
       "rank": 8,
+      "name": "都灵",
+      "pts": 13,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "尤文图斯",
       "pts": 11,
       "p": 7
      },
      {
-      "rank": 9,
-      "name": "那不勒斯",
-      "pts": 10,
-      "p": 7
-     },
-     {
       "rank": 10,
-      "name": "都灵",
+      "name": "那不勒斯",
       "pts": 10,
       "p": 7
      },
@@ -410,7 +410,7 @@
       "rank": 14,
       "name": "蒙扎",
       "pts": 7,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 15,
@@ -812,7 +812,7 @@
     "settled_at": "2026-10-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.174,
     "lam_away": 1.444,
@@ -859,10 +859,10 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 10,
-    "points": 10,
-    "played": 7,
-    "win": 3,
+    "rank": 8,
+    "points": 13,
+    "played": 8,
+    "win": 4,
     "draw": 1,
     "loss": 3,
     "form": "",
@@ -878,9 +878,9 @@
    "metrics_home": {
     "attack": 8,
     "defence": 23,
-    "control": 13,
-    "form": 16,
-    "value": 18,
+    "control": 14,
+    "form": 15,
+    "value": 17,
     "motivation": 15,
     "AXES": [
      [
@@ -910,12 +910,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 31,
+    "attack": 30,
     "defence": 23,
-    "control": 27,
-    "form": 44,
-    "value": 40,
-    "motivation": 46,
+    "control": 29,
+    "form": 43,
+    "value": 39,
+    "motivation": 45,
     "AXES": [
      [
       "attack",
@@ -966,12 +966,12 @@
     ],
     "away": [
      1.0,
-     1.0,
      0.0,
      2.0,
      0.0,
      1.0,
      2.0,
+     3.0,
      3.0
     ]
    },
@@ -1164,7 +1164,7 @@
     "settled_at": "2026-10-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -1211,19 +1211,19 @@
      },
      {
       "rank": 8,
+      "name": "都灵",
+      "pts": 13,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "尤文图斯",
       "pts": 11,
       "p": 7
      },
      {
-      "rank": 9,
-      "name": "那不勒斯",
-      "pts": 10,
-      "p": 7
-     },
-     {
       "rank": 10,
-      "name": "都灵",
+      "name": "那不勒斯",
       "pts": 10,
       "p": 7
      },
@@ -1249,7 +1249,7 @@
       "rank": 14,
       "name": "蒙扎",
       "pts": 7,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 15,
@@ -1553,7 +1553,7 @@
     "settled_at": "2026-10-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.044,
     "lam_away": 1.283,
@@ -1664,7 +1664,7 @@
     "slug": "",
     "league": "英超",
     "country": "",
-    "rank": 17,
+    "rank": 18,
     "points": 6,
     "played": 7,
     "win": 2,
@@ -1681,12 +1681,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 19,
-    "defence": 22,
+    "attack": 18,
+    "defence": 21,
     "control": 13,
-    "form": 3,
+    "form": 2,
     "value": 57,
-    "motivation": 8,
+    "motivation": 7,
     "AXES": [
      [
       "attack",
@@ -1715,11 +1715,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 32,
+    "attack": 31,
     "defence": 46,
     "control": 38,
     "form": 29,
-    "value": 65,
+    "value": 64,
     "motivation": 33,
     "AXES": [
      [
@@ -1969,7 +1969,7 @@
     "settled_at": "2026-10-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -2022,13 +2022,13 @@
      },
      {
       "rank": 9,
-      "name": "赫尔城",
-      "pts": 9,
-      "p": 7
+      "name": "伊普斯维奇",
+      "pts": 10,
+      "p": 8
      },
      {
       "rank": 10,
-      "name": "伊普斯维奇",
+      "name": "赫尔城",
       "pts": 9,
       "p": 7
      },
@@ -2064,25 +2064,25 @@
      },
      {
       "rank": 16,
+      "name": "诺丁汉森林",
+      "pts": 6,
+      "p": 8
+     },
+     {
+      "rank": 17,
       "name": "托特纳姆热刺",
       "pts": 6,
       "p": 7
      },
      {
-      "rank": 17,
+      "rank": 18,
       "name": "考文垂",
       "pts": 6,
       "p": 7
      },
      {
-      "rank": 18,
-      "name": "富勒姆",
-      "pts": 5,
-      "p": 7
-     },
-     {
       "rank": 19,
-      "name": "诺丁汉森林",
+      "name": "富勒姆",
       "pts": 5,
       "p": 7
      },
@@ -2226,11 +2226,11 @@
    },
    "metrics_home": {
     "attack": 2,
-    "defence": 74,
-    "control": 21,
-    "form": 29,
+    "defence": 75,
+    "control": 24,
+    "form": 30,
     "value": 29,
-    "motivation": 48,
+    "motivation": 49,
     "AXES": [
      [
       "attack",
@@ -2259,12 +2259,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 58,
-    "defence": 19,
-    "control": 34,
-    "form": 50,
-    "value": 35,
-    "motivation": 55,
+    "attack": 59,
+    "defence": 20,
+    "control": 35,
+    "form": 51,
+    "value": 37,
+    "motivation": 56,
     "AXES": [
      [
       "attack",
@@ -2530,7 +2530,7 @@
     "settled_at": "2026-10-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -2572,8 +2572,8 @@
      {
       "rank": 7,
       "name": "阿拉维斯",
-      "pts": 11,
-      "p": 9
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 8,
@@ -2650,8 +2650,8 @@
      {
       "rank": 20,
       "name": "马拉加",
-      "pts": 4,
-      "p": 9
+      "pts": 5,
+      "p": 10
      }
     ],
     "lam_home": 1.064,
@@ -2704,12 +2704,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 33,
-    "defence": 12,
-    "control": 21,
-    "form": 9,
-    "value": 88,
-    "motivation": 52,
+    "attack": 32,
+    "defence": 14,
+    "control": 24,
+    "form": 8,
+    "value": 86,
+    "motivation": 54,
     "AXES": [
      [
       "attack",
@@ -2738,12 +2738,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 9,
-    "defence": 45,
-    "control": 30,
-    "form": 42,
-    "value": 67,
-    "motivation": 39,
+    "attack": 11,
+    "defence": 46,
+    "control": 32,
+    "form": 41,
+    "value": 65,
+    "motivation": 41,
     "AXES": [
      [
       "attack",
@@ -2965,7 +2965,7 @@
     "settled_at": "2026-10-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.958,
     "lam_away": 0.827,
@@ -3018,11 +3018,11 @@
    },
    "metrics_home": {
     "attack": 2,
-    "defence": 79,
-    "control": 23,
-    "form": 14,
-    "value": 70,
-    "motivation": 33,
+    "defence": 80,
+    "control": 22,
+    "form": 13,
+    "value": 71,
+    "motivation": 31,
     "AXES": [
      [
       "attack",
@@ -3051,12 +3051,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 35,
-    "defence": 58,
+    "attack": 36,
+    "defence": 56,
     "control": 44,
-    "form": 37,
+    "form": 40,
     "value": 53,
-    "motivation": 65,
+    "motivation": 67,
     "AXES": [
      [
       "attack",
@@ -3287,7 +3287,7 @@
     "settled_at": "2026-10-19"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.623,
     "lam_away": 0.897,

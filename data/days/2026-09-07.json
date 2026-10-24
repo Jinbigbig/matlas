@@ -41,9 +41,9 @@
    "metrics_home": {
     "attack": 8,
     "defence": 54,
-    "control": 27,
-    "form": 44,
-    "value": 30,
+    "control": 26,
+    "form": 43,
+    "value": 29,
     "motivation": 35,
     "AXES": [
      [
@@ -73,11 +73,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 14,
-    "defence": 27,
-    "control": 22,
-    "form": 67,
-    "value": 42,
+    "attack": 15,
+    "defence": 28,
+    "control": 20,
+    "form": 68,
+    "value": 41,
     "motivation": 14,
     "AXES": [
      [
@@ -175,7 +175,7 @@
     "settled_at": "2026-09-07"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -222,19 +222,19 @@
      },
      {
       "rank": 8,
+      "name": "都灵",
+      "pts": 13,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "尤文图斯",
       "pts": 11,
       "p": 7
      },
      {
-      "rank": 9,
-      "name": "那不勒斯",
-      "pts": 10,
-      "p": 7
-     },
-     {
       "rank": 10,
-      "name": "都灵",
+      "name": "那不勒斯",
       "pts": 10,
       "p": 7
      },
@@ -260,7 +260,7 @@
       "rank": 14,
       "name": "蒙扎",
       "pts": 7,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 15,
@@ -414,10 +414,10 @@
    "metrics_home": {
     "attack": 2,
     "defence": 86,
-    "control": 27,
-    "form": 42,
-    "value": 64,
-    "motivation": 63,
+    "control": 28,
+    "form": 43,
+    "value": 65,
+    "motivation": 64,
     "AXES": [
      [
       "attack",
@@ -446,11 +446,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 17,
-    "defence": 74,
+    "attack": 16,
+    "defence": 75,
     "control": 50,
-    "form": 29,
-    "value": 82,
+    "form": 30,
+    "value": 81,
     "motivation": 39,
     "AXES": [
      [
@@ -557,7 +557,7 @@
     "settled_at": "2026-09-07"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -599,8 +599,8 @@
      {
       "rank": 7,
       "name": "阿拉维斯",
-      "pts": 11,
-      "p": 9
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 8,
@@ -677,8 +677,8 @@
      {
       "rank": 20,
       "name": "马拉加",
-      "pts": 4,
-      "p": 9
+      "pts": 5,
+      "p": 10
      }
     ],
     "lam_home": 1.081,
@@ -818,7 +818,7 @@
    "metrics_away": {
     "attack": 80,
     "defence": 52,
-    "control": 72,
+    "control": 68,
     "form": 84,
     "value": 24,
     "motivation": 96,
@@ -861,14 +861,14 @@
      "T-1"
     ],
     "home": [
-     1.0,
      2.0,
      1.0,
      0.0,
      1.0,
      0.0,
      0.0,
-     1.0
+     1.0,
+     0.0
     ],
     "away": [
      2.0,
@@ -927,7 +927,7 @@
     "settled_at": "2026-09-07"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.712,
     "lam_away": 1.361,
@@ -1105,7 +1105,7 @@
     "settled_at": "2026-09-07"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 0.989,
     "lam_away": 2.021,
@@ -1140,7 +1140,7 @@
    "metrics_home": {
     "attack": 87,
     "defence": 100,
-    "control": 100,
+    "control": 93,
     "form": 100,
     "value": 47,
     "motivation": 20,
@@ -1174,7 +1174,7 @@
    "metrics_away": {
     "attack": 20,
     "defence": 47,
-    "control": 33,
+    "control": 40,
     "form": 40,
     "value": 27,
     "motivation": 20,
@@ -1283,7 +1283,7 @@
     "settled_at": "2026-09-07"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 2.565,
     "lam_away": 0.878,
@@ -1328,10 +1328,10 @@
     "logo": "assets/logo/teams/487.png"
    },
    "metrics_home": {
-    "attack": 78,
-    "defence": 79,
-    "control": 80,
-    "form": 44,
+    "attack": 77,
+    "defence": 78,
+    "control": 79,
+    "form": 43,
     "value": 58,
     "motivation": 57,
     "AXES": [
@@ -1362,12 +1362,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 42,
+    "attack": 40,
     "defence": 54,
     "control": 51,
-    "form": 67,
+    "form": 68,
     "value": 60,
-    "motivation": 67,
+    "motivation": 66,
     "AXES": [
      [
       "attack",
@@ -1473,7 +1473,7 @@
     "settled_at": "2026-09-07"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -1520,19 +1520,19 @@
      },
      {
       "rank": 8,
+      "name": "都灵",
+      "pts": 13,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "尤文图斯",
       "pts": 11,
       "p": 7
      },
      {
-      "rank": 9,
-      "name": "那不勒斯",
-      "pts": 10,
-      "p": 7
-     },
-     {
       "rank": 10,
-      "name": "都灵",
+      "name": "那不勒斯",
       "pts": 10,
       "p": 7
      },
@@ -1558,7 +1558,7 @@
       "rank": 14,
       "name": "蒙扎",
       "pts": 7,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 15,
@@ -1628,11 +1628,11 @@
     "logo": "assets/logo/teams/240.png"
    },
    "metrics_home": {
-    "attack": 33,
+    "attack": 32,
     "defence": 3,
-    "control": 12,
+    "control": 14,
     "form": 3,
-    "value": 30,
+    "value": 32,
     "motivation": 0,
     "AXES": [
      [
@@ -1662,12 +1662,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 58,
-    "defence": 45,
-    "control": 61,
-    "form": 39,
-    "value": 48,
-    "motivation": 30,
+    "attack": 59,
+    "defence": 46,
+    "control": 62,
+    "form": 38,
+    "value": 49,
+    "motivation": 32,
     "AXES": [
      [
       "attack",
@@ -1764,7 +1764,7 @@
     "settled_at": "2026-09-07"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.212,
     "lam_away": 1.313,
@@ -1880,10 +1880,10 @@
    },
    "metrics_home": {
     "attack": 34,
-    "defence": 16,
-    "control": 18,
-    "form": 29,
-    "value": 44,
+    "defence": 15,
+    "control": 20,
+    "form": 30,
+    "value": 45,
     "motivation": 15,
     "AXES": [
      [
@@ -1914,11 +1914,11 @@
    },
    "metrics_away": {
     "attack": 34,
-    "defence": 19,
-    "control": 21,
-    "form": 29,
-    "value": 73,
-    "motivation": 58,
+    "defence": 20,
+    "control": 24,
+    "form": 30,
+    "value": 74,
+    "motivation": 59,
     "AXES": [
      [
       "attack",
@@ -2024,7 +2024,7 @@
     "settled_at": "2026-09-07"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -2066,8 +2066,8 @@
      {
       "rank": 7,
       "name": "阿拉维斯",
-      "pts": 11,
-      "p": 9
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 8,
@@ -2144,8 +2144,8 @@
      {
       "rank": 20,
       "name": "马拉加",
-      "pts": 4,
-      "p": 9
+      "pts": 5,
+      "p": 10
      }
     ],
     "lam_home": 1.367,
@@ -2180,11 +2180,11 @@
    },
    "metrics_home": {
     "attack": 7,
-    "defence": 37,
+    "defence": 36,
     "control": 9,
     "form": 7,
     "value": 33,
-    "motivation": 33,
+    "motivation": 31,
     "AXES": [
      [
       "attack",
@@ -2213,12 +2213,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 65,
-    "defence": 70,
-    "control": 72,
+    "attack": 67,
+    "defence": 69,
+    "control": 73,
     "form": 84,
-    "value": 37,
-    "motivation": 53,
+    "value": 38,
+    "motivation": 56,
     "AXES": [
      [
       "attack",
@@ -2315,7 +2315,7 @@
     "settled_at": "2026-09-07"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.076,
     "lam_away": 1.159,

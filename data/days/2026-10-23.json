@@ -38,7 +38,7 @@
     "defence": 0,
     "control": 0,
     "form": 0,
-    "value": 100,
+    "value": 33,
     "motivation": 0,
     "AXES": [
      [
@@ -68,12 +68,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 100,
-    "defence": 100,
-    "control": 100,
-    "form": 100,
+    "attack": 33,
+    "defence": 33,
+    "control": 33,
+    "form": 33,
     "value": 0,
-    "motivation": 100,
+    "motivation": 33,
     "AXES": [
      [
       "attack",
@@ -113,23 +113,23 @@
      "T-1"
     ],
     "home": [
-     2.0,
      1.0,
      1.0,
      1.0,
      2.0,
      1.0,
      0.0,
+     2.0,
      2.0
     ],
     "away": [
-     2.0,
      1.0,
      1.0,
      1.0,
      2.0,
      3.0,
      0.0,
+     1.0,
      1.0
     ]
    },
@@ -268,8 +268,17 @@
    "recent_home": [],
    "recent_away": [],
    "injuries": [],
+   "result": {
+    "half_score": "2-0",
+    "full_score": "2-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": true,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.652,
     "lam_away": 1.533,
@@ -302,160 +311,6 @@
      "客/平": 5.4,
      "客/客": 21.2
     },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 4
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 4
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      }
-     ]
-    },
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -471,16 +326,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 19.4,
-     "t_max": 20.7,
-     "pop": 79,
-     "rain": 0.4,
-     "wind": 10.8,
-     "grade": "bad",
-     "city": "布里斯班"
-    }
+    ]
    }
   },
   {
@@ -595,24 +441,24 @@
      "T-1"
     ],
     "home": [
-     2.0,
      1.0,
      1.0,
      1.0,
      0.0,
      1.0,
      2.0,
-     0.0
+     0.0,
+     1.0
     ],
     "away": [
-     0.0,
      1.0,
      0.0,
      3.0,
      0.0,
      1.0,
      5.0,
-     5.0
+     5.0,
+     1.0
     ]
    },
    "forecasts": [
@@ -742,46 +588,18 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "桑麦邦",
-     "reason": "足踝",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "史唐普夫",
-     "reason": "骨盆",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "高卡治",
-     "reason": "肌肉",
-     "status": "doubt"
-    },
-    {
-     "team": "home",
-     "player": "奥利华奥臣",
-     "reason": "腿筋",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "罗渣里奥",
-     "reason": "肌肉",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "费沙贺恩比",
-     "reason": "跟腱",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
+   "result": {
+    "half_score": "0-1",
+    "full_score": "1-1",
+    "direction_hit": false,
+    "score_hit": true,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.092,
     "lam_away": 1.385,
@@ -813,196 +631,6 @@
      "客/主": 1.6,
      "客/平": 4.9,
      "客/客": 25.9
-    },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 3
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 5,
-       "ga": 1
-      },
-      {
-       "gf": 5,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 6
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 4
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 8
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      }
-     ]
     },
     "odds_full": {
      "spf": {
@@ -1074,46 +702,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "桑麦邦",
-        "reason": "足踝"
-       },
-       {
-        "name": "史唐普夫",
-        "reason": "骨盆"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "高卡治",
-        "reason": "肌肉"
-       },
-       {
-        "name": "奥利华奥臣",
-        "reason": "腿筋"
-       }
-      ],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "罗渣里奥",
-        "reason": "肌肉"
-       },
-       {
-        "name": "费沙贺恩比",
-        "reason": "跟腱"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
-    "mood": "波鸿的史唐普夫列入伤兵名单。沃夫斯堡的韦伦雷特治好膝伤，可以复出。维兰斯仍未在今季上阵，伤情不详。\n波鸿停赛：无\n上阵成疑：高卡治（肌肉）、奥利华奥臣（腿筋）\n受伤／缺阵：桑麦邦（足踝）、史唐普夫（骨盆）\n沃夫斯堡停赛：无\n上阵成疑：无\n受伤／缺阵：罗渣里奥（肌肉）、费沙贺恩比（跟腱）、维兰斯（不详）\n波鸿上轮作客两球净负凯泽斯劳滕，联赛近3轮全败。他们开季至今攻力疲弱…",
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -1143,16 +731,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 9.2,
-     "t_max": 11.5,
-     "pop": 100,
-     "rain": 1.4,
-     "wind": 38.2,
-     "grade": "bad",
-     "city": "波鸿"
-    }
+    ]
    }
   },
   {
@@ -1190,7 +769,7 @@
    "metrics_home": {
     "attack": 56,
     "defence": 64,
-    "control": 68,
+    "control": 76,
     "form": 92,
     "value": 48,
     "motivation": 60,
@@ -1267,24 +846,24 @@
      "T-1"
     ],
     "home": [
-     0.0,
      1.0,
      2.0,
      1.0,
      3.0,
      1.0,
      2.0,
-     2.0
+     2.0,
+     0.0
     ],
     "away": [
-     1.0,
      2.0,
      1.0,
      0.0,
      1.0,
      0.0,
      0.0,
-     1.0
+     1.0,
+     0.0
     ]
    },
    "forecasts": [
@@ -1451,58 +1030,18 @@
      "half_ft": "平/平"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "列治拿",
-     "reason": "腹股沟",
-     "status": "doubt"
-    },
-    {
-     "team": "home",
-     "player": "马古斯洛顿",
-     "reason": "不详",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "邦图斯赞臣",
-     "reason": "十字靭带",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "奥斯卡施奥斯坦",
-     "reason": "",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "华伦甘文斯",
-     "reason": "不详",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "布苏拿锡",
-     "reason": "膝伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "诺亚约翰",
-     "reason": "不详",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "美斯高拿度",
-     "reason": "",
-     "status": "doubt"
-    }
-   ],
+   "injuries": [],
+   "result": {
+    "half_score": "0-0",
+    "full_score": "0-0",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.778,
     "lam_away": 1.361,
@@ -1535,272 +1074,6 @@
      "客/平": 5.3,
      "客/客": 17.1
     },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 5,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 5,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      }
-     ]
-    },
-    "injuries": {
-     "home": {
-      "out": [],
-      "doubtful": [
-       {
-        "name": "列治拿",
-        "reason": "腹股沟"
-       },
-       {
-        "name": "马古斯洛顿",
-        "reason": "不详"
-       }
-      ],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "邦图斯赞臣",
-        "reason": "十字靭带"
-       },
-       {
-        "name": "奥斯卡施奥斯坦",
-        "reason": ""
-       },
-       {
-        "name": "华伦甘文斯",
-        "reason": "不详"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "布苏拿锡",
-        "reason": "膝伤"
-       },
-       {
-        "name": "诺亚约翰",
-        "reason": "不详"
-       },
-       {
-        "name": "美斯高拿度",
-        "reason": ""
-       }
-      ],
-      "suspended": []
-     }
-    },
-    "mood": "埃夫斯堡前锋柏费克数周前手腕骨折后已无大碍，今仗可重新候命，但需佩戴保护套上阵。他在上周对天狼星一役已曾于补时阶段后备入替。马尔默前锋迪亚高加西亚已摆脱伤病困扰，上周对赫根时后备上阵踢了35分钟，今场将可继续披甲。\n埃夫斯堡停赛：无\n上阵成疑：列治拿（腹股沟）、马古斯洛顿（不详）\n受伤／缺阵：无\n马尔默停赛：无\n成疑：布苏拿锡（膝伤）、诺亚约翰（不详）",
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -1830,16 +1103,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 8.2,
-     "t_max": 9.7,
-     "pop": 16,
-     "rain": 0.0,
-     "wind": 14.4,
-     "grade": "ok",
-     "city": "布罗斯"
-    }
+    ]
    }
   },
   {
@@ -1875,12 +1139,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 33,
-    "defence": 26,
-    "control": 38,
-    "form": 38,
+    "attack": 34,
+    "defence": 27,
+    "control": 41,
+    "form": 41,
     "value": 49,
-    "motivation": 36,
+    "motivation": 37,
     "AXES": [
      [
       "attack",
@@ -1910,11 +1174,11 @@
    },
    "metrics_away": {
     "attack": 10,
-    "defence": 13,
-    "control": 5,
+    "defence": 15,
+    "control": 7,
     "form": 0,
-    "value": 8,
-    "motivation": 18,
+    "value": 7,
+    "motivation": 20,
     "AXES": [
      [
       "attack",
@@ -1955,23 +1219,23 @@
     ],
     "home": [
      1.0,
-     1.0,
      0.0,
      4.0,
      2.0,
      3.0,
      2.0,
-     1.0
+     1.0,
+     3.0
     ],
     "away": [
-     2.0,
      0.0,
      2.0,
      1.0,
      0.0,
      0.0,
      0.0,
-     3.0
+     3.0,
+     2.0
     ]
    },
    "forecasts": [
@@ -2137,22 +1401,18 @@
      "half_ft": "平/主"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Eus Waayers",
-     "reason": "伤情未明",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Pim Saathof",
-     "reason": "膝伤",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
+   "result": {
+    "half_score": "2-0",
+    "full_score": "3-2",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": true,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 2.276,
     "lam_away": 1.243,
@@ -2185,260 +1445,6 @@
      "客/平": 4.7,
      "客/客": 11.3
     },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 1,
-       "ga": 4
-      },
-      {
-       "gf": 2,
-       "ga": 5
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 4
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 2,
-       "ga": 5
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 3,
-       "ga": 4
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 4
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 4
-      },
-      {
-       "gf": 0,
-       "ga": 5
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 4
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 4
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 4
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      }
-     ]
-    },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "Eus Waayers",
-        "reason": "伤情未明"
-       },
-       {
-        "name": "Pim Saathof",
-        "reason": "膝伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -2468,16 +1474,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 10.8,
-     "t_max": 11.4,
-     "pop": 99,
-     "rain": 3.4,
-     "wind": 34.9,
-     "grade": "bad",
-     "city": "代芬特尔"
-    }
+    ]
    }
   },
   {
@@ -2592,24 +1589,24 @@
      "T-1"
     ],
     "home": [
-     2.0,
      0.0,
      0.0,
      3.0,
      0.0,
      1.0,
      2.0,
-     2.0
+     2.0,
+     1.0
     ],
     "away": [
-     0.0,
      2.0,
      2.0,
      1.0,
      1.0,
      3.0,
      2.0,
-     3.0
+     3.0,
+     1.0
     ]
    },
    "forecasts": [
@@ -2748,22 +1745,18 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Mats Seuntjens",
-     "reason": "Injury",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Yvandro Borges Sanches",
-     "reason": "Torn cruciate ligament",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
+   "result": {
+    "half_score": "1-1",
+    "full_score": "1-1",
+    "direction_hit": false,
+    "score_hit": true,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.747,
     "lam_away": 1.773,
@@ -2795,140 +1788,6 @@
      "客/主": 3.0,
      "客/平": 5.5,
      "客/客": 24.0
-    },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 4
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      }
-     ]
     },
     "odds_full": {
      "spf": {
@@ -3000,28 +1859,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "Mats Seuntjens",
-        "reason": "Injury"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Yvandro Borges Sanches",
-        "reason": "Torn cruciate ligament"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -3051,16 +1888,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 11.3,
-     "t_max": 12.3,
-     "pop": 100,
-     "rain": 0.9,
-     "wind": 36.7,
-     "grade": "bad",
-     "city": "布雷达"
-    }
+    ]
    }
   },
   {
@@ -3077,12 +1905,12 @@
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 13,
+    "rank": 14,
     "points": 6,
-    "played": 6,
+    "played": 7,
     "win": 2,
     "draw": 0,
-    "loss": 4,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/172.png"
    },
@@ -3092,9 +1920,9 @@
     "league": "德甲",
     "country": "",
     "rank": 18,
-    "points": 0,
-    "played": 6,
-    "win": 0,
+    "points": 3,
+    "played": 7,
+    "win": 1,
     "draw": 0,
     "loss": 6,
     "form": "",
@@ -3108,12 +1936,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 20,
-    "defence": 55,
-    "control": 39,
-    "form": 17,
-    "value": 55,
-    "motivation": 67,
+    "attack": 22,
+    "defence": 56,
+    "control": 37,
+    "form": 15,
+    "value": 57,
+    "motivation": 68,
     "AXES": [
      [
       "attack",
@@ -3142,12 +1970,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 45,
+    "attack": 46,
     "defence": 0,
-    "control": 4,
+    "control": 7,
     "form": 0,
-    "value": 8,
-    "motivation": 12,
+    "value": 9,
+    "motivation": 11,
     "AXES": [
      [
       "attack",
@@ -3187,24 +2015,24 @@
      "T-1"
     ],
     "home": [
-     1.0,
      4.0,
      3.0,
      1.0,
      0.0,
      2.0,
      0.0,
-     1.0
+     1.0,
+     2.0
     ],
     "away": [
-     4.0,
      0.0,
      3.0,
      3.0,
      0.0,
      3.0,
      1.0,
-     1.0
+     1.0,
+     3.0
     ]
    },
    "forecasts": [
@@ -3425,82 +2253,18 @@
      "half_ft": "主/客"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Justin Diehl",
-     "reason": "肌肉伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Dan-Axel Zagadou",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    },
-    {
-     "team": "home",
-     "player": "Josha Vagnoman",
-     "reason": "伤情",
-     "status": "doubt"
-    },
-    {
-     "team": "home",
-     "player": "Tiago Tomás",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Enzo Leopold",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Fritz Fleck",
-     "reason": "肌肉伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Jan Leszczyński",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Tim Kleindienst",
-     "reason": "肌肉伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Franck Honorat",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Isac Lidberg",
-     "reason": "大腿伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Ko Itakura",
-     "reason": "踝伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Nikolas-Gerrit Kühn",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    }
-   ],
+   "injuries": [],
+   "result": {
+    "half_score": "1-1",
+    "full_score": "2-3",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -3577,15 +2341,15 @@
      },
      {
       "rank": 13,
-      "name": "斯图加特",
+      "name": "霍芬海姆",
       "pts": 6,
       "p": 6
      },
      {
       "rank": 14,
-      "name": "霍芬海姆",
+      "name": "斯图加特",
       "pts": 6,
-      "p": 6
+      "p": 7
      },
      {
       "rank": 15,
@@ -3608,8 +2372,8 @@
      {
       "rank": 18,
       "name": "门兴格拉德巴赫",
-      "pts": 0,
-      "p": 6
+      "pts": 3,
+      "p": 7
      }
     ],
     "lam_home": 2.397,
@@ -3643,385 +2407,6 @@
      "客/平": 3.5,
      "客/客": 5.9
     },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 5
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 4
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 5,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 5
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 4
-      },
-      {
-       "gf": 5,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 4
-      },
-      {
-       "gf": 0,
-       "ga": 5
-      },
-      {
-       "gf": 3,
-       "ga": 4
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 4
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 5
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 5
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      }
-     ]
-    },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "Justin Diehl",
-        "reason": "肌肉伤"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Dan-Axel Zagadou",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Josha Vagnoman",
-        "reason": "伤情"
-       },
-       {
-        "name": "Tiago Tomás",
-        "reason": "肌肉伤"
-       }
-      ],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Enzo Leopold",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Fritz Fleck",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Jan Leszczyński",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Tim Kleindienst",
-        "reason": "肌肉伤"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Franck Honorat",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Isac Lidberg",
-        "reason": "大腿伤"
-       },
-       {
-        "name": "Ko Itakura",
-        "reason": "踝伤"
-       },
-       {
-        "name": "Nikolas-Gerrit Kühn",
-        "reason": "肌肉伤"
-       }
-      ],
-      "suspended": []
-     }
-    },
-    "mood": "斯图加特上轮联赛占得上风，但全场5次中目标射门均无功而还，门前把握力有待改善。门将丹尼士施文只曾作出2次扑救，球队久攻不下之余，更在完场前失守，惨被绝杀。门兴上轮联赛埋门次数不及对手，开赛早段亦已先落后；战至下半场早段凭翼锋华尔莫耶建功一度扳平，奈何追和后不久又告失守，最终力拚仅败。\n斯图加特受伤：米图斯达特（后卫）、尼高拉斯拿堤（中场）",
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -4051,16 +2436,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 9.6,
-     "t_max": 14.3,
-     "pop": 15,
-     "rain": 0.2,
-     "wind": 21.3,
-     "grade": "ok",
-     "city": "斯图加特"
-    }
+    ]
    }
   },
   {
@@ -4077,10 +2453,10 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 10,
-    "points": 10,
-    "played": 7,
-    "win": 3,
+    "rank": 8,
+    "points": 13,
+    "played": 8,
+    "win": 4,
     "draw": 1,
     "loss": 3,
     "form": "",
@@ -4093,10 +2469,10 @@
     "country": "",
     "rank": 14,
     "points": 7,
-    "played": 7,
+    "played": 8,
     "win": 2,
     "draw": 1,
-    "loss": 4,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/1579.png"
    },
@@ -4108,11 +2484,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 60,
+    "attack": 59,
     "defence": 40,
-    "control": 64,
+    "control": 63,
     "form": 73,
-    "value": 47,
+    "value": 46,
     "motivation": 52,
     "AXES": [
      [
@@ -4142,11 +2518,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 85,
+    "attack": 84,
     "defence": 10,
     "control": 46,
-    "form": 44,
-    "value": 14,
+    "form": 43,
+    "value": 13,
     "motivation": 23,
     "AXES": [
      [
@@ -4188,23 +2564,23 @@
     ],
     "home": [
      1.0,
-     1.0,
      0.0,
      2.0,
      0.0,
      1.0,
      2.0,
+     3.0,
      3.0
     ],
     "away": [
-     1.0,
      2.0,
      1.0,
      1.0,
      2.0,
      2.0,
      1.0,
-     4.0
+     4.0,
+     2.0
     ]
    },
    "forecasts": [
@@ -4425,64 +2801,18 @@
      "half_ft": "客/平"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Emirhan İlkhan",
-     "reason": "肌肉伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Franco Israel",
-     "reason": "肩伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Ricardo Rodríguez",
-     "reason": "大腿伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Niccolò Fortini",
-     "reason": "大腿伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Jan Ziółkowski",
-     "reason": "足伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Matteo Pessina",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Exequiel Zeballos",
-     "reason": "膝伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Idrissa Touré",
-     "reason": "膝伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Yvan Maye",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    }
-   ],
+   "injuries": [],
+   "result": {
+    "half_score": "1-0",
+    "full_score": "3-2",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": true,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -4529,19 +2859,19 @@
      },
      {
       "rank": 8,
+      "name": "都灵",
+      "pts": 13,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "尤文图斯",
       "pts": 11,
       "p": 7
      },
      {
-      "rank": 9,
-      "name": "那不勒斯",
-      "pts": 10,
-      "p": 7
-     },
-     {
       "rank": 10,
-      "name": "都灵",
+      "name": "那不勒斯",
       "pts": 10,
       "p": 7
      },
@@ -4567,7 +2897,7 @@
       "rank": 14,
       "name": "蒙扎",
       "pts": 7,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 15,
@@ -4636,220 +2966,6 @@
      "客/主": 3.4,
      "客/平": 5.3,
      "客/客": 17.3
-    },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 6
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 2
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 6
-      },
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 4
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      }
-     ]
     },
     "odds_full": {
      "spf": {
@@ -4921,58 +3037,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "Emirhan İlkhan",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Franco Israel",
-        "reason": "肩伤"
-       },
-       {
-        "name": "Ricardo Rodríguez",
-        "reason": "大腿伤"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Niccolò Fortini",
-        "reason": "大腿伤"
-       }
-      ],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Jan Ziółkowski",
-        "reason": "足伤"
-       },
-       {
-        "name": "Matteo Pessina",
-        "reason": "膝伤"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Exequiel Zeballos",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Idrissa Touré",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Yvan Maye",
-        "reason": "肌肉伤"
-       }
-      ],
-      "suspended": []
-     }
-    },
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -5002,16 +3066,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 9.2,
-     "t_max": 13.1,
-     "pop": 8,
-     "rain": 0.0,
-     "wind": 4.0,
-     "grade": "ok",
-     "city": "都灵"
-    }
+    ]
    }
   },
   {
@@ -5028,12 +3083,12 @@
     "slug": "",
     "league": "法甲",
     "country": "",
-    "rank": 10,
+    "rank": 11,
     "points": 9,
-    "played": 7,
+    "played": 8,
     "win": 2,
     "draw": 3,
-    "loss": 2,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/106.png"
    },
@@ -5042,10 +3097,10 @@
     "slug": "",
     "league": "法甲",
     "country": "",
-    "rank": 13,
-    "points": 8,
-    "played": 7,
-    "win": 2,
+    "rank": 8,
+    "points": 11,
+    "played": 8,
+    "win": 3,
     "draw": 2,
     "loss": 3,
     "form": "",
@@ -5059,7 +3114,7 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 27,
+    "attack": 25,
     "defence": 29,
     "control": 20,
     "form": 18,
@@ -5095,7 +3150,7 @@
    "metrics_away": {
     "attack": 12,
     "defence": 37,
-    "control": 27,
+    "control": 25,
     "form": 37,
     "value": 31,
     "motivation": 22,
@@ -5138,24 +3193,24 @@
      "T-1"
     ],
     "home": [
-     1.0,
      0.0,
      2.0,
      3.0,
      0.0,
      1.0,
      2.0,
-     0.0
+     0.0,
+     1.0
     ],
     "away": [
-     1.0,
      0.0,
      4.0,
      0.0,
      0.0,
      2.0,
      2.0,
-     1.0
+     1.0,
+     2.0
     ]
    },
    "forecasts": [
@@ -5331,52 +3386,18 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Brendan Chardonnet",
-     "reason": "小腿伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Raphaël Le Guen",
-     "reason": "骨折",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Giovani Versini",
-     "reason": "腿伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Ali Abdi",
-     "reason": "肌肉伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Antoine Mendy",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Laurent Abergel",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Moïse Lumpungu",
-     "reason": "腿伤",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
+   "result": {
+    "half_score": "1-0",
+    "full_score": "1-2",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -5423,38 +3444,38 @@
      },
      {
       "rank": 8,
+      "name": "尼斯",
+      "pts": 11,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "朗斯",
       "pts": 10,
       "p": 7
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "马赛",
       "pts": 9,
       "p": 7
      },
      {
-      "rank": 10,
+      "rank": 11,
       "name": "布雷斯特",
       "pts": 9,
-      "p": 7
+      "p": 8
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "图卢兹",
       "pts": 9,
       "p": 7
      },
      {
-      "rank": 12,
+      "rank": 13,
       "name": "欧塞尔",
       "pts": 9,
-      "p": 7
-     },
-     {
-      "rank": 13,
-      "name": "尼斯",
-      "pts": 8,
       "p": 7
      },
      {
@@ -5519,244 +3540,6 @@
      "客/平": 5.2,
      "客/客": 18.6
     },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 4
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 4
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      }
-     ]
-    },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "Brendan Chardonnet",
-        "reason": "小腿伤"
-       },
-       {
-        "name": "Raphaël Le Guen",
-        "reason": "骨折"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Giovani Versini",
-        "reason": "腿伤"
-       }
-      ],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Ali Abdi",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Antoine Mendy",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Laurent Abergel",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Moïse Lumpungu",
-        "reason": "腿伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
-    "mood": "布雷斯特上仗联赛沿用「4-2-3-1」阵式，箭头阿佐基及翼锋柏夫马普表现一般；反而另一翼锋森巴巴尔迪先开纪录，连续2场联赛有进帐，加上门将沙尔域克屡救险胜，就算下半场失守，但最终成功保住1分。尼斯上仗联赛排出「3-4-2-1」阵式，华希出任单箭头，加菲亚希恩与穆罕默德艾穆拉则后上支援，效果平平；虽然华希接应右翼卫约拿芬卡拉奥斯妙传先开纪录，但后防不稳最终反…",
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -5786,16 +3569,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 7.7,
-     "t_max": 11.9,
-     "pop": 0,
-     "rain": 0.0,
-     "wind": 6.8,
-     "grade": "ok",
-     "city": "布雷斯特"
-    }
+    ]
    }
   },
   {
@@ -5812,11 +3586,11 @@
     "slug": "",
     "league": "英超",
     "country": "",
-    "rank": 10,
-    "points": 9,
-    "played": 7,
+    "rank": 9,
+    "points": 10,
+    "played": 8,
     "win": 3,
-    "draw": 0,
+    "draw": 1,
     "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/57.png"
@@ -5826,11 +3600,11 @@
     "slug": "",
     "league": "英超",
     "country": "",
-    "rank": 19,
-    "points": 5,
-    "played": 7,
+    "rank": 16,
+    "points": 6,
+    "played": 8,
     "win": 1,
-    "draw": 2,
+    "draw": 3,
     "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/65.png"
@@ -5843,12 +3617,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 43,
+    "attack": 44,
     "defence": 0,
     "control": 5,
     "form": 29,
-    "value": 4,
-    "motivation": 42,
+    "value": 3,
+    "motivation": 44,
     "AXES": [
      [
       "attack",
@@ -5879,10 +3653,10 @@
    "metrics_away": {
     "attack": 0,
     "defence": 46,
-    "control": 5,
-    "form": 14,
+    "control": 7,
+    "form": 13,
     "value": 20,
-    "motivation": 47,
+    "motivation": 48,
     "AXES": [
      [
       "attack",
@@ -5923,23 +3697,23 @@
     ],
     "home": [
      2.0,
-     2.0,
      0.0,
      3.0,
      2.0,
      0.0,
      2.0,
-     2.0
+     2.0,
+     1.0
     ],
     "away": [
-     0.0,
      0.0,
      2.0,
      0.0,
      2.0,
      0.0,
      1.0,
-     0.0
+     0.0,
+     1.0
     ]
    },
    "forecasts": [
@@ -6142,34 +3916,18 @@
      "half_ft": "平/平"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Saša Lukić",
-     "reason": "腹股沟伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Jack Taylor",
-     "reason": "膝伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Igor Jesus",
-     "reason": "小腿伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Nicolò Savona",
-     "reason": "膝伤",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
+   "result": {
+    "half_score": "1-1",
+    "full_score": "1-1",
+    "direction_hit": false,
+    "score_hit": true,
+    "goals_hit": true,
+    "htft_hit": false,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -6222,13 +3980,13 @@
      },
      {
       "rank": 9,
-      "name": "赫尔城",
-      "pts": 9,
-      "p": 7
+      "name": "伊普斯维奇",
+      "pts": 10,
+      "p": 8
      },
      {
       "rank": 10,
-      "name": "伊普斯维奇",
+      "name": "赫尔城",
       "pts": 9,
       "p": 7
      },
@@ -6264,25 +4022,25 @@
      },
      {
       "rank": 16,
+      "name": "诺丁汉森林",
+      "pts": 6,
+      "p": 8
+     },
+     {
+      "rank": 17,
       "name": "托特纳姆热刺",
       "pts": 6,
       "p": 7
      },
      {
-      "rank": 17,
+      "rank": 18,
       "name": "考文垂",
       "pts": 6,
       "p": 7
      },
      {
-      "rank": 18,
-      "name": "富勒姆",
-      "pts": 5,
-      "p": 7
-     },
-     {
       "rank": 19,
-      "name": "诺丁汉森林",
+      "name": "富勒姆",
       "pts": 5,
       "p": 7
      },
@@ -6323,308 +4081,6 @@
      "客/主": 2.3,
      "客/平": 5.3,
      "客/客": 24.6
-    },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 4
-      },
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 5
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 4
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 5
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 4
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 5,
-       "ga": 0
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      }
-     ]
     },
     "odds_full": {
      "spf": {
@@ -6696,38 +4152,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "Saša Lukić",
-        "reason": "腹股沟伤"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Jack Taylor",
-        "reason": "膝伤"
-       }
-      ],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Igor Jesus",
-        "reason": "小腿伤"
-       },
-       {
-        "name": "Nicolò Savona",
-        "reason": "膝伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
-    "mood": "伊普斯上仗联赛排「4-2-3-1」阵式，艾马臣哥利亚挂帅，前田大然、祖利奥安斯素及艾布尔奥达拉后上支援攻坚。球队无惧强敌，跟对手抢攻，并一度由前田大然攻入扳平球；但门将华顿全场作出4次扑救，仍要三度失手，最终由后备出场的锋将施安费林明射入12码，追近比分终场。诺丁汉上仗联赛排「3-4-2-1」阵式，利安戴纳挂帅，丹尼杜耶及尼高拉斯杜明高斯辅助攻坚。",
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -6757,16 +4181,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 8.1,
-     "t_max": 10.0,
-     "pop": 100,
-     "rain": 1.3,
-     "wind": 34.2,
-     "grade": "bad",
-     "city": "伊普斯威奇"
-    }
+    ]
    }
   },
   {
@@ -6803,11 +4218,11 @@
    },
    "metrics_home": {
     "attack": 100,
-    "defence": 24,
-    "control": 83,
+    "defence": 42,
+    "control": 84,
     "form": 90,
     "value": 3,
-    "motivation": 52,
+    "motivation": 55,
     "AXES": [
      [
       "attack",
@@ -6836,12 +4251,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 59,
-    "defence": 52,
-    "control": 62,
-    "form": 72,
+    "attack": 61,
+    "defence": 55,
+    "control": 65,
+    "form": 74,
     "value": 97,
-    "motivation": 76,
+    "motivation": 77,
     "AXES": [
      [
       "attack",
@@ -6871,6 +4286,7 @@
    },
    "momentum": {
     "labels": [
+     "T-4",
      "T-3",
      "T-2",
      "T-1"
@@ -6878,12 +4294,14 @@
     "home": [
      4.0,
      2.0,
-     2.0
+     2.0,
+     1.0
     ],
     "away": [
      1.0,
      2.0,
-     3.0
+     3.0,
+     5.0
     ]
    },
    "forecasts": [
@@ -7022,34 +4440,18 @@
      "half_ft": "客/平"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Chris Forino",
-     "reason": "腹股沟伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Alfie Jones",
-     "reason": "小腿伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Dávid Strelec",
-     "reason": "伤情",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Rokas Pukštas",
-     "reason": "伤情",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
+   "result": {
+    "half_score": "1-3",
+    "full_score": "1-5",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": true,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.656,
     "lam_away": 2.372,
@@ -7081,136 +4483,6 @@
      "客/主": 2.6,
      "客/平": 5.2,
      "客/客": 34.9
-    },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 2,
-       "ga": 3
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      }
-     ]
     },
     "odds_full": {
      "spf": {
@@ -7282,36 +4554,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "Chris Forino",
-        "reason": "腹股沟伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Alfie Jones",
-        "reason": "小腿伤"
-       },
-       {
-        "name": "Dávid Strelec",
-        "reason": "伤情"
-       },
-       {
-        "name": "Rokas Pukštas",
-        "reason": "伤情"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -7341,16 +4583,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 6.9,
-     "t_max": 8.2,
-     "pop": 100,
-     "rain": 3.6,
-     "wind": 38.2,
-     "grade": "bad",
-     "city": "博尔顿"
-    }
+    ]
    }
   },
   {
@@ -7368,10 +4601,10 @@
     "league": "西甲",
     "country": "",
     "rank": 7,
-    "points": 11,
-    "played": 9,
+    "points": 12,
+    "played": 10,
     "win": 3,
-    "draw": 2,
+    "draw": 3,
     "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/542.png"
@@ -7382,10 +4615,10 @@
     "league": "西甲",
     "country": "",
     "rank": 20,
-    "points": 4,
-    "played": 9,
+    "points": 5,
+    "played": 10,
     "win": 0,
-    "draw": 4,
+    "draw": 5,
     "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/535.png"
@@ -7399,11 +4632,11 @@
    },
    "metrics_home": {
     "attack": 42,
-    "defence": 66,
-    "control": 71,
+    "defence": 68,
+    "control": 72,
     "form": 0,
-    "value": 38,
-    "motivation": 31,
+    "value": 39,
+    "motivation": 32,
     "AXES": [
      [
       "attack",
@@ -7435,8 +4668,8 @@
     "attack": 7,
     "defence": 14,
     "control": 1,
-    "form": 5,
-    "value": 15,
+    "form": 4,
+    "value": 14,
     "motivation": 0,
     "AXES": [
      [
@@ -7478,23 +4711,23 @@
     ],
     "home": [
      1.0,
-     1.0,
      5.0,
      1.0,
      0.0,
      0.0,
      1.0,
+     1.0,
      1.0
     ],
     "away": [
-     1.0,
      0.0,
      0.0,
      1.0,
      1.0,
      0.0,
      1.0,
-     2.0
+     2.0,
+     1.0
     ]
    },
    "forecasts": [
@@ -7706,52 +4939,18 @@
      "half_ft": "主/平"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Mikel Rodríguez Ulacia",
-     "reason": "踝伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Facundo Garcés",
-     "reason": "停赛",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "Aaron Ochoa",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Julen Lobete",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Diego Murillo",
-     "reason": "膝伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Juan Cruz",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Joaquín Muñoz",
-     "reason": "小腿伤",
-     "status": "doubt"
-    }
-   ],
+   "injuries": [],
+   "result": {
+    "half_score": "0-1",
+    "full_score": "1-1",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": true,
+    "htft_hit": false,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -7793,8 +4992,8 @@
      {
       "rank": 7,
       "name": "阿拉维斯",
-      "pts": 11,
-      "p": 9
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 8,
@@ -7871,8 +5070,8 @@
      {
       "rank": 20,
       "name": "马拉加",
-      "pts": 4,
-      "p": 9
+      "pts": 5,
+      "p": 10
      }
     ],
     "lam_home": 1.848,
@@ -7905,220 +5104,6 @@
      "客/主": 2.8,
      "客/平": 4.4,
      "客/客": 10.2
-    },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 5,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 4
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 4,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 5,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 3
-      },
-      {
-       "gf": 4,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 2,
-       "ga": 5
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 4
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      }
-     ]
     },
     "odds_full": {
      "spf": {
@@ -8190,50 +5175,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "Mikel Rodríguez Ulacia",
-        "reason": "踝伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "Facundo Garcés",
-        "reason": "停赛"
-       }
-      ]
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Aaron Ochoa",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Julen Lobete",
-        "reason": "膝伤"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Diego Murillo",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Juan Cruz",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Joaquín Muñoz",
-        "reason": "小腿伤"
-       }
-      ],
-      "suspended": []
-     }
-    },
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -8263,16 +5204,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 10.1,
-     "t_max": 13.5,
-     "pop": 0,
-     "rain": 0.0,
-     "wind": 18.6,
-     "grade": "ok",
-     "city": "维多利亚"
-    }
+    ]
    }
   },
   {
@@ -8308,12 +5240,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 6,
+    "attack": 8,
     "defence": 3,
-    "control": 6,
-    "form": 9,
-    "value": 58,
-    "motivation": 15,
+    "control": 8,
+    "form": 8,
+    "value": 57,
+    "motivation": 16,
     "AXES": [
      [
       "attack",
@@ -8342,12 +5274,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 42,
-    "defence": 36,
-    "control": 33,
-    "form": 42,
-    "value": 9,
-    "motivation": 48,
+    "attack": 43,
+    "defence": 35,
+    "control": 35,
+    "form": 41,
+    "value": 8,
+    "motivation": 51,
     "AXES": [
      [
       "attack",
@@ -8377,6 +5309,7 @@
    },
    "momentum": {
     "labels": [
+     "T-6",
      "T-5",
      "T-4",
      "T-3",
@@ -8388,14 +5321,16 @@
      2.0,
      1.0,
      0.0,
-     0.0
+     0.0,
+     5.0
     ],
     "away": [
      1.0,
      2.0,
      2.0,
      0.0,
-     1.0
+     1.0,
+     0.0
     ]
    },
    "forecasts": [
@@ -8544,28 +5479,18 @@
      "half_ft": "客/客"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "古尔",
-     "reason": "门将",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "古斯达禾根夏",
-     "reason": "前锋",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "辛迪亚高佩雷斯",
-     "reason": "中场",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
+   "result": {
+    "half_score": "1-0",
+    "full_score": "5-0",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": true,
+    "settled_at": "2026-10-23"
+   },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.852,
     "lam_away": 0.962,
@@ -8597,108 +5522,6 @@
      "客/主": 2.9,
      "客/平": 4.5,
      "客/客": 10.6
-    },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 5
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 5
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      }
-     ]
     },
     "odds_full": {
      "spf": {
@@ -8770,33 +5593,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "古尔",
-        "reason": "门将"
-       },
-       {
-        "name": "古斯达禾根夏",
-        "reason": "前锋"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "辛迪亚高佩雷斯",
-        "reason": "中场"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
-    "mood": "吉马良斯上轮联赛撼本菲卡，惨被围攻，全场居然无法取得任何中目标射门，锋力疲弱。门将奥利维亚施治只曾作出3次扑救，球队终在上、下半场中段先后失守，败阵而回。马里迪莫上轮联赛撼波尔图，全程挨打，但上半场中段却凭中坚加保亚沙拉尔先开纪录。不过，球队领先后无以为继，门将维伊迪斯全场虽已作出6次扑救，表现神勇；奈何仍在上、下半场尾段先后失守，反胜为败，主场抢分失败。",
     "odds_ticks": [
      {
       "t": "2026-10-23 16:14",
@@ -8826,16 +5622,7 @@
        }
       ]
      }
-    ],
-    "weather": {
-     "t_min": 7.6,
-     "t_max": 15.5,
-     "pop": 0,
-     "rain": 0.0,
-     "wind": 11.6,
-     "grade": "ok",
-     "city": "吉马良斯"
-    }
+    ]
    }
   }
  ]

@@ -224,7 +224,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 0.971,
     "lam_away": 0.768,
@@ -562,7 +562,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.72,
     "lam_away": 1.22,
@@ -869,7 +869,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 0.191,
     "lam_away": 1.696,
@@ -1176,7 +1176,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.347,
     "lam_away": 0.601,
@@ -1326,7 +1326,7 @@
    "metrics_away": {
     "attack": 36,
     "defence": 68,
-    "control": 56,
+    "control": 60,
     "form": 12,
     "value": 56,
     "motivation": 20,
@@ -1477,7 +1477,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.468,
     "lam_away": 0.745,
@@ -1774,7 +1774,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 0.72,
     "lam_away": 1.567,
@@ -1843,11 +1843,11 @@
    },
    "metrics_home": {
     "attack": 42,
-    "defence": 19,
-    "control": 27,
+    "defence": 20,
+    "control": 28,
     "form": 19,
-    "value": 30,
-    "motivation": 49,
+    "value": 31,
+    "motivation": 50,
     "AXES": [
      [
       "attack",
@@ -1877,9 +1877,9 @@
    },
    "metrics_away": {
     "attack": 42,
-    "defence": 74,
-    "control": 77,
-    "form": 50,
+    "defence": 75,
+    "control": 78,
+    "form": 51,
     "value": 22,
     "motivation": 9,
     "AXES": [
@@ -2094,7 +2094,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -2136,8 +2136,8 @@
      {
       "rank": 7,
       "name": "阿拉维斯",
-      "pts": 11,
-      "p": 9
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 8,
@@ -2214,8 +2214,8 @@
      {
       "rank": 20,
       "name": "马拉加",
-      "pts": 4,
-      "p": 9
+      "pts": 5,
+      "p": 10
      }
     ],
     "lam_home": 1.397,
@@ -2312,10 +2312,10 @@
     "league": "西甲",
     "country": "",
     "rank": 7,
-    "points": 11,
-    "played": 9,
+    "points": 12,
+    "played": 10,
     "win": 3,
-    "draw": 2,
+    "draw": 3,
     "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/542.png"
@@ -2337,11 +2337,11 @@
    },
    "metrics_home": {
     "attack": 74,
-    "defence": 66,
-    "control": 85,
-    "form": 83,
-    "value": 50,
-    "motivation": 52,
+    "defence": 68,
+    "control": 87,
+    "form": 84,
+    "value": 51,
+    "motivation": 54,
     "AXES": [
      [
       "attack",
@@ -2370,12 +2370,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 17,
+    "attack": 16,
     "defence": 35,
-    "control": 17,
+    "control": 15,
     "form": 0,
-    "value": 48,
-    "motivation": 40,
+    "value": 50,
+    "motivation": 42,
     "AXES": [
      [
       "attack",
@@ -2416,11 +2416,11 @@
     ],
     "home": [
      1.0,
-     1.0,
      5.0,
      1.0,
      0.0,
      0.0,
+     1.0,
      1.0,
      1.0
     ],
@@ -2588,7 +2588,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -2630,8 +2630,8 @@
      {
       "rank": 7,
       "name": "阿拉维斯",
-      "pts": 11,
-      "p": 9
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 8,
@@ -2708,8 +2708,8 @@
      {
       "rank": 20,
       "name": "马拉加",
-      "pts": 4,
-      "p": 9
+      "pts": 5,
+      "p": 10
      }
     ],
     "lam_home": 1.911,
@@ -2754,12 +2754,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 69,
+    "attack": 71,
     "defence": 85,
-    "control": 77,
-    "form": 69,
-    "value": 67,
-    "motivation": 59,
+    "control": 78,
+    "form": 71,
+    "value": 68,
+    "motivation": 61,
     "AXES": [
      [
       "attack",
@@ -2788,12 +2788,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 18,
-    "defence": 44,
-    "control": 28,
+    "attack": 20,
+    "defence": 46,
+    "control": 29,
     "form": 15,
-    "value": 31,
-    "motivation": 13,
+    "value": 32,
+    "motivation": 12,
     "AXES": [
      [
       "attack",
@@ -2988,7 +2988,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 2.404,
     "lam_away": 0.623,
@@ -3102,12 +3102,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 59,
-    "defence": 76,
-    "control": 76,
-    "form": 38,
-    "value": 93,
-    "motivation": 72,
+    "attack": 61,
+    "defence": 74,
+    "control": 77,
+    "form": 42,
+    "value": 94,
+    "motivation": 74,
     "AXES": [
      [
       "attack",
@@ -3136,12 +3136,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 28,
-    "defence": 76,
-    "control": 52,
-    "form": 10,
-    "value": 76,
-    "motivation": 48,
+    "attack": 35,
+    "defence": 74,
+    "control": 55,
+    "form": 16,
+    "value": 77,
+    "motivation": 52,
     "AXES": [
      [
       "attack",
@@ -3181,14 +3181,14 @@
      "T-1"
     ],
     "home": [
-     2.0,
      0.0,
      1.0,
      0.0,
      1.0,
      1.0,
      2.0,
-     3.0
+     3.0,
+     5.0
     ],
     "away": [
      0.0,
@@ -3316,7 +3316,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 1.971,
     "lam_away": 1.036,
@@ -3682,7 +3682,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 2.004,
     "lam_away": 1.19,
@@ -3876,13 +3876,13 @@
     ],
     "home": [
      2.0,
-     2.0,
      0.0,
      3.0,
      2.0,
      0.0,
      2.0,
-     2.0
+     2.0,
+     1.0
     ],
     "away": [
      2.0,
@@ -4039,7 +4039,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "lam_home": 0.637,
     "lam_away": 2.02,
@@ -4159,11 +4159,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 24,
+    "attack": 23,
     "defence": 5,
     "control": 11,
-    "form": 5,
-    "value": 20,
+    "form": 4,
+    "value": 21,
     "motivation": 14,
     "AXES": [
      [
@@ -4198,7 +4198,7 @@
     "control": 94,
     "form": 89,
     "value": 93,
-    "motivation": 94,
+    "motivation": 95,
     "AXES": [
      [
       "attack",
@@ -4411,7 +4411,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
@@ -4453,8 +4453,8 @@
      {
       "rank": 7,
       "name": "阿拉维斯",
-      "pts": 11,
-      "p": 9
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 8,
@@ -4531,8 +4531,8 @@
      {
       "rank": 20,
       "name": "马拉加",
-      "pts": 4,
-      "p": 9
+      "pts": 5,
+      "p": 10
      }
     ],
     "lam_home": 0.807,
@@ -4814,7 +4814,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-10-23T19:02:19+08:00",
+   "generated_at": "2026-10-24T19:01:09+08:00",
    "extras": {
     "table": [
      {
