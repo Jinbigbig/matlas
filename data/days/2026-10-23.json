@@ -8,7 +8,7 @@
    "code": "周五001",
    "competition": "澳超",
    "round": "",
-   "kickoff": "2026-10-23 17:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "布里斯班",
@@ -34,11 +34,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 0,
+    "attack": 20,
     "defence": 0,
     "control": 0,
     "form": 0,
-    "value": 33,
+    "value": 60,
     "motivation": 0,
     "AXES": [
      [
@@ -68,12 +68,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 33,
-    "defence": 33,
-    "control": 33,
-    "form": 33,
+    "attack": 40,
+    "defence": 40,
+    "control": 20,
+    "form": 20,
     "value": 0,
-    "motivation": 33,
+    "motivation": 20,
     "AXES": [
      [
       "attack",
@@ -278,7 +278,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "lam_home": 1.652,
     "lam_away": 1.533,
@@ -336,7 +336,7 @@
    "code": "周五002",
    "competition": "德乙",
    "round": "",
-   "kickoff": "2026-10-24 00:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "波鸿",
@@ -599,7 +599,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "lam_home": 1.092,
     "lam_away": 1.385,
@@ -741,7 +741,7 @@
    "code": "周五003",
    "competition": "瑞超",
    "round": "",
-   "kickoff": "2026-10-24 01:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "埃夫斯堡",
@@ -768,11 +768,11 @@
    },
    "metrics_home": {
     "attack": 56,
-    "defence": 64,
-    "control": 76,
-    "form": 92,
-    "value": 48,
-    "motivation": 60,
+    "defence": 63,
+    "control": 70,
+    "form": 93,
+    "value": 44,
+    "motivation": 63,
     "AXES": [
      [
       "attack",
@@ -801,12 +801,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 32,
-    "defence": 76,
+    "attack": 33,
+    "defence": 74,
     "control": 56,
     "form": 48,
-    "value": 68,
-    "motivation": 80,
+    "value": 63,
+    "motivation": 81,
     "AXES": [
      [
       "attack",
@@ -1041,7 +1041,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "lam_home": 1.778,
     "lam_away": 1.361,
@@ -1113,7 +1113,7 @@
    "code": "周五004",
    "competition": "荷甲",
    "round": "",
-   "kickoff": "2026-10-24 02:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "前进之鹰",
@@ -1139,12 +1139,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 34,
-    "defence": 27,
-    "control": 41,
-    "form": 41,
-    "value": 49,
-    "motivation": 37,
+    "attack": 32,
+    "defence": 23,
+    "control": 38,
+    "form": 38,
+    "value": 47,
+    "motivation": 34,
     "AXES": [
      [
       "attack",
@@ -1173,12 +1173,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 10,
-    "defence": 15,
-    "control": 5,
+    "attack": 9,
+    "defence": 13,
+    "control": 4,
     "form": 0,
-    "value": 7,
-    "motivation": 20,
+    "value": 6,
+    "motivation": 17,
     "AXES": [
      [
       "attack",
@@ -1412,7 +1412,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "lam_home": 2.276,
     "lam_away": 1.243,
@@ -1484,7 +1484,7 @@
    "code": "周五005",
    "competition": "荷乙",
    "round": "",
-   "kickoff": "2026-10-24 02:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "布雷达",
@@ -1756,7 +1756,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "lam_home": 1.747,
     "lam_away": 1.773,
@@ -1898,14 +1898,14 @@
    "code": "周五006",
    "competition": "德甲",
    "round": "",
-   "kickoff": "2026-10-24 02:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "斯图加特",
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 14,
+    "rank": 15,
     "points": 6,
     "played": 7,
     "win": 2,
@@ -1936,12 +1936,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 22,
-    "defence": 56,
+    "attack": 21,
+    "defence": 55,
     "control": 40,
-    "form": 15,
-    "value": 57,
-    "motivation": 68,
+    "form": 14,
+    "value": 56,
+    "motivation": 67,
     "AXES": [
      [
       "attack",
@@ -1970,7 +1970,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 46,
+    "attack": 45,
     "defence": 0,
     "control": 3,
     "form": 0,
@@ -2264,18 +2264,18 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "拜仁慕尼黑",
-      "pts": 14,
-      "p": 6
+      "name": "多特蒙德",
+      "pts": 17,
+      "p": 7
      },
      {
       "rank": 2,
-      "name": "多特蒙德",
+      "name": "拜仁慕尼黑",
       "pts": 14,
       "p": 6
      },
@@ -2293,81 +2293,81 @@
      },
      {
       "rank": 5,
-      "name": "美因茨",
-      "pts": 10,
-      "p": 6
+      "name": "RB莱比锡",
+      "pts": 12,
+      "p": 7
      },
      {
       "rank": 6,
-      "name": "埃弗斯堡",
-      "pts": 10,
-      "p": 6
+      "name": "云达不莱梅",
+      "pts": 12,
+      "p": 7
      },
      {
       "rank": 7,
-      "name": "RB莱比锡",
-      "pts": 9,
-      "p": 6
+      "name": "美因茨",
+      "pts": 10,
+      "p": 7
      },
      {
       "rank": 8,
-      "name": "云达不莱梅",
-      "pts": 9,
-      "p": 6
+      "name": "埃弗斯堡",
+      "pts": 10,
+      "p": 7
      },
      {
       "rank": 9,
-      "name": "汉堡",
+      "name": "奥格斯堡",
       "pts": 9,
-      "p": 6
+      "p": 7
      },
      {
       "rank": 10,
-      "name": "奥格斯堡",
-      "pts": 8,
-      "p": 6
+      "name": "汉堡",
+      "pts": 9,
+      "p": 7
      },
      {
       "rank": 11,
-      "name": "法兰克福",
+      "name": "科隆",
       "pts": 8,
-      "p": 6
+      "p": 7
      },
      {
       "rank": 12,
-      "name": "科隆",
-      "pts": 7,
-      "p": 6
+      "name": "帕德博恩",
+      "pts": 8,
+      "p": 7
      },
      {
       "rank": 13,
+      "name": "法兰克福",
+      "pts": 8,
+      "p": 7
+     },
+     {
+      "rank": 14,
       "name": "霍芬海姆",
       "pts": 6,
       "p": 6
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "斯图加特",
       "pts": 6,
       "p": 7
      },
      {
-      "rank": 15,
-      "name": "沙尔克04",
-      "pts": 5,
-      "p": 6
-     },
-     {
       "rank": 16,
-      "name": "帕德博恩",
-      "pts": 5,
-      "p": 6
+      "name": "沙尔克04",
+      "pts": 6,
+      "p": 7
      },
      {
       "rank": 17,
       "name": "柏林联合",
-      "pts": 5,
-      "p": 6
+      "pts": 6,
+      "p": 7
      },
      {
       "rank": 18,
@@ -2446,14 +2446,14 @@
    "code": "周五007",
    "competition": "意甲",
    "round": "",
-   "kickoff": "2026-10-24 02:45",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "都灵",
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 8,
+    "rank": 7,
     "points": 13,
     "played": 8,
     "win": 4,
@@ -2467,7 +2467,7 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 14,
+    "rank": 15,
     "points": 7,
     "played": 8,
     "win": 2,
@@ -2485,11 +2485,11 @@
    },
    "metrics_home": {
     "attack": 59,
-    "defence": 40,
-    "control": 63,
-    "form": 73,
+    "defence": 43,
+    "control": 62,
+    "form": 72,
     "value": 46,
-    "motivation": 52,
+    "motivation": 51,
     "AXES": [
      [
       "attack",
@@ -2518,10 +2518,10 @@
     ]
    },
    "metrics_away": {
-    "attack": 84,
-    "defence": 10,
-    "control": 46,
-    "form": 43,
+    "attack": 82,
+    "defence": 12,
+    "control": 48,
+    "form": 45,
     "value": 13,
     "motivation": 23,
     "AXES": [
@@ -2812,37 +2812,37 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "国际米兰",
-      "pts": 19,
-      "p": 7
+      "name": "拉齐奥",
+      "pts": 22,
+      "p": 8
      },
      {
       "rank": 2,
-      "name": "拉齐奥",
+      "name": "国际米兰",
       "pts": 19,
       "p": 7
      },
      {
       "rank": 3,
       "name": "罗马",
-      "pts": 17,
-      "p": 7
+      "pts": 18,
+      "p": 8
      },
      {
       "rank": 4,
-      "name": "AC米兰",
-      "pts": 15,
-      "p": 7
+      "name": "科莫",
+      "pts": 17,
+      "p": 8
      },
      {
       "rank": 5,
-      "name": "科莫",
-      "pts": 14,
+      "name": "AC米兰",
+      "pts": 15,
       "p": 7
      },
      {
@@ -2853,13 +2853,13 @@
      },
      {
       "rank": 7,
-      "name": "卡利亚里",
+      "name": "都灵",
       "pts": 13,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 8,
-      "name": "都灵",
+      "name": "卡利亚里",
       "pts": 13,
       "p": 8
      },
@@ -2872,8 +2872,8 @@
      {
       "rank": 10,
       "name": "那不勒斯",
-      "pts": 10,
-      "p": 7
+      "pts": 11,
+      "p": 8
      },
      {
       "rank": 11,
@@ -2889,21 +2889,21 @@
      },
      {
       "rank": 13,
-      "name": "萨索洛",
+      "name": "博洛尼亚",
       "pts": 8,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 14,
-      "name": "蒙扎",
-      "pts": 7,
+      "name": "萨索洛",
+      "pts": 8,
       "p": 8
      },
      {
       "rank": 15,
-      "name": "博洛尼亚",
-      "pts": 5,
-      "p": 7
+      "name": "蒙扎",
+      "pts": 7,
+      "p": 8
      },
      {
       "rank": 16,
@@ -2927,7 +2927,7 @@
       "rank": 19,
       "name": "帕尔马",
       "pts": 4,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 20,
@@ -3076,7 +3076,7 @@
    "code": "周五008",
    "competition": "法甲",
    "round": "",
-   "kickoff": "2026-10-24 02:45",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "布雷斯特",
@@ -3097,7 +3097,7 @@
     "slug": "",
     "league": "法甲",
     "country": "",
-    "rank": 8,
+    "rank": 9,
     "points": 11,
     "played": 8,
     "win": 3,
@@ -3114,12 +3114,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 25,
-    "defence": 29,
+    "attack": 24,
+    "defence": 33,
     "control": 20,
-    "form": 18,
+    "form": 16,
     "value": 0,
-    "motivation": 10,
+    "motivation": 9,
     "AXES": [
      [
       "attack",
@@ -3148,12 +3148,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 12,
-    "defence": 37,
-    "control": 33,
-    "form": 37,
+    "attack": 11,
+    "defence": 40,
+    "control": 35,
+    "form": 40,
     "value": 31,
-    "motivation": 22,
+    "motivation": 20,
     "AXES": [
      [
       "attack",
@@ -3397,7 +3397,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "table": [
      {
@@ -3414,15 +3414,15 @@
      },
      {
       "rank": 3,
-      "name": "巴黎FC",
+      "name": "里尔",
       "pts": 14,
       "p": 7
      },
      {
       "rank": 4,
-      "name": "里尔",
+      "name": "巴黎FC",
       "pts": 14,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 5,
@@ -3432,27 +3432,27 @@
      },
      {
       "rank": 6,
+      "name": "朗斯",
+      "pts": 13,
+      "p": 8
+     },
+     {
+      "rank": 7,
       "name": "雷恩",
       "pts": 13,
       "p": 7
      },
      {
-      "rank": 7,
+      "rank": 8,
       "name": "洛里昂",
       "pts": 11,
       "p": 7
      },
      {
-      "rank": 8,
+      "rank": 9,
       "name": "尼斯",
       "pts": 11,
       "p": 8
-     },
-     {
-      "rank": 9,
-      "name": "朗斯",
-      "pts": 10,
-      "p": 7
      },
      {
       "rank": 10,
@@ -3579,14 +3579,14 @@
    "code": "周五009",
    "competition": "英超",
    "round": "",
-   "kickoff": "2026-10-24 03:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "伊普斯",
     "slug": "",
     "league": "英超",
     "country": "",
-    "rank": 9,
+    "rank": 10,
     "points": 10,
     "played": 8,
     "win": 3,
@@ -3600,7 +3600,7 @@
     "slug": "",
     "league": "英超",
     "country": "",
-    "rank": 16,
+    "rank": 18,
     "points": 6,
     "played": 8,
     "win": 1,
@@ -3617,12 +3617,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 44,
+    "attack": 43,
     "defence": 0,
-    "control": 5,
-    "form": 29,
-    "value": 3,
-    "motivation": 44,
+    "control": 4,
+    "form": 31,
+    "value": 4,
+    "motivation": 43,
     "AXES": [
      [
       "attack",
@@ -3652,11 +3652,11 @@
    },
    "metrics_away": {
     "attack": 0,
-    "defence": 46,
-    "control": 5,
-    "form": 13,
-    "value": 20,
-    "motivation": 48,
+    "defence": 48,
+    "control": 4,
+    "form": 14,
+    "value": 19,
+    "motivation": 49,
     "AXES": [
      [
       "attack",
@@ -3927,20 +3927,20 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "曼城",
       "pts": 21,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 2,
       "name": "阿森纳",
-      "pts": 18,
-      "p": 7
+      "pts": 21,
+      "p": 8
      },
      {
       "rank": 3,
@@ -3952,7 +3952,7 @@
       "rank": 4,
       "name": "切尔西",
       "pts": 13,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 5,
@@ -3962,87 +3962,87 @@
      },
      {
       "rank": 6,
+      "name": "阿斯顿维拉",
+      "pts": 11,
+      "p": 8
+     },
+     {
+      "rank": 7,
       "name": "布伦特福德",
       "pts": 10,
       "p": 7
      },
      {
-      "rank": 7,
+      "rank": 8,
       "name": "利兹联",
       "pts": 10,
       "p": 7
      },
      {
-      "rank": 8,
-      "name": "埃弗顿",
-      "pts": 10,
-      "p": 7
-     },
-     {
       "rank": 9,
-      "name": "伊普斯维奇",
+      "name": "埃弗顿",
       "pts": 10,
       "p": 8
      },
      {
       "rank": 10,
+      "name": "伊普斯维奇",
+      "pts": 10,
+      "p": 8
+     },
+     {
+      "rank": 11,
       "name": "赫尔城",
       "pts": 9,
       "p": 7
      },
      {
-      "rank": 11,
+      "rank": 12,
+      "name": "托特纳姆热刺",
+      "pts": 9,
+      "p": 8
+     },
+     {
+      "rank": 13,
+      "name": "富勒姆",
+      "pts": 8,
+      "p": 8
+     },
+     {
+      "rank": 14,
       "name": "纽卡斯尔联",
       "pts": 8,
       "p": 7
      },
      {
-      "rank": 12,
-      "name": "阿斯顿维拉",
-      "pts": 8,
-      "p": 7
-     },
-     {
-      "rank": 13,
+      "rank": 15,
       "name": "曼联",
       "pts": 7,
       "p": 7
      },
      {
-      "rank": 14,
+      "rank": 16,
       "name": "水晶宫",
       "pts": 7,
       "p": 7
      },
      {
-      "rank": 15,
+      "rank": 17,
       "name": "伯恩茅斯",
       "pts": 6,
       "p": 7
      },
      {
-      "rank": 16,
+      "rank": 18,
       "name": "诺丁汉森林",
       "pts": 6,
       "p": 8
      },
      {
-      "rank": 17,
-      "name": "托特纳姆热刺",
-      "pts": 6,
-      "p": 7
-     },
-     {
-      "rank": 18,
+      "rank": 19,
       "name": "考文垂",
       "pts": 6,
-      "p": 7
-     },
-     {
-      "rank": 19,
-      "name": "富勒姆",
-      "pts": 5,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 20,
@@ -4191,7 +4191,7 @@
    "code": "周五010",
    "competition": "英冠",
    "round": "",
-   "kickoff": "2026-10-24 03:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "博尔顿",
@@ -4451,7 +4451,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "lam_home": 1.656,
     "lam_away": 2.372,
@@ -4593,7 +4593,7 @@
    "code": "周五011",
    "competition": "西甲",
    "round": "",
-   "kickoff": "2026-10-24 03:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "阿拉维斯",
@@ -4632,11 +4632,11 @@
    },
    "metrics_home": {
     "attack": 42,
-    "defence": 68,
-    "control": 73,
+    "defence": 67,
+    "control": 70,
     "form": 0,
-    "value": 39,
-    "motivation": 32,
+    "value": 38,
+    "motivation": 30,
     "AXES": [
      [
       "attack",
@@ -4666,10 +4666,10 @@
    },
    "metrics_away": {
     "attack": 7,
-    "defence": 14,
+    "defence": 13,
     "control": 2,
     "form": 4,
-    "value": 14,
+    "value": 13,
     "motivation": 0,
     "AXES": [
      [
@@ -4950,7 +4950,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "table": [
      {
@@ -4962,8 +4962,8 @@
      {
       "rank": 2,
       "name": "马德里竞技",
-      "pts": 22,
-      "p": 9
+      "pts": 25,
+      "p": 10
      },
      {
       "rank": 3,
@@ -4997,75 +4997,75 @@
      },
      {
       "rank": 8,
+      "name": "比利亚雷亚尔",
+      "pts": 12,
+      "p": 10
+     },
+     {
+      "rank": 9,
       "name": "塞尔塔",
       "pts": 11,
       "p": 9
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "拉科鲁尼亚",
       "pts": 11,
-      "p": 9
+      "p": 10
      },
      {
-      "rank": 10,
+      "rank": 11,
       "name": "奥萨苏纳",
       "pts": 11,
       "p": 9
      },
      {
-      "rank": 11,
+      "rank": 12,
+      "name": "桑坦德竞技",
+      "pts": 11,
+      "p": 10
+     },
+     {
+      "rank": 13,
       "name": "莱万特",
       "pts": 10,
       "p": 9
      },
      {
-      "rank": 12,
-      "name": "比利亚雷亚尔",
-      "pts": 9,
-      "p": 9
+      "rank": 14,
+      "name": "埃尔切",
+      "pts": 10,
+      "p": 10
      },
      {
-      "rank": 13,
+      "rank": 15,
       "name": "毕尔巴鄂竞技",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 14,
-      "name": "巴列卡诺",
-      "pts": 9,
-      "p": 8
-     },
-     {
-      "rank": 15,
+      "rank": 16,
       "name": "赫塔费",
       "pts": 9,
       "p": 9
      },
      {
-      "rank": 16,
-      "name": "西班牙人",
-      "pts": 8,
-      "p": 9
-     },
-     {
       "rank": 17,
-      "name": "桑坦德竞技",
-      "pts": 8,
+      "name": "巴列卡诺",
+      "pts": 9,
       "p": 9
      },
      {
       "rank": 18,
-      "name": "埃尔切",
-      "pts": 7,
-      "p": 9
+      "name": "西班牙人",
+      "pts": 8,
+      "p": 10
      },
      {
       "rank": 19,
       "name": "瓦伦西亚",
       "pts": 6,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 20,
@@ -5214,7 +5214,7 @@
    "code": "周五012",
    "competition": "葡超",
    "round": "",
-   "kickoff": "2026-10-24 03:45",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "吉马良斯",
@@ -5243,9 +5243,9 @@
     "attack": 8,
     "defence": 3,
     "control": 8,
-    "form": 8,
-    "value": 57,
-    "motivation": 16,
+    "form": 10,
+    "value": 56,
+    "motivation": 18,
     "AXES": [
      [
       "attack",
@@ -5274,11 +5274,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 43,
+    "attack": 44,
     "defence": 38,
-    "control": 35,
+    "control": 36,
     "form": 41,
-    "value": 8,
+    "value": 10,
     "motivation": 51,
     "AXES": [
      [
@@ -5490,7 +5490,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-10-25T09:50:54+08:00",
+   "generated_at": "2026-10-25T14:17:22+08:00",
    "extras": {
     "lam_home": 1.852,
     "lam_away": 0.962,
