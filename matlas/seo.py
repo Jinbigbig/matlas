@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import quote
 
-from .config import Config
+from .config import Config, write_text_safe
 from .models import Day, Match, SCHEMA_VERSION
 
 
@@ -147,16 +147,16 @@ def write_dataset(cfg: Config, days: list[Day]) -> Path:
         ],
     }
     p = out_dir / "dataset.json"
-    p.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+    write_text_safe(p, json.dumps(payload, ensure_ascii=False, indent=1))
 
     # 逐日快照：便于 diff 出「哪一天的结论被改过」
     daily = out_dir / "days"
     daily.mkdir(exist_ok=True)
     for d in days:
-        (daily / f"{d.date}.json").write_text(
+        write_text_safe(
+            daily / f"{d.date}.json",
             json.dumps({"date": d.date, "matches": [m.to_dict() for m in d.matches]},
                        ensure_ascii=False, indent=1),
-            encoding="utf-8",
         )
     return p
 
@@ -164,5 +164,5 @@ def write_dataset(cfg: Config, days: list[Day]) -> Path:
 def _w(cfg: Config, rel: str, text: str) -> Path:
     p = cfg.out_dir / rel
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(text, encoding="utf-8")
+    write_text_safe(p, text)
     return p

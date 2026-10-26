@@ -7,7 +7,7 @@ import time
 from pathlib import Path
 from typing import Any
 
-from ..config import Config
+from ..config import Config, write_text_safe
 from ..models import SCHEMA_VERSION  # noqa: F401  （llms.txt 出口仍引用）
 from . import components as C
 
@@ -1141,7 +1141,7 @@ ICON_CROSS = (  # 未中：叉
 def _write_style(cfg: Config) -> None:
     s = cfg.out_dir / "assets"
     s.mkdir(parents=True, exist_ok=True)
-    (s / "style.css").write_text(_CSS.strip() + "\n", encoding="utf-8")
+    write_text_safe(s / "style.css", _CSS.strip() + "\n")
 
 
 def _jsonld(blocks: list[dict[str, Any]]) -> str:
@@ -1324,5 +1324,5 @@ aiSyncArrows();
 def write(cfg: Config, rel: str, content: str) -> Path:
     p = cfg.out_dir / rel
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(content, encoding="utf-8")
+    write_text_safe(p, content)
     return p

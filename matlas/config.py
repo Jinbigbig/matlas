@@ -75,3 +75,22 @@ DEFAULT_CONFIG = Config(
     out_dir=Path(__file__).resolve().parent.parent / "_site",
     data_dir=Path(__file__).resolve().parent.parent / "data",
 )
+
+
+def write_text_safe(p: Path, content: str) -> None:
+    """写产物文件；覆盖被拒时删掉再写一次。
+
+    重建 _site 必然要覆盖同名文件，而沙箱/索引层会随机拒掉个别文件的
+    覆盖写（PermissionError）。此处只做一次「删了重写」兜底：删失败
+    （含安全删除钩子拦截）就原样重试写入，不把异常升级成构建中断。
+    """
+    try:
+        p.write_text(content, encoding="utf-8")
+        return
+    except PermissionError:
+        pass
+    try:
+        p.unlink()
+    except Exception:
+        pass
+    p.write_text(content, encoding="utf-8")

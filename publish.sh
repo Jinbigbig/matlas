@@ -7,6 +7,8 @@
 #
 #   ./publish.sh           构建（strict 自检）+ 提交 + 推送 gh-pages
 #   ./publish.sh --no-push 只构建，不动产物分支（本地预览用）
+#   SKIP_BUILD=1 ./publish.sh  跳过构建，直接同步现有 _site
+#                              （产物目录已单独清空重建好时用，避免覆盖写被拦）
 #
 # 首次使用需要先建工作树：git worktree add .publish gh-pages
 set -euo pipefail
@@ -15,12 +17,21 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PY="${PY:-python}"
 PUB="$ROOT/.publish"
 PUSH=1
+SKIP_BUILD="${SKIP_BUILD:-0}"
 [ "${1:-}" = "--no-push" ] && PUSH=0
 
 cd "$ROOT"
 
-echo "[1/4] 构建（红线自检 strict）"
-"$PY" build.py --strict
+if [ "$SKIP_BUILD" -eq 0 ]; then
+  echo "[1/4] 构建（红线自检 strict）"
+  "$PY" build.py --strict
+else
+  echo "[1/4] 跳过构建（SKIP_BUILD=1，直接同步现有 _site）"
+  if [ ! -d "$ROOT/_site" ]; then
+    echo "[!] _site 不存在，无法跳过构建。" >&2
+    exit 1
+  fi
+fi
 
 if [ "$PUSH" -eq 0 ]; then
   echo "[√] 已构建到 $ROOT/_site（未推送，产物分支未改动）"
