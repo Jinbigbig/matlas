@@ -66,7 +66,12 @@ if [ -n "$(git status --porcelain)" ]; then
 fi
 
 echo "[2/4] 清空产物工作树（保留 .git）"
-find "$PUB" -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+# 用「移走」代替删除：安全删除钩子会把 rm 转成回收站操作，产物目录上千个
+# 文件时会 fail-closed 报 Permission denied，而 rename 不受该钩子影响。
+TRASH="${TMPDIR:-/tmp}/matlas-publish-trash/$(date +%Y%m%d-%H%M%S)-$$"
+mkdir -p "$TRASH"
+find "$PUB" -mindepth 1 -maxdepth 1 ! -name .git -exec mv -t "$TRASH" {} +
+echo "      旧产物已移出到 $TRASH"
 
 echo "[3/4] 同步 _site → .publish"
 cp -r "$ROOT/_site/." "$PUB/"
