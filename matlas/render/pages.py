@@ -944,9 +944,9 @@ def _ranking_card(rows: list[tuple[str, int, int]], pre: str = "",
                 else f'<span class="rank-logo rank-logo-ph" aria-hidden="true">{C.esc(name[:1])}</span>'
             )
             items.append(
-                f'<a class="ranking-item" href="{pre}days/">'
+                f'<a class="ranking-item" href="{goto}">'
                 f'<div class="rank-index">{i}</div>{img}'
-                f'<span class="rank-name lg-link" data-goto="{goto}">{C.esc(name)}</span>'
+                f'<span class="rank-name lg-link">{C.esc(name)}</span>'
                 f'<div class="rank-bar-wrap">'
                 f'<div class="rank-bar" style="width:{acc:.1f}%"></div></div>'
                 f'<span class="rank-acc pct">{acc:.1f}%</span></a>'
