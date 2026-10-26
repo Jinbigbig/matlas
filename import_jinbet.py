@@ -23,6 +23,9 @@ import re
 import sys
 from pathlib import Path
 
+from matlas.config import write_text_safe
+from matlas.t2s import to_simplified
+
 PRED_DIR = Path("C:/Users/Jin/jinbet/predictions")
 RES_DIR = Path("C:/Users/Jin/jinbet/results_history")
 # 引擎全量赛果库（results_history 归档缺失时回退）：key = {date}_{主}_{客}
@@ -345,8 +348,10 @@ def _ticks_for(env: dict, date: str, home: str, away: str) -> list:
 
 # 7M 军情正文的字段标记：一次匹配（长的在前），避免「受伤／缺阵：」被二次切碎
 # 单个「受伤：」「缺阵：」也切，切完若把队名甩到上一行末尾，再由 _mood_fix 搬回来
-_MOOD_MARKS = re.compile(r"(受伤／缺阵：|上阵成疑：|成疑：|受伤：|缺阵：)")
-_MOOD_LABELS = ("停赛：", "上阵成疑：", "成疑：", "受伤／缺阵：", "受伤：", "缺阵：")
+_MOOD_MARKS = re.compile(
+    r"(受伤／缺阵：|上阵成疑：|成疑：|受伤：|缺阵：|受傷／缺陣：|上陣成疑：|受傷：|缺陣：)")
+_MOOD_LABELS = ("停赛：", "上阵成疑：", "成疑：", "受伤／缺阵：", "受伤：", "缺阵："
+                , "停賽：", "上陣成疑：", "受傷／缺陣：", "受傷：", "缺陣：")
 _MOOD_TEAM_SUSP = re.compile(r"([\u4e00-\u9fa5]{2,7})停赛：")
 # 名单段后面常常直接跟回顾正文（「（不详）波鸿上轮…」），在队名前断开
 _MOOD_AFTER_LIST = re.compile(
@@ -366,33 +371,52 @@ def _mood_tail(line: str) -> str:
     return line[:cut] if cut > 0 else line
 
 
-def _mood_fix(lines: list[str]) -> list[str]:
-    """把被切断在上一行末尾的队名，搬回下面那行标记的开头。"""
+def _mood_fix(lines: list[str], teams: tuple[str, ...] = ()) -> list[str]:
+    """把被切断在上一行末尾的队名，搬回下面那行标记的开头。
+
+    两种断法：
+      1. 「……击败对手。本菲卡」+「受伤：…」—— 上一行以句读接队名结尾；
+      2. 「停赛：／本菲卡」+「受伤：…」—— 值先被换成「无」，队名黏在行尾；
+         这种没有句读可依，用已知队名精确匹配，避免把「无」误当队名。
+    """
     out: list[str] = []
     for ln in lines:
         if out and any(ln.startswith(mk) for mk in _MOOD_LABELS):
+            moved = ""
             m = _MOOD_TAIL_TEAM.search(out[-1])
             if m:
+                moved = m.group(1)
                 out[-1] = out[-1][: m.start() + 1]
-                ln = m.group(1) + ln
+            else:
+                # 上一行可能只有队名（「弗赖堡」+「受伤：…」），也可能带着
+                # 值（「停赛：无」+「本菲卡」）；限定短行，避免把长句尾的队名也搬走
+                for _t in teams:
+                    if _t and out[-1].endswith(_t) and len(out[-1]) <= 12:
+                        moved = _t
+                        out[-1] = out[-1][: -len(_t)].rstrip(" 　")
+                        break
+            if moved:
+                ln = moved + ln
         out.append(ln)
-    return out
+    return [x for x in out if x.strip()]
 
 
-def _mood_clean(raw: str) -> str:
+def _mood_clean(raw: str, teams: tuple[str, ...] = ()) -> str:
     """军情正文整理：去「军情」前缀与末尾截断符，按「队名+停赛：」/字段标记分段落。"""
     t = raw.strip()
     for cut in ("……", "…", "..."):
         if t.endswith(cut):
             t = t[: -len(cut)].rstrip()
-    if t.startswith("军情"):
-        t = t[2:].strip()
+    for _pre in ("军情", "軍情"):
+        if t.startswith(_pre):
+            t = t[len(_pre):].strip()
+            break
     t = _MOOD_TEAM_SUSP.sub(lambda mm: "\n" + mm.group(1) + "停赛：", t)
     t = re.sub(r"(?<![\u4e00-\u9fa5])(?<!\n)停赛：", "\n停赛：", t)
     t = _MOOD_MARKS.sub(lambda mm: "\n" + mm.group(1), t)
     t = _MOOD_AFTER_LIST.sub(lambda mm: "\n" + mm.group(1), t)
     lines = [_mood_tail(ln.strip(" 　")) for ln in t.split("\n")]
-    lines = _mood_fix([ln for ln in lines if ln])
+    lines = _mood_fix([ln for ln in lines if ln], teams)
     out = []
     for ln in lines:
         # 名单行里的「／」是源站「无」的写法，直接读会误解成斜杠
@@ -580,8 +604,8 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                 return None
             got: dict[str, list] = {}
             for key, src in (("out", out_k), ("doubtful", doubt_k), ("suspended", susp_k)):
-                got[key] = [{"name": str(p.get("name", "")).strip(),
-                             "reason": str(p.get("reason") or "").strip()}
+                got[key] = [{"name": to_simplified(str(p.get("name", "")).strip()),
+                             "reason": to_simplified(str(p.get("reason") or "").strip())}
                             for p in (rec.get(src) or [])
                             if str(p.get("name", "")).strip()]
             return got if any(got.values()) else None
@@ -618,7 +642,7 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
         if env.get("extra_date") == date:
             mo = (env.get("extra_moods") or {}).get(code)
             if mo:
-                txt = _mood_clean(str(mo.get("text") or ""))
+                txt = _mood_clean(to_simplified(str(mo.get("text") or "")), (home, away))
                 if txt:
                     extras["mood"] = txt
         tk = _ticks_for(env, date, home, away)
@@ -754,6 +778,42 @@ def _load_odds_index() -> dict[tuple, dict]:
     return idx
 
 
+# 这几种 extras 都是「赛前那一天一次性采集」的：源端每天只保留当日一份，
+# 而 import 每次重跑全部日期 —— 不做继承的话，隔天再导一次，前一天及更早的
+# 军情 / 天气 / 伤停 / 裁判会被全部清空（实测 10-25 一次丢 72 处）。
+# form_net（近期战绩序列）同样来自当日抓取的网易赛程页，隔天重导即空，一并继承。
+_ONESHOT_EXTRAS = ("mood", "weather", "injuries", "referee", "form_net")
+
+
+def _inherit_extras(path: Path, matches: list[dict]) -> None:
+    """把上次落盘留下的当日采集字段，补进本次没抓到的场次（缺则继承）。"""
+    try:
+        old = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:
+        return
+    prev: dict[str, dict] = {}
+    for m in old.get("matches", []):
+        ex = {k: v for k, v in (m.get("extras") or {}).items() if k in _ONESHOT_EXTRAS}
+        if ex:
+            prev[m.get("match_id") or ""] = ex
+    if not prev:
+        return
+    for mm in matches:
+        keep = prev.get(mm.get("match_id") or "")
+        if not keep:
+            continue
+        ex = mm.setdefault("extras", {})
+        for k, v in keep.items():
+            if ex.get(k):
+                continue
+            if k == "mood":
+                # 旧数据可能是未拆行的整段（繁简规则失效时期的产物），继承时重整
+                _h = (mm.get("home") or {}).get("name", "")
+                _a = (mm.get("away") or {}).get("name", "")
+                v = _mood_clean(to_simplified(v), (_h, _a))
+            ex[k] = v
+
+
 def main() -> None:
     dry = "--dry-run" in sys.argv
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -795,15 +855,21 @@ def main() -> None:
         }
         n_days += 1
         n_matches += len(matches)
+        # 军情只在「采集当天」抓得到（injuries_extra 每天只留一份稿），
+        # 而 import 每次重跑全部日期：不继承的话，隔天再导一次历史军情就被清空。
         if not dry:
-            (OUT_DIR / f"{date}.json").write_text(
-                json.dumps(day, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
+            _inherit_extras(OUT_DIR / f"{date}.json", matches)
+        if not dry:
+            write_text_safe(
+                OUT_DIR / f"{date}.json",
+                json.dumps(day, ensure_ascii=False, indent=1) + "\n",
             )
         print(f"{date}: {len(matches)} 场 / 回填赛果 {sum(1 for x in matches if x.get('result'))}")
     if not dry:
         # 历史赛果池（六维战力先例样本）；放 data/ 根目录，避免被 load_days 当交易日读取
-        (OUT_DIR.parent / "history.json").write_text(
-            json.dumps(history, ensure_ascii=False) + "\n", encoding="utf-8"
+        write_text_safe(
+            OUT_DIR.parent / "history.json",
+            json.dumps(history, ensure_ascii=False) + "\n",
         )
         n_h2h = sum(
             1 for p in OUT_DIR.glob("*.json")
