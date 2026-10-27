@@ -237,7 +237,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "lam_home": 1.539,
     "lam_away": 0.588,
@@ -391,7 +391,7 @@
    "metrics_away": {
     "attack": 53,
     "defence": 18,
-    "control": 12,
+    "control": 35,
     "form": 59,
     "value": 65,
     "motivation": 29,
@@ -579,7 +579,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "lam_home": 1.337,
     "lam_away": 1.928,
@@ -629,7 +629,7 @@
    "metrics_home": {
     "attack": 14,
     "defence": 29,
-    "control": 43,
+    "control": 29,
     "form": 71,
     "value": 57,
     "motivation": 57,
@@ -829,7 +829,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "lam_home": 1.901,
     "lam_away": 1.268,
@@ -1162,7 +1162,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "lam_home": 1.964,
     "lam_away": 0.867,
@@ -1494,7 +1494,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "lam_home": 1.503,
     "lam_away": 1.026,
@@ -1756,7 +1756,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "lam_home": 2.217,
     "lam_away": 1.16,
@@ -2003,7 +2003,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "lam_home": 2.025,
     "lam_away": 1.289,
@@ -2394,7 +2394,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "table": [
      {
@@ -2634,10 +2634,10 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 67,
-    "defence": 5,
+    "attack": 65,
+    "defence": 4,
     "control": 17,
-    "form": 17,
+    "form": 16,
     "value": 0,
     "motivation": 3,
     "AXES": [
@@ -2668,12 +2668,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 59,
-    "defence": 31,
-    "control": 51,
-    "form": 60,
+    "attack": 57,
+    "defence": 30,
+    "control": 50,
+    "form": 58,
     "value": 40,
-    "motivation": 38,
+    "motivation": 37,
     "AXES": [
      [
       "attack",
@@ -2877,7 +2877,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "table": [
      {
@@ -3098,7 +3098,7 @@
     "slug": "",
     "league": "法甲",
     "country": "",
-    "rank": 3,
+    "rank": 4,
     "points": 15,
     "played": 8,
     "win": 4,
@@ -3372,38 +3372,38 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
+      "name": "巴黎圣日耳曼",
+      "pts": 17,
+      "p": 8
+     },
+     {
+      "rank": 2,
       "name": "雷恩",
       "pts": 16,
       "p": 8
      },
      {
-      "rank": 2,
+      "rank": 3,
       "name": "里尔",
       "pts": 15,
       "p": 8
      },
      {
-      "rank": 3,
+      "rank": 4,
       "name": "摩纳哥",
       "pts": 15,
       "p": 8
      },
      {
-      "rank": 4,
+      "rank": 5,
       "name": "里昂",
       "pts": 14,
-      "p": 7
-     },
-     {
-      "rank": 5,
-      "name": "巴黎圣日耳曼",
-      "pts": 14,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 6,
@@ -3873,7 +3873,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "table": [
      {
@@ -4254,7 +4254,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "lam_home": 1.992,
     "lam_away": 1.26,
@@ -4654,7 +4654,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "table": [
      {
@@ -4690,8 +4690,8 @@
      {
       "rank": 6,
       "name": "塞维利亚",
-      "pts": 14,
-      "p": 9
+      "pts": 17,
+      "p": 10
      },
      {
       "rank": 7,
@@ -4727,7 +4727,7 @@
       "rank": 12,
       "name": "奥萨苏纳",
       "pts": 11,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 13,
@@ -5026,7 +5026,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-10-27T08:38:15+08:00",
+   "generated_at": "2026-10-27T14:14:07+08:00",
    "extras": {
     "lam_home": 1.434,
     "lam_away": 0.8,
