@@ -34,11 +34,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 41,
-    "defence": 88,
-    "control": 53,
-    "form": 88,
-    "value": 71,
+    "attack": 42,
+    "defence": 84,
+    "control": 47,
+    "form": 84,
+    "value": 68,
     "motivation": 47,
     "AXES": [
      [
@@ -68,12 +68,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 100,
-    "defence": 29,
-    "control": 94,
-    "form": 12,
-    "value": 59,
-    "motivation": 24,
+    "attack": 95,
+    "defence": 26,
+    "control": 84,
+    "form": 11,
+    "value": 53,
+    "motivation": 21,
     "AXES": [
      [
       "attack",
@@ -256,7 +256,7 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "lam_home": 2.097,
     "lam_away": 1.205,
@@ -401,11 +401,11 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 19,
-    "points": 4,
-    "played": 8,
+    "rank": 18,
+    "points": 5,
+    "played": 9,
     "win": 1,
-    "draw": 1,
+    "draw": 2,
     "loss": 6,
     "form": "",
     "logo": "assets/logo/teams/523.png"
@@ -419,7 +419,7 @@
    },
    "metrics_home": {
     "attack": 88,
-    "defence": 82,
+    "defence": 83,
     "control": 90,
     "form": 92,
     "value": 81,
@@ -453,9 +453,9 @@
    },
    "metrics_away": {
     "attack": 9,
-    "defence": 72,
-    "control": 37,
-    "form": 17,
+    "defence": 73,
+    "control": 36,
+    "form": 16,
     "value": 22,
     "motivation": 20,
     "AXES": [
@@ -643,20 +643,20 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "拉齐奥",
+      "name": "国际米兰",
       "pts": 25,
       "p": 9
      },
      {
       "rank": 2,
-      "name": "国际米兰",
-      "pts": 22,
-      "p": 8
+      "name": "拉齐奥",
+      "pts": 25,
+      "p": 9
      },
      {
       "rank": 3,
@@ -674,7 +674,7 @@
       "rank": 5,
       "name": "AC米兰",
       "pts": 18,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 6,
@@ -684,79 +684,79 @@
      },
      {
       "rank": 7,
-      "name": "尤文图斯",
+      "name": "那不勒斯",
       "pts": 14,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 8,
+      "name": "尤文图斯",
+      "pts": 14,
+      "p": 9
+     },
+     {
+      "rank": 9,
       "name": "都灵",
       "pts": 13,
       "p": 9
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "卡利亚里",
       "pts": 13,
       "p": 9
      },
      {
-      "rank": 10,
-      "name": "那不勒斯",
+      "rank": 11,
+      "name": "博洛尼亚",
       "pts": 11,
-      "p": 8
+      "p": 9
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "亚特兰大",
       "pts": 10,
       "p": 8
      },
      {
-      "rank": 12,
+      "rank": 13,
+      "name": "热那亚",
+      "pts": 10,
+      "p": 9
+     },
+     {
+      "rank": 14,
       "name": "莱切",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 13,
-      "name": "博洛尼亚",
-      "pts": 8,
-      "p": 8
-     },
-     {
-      "rank": 14,
+      "rank": 15,
       "name": "萨索洛",
       "pts": 8,
       "p": 9
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "蒙扎",
       "pts": 7,
-      "p": 8
-     },
-     {
-      "rank": 16,
-      "name": "热那亚",
-      "pts": 7,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 17,
       "name": "乌迪内斯",
-      "pts": 4,
-      "p": 8
+      "pts": 5,
+      "p": 9
      },
      {
       "rank": 18,
-      "name": "佛罗伦萨",
-      "pts": 4,
-      "p": 8
+      "name": "帕尔马",
+      "pts": 5,
+      "p": 9
      },
      {
       "rank": 19,
-      "name": "帕尔马",
+      "name": "佛罗伦萨",
       "pts": 4,
       "p": 8
      },
@@ -764,7 +764,7 @@
       "rank": 20,
       "name": "威尼斯",
       "pts": 3,
-      "p": 8
+      "p": 9
      }
     ],
     "lam_home": 2.344,
@@ -1178,7 +1178,7 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 8,
+    "rank": 9,
     "points": 13,
     "played": 9,
     "win": 4,
@@ -1210,10 +1210,10 @@
    },
    "metrics_home": {
     "attack": 40,
-    "defence": 33,
-    "control": 44,
-    "form": 17,
-    "value": 47,
+    "defence": 35,
+    "control": 45,
+    "form": 16,
+    "value": 48,
     "motivation": 48,
     "AXES": [
      [
@@ -1243,7 +1243,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 94,
+    "attack": 95,
     "defence": 98,
     "control": 100,
     "form": 92,
@@ -1460,20 +1460,20 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "拉齐奥",
+      "name": "国际米兰",
       "pts": 25,
       "p": 9
      },
      {
       "rank": 2,
-      "name": "国际米兰",
-      "pts": 22,
-      "p": 8
+      "name": "拉齐奥",
+      "pts": 25,
+      "p": 9
      },
      {
       "rank": 3,
@@ -1491,7 +1491,7 @@
       "rank": 5,
       "name": "AC米兰",
       "pts": 18,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 6,
@@ -1501,79 +1501,79 @@
      },
      {
       "rank": 7,
-      "name": "尤文图斯",
+      "name": "那不勒斯",
       "pts": 14,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 8,
+      "name": "尤文图斯",
+      "pts": 14,
+      "p": 9
+     },
+     {
+      "rank": 9,
       "name": "都灵",
       "pts": 13,
       "p": 9
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "卡利亚里",
       "pts": 13,
       "p": 9
      },
      {
-      "rank": 10,
-      "name": "那不勒斯",
+      "rank": 11,
+      "name": "博洛尼亚",
       "pts": 11,
-      "p": 8
+      "p": 9
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "亚特兰大",
       "pts": 10,
       "p": 8
      },
      {
-      "rank": 12,
+      "rank": 13,
+      "name": "热那亚",
+      "pts": 10,
+      "p": 9
+     },
+     {
+      "rank": 14,
       "name": "莱切",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 13,
-      "name": "博洛尼亚",
-      "pts": 8,
-      "p": 8
-     },
-     {
-      "rank": 14,
+      "rank": 15,
       "name": "萨索洛",
       "pts": 8,
       "p": 9
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "蒙扎",
       "pts": 7,
-      "p": 8
-     },
-     {
-      "rank": 16,
-      "name": "热那亚",
-      "pts": 7,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 17,
       "name": "乌迪内斯",
-      "pts": 4,
-      "p": 8
+      "pts": 5,
+      "p": 9
      },
      {
       "rank": 18,
-      "name": "佛罗伦萨",
-      "pts": 4,
-      "p": 8
+      "name": "帕尔马",
+      "pts": 5,
+      "p": 9
      },
      {
       "rank": 19,
-      "name": "帕尔马",
+      "name": "佛罗伦萨",
       "pts": 4,
       "p": 8
      },
@@ -1581,7 +1581,7 @@
       "rank": 20,
       "name": "威尼斯",
       "pts": 3,
-      "p": 8
+      "p": 9
      }
     ],
     "lam_home": 1.045,
@@ -1760,12 +1760,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 90,
+    "attack": 85,
     "defence": 100,
     "control": 97,
-    "form": 97,
-    "value": 94,
-    "motivation": 87,
+    "form": 94,
+    "value": 91,
+    "motivation": 82,
     "AXES": [
      [
       "attack",
@@ -1794,12 +1794,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 23,
-    "defence": 87,
-    "control": 61,
-    "form": 16,
-    "value": 74,
-    "motivation": 35,
+    "attack": 21,
+    "defence": 85,
+    "control": 58,
+    "form": 18,
+    "value": 70,
+    "motivation": 33,
     "AXES": [
      [
       "attack",
@@ -1975,7 +1975,7 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "lam_home": 1.862,
     "lam_away": 0.76,
@@ -2313,7 +2313,7 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "lam_home": 2.732,
     "lam_away": 0.511,
@@ -2540,7 +2540,7 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "lam_home": 2.01,
     "lam_away": 0.2,
@@ -2635,10 +2635,10 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 2,
-    "points": 22,
-    "played": 8,
-    "win": 7,
+    "rank": 1,
+    "points": 25,
+    "played": 9,
+    "win": 8,
     "draw": 1,
     "loss": 0,
     "form": "",
@@ -2650,10 +2650,10 @@
     "league": "意甲",
     "country": "",
     "rank": 17,
-    "points": 4,
-    "played": 8,
+    "points": 5,
+    "played": 9,
     "win": 1,
-    "draw": 1,
+    "draw": 2,
     "loss": 6,
     "form": "",
     "logo": "assets/logo/teams/494.png"
@@ -2667,10 +2667,10 @@
    },
    "metrics_home": {
     "attack": 92,
-    "defence": 57,
-    "control": 90,
-    "form": 72,
-    "value": 70,
+    "defence": 58,
+    "control": 91,
+    "form": 73,
+    "value": 71,
     "motivation": 98,
     "AXES": [
      [
@@ -2701,11 +2701,11 @@
    },
    "metrics_away": {
     "attack": 57,
-    "defence": 57,
+    "defence": 58,
     "control": 66,
-    "form": 43,
+    "form": 44,
     "value": 57,
-    "motivation": 54,
+    "motivation": 53,
     "AXES": [
      [
       "attack",
@@ -2909,20 +2909,20 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "拉齐奥",
+      "name": "国际米兰",
       "pts": 25,
       "p": 9
      },
      {
       "rank": 2,
-      "name": "国际米兰",
-      "pts": 22,
-      "p": 8
+      "name": "拉齐奥",
+      "pts": 25,
+      "p": 9
      },
      {
       "rank": 3,
@@ -2940,7 +2940,7 @@
       "rank": 5,
       "name": "AC米兰",
       "pts": 18,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 6,
@@ -2950,79 +2950,79 @@
      },
      {
       "rank": 7,
-      "name": "尤文图斯",
+      "name": "那不勒斯",
       "pts": 14,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 8,
+      "name": "尤文图斯",
+      "pts": 14,
+      "p": 9
+     },
+     {
+      "rank": 9,
       "name": "都灵",
       "pts": 13,
       "p": 9
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "卡利亚里",
       "pts": 13,
       "p": 9
      },
      {
-      "rank": 10,
-      "name": "那不勒斯",
+      "rank": 11,
+      "name": "博洛尼亚",
       "pts": 11,
-      "p": 8
+      "p": 9
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "亚特兰大",
       "pts": 10,
       "p": 8
      },
      {
-      "rank": 12,
+      "rank": 13,
+      "name": "热那亚",
+      "pts": 10,
+      "p": 9
+     },
+     {
+      "rank": 14,
       "name": "莱切",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 13,
-      "name": "博洛尼亚",
-      "pts": 8,
-      "p": 8
-     },
-     {
-      "rank": 14,
+      "rank": 15,
       "name": "萨索洛",
       "pts": 8,
       "p": 9
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "蒙扎",
       "pts": 7,
-      "p": 8
-     },
-     {
-      "rank": 16,
-      "name": "热那亚",
-      "pts": 7,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 17,
       "name": "乌迪内斯",
-      "pts": 4,
-      "p": 8
+      "pts": 5,
+      "p": 9
      },
      {
       "rank": 18,
-      "name": "佛罗伦萨",
-      "pts": 4,
-      "p": 8
+      "name": "帕尔马",
+      "pts": 5,
+      "p": 9
      },
      {
       "rank": 19,
-      "name": "帕尔马",
+      "name": "佛罗伦萨",
       "pts": 4,
       "p": 8
      },
@@ -3030,7 +3030,7 @@
       "rank": 20,
       "name": "威尼斯",
       "pts": 3,
-      "p": 8
+      "p": 9
      }
     ],
     "lam_home": 2.483,
@@ -3280,7 +3280,7 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "lam_home": 1.465,
     "lam_away": 1.206,
@@ -3640,7 +3640,7 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "table": [
      {
@@ -4046,7 +4046,7 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "table": [
      {
@@ -4455,7 +4455,7 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "lam_home": 1.95,
     "lam_away": 0.628,
@@ -4742,7 +4742,7 @@
     "settled_at": "2026-09-14"
    },
    "source_url": "",
-   "generated_at": "2026-10-29T08:20:44+08:00",
+   "generated_at": "2026-10-29T14:08:37+08:00",
    "extras": {
     "lam_home": 3.2,
     "lam_away": 0.306,
