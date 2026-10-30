@@ -36,10 +36,10 @@
    "metrics_home": {
     "attack": 0,
     "defence": 100,
-    "control": 40,
-    "form": 20,
-    "value": 40,
-    "motivation": 40,
+    "control": 43,
+    "form": 14,
+    "value": 29,
+    "motivation": 43,
     "AXES": [
      [
       "attack",
@@ -68,12 +68,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 80,
-    "defence": 20,
-    "control": 60,
-    "form": 80,
-    "value": 20,
-    "motivation": 60,
+    "attack": 86,
+    "defence": 29,
+    "control": 57,
+    "form": 71,
+    "value": 14,
+    "motivation": 57,
     "AXES": [
      [
       "attack",
@@ -261,7 +261,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 1.267,
     "lam_away": 1.107,
@@ -940,7 +940,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 0.855,
     "lam_away": 1.609,
@@ -1444,7 +1444,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 1.946,
     "lam_away": 0.541,
@@ -2113,7 +2113,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 1.521,
     "lam_away": 0.995,
@@ -2793,7 +2793,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 1.83,
     "lam_away": 1.774,
@@ -3222,11 +3222,11 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 19,
-    "points": 4,
-    "played": 8,
+    "rank": 18,
+    "points": 5,
+    "played": 9,
     "win": 1,
-    "draw": 1,
+    "draw": 2,
     "loss": 6,
     "form": "",
     "logo": "assets/logo/teams/502.png"
@@ -3567,7 +3567,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -3603,8 +3603,8 @@
      {
       "rank": 6,
       "name": "弗罗西诺内",
-      "pts": 14,
-      "p": 8
+      "pts": 17,
+      "p": 9
      },
      {
       "rank": 7,
@@ -3639,8 +3639,8 @@
      {
       "rank": 12,
       "name": "亚特兰大",
-      "pts": 10,
-      "p": 8
+      "pts": 11,
+      "p": 9
      },
      {
       "rank": 13,
@@ -3652,7 +3652,7 @@
       "rank": 14,
       "name": "莱切",
       "pts": 9,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 15,
@@ -3674,15 +3674,15 @@
      },
      {
       "rank": 18,
-      "name": "帕尔马",
+      "name": "佛罗伦萨",
       "pts": 5,
       "p": 9
      },
      {
       "rank": 19,
-      "name": "佛罗伦萨",
-      "pts": 4,
-      "p": 8
+      "name": "帕尔马",
+      "pts": 5,
+      "p": 9
      },
      {
       "rank": 20,
@@ -4280,12 +4280,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 23,
+    "attack": 22,
     "defence": 52,
-    "control": 42,
+    "control": 41,
     "form": 42,
     "value": 64,
-    "motivation": 13,
+    "motivation": 14,
     "AXES": [
      [
       "attack",
@@ -4317,7 +4317,7 @@
     "attack": 2,
     "defence": 68,
     "control": 19,
-    "form": 28,
+    "form": 29,
     "value": 24,
     "motivation": 45,
     "AXES": [
@@ -4599,7 +4599,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -5487,7 +5487,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 1.371,
     "lam_away": 1.358,
@@ -6156,7 +6156,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 1.967,
     "lam_away": 1.244,
@@ -6986,7 +6986,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 2.376,
     "lam_away": 1.824,
@@ -7633,12 +7633,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 66,
-    "defence": 24,
-    "control": 66,
-    "form": 34,
-    "value": 34,
-    "motivation": 93,
+    "attack": 61,
+    "defence": 23,
+    "control": 61,
+    "form": 32,
+    "value": 32,
+    "motivation": 87,
     "AXES": [
      [
       "attack",
@@ -7667,12 +7667,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 66,
+    "attack": 61,
     "defence": 3,
-    "control": 34,
-    "form": 34,
-    "value": 59,
-    "motivation": 45,
+    "control": 32,
+    "form": 32,
+    "value": 58,
+    "motivation": 42,
     "AXES": [
      [
       "attack",
@@ -7925,7 +7925,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 2.434,
     "lam_away": 1.121,
@@ -8698,7 +8698,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -9741,7 +9741,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -10760,7 +10760,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -11740,7 +11740,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -11776,8 +11776,8 @@
      {
       "rank": 6,
       "name": "弗罗西诺内",
-      "pts": 14,
-      "p": 8
+      "pts": 17,
+      "p": 9
      },
      {
       "rank": 7,
@@ -11812,8 +11812,8 @@
      {
       "rank": 12,
       "name": "亚特兰大",
-      "pts": 10,
-      "p": 8
+      "pts": 11,
+      "p": 9
      },
      {
       "rank": 13,
@@ -11825,7 +11825,7 @@
       "rank": 14,
       "name": "莱切",
       "pts": 9,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 15,
@@ -11847,15 +11847,15 @@
      },
      {
       "rank": 18,
-      "name": "帕尔马",
+      "name": "佛罗伦萨",
       "pts": 5,
       "p": 9
      },
      {
       "rank": 19,
-      "name": "佛罗伦萨",
-      "pts": 4,
-      "p": 8
+      "name": "帕尔马",
+      "pts": 5,
+      "p": 9
      },
      {
       "rank": 20,
@@ -12375,10 +12375,10 @@
     "league": "意甲",
     "country": "",
     "rank": 12,
-    "points": 10,
-    "played": 8,
+    "points": 11,
+    "played": 9,
     "win": 3,
-    "draw": 1,
+    "draw": 2,
     "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/499.png"
@@ -12709,7 +12709,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -12745,8 +12745,8 @@
      {
       "rank": 6,
       "name": "弗罗西诺内",
-      "pts": 14,
-      "p": 8
+      "pts": 17,
+      "p": 9
      },
      {
       "rank": 7,
@@ -12781,8 +12781,8 @@
      {
       "rank": 12,
       "name": "亚特兰大",
-      "pts": 10,
-      "p": 8
+      "pts": 11,
+      "p": 9
      },
      {
       "rank": 13,
@@ -12794,7 +12794,7 @@
       "rank": 14,
       "name": "莱切",
       "pts": 9,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 15,
@@ -12816,15 +12816,15 @@
      },
      {
       "rank": 18,
-      "name": "帕尔马",
+      "name": "佛罗伦萨",
       "pts": 5,
       "p": 9
      },
      {
       "rank": 19,
-      "name": "佛罗伦萨",
-      "pts": 4,
-      "p": 8
+      "name": "帕尔马",
+      "pts": 5,
+      "p": 9
      },
      {
       "rank": 20,
@@ -13303,10 +13303,10 @@
    },
    "metrics_home": {
     "attack": 38,
-    "defence": 71,
-    "control": 55,
-    "form": 55,
-    "value": 78,
+    "defence": 74,
+    "control": 57,
+    "form": 54,
+    "value": 77,
     "motivation": 69,
     "AXES": [
      [
@@ -13336,12 +13336,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 29,
-    "defence": 29,
-    "control": 22,
+    "attack": 28,
+    "defence": 28,
+    "control": 21,
     "form": 31,
-    "value": 71,
-    "motivation": 62,
+    "value": 70,
+    "motivation": 61,
     "AXES": [
      [
       "attack",
@@ -13630,7 +13630,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -14323,9 +14323,9 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 35,
+    "attack": 34,
     "defence": 12,
-    "control": 20,
+    "control": 19,
     "form": 34,
     "value": 88,
     "motivation": 55,
@@ -14357,8 +14357,8 @@
     ]
    },
    "metrics_away": {
-    "attack": 93,
-    "defence": 93,
+    "attack": 94,
+    "defence": 94,
     "control": 95,
     "form": 98,
     "value": 100,
@@ -14651,7 +14651,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -15425,11 +15425,11 @@
    },
    "metrics_away": {
     "attack": 89,
-    "defence": 20,
+    "defence": 19,
     "control": 80,
     "form": 81,
     "value": 84,
-    "motivation": 83,
+    "motivation": 84,
     "AXES": [
      [
       "attack",
@@ -15718,7 +15718,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -16410,10 +16410,10 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 67,
-    "defence": 29,
-    "control": 47,
-    "form": 25,
+    "attack": 66,
+    "defence": 28,
+    "control": 49,
+    "form": 26,
     "value": 64,
     "motivation": 67,
     "AXES": [
@@ -16444,12 +16444,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 53,
+    "attack": 52,
     "defence": 7,
-    "control": 15,
+    "control": 13,
     "form": 16,
     "value": 13,
-    "motivation": 27,
+    "motivation": 28,
     "AXES": [
      [
       "attack",
@@ -16720,7 +16720,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -17591,7 +17591,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -18272,11 +18272,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 76,
-    "defence": 64,
+    "attack": 74,
+    "defence": 65,
     "control": 76,
-    "form": 44,
-    "value": 41,
+    "form": 45,
+    "value": 40,
     "motivation": 60,
     "AXES": [
      [
@@ -18309,7 +18309,7 @@
     "attack": 100,
     "defence": 91,
     "control": 99,
-    "form": 66,
+    "form": 67,
     "value": 95,
     "motivation": 97,
     "AXES": [
@@ -18600,7 +18600,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -19320,10 +19320,10 @@
     "country": "",
     "rank": 14,
     "points": 9,
-    "played": 8,
+    "played": 9,
     "win": 3,
     "draw": 0,
-    "loss": 5,
+    "loss": 6,
     "form": "",
     "logo": "assets/logo/teams/867.png"
    },
@@ -19685,7 +19685,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -19721,8 +19721,8 @@
      {
       "rank": 6,
       "name": "弗罗西诺内",
-      "pts": 14,
-      "p": 8
+      "pts": 17,
+      "p": 9
      },
      {
       "rank": 7,
@@ -19757,8 +19757,8 @@
      {
       "rank": 12,
       "name": "亚特兰大",
-      "pts": 10,
-      "p": 8
+      "pts": 11,
+      "p": 9
      },
      {
       "rank": 13,
@@ -19770,7 +19770,7 @@
       "rank": 14,
       "name": "莱切",
       "pts": 9,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 15,
@@ -19792,15 +19792,15 @@
      },
      {
       "rank": 18,
-      "name": "帕尔马",
+      "name": "佛罗伦萨",
       "pts": 5,
       "p": 9
      },
      {
       "rank": 19,
-      "name": "佛罗伦萨",
-      "pts": 4,
-      "p": 8
+      "name": "帕尔马",
+      "pts": 5,
+      "p": 9
      },
      {
       "rank": 20,
@@ -20401,12 +20401,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 69,
+    "attack": 68,
     "defence": 13,
-    "control": 42,
-    "form": 28,
+    "control": 41,
+    "form": 29,
     "value": 20,
-    "motivation": 72,
+    "motivation": 73,
     "AXES": [
      [
       "attack",
@@ -20695,7 +20695,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -21745,7 +21745,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 1.53,
     "lam_away": 1.399,
@@ -22634,7 +22634,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -22670,8 +22670,8 @@
      {
       "rank": 6,
       "name": "弗罗西诺内",
-      "pts": 14,
-      "p": 8
+      "pts": 17,
+      "p": 9
      },
      {
       "rank": 7,
@@ -22706,8 +22706,8 @@
      {
       "rank": 12,
       "name": "亚特兰大",
-      "pts": 10,
-      "p": 8
+      "pts": 11,
+      "p": 9
      },
      {
       "rank": 13,
@@ -22719,7 +22719,7 @@
       "rank": 14,
       "name": "莱切",
       "pts": 9,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 15,
@@ -22741,15 +22741,15 @@
      },
      {
       "rank": 18,
-      "name": "帕尔马",
+      "name": "佛罗伦萨",
       "pts": 5,
       "p": 9
      },
      {
       "rank": 19,
-      "name": "佛罗伦萨",
-      "pts": 4,
-      "p": 8
+      "name": "帕尔马",
+      "pts": 5,
+      "p": 9
      },
      {
       "rank": 20,
@@ -23303,7 +23303,7 @@
     "attack": 100,
     "defence": 48,
     "control": 99,
-    "form": 87,
+    "form": 88,
     "value": 97,
     "motivation": 100,
     "AXES": [
@@ -23337,9 +23337,9 @@
     "attack": 96,
     "defence": 68,
     "control": 95,
-    "form": 87,
+    "form": 88,
     "value": 98,
-    "motivation": 94,
+    "motivation": 95,
     "AXES": [
      [
       "attack",
@@ -23636,7 +23636,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "table": [
      {
@@ -24406,12 +24406,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 78,
-    "defence": 51,
-    "control": 73,
-    "form": 51,
-    "value": 93,
-    "motivation": 71,
+    "attack": 79,
+    "defence": 53,
+    "control": 74,
+    "form": 53,
+    "value": 91,
+    "motivation": 72,
     "AXES": [
      [
       "attack",
@@ -24441,11 +24441,11 @@
    },
    "metrics_away": {
     "attack": 37,
-    "defence": 10,
-    "control": 20,
+    "defence": 9,
+    "control": 21,
     "form": 7,
     "value": 0,
-    "motivation": 10,
+    "motivation": 9,
     "AXES": [
      [
       "attack",
@@ -24670,7 +24670,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 2.379,
     "lam_away": 0.584,
@@ -25295,7 +25295,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-10-30T08:13:02+08:00",
+   "generated_at": "2026-10-30T14:33:50+08:00",
    "extras": {
     "lam_home": 1.83,
     "lam_away": 0.92,
