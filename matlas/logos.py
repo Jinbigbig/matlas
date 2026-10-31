@@ -718,6 +718,22 @@ TEAM_CREST.update({k: v for k, v in _TOPIC.items() if k not in TEAM_CREST})
 _EXTRA = {"FC东京": "292"}
 TEAM_CREST.update({k: v for k, v in _EXTRA.items() if k not in TEAM_CREST})
 
+# 2026-10-31 补录：球小策赛程接口逐日回看（action=abv2_ms_get_schedule），
+# 解析「队名 title + logo/teams/{id}.png」配对后补齐站内仍显示占位圆的队伍。
+# 竞彩译名与源站命名常不同，逐条核对后收録：济州SK=济州联、安养FC=FC安养、
+# 拉斯永恒=Al-Kholood（阿尔科鲁德）、中国港女=香港女足、中国港亚=香港亚运男足、
+# 卡塔尔23=卡塔尔国奥、朝鲜亚=朝鲜国奥、赫尔火花=Gnistan、腓特烈=腓特烈斯塔。
+# 国家队在源站多以国旗代替徽章，这类照原样取（小尺寸下辨识度反而更高）。
+_FILL = {
+    "科特布斯": "1320", "济州SK": "2761", "安养FC": "2748", "萨巴赫": "13976",
+    "德尔瓦耶独立": "1153", "卡塔尔23": "10954", "朝鲜亚": "10939",
+    "赫尔火花": "2082", "塞尔维亚": "14", "智利": "2383", "新未来SC": "10513",
+    "拉斯永恒": "10509", "中国港女": "17896", "中国港亚": "10934",
+    "菲律宾女": "17892", "马尔代夫": "1549", "新西兰": "4673",
+    "朝鲜女": "21343", "塔吉克": "1536", "腓特烈": "2149",
+}
+TEAM_CREST.update({k: v for k, v in _FILL.items() if k not in TEAM_CREST})
+
 
 def crest_url(name: str) -> str:
     """队名 → 队徽站点相对路径（assets/logo/teams/{id}.png）。
