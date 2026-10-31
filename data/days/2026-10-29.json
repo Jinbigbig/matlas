@@ -8,7 +8,7 @@
    "code": "周四001",
    "competition": "亚冠乙",
    "round": "",
-   "kickoff": "2026-10-29 20:15",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "上海申花",
@@ -299,7 +299,7 @@
     "settled_at": "2026-10-29"
    },
    "source_url": "",
-   "generated_at": "2026-10-31T09:14:52+08:00",
+   "generated_at": "2026-10-31T14:15:43+08:00",
    "extras": {
     "lam_home": 1.149,
     "lam_away": 1.675,
@@ -581,7 +581,7 @@
    "code": "周四002",
    "competition": "芬超",
    "round": "",
-   "kickoff": "2026-10-30 00:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "国际图",
@@ -609,7 +609,7 @@
    "metrics_home": {
     "attack": 26,
     "defence": 100,
-    "control": 84,
+    "control": 89,
     "form": 95,
     "value": 63,
     "motivation": 63,
@@ -916,7 +916,7 @@
     "settled_at": "2026-10-29"
    },
    "source_url": "",
-   "generated_at": "2026-10-31T09:14:52+08:00",
+   "generated_at": "2026-10-31T14:15:43+08:00",
    "extras": {
     "lam_home": 1.471,
     "lam_away": 1.228,
@@ -1228,7 +1228,7 @@
    "code": "周四003",
    "competition": "意甲",
    "round": "",
-   "kickoff": "2026-10-30 01:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "弗洛西诺",
@@ -1260,12 +1260,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 86,
+    "attack": 85,
     "defence": 29,
     "control": 71,
-    "form": 60,
+    "form": 59,
     "value": 12,
-    "motivation": 63,
+    "motivation": 62,
     "AXES": [
      [
       "attack",
@@ -1294,10 +1294,10 @@
     ]
    },
    "metrics_away": {
-    "attack": 47,
-    "defence": 22,
+    "attack": 45,
+    "defence": 23,
     "control": 36,
-    "form": 36,
+    "form": 35,
     "value": 20,
     "motivation": 12,
     "AXES": [
@@ -1586,7 +1586,7 @@
     "settled_at": "2026-10-29"
    },
    "source_url": "",
-   "generated_at": "2026-10-31T09:14:52+08:00",
+   "generated_at": "2026-10-31T14:15:43+08:00",
    "extras": {
     "table": [
      {
@@ -1811,18 +1811,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "away": {
-      "out": [],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "基亚朗达加斯柏",
-        "reason": "后卫"
-       }
-      ]
-     }
-    },
     "odds_ticks": [
      {
       "t": "2026-10-29 11:12",
@@ -1839,6 +1827,18 @@
       ]
      }
     ],
+    "injuries": {
+     "away": {
+      "out": [],
+      "doubtful": [],
+      "suspended": [
+       {
+        "name": "基亚朗达加斯柏",
+        "reason": "后卫"
+       }
+      ]
+     }
+    },
     "form_net": {
      "home_7": [
       {
@@ -2066,7 +2066,7 @@
    "code": "周四004",
    "competition": "瑞超",
    "round": "",
-   "kickoff": "2026-10-30 01:45",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "哈马比",
@@ -2379,7 +2379,7 @@
     "settled_at": "2026-10-29"
    },
    "source_url": "",
-   "generated_at": "2026-10-31T09:14:52+08:00",
+   "generated_at": "2026-10-31T14:15:43+08:00",
    "extras": {
     "lam_home": 2.254,
     "lam_away": 1.225,
@@ -2412,6 +2412,22 @@
      "客/平": 4.7,
      "客/客": 11.2
     },
+    "odds_ticks": [
+     {
+      "t": "2026-10-29 11:12",
+      "胜": 1.33,
+      "平": 4.65,
+      "负": 5.8,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 2.06,
+        "平": 3.61,
+        "负": 2.65
+       }
+      ]
+     }
+    ],
     "injuries": {
      "home": {
       "out": [
@@ -2448,22 +2464,6 @@
       "suspended": []
      }
     },
-    "odds_ticks": [
-     {
-      "t": "2026-10-29 11:12",
-      "胜": 1.33,
-      "平": 4.65,
-      "负": 5.8,
-      "让球": [
-       {
-        "handicap": "-1",
-        "胜": 2.06,
-        "平": 3.61,
-        "负": 2.65
-       }
-      ]
-     }
-    ],
     "form_net": {
      "home_7": [
       {
@@ -2708,7 +2708,7 @@
    "code": "周四005",
    "competition": "英联杯",
    "round": "",
-   "kickoff": "2026-10-30 03:45",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "埃弗顿",
@@ -2736,7 +2736,7 @@
    "metrics_home": {
     "attack": 32,
     "defence": 79,
-    "control": 53,
+    "control": 47,
     "form": 11,
     "value": 32,
     "motivation": 0,
@@ -2770,7 +2770,7 @@
    "metrics_away": {
     "attack": 42,
     "defence": 5,
-    "control": 11,
+    "control": 5,
     "form": 32,
     "value": 79,
     "motivation": 0,
@@ -3081,7 +3081,7 @@
     "settled_at": "2026-10-29"
    },
    "source_url": "",
-   "generated_at": "2026-10-31T09:14:52+08:00",
+   "generated_at": "2026-10-31T14:15:43+08:00",
    "extras": {
     "lam_home": 1.674,
     "lam_away": 1.404,
@@ -3114,6 +3114,22 @@
      "客/平": 5.3,
      "客/客": 18.9
     },
+    "odds_ticks": [
+     {
+      "t": "2026-10-29 11:12",
+      "胜": 2.04,
+      "平": 3.3,
+      "负": 2.9,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.2,
+        "平": 3.8,
+        "负": 1.57
+       }
+      ]
+     }
+    ],
     "injuries": {
      "home": {
       "out": [
@@ -3140,22 +3156,6 @@
       "suspended": []
      }
     },
-    "odds_ticks": [
-     {
-      "t": "2026-10-29 11:12",
-      "胜": 2.04,
-      "平": 3.3,
-      "负": 2.9,
-      "让球": [
-       {
-        "handicap": "-1",
-        "胜": 4.2,
-        "平": 3.8,
-        "负": 1.57
-       }
-      ]
-     }
-    ],
     "form_net": {
      "home_7": [
       {
@@ -3516,7 +3516,7 @@
    "code": "周四006",
    "competition": "意甲",
    "round": "",
-   "kickoff": "2026-10-30 03:45",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "佛罗伦萨",
@@ -3554,11 +3554,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 26,
+    "attack": 24,
     "defence": 7,
     "control": 10,
     "form": 16,
-    "value": 45,
+    "value": 44,
     "motivation": 23,
     "AXES": [
      [
@@ -3588,11 +3588,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 65,
-    "defence": 15,
+    "attack": 63,
+    "defence": 16,
     "control": 36,
     "form": 16,
-    "value": 66,
+    "value": 65,
     "motivation": 56,
     "AXES": [
      [
@@ -3901,7 +3901,7 @@
     "settled_at": "2026-10-29"
    },
    "source_url": "",
-   "generated_at": "2026-10-31T09:14:52+08:00",
+   "generated_at": "2026-10-31T14:15:43+08:00",
    "extras": {
     "table": [
      {
@@ -4126,6 +4126,22 @@
      },
      "kickoff": ""
     },
+    "odds_ticks": [
+     {
+      "t": "2026-10-29 11:12",
+      "胜": 2.12,
+      "平": 3.4,
+      "负": 2.68,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.4,
+        "平": 3.95,
+        "负": 1.52
+       }
+      ]
+     }
+    ],
     "injuries": {
      "home": {
       "out": [
@@ -4152,22 +4168,6 @@
       "suspended": []
      }
     },
-    "odds_ticks": [
-     {
-      "t": "2026-10-29 11:12",
-      "胜": 2.12,
-      "平": 3.4,
-      "负": 2.68,
-      "让球": [
-       {
-        "handicap": "-1",
-        "胜": 4.4,
-        "平": 3.95,
-        "负": 1.52
-       }
-      ]
-     }
-    ],
     "form_net": {
      "home_7": [
       {
@@ -4528,7 +4528,7 @@
    "code": "周四007",
    "competition": "巴甲",
    "round": "",
-   "kickoff": "2026-10-30 08:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "格雷米奥",
@@ -4837,7 +4837,7 @@
     "settled_at": "2026-10-29"
    },
    "source_url": "",
-   "generated_at": "2026-10-31T09:14:52+08:00",
+   "generated_at": "2026-10-31T14:15:43+08:00",
    "extras": {
     "lam_home": 1.488,
     "lam_away": 1.587,
