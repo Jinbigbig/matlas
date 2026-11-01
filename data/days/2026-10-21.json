@@ -34,11 +34,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 80,
+    "attack": 81,
     "defence": 96,
     "control": 98,
-    "form": 78,
-    "value": 27,
+    "form": 79,
+    "value": 28,
     "motivation": 94,
     "AXES": [
      [
@@ -69,9 +69,9 @@
    },
    "metrics_away": {
     "attack": 98,
-    "defence": 20,
-    "control": 82,
-    "form": 51,
+    "defence": 21,
+    "control": 83,
+    "form": 53,
     "value": 98,
     "motivation": 100,
     "AXES": [
@@ -313,7 +313,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "lam_home": 2.149,
     "lam_away": 1.657,
@@ -528,11 +528,11 @@
    },
    "metrics_home": {
     "attack": 6,
-    "defence": 57,
-    "control": 18,
-    "form": 10,
-    "value": 57,
-    "motivation": 2,
+    "defence": 55,
+    "control": 19,
+    "form": 9,
+    "value": 58,
+    "motivation": 4,
     "AXES": [
      [
       "attack",
@@ -561,12 +561,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 27,
-    "defence": 45,
-    "control": 39,
-    "form": 41,
-    "value": 80,
-    "motivation": 27,
+    "attack": 30,
+    "defence": 43,
+    "control": 40,
+    "form": 43,
+    "value": 79,
+    "motivation": 30,
     "AXES": [
      [
       "attack",
@@ -770,7 +770,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "lam_home": 1.517,
     "lam_away": 1.529,
@@ -1357,7 +1357,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "lam_home": 2.248,
     "lam_away": 1.952,
@@ -1930,7 +1930,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "table": [
      {
@@ -2826,7 +2826,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "table": [
      {
@@ -3381,12 +3381,12 @@
     "slug": "",
     "league": "西甲",
     "country": "",
-    "rank": 15,
+    "rank": 17,
     "points": 10,
-    "played": 10,
+    "played": 11,
     "win": 2,
     "draw": 4,
-    "loss": 4,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/539.png"
    },
@@ -3395,7 +3395,7 @@
     "slug": "",
     "league": "西甲",
     "country": "",
-    "rank": 8,
+    "rank": 7,
     "points": 12,
     "played": 9,
     "win": 3,
@@ -3415,9 +3415,9 @@
     "attack": 58,
     "defence": 20,
     "control": 33,
-    "form": 11,
-    "value": 25,
-    "motivation": 68,
+    "form": 10,
+    "value": 26,
+    "motivation": 69,
     "AXES": [
      [
       "attack",
@@ -3446,12 +3446,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 15,
+    "attack": 16,
     "defence": 60,
     "control": 33,
     "form": 76,
     "value": 60,
-    "motivation": 18,
+    "motivation": 17,
     "AXES": [
      [
       "attack",
@@ -3691,20 +3691,20 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "巴塞罗那",
-      "pts": 27,
-      "p": 10
+      "pts": 30,
+      "p": 11
      },
      {
       "rank": 2,
       "name": "马德里竞技",
-      "pts": 25,
-      "p": 10
+      "pts": 28,
+      "p": 11
      },
      {
       "rank": 3,
@@ -3715,8 +3715,8 @@
      {
       "rank": 4,
       "name": "皇家贝蒂斯",
-      "pts": 20,
-      "p": 10
+      "pts": 23,
+      "p": 11
      },
      {
       "rank": 5,
@@ -3732,56 +3732,56 @@
      },
      {
       "rank": 7,
-      "name": "阿拉维斯",
-      "pts": 12,
-      "p": 10
-     },
-     {
-      "rank": 8,
       "name": "毕尔巴鄂竞技",
       "pts": 12,
       "p": 9
      },
      {
-      "rank": 9,
-      "name": "塞尔塔",
-      "pts": 12,
-      "p": 10
-     },
-     {
-      "rank": 10,
+      "rank": 8,
       "name": "比利亚雷亚尔",
       "pts": 12,
       "p": 11
      },
      {
+      "rank": 9,
+      "name": "塞尔塔",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 10,
+      "name": "阿拉维斯",
+      "pts": 12,
+      "p": 11
+     },
+     {
       "rank": 11,
+      "name": "巴列卡诺",
+      "pts": 12,
+      "p": 10
+     },
+     {
+      "rank": 12,
       "name": "拉科鲁尼亚",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 12,
+      "rank": 13,
       "name": "西班牙人",
       "pts": 11,
       "p": 11
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "奥萨苏纳",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "桑坦德竞技",
       "pts": 11,
-      "p": 10
-     },
-     {
-      "rank": 15,
-      "name": "莱万特",
-      "pts": 10,
       "p": 10
      },
      {
@@ -3792,9 +3792,9 @@
      },
      {
       "rank": 17,
-      "name": "巴列卡诺",
-      "pts": 9,
-      "p": 9
+      "name": "莱万特",
+      "pts": 10,
+      "p": 11
      },
      {
       "rank": 18,
@@ -3812,7 +3812,7 @@
       "rank": 20,
       "name": "马拉加",
       "pts": 5,
-      "p": 10
+      "p": 11
      }
     ],
     "lam_home": 1.324,
@@ -4514,7 +4514,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "table": [
      {
@@ -5466,7 +5466,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "table": [
      {
@@ -6258,7 +6258,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "table": [
      {
@@ -7089,7 +7089,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "table": [
      {
@@ -8008,7 +8008,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "table": [
      {
@@ -8959,7 +8959,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "table": [
      {
@@ -9955,7 +9955,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-01T08:15:48+08:00",
+   "generated_at": "2026-11-01T14:25:57+08:00",
    "extras": {
     "table": [
      {
