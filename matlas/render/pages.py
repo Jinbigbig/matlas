@@ -401,24 +401,48 @@ def _mood_panel(m: Match) -> str:
     return C.panel("赛前军情", '<div class="mood-text">' + "".join(parts) + "</div>")
 
 
+def _pct_or(v) -> str:
+    """百分比单元格：无值出 —，有值走 pct 类（红线口径）。"""
+    return f'<span class="pct">{v}%</span>' if isinstance(v, (int, float)) else "—"
+
+
+def _pct_flat(v) -> str:
+    """正文夹句用的百分比：同走 pct 类，但不带胶囊内边距。"""
+    return f'<span class="pct flat">{v}%</span>' if isinstance(v, (int, float)) else "—"
+
+
 def _weather_panel(m: Match) -> str:
-    """比赛当地比赛时段天气（extras.weather，import 按日期防错配）。"""
+    """比赛当地天气。气温/风速用红彩比赛地实况，降雨概率仍是 Open-Meteo 预报。"""
     w = (m.extras or {}).get("weather")
     if not w:
         return ""
     grade = {"ok": "✅ 适宜", "watch": "⚠️ 需留意", "bad": "🌧 恶劣"}.get(w.get("grade"), "")
+    t_act = w.get("t_actual")
+    temp = f"{t_act}℃" if t_act is not None else f'{w.get("t_min")}~{w.get("t_max")}℃'
     rows = [
-        ["城市", C.esc(w.get("city", "")) or "—", "时段", "当地 18:00–23:00"],
-        ["气温", f'{w.get("t_min")}~{w.get("t_max")}℃', "降雨概率",
-         f'<span class="pct">{w.get("pop")}%</span>'],
-        ["降水量", f'{w.get("rain")}mm', "风速", f'{w.get("wind")}km/h'],
-        ["评估", grade, "", ""],
+        ["城市", C.esc(w.get("city", "")) or "—", "天气", C.esc(w.get("wx", "")) or "—"],
+        ["气温", temp, "湿度", _pct_or(w.get("humidity"))],
+        ["降雨概率", _pct_or(w.get("pop")), "降水量", f'{w.get("rain")}mm'],
+        ["风速", f'{w.get("wind")}km/h', "评估", grade],
     ]
-    return C.panel("天气", C.table(["项目", "内容", "项目", "内容"], rows, cls="duo"))
+    body = C.table(["项目", "内容", "项目", "内容"], rows, cls="duo")
+    # 该天气条件下的历史战绩（红彩按天气等级统计）
+    segs = []
+    for team, key in ((m.home.name, "by_home"), (m.away.name, "by_away")):
+        b = w.get(key) or {}
+        if not b:
+            continue
+        segs.append(
+            f'{C.esc(team)} {b.get("n")} 场 {b.get("w")}胜{b.get("d")}平{b.get("l")}负'
+            f'，胜率{_pct_flat(b.get("win_rate"))}'
+        )
+    if segs:
+        body += f'<p class="sub">{" · ".join(segs)}</p>'
+    return C.panel("天气", body)
 
 
 def _referee_panel(m: Match) -> str:
-    """主裁判执法数据（extras.referee，直播吧「裁判分析」抓取）。"""
+    """主裁判执法数据：优先红彩（按 matchId 直出），回退直播吧赛前文章。"""
     r = (m.extras or {}).get("referee")
     if not r:
         return ""
@@ -430,8 +454,17 @@ def _referee_panel(m: Match) -> str:
         who += "）"
     rows = [["主裁判", who]]
     if r.get("h") is not None:
-        rows.append(["近20场执法", f'主队 {r["h"]}胜{r["d"]}平{r["a"]}负'])
-        rows.append(["出示", f'黄牌 {r.get("yellow", "—")} · 红牌 {r.get("red", "—")} · 点球 {r.get("pen", "—")}'])
+        n = r.get("n") or 20
+        rows.append([f"近{n}场执法", f'主队 {r["h"]}胜{r["d"]}平{r["a"]}负'])
+        # 红彩给场均、直播吧给累计，标签跟着口径走，不混用
+        label = "场均出示" if r.get("src") == "红彩" else "出示"
+        rows.append([label, f'黄牌 {r.get("yellow", "—")} · 红牌 {r.get("red", "—")} · 点球 {r.get("pen", "—")}'])
+    for team, key in ((m.home.name, "by_home"), (m.away.name, "by_away")):
+        b = r.get(key) or {}
+        if not b:
+            continue
+        rows.append([f"执法{C.esc(team)}",
+                     f'{b.get("n")} 场 {b.get("w")}胜{b.get("d")}平{b.get("l")}负 · 场均黄 {b.get("yellow", "—")}'])
     return C.panel("裁判执法", C.table(["项目", "内容"], rows))
 
 
@@ -496,22 +529,204 @@ def _pct(v) -> str:
     return f'<span class="pct">{v:g}%</span>' if isinstance(v, (int, float)) else "—"
 
 
+_HC_STATS = (
+    ("possession", "控球率", "%"),
+    ("shots", "场均射门", ""),
+    ("shots_against", "场均被射门", ""),
+    ("corners", "场均角球", ""),
+    ("fouls", "场均犯规", ""),
+    ("freekicks", "场均任意球", ""),
+    ("yellow", "场均黄牌", ""),
+    ("red", "场均红牌", ""),
+    ("attack_eff", "进攻效率", ""),
+    ("defense_eff", "防守效率", ""),
+)
+
+
+def _cmp_val(v, unit: str = "") -> str:
+    if not isinstance(v, (int, float)):
+        return "—"
+    txt = f"{v:g}"
+    return f'<span class="pct">{txt}%</span>' if unit == "%" else txt
+
+
+def _cmp_row(label: str, hv, av, unit: str = "") -> str:
+    """一行对战条：主队从中轴往左长，客队往右长，两侧数值对齐。"""
+    try:
+        h, a = float(hv or 0), float(av or 0)
+    except (TypeError, ValueError):
+        h = a = 0.0
+    tot = h + a
+    hw = round(h / tot * 100) if tot > 0 else 0
+    aw = round(a / tot * 100) if tot > 0 else 0
+    return (
+        '<div class="cmp-row">'
+        f'<b class="ch">{_cmp_val(hv, unit)}</b>'
+        f'<div class="cm h"><i style="width:{hw}%"></i></div>'
+        f'<span class="ck">{C.esc(label)}</span>'
+        f'<div class="cm a"><i style="width:{aw}%"></i></div>'
+        f'<b class="ca">{_cmp_val(av, unit)}</b>'
+        '</div>'
+    )
+
+
 def _compare_panel(m: Match) -> str:
-    """核心数据对比：主客两队可量化指标并排（对方「核心数据对比」同框架）。"""
+    """核心数据对比：模型期望进球 + 红彩 10 项赛季场均指标 + 主客分项战绩。"""
     ex = m.extras or {}
     rows = []
     lam_h, lam_a = ex.get("lam_home"), ex.get("lam_away")
     if lam_h is not None and lam_a is not None:
-        rows.append(["期望进球（模型）", f"{lam_h:g}", f"{lam_a:g}"])
+        rows.append(_cmp_row("期望进球", lam_h, lam_a))
     dn = ex.get("data_n") or {}
     if dn.get("home") or dn.get("away"):
-        rows.append(["统计样本（场）", str(dn.get("home", "—")), str(dn.get("away", "—"))])
-    body = (
-        C.table(["数据维度", m.home.name, m.away.name], rows, cls="duo")
-        if rows
-        else '<p class="panel-empty">两队量化指标数据源尚未接入，框架已预留。</p>'
-    )
+        rows.append(_cmp_row("统计样本场", dn.get("home"), dn.get("away")))
+    st = ex.get("hc_stats") or {}
+    hs, as_ = st.get("home") or {}, st.get("away") or {}
+    for key, label, unit in _HC_STATS:
+        if key in hs or key in as_:
+            rows.append(_cmp_row(label, hs.get(key), as_.get(key), unit))
+    if not rows:
+        return C.panel(
+            "核心数据对比",
+            '<p class="panel-empty">两队量化指标数据源尚未接入，框架已预留。</p>',
+        )
+    body = f'<div class="cmp">{"".join(rows)}</div>'
+    # 主客分项战绩：主队的主场 vs 客队的客场，才是本场可直接对照的口径
+    rg = ex.get("hc_range") or {}
+    segs = []
+    for team, venue, side in ((m.home.name, "主场", rg.get("home") or {}),
+                              (m.away.name, "客场", rg.get("away") or {})):
+        if not side:
+            continue
+        rank = f'，第 {side["rank"]} 名' if side.get("rank") else ""
+        segs.append(f'{C.esc(team)} {venue} {side.get("n")} 场 '
+                    f'{side.get("w")}胜{side.get("d")}平{side.get("l")}负'
+                    f'（{side.get("gf")}:{side.get("ga")}{rank}）')
+    if segs:
+        body += f'<p class="sub">{" · ".join(segs)}</p>'
     return C.panel("核心数据对比", body)
+
+
+_DISH_ROWS = (
+    ("home6", "主场近6"), ("home12", "主场近12"),
+    ("all6", "全部近6"), ("all12", "全部近12"),
+    ("lg6", "同联赛6"), ("lg12", "同联赛12"),
+    ("home_lg6", "主+联赛6"), ("home_lg12", "主+联赛12"),
+)
+
+
+def _seq_html(seq: str) -> str:
+    """胜平负序列 → 小方块，红彩给的是 [3,1,0] 转出来的 WDL。"""
+    zh = {"W": ("胜", "w"), "D": ("平", "d"), "L": ("负", "l")}
+    items = "".join(f'<span class="sq {zh[c][1]}">{zh[c][0]}</span>'
+                    for c in str(seq or "") if c in zh)
+    return f'<span class="seq">{items}</span>' if items else ""
+
+
+def _dish_panel(m: Match) -> str:
+    """盘路走势：8 个样本维度各自的胜平负 / 赢盘率 / 进失 / 走势，两队各一组。"""
+    dish = (m.extras or {}).get("hc_dish") or {}
+    if not dish:
+        return ""
+    bodies = ""
+    for side in ("home", "away"):
+        d = dish.get(side) or {}
+        if not d:
+            continue
+        team = m.home.name if side == "home" else m.away.name
+        rows = ""
+        for key, label in _DISH_ROWS:
+            b = d.get(key)
+            if not b:
+                continue
+            rows += (
+                f'<tr><td>{C.esc(label)}</td>'
+                f'<td>{b.get("w")}胜{b.get("d")}平{b.get("l")}负</td>'
+                f'<td>{_pct_or(b.get("win_rate"))}</td>'
+                f'<td>{_pct_or(b.get("plate_rate"))}</td>'
+                f'<td>{b.get("gf")}:{b.get("ga")}</td>'
+                f'<td class="seq-cell">{_seq_html(str(b.get("seq") or ""))}</td></tr>'
+            )
+        if not rows:
+            continue
+        bodies += (f'<tbody><tr class="dish-hd"><td colspan="6">{C.esc(team)}</td></tr>'
+                   f'{rows}</tbody>')
+    if not bodies:
+        return ""
+    head = ('<thead><tr><th>样本</th><th>胜平负</th><th>胜率</th><th>赢盘率</th>'
+            '<th>进/失</th><th>走势</th></tr></thead>')
+    return C.panel(
+        "盘路走势",
+        f'<div class="tw"><table class="dish-t">{head}{bodies}</table></div>',
+    )
+
+
+def _gd_block(m: Match, side: str, maxv: float) -> str:
+    """单队进球时段：每个 15 分钟段两条横条（进球 / 失球），右列为占比。"""
+    gd = ((m.extras or {}).get("hc_goal_dist") or {}).get(side) or {}
+    sc = gd.get("scored") or []
+    cd = gd.get("conceded") or []
+    if not sc and not cd:
+        return ""
+    team = m.home.name if side == "home" else m.away.name
+
+    def _w(x: dict) -> int:
+        p = x.get("pct")
+        return round(float(p) / maxv * 100) if isinstance(p, (int, float)) and maxv > 0 else 0
+
+    rows = []
+    for i in range(max(len(sc), len(cd))):
+        a = sc[i] if i < len(sc) else {}
+        b = cd[i] if i < len(cd) else {}
+        band = f'{a.get("from", b.get("from", ""))}–{a.get("to", b.get("to", ""))}′'
+        rows.append(
+            '<div class="gd-row">'
+            f'<span class="gk">{band}</span>'
+            '<div class="gd-track">'
+            f'<div class="gd-bar sc"><i style="width:{_w(a)}%"></i></div>'
+            f'<div class="gd-bar cd"><i style="width:{_w(b)}%"></i></div>'
+            '</div>'
+            f'<span class="gv">{a.get("pct", 0)} / {b.get("pct", 0)}</span>'
+            '</div>'
+        )
+    if not rows:
+        return ""
+    return f'<div><h3>{C.esc(team)}</h3>{"".join(rows)}</div>'
+
+
+def _goaldist_panel(m: Match) -> str:
+    gd = (m.extras or {}).get("hc_goal_dist") or {}
+    if not gd:
+        return ""
+    vals = [float(x["pct"])
+            for side in ("home", "away")
+            for kind in ("scored", "conceded")
+            for x in (gd.get(side) or {}).get(kind) or []
+            if isinstance(x.get("pct"), (int, float))]
+    maxv = max(vals) if vals else 0.0
+    blocks = _gd_block(m, "home", maxv) + _gd_block(m, "away", maxv)
+    if not blocks:
+        return ""
+    key = ('<p class="gd-key"><span><i class="sc"></i>进球</span>'
+           '<span><i class="cd"></i>失球</span></p>')
+    return C.panel("进球时段", key + f'<div class="gd-grid">{blocks}</div>')
+
+
+def _analyse_panel(m: Match) -> str:
+    """红彩赛前分析短句（每队 2-8 条，已去 HTML 标签）。"""
+    ana = (m.extras or {}).get("hc_analyse") or {}
+    if not ana:
+        return ""
+    blocks = ""
+    for key, team in (("home", m.home.name), ("guest", m.away.name)):
+        rows = ana.get(key) or []
+        if not rows:
+            continue
+        lis = "".join(f"<li>{C.esc(x)}</li>" for x in rows)
+        blocks += f'<div><h3>{C.esc(team)}</h3><ul>{lis}</ul></div>'
+    if not blocks:
+        return ""
+    return C.panel("赛前分析", f'<div class="ana-grid">{blocks}</div>')
 
 
 def _model_panel(m: Match) -> str:
@@ -672,14 +887,17 @@ def render_match(cfg: Config, m: Match) -> str:
         _odds_panel(m),         # 赔率数据（含时序变化，放在情报速览之前）
         _intel_panel(m),        # 1. 📌 赛前情报速览
         _main_pick_block(m),    # 一句话主推（有才出现）
-        _compare_panel(m),      # 2. 🔍 核心数据对比
+        _compare_panel(m),      # 2. 🔍 核心数据对比（模型期望进球 + 红彩 10 项场均）
         _h2h_panel(m),          # 3. ⚔️ 历史交锋数据
         _form_panel(m),         # 4. 📈 球队状态（近期战绩）
+        _goaldist_panel(m),     # 4.1 ⏱ 进球时段分布（红彩进/失各 6 段）
         _injury_panel(m),       # 5. ⚠️ 核心球员缺阵影响
         _mood_panel(m),         # 5.1 📰 赛前军情（7M 联赛稿）
+        _analyse_panel(m),      # 5.2 🗒 赛前分析（红彩短句）
         _weather_panel(m),      # 5.5 🌤 比赛地天气
         _referee_panel(m),      # 5.6 🟨 主裁判执法数据
         _handicap_panel(m),     # 7. 🤔 让步可信度分析
+        _dish_panel(m),         # 7.1 📉 盘路走势（红彩 8 维度含赢盘率）
         _model_panel(m),        # 8. 🧠 模型视角
         C.panel("综合赛果推演", picks) if picks else "",   # 9. 🎯
         _charts_panel(m),       # 战力对照（雷达/动量，有数据才画）

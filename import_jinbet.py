@@ -43,6 +43,9 @@ INJURIES_EXTRA_JSON = Path("C:/Users/Jin/jinbet/injuries_extra.json")
 ODDS_TICKS_JSON = Path("C:/Users/Jin/jinbet/odds_ticks.json")
 WEATHER_JSON = Path("C:/Users/Jin/jinbet/weather.json")
 REFEREE_JSON = Path("C:/Users/Jin/jinbet/referee.json")
+# 网易红彩「数据」tab（jinbet/_fetch_hongcai.py 产出）：统计/风格/裁判/天气/盘路/
+# 交锋/进球时段/赛前分析/伤停，按竞彩编号索引，与 jinbet 报告生成共用同一份
+HONGCAI_JSON = Path("C:/Users/Jin/jinbet/hongcai.json")
 _results_data_cache: dict | None = None
 OUT_DIR = Path("C:/Users/Jin/matlas/data/days")
 
@@ -315,6 +318,11 @@ def _load_env() -> dict:
     if d:
         env["refs"] = d.get("matches") or []
         env["ref_date"] = str(d.get("updated", ""))[:10]
+    d = _read(HONGCAI_JSON)
+    if d:
+        env["hc"] = d.get("matches") or {}
+        env["hc_date"] = str(d.get("date", ""))[:10]
+        env["hc_updated"] = str(d.get("updated", ""))
     return env
 
 
@@ -617,6 +625,29 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
         hk_one = hk_all.get(code) if env.get("hkjc_date") == date else None
         ex_all = env.get("extra_inj") or {}
         ex_ok = env.get("extra_date") == date
+        hc_one = (env.get("hc") or {}).get(code) if env.get("hc_date") == date else None
+        hc_ok = bool(hc_one)
+
+        def _hc_inj(rows) -> dict | None:
+            """红彩伤停（第五源）：受伤→缺阵 / 停赛→停赛 / 其余→存疑。
+
+            红彩多给 position（位置）与 state（伤情细化），一并塞进原因列，
+            这样沿用现有四列表格即可，不必为它单开一列。
+            """
+            got: dict[str, list] = {"out": [], "doubtful": [], "suspended": []}
+            for p in rows or []:
+                nm = str(p.get("name") or "").strip()
+                if not nm:
+                    continue
+                key = {"out": "out", "suspended": "suspended",
+                       "doubt": "doubtful"}.get(str(p.get("status") or ""))
+                if not key:
+                    continue
+                reason = "·".join(x for x in (str(p.get("position") or "").strip(),
+                                             str(p.get("state") or "").strip()) if x)
+                got[key].append({"name": nm, "reason": reason})
+            return got if any(got.values()) else None
+
         merged: dict[str, dict] = {}
         for side_key, team_name in (("home", home), ("away", away)):
             cands = [
@@ -626,6 +657,8 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                 _inj_norm((hk_one or {}).get(side_key)),
                 _inj_norm(ex_all.get(team_name) or ex_all.get(TEAM_ALIAS.get(team_name, "")))
                 if ex_ok else None,
+                _hc_inj(((hc_one or {}).get("injuries") or {}).get(
+                    side_key if side_key == "home" else "guest")),
             ]
             acc = {"out": [], "doubtful": [], "suspended": []}
             for c in cands:
@@ -655,6 +688,27 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                 extras["weather"] = {k: w[k] for k in
                                      ("t_min", "t_max", "pop", "rain", "wind", "grade", "city")
                                      if k in w}
+        # 红彩天气（比赛地实况）：气温/风速以它为准，另补湿度、天气现象与
+        # 「该天气下战绩」。降雨概率只有 Open-Meteo 有，保留原值不作覆盖。
+        hcw = (hc_one or {}).get("weather") or {}
+        if hcw:
+            wx = dict(extras.get("weather") or {})
+            if hcw.get("name"):
+                wx["wx"] = hcw["name"]
+            if hcw.get("temperature") is not None:
+                wx["t_min"] = wx["t_max"] = hcw["temperature"]
+                wx["t_actual"] = hcw["temperature"]
+            if hcw.get("wind") is not None:
+                wx["wind"] = hcw["wind"]
+            if hcw.get("humidity") is not None:
+                wx["humidity"] = hcw["humidity"]
+            if hcw.get("by_home"):
+                wx["by_home"] = hcw["by_home"]
+            if hcw.get("by_away"):
+                wx["by_away"] = hcw["by_away"]
+            wx["src"] = "红彩"
+            if len(wx) > 1:
+                extras["weather"] = wx
         try:
             from datetime import date as _dd
             ref_ok = env.get("ref_date") and abs(
@@ -672,6 +726,31 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                     if nat:
                         extras["referee"]["nation"] = nat
                     break
+        # 红彩裁判：按 matchId 直出，比直播吧赛前文章准（后者靠标题模糊匹配，
+        # 常有错配），有值即覆盖；无值则保留直播吧原值。
+        hcr = (hc_one or {}).get("referee") or {}
+        if hcr.get("name"):
+            ref = {"ref": hcr["name"], "src": "红彩"}
+            car = hcr.get("career") or {}
+            if car:
+                ref.update({"n": car.get("n"), "h": car.get("w"), "d": car.get("d"),
+                            "a": car.get("l"), "yellow": car.get("yellow"),
+                            "red": car.get("red"), "pen": car.get("pen")})
+            for k in ("by_home", "by_away", "name_en"):
+                if hcr.get(k):
+                    ref[k] = hcr[k]
+            extras["referee"] = ref
+        # 红彩数据块：统计对比 / 风格指数 / 盘路走势 / 交锋统计 / 进球时段 /
+        # 赛前分析 / 主客分项战绩。整块透传，渲染层缺哪块就不画哪块。
+        for key, src in (("hc_stats", "stats"), ("hc_style", "style"),
+                         ("hc_dish", "dish"), ("hc_meeting", "meeting"),
+                         ("hc_goal_dist", "goal_dist"),
+                         ("hc_analyse", "analyse"), ("hc_range", "range")):
+            v = (hc_one or {}).get(src)
+            if v and (not isinstance(v, dict) or any(v.values())):
+                extras[key] = v
+        if hc_ok:
+            extras["hc_at"] = str(env.get("hc_updated") or "")
     def _team_side(name: str) -> dict:
         """队侧槽位：积分榜命中则填 rank/points/played/win/draw/loss。"""
         side = {"name": name, "league": league}
@@ -782,7 +861,10 @@ def _load_odds_index() -> dict[tuple, dict]:
 # 而 import 每次重跑全部日期 —— 不做继承的话，隔天再导一次，前一天及更早的
 # 军情 / 天气 / 伤停 / 裁判会被全部清空（实测 10-25 一次丢 72 处）。
 # form_net（近期战绩序列）同样来自当日抓取的网易赛程页，隔天重导即空，一并继承。
-_ONESHOT_EXTRAS = ("mood", "weather", "injuries", "referee", "form_net")
+_ONESHOT_EXTRAS = ("mood", "weather", "injuries", "referee", "form_net",
+                   # 红彩数据块同属「当日抓一次」的采集字段，隔天重导会空，一并继承
+                   "hc_stats", "hc_style", "hc_dish", "hc_meeting",
+                   "hc_goal_dist", "hc_analyse", "hc_range", "hc_at")
 
 
 def _inherit_extras(path: Path, matches: list[dict]) -> None:

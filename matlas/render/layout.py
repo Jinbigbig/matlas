@@ -290,6 +290,8 @@ table.duo td:not(:first-child) { font-variant-numeric: tabular-nums; }
 /* ---------- 概率与评级 ---------- */
 .pct { display: inline-block; font-variant-numeric: tabular-nums; font-size: 0.82rem;
   padding: 0.1rem 0.45rem; border-radius: 4px; font-weight: 600; }
+/* 正文里的百分比：保留 pct 口径，但不带胶囊内边距 */
+.pct.flat { padding: 0; background: none; font-size: inherit; }
 .p-hi { background: rgba(16,185,129,0.12); color: var(--win); }
 .p-mid { background: rgba(245,158,11,0.14); color: #b45309; }
 .p-lo { background: rgba(107,114,128,0.1); color: var(--muted); }
@@ -1041,6 +1043,82 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
   .form-dot { width: 18px; height: 18px; font-size: 0.6rem; }
   .risk-note { padding: 0.6rem 0.75rem; }
   .legend { gap: 0.7rem; font-size: 0.72rem; }
+}
+
+/* ---------- 红彩数据块：核心数据对比 / 盘路走势 / 进球时段 / 赛前分析 ---------- */
+/* 核心数据对比：中轴对称对战条，主队从中间往左长、客队往右长 */
+.cmp { display: grid; gap: 3px; }
+.cmp-row { display: grid; grid-template-columns: 3.8em 1fr 5.8em 1fr 3.8em;
+  align-items: center; gap: 6px; font-size: 0.82rem; line-height: 1.6; }
+.cmp-row .ch { text-align: right; font-weight: 700; color: var(--accent);
+  font-variant-numeric: tabular-nums; }
+.cmp-row .ca { text-align: left; font-weight: 700; color: #64748b;
+  font-variant-numeric: tabular-nums; }
+.cmp-row .ck { text-align: center; color: var(--muted); font-size: 0.76rem; white-space: nowrap; }
+.cm { height: 6px; background: #eef2f6; border-radius: 3px; overflow: hidden; display: flex;
+  min-width: 0; }
+.cmp-row > * { min-width: 0; }
+.cm.h { justify-content: flex-end; }
+.cm i { display: block; height: 100%; border-radius: 3px; min-width: 0; }
+.cm.h i { background: var(--accent); }
+.cm.a i { background: #c3d0e4; }
+@media (max-width: 480px) {
+  .cmp-row { grid-template-columns: 3em 1fr 4.6em 1fr 3em; gap: 4px; font-size: 0.75rem; }
+  .cmp-row .ck { font-size: 0.68rem; }
+}
+
+/* 盘路走势：两张队表，列宽均分，末列放胜平负方块序列 */
+.dish-t td, .dish-t th { text-align: center; white-space: nowrap; }
+.dish-t td:first-child, .dish-t th:first-child { text-align: left; }
+.dish-t .dish-hd td { background: #f8fafc; font-weight: 700; color: #111;
+  text-align: left; border-top: 1px solid var(--rule); }
+.dish-t tbody:first-of-type .dish-hd td { border-top: 0; }
+.dish-t .seq-cell { text-align: right; }
+.seq { display: inline-flex; gap: 1px; }
+.sq { width: 13px; height: 13px; border-radius: 3px; display: inline-flex;
+  align-items: center; justify-content: center; font-size: 8px; font-weight: 700; color: #fff; }
+.sq.w { background: var(--win); }
+.sq.d { background: var(--draw); }
+.sq.l { background: var(--loss); }
+/* 窄屏：隐藏进/失列、方块收成纯色块，保证 12 场走势不被截断 */
+@media (max-width: 640px) {
+  .dish-t { font-size: 0.72rem; }
+  .dish-t th, .dish-t td { padding: 0.32rem 0.18rem; }
+  .dish-t th:nth-child(5), .dish-t td:nth-child(5) { display: none; }
+  .sq { width: 9px; height: 9px; font-size: 0; border-radius: 2px; }
+}
+
+/* 进球时段分布：两队各一组，进球深色 / 失球浅色 */
+.gd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; }
+.gd-grid h3 { margin: 0 0 6px; }
+.gd-row { display: grid; grid-template-columns: 4.2em 1fr 3.2em; align-items: center;
+  gap: 7px; font-size: 0.79rem; line-height: 1.9; }
+.gd-row .gk { color: #334155; font-variant-numeric: tabular-nums; }
+.gd-track { display: grid; gap: 2px; }
+.gd-bar { height: 5px; background: #eef2f6; border-radius: 3px; overflow: hidden; }
+.gd-bar i { display: block; height: 100%; border-radius: 3px; }
+.gd-bar.sc i { background: var(--accent); }
+.gd-bar.cd i { background: #cbd5e1; }
+.gd-row .gv { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+.gd-key { display: flex; gap: 12px; font-size: 0.72rem; color: var(--muted); margin: 0 0 4px; }
+.gd-key span { display: inline-flex; align-items: center; gap: 4px; }
+.gd-key i { width: 10px; height: 5px; border-radius: 3px; display: inline-block; }
+.gd-key i.sc { background: var(--accent); }
+.gd-key i.cd { background: #cbd5e1; }
+@media (max-width: 640px) {
+  .gd-grid { grid-template-columns: 1fr; gap: 0; }
+  .gd-grid > div + div { margin-top: 14px; }
+}
+
+/* 赛前分析：两队短句并列 */
+.ana-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 26px; }
+.ana-grid h3 { margin: 0 0 6px; }
+.ana-grid ul { margin: 0; padding-left: 1.05em; }
+.ana-grid li { font-size: 0.84rem; line-height: 1.85; color: #374151; }
+.ana-grid li + li { margin-top: 2px; }
+@media (max-width: 640px) {
+  .ana-grid { grid-template-columns: 1fr; gap: 0; }
+  .ana-grid > div + div { margin-top: 14px; }
 }
 """
 
