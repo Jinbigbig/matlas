@@ -286,7 +286,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 1.526,
     "lam_away": 1.342,
@@ -753,7 +753,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 1.987,
     "lam_away": 1.091,
@@ -1106,7 +1106,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 1.477,
     "lam_away": 1.359,
@@ -1694,7 +1694,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 0.993,
     "lam_away": 1.584,
@@ -2063,10 +2063,10 @@
     "slug": "",
     "league": "英超",
     "country": "",
-    "rank": 2,
-    "points": 21,
-    "played": 8,
-    "win": 7,
+    "rank": 1,
+    "points": 24,
+    "played": 9,
+    "win": 8,
     "draw": 0,
     "loss": 1,
     "form": "",
@@ -2095,10 +2095,10 @@
    },
    "metrics_home": {
     "attack": 85,
-    "defence": 95,
+    "defence": 96,
     "control": 97,
-    "form": 95,
-    "value": 20,
+    "form": 96,
+    "value": 19,
     "motivation": 96,
     "AXES": [
      [
@@ -2128,11 +2128,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 43,
-    "defence": 32,
+    "attack": 42,
+    "defence": 33,
     "control": 47,
     "form": 59,
-    "value": 50,
+    "value": 49,
     "motivation": 59,
     "AXES": [
      [
@@ -2373,20 +2373,20 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "曼城",
-      "pts": 21,
+      "name": "阿森纳",
+      "pts": 24,
       "p": 9
      },
      {
       "rank": 2,
-      "name": "阿森纳",
+      "name": "曼城",
       "pts": 21,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 3,
@@ -2404,7 +2404,7 @@
       "rank": 5,
       "name": "利物浦",
       "pts": 15,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 6,
@@ -2737,9 +2737,9 @@
     "league": "西甲",
     "country": "",
     "rank": 7,
-    "points": 12,
-    "played": 9,
-    "win": 3,
+    "points": 15,
+    "played": 10,
+    "win": 4,
     "draw": 3,
     "loss": 3,
     "form": "",
@@ -2753,11 +2753,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 58,
+    "attack": 59,
     "defence": 20,
     "control": 33,
-    "form": 50,
-    "value": 36,
+    "form": 51,
+    "value": 37,
     "motivation": 57,
     "AXES": [
      [
@@ -2789,8 +2789,8 @@
    "metrics_away": {
     "attack": 16,
     "defence": 52,
-    "control": 27,
-    "form": 71,
+    "control": 28,
+    "form": 72,
     "value": 68,
     "motivation": 17,
     "AXES": [
@@ -3024,7 +3024,7 @@
    ],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -3042,8 +3042,8 @@
      {
       "rank": 3,
       "name": "皇家马德里",
-      "pts": 24,
-      "p": 10
+      "pts": 27,
+      "p": 11
      },
      {
       "rank": 4,
@@ -3055,19 +3055,19 @@
       "rank": 5,
       "name": "皇家社会",
       "pts": 19,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
       "name": "塞维利亚",
       "pts": 17,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 7,
       "name": "毕尔巴鄂竞技",
-      "pts": 12,
-      "p": 9
+      "pts": 15,
+      "p": 10
      },
      {
       "rank": 8,
@@ -3095,51 +3095,51 @@
      },
      {
       "rank": 12,
+      "name": "赫塔费",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 13,
       "name": "拉科鲁尼亚",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "西班牙人",
       "pts": 11,
       "p": 11
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "奥萨苏纳",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "桑坦德竞技",
       "pts": 11,
-      "p": 10
-     },
-     {
-      "rank": 16,
-      "name": "埃尔切",
-      "pts": 10,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 17,
-      "name": "莱万特",
+      "name": "埃尔切",
       "pts": 10,
       "p": 11
      },
      {
       "rank": 18,
-      "name": "赫塔费",
-      "pts": 9,
-      "p": 10
+      "name": "莱万特",
+      "pts": 10,
+      "p": 11
      },
      {
       "rank": 19,
       "name": "瓦伦西亚",
-      "pts": 6,
-      "p": 10
+      "pts": 9,
+      "p": 11
      },
      {
       "rank": 20,
@@ -3595,10 +3595,10 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 13,
-    "points": 10,
-    "played": 9,
-    "win": 3,
+    "rank": 11,
+    "points": 13,
+    "played": 10,
+    "win": 4,
     "draw": 1,
     "loss": 5,
     "form": "",
@@ -3627,11 +3627,11 @@
    },
    "metrics_home": {
     "attack": 0,
-    "defence": 38,
-    "control": 10,
+    "defence": 40,
+    "control": 11,
     "form": 3,
     "value": 28,
-    "motivation": 19,
+    "motivation": 20,
     "AXES": [
      [
       "attack",
@@ -3660,12 +3660,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 8,
-    "defence": 16,
-    "control": 8,
+    "attack": 9,
+    "defence": 17,
+    "control": 9,
     "form": 17,
     "value": 57,
-    "motivation": 38,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -3887,14 +3887,14 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "拉齐奥",
-      "pts": 25,
-      "p": 9
+      "pts": 28,
+      "p": 10
      },
      {
       "rank": 2,
@@ -3910,33 +3910,33 @@
      },
      {
       "rank": 4,
+      "name": "科莫",
+      "pts": 23,
+      "p": 10
+     },
+     {
+      "rank": 5,
       "name": "AC米兰",
       "pts": 21,
       "p": 10
      },
      {
-      "rank": 5,
-      "name": "科莫",
-      "pts": 20,
-      "p": 9
-     },
-     {
       "rank": 6,
       "name": "弗罗西诺内",
-      "pts": 17,
-      "p": 9
+      "pts": 20,
+      "p": 10
      },
      {
       "rank": 7,
-      "name": "那不勒斯",
-      "pts": 14,
-      "p": 9
+      "name": "尤文图斯",
+      "pts": 17,
+      "p": 10
      },
      {
       "rank": 8,
-      "name": "尤文图斯",
+      "name": "那不勒斯",
       "pts": 14,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 9,
@@ -3948,31 +3948,31 @@
       "rank": 10,
       "name": "都灵",
       "pts": 13,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 11,
-      "name": "卡利亚里",
+      "name": "热那亚",
       "pts": 13,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 12,
-      "name": "亚特兰大",
-      "pts": 11,
-      "p": 9
+      "name": "卡利亚里",
+      "pts": 13,
+      "p": 10
      },
      {
       "rank": 13,
-      "name": "热那亚",
-      "pts": 10,
+      "name": "亚特兰大",
+      "pts": 11,
       "p": 9
      },
      {
       "rank": 14,
       "name": "莱切",
       "pts": 9,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 15,
@@ -4008,7 +4008,7 @@
       "rank": 20,
       "name": "威尼斯",
       "pts": 3,
-      "p": 9
+      "p": 10
      }
     ],
     "lam_home": 0.953,
@@ -4156,11 +4156,11 @@
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 17,
-    "points": 6,
-    "played": 7,
+    "rank": 16,
+    "points": 7,
+    "played": 8,
     "win": 1,
-    "draw": 3,
+    "draw": 4,
     "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/182.png"
@@ -4433,7 +4433,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -4480,63 +4480,63 @@
      },
      {
       "rank": 8,
+      "name": "法兰克福",
+      "pts": 11,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "美因茨",
       "pts": 10,
       "p": 8
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "奥格斯堡",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 10,
+      "rank": 11,
       "name": "斯图加特",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "霍芬海姆",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 12,
+      "rank": 13,
+      "name": "科隆",
+      "pts": 9,
+      "p": 8
+     },
+     {
+      "rank": 14,
       "name": "帕德博恩",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 13,
+      "rank": 15,
       "name": "汉堡",
       "pts": 9,
-      "p": 7
-     },
-     {
-      "rank": 14,
-      "name": "科隆",
-      "pts": 8,
-      "p": 7
-     },
-     {
-      "rank": 15,
-      "name": "法兰克福",
-      "pts": 8,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 16,
-      "name": "沙尔克04",
-      "pts": 6,
+      "name": "柏林联合",
+      "pts": 7,
       "p": 8
      },
      {
       "rank": 17,
-      "name": "柏林联合",
+      "name": "沙尔克04",
       "pts": 6,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 18,
@@ -5012,7 +5012,7 @@
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 9,
+    "rank": 10,
     "points": 9,
     "played": 8,
     "win": 2,
@@ -5322,7 +5322,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -5369,63 +5369,63 @@
      },
      {
       "rank": 8,
+      "name": "法兰克福",
+      "pts": 11,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "美因茨",
       "pts": 10,
       "p": 8
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "奥格斯堡",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 10,
+      "rank": 11,
       "name": "斯图加特",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "霍芬海姆",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 12,
+      "rank": 13,
+      "name": "科隆",
+      "pts": 9,
+      "p": 8
+     },
+     {
+      "rank": 14,
       "name": "帕德博恩",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 13,
+      "rank": 15,
       "name": "汉堡",
       "pts": 9,
-      "p": 7
-     },
-     {
-      "rank": 14,
-      "name": "科隆",
-      "pts": 8,
-      "p": 7
-     },
-     {
-      "rank": 15,
-      "name": "法兰克福",
-      "pts": 8,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 16,
-      "name": "沙尔克04",
-      "pts": 6,
+      "name": "柏林联合",
+      "pts": 7,
       "p": 8
      },
      {
       "rank": 17,
-      "name": "柏林联合",
+      "name": "沙尔克04",
       "pts": 6,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 18,
@@ -5769,7 +5769,7 @@
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 8,
+    "rank": 9,
     "points": 10,
     "played": 8,
     "win": 3,
@@ -6079,7 +6079,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -6126,63 +6126,63 @@
      },
      {
       "rank": 8,
+      "name": "法兰克福",
+      "pts": 11,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "美因茨",
       "pts": 10,
       "p": 8
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "奥格斯堡",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 10,
+      "rank": 11,
       "name": "斯图加特",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "霍芬海姆",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 12,
+      "rank": 13,
+      "name": "科隆",
+      "pts": 9,
+      "p": 8
+     },
+     {
+      "rank": 14,
       "name": "帕德博恩",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 13,
+      "rank": 15,
       "name": "汉堡",
       "pts": 9,
-      "p": 7
-     },
-     {
-      "rank": 14,
-      "name": "科隆",
-      "pts": 8,
-      "p": 7
-     },
-     {
-      "rank": 15,
-      "name": "法兰克福",
-      "pts": 8,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 16,
-      "name": "沙尔克04",
-      "pts": 6,
+      "name": "柏林联合",
+      "pts": 7,
       "p": 8
      },
      {
       "rank": 17,
-      "name": "柏林联合",
+      "name": "沙尔克04",
       "pts": 6,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 18,
@@ -6564,7 +6564,7 @@
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 12,
+    "rank": 14,
     "points": 9,
     "played": 8,
     "win": 2,
@@ -6578,7 +6578,7 @@
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 10,
+    "rank": 11,
     "points": 9,
     "played": 8,
     "win": 3,
@@ -6856,7 +6856,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -6903,63 +6903,63 @@
      },
      {
       "rank": 8,
+      "name": "法兰克福",
+      "pts": 11,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "美因茨",
       "pts": 10,
       "p": 8
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "奥格斯堡",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 10,
+      "rank": 11,
       "name": "斯图加特",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "霍芬海姆",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 12,
+      "rank": 13,
+      "name": "科隆",
+      "pts": 9,
+      "p": 8
+     },
+     {
+      "rank": 14,
       "name": "帕德博恩",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 13,
+      "rank": 15,
       "name": "汉堡",
       "pts": 9,
-      "p": 7
-     },
-     {
-      "rank": 14,
-      "name": "科隆",
-      "pts": 8,
-      "p": 7
-     },
-     {
-      "rank": 15,
-      "name": "法兰克福",
-      "pts": 8,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 16,
-      "name": "沙尔克04",
-      "pts": 6,
+      "name": "柏林联合",
+      "pts": 7,
       "p": 8
      },
      {
       "rank": 17,
-      "name": "柏林联合",
+      "name": "沙尔克04",
       "pts": 6,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 18,
@@ -7319,7 +7319,7 @@
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 11,
+    "rank": 12,
     "points": 9,
     "played": 8,
     "win": 3,
@@ -7333,12 +7333,12 @@
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 13,
+    "rank": 15,
     "points": 9,
-    "played": 7,
+    "played": 8,
     "win": 3,
     "draw": 0,
-    "loss": 4,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/175.png"
    },
@@ -7629,7 +7629,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -7676,63 +7676,63 @@
      },
      {
       "rank": 8,
+      "name": "法兰克福",
+      "pts": 11,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "美因茨",
       "pts": 10,
       "p": 8
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "奥格斯堡",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 10,
+      "rank": 11,
       "name": "斯图加特",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "霍芬海姆",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 12,
+      "rank": 13,
+      "name": "科隆",
+      "pts": 9,
+      "p": 8
+     },
+     {
+      "rank": 14,
       "name": "帕德博恩",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 13,
+      "rank": 15,
       "name": "汉堡",
       "pts": 9,
-      "p": 7
-     },
-     {
-      "rank": 14,
-      "name": "科隆",
-      "pts": 8,
-      "p": 7
-     },
-     {
-      "rank": 15,
-      "name": "法兰克福",
-      "pts": 8,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 16,
-      "name": "沙尔克04",
-      "pts": 6,
+      "name": "柏林联合",
+      "pts": 7,
       "p": 8
      },
      {
       "rank": 17,
-      "name": "柏林联合",
+      "name": "沙尔克04",
       "pts": 6,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 18,
@@ -8129,12 +8129,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 43,
+    "attack": 42,
     "defence": 5,
     "control": 11,
     "form": 4,
-    "value": 23,
-    "motivation": 33,
+    "value": 22,
+    "motivation": 35,
     "AXES": [
      [
       "attack",
@@ -8163,12 +8163,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 5,
+    "attack": 4,
     "defence": 64,
     "control": 18,
     "form": 0,
     "value": 10,
-    "motivation": 14,
+    "motivation": 13,
     "AXES": [
      [
       "attack",
@@ -8390,20 +8390,20 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "曼城",
-      "pts": 21,
+      "name": "阿森纳",
+      "pts": 24,
       "p": 9
      },
      {
       "rank": 2,
-      "name": "阿森纳",
+      "name": "曼城",
       "pts": 21,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 3,
@@ -8421,7 +8421,7 @@
       "rank": 5,
       "name": "利物浦",
       "pts": 15,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 6,
@@ -8898,7 +8898,7 @@
    "metrics_home": {
     "attack": 65,
     "defence": 5,
-    "control": 20,
+    "control": 19,
     "form": 44,
     "value": 50,
     "motivation": 26,
@@ -8931,11 +8931,11 @@
    },
    "metrics_away": {
     "attack": 35,
-    "defence": 74,
-    "control": 59,
-    "form": 31,
-    "value": 46,
-    "motivation": 77,
+    "defence": 73,
+    "control": 58,
+    "form": 30,
+    "value": 45,
+    "motivation": 78,
     "AXES": [
      [
       "attack",
@@ -9175,20 +9175,20 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "曼城",
-      "pts": 21,
+      "name": "阿森纳",
+      "pts": 24,
       "p": 9
      },
      {
       "rank": 2,
-      "name": "阿森纳",
+      "name": "曼城",
       "pts": 21,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 3,
@@ -9206,7 +9206,7 @@
       "rank": 5,
       "name": "利物浦",
       "pts": 15,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 6,
@@ -9739,8 +9739,8 @@
    "metrics_home": {
     "attack": 85,
     "defence": 50,
-    "control": 79,
-    "form": 78,
+    "control": 80,
+    "form": 79,
     "value": 6,
     "motivation": 31,
     "AXES": [
@@ -9772,10 +9772,10 @@
    },
    "metrics_away": {
     "attack": 91,
-    "defence": 74,
+    "defence": 73,
     "control": 90,
-    "form": 69,
-    "value": 29,
+    "form": 70,
+    "value": 28,
     "motivation": 73,
     "AXES": [
      [
@@ -10025,20 +10025,20 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "曼城",
-      "pts": 21,
+      "name": "阿森纳",
+      "pts": 24,
       "p": 9
      },
      {
       "rank": 2,
-      "name": "阿森纳",
+      "name": "曼城",
       "pts": 21,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 3,
@@ -10056,7 +10056,7 @@
       "rank": 5,
       "name": "利物浦",
       "pts": 15,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 6,
@@ -10563,12 +10563,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 41,
+    "attack": 42,
     "defence": 97,
-    "control": 87,
-    "form": 50,
-    "value": 57,
-    "motivation": 43,
+    "control": 88,
+    "form": 51,
+    "value": 58,
+    "motivation": 44,
     "AXES": [
      [
       "attack",
@@ -10600,7 +10600,7 @@
     "attack": 84,
     "defence": 52,
     "control": 83,
-    "form": 76,
+    "form": 77,
     "value": 86,
     "motivation": 89,
     "AXES": [
@@ -10860,7 +10860,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -10878,8 +10878,8 @@
      {
       "rank": 3,
       "name": "皇家马德里",
-      "pts": 24,
-      "p": 10
+      "pts": 27,
+      "p": 11
      },
      {
       "rank": 4,
@@ -10891,19 +10891,19 @@
       "rank": 5,
       "name": "皇家社会",
       "pts": 19,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
       "name": "塞维利亚",
       "pts": 17,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 7,
       "name": "毕尔巴鄂竞技",
-      "pts": 12,
-      "p": 9
+      "pts": 15,
+      "p": 10
      },
      {
       "rank": 8,
@@ -10931,51 +10931,51 @@
      },
      {
       "rank": 12,
+      "name": "赫塔费",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 13,
       "name": "拉科鲁尼亚",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "西班牙人",
       "pts": 11,
       "p": 11
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "奥萨苏纳",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "桑坦德竞技",
       "pts": 11,
-      "p": 10
-     },
-     {
-      "rank": 16,
-      "name": "埃尔切",
-      "pts": 10,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 17,
-      "name": "莱万特",
+      "name": "埃尔切",
       "pts": 10,
       "p": 11
      },
      {
       "rank": 18,
-      "name": "赫塔费",
-      "pts": 9,
-      "p": 10
+      "name": "莱万特",
+      "pts": 10,
+      "p": 11
      },
      {
       "rank": 19,
       "name": "瓦伦西亚",
-      "pts": 6,
-      "p": 10
+      "pts": 9,
+      "p": 11
      },
      {
       "rank": 20,
@@ -11624,7 +11624,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -11641,45 +11641,45 @@
      },
      {
       "rank": 3,
+      "name": "里昂",
+      "pts": 17,
+      "p": 9
+     },
+     {
+      "rank": 4,
+      "name": "巴黎FC",
+      "pts": 17,
+      "p": 9
+     },
+     {
+      "rank": 5,
       "name": "雷恩",
       "pts": 16,
       "p": 9
      },
      {
-      "rank": 4,
-      "name": "摩纳哥",
-      "pts": 15,
-      "p": 8
-     },
-     {
-      "rank": 5,
-      "name": "里昂",
-      "pts": 14,
-      "p": 8
-     },
-     {
       "rank": 6,
-      "name": "巴黎FC",
-      "pts": 14,
-      "p": 8
+      "name": "马赛",
+      "pts": 15,
+      "p": 9
      },
      {
       "rank": 7,
+      "name": "摩纳哥",
+      "pts": 15,
+      "p": 9
+     },
+     {
+      "rank": 8,
       "name": "尼斯",
       "pts": 14,
       "p": 9
      },
      {
-      "rank": 8,
+      "rank": 9,
       "name": "朗斯",
       "pts": 13,
       "p": 9
-     },
-     {
-      "rank": 9,
-      "name": "马赛",
-      "pts": 12,
-      "p": 8
      },
      {
       "rank": 10,
@@ -11691,37 +11691,37 @@
       "rank": 11,
       "name": "图卢兹",
       "pts": 10,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 12,
-      "name": "欧塞尔",
+      "name": "斯特拉斯堡",
       "pts": 10,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 13,
+      "name": "欧塞尔",
+      "pts": 10,
+      "p": 9
+     },
+     {
+      "rank": 14,
       "name": "布雷斯特",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 14,
-      "name": "昂热",
-      "pts": 8,
-      "p": 8
-     },
-     {
       "rank": 15,
-      "name": "特鲁瓦",
+      "name": "昂热",
       "pts": 8,
       "p": 9
      },
      {
       "rank": 16,
-      "name": "斯特拉斯堡",
-      "pts": 7,
-      "p": 8
+      "name": "特鲁瓦",
+      "pts": 8,
+      "p": 9
      },
      {
       "rank": 17,
@@ -12098,8 +12098,8 @@
     "defence": 0,
     "control": 0,
     "form": 0,
-    "value": 9,
-    "motivation": 20,
+    "value": 8,
+    "motivation": 19,
     "AXES": [
      [
       "attack",
@@ -12128,9 +12128,9 @@
     ]
    },
    "metrics_away": {
-    "attack": 6,
-    "defence": 31,
-    "control": 9,
+    "attack": 5,
+    "defence": 30,
+    "control": 8,
     "form": 11,
     "value": 3,
     "motivation": 0,
@@ -12327,7 +12327,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 1.493,
     "lam_away": 0.975,
@@ -12738,9 +12738,9 @@
    },
    "metrics_home": {
     "attack": 95,
-    "defence": 50,
+    "defence": 51,
     "control": 93,
-    "form": 71,
+    "form": 72,
     "value": 70,
     "motivation": 97,
     "AXES": [
@@ -12772,11 +12772,11 @@
    },
    "metrics_away": {
     "attack": 15,
-    "defence": 61,
-    "control": 34,
+    "defence": 62,
+    "control": 36,
     "form": 17,
     "value": 23,
-    "motivation": 25,
+    "motivation": 26,
     "AXES": [
      [
       "attack",
@@ -13024,14 +13024,14 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "拉齐奥",
-      "pts": 25,
-      "p": 9
+      "pts": 28,
+      "p": 10
      },
      {
       "rank": 2,
@@ -13047,33 +13047,33 @@
      },
      {
       "rank": 4,
+      "name": "科莫",
+      "pts": 23,
+      "p": 10
+     },
+     {
+      "rank": 5,
       "name": "AC米兰",
       "pts": 21,
       "p": 10
      },
      {
-      "rank": 5,
-      "name": "科莫",
-      "pts": 20,
-      "p": 9
-     },
-     {
       "rank": 6,
       "name": "弗罗西诺内",
-      "pts": 17,
-      "p": 9
+      "pts": 20,
+      "p": 10
      },
      {
       "rank": 7,
-      "name": "那不勒斯",
-      "pts": 14,
-      "p": 9
+      "name": "尤文图斯",
+      "pts": 17,
+      "p": 10
      },
      {
       "rank": 8,
-      "name": "尤文图斯",
+      "name": "那不勒斯",
       "pts": 14,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 9,
@@ -13085,31 +13085,31 @@
       "rank": 10,
       "name": "都灵",
       "pts": 13,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 11,
-      "name": "卡利亚里",
+      "name": "热那亚",
       "pts": 13,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 12,
-      "name": "亚特兰大",
-      "pts": 11,
-      "p": 9
+      "name": "卡利亚里",
+      "pts": 13,
+      "p": 10
      },
      {
       "rank": 13,
-      "name": "热那亚",
-      "pts": 10,
+      "name": "亚特兰大",
+      "pts": 11,
       "p": 9
      },
      {
       "rank": 14,
       "name": "莱切",
       "pts": 9,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 15,
@@ -13145,7 +13145,7 @@
       "rank": 20,
       "name": "威尼斯",
       "pts": 3,
-      "p": 9
+      "p": 10
      }
     ],
     "lam_home": 2.462,
@@ -13374,9 +13374,9 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 72,
-    "defence": 74,
-    "control": 79,
+    "attack": 73,
+    "defence": 73,
+    "control": 80,
     "form": 59,
     "value": 85,
     "motivation": 85,
@@ -13412,8 +13412,8 @@
     "defence": 23,
     "control": 12,
     "form": 0,
-    "value": 75,
-    "motivation": 5,
+    "value": 74,
+    "motivation": 4,
     "AXES": [
      [
       "attack",
@@ -13662,20 +13662,20 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "曼城",
-      "pts": 21,
+      "name": "阿森纳",
+      "pts": 24,
       "p": 9
      },
      {
       "rank": 2,
-      "name": "阿森纳",
+      "name": "曼城",
       "pts": 21,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 3,
@@ -13693,7 +13693,7 @@
       "rank": 5,
       "name": "利物浦",
       "pts": 15,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 6,
@@ -14259,10 +14259,10 @@
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 15,
-    "points": 8,
-    "played": 7,
-    "win": 2,
+    "rank": 8,
+    "points": 11,
+    "played": 8,
+    "win": 3,
     "draw": 2,
     "loss": 3,
     "form": "",
@@ -14555,7 +14555,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -14602,63 +14602,63 @@
      },
      {
       "rank": 8,
+      "name": "法兰克福",
+      "pts": 11,
+      "p": 8
+     },
+     {
+      "rank": 9,
       "name": "美因茨",
       "pts": 10,
       "p": 8
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "奥格斯堡",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 10,
+      "rank": 11,
       "name": "斯图加特",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "霍芬海姆",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 12,
+      "rank": 13,
+      "name": "科隆",
+      "pts": 9,
+      "p": 8
+     },
+     {
+      "rank": 14,
       "name": "帕德博恩",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 13,
+      "rank": 15,
       "name": "汉堡",
       "pts": 9,
-      "p": 7
-     },
-     {
-      "rank": 14,
-      "name": "科隆",
-      "pts": 8,
-      "p": 7
-     },
-     {
-      "rank": 15,
-      "name": "法兰克福",
-      "pts": 8,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 16,
-      "name": "沙尔克04",
-      "pts": 6,
+      "name": "柏林联合",
+      "pts": 7,
       "p": 8
      },
      {
       "rank": 17,
-      "name": "柏林联合",
+      "name": "沙尔克04",
       "pts": 6,
-      "p": 7
+      "p": 8
      },
      {
       "rank": 18,
@@ -15046,10 +15046,10 @@
     "slug": "",
     "league": "西甲",
     "country": "",
-    "rank": 18,
-    "points": 9,
-    "played": 10,
-    "win": 2,
+    "rank": 12,
+    "points": 12,
+    "played": 11,
+    "win": 3,
     "draw": 3,
     "loss": 5,
     "form": "",
@@ -15064,7 +15064,7 @@
    },
    "metrics_home": {
     "attack": 99,
-    "defence": 69,
+    "defence": 70,
     "control": 99,
     "form": 98,
     "value": 97,
@@ -15100,8 +15100,8 @@
     "attack": 12,
     "defence": 90,
     "control": 48,
-    "form": 27,
-    "value": 40,
+    "form": 28,
+    "value": 41,
     "motivation": 57,
     "AXES": [
      [
@@ -15360,7 +15360,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -15378,8 +15378,8 @@
      {
       "rank": 3,
       "name": "皇家马德里",
-      "pts": 24,
-      "p": 10
+      "pts": 27,
+      "p": 11
      },
      {
       "rank": 4,
@@ -15391,19 +15391,19 @@
       "rank": 5,
       "name": "皇家社会",
       "pts": 19,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
       "name": "塞维利亚",
       "pts": 17,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 7,
       "name": "毕尔巴鄂竞技",
-      "pts": 12,
-      "p": 9
+      "pts": 15,
+      "p": 10
      },
      {
       "rank": 8,
@@ -15431,51 +15431,51 @@
      },
      {
       "rank": 12,
+      "name": "赫塔费",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 13,
       "name": "拉科鲁尼亚",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "西班牙人",
       "pts": 11,
       "p": 11
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "奥萨苏纳",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "桑坦德竞技",
       "pts": 11,
-      "p": 10
-     },
-     {
-      "rank": 16,
-      "name": "埃尔切",
-      "pts": 10,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 17,
-      "name": "莱万特",
+      "name": "埃尔切",
       "pts": 10,
       "p": 11
      },
      {
       "rank": 18,
-      "name": "赫塔费",
-      "pts": 9,
-      "p": 10
+      "name": "莱万特",
+      "pts": 10,
+      "p": 11
      },
      {
       "rank": 19,
       "name": "瓦伦西亚",
-      "pts": 6,
-      "p": 10
+      "pts": 9,
+      "p": 11
      },
      {
       "rank": 20,
@@ -16136,7 +16136,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 1.913,
     "lam_away": 1.577,
@@ -16620,8 +16620,8 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 49,
-    "defence": 42,
+    "attack": 47,
+    "defence": 43,
     "control": 49,
     "form": 62,
     "value": 4,
@@ -16654,11 +16654,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 71,
+    "attack": 70,
     "defence": 91,
-    "control": 78,
-    "form": 78,
-    "value": 87,
+    "control": 77,
+    "form": 77,
+    "value": 85,
     "motivation": 98,
     "AXES": [
      [
@@ -16857,7 +16857,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 0.735,
     "lam_away": 2.29,
@@ -17231,7 +17231,7 @@
    "metrics_home": {
     "attack": 93,
     "defence": 87,
-    "control": 93,
+    "control": 100,
     "form": 60,
     "value": 47,
     "motivation": 20,
@@ -17472,7 +17472,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 2.659,
     "lam_away": 0.908,
@@ -18183,7 +18183,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 1.223,
     "lam_away": 2.405,
@@ -18640,12 +18640,12 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 7,
+    "rank": 8,
     "points": 14,
-    "played": 9,
+    "played": 10,
     "win": 4,
     "draw": 2,
-    "loss": 3,
+    "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/492.png"
    },
@@ -18666,11 +18666,11 @@
    },
    "metrics_home": {
     "attack": 54,
-    "defence": 84,
-    "control": 69,
+    "defence": 85,
+    "control": 70,
     "form": 17,
-    "value": 71,
-    "motivation": 75,
+    "value": 72,
+    "motivation": 76,
     "AXES": [
      [
       "attack",
@@ -18699,9 +18699,9 @@
     ]
    },
    "metrics_away": {
-    "attack": 71,
+    "attack": 72,
     "defence": 89,
-    "control": 79,
+    "control": 80,
     "form": 85,
     "value": 7,
     "motivation": 77,
@@ -18935,14 +18935,14 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "拉齐奥",
-      "pts": 25,
-      "p": 9
+      "pts": 28,
+      "p": 10
      },
      {
       "rank": 2,
@@ -18958,33 +18958,33 @@
      },
      {
       "rank": 4,
+      "name": "科莫",
+      "pts": 23,
+      "p": 10
+     },
+     {
+      "rank": 5,
       "name": "AC米兰",
       "pts": 21,
       "p": 10
      },
      {
-      "rank": 5,
-      "name": "科莫",
-      "pts": 20,
-      "p": 9
-     },
-     {
       "rank": 6,
       "name": "弗罗西诺内",
-      "pts": 17,
-      "p": 9
+      "pts": 20,
+      "p": 10
      },
      {
       "rank": 7,
-      "name": "那不勒斯",
-      "pts": 14,
-      "p": 9
+      "name": "尤文图斯",
+      "pts": 17,
+      "p": 10
      },
      {
       "rank": 8,
-      "name": "尤文图斯",
+      "name": "那不勒斯",
       "pts": 14,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 9,
@@ -18996,31 +18996,31 @@
       "rank": 10,
       "name": "都灵",
       "pts": 13,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 11,
-      "name": "卡利亚里",
+      "name": "热那亚",
       "pts": 13,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 12,
-      "name": "亚特兰大",
-      "pts": 11,
-      "p": 9
+      "name": "卡利亚里",
+      "pts": 13,
+      "p": 10
      },
      {
       "rank": 13,
-      "name": "热那亚",
-      "pts": 10,
+      "name": "亚特兰大",
+      "pts": 11,
       "p": 9
      },
      {
       "rank": 14,
       "name": "莱切",
       "pts": 9,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 15,
@@ -19056,7 +19056,7 @@
       "rank": 20,
       "name": "威尼斯",
       "pts": 3,
-      "p": 9
+      "p": 10
      }
     ],
     "lam_home": 1.779,
@@ -19506,12 +19506,12 @@
     "slug": "",
     "league": "法甲",
     "country": "",
-    "rank": 4,
+    "rank": 7,
     "points": 15,
-    "played": 8,
+    "played": 9,
     "win": 4,
     "draw": 3,
-    "loss": 1,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/91.png"
    },
@@ -19522,10 +19522,10 @@
     "country": "",
     "rank": 11,
     "points": 10,
-    "played": 8,
+    "played": 9,
     "win": 2,
     "draw": 4,
-    "loss": 2,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/96.png"
    },
@@ -19761,7 +19761,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -19778,45 +19778,45 @@
      },
      {
       "rank": 3,
+      "name": "里昂",
+      "pts": 17,
+      "p": 9
+     },
+     {
+      "rank": 4,
+      "name": "巴黎FC",
+      "pts": 17,
+      "p": 9
+     },
+     {
+      "rank": 5,
       "name": "雷恩",
       "pts": 16,
       "p": 9
      },
      {
-      "rank": 4,
-      "name": "摩纳哥",
-      "pts": 15,
-      "p": 8
-     },
-     {
-      "rank": 5,
-      "name": "里昂",
-      "pts": 14,
-      "p": 8
-     },
-     {
       "rank": 6,
-      "name": "巴黎FC",
-      "pts": 14,
-      "p": 8
+      "name": "马赛",
+      "pts": 15,
+      "p": 9
      },
      {
       "rank": 7,
+      "name": "摩纳哥",
+      "pts": 15,
+      "p": 9
+     },
+     {
+      "rank": 8,
       "name": "尼斯",
       "pts": 14,
       "p": 9
      },
      {
-      "rank": 8,
+      "rank": 9,
       "name": "朗斯",
       "pts": 13,
       "p": 9
-     },
-     {
-      "rank": 9,
-      "name": "马赛",
-      "pts": 12,
-      "p": 8
      },
      {
       "rank": 10,
@@ -19828,37 +19828,37 @@
       "rank": 11,
       "name": "图卢兹",
       "pts": 10,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 12,
-      "name": "欧塞尔",
+      "name": "斯特拉斯堡",
       "pts": 10,
-      "p": 8
+      "p": 9
      },
      {
       "rank": 13,
+      "name": "欧塞尔",
+      "pts": 10,
+      "p": 9
+     },
+     {
+      "rank": 14,
       "name": "布雷斯特",
       "pts": 9,
       "p": 8
      },
      {
-      "rank": 14,
-      "name": "昂热",
-      "pts": 8,
-      "p": 8
-     },
-     {
       "rank": 15,
-      "name": "特鲁瓦",
+      "name": "昂热",
       "pts": 8,
       "p": 9
      },
      {
       "rank": 16,
-      "name": "斯特拉斯堡",
-      "pts": 7,
-      "p": 8
+      "name": "特鲁瓦",
+      "pts": 8,
+      "p": 9
      },
      {
       "rank": 17,
@@ -20320,7 +20320,7 @@
     "attack": 94,
     "defence": 77,
     "control": 93,
-    "form": 76,
+    "form": 77,
     "value": 95,
     "motivation": 92,
     "AXES": [
@@ -20353,9 +20353,9 @@
    "metrics_away": {
     "attack": 88,
     "defence": 20,
-    "control": 66,
-    "form": 42,
-    "value": 87,
+    "control": 67,
+    "form": 43,
+    "value": 88,
     "motivation": 73,
     "AXES": [
      [
@@ -20605,7 +20605,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -20623,8 +20623,8 @@
      {
       "rank": 3,
       "name": "皇家马德里",
-      "pts": 24,
-      "p": 10
+      "pts": 27,
+      "p": 11
      },
      {
       "rank": 4,
@@ -20636,19 +20636,19 @@
       "rank": 5,
       "name": "皇家社会",
       "pts": 19,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
       "name": "塞维利亚",
       "pts": 17,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 7,
       "name": "毕尔巴鄂竞技",
-      "pts": 12,
-      "p": 9
+      "pts": 15,
+      "p": 10
      },
      {
       "rank": 8,
@@ -20676,51 +20676,51 @@
      },
      {
       "rank": 12,
+      "name": "赫塔费",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 13,
       "name": "拉科鲁尼亚",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "西班牙人",
       "pts": 11,
       "p": 11
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "奥萨苏纳",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "桑坦德竞技",
       "pts": 11,
-      "p": 10
-     },
-     {
-      "rank": 16,
-      "name": "埃尔切",
-      "pts": 10,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 17,
-      "name": "莱万特",
+      "name": "埃尔切",
       "pts": 10,
       "p": 11
      },
      {
       "rank": 18,
-      "name": "赫塔费",
-      "pts": 9,
-      "p": 10
+      "name": "莱万特",
+      "pts": 10,
+      "p": 11
      },
      {
       "rank": 19,
       "name": "瓦伦西亚",
-      "pts": 6,
-      "p": 10
+      "pts": 9,
+      "p": 11
      },
      {
       "rank": 20,
@@ -20779,11 +20779,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 43,
+    "attack": 44,
     "defence": 9,
     "control": 15,
     "form": 4,
-    "value": 15,
+    "value": 16,
     "motivation": 2,
     "AXES": [
      [
@@ -20814,11 +20814,11 @@
    },
    "metrics_away": {
     "attack": 42,
-    "defence": 74,
-    "control": 60,
+    "defence": 75,
+    "control": 62,
     "form": 85,
     "value": 45,
-    "motivation": 75,
+    "motivation": 76,
     "AXES": [
      [
       "attack",
@@ -20991,7 +20991,7 @@
     "settled_at": "2026-10-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 1.537,
     "lam_away": 1.035,

@@ -224,7 +224,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 0.971,
     "lam_away": 0.768,
@@ -748,7 +748,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 1.72,
     "lam_away": 1.22,
@@ -1305,7 +1305,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 0.191,
     "lam_away": 1.696,
@@ -1782,7 +1782,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 1.347,
     "lam_away": 0.601,
@@ -2396,7 +2396,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 1.468,
     "lam_away": 0.745,
@@ -3015,7 +3015,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 0.72,
     "lam_away": 1.567,
@@ -3272,7 +3272,7 @@
     "slug": "",
     "league": "西甲",
     "country": "",
-    "rank": 13,
+    "rank": 14,
     "points": 11,
     "played": 11,
     "win": 3,
@@ -3289,11 +3289,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 41,
+    "attack": 42,
     "defence": 20,
-    "control": 27,
-    "form": 17,
-    "value": 31,
+    "control": 28,
+    "form": 18,
+    "value": 30,
     "motivation": 50,
     "AXES": [
      [
@@ -3323,11 +3323,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 41,
+    "attack": 42,
     "defence": 77,
     "control": 74,
-    "form": 50,
-    "value": 22,
+    "form": 51,
+    "value": 21,
     "motivation": 9,
     "AXES": [
      [
@@ -3541,7 +3541,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -3559,8 +3559,8 @@
      {
       "rank": 3,
       "name": "皇家马德里",
-      "pts": 24,
-      "p": 10
+      "pts": 27,
+      "p": 11
      },
      {
       "rank": 4,
@@ -3572,19 +3572,19 @@
       "rank": 5,
       "name": "皇家社会",
       "pts": 19,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
       "name": "塞维利亚",
       "pts": 17,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 7,
       "name": "毕尔巴鄂竞技",
-      "pts": 12,
-      "p": 9
+      "pts": 15,
+      "p": 10
      },
      {
       "rank": 8,
@@ -3612,51 +3612,51 @@
      },
      {
       "rank": 12,
+      "name": "赫塔费",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 13,
       "name": "拉科鲁尼亚",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "西班牙人",
       "pts": 11,
       "p": 11
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "奥萨苏纳",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "桑坦德竞技",
       "pts": 11,
-      "p": 10
-     },
-     {
-      "rank": 16,
-      "name": "埃尔切",
-      "pts": 10,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 17,
-      "name": "莱万特",
+      "name": "埃尔切",
       "pts": 10,
       "p": 11
      },
      {
       "rank": 18,
-      "name": "赫塔费",
-      "pts": 9,
-      "p": 10
+      "name": "莱万特",
+      "pts": 10,
+      "p": 11
      },
      {
       "rank": 19,
       "name": "瓦伦西亚",
-      "pts": 6,
-      "p": 10
+      "pts": 9,
+      "p": 11
      },
      {
       "rank": 20,
@@ -4094,10 +4094,10 @@
    },
    "metrics_home": {
     "attack": 73,
-    "defence": 69,
+    "defence": 70,
     "control": 83,
     "form": 81,
-    "value": 51,
+    "value": 52,
     "motivation": 55,
     "AXES": [
      [
@@ -4129,10 +4129,10 @@
    "metrics_away": {
     "attack": 16,
     "defence": 33,
-    "control": 15,
+    "control": 16,
     "form": 0,
-    "value": 49,
-    "motivation": 42,
+    "value": 50,
+    "motivation": 43,
     "AXES": [
      [
       "attack",
@@ -4345,7 +4345,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -4363,8 +4363,8 @@
      {
       "rank": 3,
       "name": "皇家马德里",
-      "pts": 24,
-      "p": 10
+      "pts": 27,
+      "p": 11
      },
      {
       "rank": 4,
@@ -4376,19 +4376,19 @@
       "rank": 5,
       "name": "皇家社会",
       "pts": 19,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
       "name": "塞维利亚",
       "pts": 17,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 7,
       "name": "毕尔巴鄂竞技",
-      "pts": 12,
-      "p": 9
+      "pts": 15,
+      "p": 10
      },
      {
       "rank": 8,
@@ -4416,51 +4416,51 @@
      },
      {
       "rank": 12,
+      "name": "赫塔费",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 13,
       "name": "拉科鲁尼亚",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "西班牙人",
       "pts": 11,
       "p": 11
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "奥萨苏纳",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "桑坦德竞技",
       "pts": 11,
-      "p": 10
-     },
-     {
-      "rank": 16,
-      "name": "埃尔切",
-      "pts": 10,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 17,
-      "name": "莱万特",
+      "name": "埃尔切",
       "pts": 10,
       "p": 11
      },
      {
       "rank": 18,
-      "name": "赫塔费",
-      "pts": 9,
-      "p": 10
+      "name": "莱万特",
+      "pts": 10,
+      "p": 11
      },
      {
       "rank": 19,
       "name": "瓦伦西亚",
-      "pts": 6,
-      "p": 10
+      "pts": 9,
+      "p": 11
      },
      {
       "rank": 20,
@@ -5043,7 +5043,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 2.404,
     "lam_away": 0.623,
@@ -5701,7 +5701,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 1.971,
     "lam_away": 1.036,
@@ -6397,7 +6397,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 2.004,
     "lam_away": 1.19,
@@ -6513,7 +6513,7 @@
    "metrics_home": {
     "attack": 42,
     "defence": 16,
-    "control": 26,
+    "control": 21,
     "form": 47,
     "value": 53,
     "motivation": 0,
@@ -6754,7 +6754,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "lam_home": 0.637,
     "lam_away": 2.02,
@@ -6849,12 +6849,12 @@
     "slug": "",
     "league": "西甲",
     "country": "",
-    "rank": 16,
+    "rank": 17,
     "points": 10,
-    "played": 10,
+    "played": 11,
     "win": 2,
     "draw": 4,
-    "loss": 4,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/797.png"
    },
@@ -6874,12 +6874,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 22,
+    "attack": 23,
     "defence": 5,
-    "control": 10,
+    "control": 11,
     "form": 4,
-    "value": 20,
-    "motivation": 13,
+    "value": 19,
+    "motivation": 12,
     "AXES": [
      [
       "attack",
@@ -6911,7 +6911,7 @@
     "attack": 91,
     "defence": 90,
     "control": 93,
-    "form": 87,
+    "form": 88,
     "value": 92,
     "motivation": 94,
     "AXES": [
@@ -7126,7 +7126,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
@@ -7144,8 +7144,8 @@
      {
       "rank": 3,
       "name": "皇家马德里",
-      "pts": 24,
-      "p": 10
+      "pts": 27,
+      "p": 11
      },
      {
       "rank": 4,
@@ -7157,19 +7157,19 @@
       "rank": 5,
       "name": "皇家社会",
       "pts": 19,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
       "name": "塞维利亚",
       "pts": 17,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 7,
       "name": "毕尔巴鄂竞技",
-      "pts": 12,
-      "p": 9
+      "pts": 15,
+      "p": 10
      },
      {
       "rank": 8,
@@ -7197,51 +7197,51 @@
      },
      {
       "rank": 12,
+      "name": "赫塔费",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 13,
       "name": "拉科鲁尼亚",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "西班牙人",
       "pts": 11,
       "p": 11
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "奥萨苏纳",
       "pts": 11,
       "p": 10
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "桑坦德竞技",
       "pts": 11,
-      "p": 10
-     },
-     {
-      "rank": 16,
-      "name": "埃尔切",
-      "pts": 10,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 17,
-      "name": "莱万特",
+      "name": "埃尔切",
       "pts": 10,
       "p": 11
      },
      {
       "rank": 18,
-      "name": "赫塔费",
-      "pts": 9,
-      "p": 10
+      "name": "莱万特",
+      "pts": 10,
+      "p": 11
      },
      {
       "rank": 19,
       "name": "瓦伦西亚",
-      "pts": 6,
-      "p": 10
+      "pts": 9,
+      "p": 11
      },
      {
       "rank": 20,
@@ -7529,7 +7529,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-02T08:08:53+08:00",
+   "generated_at": "2026-11-02T14:31:42+08:00",
    "extras": {
     "table": [
      {
