@@ -8,6 +8,8 @@
   --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb;
   --gray-500: #6b7280; --gray-700: #374151;
   --blue-50: #eff6ff;
+  --hc-h: #2563eb; --hc-a: #f59e0b;
+  --hc-track: #edf0f4;
 }
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -1101,4 +1103,155 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
 @media (max-width: 640px) {
   .ana-grid { grid-template-columns: 1fr; gap: 0; }
   .ana-grid > div + div { margin-top: 14px; }
+}
+
+/* ================= 数据对比版式（橙=主队 / 蓝=客队） ================= */
+/* 单行对比：数值—条—标签—条—数值，两条各自从中轴向两侧生长 */
+.hc-cmp { display: grid; gap: 11px; }
+.hc-cmp + .hc-cmp { margin-top: 14px; }
+.hc-row { display: grid; grid-template-columns: 4.2em 1fr 6.4em 1fr 4.2em;
+  align-items: center; gap: 9px; }
+.hc-row > b { font-size: 0.8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.hc-row .hv { text-align: right; color: var(--hc-h); }
+.hc-row .av { text-align: left; color: var(--hc-a); }
+.hc-row .hl { text-align: center; font-size: 0.76rem; color: #59616e; white-space: nowrap; }
+.hc-track { height: 9px; border-radius: 5px; background: var(--hc-track);
+  display: flex; overflow: hidden; }
+.hc-track.h { justify-content: flex-start; }
+.hc-track.a { justify-content: flex-end; }
+.hc-track i { display: block; height: 100%; border-radius: 5px; min-width: 2px; }
+.hc-track.h i { background: linear-gradient(90deg, var(--hc-h), #93b4f8); }
+.hc-track.a i { background: linear-gradient(90deg, #f9c877, var(--hc-a)); }
+
+/* 队名行（对比面板顶部） */
+.hc-teams { display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; margin: 0 0 14px; font-size: 0.9rem; font-weight: 700; color: #111; }
+.hc-teams .tm { display: inline-flex; align-items: center; gap: 7px; min-width: 0; }
+.hc-teams .tm.a { flex-direction: row-reverse; }
+.hc-teams img { width: 26px; height: 26px; object-fit: contain; flex: none; }
+.hc-teams .crest { width: 26px; height: 26px; }
+.hc-teams .crest-ph { width: 26px; height: 26px; font-size: 0.78rem; }
+.hc-teams span.n { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* 面板内的二级小标题（同一面板里分段） */
+.blk-h { margin: 20px 0 3px; font-size: 0.9rem; font-weight: 700; color: #111;
+  padding-top: 16px; border-top: 1px solid var(--rule); }
+.panel-hint { margin: 0 0 12px; font-size: 0.72rem; color: var(--muted); }
+.panel-hint .lg { width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+  margin: 0 5px 0 14px; vertical-align: middle; }
+.panel-hint .lg:first-child { margin-left: 0; }
+.panel-hint .lg.h { background: var(--hc-h); }
+.panel-hint .lg.a { background: var(--hc-a); }
+.radar-wrap { text-align: center; padding-bottom: 6px; }
+.radar-wrap .legend { justify-content: center; margin: 0 0 10px; font-size: 0.74rem; }
+.radar-wrap svg { width: 100%; max-width: 460px; height: auto; display: inline-block; }
+.hc-times { margin: 0 0 14px; }
+
+/* 纯 CSS 标签页（radio + label，无脚本） */
+.hc-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px;
+  position: relative; }
+.hc-tabs input { position: absolute; width: 1px; height: 1px; opacity: 0;
+  pointer-events: none; }
+.hc-tabs label { padding: 0.32rem 0.88rem; border-radius: 999px; background: #f1f4f8;
+  color: #4b5563; font-size: 0.78rem; cursor: pointer; border: 1px solid transparent;
+  transition: background 0.15s, color 0.15s; user-select: none; }
+.hc-tabs label:hover { background: #e6ebf2; }
+.hc-tabs input:checked + label { background: var(--accent); color: #fff; font-weight: 600; }
+.hc-tabs input:focus-visible + label { outline: 2px solid var(--hc-a); outline-offset: 2px; }
+.hc-pane { display: none; width: 100%; }
+.hc-tabs input:nth-of-type(1):checked ~ .hc-pane.p1,
+.hc-tabs input:nth-of-type(2):checked ~ .hc-pane.p2,
+.hc-tabs input:nth-of-type(3):checked ~ .hc-pane.p3,
+.hc-tabs input:nth-of-type(4):checked ~ .hc-pane.p4 { display: block; }
+
+/* 胜负方块序列（比表格里的 13px 大一档，单独成行） */
+.hc-seq { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
+.hc-seq span { width: 24px; height: 24px; border-radius: 5px; display: inline-flex;
+  align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700;
+  color: #fff; }
+.hc-seq .w { background: var(--win); }
+.hc-seq .d { background: #9aa3af; }
+.hc-seq .l { background: var(--loss); }
+
+/* 近期战绩：两队并排小卡 + 方块 */
+.hc-form2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 16px; }
+.hc-form2 .fc { background: #f8fafc; border: 1px solid var(--rule); border-radius: 10px;
+  padding: 12px 10px 10px; text-align: center; }
+.hc-form2 .fc h4 { margin: 0 0 10px; font-size: 0.8rem; font-weight: 600; color: #334155; }
+.hc-form2 .fc .fc-sum { margin: 10px 0 0; font-size: 0.74rem; color: var(--muted);
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+/* 历史交锋的三个大数字 */
+.hc-wdl { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
+  margin: 2px 0 16px; text-align: center; }
+.hc-wdl b { display: block; font-size: 1.9rem; font-weight: 700; line-height: 1.15;
+  font-variant-numeric: tabular-nums; }
+.hc-wdl span { font-size: 0.74rem; color: var(--muted); }
+.hc-wdl .w b { color: var(--hc-h); }
+.hc-wdl .d b { color: #374151; }
+.hc-wdl .l b { color: var(--hc-a); }
+
+/* 双柱状图（进球 / 丢球时段分布） */
+.hc-bars { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px;
+  max-width: 620px; margin: 0 auto; }
+.hc-bars .bg { display: flex; gap: 4px; align-items: flex-end; justify-content: center;
+  height: 118px; }
+.hc-bars .bh { position: relative; flex: 1; max-width: 40px; height: 100%; }
+.hc-bars .bh i { position: absolute; bottom: 0; left: 0; right: 0; border-radius: 3px 3px 0 0;
+  display: block; min-height: 2px; }
+.hc-bars .bh b { position: absolute; left: 50%; transform: translateX(-50%);
+  bottom: calc(var(--h) + 4px); font-size: 0.62rem; font-weight: 600; color: #64748b;
+  white-space: nowrap; font-variant-numeric: tabular-nums; }
+.hc-bars .bh.h i { background: var(--hc-h); }
+.hc-bars .bh.a i { background: var(--hc-a); }
+.hc-axis { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px;
+  margin: 6px auto 0; max-width: 620px; font-size: 0.68rem; color: var(--muted);
+  text-align: center; }
+
+/* 比赛天气卡片 */
+.wx-card { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px;
+  background: #f8fafc; border: 1px solid var(--rule); border-radius: 12px;
+  padding: 16px 18px; align-items: center; }
+.wx-icon { font-size: 2.6rem; line-height: 1; }
+.wx-top { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.wx-temp { font-size: 1.9rem; font-weight: 700; color: #111; line-height: 1.05;
+  font-variant-numeric: tabular-nums; }
+.wx-temp small { font-size: 0.95rem; font-weight: 500; color: #6b7280; margin-left: 1px; }
+.wx-meta { font-size: 0.78rem; color: #4b5563; }
+.wx-name { font-size: 0.8rem; color: #374151; margin-top: 2px; }
+.wx-teams { grid-column: 1 / -1; display: grid; gap: 3px; font-size: 0.78rem;
+  color: #4b5563; border-top: 1px dashed var(--rule); padding-top: 9px; margin-top: 4px; }
+.wx-teams span b { color: #111; font-weight: 600; }
+
+/* 裁判执法：姓名卡 + 场均表 */
+.ref-card { background: #f8fafc; border: 1px solid var(--rule); border-radius: 10px;
+  padding: 12px 16px; margin-bottom: 14px; }
+.ref-card b { font-size: 0.98rem; color: #111; font-weight: 700; }
+.ref-card span { display: block; font-size: 0.74rem; color: var(--muted); margin-top: 3px; }
+.ref-t th, .ref-t td { text-align: center; }
+.ref-t td:first-child, .ref-t th:first-child { text-align: left; color: #334155;
+  font-weight: 600; white-space: nowrap; }
+.ref-t td { font-variant-numeric: tabular-nums; }
+
+/* 明细折叠 */
+.fold { margin-top: 14px; border-top: 1px dashed var(--rule); padding-top: 10px; }
+.fold summary { cursor: pointer; font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+.fold summary:hover { color: var(--accent); }
+.fold[open] summary { margin-bottom: 8px; }
+
+@media (max-width: 640px) {
+  .hc-row { grid-template-columns: 2.9em 1fr 4.4em 1fr 2.9em; gap: 5px; }
+  .hc-row > b { font-size: 0.72rem; }
+  .hc-row .hl { font-size: 0.68rem; }
+  .hc-track { height: 8px; }
+  .hc-form2 { grid-template-columns: 1fr; }
+  .hc-bars .bg { height: 96px; }
+  .hc-bars .bh b { font-size: 0.56rem; }
+  .hc-axis { font-size: 0.62rem; }
+  .hc-teams { font-size: 0.84rem; }
+  .hc-teams img, .hc-teams .crest-ph { width: 22px; height: 22px; }
+  .wx-card { padding: 14px; gap: 6px 12px; }
+  .wx-icon { font-size: 2.1rem; }
+  .wx-temp { font-size: 1.6rem; }
+  .ref-t th, .ref-t td { padding: 0.4rem 0.3rem; font-size: 0.74rem; }
 }

@@ -113,24 +113,24 @@
      "T-1"
     ],
     "home": [
-     1.0,
      0.0,
      3.0,
      1.0,
      1.0,
      0.0,
      1.0,
-     2.0
+     2.0,
+     4.0
     ],
     "away": [
-     0.0,
      2.0,
      3.0,
      3.0,
      1.0,
      1.0,
      0.0,
-     0.0
+     0.0,
+     3.0
     ]
    },
    "forecasts": [
@@ -388,13 +388,22 @@
     },
     {
      "team": "away",
-     "player": "格纳努",
-     "reason": "后卫·无法出战",
+     "player": "于拉图帕",
+     "reason": "前锋·无法出战",
      "status": "suspended"
     }
    ],
+   "result": {
+    "half_score": "1-1",
+    "full_score": "4-3",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-11-02"
+   },
    "source_url": "",
-   "generated_at": "2026-11-02T20:26:15+08:00",
+   "generated_at": "2026-11-03T09:43:30+08:00",
    "extras": {
     "lam_home": 1.843,
     "lam_away": 0.865,
@@ -743,8 +752,8 @@
         "reason": "后卫·无法出战"
        },
        {
-        "name": "格纳努",
-        "reason": "后卫·无法出战"
+        "name": "于拉图帕",
+        "reason": "前锋·无法出战"
        }
       ]
      }
@@ -850,16 +859,16 @@
      }
     ],
     "weather": {
-     "t_min": 6,
-     "t_max": 6,
+     "t_min": 4,
+     "t_max": 4,
      "pop": 0,
      "rain": 0.0,
-     "wind": 12,
+     "wind": 7,
      "grade": "ok",
      "city": "图尔库",
      "wx": "局部有云",
-     "t_actual": 6,
-     "humidity": 92,
+     "t_actual": 4,
+     "humidity": 100,
      "by_home": {
       "n": 6,
       "w": 3,
@@ -1353,37 +1362,37 @@
       "scored": [
        {
         "n": 6,
-        "pct": 16,
+        "pct": 14,
         "from": 1,
         "to": 15
        },
        {
-        "n": 4,
-        "pct": 10,
+        "n": 5,
+        "pct": 12,
         "from": 16,
         "to": 30
        },
        {
         "n": 5,
-        "pct": 13,
+        "pct": 12,
         "from": 31,
         "to": 45
        },
        {
-        "n": 8,
+        "n": 9,
         "pct": 21,
         "from": 46,
         "to": 60
        },
        {
         "n": 6,
-        "pct": 16,
+        "pct": 14,
         "from": 61,
         "to": 75
        },
        {
-        "n": 8,
-        "pct": 21,
+        "n": 10,
+        "pct": 24,
         "from": 76,
         "to": 90
        }
@@ -1397,31 +1406,31 @@
        },
        {
         "n": 8,
-        "pct": 33,
+        "pct": 29,
         "from": 16,
         "to": 30
        },
        {
-        "n": 5,
-        "pct": 20,
+        "n": 6,
+        "pct": 22,
         "from": 31,
         "to": 45
        },
        {
         "n": 2,
-        "pct": 8,
+        "pct": 7,
         "from": 46,
         "to": 60
        },
        {
         "n": 4,
-        "pct": 16,
+        "pct": 14,
         "from": 61,
         "to": 75
        },
        {
-        "n": 5,
-        "pct": 20,
+        "n": 7,
+        "pct": 25,
         "from": 76,
         "to": 90
        }
@@ -1431,37 +1440,37 @@
       "scored": [
        {
         "n": 8,
-        "pct": 18,
+        "pct": 17,
         "from": 1,
         "to": 15
        },
        {
         "n": 6,
-        "pct": 13,
+        "pct": 12,
         "from": 16,
         "to": 30
        },
        {
-        "n": 3,
-        "pct": 6,
+        "n": 4,
+        "pct": 8,
         "from": 31,
         "to": 45
        },
        {
         "n": 10,
-        "pct": 22,
+        "pct": 21,
         "from": 46,
         "to": 60
        },
        {
         "n": 8,
-        "pct": 18,
+        "pct": 17,
         "from": 61,
         "to": 75
        },
        {
-        "n": 9,
-        "pct": 20,
+        "n": 11,
+        "pct": 23,
         "from": 76,
         "to": 90
        }
@@ -1469,37 +1478,37 @@
       "conceded": [
        {
         "n": 7,
-        "pct": 16,
+        "pct": 15,
         "from": 1,
         "to": 15
        },
        {
-        "n": 3,
-        "pct": 7,
+        "n": 4,
+        "pct": 8,
         "from": 16,
         "to": 30
        },
        {
         "n": 7,
-        "pct": 16,
+        "pct": 15,
         "from": 31,
         "to": 45
        },
        {
-        "n": 11,
+        "n": 12,
         "pct": 26,
         "from": 46,
         "to": 60
        },
        {
         "n": 4,
-        "pct": 9,
+        "pct": 8,
         "from": 61,
         "to": 75
        },
        {
-        "n": 10,
-        "pct": 23,
+        "n": 12,
+        "pct": 26,
         "from": 76,
         "to": 90
        }
@@ -1525,28 +1534,96 @@
      ]
     },
     "hc_range": {
-     "home": {
-      "n": 4,
-      "w": 2,
+     "home_total": {
+      "n": 31,
+      "w": 16,
+      "d": 10,
+      "l": 5,
+      "gf": 41,
+      "ga": 27,
+      "rank": 2,
+      "pts": 58,
+      "gd": 14
+     },
+     "away_total": {
+      "n": 31,
+      "w": 11,
+      "d": 10,
+      "l": 10,
+      "gf": 47,
+      "ga": 46,
+      "rank": 5,
+      "pts": 43,
+      "gd": 1
+     },
+     "home_home": {
+      "n": 5,
+      "w": 3,
       "d": 0,
       "l": 2,
+      "gf": 9,
+      "ga": 9,
+      "rank": 2,
+      "pts": 9,
+      "gd": 0
+     },
+     "home_guest": {
+      "n": 4,
+      "w": 2,
+      "d": 1,
+      "l": 1,
+      "gf": 3,
+      "ga": 2,
+      "rank": 3,
+      "pts": 7,
+      "gd": 1
+     },
+     "away_home": {
+      "n": 4,
+      "w": 0,
+      "d": 3,
+      "l": 1,
       "gf": 5,
       "ga": 6,
-      "rank": 2,
-      "pts": 6
+      "rank": 6,
+      "pts": 3,
+      "gd": -1
      },
-     "away": {
-      "n": 4,
+     "away_guest": {
+      "n": 5,
       "w": 1,
       "d": 1,
-      "l": 2,
-      "gf": 3,
-      "ga": 7,
+      "l": 3,
+      "gf": 6,
+      "ga": 11,
       "rank": 5,
-      "pts": 4
+      "pts": 4,
+      "gd": -5
+     },
+     "home": {
+      "n": 5,
+      "w": 3,
+      "d": 0,
+      "l": 2,
+      "gf": 9,
+      "ga": 9,
+      "rank": 2,
+      "pts": 9,
+      "gd": 0
+     },
+     "away": {
+      "n": 5,
+      "w": 1,
+      "d": 1,
+      "l": 3,
+      "gf": 6,
+      "ga": 11,
+      "rank": 5,
+      "pts": 4,
+      "gd": -5
      }
     },
-    "hc_at": "2026-11-02 20:26"
+    "hc_at": "2026-11-03 09:35"
    }
   },
   {
@@ -1596,7 +1673,7 @@
    "metrics_home": {
     "attack": 62,
     "defence": 1,
-    "control": 18,
+    "control": 15,
     "form": 3,
     "value": 37,
     "motivation": 16,
@@ -1630,7 +1707,7 @@
    "metrics_away": {
     "attack": 38,
     "defence": 3,
-    "control": 7,
+    "control": 8,
     "form": 7,
     "value": 42,
     "motivation": 22,
@@ -1673,24 +1750,24 @@
      "T-1"
     ],
     "home": [
-     1.0,
      2.0,
      3.0,
      1.0,
      1.0,
      2.0,
      0.0,
+     2.0,
      2.0
     ],
     "away": [
-     0.0,
      1.0,
      4.0,
      1.0,
      1.0,
      1.0,
      1.0,
-     2.0
+     2.0,
+     4.0
     ]
    },
    "forecasts": [
@@ -1973,8 +2050,17 @@
      "status": "out"
     }
    ],
+   "result": {
+    "half_score": "1-1",
+    "full_score": "2-4",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-11-02"
+   },
    "source_url": "",
-   "generated_at": "2026-11-02T20:26:15+08:00",
+   "generated_at": "2026-11-03T09:43:30+08:00",
    "extras": {
     "table": [
      {
@@ -2615,29 +2701,29 @@
      }
     ],
     "weather": {
-     "t_min": 12,
-     "t_max": 12,
+     "t_min": 10,
+     "t_max": 10,
      "pop": 0,
      "rain": 0.0,
-     "wind": 13,
+     "wind": 5,
      "grade": "ok",
      "city": "雷焦艾米利亚",
-     "wx": "阴",
-     "t_actual": 12,
-     "humidity": 64,
+     "wx": "局部有云",
+     "t_actual": 10,
+     "humidity": 61,
      "by_home": {
       "n": 6,
-      "w": 6,
-      "d": 0,
-      "l": 0,
-      "win_rate": 100
+      "w": 3,
+      "d": 1,
+      "l": 2,
+      "win_rate": 50
      },
      "by_away": {
       "n": 6,
-      "w": 3,
-      "d": 3,
-      "l": 0,
-      "win_rate": 50
+      "w": 2,
+      "d": 1,
+      "l": 3,
+      "win_rate": 33
      },
      "src": "红彩"
     },
@@ -3118,37 +3204,37 @@
       "scored": [
        {
         "n": 2,
-        "pct": 14,
+        "pct": 12,
         "from": 1,
         "to": 15
        },
        {
-        "n": 1,
-        "pct": 7,
+        "n": 2,
+        "pct": 12,
         "from": 16,
         "to": 30
        },
        {
         "n": 3,
-        "pct": 21,
+        "pct": 18,
         "from": 31,
         "to": 45
        },
        {
         "n": 2,
-        "pct": 14,
+        "pct": 12,
         "from": 46,
         "to": 60
        },
        {
-        "n": 2,
-        "pct": 14,
+        "n": 3,
+        "pct": 18,
         "from": 61,
         "to": 75
        },
        {
         "n": 4,
-        "pct": 28,
+        "pct": 25,
         "from": 76,
         "to": 90
        }
@@ -3156,13 +3242,13 @@
       "conceded": [
        {
         "n": 4,
-        "pct": 18,
+        "pct": 15,
         "from": 1,
         "to": 15
        },
        {
         "n": 3,
-        "pct": 13,
+        "pct": 11,
         "from": 16,
         "to": 30
        },
@@ -3173,20 +3259,20 @@
         "to": 45
        },
        {
-        "n": 8,
-        "pct": 36,
+        "n": 10,
+        "pct": 38,
         "from": 46,
         "to": 60
        },
        {
         "n": 4,
-        "pct": 18,
+        "pct": 15,
         "from": 61,
         "to": 75
        },
        {
-        "n": 3,
-        "pct": 13,
+        "n": 5,
+        "pct": 19,
         "from": 76,
         "to": 90
        }
@@ -3202,31 +3288,31 @@
        },
        {
         "n": 2,
-        "pct": 18,
+        "pct": 13,
         "from": 16,
         "to": 30
        },
        {
         "n": 1,
-        "pct": 9,
+        "pct": 6,
         "from": 31,
         "to": 45
        },
        {
-        "n": 3,
-        "pct": 27,
+        "n": 5,
+        "pct": 33,
         "from": 46,
         "to": 60
        },
        {
         "n": 4,
-        "pct": 36,
+        "pct": 26,
         "from": 61,
         "to": 75
        },
        {
-        "n": 1,
-        "pct": 9,
+        "n": 3,
+        "pct": 20,
         "from": 76,
         "to": 90
        }
@@ -3234,37 +3320,37 @@
       "conceded": [
        {
         "n": 2,
-        "pct": 9,
+        "pct": 8,
         "from": 1,
         "to": 15
        },
        {
-        "n": 4,
-        "pct": 19,
+        "n": 5,
+        "pct": 21,
         "from": 16,
         "to": 30
        },
        {
         "n": 4,
-        "pct": 19,
+        "pct": 17,
         "from": 31,
         "to": 45
        },
        {
         "n": 3,
-        "pct": 14,
+        "pct": 13,
         "from": 46,
         "to": 60
        },
        {
-        "n": 3,
-        "pct": 14,
+        "n": 4,
+        "pct": 17,
         "from": 61,
         "to": 75
        },
        {
         "n": 5,
-        "pct": 23,
+        "pct": 21,
         "from": 76,
         "to": 90
        }
@@ -3285,28 +3371,96 @@
      ]
     },
     "hc_range": {
-     "home": {
-      "n": 4,
+     "home_total": {
+      "n": 10,
+      "w": 2,
+      "d": 2,
+      "l": 6,
+      "gf": 16,
+      "ga": 26,
+      "rank": 17,
+      "pts": 8,
+      "gd": -10
+     },
+     "away_total": {
+      "n": 10,
+      "w": 2,
+      "d": 2,
+      "l": 6,
+      "gf": 15,
+      "ga": 23,
+      "rank": 16,
+      "pts": 8,
+      "gd": -8
+     },
+     "home_home": {
+      "n": 5,
       "w": 2,
       "d": 1,
-      "l": 1,
-      "gf": 8,
-      "ga": 10,
+      "l": 2,
+      "gf": 10,
+      "ga": 14,
       "rank": 11,
-      "pts": 7
+      "pts": 7,
+      "gd": -4
      },
-     "away": {
-      "n": 4,
-      "w": 1,
+     "home_guest": {
+      "n": 5,
+      "w": 0,
+      "d": 1,
+      "l": 4,
+      "gf": 6,
+      "ga": 12,
+      "rank": 18,
+      "pts": 1,
+      "gd": -6
+     },
+     "away_home": {
+      "n": 5,
+      "w": 0,
+      "d": 2,
+      "l": 3,
+      "gf": 5,
+      "ga": 11,
+      "rank": 19,
+      "pts": 2,
+      "gd": -6
+     },
+     "away_guest": {
+      "n": 5,
+      "w": 2,
       "d": 0,
       "l": 3,
-      "gf": 6,
-      "ga": 10,
-      "rank": 15,
-      "pts": 3
+      "gf": 10,
+      "ga": 12,
+      "rank": 12,
+      "pts": 6,
+      "gd": -2
+     },
+     "home": {
+      "n": 5,
+      "w": 2,
+      "d": 1,
+      "l": 2,
+      "gf": 10,
+      "ga": 14,
+      "rank": 11,
+      "pts": 7,
+      "gd": -4
+     },
+     "away": {
+      "n": 5,
+      "w": 2,
+      "d": 0,
+      "l": 3,
+      "gf": 10,
+      "ga": 12,
+      "rank": 12,
+      "pts": 6,
+      "gd": -2
      }
     },
-    "hc_at": "2026-11-02 20:26"
+    "hc_at": "2026-11-03 09:35"
    }
   },
   {
@@ -3421,24 +3575,24 @@
      "T-1"
     ],
     "home": [
-     0.0,
      1.0,
      2.0,
      0.0,
      0.0,
      0.0,
      3.0,
-     1.0
+     1.0,
+     2.0
     ],
     "away": [
-     2.0,
      0.0,
      0.0,
      4.0,
      3.0,
      3.0,
      0.0,
-     2.0
+     2.0,
+     1.0
     ]
    },
    "forecasts": [
@@ -3617,73 +3771,88 @@
    "injuries": [
     {
      "team": "home",
-     "player": "K.霍尔门",
-     "reason": "中场·膝关节损伤",
+     "player": "奇云贺尔文",
+     "reason": "膝伤",
      "status": "out"
     },
     {
      "team": "home",
-     "player": "奥克尔森",
-     "reason": "中场·膝关节损伤",
+     "player": "科卡臣",
+     "reason": "十字韧带",
      "status": "out"
     },
     {
      "team": "home",
-     "player": "丹夸",
-     "reason": "中场·患病",
+     "player": "丹尼斯高兰达",
+     "reason": "肋骨",
      "status": "out"
     },
     {
      "team": "home",
-     "player": "科兰德",
-     "reason": "中场·无法出战",
+     "player": "丹克华",
+     "reason": "不详",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "赫贝治",
+     "reason": "鼠蹊",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "碧克文",
+     "reason": "",
      "status": "suspended"
     },
     {
-     "team": "home",
-     "player": "葛雷维奥斯",
-     "reason": "中场·无法出战",
-     "status": "suspended"
-    },
-    {
      "team": "away",
-     "player": "菲林",
-     "reason": "前锋·膝关节损伤",
+     "player": "柏柏基安普鲁斯",
+     "reason": "膝伤",
      "status": "out"
     },
     {
      "team": "away",
-     "player": "帕帕吉安诺普洛斯",
-     "reason": "后卫·膝关节损伤",
+     "player": "奇云芬宁",
+     "reason": "膝伤",
      "status": "out"
     },
     {
      "team": "away",
-     "player": "雷德金",
-     "reason": "膝关节损伤",
-     "status": "out"
+     "player": "伊巴謙施斯",
+     "reason": "足伤",
+     "status": "doubt"
     },
     {
      "team": "away",
-     "player": "西塞",
-     "reason": "后卫·踝关节受伤",
-     "status": "out"
+     "player": "阿祖安凯姆",
+     "reason": "不详",
+     "status": "doubt"
     },
     {
      "team": "away",
-     "player": "赫尔姆",
-     "reason": "前锋·膝关节损伤",
-     "status": "out"
+     "player": "夏维马菲斯",
+     "reason": "不详",
+     "status": "doubt"
     },
     {
      "team": "away",
-     "player": "马西斯",
-     "reason": "后卫·受伤",
-     "status": "out"
+     "player": "贝治基斯",
+     "reason": "患病",
+     "status": "doubt"
     }
    ],
+   "result": {
+    "half_score": "1-0",
+    "full_score": "2-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": true,
+    "settled_at": "2026-11-02"
+   },
    "source_url": "",
-   "generated_at": "2026-11-02T20:26:15+08:00",
+   "generated_at": "2026-11-03T09:43:30+08:00",
    "extras": {
     "lam_home": 1.431,
     "lam_away": 0.935,
@@ -3930,58 +4099,64 @@
      "home": {
       "out": [
        {
-        "name": "K.霍尔门",
-        "reason": "中场·膝关节损伤"
+        "name": "奇云贺尔文",
+        "reason": "膝伤"
        },
        {
-        "name": "奥克尔森",
-        "reason": "中场·膝关节损伤"
+        "name": "科卡臣",
+        "reason": "十字韧带"
        },
        {
-        "name": "丹夸",
-        "reason": "中场·患病"
+        "name": "丹尼斯高兰达",
+        "reason": "肋骨"
        }
       ],
-      "doubtful": [],
-      "suspended": [
+      "doubtful": [
        {
-        "name": "科兰德",
-        "reason": "中场·无法出战"
+        "name": "丹克华",
+        "reason": "不详"
        },
        {
-        "name": "葛雷维奥斯",
-        "reason": "中场·无法出战"
+        "name": "赫贝治",
+        "reason": "鼠蹊"
+       }
+      ],
+      "suspended": [
+       {
+        "name": "碧克文",
+        "reason": ""
        }
       ]
      },
      "away": {
       "out": [
        {
-        "name": "菲林",
-        "reason": "前锋·膝关节损伤"
+        "name": "柏柏基安普鲁斯",
+        "reason": "膝伤"
        },
        {
-        "name": "帕帕吉安诺普洛斯",
-        "reason": "后卫·膝关节损伤"
-       },
-       {
-        "name": "雷德金",
-        "reason": "膝关节损伤"
-       },
-       {
-        "name": "西塞",
-        "reason": "后卫·踝关节受伤"
-       },
-       {
-        "name": "赫尔姆",
-        "reason": "前锋·膝关节损伤"
-       },
-       {
-        "name": "马西斯",
-        "reason": "后卫·受伤"
+        "name": "奇云芬宁",
+        "reason": "膝伤"
        }
       ],
-      "doubtful": [],
+      "doubtful": [
+       {
+        "name": "伊巴謙施斯",
+        "reason": "足伤"
+       },
+       {
+        "name": "阿祖安凯姆",
+        "reason": "不详"
+       },
+       {
+        "name": "夏维马菲斯",
+        "reason": "不详"
+       },
+       {
+        "name": "贝治基斯",
+        "reason": "患病"
+       }
+      ],
       "suspended": []
      }
     },
@@ -4090,12 +4265,12 @@
      "t_max": 6,
      "pop": 0,
      "rain": 0.0,
-     "wind": 14,
+     "wind": 11,
      "grade": "ok",
      "city": "哥德堡",
      "wx": "晴",
      "t_actual": 6,
-     "humidity": 88,
+     "humidity": 84,
      "by_home": {
       "n": 6,
       "w": 4,
@@ -4589,37 +4764,37 @@
       "scored": [
        {
         "n": 3,
-        "pct": 9,
+        "pct": 8,
         "from": 1,
         "to": 15
        },
        {
         "n": 3,
-        "pct": 9,
+        "pct": 8,
         "from": 16,
         "to": 30
        },
        {
-        "n": 5,
-        "pct": 15,
+        "n": 6,
+        "pct": 17,
         "from": 31,
         "to": 45
        },
        {
-        "n": 9,
-        "pct": 28,
+        "n": 10,
+        "pct": 29,
         "from": 46,
         "to": 60
        },
        {
         "n": 4,
-        "pct": 12,
+        "pct": 11,
         "from": 61,
         "to": 75
        },
        {
         "n": 8,
-        "pct": 25,
+        "pct": 23,
         "from": 76,
         "to": 90
        }
@@ -4633,31 +4808,31 @@
        },
        {
         "n": 4,
-        "pct": 15,
+        "pct": 14,
         "from": 16,
         "to": 30
        },
        {
         "n": 4,
-        "pct": 15,
+        "pct": 14,
         "from": 31,
         "to": 45
        },
        {
         "n": 5,
-        "pct": 19,
+        "pct": 18,
         "from": 46,
         "to": 60
        },
        {
         "n": 6,
-        "pct": 23,
+        "pct": 22,
         "from": 61,
         "to": 75
        },
        {
-        "n": 4,
-        "pct": 15,
+        "n": 5,
+        "pct": 18,
         "from": 76,
         "to": 90
        }
@@ -4667,7 +4842,7 @@
       "scored": [
        {
         "n": 3,
-        "pct": 7,
+        "pct": 6,
         "from": 1,
         "to": 15
        },
@@ -4685,19 +4860,19 @@
        },
        {
         "n": 9,
-        "pct": 21,
+        "pct": 20,
         "from": 46,
         "to": 60
        },
        {
         "n": 6,
-        "pct": 14,
+        "pct": 13,
         "from": 61,
         "to": 75
        },
        {
-        "n": 12,
-        "pct": 28,
+        "n": 13,
+        "pct": 30,
         "from": 76,
         "to": 90
        }
@@ -4705,7 +4880,7 @@
       "conceded": [
        {
         "n": 6,
-        "pct": 13,
+        "pct": 12,
         "from": 1,
         "to": 15
        },
@@ -4716,26 +4891,26 @@
         "to": 30
        },
        {
-        "n": 4,
-        "pct": 8,
+        "n": 5,
+        "pct": 10,
         "from": 31,
         "to": 45
        },
        {
-        "n": 8,
-        "pct": 17,
+        "n": 9,
+        "pct": 19,
         "from": 46,
         "to": 60
        },
        {
         "n": 9,
-        "pct": 20,
+        "pct": 19,
         "from": 61,
         "to": 75
        },
        {
         "n": 10,
-        "pct": 22,
+        "pct": 21,
         "from": 76,
         "to": 90
        }
@@ -4756,28 +4931,96 @@
      ]
     },
     "hc_range": {
-     "home": {
-      "n": 13,
-      "w": 5,
-      "d": 5,
-      "l": 3,
-      "gf": 17,
-      "ga": 6,
-      "rank": 8,
-      "pts": 20
+     "home_total": {
+      "n": 27,
+      "w": 10,
+      "d": 7,
+      "l": 10,
+      "gf": 34,
+      "ga": 27,
+      "rank": 10,
+      "pts": 37,
+      "gd": 7
      },
-     "away": {
-      "n": 13,
+     "away_total": {
+      "n": 27,
+      "w": 10,
+      "d": 8,
+      "l": 9,
+      "gf": 43,
+      "ga": 47,
+      "rank": 8,
+      "pts": 38,
+      "gd": -4
+     },
+     "home_home": {
+      "n": 14,
       "w": 6,
       "d": 5,
-      "l": 2,
-      "gf": 21,
-      "ga": 16,
+      "l": 3,
+      "gf": 19,
+      "ga": 7,
       "rank": 6,
-      "pts": 23
+      "pts": 23,
+      "gd": 12
+     },
+     "home_guest": {
+      "n": 13,
+      "w": 4,
+      "d": 2,
+      "l": 7,
+      "gf": 15,
+      "ga": 20,
+      "rank": 12,
+      "pts": 14,
+      "gd": -5
+     },
+     "away_home": {
+      "n": 13,
+      "w": 4,
+      "d": 3,
+      "l": 6,
+      "gf": 21,
+      "ga": 29,
+      "rank": 12,
+      "pts": 15,
+      "gd": -8
+     },
+     "away_guest": {
+      "n": 14,
+      "w": 6,
+      "d": 5,
+      "l": 3,
+      "gf": 22,
+      "ga": 18,
+      "rank": 6,
+      "pts": 23,
+      "gd": 4
+     },
+     "home": {
+      "n": 14,
+      "w": 6,
+      "d": 5,
+      "l": 3,
+      "gf": 19,
+      "ga": 7,
+      "rank": 6,
+      "pts": 23,
+      "gd": 12
+     },
+     "away": {
+      "n": 14,
+      "w": 6,
+      "d": 5,
+      "l": 3,
+      "gf": 22,
+      "ga": 18,
+      "rank": 6,
+      "pts": 23,
+      "gd": 4
      }
     },
-    "hc_at": "2026-11-02 20:26"
+    "hc_at": "2026-11-03 09:35"
    }
   },
   {
@@ -4905,23 +5148,23 @@
     ],
     "home": [
      1.0,
-     1.0,
      0.0,
      3.0,
      2.0,
      0.0,
      4.0,
-     2.0
+     2.0,
+     0.0
     ],
     "away": [
-     0.0,
      1.0,
      1.0,
      2.0,
      0.0,
      0.0,
      1.0,
-     0.0
+     0.0,
+     3.0
     ]
    },
    "forecasts": [
@@ -5192,6 +5435,12 @@
      "status": "doubt"
     },
     {
+     "team": "home",
+     "player": "庞培",
+     "reason": "守门员·未进入大名单",
+     "status": "suspended"
+    },
+    {
      "team": "away",
      "player": "Lautaro Valenti",
      "reason": "教练决定",
@@ -5210,8 +5459,17 @@
      "status": "suspended"
     }
    ],
+   "result": {
+    "half_score": "0-1",
+    "full_score": "0-3",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-11-02"
+   },
    "source_url": "",
-   "generated_at": "2026-11-02T20:26:15+08:00",
+   "generated_at": "2026-11-03T09:43:30+08:00",
    "extras": {
     "table": [
      {
@@ -5796,7 +6054,12 @@
         "reason": "伤情"
        }
       ],
-      "suspended": []
+      "suspended": [
+       {
+        "name": "庞培",
+        "reason": "守门员·未进入大名单"
+       }
+      ]
      },
      "away": {
       "out": [
@@ -5923,12 +6186,12 @@
      "t_max": 8,
      "pop": 0,
      "rain": 0.0,
-     "wind": 7,
+     "wind": 9,
      "grade": "ok",
      "city": "贝加莫",
      "wx": "晴",
      "t_actual": 8,
-     "humidity": 69,
+     "humidity": 71,
      "by_home": {
       "n": 6,
       "w": 4,
@@ -6466,31 +6729,31 @@
        },
        {
         "n": 4,
-        "pct": 23,
+        "pct": 20,
         "from": 16,
         "to": 30
        },
        {
-        "n": 2,
-        "pct": 11,
+        "n": 3,
+        "pct": 15,
         "from": 31,
         "to": 45
        },
        {
-        "n": 4,
-        "pct": 23,
+        "n": 6,
+        "pct": 30,
         "from": 46,
         "to": 60
        },
        {
         "n": 2,
-        "pct": 11,
+        "pct": 10,
         "from": 61,
         "to": 75
        },
        {
         "n": 4,
-        "pct": 23,
+        "pct": 20,
         "from": 76,
         "to": 90
        }
@@ -6511,14 +6774,14 @@
         "to": 30
        },
        {
-        "n": 1,
-        "pct": 20,
+        "n": 2,
+        "pct": 25,
         "from": 31,
         "to": 45
        },
        {
-        "n": 1,
-        "pct": 20,
+        "n": 3,
+        "pct": 37,
         "from": 46,
         "to": 60
        },
@@ -6530,7 +6793,7 @@
        },
        {
         "n": 3,
-        "pct": 60,
+        "pct": 37,
         "from": 76,
         "to": 90
        }
@@ -6590,28 +6853,96 @@
      ]
     },
     "hc_range": {
-     "home": {
-      "n": 5,
+     "home_total": {
+      "n": 10,
+      "w": 3,
+      "d": 2,
+      "l": 5,
+      "gf": 16,
+      "ga": 20,
+      "rank": 13,
+      "pts": 11,
+      "gd": -4
+     },
+     "away_total": {
+      "n": 10,
+      "w": 2,
+      "d": 2,
+      "l": 6,
+      "gf": 8,
+      "ga": 15,
+      "rank": 15,
+      "pts": 8,
+      "gd": -7
+     },
+     "home_home": {
+      "n": 6,
       "w": 3,
       "d": 1,
-      "l": 1,
+      "l": 2,
       "gf": 11,
-      "ga": 8,
+      "ga": 11,
       "rank": 9,
-      "pts": 10
+      "pts": 10,
+      "gd": 0
      },
-     "away": {
+     "home_guest": {
       "n": 4,
       "w": 0,
+      "d": 1,
+      "l": 3,
+      "gf": 5,
+      "ga": 9,
+      "rank": 17,
+      "pts": 1,
+      "gd": -4
+     },
+     "away_home": {
+      "n": 5,
+      "w": 1,
+      "d": 2,
+      "l": 2,
+      "gf": 3,
+      "ga": 6,
+      "rank": 15,
+      "pts": 5,
+      "gd": -3
+     },
+     "away_guest": {
+      "n": 5,
+      "w": 1,
       "d": 0,
       "l": 4,
-      "gf": 2,
+      "gf": 5,
       "ga": 9,
-      "rank": 19,
-      "pts": 0
+      "rank": 16,
+      "pts": 3,
+      "gd": -4
+     },
+     "home": {
+      "n": 6,
+      "w": 3,
+      "d": 1,
+      "l": 2,
+      "gf": 11,
+      "ga": 11,
+      "rank": 9,
+      "pts": 10,
+      "gd": 0
+     },
+     "away": {
+      "n": 5,
+      "w": 1,
+      "d": 0,
+      "l": 4,
+      "gf": 5,
+      "ga": 9,
+      "rank": 16,
+      "pts": 3,
+      "gd": -4
      }
     },
-    "hc_at": "2026-11-02 20:26"
+    "hc_at": "2026-11-03 09:35"
    }
   },
   {
@@ -6716,6 +7047,7 @@
    },
    "momentum": {
     "labels": [
+     "T-6",
      "T-5",
      "T-4",
      "T-3",
@@ -6727,6 +7059,7 @@
      0.0,
      2.0,
      1.0,
+     1.0,
      1.0
     ],
     "away": [
@@ -6734,7 +7067,8 @@
      0.0,
      1.0,
      0.0,
-     0.0
+     0.0,
+     4.0
     ]
    },
    "forecasts": [
@@ -6888,12 +7222,6 @@
     },
     {
      "team": "home",
-     "player": "卡布拉尔",
-     "reason": "前锋·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "home",
      "player": "迪亚瓦拉",
      "reason": "前锋·无法出战",
      "status": "suspended"
@@ -6905,15 +7233,15 @@
      "status": "suspended"
     },
     {
-     "team": "away",
-     "player": "西迪贝",
-     "reason": "前锋·轮休",
-     "status": "out"
+     "team": "home",
+     "player": "埃斯卡丹",
+     "reason": "后卫·无法出战",
+     "status": "suspended"
     },
     {
      "team": "away",
-     "player": "巴尔德",
-     "reason": "后卫·受伤",
+     "player": "西迪贝",
+     "reason": "前锋·轮休",
      "status": "out"
     },
     {
@@ -6948,19 +7276,28 @@
     },
     {
      "team": "away",
-     "player": "兹图蒂",
+     "player": "达巴塞",
      "reason": "前锋·无法出战",
      "status": "suspended"
     },
     {
      "team": "away",
-     "player": "达巴塞",
-     "reason": "前锋·无法出战",
+     "player": "坎迪尔",
+     "reason": "中场·无法出战",
      "status": "suspended"
     }
    ],
+   "result": {
+    "half_score": "1-2",
+    "full_score": "1-4",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-11-02"
+   },
    "source_url": "",
-   "generated_at": "2026-11-02T20:26:15+08:00",
+   "generated_at": "2026-11-03T09:43:30+08:00",
    "extras": {
     "lam_home": 1.215,
     "lam_away": 0.808,
@@ -7164,16 +7501,16 @@
         "reason": "中场·无法出战"
        },
        {
-        "name": "卡布拉尔",
-        "reason": "前锋·无法出战"
-       },
-       {
         "name": "迪亚瓦拉",
         "reason": "前锋·无法出战"
        },
        {
         "name": "杜里沃",
         "reason": "后卫·红牌停赛"
+       },
+       {
+        "name": "埃斯卡丹",
+        "reason": "后卫·无法出战"
        }
       ]
      },
@@ -7182,10 +7519,6 @@
        {
         "name": "西迪贝",
         "reason": "前锋·轮休"
-       },
-       {
-        "name": "巴尔德",
-        "reason": "后卫·受伤"
        },
        {
         "name": "巴尔比耶",
@@ -7211,12 +7544,12 @@
         "reason": "中场·无法出战"
        },
        {
-        "name": "兹图蒂",
+        "name": "达巴塞",
         "reason": "前锋·无法出战"
        },
        {
-        "name": "达巴塞",
-        "reason": "前锋·无法出战"
+        "name": "坎迪尔",
+        "reason": "中场·无法出战"
        }
       ]
      }
@@ -7326,12 +7659,12 @@
      "t_max": 10,
      "pop": 25,
      "rain": 0.0,
-     "wind": 16,
+     "wind": 15,
      "grade": "ok",
      "city": "巴黎",
      "wx": "阴",
      "t_actual": 10,
-     "humidity": 86,
+     "humidity": 88,
      "by_home": {
       "n": 6,
       "w": 2,
@@ -7349,7 +7682,7 @@
      "src": "红彩"
     },
     "referee": {
-     "ref": "Vincent, Thomas",
+     "ref": "托马斯·文森特",
      "src": "红彩",
      "n": 4,
      "h": 0,
@@ -7367,7 +7700,7 @@
       "red": 0,
       "pen": 0
      },
-     "name_en": "Vincent, Thomas"
+     "name_en": "Thomas Vincent"
     },
     "hc_stats": {
      "home": {
@@ -7816,31 +8149,31 @@
       "scored": [
        {
         "n": 3,
-        "pct": 23,
+        "pct": 21,
         "from": 1,
         "to": 15
        },
        {
-        "n": 1,
-        "pct": 7,
+        "n": 2,
+        "pct": 14,
         "from": 16,
         "to": 30
        },
        {
         "n": 3,
-        "pct": 23,
+        "pct": 21,
         "from": 31,
         "to": 45
        },
        {
         "n": 3,
-        "pct": 23,
+        "pct": 21,
         "from": 46,
         "to": 60
        },
        {
         "n": 3,
-        "pct": 23,
+        "pct": 21,
         "from": 61,
         "to": 75
        },
@@ -7854,36 +8187,36 @@
       "conceded": [
        {
         "n": 2,
-        "pct": 16,
+        "pct": 12,
         "from": 1,
         "to": 15
        },
        {
-        "n": 1,
-        "pct": 8,
+        "n": 2,
+        "pct": 12,
         "from": 16,
         "to": 30
        },
        {
         "n": 1,
-        "pct": 8,
+        "pct": 6,
         "from": 31,
         "to": 45
        },
        {
-        "n": 4,
-        "pct": 33,
+        "n": 5,
+        "pct": 31,
         "from": 46,
         "to": 60
        },
        {
-        "n": 1,
-        "pct": 8,
+        "n": 2,
+        "pct": 12,
         "from": 61,
         "to": 75
        },
        {
-        "n": 3,
+        "n": 4,
         "pct": 25,
         "from": 76,
         "to": 90
@@ -7894,37 +8227,37 @@
       "scored": [
        {
         "n": 1,
-        "pct": 8,
+        "pct": 6,
         "from": 1,
         "to": 15
        },
        {
-        "n": 0,
-        "pct": 0,
+        "n": 1,
+        "pct": 6,
         "from": 16,
         "to": 30
        },
        {
         "n": 1,
-        "pct": 8,
+        "pct": 6,
         "from": 31,
         "to": 45
        },
        {
-        "n": 3,
+        "n": 4,
         "pct": 25,
         "from": 46,
         "to": 60
        },
        {
-        "n": 3,
+        "n": 4,
         "pct": 25,
         "from": 61,
         "to": 75
        },
        {
-        "n": 4,
-        "pct": 33,
+        "n": 5,
+        "pct": 31,
         "from": 76,
         "to": 90
        }
@@ -7932,31 +8265,31 @@
       "conceded": [
        {
         "n": 1,
-        "pct": 12,
+        "pct": 11,
         "from": 1,
         "to": 15
        },
        {
-        "n": 2,
-        "pct": 25,
+        "n": 3,
+        "pct": 33,
         "from": 16,
         "to": 30
        },
        {
         "n": 1,
-        "pct": 12,
+        "pct": 11,
         "from": 31,
         "to": 45
        },
        {
         "n": 3,
-        "pct": 37,
+        "pct": 33,
         "from": 46,
         "to": 60
        },
        {
         "n": 1,
-        "pct": 12,
+        "pct": 11,
         "from": 61,
         "to": 75
        },
@@ -7985,28 +8318,96 @@
      ]
     },
     "hc_range": {
-     "home": {
-      "n": 4,
+     "home_total": {
+      "n": 11,
+      "w": 5,
+      "d": 2,
+      "l": 4,
+      "gf": 14,
+      "ga": 16,
+      "rank": 6,
+      "pts": 17,
+      "gd": -2
+     },
+     "away_total": {
+      "n": 11,
+      "w": 7,
+      "d": 1,
+      "l": 3,
+      "gf": 16,
+      "ga": 9,
+      "rank": 3,
+      "pts": 22,
+      "gd": 7
+     },
+     "home_home": {
+      "n": 5,
       "w": 1,
       "d": 1,
-      "l": 2,
-      "gf": 2,
-      "ga": 5,
+      "l": 3,
+      "gf": 3,
+      "ga": 9,
       "rank": 14,
-      "pts": 4
+      "pts": 4,
+      "gd": -6
      },
-     "away": {
-      "n": 5,
-      "w": 3,
+     "home_guest": {
+      "n": 6,
+      "w": 4,
       "d": 1,
       "l": 1,
-      "gf": 7,
-      "ga": 5,
-      "rank": 6,
-      "pts": 10
+      "gf": 11,
+      "ga": 7,
+      "rank": 3,
+      "pts": 13,
+      "gd": 4
+     },
+     "away_home": {
+      "n": 5,
+      "w": 3,
+      "d": 0,
+      "l": 2,
+      "gf": 5,
+      "ga": 3,
+      "rank": 7,
+      "pts": 9,
+      "gd": 2
+     },
+     "away_guest": {
+      "n": 6,
+      "w": 4,
+      "d": 1,
+      "l": 1,
+      "gf": 11,
+      "ga": 6,
+      "rank": 2,
+      "pts": 13,
+      "gd": 5
+     },
+     "home": {
+      "n": 5,
+      "w": 1,
+      "d": 1,
+      "l": 3,
+      "gf": 3,
+      "ga": 9,
+      "rank": 14,
+      "pts": 4,
+      "gd": -6
+     },
+     "away": {
+      "n": 6,
+      "w": 4,
+      "d": 1,
+      "l": 1,
+      "gf": 11,
+      "ga": 6,
+      "rank": 2,
+      "pts": 13,
+      "gd": 5
      }
     },
-    "hc_at": "2026-11-02 20:26"
+    "hc_at": "2026-11-03 09:35"
    }
   },
   {
@@ -8134,23 +8535,23 @@
     ],
     "home": [
      2.0,
-     2.0,
      1.0,
      2.0,
      1.0,
      0.0,
      2.0,
-     1.0
+     1.0,
+     0.0
     ],
     "away": [
-     1.0,
      2.0,
      0.0,
      1.0,
      2.0,
      0.0,
      0.0,
-     3.0
+     3.0,
+     1.0
     ]
    },
    "forecasts": [
@@ -8412,8 +8813,8 @@
     },
     {
      "team": "away",
-     "player": "格拉利什",
-     "reason": "前锋·轮休",
+     "player": "班夫韦迪",
+     "reason": "后卫",
      "status": "out"
     },
     {
@@ -8429,8 +8830,17 @@
      "status": "doubt"
     }
    ],
+   "result": {
+    "half_score": "0-0",
+    "full_score": "0-1",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-11-02"
+   },
    "source_url": "",
-   "generated_at": "2026-11-02T20:26:15+08:00",
+   "generated_at": "2026-11-03T09:43:30+08:00",
    "extras": {
     "table": [
      {
@@ -9008,8 +9418,8 @@
      "away": {
       "out": [
        {
-        "name": "格拉利什",
-        "reason": "前锋·轮休"
+        "name": "班夫韦迪",
+        "reason": "后卫"
        }
       ],
       "doubtful": [
@@ -9130,24 +9540,24 @@
      "t_max": 8,
      "pop": 65,
      "rain": 0.1,
-     "wind": 9,
+     "wind": 12,
      "grade": "warn",
      "city": "纽卡斯尔",
-     "wx": "阴",
+     "wx": "多云",
      "t_actual": 8,
      "humidity": 94,
      "by_home": {
       "n": 6,
       "w": 1,
-      "d": 4,
-      "l": 1,
+      "d": 1,
+      "l": 4,
       "win_rate": 17
      },
      "by_away": {
       "n": 6,
       "w": 2,
-      "d": 3,
-      "l": 1,
+      "d": 4,
+      "l": 0,
       "win_rate": 33
      },
      "src": "红彩"
@@ -9667,7 +10077,7 @@
       "conceded": [
        {
         "n": 2,
-        "pct": 14,
+        "pct": 13,
         "from": 1,
         "to": 15
        },
@@ -9679,25 +10089,25 @@
        },
        {
         "n": 4,
-        "pct": 28,
+        "pct": 26,
         "from": 31,
         "to": 45
        },
        {
-        "n": 4,
-        "pct": 28,
+        "n": 5,
+        "pct": 33,
         "from": 46,
         "to": 60
        },
        {
         "n": 1,
-        "pct": 7,
+        "pct": 6,
         "from": 61,
         "to": 75
        },
        {
         "n": 3,
-        "pct": 21,
+        "pct": 20,
         "from": 76,
         "to": 90
        }
@@ -9707,7 +10117,7 @@
       "scored": [
        {
         "n": 1,
-        "pct": 12,
+        "pct": 11,
         "from": 1,
         "to": 15
        },
@@ -9719,25 +10129,25 @@
        },
        {
         "n": 1,
-        "pct": 12,
+        "pct": 11,
         "from": 31,
         "to": 45
        },
        {
-        "n": 2,
-        "pct": 25,
+        "n": 3,
+        "pct": 33,
         "from": 46,
         "to": 60
        },
        {
         "n": 1,
-        "pct": 12,
+        "pct": 11,
         "from": 61,
         "to": 75
        },
        {
         "n": 3,
-        "pct": 37,
+        "pct": 33,
         "from": 76,
         "to": 90
        }
@@ -9796,28 +10206,96 @@
      ]
     },
     "hc_range": {
-     "home": {
-      "n": 4,
+     "home_total": {
+      "n": 9,
+      "w": 3,
+      "d": 2,
+      "l": 4,
+      "gf": 12,
+      "ga": 15,
+      "rank": 13,
+      "pts": 11,
+      "gd": -3
+     },
+     "away_total": {
+      "n": 9,
+      "w": 3,
+      "d": 4,
+      "l": 2,
+      "gf": 9,
+      "ga": 9,
+      "rank": 7,
+      "pts": 13,
+      "gd": 0
+     },
+     "home_home": {
+      "n": 5,
       "w": 1,
       "d": 2,
-      "l": 1,
+      "l": 2,
       "gf": 6,
-      "ga": 6,
+      "ga": 7,
       "rank": 15,
-      "pts": 5
+      "pts": 5,
+      "gd": -1
      },
-     "away": {
+     "home_guest": {
       "n": 4,
-      "w": 0,
+      "w": 2,
+      "d": 0,
+      "l": 2,
+      "gf": 6,
+      "ga": 8,
+      "rank": 8,
+      "pts": 6,
+      "gd": -2
+     },
+     "away_home": {
+      "n": 4,
+      "w": 2,
+      "d": 1,
+      "l": 1,
+      "gf": 5,
+      "ga": 4,
+      "rank": 7,
+      "pts": 7,
+      "gd": 1
+     },
+     "away_guest": {
+      "n": 5,
+      "w": 1,
       "d": 3,
       "l": 1,
-      "gf": 3,
+      "gf": 4,
       "ga": 5,
-      "rank": 17,
-      "pts": 3
+      "rank": 7,
+      "pts": 6,
+      "gd": -1
+     },
+     "home": {
+      "n": 5,
+      "w": 1,
+      "d": 2,
+      "l": 2,
+      "gf": 6,
+      "ga": 7,
+      "rank": 15,
+      "pts": 5,
+      "gd": -1
+     },
+     "away": {
+      "n": 5,
+      "w": 1,
+      "d": 3,
+      "l": 1,
+      "gf": 4,
+      "ga": 5,
+      "rank": 7,
+      "pts": 6,
+      "gd": -1
      }
     },
-    "hc_at": "2026-11-02 20:26"
+    "hc_at": "2026-11-03 09:35"
    }
   },
   {
@@ -9945,23 +10423,23 @@
     ],
     "home": [
      3.0,
-     3.0,
      1.0,
      0.0,
      1.0,
      2.0,
      1.0,
-     0.0
+     0.0,
+     2.0
     ],
     "away": [
-     1.0,
      2.0,
      0.0,
      0.0,
      1.0,
      2.0,
      2.0,
-     0.0
+     0.0,
+     1.0
     ]
    },
    "forecasts": [
@@ -10182,12 +10660,6 @@
     },
     {
      "team": "home",
-     "player": "奥巴梅扬",
-     "reason": "前锋·膝关节损伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
      "player": "卡萨多",
      "reason": "中场·锁骨骨折",
      "status": "out"
@@ -10217,8 +10689,17 @@
      "status": "out"
     }
    ],
+   "result": {
+    "half_score": "0-1",
+    "full_score": "2-1",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-11-02"
+   },
    "source_url": "",
-   "generated_at": "2026-11-02T20:26:15+08:00",
+   "generated_at": "2026-11-03T09:43:30+08:00",
    "extras": {
     "table": [
      {
@@ -10681,10 +11162,6 @@
         "reason": "前锋·手腕损伤"
        },
        {
-        "name": "奥巴梅扬",
-        "reason": "前锋·膝关节损伤"
-       },
-       {
         "name": "卡萨多",
         "reason": "中场·锁骨骨折"
        },
@@ -10820,12 +11297,12 @@
      "t_max": 14,
      "pop": 0,
      "rain": 0.0,
-     "wind": 14,
+     "wind": 8,
      "grade": "ok",
      "city": "拉科鲁尼亚",
      "wx": "晴",
      "t_actual": 14,
-     "humidity": 72,
+     "humidity": 71,
      "by_home": {
       "n": 6,
       "w": 2,
@@ -11271,37 +11748,37 @@
       "scored": [
        {
         "n": 1,
-        "pct": 7,
+        "pct": 6,
         "from": 1,
         "to": 15
        },
        {
         "n": 3,
-        "pct": 23,
+        "pct": 20,
         "from": 16,
         "to": 30
        },
        {
         "n": 1,
-        "pct": 7,
+        "pct": 6,
         "from": 31,
         "to": 45
        },
        {
         "n": 1,
-        "pct": 7,
+        "pct": 6,
         "from": 46,
         "to": 60
        },
        {
-        "n": 3,
-        "pct": 23,
+        "n": 4,
+        "pct": 26,
         "from": 61,
         "to": 75
        },
        {
-        "n": 4,
-        "pct": 30,
+        "n": 5,
+        "pct": 33,
         "from": 76,
         "to": 90
        }
@@ -11315,19 +11792,19 @@
        },
        {
         "n": 3,
-        "pct": 23,
+        "pct": 21,
         "from": 16,
         "to": 30
        },
        {
-        "n": 3,
-        "pct": 23,
+        "n": 4,
+        "pct": 28,
         "from": 31,
         "to": 45
        },
        {
         "n": 3,
-        "pct": 23,
+        "pct": 21,
         "from": 46,
         "to": 60
        },
@@ -11339,7 +11816,7 @@
        },
        {
         "n": 3,
-        "pct": 23,
+        "pct": 21,
         "from": 76,
         "to": 90
        }
@@ -11349,37 +11826,37 @@
       "scored": [
        {
         "n": 1,
-        "pct": 10,
+        "pct": 9,
         "from": 1,
         "to": 15
        },
        {
         "n": 1,
-        "pct": 10,
+        "pct": 9,
         "from": 16,
         "to": 30
        },
        {
-        "n": 0,
-        "pct": 0,
+        "n": 1,
+        "pct": 9,
         "from": 31,
         "to": 45
        },
        {
         "n": 5,
-        "pct": 50,
+        "pct": 45,
         "from": 46,
         "to": 60
        },
        {
         "n": 2,
-        "pct": 20,
+        "pct": 18,
         "from": 61,
         "to": 75
        },
        {
         "n": 1,
-        "pct": 10,
+        "pct": 9,
         "from": 76,
         "to": 90
        }
@@ -11387,37 +11864,37 @@
       "conceded": [
        {
         "n": 3,
-        "pct": 15,
+        "pct": 13,
         "from": 1,
         "to": 15
        },
        {
         "n": 4,
-        "pct": 20,
+        "pct": 18,
         "from": 16,
         "to": 30
        },
        {
         "n": 2,
-        "pct": 10,
+        "pct": 9,
         "from": 31,
         "to": 45
        },
        {
         "n": 4,
-        "pct": 20,
+        "pct": 18,
         "from": 46,
         "to": 60
        },
        {
-        "n": 3,
-        "pct": 15,
+        "n": 4,
+        "pct": 18,
         "from": 61,
         "to": 75
        },
        {
-        "n": 4,
-        "pct": 20,
+        "n": 5,
+        "pct": 22,
         "from": 76,
         "to": 90
        }
@@ -11437,28 +11914,96 @@
      ]
     },
     "hc_range": {
-     "home": {
-      "n": 5,
-      "w": 1,
+     "home_total": {
+      "n": 11,
+      "w": 3,
+      "d": 5,
+      "l": 3,
+      "gf": 15,
+      "ga": 14,
+      "rank": 8,
+      "pts": 14,
+      "gd": 1
+     },
+     "away_total": {
+      "n": 11,
+      "w": 3,
+      "d": 2,
+      "l": 6,
+      "gf": 11,
+      "ga": 22,
+      "rank": 15,
+      "pts": 11,
+      "gd": -11
+     },
+     "home_home": {
+      "n": 6,
+      "w": 2,
       "d": 3,
       "l": 1,
-      "gf": 6,
-      "ga": 5,
-      "rank": 15,
-      "pts": 6
+      "gf": 8,
+      "ga": 6,
+      "rank": 12,
+      "pts": 9,
+      "gd": 2
      },
-     "away": {
+     "home_guest": {
       "n": 5,
       "w": 1,
-      "d": 0,
-      "l": 4,
-      "gf": 6,
-      "ga": 17,
+      "d": 2,
+      "l": 2,
+      "gf": 7,
+      "ga": 8,
+      "rank": 11,
+      "pts": 5,
+      "gd": -1
+     },
+     "away_home": {
+      "n": 5,
+      "w": 2,
+      "d": 2,
+      "l": 1,
+      "gf": 4,
+      "ga": 3,
       "rank": 14,
-      "pts": 3
+      "pts": 8,
+      "gd": 1
+     },
+     "away_guest": {
+      "n": 6,
+      "w": 1,
+      "d": 0,
+      "l": 5,
+      "gf": 7,
+      "ga": 19,
+      "rank": 14,
+      "pts": 3,
+      "gd": -12
+     },
+     "home": {
+      "n": 6,
+      "w": 2,
+      "d": 3,
+      "l": 1,
+      "gf": 8,
+      "ga": 6,
+      "rank": 12,
+      "pts": 9,
+      "gd": 2
+     },
+     "away": {
+      "n": 6,
+      "w": 1,
+      "d": 0,
+      "l": 5,
+      "gf": 7,
+      "ga": 19,
+      "rank": 14,
+      "pts": 3,
+      "gd": -12
      }
     },
-    "hc_at": "2026-11-02 20:26"
+    "hc_at": "2026-11-03 09:35"
    }
   },
   {
@@ -11573,24 +12118,24 @@
      "T-1"
     ],
     "home": [
-     3.0,
      4.0,
      3.0,
      2.0,
      1.0,
      2.0,
      4.0,
-     2.0
+     2.0,
+     1.0
     ],
     "away": [
-     1.0,
      0.0,
      1.0,
      1.0,
      2.0,
      0.0,
      2.0,
-     4.0
+     4.0,
+     0.0
     ]
    },
    "forecasts": [
@@ -11784,8 +12329,8 @@
     },
     {
      "team": "home",
-     "player": "班贾奎",
-     "reason": "后卫·肌肉受伤",
+     "player": "卢克巴基奥",
+     "reason": "前锋·受伤",
      "status": "out"
     },
     {
@@ -11795,8 +12340,17 @@
      "status": "suspended"
     }
    ],
+   "result": {
+    "half_score": "0-0",
+    "full_score": "1-0",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-11-02"
+   },
    "source_url": "",
-   "generated_at": "2026-11-02T20:26:15+08:00",
+   "generated_at": "2026-11-03T09:43:30+08:00",
    "extras": {
     "lam_home": 3.049,
     "lam_away": 0.881,
@@ -12137,8 +12691,8 @@
         "reason": "中场·受伤"
        },
        {
-        "name": "班贾奎",
-        "reason": "后卫·肌肉受伤"
+        "name": "卢克巴基奥",
+        "reason": "前锋·受伤"
        }
       ],
       "doubtful": [],
@@ -12151,16 +12705,16 @@
      }
     },
     "weather": {
-     "t_min": 19,
-     "t_max": 19,
+     "t_min": 18,
+     "t_max": 18,
      "pop": 0,
      "rain": 0.0,
-     "wind": 12,
+     "wind": 10,
      "grade": "ok",
      "city": "里斯本",
      "wx": "晴",
-     "t_actual": 19,
-     "humidity": 41,
+     "t_actual": 18,
+     "humidity": 45,
      "by_home": {
       "n": 6,
       "w": 5,
@@ -12654,7 +13208,7 @@
       "scored": [
        {
         "n": 4,
-        "pct": 15,
+        "pct": 14,
         "from": 1,
         "to": 15
        },
@@ -12671,14 +13225,14 @@
         "to": 45
        },
        {
-        "n": 10,
-        "pct": 38,
+        "n": 11,
+        "pct": 40,
         "from": 46,
         "to": 60
        },
        {
         "n": 6,
-        "pct": 23,
+        "pct": 22,
         "from": 61,
         "to": 75
        },
@@ -12770,7 +13324,7 @@
       "conceded": [
        {
         "n": 2,
-        "pct": 15,
+        "pct": 14,
         "from": 1,
         "to": 15
        },
@@ -12782,13 +13336,13 @@
        },
        {
         "n": 2,
-        "pct": 15,
+        "pct": 14,
         "from": 31,
         "to": 45
        },
        {
-        "n": 5,
-        "pct": 38,
+        "n": 6,
+        "pct": 42,
         "from": 46,
         "to": 60
        },
@@ -12800,7 +13354,7 @@
        },
        {
         "n": 2,
-        "pct": 15,
+        "pct": 14,
         "from": 76,
         "to": 90
        }
@@ -12824,28 +13378,96 @@
      ]
     },
     "hc_range": {
-     "home": {
-      "n": 4,
+     "home_total": {
+      "n": 10,
+      "w": 8,
+      "d": 1,
+      "l": 1,
+      "gf": 27,
+      "ga": 8,
+      "rank": 2,
+      "pts": 25,
+      "gd": 19
+     },
+     "away_total": {
+      "n": 10,
       "w": 3,
+      "d": 2,
+      "l": 5,
+      "gf": 13,
+      "ga": 14,
+      "rank": 10,
+      "pts": 11,
+      "gd": -1
+     },
+     "home_home": {
+      "n": 5,
+      "w": 4,
       "d": 1,
       "l": 0,
-      "gf": 9,
+      "gf": 10,
+      "ga": 4,
+      "rank": 2,
+      "pts": 13,
+      "gd": 6
+     },
+     "home_guest": {
+      "n": 5,
+      "w": 4,
+      "d": 0,
+      "l": 1,
+      "gf": 17,
       "ga": 4,
       "rank": 3,
-      "pts": 10
+      "pts": 12,
+      "gd": 13
      },
-     "away": {
-      "n": 4,
+     "away_home": {
+      "n": 5,
+      "w": 1,
+      "d": 2,
+      "l": 2,
+      "gf": 5,
+      "ga": 6,
+      "rank": 12,
+      "pts": 5,
+      "gd": -1
+     },
+     "away_guest": {
+      "n": 5,
       "w": 2,
       "d": 0,
-      "l": 2,
+      "l": 3,
       "gf": 8,
-      "ga": 7,
+      "ga": 8,
       "rank": 11,
-      "pts": 6
+      "pts": 6,
+      "gd": 0
+     },
+     "home": {
+      "n": 5,
+      "w": 4,
+      "d": 1,
+      "l": 0,
+      "gf": 10,
+      "ga": 4,
+      "rank": 2,
+      "pts": 13,
+      "gd": 6
+     },
+     "away": {
+      "n": 5,
+      "w": 2,
+      "d": 0,
+      "l": 3,
+      "gf": 8,
+      "ga": 8,
+      "rank": 11,
+      "pts": 6,
+      "gd": 0
      }
     },
-    "hc_at": "2026-11-02 20:26"
+    "hc_at": "2026-11-03 09:35"
    }
   },
   {
@@ -13158,18 +13780,6 @@
      "status": "out"
     },
     {
-     "team": "home",
-     "player": "马奎斯",
-     "reason": "后卫·无法出战",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "拉米雷斯",
-     "reason": "中场·受伤",
-     "status": "out"
-    },
-    {
      "team": "away",
      "player": "利拉",
      "reason": "后卫·膝关节损伤",
@@ -13179,12 +13789,6 @@
      "team": "away",
      "player": "布拉藏",
      "reason": "守门员·肩部受伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "阿图尔",
-     "reason": "中场·肌肉受伤",
      "status": "out"
     },
     {
@@ -13207,8 +13811,8 @@
     },
     {
      "team": "away",
-     "player": "恩里克",
-     "reason": "中场·受伤",
+     "player": "萨西亚诺",
+     "reason": "中场·肌肉受伤",
      "status": "out"
     },
     {
@@ -13225,7 +13829,7 @@
     }
    ],
    "source_url": "",
-   "generated_at": "2026-11-02T20:26:15+08:00",
+   "generated_at": "2026-11-03T09:43:30+08:00",
    "extras": {
     "lam_home": 1.453,
     "lam_away": 1.11,
@@ -13456,14 +14060,6 @@
        {
         "name": "赫尔塔多",
         "reason": "后卫·肌肉受伤"
-       },
-       {
-        "name": "马奎斯",
-        "reason": "后卫·无法出战"
-       },
-       {
-        "name": "拉米雷斯",
-        "reason": "中场·受伤"
        }
       ],
       "doubtful": [],
@@ -13480,10 +14076,6 @@
         "reason": "守门员·肩部受伤"
        },
        {
-        "name": "阿图尔",
-        "reason": "中场·肌肉受伤"
-       },
-       {
         "name": "埃斯科巴尔",
         "reason": "后卫·大腿受伤"
        },
@@ -13496,8 +14088,8 @@
         "reason": "中场·肌肉受伤"
        },
        {
-        "name": "恩里克",
-        "reason": "中场·受伤"
+        "name": "萨西亚诺",
+        "reason": "中场·肌肉受伤"
        }
       ],
       "doubtful": [],
@@ -13518,25 +14110,25 @@
      "t_max": 19,
      "pop": 65,
      "rain": 0.0,
-     "wind": 8,
+     "wind": 9,
      "grade": "warn",
      "city": "布拉干萨保利斯塔",
-     "wx": "阴",
+     "wx": "多云",
      "t_actual": 19,
-     "humidity": 88,
+     "humidity": 86,
      "by_home": {
       "n": 6,
       "w": 2,
-      "d": 2,
-      "l": 2,
+      "d": 1,
+      "l": 3,
       "win_rate": 33
      },
      "by_away": {
       "n": 6,
-      "w": 4,
-      "d": 1,
+      "w": 3,
+      "d": 2,
       "l": 1,
-      "win_rate": 67
+      "win_rate": 50
      },
      "src": "红彩"
     },
@@ -14016,38 +14608,38 @@
      "home": {
       "scored": [
        {
-        "n": 5,
-        "pct": 11,
+        "n": 6,
+        "pct": 13,
         "from": 1,
         "to": 15
        },
        {
         "n": 7,
-        "pct": 16,
+        "pct": 15,
         "from": 16,
         "to": 30
        },
        {
-        "n": 8,
-        "pct": 19,
+        "n": 9,
+        "pct": 20,
         "from": 31,
         "to": 45
        },
        {
         "n": 11,
-        "pct": 26,
+        "pct": 25,
         "from": 46,
         "to": 60
        },
        {
         "n": 3,
-        "pct": 7,
+        "pct": 6,
         "from": 61,
         "to": 75
        },
        {
         "n": 8,
-        "pct": 19,
+        "pct": 18,
         "from": 76,
         "to": 90
        }
@@ -14066,14 +14658,14 @@
         "to": 30
        },
        {
-        "n": 5,
-        "pct": 13,
+        "n": 6,
+        "pct": 15,
         "from": 31,
         "to": 45
        },
        {
         "n": 10,
-        "pct": 26,
+        "pct": 25,
         "from": 46,
         "to": 60
        },
@@ -14085,7 +14677,7 @@
        },
        {
         "n": 7,
-        "pct": 18,
+        "pct": 17,
         "from": 76,
         "to": 90
        }
@@ -14106,8 +14698,8 @@
         "to": 30
        },
        {
-        "n": 7,
-        "pct": 14,
+        "n": 8,
+        "pct": 16,
         "from": 31,
         "to": 45
        },
@@ -14132,8 +14724,8 @@
       ],
       "conceded": [
        {
-        "n": 4,
-        "pct": 8,
+        "n": 5,
+        "pct": 10,
         "from": 1,
         "to": 15
        },
@@ -14144,8 +14736,8 @@
         "to": 30
        },
        {
-        "n": 8,
-        "pct": 17,
+        "n": 9,
+        "pct": 18,
         "from": 31,
         "to": 45
        },
@@ -14157,13 +14749,13 @@
        },
        {
         "n": 9,
-        "pct": 19,
+        "pct": 18,
         "from": 61,
         "to": 75
        },
        {
         "n": 14,
-        "pct": 29,
+        "pct": 28,
         "from": 76,
         "to": 90
        }
@@ -14183,28 +14775,96 @@
      ]
     },
     "hc_range": {
-     "home": {
-      "n": 16,
-      "w": 8,
+     "home_total": {
+      "n": 34,
+      "w": 13,
+      "d": 8,
+      "l": 13,
+      "gf": 44,
+      "ga": 39,
+      "rank": 8,
+      "pts": 47,
+      "gd": 5
+     },
+     "away_total": {
+      "n": 34,
+      "w": 12,
+      "d": 11,
+      "l": 11,
+      "gf": 50,
+      "ga": 49,
+      "rank": 9,
+      "pts": 47,
+      "gd": 1
+     },
+     "home_home": {
+      "n": 17,
+      "w": 9,
       "d": 3,
       "l": 5,
-      "gf": 27,
-      "ga": 17,
-      "rank": 11,
-      "pts": 27
+      "gf": 29,
+      "ga": 18,
+      "rank": 10,
+      "pts": 30,
+      "gd": 11
      },
-     "away": {
-      "n": 16,
+     "home_guest": {
+      "n": 17,
+      "w": 4,
+      "d": 5,
+      "l": 8,
+      "gf": 15,
+      "ga": 21,
+      "rank": 8,
+      "pts": 17,
+      "gd": -6
+     },
+     "away_home": {
+      "n": 17,
+      "w": 6,
+      "d": 7,
+      "l": 4,
+      "gf": 23,
+      "ga": 21,
+      "rank": 14,
+      "pts": 25,
+      "gd": 2
+     },
+     "away_guest": {
+      "n": 17,
       "w": 6,
       "d": 4,
-      "l": 6,
-      "gf": 26,
-      "ga": 26,
+      "l": 7,
+      "gf": 27,
+      "ga": 28,
       "rank": 6,
-      "pts": 22
+      "pts": 22,
+      "gd": -1
+     },
+     "home": {
+      "n": 17,
+      "w": 9,
+      "d": 3,
+      "l": 5,
+      "gf": 29,
+      "ga": 18,
+      "rank": 10,
+      "pts": 30,
+      "gd": 11
+     },
+     "away": {
+      "n": 17,
+      "w": 6,
+      "d": 4,
+      "l": 7,
+      "gf": 27,
+      "ga": 28,
+      "rank": 6,
+      "pts": 22,
+      "gd": -1
      }
     },
-    "hc_at": "2026-11-02 20:26"
+    "hc_at": "2026-11-03 09:35"
    }
   }
  ]
