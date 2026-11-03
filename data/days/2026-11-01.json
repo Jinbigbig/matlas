@@ -281,7 +281,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 1.311,
     "lam_away": 1.213,
@@ -935,7 +935,32 @@
      "half_ft": "客/客"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "郑成彬",
+     "reason": "不详",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "文正仁",
+     "reason": "手指",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "朴鎔宇",
+     "reason": "膝部",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "姜祥佑",
+     "reason": "不详",
+     "status": "doubt"
+    }
+   ],
    "result": {
     "half_score": "0-1",
     "full_score": "2-1",
@@ -946,7 +971,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 1.493,
     "lam_away": 1.211,
@@ -1049,6 +1074,31 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "郑成彬",
+        "reason": "不详"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "文正仁",
+        "reason": "手指"
+       },
+       {
+        "name": "朴鎔宇",
+        "reason": "膝部"
+       },
+       {
+        "name": "姜祥佑",
+        "reason": "不详"
+       }
+      ],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-10-31 11:11",
@@ -1093,31 +1143,6 @@
       ]
      }
     ],
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "郑成彬",
-        "reason": "不详"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "文正仁",
-        "reason": "手指"
-       },
-       {
-        "name": "朴鎔宇",
-        "reason": "膝部"
-       },
-       {
-        "name": "姜祥佑",
-        "reason": "不详"
-       }
-      ],
-      "suspended": []
-     }
-    },
     "form_net": {
      "home_7": [
       {
@@ -1739,7 +1764,50 @@
      "half_ft": "客/客"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "菊池流帆",
+     "reason": "小腿",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "荒木瑠伟",
+     "reason": "肘手术",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "半田陆",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "三浦弦太",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "奥抜侃志",
+     "reason": "脚伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "植中朝日",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "一森純",
+     "reason": "",
+     "status": "suspended"
+    }
+   ],
    "result": {
     "half_score": "0-0",
     "full_score": "0-0",
@@ -1750,7 +1818,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 2.0,
     "lam_away": 1.131,
@@ -1853,6 +1921,49 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "菊池流帆",
+        "reason": "小腿"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "荒木瑠伟",
+        "reason": "肘手术"
+       },
+       {
+        "name": "半田陆",
+        "reason": "膝伤"
+       },
+       {
+        "name": "三浦弦太",
+        "reason": "膝伤"
+       },
+       {
+        "name": "奥抜侃志",
+        "reason": "脚伤"
+       },
+       {
+        "name": "植中朝日",
+        "reason": "膝伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": [
+       {
+        "name": "一森純",
+        "reason": ""
+       }
+      ]
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-10-31 11:11",
@@ -1911,49 +2022,6 @@
       ]
      }
     ],
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "菊池流帆",
-        "reason": "小腿"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "荒木瑠伟",
-        "reason": "肘手术"
-       },
-       {
-        "name": "半田陆",
-        "reason": "膝伤"
-       },
-       {
-        "name": "三浦弦太",
-        "reason": "膝伤"
-       },
-       {
-        "name": "奥抜侃志",
-        "reason": "脚伤"
-       },
-       {
-        "name": "植中朝日",
-        "reason": "膝伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "一森純",
-        "reason": ""
-       }
-      ]
-     }
-    },
     "form_net": {
      "home_7": [
       {
@@ -2589,7 +2657,32 @@
      "half_ft": "主/平"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "金珍洙",
+     "reason": "1场",
+     "status": "suspended"
+    },
+    {
+     "team": "away",
+     "player": "吳厚成",
+     "reason": "不详",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "高正民",
+     "reason": "不详",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "郑元鎮",
+     "reason": "不详",
+     "status": "doubt"
+    }
+   ],
    "result": {
     "half_score": "0-0",
     "full_score": "0-1",
@@ -2600,7 +2693,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 1.751,
     "lam_away": 0.945,
@@ -2703,6 +2796,36 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [],
+      "doubtful": [],
+      "suspended": [
+       {
+        "name": "金珍洙",
+        "reason": "1场"
+       }
+      ]
+     },
+     "away": {
+      "out": [],
+      "doubtful": [
+       {
+        "name": "吳厚成",
+        "reason": "不详"
+       },
+       {
+        "name": "高正民",
+        "reason": "不详"
+       },
+       {
+        "name": "郑元鎮",
+        "reason": "不详"
+       }
+      ],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-10-30 11:11",
@@ -2789,36 +2912,6 @@
       ]
      }
     ],
-    "injuries": {
-     "home": {
-      "out": [],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "金珍洙",
-        "reason": "1场"
-       }
-      ]
-     },
-     "away": {
-      "out": [],
-      "doubtful": [
-       {
-        "name": "吳厚成",
-        "reason": "不详"
-       },
-       {
-        "name": "高正民",
-        "reason": "不详"
-       },
-       {
-        "name": "郑元鎮",
-        "reason": "不详"
-       }
-      ],
-      "suspended": []
-     }
-    },
     "form_net": {
      "home_7": [
       {
@@ -3417,7 +3510,32 @@
      "half_ft": "客/主"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "奥斯拿",
+     "reason": "前锋",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "派亚利斯",
+     "reason": "中场",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "拿积杜夫斯基",
+     "reason": "前锋",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "积及巴拉锡迪",
+     "reason": "前锋",
+     "status": "out"
+    }
+   ],
    "result": {
     "half_score": "3-0",
     "full_score": "4-0",
@@ -3428,7 +3546,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 1.399,
     "lam_away": 1.514,
@@ -3531,6 +3649,36 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "奥斯拿",
+        "reason": "前锋"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "派亚利斯",
+        "reason": "中场"
+       },
+       {
+        "name": "拿积杜夫斯基",
+        "reason": "前锋"
+       },
+       {
+        "name": "积及巴拉锡迪",
+        "reason": "前锋"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-10-30 11:11",
@@ -3617,36 +3765,6 @@
       ]
      }
     ],
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "奥斯拿",
-        "reason": "前锋"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "派亚利斯",
-        "reason": "中场"
-       },
-       {
-        "name": "拿积杜夫斯基",
-        "reason": "前锋"
-       },
-       {
-        "name": "积及巴拉锡迪",
-        "reason": "前锋"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
     "form_net": {
      "home_7": [
       {
@@ -4135,7 +4253,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 1.681,
     "lam_away": 1.345,
@@ -4837,7 +4955,20 @@
      "half_ft": "客/客"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "阿辛尼迪亚奥",
+     "reason": "前锋",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "杜利奥查洛巴",
+     "reason": "后卫",
+     "status": "out"
+    }
+   ],
    "result": {
     "half_score": "1-0",
     "full_score": "1-0",
@@ -4848,7 +4979,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -5073,6 +5204,22 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "阿辛尼迪亚奥",
+        "reason": "前锋"
+       },
+       {
+        "name": "杜利奥查洛巴",
+        "reason": "后卫"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-10-30 11:11",
@@ -5159,22 +5306,6 @@
       ]
      }
     ],
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "阿辛尼迪亚奥",
-        "reason": "前锋"
-       },
-       {
-        "name": "杜利奥查洛巴",
-        "reason": "后卫"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
     "form_net": {
      "home_7": [
       {
@@ -5788,7 +5919,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -6753,7 +6884,50 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "邦图斯赞臣",
+     "reason": "十字靭带",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "奥斯卡施奥斯坦",
+     "reason": "",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "华伦甘文斯",
+     "reason": "不详",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "隆德伯格",
+     "reason": "",
+     "status": "suspended"
+    },
+    {
+     "team": "away",
+     "player": "艾文保迪",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "奥利华哈根",
+     "reason": "不详",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "伊巴謙马科芬拿",
+     "reason": "",
+     "status": "suspended"
+    }
+   ],
    "result": {
     "half_score": "1-0",
     "full_score": "1-2",
@@ -6764,7 +6938,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 0.892,
     "lam_away": 1.866,
@@ -6867,6 +7041,51 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "邦图斯赞臣",
+        "reason": "十字靭带"
+       },
+       {
+        "name": "奥斯卡施奥斯坦",
+        "reason": ""
+       },
+       {
+        "name": "华伦甘文斯",
+        "reason": "不详"
+       }
+      ],
+      "doubtful": [],
+      "suspended": [
+       {
+        "name": "隆德伯格",
+        "reason": ""
+       }
+      ]
+     },
+     "away": {
+      "out": [
+       {
+        "name": "艾文保迪",
+        "reason": "膝伤"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "奥利华哈根",
+        "reason": "不详"
+       }
+      ],
+      "suspended": [
+       {
+        "name": "伊巴謙马科芬拿",
+        "reason": ""
+       }
+      ]
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-10-31 11:11",
@@ -6925,51 +7144,6 @@
       ]
      }
     ],
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "邦图斯赞臣",
-        "reason": "十字靭带"
-       },
-       {
-        "name": "奥斯卡施奥斯坦",
-        "reason": ""
-       },
-       {
-        "name": "华伦甘文斯",
-        "reason": "不详"
-       }
-      ],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "隆德伯格",
-        "reason": ""
-       }
-      ]
-     },
-     "away": {
-      "out": [
-       {
-        "name": "艾文保迪",
-        "reason": "膝伤"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "奥利华哈根",
-        "reason": "不详"
-       }
-      ],
-      "suspended": [
-       {
-        "name": "伊巴謙马科芬拿",
-        "reason": ""
-       }
-      ]
-     }
-    },
     "form_net": {
      "home_7": [
       {
@@ -7544,7 +7718,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 1.13,
     "lam_away": 2.037,
@@ -8282,7 +8456,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 1.961,
     "lam_away": 2.239,
@@ -8944,7 +9118,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -9821,7 +9995,14 @@
      "half_ft": "平/客"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "阿当马路锡",
+     "reason": "后卫",
+     "status": "out"
+    }
+   ],
    "result": {
     "half_score": "1-1",
     "full_score": "2-1",
@@ -9832,7 +10013,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -10057,6 +10238,18 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "阿当马路锡",
+        "reason": "后卫"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-10-30 11:11",
@@ -10143,18 +10336,6 @@
       ]
      }
     ],
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "阿当马路锡",
-        "reason": "后卫"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
     "form_net": {
      "home_7": [
       {
@@ -10854,7 +11035,56 @@
      "half_ft": "主/平"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "马云费特列治",
+     "reason": "后卫",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "尼苏基",
+     "reason": "后卫",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "安达积伊历",
+     "reason": "前锋",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "乌度佳",
+     "reason": "后卫",
+     "status": "suspended"
+    },
+    {
+     "team": "away",
+     "player": "艾耶斯史基尼",
+     "reason": "中场",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "拉格拿艾捷",
+     "reason": "前锋",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "达宁加",
+     "reason": "前锋",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "朗迪",
+     "reason": "前锋",
+     "status": "out"
+    }
+   ],
    "result": {
     "half_score": "1-0",
     "full_score": "1-1",
@@ -10865,7 +11095,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -11078,6 +11308,53 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "马云费特列治",
+        "reason": "后卫"
+       },
+       {
+        "name": "尼苏基",
+        "reason": "后卫"
+       },
+       {
+        "name": "安达积伊历",
+        "reason": "前锋"
+       }
+      ],
+      "doubtful": [],
+      "suspended": [
+       {
+        "name": "乌度佳",
+        "reason": "后卫"
+       }
+      ]
+     },
+     "away": {
+      "out": [
+       {
+        "name": "艾耶斯史基尼",
+        "reason": "中场"
+       },
+       {
+        "name": "拉格拿艾捷",
+        "reason": "前锋"
+       },
+       {
+        "name": "达宁加",
+        "reason": "前锋"
+       },
+       {
+        "name": "朗迪",
+        "reason": "前锋"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-10-30 11:11",
@@ -11164,53 +11441,6 @@
       ]
      }
     ],
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "马云费特列治",
-        "reason": "后卫"
-       },
-       {
-        "name": "尼苏基",
-        "reason": "后卫"
-       },
-       {
-        "name": "安达积伊历",
-        "reason": "前锋"
-       }
-      ],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "乌度佳",
-        "reason": "后卫"
-       }
-      ]
-     },
-     "away": {
-      "out": [
-       {
-        "name": "艾耶斯史基尼",
-        "reason": "中场"
-       },
-       {
-        "name": "拉格拿艾捷",
-        "reason": "前锋"
-       },
-       {
-        "name": "达宁加",
-        "reason": "前锋"
-       },
-       {
-        "name": "朗迪",
-        "reason": "前锋"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
     "form_net": {
      "home_7": [
       {
@@ -11834,7 +12064,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 2.011,
     "lam_away": 1.278,
@@ -12613,7 +12843,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -13690,7 +13920,32 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "尼简甘",
+     "reason": "前锋",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "马历比邦",
+     "reason": "前锋",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "法比奥韦拉",
+     "reason": "中场",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "尼古拉斯卡柏度",
+     "reason": "中场",
+     "status": "out"
+    }
+   ],
    "result": {
     "half_score": "1-1",
     "full_score": "3-1",
@@ -13701,7 +13956,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -13914,6 +14169,36 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "尼简甘",
+        "reason": "前锋"
+       },
+       {
+        "name": "马历比邦",
+        "reason": "前锋"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "法比奥韦拉",
+        "reason": "中场"
+       },
+       {
+        "name": "尼古拉斯卡柏度",
+        "reason": "中场"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-10-30 11:11",
@@ -14000,36 +14285,6 @@
       ]
      }
     ],
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "尼简甘",
-        "reason": "前锋"
-       },
-       {
-        "name": "马历比邦",
-        "reason": "前锋"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "法比奥韦拉",
-        "reason": "中场"
-       },
-       {
-        "name": "尼古拉斯卡柏度",
-        "reason": "中场"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
     "form_net": {
      "home_7": [
       {
@@ -14720,7 +14975,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -15751,7 +16006,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -16624,7 +16879,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 1.613,
     "lam_away": 0.969,
@@ -17336,7 +17591,20 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "基伦耶迪斯",
+     "reason": "前锋",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "大卫拿尼斯",
+     "reason": "前锋",
+     "status": "out"
+    }
+   ],
    "result": {
     "half_score": "0-0",
     "full_score": "2-0",
@@ -17347,7 +17615,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -17572,6 +17840,28 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "基伦耶迪斯",
+        "reason": "前锋"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "大卫拿尼斯",
+        "reason": "前锋"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-10-30 11:11",
@@ -17661,28 +17951,6 @@
     "referee": {
      "ref": "西蒙尼·索萨",
      "age": 39
-    },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "基伦耶迪斯",
-        "reason": "前锋"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "大卫拿尼斯",
-        "reason": "前锋"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
     },
     "form_net": {
      "home_7": [
@@ -18394,7 +18662,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -19300,7 +19568,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "table": [
      {
@@ -20273,7 +20541,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 1.527,
     "lam_away": 1.482,
@@ -20789,7 +21057,7 @@
     "settled_at": "2026-11-01"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T09:43:30+08:00",
+   "generated_at": "2026-11-03T09:51:22+08:00",
    "extras": {
     "lam_home": 1.449,
     "lam_away": 1.874,
