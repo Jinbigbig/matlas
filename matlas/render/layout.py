@@ -1242,7 +1242,7 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
   text-align: center; }
 
 /* 比赛天气卡片 */
-.wx-card { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px;
+.wx-card { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px 16px;
   background: #f8fafc; border: 1px solid var(--rule); border-radius: 12px;
   padding: 16px 18px; align-items: center; }
 .wx-icon { font-size: 2.6rem; line-height: 1; }
@@ -1255,9 +1255,9 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
 .wx-teams { grid-column: 1 / -1; display: grid; gap: 3px; font-size: 0.78rem;
   color: #4b5563; border-top: 1px dashed var(--rule); padding-top: 9px; margin-top: 4px; }
 .wx-teams span b { color: #111; font-weight: 600; }
-.wx-verdict { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px;
-  flex-wrap: wrap; background: #fff; border: 1px solid var(--rule); border-radius: 10px;
-  padding: 9px 14px; font-size: 0.82rem; color: #374151; line-height: 1.55; }
+.wx-verdict { display: flex; align-items: center; justify-content: flex-end; gap: 9px;
+  flex-wrap: wrap; text-align: right; font-size: 0.82rem; color: #374151;
+  line-height: 1.55; max-width: 42ch; }
 .wx-tag { flex: 0 0 auto; font-size: 0.72rem; font-weight: 600; padding: 2px 9px;
   border-radius: 999px; white-space: nowrap; }
 .wx-tag.ok { color: #0f7a43; background: rgba(16,163,74,0.12); }
@@ -1292,7 +1292,9 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
   .hc-axis { font-size: 0.62rem; }
   .hc-teams { font-size: 0.84rem; }
   .hc-teams img, .hc-teams .crest-ph { width: 22px; height: 22px; }
-  .wx-card { padding: 14px; gap: 6px 12px; }
+  .wx-card { grid-template-columns: auto minmax(0, 1fr); padding: 14px; gap: 6px 12px; }
+  .wx-verdict { grid-column: 1 / -1; justify-content: flex-start; text-align: left;
+    max-width: none; }
   .wx-icon { font-size: 2.1rem; }
   .wx-temp { font-size: 1.6rem; }
   .ref-t th, .ref-t td { padding: 0.4rem 0.3rem; font-size: 0.74rem; }
