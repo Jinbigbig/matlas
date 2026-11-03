@@ -1255,6 +1255,15 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
 .wx-teams { grid-column: 1 / -1; display: grid; gap: 3px; font-size: 0.78rem;
   color: #4b5563; border-top: 1px dashed var(--rule); padding-top: 9px; margin-top: 4px; }
 .wx-teams span b { color: #111; font-weight: 600; }
+.wx-verdict { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px;
+  flex-wrap: wrap; background: #fff; border: 1px solid var(--rule); border-radius: 10px;
+  padding: 9px 14px; font-size: 0.82rem; color: #374151; line-height: 1.55; }
+.wx-tag { flex: 0 0 auto; font-size: 0.72rem; font-weight: 600; padding: 2px 9px;
+  border-radius: 999px; white-space: nowrap; }
+.wx-tag.ok { color: #0f7a43; background: rgba(16,163,74,0.12); }
+.wx-tag.warn { color: #8a5a00; background: rgba(234,150,10,0.15); }
+.wx-tag.bad { color: #a3252f; background: rgba(220,70,80,0.13); }
+.wx-fit { font-weight: 600; color: #111; }
 
 /* 裁判执法：姓名卡 + 场均表 */
 .ref-card { background: #f8fafc; border: 1px solid var(--rule); border-radius: 10px;

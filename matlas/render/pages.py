@@ -483,6 +483,70 @@ def _wx_icon(name: str) -> str:
     return "⛅"
 
 
+_WX_LV = {"ok": 0, "warn": 1, "watch": 1, "bad": 2}
+_WX_TAGS = (("适宜", "ok"), ("需留意", "warn"), ("恶劣", "bad"))
+
+
+def _wx_level(w: dict) -> int:
+    """综合评级：上游 grade 只看降雨，低温高温与大风要一并算进去。"""
+    lv = _WX_LV.get(str(w.get("grade") or ""), 0)
+    t = w.get("t_actual")
+    if t is None:
+        t = w.get("t_max") if w.get("t_max") is not None else w.get("t_min")
+    if isinstance(t, (int, float)):
+        if t <= -3 or t >= 35:
+            lv = max(lv, 2)
+        elif t <= 6 or t >= 30:
+            lv = max(lv, 1)
+    pop, wind = w.get("pop"), w.get("wind")
+    if isinstance(pop, (int, float)) and pop >= 85:
+        lv = max(lv, 1)
+    if isinstance(wind, (int, float)) and wind >= 28:
+        lv = max(lv, 1)
+    return lv
+
+
+def _wx_say(w: dict) -> str:
+    """一句话读天气：冷热、降雨、风力，只给判断不给数字堆叠。"""
+    segs: list[str] = []
+    t = w.get("t_actual")
+    if t is None:
+        lo, hi = w.get("t_min"), w.get("t_max")
+        t = hi if hi is not None else lo
+    if isinstance(t, (int, float)):
+        if t <= 0:
+            segs.append("严寒，体感与球速都受影响")
+        elif t <= 8:
+            segs.append("偏冷，热身与肌肉状态要留意")
+        elif t >= 32:
+            segs.append("高温，节奏与体能消耗偏大")
+        elif t >= 27:
+            segs.append("闷热，下半场体能下滑风险")
+    pop = w.get("pop")
+    if isinstance(pop, (int, float)):
+        if pop >= 80:
+            segs.append("大概率有雨，场地湿滑、球速变快")
+        elif pop >= 50:
+            segs.append("有降雨可能，注意地面配合")
+    wind = w.get("wind")
+    if isinstance(wind, (int, float)) and wind >= 20:
+        segs.append("风力偏大，长传和高空球受影响")
+    return "，".join(segs)
+
+
+def _wx_fit(w: dict, home: str, away: str) -> str:
+    """两队在该类天气下的适应度，只在双方样本都有时给结论。"""
+    hb, ab = w.get("by_home") or {}, w.get("by_away") or {}
+    hr, ar = hb.get("win_rate"), ab.get("win_rate")
+    if not isinstance(hr, (int, float)) or not isinstance(ar, (int, float)):
+        return ""
+    if abs(hr - ar) < 20:
+        return "两队在同类天气下表现接近"
+    better, hi, lo = (home, hr, ar) if hr > ar else (away, ar, hr)
+    return (f'{C.esc(better)}更适应这类天气'
+            f'（{hi:g}% 对 {lo:g}%）')
+
+
 def _weather_panel(m: Match) -> str:
     """比赛地天气卡片。气温/风速/湿度用红彩实况，降雨概率仍是 Open-Meteo 预报。"""
     w = (m.extras or {}).get("weather")
@@ -504,13 +568,24 @@ def _weather_panel(m: Match) -> str:
     if w.get("pop") is not None:
         metas.append(f'降雨概率 <span class="pct flat">{w["pop"]}%</span>')
     title = " · ".join(x for x in (name, str(w.get("city") or "")) if x)
+
+    # 结论行：评估标签 + 一句天气判断
+    grade, gcls = _WX_TAGS[_wx_level(w)]
+    say = _wx_say(w)
+    verdict = ""
+    if grade or say:
+        tag = f'<span class="wx-tag {gcls}">{grade}</span>' if grade else ""
+        txt = f'<span>{C.esc(say)}</span>' if say else ""
+        verdict = f'<div class="wx-verdict">{tag}{txt}</div>'
+
+    fit = _wx_fit(w, m.home.name, m.away.name)
     teams = ""
     for team, key in ((m.home.name, "by_home"), (m.away.name, "by_away")):
         b = w.get(key) or {}
         if not b or b.get("win_rate") is None:
             continue
         teams += (
-            f'<span><b>{C.esc(team)}</b> {C.esc(name)}近 {b.get("n")} 场 '
+            f'<span><b>{C.esc(team)}</b> 近 {b.get("n")} 场 '
             f'{b.get("w")}胜{b.get("d")}平{b.get("l")}负 · 胜率 '
             f'<span class="pct flat">{b.get("win_rate")}%</span></span>'
         )
@@ -522,7 +597,10 @@ def _weather_panel(m: Match) -> str:
         f'<span class="wx-meta">{" · ".join(metas)}</span></div>'
         f'<div class="wx-name">{C.esc(title)}</div>'
         '</div>'
-        + (f'<div class="wx-teams">{teams}</div>' if teams else "")
+        + verdict
+        + (f'<div class="wx-teams">'
+           + (f'<span class="wx-fit">{C.esc(fit)}</span>' if fit else "")
+           + teams + '</div>' if (teams or fit) else "")
         + "</div>"
     )
     return C.panel("比赛天气", body)
