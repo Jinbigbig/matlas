@@ -628,6 +628,20 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
         hc_one = (env.get("hc") or {}).get(code) if env.get("hc_date") == date else None
         hc_ok = bool(hc_one)
 
+        def _deep_simplify(obj):
+            """递归把所有字符串过一遍繁→简，出口兜底。
+
+            每个采集端都自称转了简体，但任一处漏掉（换源、opencc 缺失退回字表、
+            手写 json）都会在页面上露出繁体。转换是幂等的，已在写出前统一扫一遍。
+            """
+            if isinstance(obj, str):
+                return to_simplified(obj)
+            if isinstance(obj, list):
+                return [_deep_simplify(x) for x in obj]
+            if isinstance(obj, dict):
+                return {k: _deep_simplify(v) for k, v in obj.items()}
+            return obj
+
         def _hc_inj(rows) -> dict | None:
             """红彩伤停（第五源）：受伤→缺阵 / 停赛→停赛 / 其余→存疑。
 
@@ -636,15 +650,16 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
             """
             got: dict[str, list] = {"out": [], "doubtful": [], "suspended": []}
             for p in rows or []:
-                nm = str(p.get("name") or "").strip()
+                nm = to_simplified(str(p.get("name") or "").strip())
                 if not nm:
                     continue
                 key = {"out": "out", "suspended": "suspended",
                        "doubt": "doubtful"}.get(str(p.get("status") or ""))
                 if not key:
                     continue
-                reason = "·".join(x for x in (str(p.get("position") or "").strip(),
-                                             str(p.get("state") or "").strip()) if x)
+                reason = "·".join(x for x in
+                                  (to_simplified(str(p.get("position") or "").strip()),
+                                   to_simplified(str(p.get("state") or "").strip())) if x)
                 got[key].append({"name": nm, "reason": reason})
             return got if any(got.values()) else None
 
@@ -670,7 +685,7 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
             if any(acc.values()):
                 merged[side_key] = acc
         if merged:
-            extras["injuries"] = merged
+            extras["injuries"] = _deep_simplify(merged)
         # 赛前军情（7M 联赛稿，按场次编号）：优先于结构化伤停，单独成块展示
         if env.get("extra_date") == date:
             mo = (env.get("extra_moods") or {}).get(code)

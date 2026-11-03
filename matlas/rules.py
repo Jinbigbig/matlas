@@ -12,6 +12,15 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
+from matlas.t2s import _PAIRS
+
+
+# ---- §3.5 字形红线：对外一律简体 ----
+# 繁体漏到页面上不只是字形问题：`停賽：`「受傷：」这类标记一旦是繁体，
+# 结构化处理就全部失配。上游有繁体稿（7M 军情、港马会简报），采集端和
+# import 端都已转换，这里再兜一层 —— 万一哪天真漏了，构建直接报出来。
+_TRAD_CHARS = frozenset(_PAIRS[0::2])
+
 
 # ---- §3.1 公开页文案红线 ----
 
@@ -102,6 +111,22 @@ def _scan_percents(rel: str, text: str) -> list[Violation]:
     return out
 
 
+def _scan_traditional(rel: str, text: str) -> list[Violation]:
+    """§3.5：页面文字必须是简体，出现繁体字即违规。
+
+    先做整篇字符集求交，绝大多数页面第一步就返回，开销可忽略。
+    """
+    if not _TRAD_CHARS.intersection(text):
+        return []
+    out: list[Violation] = []
+    for i, line in enumerate(text.split("\n"), 1):
+        bad = _TRAD_CHARS.intersection(line)
+        if bad:
+            out.append(Violation(rel, i, "繁体残留",
+                                 f"「{''.join(sorted(bad))}」{line.strip()[:80]}"))
+    return out
+
+
 def check_site(out_dir: Path) -> list[Violation]:
     res: list[Violation] = []
     if not out_dir.exists():
@@ -111,6 +136,7 @@ def check_site(out_dir: Path) -> list[Violation]:
         text = p.read_text(encoding="utf-8")
         res += _scan_text(rel, text)
         res += _scan_percents(rel, text)
+        res += _scan_traditional(rel, text)
     return res
 
 
