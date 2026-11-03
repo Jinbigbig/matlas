@@ -279,7 +279,7 @@ def radar_svg(
     series(home_vals, HOME_COLOR, "0")
 
     for i, name in enumerate(axes):
-        x, y = pt(i, 1.19)
+        x, y = pt(i, 1.13)
         anchor = "middle"
         if x > cx + 6:
             anchor = "start"
@@ -289,7 +289,8 @@ def radar_svg(
             f'<text x="{x:.1f}" y="{y:.1f}" text-anchor="{anchor}" dominant-baseline="central" '
             f'font-size="12" fill="{MUTED}">{esc(name)}</text>'
         )
-    parts.append(f'<text x="{cx}" y="{size - 8}" text-anchor="middle" font-size="10" fill="{MUTED}">0–100</text>')
+    parts.append(f'<text x="10" y="{size - 10}" text-anchor="start" font-size="10" '
+                 f'fill="{MUTED}">0–100</text>')
     parts.append("</svg>")
 
     legend = (
