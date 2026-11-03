@@ -226,7 +226,7 @@ def _rank_range(table: list[dict], name: str, pts: int) -> tuple[int, int]:
 
 
 def _situation_panel(m: Match) -> str:
-    """形势分析：本场三种结果分别把两队推到什么名次。"""
+    """形势分析：三种结果各自把两队推到什么名次，一张满宽表说清。"""
     table = (m.extras or {}).get("table") or []
     if len(table) < 8:
         return ""
@@ -234,38 +234,50 @@ def _situation_panel(m: Match) -> str:
     a_row = _table_row(table, m.away.name)
     if not h_row or not a_row:
         return ""
-    blocks = []
-    for team, row in ((m.home, h_row), (m.away, a_row)):
-        outs = []
-        for lab, add in (("赢", 3), ("平", 1), ("负", 0)):
-            pts = row["pts"] + add
-            best, worst = _rank_range(table, row["name"], pts)
-            tail = "" if best == worst else f"<i>最差 {worst}</i>"
-            outs.append(f'<div class="sit-out"><b>{lab}</b>{pts} 分 · 第 {best} 名{tail}</div>')
-        blocks.append(
-            '<div class="sit-card">'
-            f'<div class="sit-head">{C.esc(team.name)}'
-            f'<span>第 {row["rank"]} · {row["pts"]} 分</span></div>'
-            + "".join(outs) + "</div>"
-        )
-    body = f'<div class="sit-grid">{"".join(blocks)}</div>'
 
-    notes = []
+    def _head_cell(team, row: dict, side: str) -> str:
+        cls = ' class="away"' if side == "away" else ""
+        return (f'<th{cls}><span class="sth">'
+                f'{C.crest_img(team, cls="crest", pre="../")}'
+                f'<b>{C.esc(team.name)}</b>'
+                f'<i>第 {row["rank"]} · {row["pts"]} 分</i></span></th>')
+
+    def _cell(row: dict, add: int) -> str:
+        pts = row["pts"] + add
+        best, worst = _rank_range(table, row["name"], pts)
+        tail = f'<i>最差 {worst}</i>' if best != worst else ""
+        return f'<td><span class="sv"><b>{pts}</b> 分 · 第 {best} 名</span>{tail}</td>'
+
+    rows = "".join(
+        f'<tr><td class="rk {cls}">{lab}</td>{_cell(h_row, add)}{_cell(a_row, add)}</tr>'
+        for lab, add, cls in (("赢", 3, "w"), ("平", 1, "d"), ("负", 0, "l"))
+    )
+
+    foot = []
     segs = []
     for pos, meaning in (_SITUATION_ZONES.get(m.competition) or ()):
         line = next((t for t in table if t["rank"] == pos), None)
         if line:
             segs.append(f'第 {pos} 名 {line["pts"]} 分（{meaning}）')
     if segs:
-        notes.append("关键线：" + " · ".join(segs))
+        foot.append(("关键线", " · ".join(segs)))
     near = [t for t in table
             if abs(t["rank"] - h_row["rank"]) <= 2
             and t.get("name") not in (h_row.get("name"), a_row.get("name"))]
     if near:
-        notes.append("名次相邻：" + "、".join(
-            f'{t["name"]} 第 {t["rank"]} 名 {t["pts"]} 分' for t in near[:4]))
-    if notes:
-        body += "".join(f'<p class="sub">{C.esc(x)}</p>' for x in notes)
+        foot.append(("名次相邻", "、".join(
+            f'{t["name"]} 第 {t["rank"]} 名 {t["pts"]} 分' for t in near[:4])))
+    tail_rows = "".join(
+        f'<tr><th>{C.esc(k)}</th><td colspan="2">{C.esc(v)}</td></tr>' for k, v in foot
+    )
+    body = (
+        '<div class="tw"><table class="sit-t">'
+        f'<thead><tr><th class="rk">结果</th>{_head_cell(m.home, h_row, "home")}'
+        f'{_head_cell(m.away, a_row, "away")}</tr></thead>'
+        f'<tbody>{rows}</tbody>'
+        + (f'<tfoot>{tail_rows}</tfoot>' if tail_rows else "")
+        + "</table></div>"
+    )
     return C.panel("形势分析", body)
 
 
