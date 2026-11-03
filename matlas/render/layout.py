@@ -1242,28 +1242,34 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
   text-align: center; }
 
 /* 比赛天气卡片 */
-.wx-card { display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 8px 14px;
-  background: #f8fafc; border: 1px solid var(--rule); border-radius: 12px;
-  padding: 16px 18px; align-items: center; }
+.wx-card { display: grid; gap: 10px; background: #f8fafc; border: 1px solid var(--rule);
+  border-radius: 12px; padding: 15px 18px; }
+.wx-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.wx-data { flex: 1 1 0; min-width: 0; }
+.wx-row .wx-tag { margin-left: auto; }
 .wx-icon { font-size: 2.6rem; line-height: 1; }
 .wx-top { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
 .wx-temp { font-size: 1.9rem; font-weight: 700; color: #111; line-height: 1.05;
   font-variant-numeric: tabular-nums; }
 .wx-temp small { font-size: 0.95rem; font-weight: 500; color: #6b7280; margin-left: 1px; }
-.wx-meta { font-size: 0.78rem; color: #4b5563; }
+.wx-meta { display: flex; flex-wrap: wrap; column-gap: 10px; row-gap: 2px;
+  font-size: 0.78rem; color: #4b5563; }
+.wx-meta span { white-space: nowrap; }
 .wx-name { font-size: 0.8rem; color: #374151; margin-top: 2px; }
-.wx-teams { grid-column: 1 / -1; display: grid; gap: 3px; font-size: 0.78rem;
-  color: #4b5563; border-top: 1px dashed var(--rule); padding-top: 9px; margin-top: 4px; }
+.wx-teams { display: grid; gap: 3px; font-size: 0.78rem;
+  color: #4b5563; border-top: 1px dashed var(--rule); padding-top: 9px; margin-top: 1px; }
 .wx-teams span b { color: #111; font-weight: 600; }
-.wx-verdict { display: flex; align-items: center; justify-content: flex-start; gap: 9px;
-  flex-wrap: wrap; text-align: left; font-size: 0.82rem; color: #374151;
-  line-height: 1.55; border-left: 3px solid #cbd5e1; padding-left: 12px; min-width: 0; }
+.wx-verdict { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+  text-align: left; font-size: 0.84rem; color: #374151; line-height: 1.6;
+  border-top: 1px dashed var(--rule); padding-top: 9px; margin-top: 1px; }
+.wx-say { flex: 1 1 auto; min-width: 0; }
+.wx-verdict + .wx-teams { border-top: none; padding-top: 0; }
 .wx-tag { flex: 0 0 auto; font-size: 0.72rem; font-weight: 600; padding: 2px 9px;
   border-radius: 999px; white-space: nowrap; }
 .wx-tag.ok { color: #0f7a43; background: rgba(16,163,74,0.12); }
 .wx-tag.warn { color: #8a5a00; background: rgba(234,150,10,0.15); }
 .wx-tag.bad { color: #a3252f; background: rgba(220,70,80,0.13); }
-.wx-fit { font-weight: 600; color: #111; }
+.wx-fit { flex: 0 0 auto; margin-left: auto; text-align: right; font-weight: 600; color: #111; }
 
 /* 裁判执法：姓名卡 + 场均表 */
 .ref-card { background: #f8fafc; border: 1px solid var(--rule); border-radius: 10px;
@@ -1292,9 +1298,11 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
   .hc-axis { font-size: 0.62rem; }
   .hc-teams { font-size: 0.84rem; }
   .hc-teams img, .hc-teams .crest-ph { width: 22px; height: 22px; }
-  .wx-card { grid-template-columns: auto minmax(0, 1fr); padding: 14px; gap: 6px 12px; }
-  .wx-verdict { grid-column: 1 / -1; border-left: none; padding-left: 0;
-    padding-top: 8px; border-top: 1px dashed var(--rule); }
+  .wx-card { padding: 13px 14px; gap: 8px; }
+  .wx-row { gap: 11px; }
+  .wx-row { align-items: flex-start; }
+  .wx-verdict { display: block; }
+  .wx-fit { display: block; margin: 4px 0 0; text-align: left; }
   .wx-icon { font-size: 2.1rem; }
   .wx-temp { font-size: 1.6rem; }
   .ref-t th, .ref-t td { padding: 0.4rem 0.3rem; font-size: 0.74rem; }

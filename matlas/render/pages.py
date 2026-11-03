@@ -476,10 +476,25 @@ _WX_ICON = (("雷", "⛈"), ("雨", "🌧"), ("雪", "🌨"), ("雾", "🌫"),
             ("阴", "☁️"), ("云", "⛅"), ("晴", "☀️"))
 
 
-def _wx_icon(name: str) -> str:
+def _wx_icon(name: str, w: dict | None = None) -> str:
+    """有实况天气名就按名字取图标；只有预报时按降雨与风力反推，别再一律阴天。"""
+    s = str(name or "")
     for k, ico in _WX_ICON:
-        if k in str(name or ""):
+        if k in s:
             return ico
+    if w:
+        pop, rain, wind = w.get("pop"), w.get("rain"), w.get("wind")
+        if isinstance(pop, (int, float)) and pop >= 80:
+            return "🌧"
+        if isinstance(rain, (int, float)) and rain >= 3:
+            return "🌧"
+        if isinstance(wind, (int, float)) and wind >= 25:
+            return "💨"
+        if isinstance(pop, (int, float)) and pop >= 45:
+            return "⛅"
+        t = w.get("t_max")
+        if isinstance(t, (int, float)) and t >= 26:
+            return "☀️"
     return "⛅"
 
 
@@ -562,21 +577,16 @@ def _weather_panel(m: Match) -> str:
         temp = "—"
     metas = []
     if w.get("humidity") is not None:
-        metas.append(f'湿度 <span class="pct flat">{w["humidity"]}%</span>')
+        metas.append(f'<span>湿度 <span class="pct flat">{w["humidity"]}%</span></span>')
     if w.get("wind") is not None:
-        metas.append(f'风速 {w["wind"]}km/h')
+        metas.append(f'<span>风速 {w["wind"]}km/h</span>')
     if w.get("pop") is not None:
-        metas.append(f'降雨概率 <span class="pct flat">{w["pop"]}%</span>')
+        metas.append(f'<span>降雨概率 <span class="pct flat">{w["pop"]}%</span></span>')
     title = " · ".join(x for x in (name, str(w.get("city") or "")) if x)
 
-    # 结论行：评估标签 + 一句天气判断
+    # 评估标签挂在首行右端，判断句与两队适应度另起一行两端对齐，避免右侧大片空档
     grade, gcls = _WX_TAGS[_wx_level(w)]
     say = _wx_say(w)
-    verdict = ""
-    if grade or say:
-        tag = f'<span class="wx-tag {gcls}">{grade}</span>' if grade else ""
-        txt = f'<span>{C.esc(say)}</span>' if say else ""
-        verdict = f'<div class="wx-verdict">{tag}{txt}</div>'
 
     fit = _wx_fit(w, m.home.name, m.away.name)
     teams = ""
@@ -589,18 +599,32 @@ def _weather_panel(m: Match) -> str:
             f'{b.get("w")}胜{b.get("d")}平{b.get("l")}负 · 胜率 '
             f'<span class="pct flat">{b.get("win_rate")}%</span></span>'
         )
-    body = (
-        '<div class="wx-card">'
-        f'<div class="wx-icon">{_wx_icon(name)}</div>'
-        '<div>'
-        f'<div class="wx-top"><span class="wx-temp">{temp}</span>'
-        f'<span class="wx-meta">{" · ".join(metas)}</span></div>'
+
+    row = (
+        '<div class="wx-row">'
+        f'<div class="wx-icon">{_wx_icon(name, w)}</div>'
+        '<div class="wx-data">'
+        '<div class="wx-top">'
+        f'<span class="wx-temp">{temp}</span>'
+        f'<span class="wx-meta">{"".join(metas)}</span>'
+        '</div>'
         f'<div class="wx-name">{C.esc(title)}</div>'
         '</div>'
-        + verdict
-        + (f'<div class="wx-teams">'
-           + (f'<span class="wx-fit">{C.esc(fit)}</span>' if fit else "")
-           + teams + '</div>' if (teams or fit) else "")
+        f'<span class="wx-tag {gcls}">{grade}</span>'
+        '</div>'
+    )
+    verdict = ""
+    if say or fit:
+        verdict = (
+            '<div class="wx-verdict">'
+            + (f'<span class="wx-say">{C.esc(say)}</span>' if say else "")
+            + (f'<span class="wx-fit">{C.esc(fit)}</span>' if fit else "")
+            + '</div>'
+        )
+    body = (
+        '<div class="wx-card">'
+        + row + verdict
+        + (f'<div class="wx-teams">{teams}</div>' if teams else "")
         + "</div>"
     )
     return C.panel("比赛天气", body)
