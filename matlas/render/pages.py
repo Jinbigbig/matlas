@@ -821,11 +821,13 @@ def _rank_panel(m: Match) -> str:
     return C.panel("积分排名", head + body)
 
 
+# 近6 / 近12 / 同主客(主场近6) / 同赛事(同联赛6) 已在「近期战绩」四档里给过，
+# 这里只留它没有的口径，同一组数字不在两处出现
 _DISH_ROWS = (
-    ("home6", "主场近6"), ("home12", "主场近12"),
-    ("all6", "全部近6"), ("all12", "全部近12"),
-    ("lg6", "同联赛6"), ("lg12", "同联赛12"),
-    ("home_lg6", "主+联赛6"), ("home_lg12", "主+联赛12"),
+    ("home12", "主场近12"),
+    ("lg12", "同联赛12"),
+    ("home_lg6", "主+联赛6"),
+    ("home_lg12", "主+联赛12"),
 )
 
 
@@ -837,11 +839,27 @@ def _seq_html(seq: str) -> str:
     return f'<span class="seq">{items}</span>' if items else ""
 
 
+def _dish_sig(b: dict) -> tuple:
+    """一组盘路数据的指纹（胜平负 + 进失），用于跨口径去重。"""
+    if not b:
+        return ()
+    vals = tuple(b.get(k) for k in ("w", "d", "l", "gf", "ga"))
+    return vals if any(v is not None for v in vals) else ()
+
+
 def _dish_panel(m: Match) -> str:
-    """盘路走势：8 个样本维度各自的胜平负 / 赢盘率 / 进失 / 走势，两队各一组。"""
+    """盘路走势：近期战绩未覆盖的样本口径，各自的胜平负 / 赢盘率 / 进失 / 走势。"""
     dish = (m.extras or {}).get("hc_dish") or {}
     if not dish:
         return ""
+    # 近期战绩四档已展示过的数字，这里按数值指纹跳过，避免同一组数据出现在两处
+    shown = set()
+    for side in ("home", "away"):
+        d = dish.get(side) or {}
+        for _, key in _FORM_TABS:
+            sig = _dish_sig(d.get(key) or {})
+            if sig:
+                shown.add(sig)
     bodies = ""
     for side in ("home", "away"):
         d = dish.get(side) or {}
@@ -851,8 +869,10 @@ def _dish_panel(m: Match) -> str:
         rows = ""
         for key, label in _DISH_ROWS:
             b = d.get(key)
-            if not b:
+            sig = _dish_sig(b or {})
+            if not sig or sig in shown:
                 continue
+            shown.add(sig)
             rows += (
                 f'<tr><td>{C.esc(label)}</td>'
                 f'<td>{b.get("w")}胜{b.get("d")}平{b.get("l")}负</td>'
