@@ -403,7 +403,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T10:12:30+08:00",
+   "generated_at": "2026-11-03T10:31:34+08:00",
    "extras": {
     "lam_home": 1.843,
     "lam_away": 0.865,
@@ -438,6 +438,10 @@
     },
     "form_net": {
      "home_7": [
+      {
+       "gf": 4,
+       "ga": 3
+      },
       {
        "gf": 2,
        "ga": 4
@@ -525,6 +529,10 @@
      ],
      "home_home": [
       {
+       "gf": 4,
+       "ga": 3
+      },
+      {
        "gf": 2,
        "ga": 4
       },
@@ -570,6 +578,10 @@
       }
      ],
      "away_7": [
+      {
+       "gf": 3,
+       "ga": 4
+      },
       {
        "gf": 0,
        "ga": 4
@@ -660,6 +672,10 @@
       }
      ],
      "away_away": [
+      {
+       "gf": 3,
+       "ga": 4
+      },
       {
        "gf": 0,
        "ga": 4
@@ -2046,7 +2062,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T10:12:30+08:00",
+   "generated_at": "2026-11-03T10:31:34+08:00",
    "extras": {
     "table": [
      {
@@ -2205,6 +2221,10 @@
      "home_7": [
       {
        "gf": 2,
+       "ga": 4
+      },
+      {
+       "gf": 2,
        "ga": 6
       },
       {
@@ -2298,13 +2318,13 @@
       {
        "gf": 3,
        "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
       }
      ],
      "home_home": [
+      {
+       "gf": 2,
+       "ga": 4
+      },
       {
        "gf": 2,
        "ga": 6
@@ -2360,6 +2380,10 @@
      ],
      "away_7": [
       {
+       "gf": 4,
+       "ga": 2
+      },
+      {
        "gf": 2,
        "ga": 2
       },
@@ -2453,14 +2477,14 @@
       },
       {
        "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
        "ga": 2
       }
      ],
      "away_away": [
+      {
+       "gf": 4,
+       "ga": 2
+      },
       {
        "gf": 1,
        "ga": 2
@@ -3743,105 +3767,75 @@
    "injuries": [
     {
      "team": "home",
-     "player": "K.霍尔门",
-     "reason": "中场·膝关节损伤",
+     "player": "奇云贺尔文",
+     "reason": "膝伤",
      "status": "out"
     },
     {
      "team": "home",
-     "player": "奥克尔森",
-     "reason": "中场·膝关节损伤",
+     "player": "科卡臣",
+     "reason": "十字韧带",
      "status": "out"
     },
     {
      "team": "home",
-     "player": "丹夸",
-     "reason": "中场·患病",
+     "player": "丹尼斯高兰达",
+     "reason": "肋骨",
      "status": "out"
     },
     {
      "team": "home",
-     "player": "科兰德",
-     "reason": "中场·无法出战",
-     "status": "suspended"
+     "player": "丹克华",
+     "reason": "不详",
+     "status": "doubt"
     },
     {
      "team": "home",
-     "player": "葛雷维奥斯",
-     "reason": "中场·无法出战",
-     "status": "suspended"
+     "player": "赫贝治",
+     "reason": "鼠蹊",
+     "status": "doubt"
     },
     {
      "team": "home",
-     "player": "斯莱茨乔",
-     "reason": "中场·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "home",
-     "player": "贝克曼",
-     "reason": "后卫·累计黄牌停赛",
+     "player": "碧克文",
+     "reason": "",
      "status": "suspended"
     },
     {
      "team": "away",
-     "player": "菲林",
-     "reason": "前锋·膝关节损伤",
+     "player": "柏柏基安普鲁斯",
+     "reason": "膝伤",
      "status": "out"
     },
     {
      "team": "away",
-     "player": "帕帕吉安诺普洛斯",
-     "reason": "后卫·膝关节损伤",
+     "player": "奇云芬宁",
+     "reason": "膝伤",
      "status": "out"
     },
     {
      "team": "away",
-     "player": "雷德金",
-     "reason": "膝关节损伤",
-     "status": "out"
+     "player": "伊巴谦施斯",
+     "reason": "足伤",
+     "status": "doubt"
     },
     {
      "team": "away",
-     "player": "西塞",
-     "reason": "后卫·踝关节受伤",
-     "status": "out"
+     "player": "阿祖安凯姆",
+     "reason": "不详",
+     "status": "doubt"
     },
     {
      "team": "away",
-     "player": "赫尔姆",
-     "reason": "前锋·膝关节损伤",
-     "status": "out"
+     "player": "夏维马菲斯",
+     "reason": "不详",
+     "status": "doubt"
     },
     {
      "team": "away",
-     "player": "穆亚尼奇",
-     "reason": "中场·轮休",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "奥特鲁德",
-     "reason": "守门员·轮休",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "埃德",
-     "reason": "中场·受伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "博格奎斯特",
-     "reason": "后卫·轮休",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "豪斯纳",
-     "reason": "后卫·轮休",
-     "status": "out"
+     "player": "贝治基斯",
+     "reason": "患病",
+     "status": "doubt"
     }
    ],
    "result": {
@@ -3854,7 +3848,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T10:12:30+08:00",
+   "generated_at": "2026-11-03T10:31:34+08:00",
    "extras": {
     "lam_home": 1.431,
     "lam_away": 0.935,
@@ -3889,6 +3883,10 @@
     },
     "form_net": {
      "home_7": [
+      {
+       "gf": 2,
+       "ga": 1
+      },
       {
        "gf": 1,
        "ga": 1
@@ -3960,6 +3958,10 @@
      ],
      "home_home": [
       {
+       "gf": 2,
+       "ga": 1
+      },
+      {
        "gf": 1,
        "ga": 1
       },
@@ -3997,6 +3999,10 @@
       }
      ],
      "away_7": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
       {
        "gf": 2,
        "ga": 2
@@ -4064,6 +4070,10 @@
      ],
      "away_away": [
       {
+       "gf": 1,
+       "ga": 2
+      },
+      {
        "gf": 0,
        "ga": 0
       },
@@ -4101,82 +4111,64 @@
      "home": {
       "out": [
        {
-        "name": "K.霍尔门",
-        "reason": "中场·膝关节损伤"
+        "name": "奇云贺尔文",
+        "reason": "膝伤"
        },
        {
-        "name": "奥克尔森",
-        "reason": "中场·膝关节损伤"
+        "name": "科卡臣",
+        "reason": "十字韧带"
        },
        {
-        "name": "丹夸",
-        "reason": "中场·患病"
+        "name": "丹尼斯高兰达",
+        "reason": "肋骨"
        }
       ],
-      "doubtful": [],
+      "doubtful": [
+       {
+        "name": "丹克华",
+        "reason": "不详"
+       },
+       {
+        "name": "赫贝治",
+        "reason": "鼠蹊"
+       }
+      ],
       "suspended": [
        {
-        "name": "科兰德",
-        "reason": "中场·无法出战"
-       },
-       {
-        "name": "葛雷维奥斯",
-        "reason": "中场·无法出战"
-       },
-       {
-        "name": "斯莱茨乔",
-        "reason": "中场·无法出战"
-       },
-       {
-        "name": "贝克曼",
-        "reason": "后卫·累计黄牌停赛"
+        "name": "碧克文",
+        "reason": ""
        }
       ]
      },
      "away": {
       "out": [
        {
-        "name": "菲林",
-        "reason": "前锋·膝关节损伤"
+        "name": "柏柏基安普鲁斯",
+        "reason": "膝伤"
        },
        {
-        "name": "帕帕吉安诺普洛斯",
-        "reason": "后卫·膝关节损伤"
-       },
-       {
-        "name": "雷德金",
-        "reason": "膝关节损伤"
-       },
-       {
-        "name": "西塞",
-        "reason": "后卫·踝关节受伤"
-       },
-       {
-        "name": "赫尔姆",
-        "reason": "前锋·膝关节损伤"
-       },
-       {
-        "name": "穆亚尼奇",
-        "reason": "中场·轮休"
-       },
-       {
-        "name": "奥特鲁德",
-        "reason": "守门员·轮休"
-       },
-       {
-        "name": "埃德",
-        "reason": "中场·受伤"
-       },
-       {
-        "name": "博格奎斯特",
-        "reason": "后卫·轮休"
-       },
-       {
-        "name": "豪斯纳",
-        "reason": "后卫·轮休"
+        "name": "奇云芬宁",
+        "reason": "膝伤"
        }
       ],
-      "doubtful": [],
+      "doubtful": [
+       {
+        "name": "伊巴谦施斯",
+        "reason": "足伤"
+       },
+       {
+        "name": "阿祖安凯姆",
+        "reason": "不详"
+       },
+       {
+        "name": "夏维马菲斯",
+        "reason": "不详"
+       },
+       {
+        "name": "贝治基斯",
+        "reason": "患病"
+       }
+      ],
       "suspended": []
      }
     },
@@ -5475,7 +5467,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T10:12:30+08:00",
+   "generated_at": "2026-11-03T10:31:34+08:00",
    "extras": {
     "table": [
      {
@@ -5633,6 +5625,10 @@
     "form_net": {
      "home_7": [
       {
+       "gf": 0,
+       "ga": 3
+      },
+      {
        "gf": 2,
        "ga": 2
       },
@@ -5727,13 +5723,13 @@
       {
        "gf": 2,
        "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
       }
      ],
      "home_home": [
+      {
+       "gf": 0,
+       "ga": 3
+      },
       {
        "gf": 4,
        "ga": 4
@@ -5797,6 +5793,10 @@
      ],
      "away_7": [
       {
+       "gf": 3,
+       "ga": 0
+      },
+      {
        "gf": 0,
        "ga": 0
       },
@@ -5887,10 +5887,6 @@
       {
        "gf": 0,
        "ga": 4
-      },
-      {
-       "gf": 0,
-       "ga": 0
       },
       {
        "gf": 0,
@@ -5898,6 +5894,10 @@
       }
      ],
      "away_away": [
+      {
+       "gf": 3,
+       "ga": 0
+      },
       {
        "gf": 1,
        "ga": 2
@@ -7289,7 +7289,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T10:12:30+08:00",
+   "generated_at": "2026-11-03T10:31:34+08:00",
    "extras": {
     "lam_home": 1.215,
     "lam_away": 0.808,
@@ -7326,6 +7326,10 @@
      "home_7": [
       {
        "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
        "ga": 0
       },
       {
@@ -7360,6 +7364,10 @@
      "home_home": [
       {
        "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
        "ga": 0
       },
       {
@@ -7376,6 +7384,10 @@
       }
      ],
      "away_7": [
+      {
+       "gf": 4,
+       "ga": 1
+      },
       {
        "gf": 0,
        "ga": 0
@@ -7398,6 +7410,10 @@
       }
      ],
      "away_away": [
+      {
+       "gf": 4,
+       "ga": 1
+      },
       {
        "gf": 0,
        "ga": 3
@@ -8791,8 +8807,8 @@
     },
     {
      "team": "away",
-     "player": "格拉利什",
-     "reason": "前锋·轮休",
+     "player": "班夫韦迪",
+     "reason": "后卫",
      "status": "out"
     },
     {
@@ -8818,7 +8834,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T10:12:30+08:00",
+   "generated_at": "2026-11-03T10:31:34+08:00",
    "extras": {
     "table": [
      {
@@ -8976,6 +8992,10 @@
     "form_net": {
      "home_7": [
       {
+       "gf": 0,
+       "ga": 1
+      },
+      {
        "gf": 1,
        "ga": 3
       },
@@ -9070,13 +9090,13 @@
       {
        "gf": 3,
        "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 1
       }
      ],
      "home_home": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
       {
        "gf": 0,
        "ga": 1
@@ -9139,6 +9159,10 @@
       }
      ],
      "away_7": [
+      {
+       "gf": 1,
+       "ga": 0
+      },
       {
        "gf": 3,
        "ga": 1
@@ -9234,13 +9258,13 @@
       {
        "gf": 1,
        "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 1
       }
      ],
      "away_away": [
+      {
+       "gf": 1,
+       "ga": 0
+      },
       {
        "gf": 0,
        "ga": 2
@@ -9396,8 +9420,8 @@
      "away": {
       "out": [
        {
-        "name": "格拉利什",
-        "reason": "前锋·轮休"
+        "name": "班夫韦迪",
+        "reason": "后卫"
        }
       ],
       "doubtful": [
@@ -10663,7 +10687,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T10:12:30+08:00",
+   "generated_at": "2026-11-03T10:31:34+08:00",
    "extras": {
     "table": [
      {
@@ -10821,6 +10845,10 @@
     "form_net": {
      "home_7": [
       {
+       "gf": 2,
+       "ga": 1
+      },
+      {
        "gf": 0,
        "ga": 1
       },
@@ -10863,6 +10891,10 @@
      ],
      "home_home": [
       {
+       "gf": 2,
+       "ga": 1
+      },
+      {
        "gf": 1,
        "ga": 1
       },
@@ -10880,6 +10912,10 @@
       }
      ],
      "away_7": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
       {
        "gf": 0,
        "ga": 2
@@ -10975,13 +11011,13 @@
       {
        "gf": 0,
        "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
       }
      ],
      "away_away": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
       {
        "gf": 0,
        "ga": 2
@@ -12300,7 +12336,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T10:12:30+08:00",
+   "generated_at": "2026-11-03T10:31:34+08:00",
    "extras": {
     "lam_home": 3.049,
     "lam_away": 0.881,
@@ -12335,6 +12371,10 @@
     },
     "form_net": {
      "home_7": [
+      {
+       "gf": 1,
+       "ga": 0
+      },
       {
        "gf": 2,
        "ga": 1
@@ -12430,13 +12470,13 @@
       {
        "gf": 3,
        "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 1
       }
      ],
      "home_home": [
+      {
+       "gf": 1,
+       "ga": 0
+      },
       {
        "gf": 4,
        "ga": 1
@@ -12512,6 +12552,10 @@
      ],
      "away_7": [
       {
+       "gf": 0,
+       "ga": 1
+      },
+      {
        "gf": 4,
        "ga": 1
       },
@@ -12545,6 +12589,10 @@
       }
      ],
      "away_away": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
       {
        "gf": 4,
        "ga": 1
@@ -13791,7 +13839,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T10:12:30+08:00",
+   "generated_at": "2026-11-03T10:31:34+08:00",
    "extras": {
     "lam_home": 1.453,
     "lam_away": 1.11,
@@ -13827,6 +13875,10 @@
     "form_net": {
      "home_7": [
       {
+       "gf": 2,
+       "ga": 1
+      },
+      {
        "gf": 1,
        "ga": 1
       },
@@ -13841,6 +13893,10 @@
      ],
      "home_home": [
       {
+       "gf": 2,
+       "ga": 1
+      },
+      {
        "gf": 1,
        "ga": 1
       },
@@ -13854,6 +13910,10 @@
       }
      ],
      "away_7": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
       {
        "gf": 1,
        "ga": 1
@@ -13908,6 +13968,10 @@
       }
      ],
      "away_away": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
       {
        "gf": 2,
        "ga": 1
