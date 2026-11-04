@@ -34,9 +34,9 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 51,
-    "defence": 85,
-    "control": 85,
+    "attack": 59,
+    "defence": 80,
+    "control": 83,
     "form": 68,
     "value": 24,
     "motivation": 29,
@@ -68,8 +68,8 @@
     ]
    },
    "metrics_away": {
-    "attack": 20,
-    "defence": 76,
+    "attack": 24,
+    "defence": 59,
     "control": 22,
     "form": 39,
     "value": 2,
@@ -103,11 +103,13 @@
    },
    "momentum": {
     "labels": [
+     "T-4",
      "T-3",
      "T-2",
      "T-1"
     ],
     "home": [
+     3.0,
      1.0,
      1.0,
      4.0
@@ -115,7 +117,8 @@
     "away": [
      0.0,
      6.0,
-     1.0
+     1.0,
+     4.0
     ]
    },
    "forecasts": [
@@ -224,7 +227,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "lam_home": 0.971,
     "lam_away": 0.768,
@@ -468,7 +471,7 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 41,
+    "attack": 39,
     "defence": 51,
     "control": 46,
     "form": 76,
@@ -547,13 +550,13 @@
      "T-1"
     ],
     "home": [
-     2.0,
      3.0,
      2.0,
      1.0,
      1.0,
      1.0,
      1.0,
+     0.0,
      0.0
     ],
     "away": [
@@ -692,7 +695,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "lam_home": 1.72,
     "lam_away": 1.22,
@@ -1257,7 +1260,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "lam_home": 0.191,
     "lam_away": 1.696,
@@ -1400,8 +1403,8 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 29,
-    "defence": 49,
+    "attack": 37,
+    "defence": 44,
     "control": 22,
     "form": 17,
     "value": 27,
@@ -1434,7 +1437,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 15,
+    "attack": 17,
     "defence": 95,
     "control": 51,
     "form": 68,
@@ -1593,7 +1596,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "lam_home": 1.347,
     "lam_away": 0.601,
@@ -1937,8 +1940,8 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 61,
-    "defence": 15,
+    "attack": 66,
+    "defence": 10,
     "control": 22,
     "form": 51,
     "value": 5,
@@ -1971,8 +1974,8 @@
     ]
    },
    "metrics_away": {
-    "attack": 34,
-    "defence": 68,
+    "attack": 29,
+    "defence": 71,
     "control": 54,
     "form": 20,
     "value": 56,
@@ -2006,6 +2009,7 @@
    },
    "momentum": {
     "labels": [
+     "T-4",
      "T-3",
      "T-2",
      "T-1"
@@ -2013,9 +2017,11 @@
     "home": [
      3.0,
      1.0,
-     2.0
+     2.0,
+     4.0
     ],
     "away": [
+     2.0,
      1.0,
      0.0,
      0.0
@@ -2127,7 +2133,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "lam_home": 1.468,
     "lam_away": 0.745,
@@ -2611,8 +2617,8 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 61,
-    "defence": 15,
+    "attack": 66,
+    "defence": 10,
     "control": 22,
     "form": 51,
     "value": 5,
@@ -2646,7 +2652,7 @@
    },
    "metrics_away": {
     "attack": 83,
-    "defence": 32,
+    "defence": 34,
     "control": 76,
     "form": 76,
     "value": 98,
@@ -2794,7 +2800,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "lam_home": 0.72,
     "lam_away": 1.567,
@@ -3324,7 +3330,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "table": [
      {
@@ -4156,7 +4162,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "table": [
      {
@@ -4886,7 +4892,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "lam_home": 2.404,
     "lam_away": 0.623,
@@ -5576,7 +5582,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "lam_home": 1.971,
     "lam_away": 1.036,
@@ -6070,7 +6076,7 @@
    "metrics_home": {
     "attack": 58,
     "defence": 26,
-    "control": 53,
+    "control": 47,
     "form": 74,
     "value": 95,
     "motivation": 0,
@@ -6320,7 +6326,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "lam_home": 2.004,
     "lam_away": 1.19,
@@ -6770,7 +6776,7 @@
    "metrics_home": {
     "attack": 42,
     "defence": 16,
-    "control": 21,
+    "control": 26,
     "form": 47,
     "value": 53,
     "motivation": 0,
@@ -7011,7 +7017,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "lam_home": 0.637,
     "lam_away": 2.02,
@@ -7383,7 +7389,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "table": [
      {
@@ -7786,7 +7792,7 @@
     "settled_at": "2026-09-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-03T19:01:01+08:00",
+   "generated_at": "2026-11-04T08:14:37+08:00",
    "extras": {
     "table": [
      {
