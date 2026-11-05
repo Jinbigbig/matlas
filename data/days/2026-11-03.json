@@ -2254,6 +2254,34 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "away": {
+      "out": [
+       {
+        "name": "Angelo Stiller",
+        "reason": "腹股沟伤"
+       },
+       {
+        "name": "Dan-Axel Zagadou",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Justin Diehl",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Josha Vagnoman",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Leo Sauer",
+        "reason": "肌肉伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-11-02 14:31",
@@ -2527,73 +2555,6 @@
        "ga": 2
       }
      ]
-    },
-    "injuries": {
-     "home": {
-      "out": [],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "埃丁",
-        "reason": "中场·未进入大名单"
-       },
-       {
-        "name": "艾汉",
-        "reason": "后卫·未进入大名单"
-       },
-       {
-        "name": "居内尔",
-        "reason": "前锋·未进入大名单"
-       },
-       {
-        "name": "卡拉塔斯",
-        "reason": "后卫·未进入大名单"
-       },
-       {
-        "name": "A.伊尔马兹",
-        "reason": "守门员·未进入大名单"
-       },
-       {
-        "name": "尤尼亚",
-        "reason": "后卫·未进入大名单"
-       }
-      ]
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Angelo Stiller",
-        "reason": "腹股沟伤"
-       },
-       {
-        "name": "Dan-Axel Zagadou",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Justin Diehl",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Josha Vagnoman",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Leo Sauer",
-        "reason": "肌肉伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "斯特吉奥",
-        "reason": "后卫·未进入大名单"
-       },
-       {
-        "name": "德尔利亚恰",
-        "reason": "守门员·未进入大名单"
-       }
-      ]
-     }
     },
     "weather": {
      "t_min": 16,
@@ -3173,7 +3134,39 @@
     "goals_hit": false,
     "htft_hit": true,
     "settled_at": "2026-11-03"
-   }
+   },
+   "injuries": [
+    {
+     "team": "away",
+     "player": "Angelo Stiller",
+     "reason": "腹股沟伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Dan-Axel Zagadou",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Justin Diehl",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Josha Vagnoman",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Leo Sauer",
+     "reason": "肌肉伤",
+     "status": "out"
+    }
+   ]
   },
   {
    "match_id": "2026-11-03-005",
@@ -3615,6 +3608,49 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [],
+      "doubtful": [
+       {
+        "name": "Cristian Romero",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "João Cardoso",
+        "reason": "大腿伤"
+       }
+      ],
+      "suspended": [
+       {
+        "name": "Morten Hjulmand",
+        "reason": "红牌停赛"
+       }
+      ]
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Ismael Saibari",
+        "reason": "伤情"
+       },
+       {
+        "name": "Jamal Musiala",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Luis Díaz",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Serge Gnabry",
+        "reason": "肌肉伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-11-02 14:31",
@@ -4033,54 +4069,6 @@
        "ga": 1
       }
      ]
-    },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "卡多索",
-        "reason": "中场·大腿受伤"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Cristian Romero",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "João Cardoso",
-        "reason": "大腿伤"
-       }
-      ],
-      "suspended": [
-       {
-        "name": "Morten Hjulmand",
-        "reason": "红牌停赛"
-       }
-      ]
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Ismael Saibari",
-        "reason": "伤情"
-       },
-       {
-        "name": "Jamal Musiala",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Luis Díaz",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Serge Gnabry",
-        "reason": "肌肉伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
     },
     "weather": {
      "t_min": 8,
@@ -4842,7 +4830,51 @@
     "goals_hit": false,
     "htft_hit": false,
     "settled_at": "2026-11-03"
-   }
+   },
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Cristian Romero",
+     "reason": "肌肉伤",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "João Cardoso",
+     "reason": "大腿伤",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "Morten Hjulmand",
+     "reason": "红牌停赛",
+     "status": "suspended"
+    },
+    {
+     "team": "away",
+     "player": "Ismael Saibari",
+     "reason": "伤情",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Jamal Musiala",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Luis Díaz",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Serge Gnabry",
+     "reason": "肌肉伤",
+     "status": "out"
+    }
+   ]
   },
   {
    "match_id": "2026-11-03-006",
@@ -6593,6 +6625,79 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "Bart Nieuwkoop",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Jordan Bos",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Thomas Beelen",
+        "reason": "骨折"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Gijs Smal",
+        "reason": "踝伤"
+       },
+       {
+        "name": "Jeremiah St. Juste",
+        "reason": "腿伤"
+       },
+       {
+        "name": "Reiss Nelson",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Shaqueel van Persie",
+        "reason": "碰撞伤"
+       }
+      ],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Curtis Jones",
+        "reason": "大腿伤"
+       },
+       {
+        "name": "John Stones",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Lautaro Martínez",
+        "reason": "大腿伤"
+       },
+       {
+        "name": "Luis Henrique",
+        "reason": "大腿伤"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Benjamin Pavard",
+        "reason": "大腿伤"
+       },
+       {
+        "name": "Ivan Provedel",
+        "reason": "疾病"
+       }
+      ],
+      "suspended": [
+       {
+        "name": "Alessandro Bastoni",
+        "reason": "红牌停赛"
+       }
+      ]
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-11-02 14:31",
@@ -6974,79 +7079,6 @@
        "ga": 1
       }
      ]
-    },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "Bart Nieuwkoop",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Jordan Bos",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Thomas Beelen",
-        "reason": "骨折"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Gijs Smal",
-        "reason": "踝伤"
-       },
-       {
-        "name": "Jeremiah St. Juste",
-        "reason": "腿伤"
-       },
-       {
-        "name": "Reiss Nelson",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Shaqueel van Persie",
-        "reason": "碰撞伤"
-       }
-      ],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Curtis Jones",
-        "reason": "大腿伤"
-       },
-       {
-        "name": "John Stones",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Lautaro Martínez",
-        "reason": "大腿伤"
-       },
-       {
-        "name": "Luis Henrique",
-        "reason": "大腿伤"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Benjamin Pavard",
-        "reason": "大腿伤"
-       },
-       {
-        "name": "Ivan Provedel",
-        "reason": "疾病"
-       }
-      ],
-      "suspended": [
-       {
-        "name": "Alessandro Bastoni",
-        "reason": "红牌停赛"
-       }
-      ]
-     }
     },
     "weather": {
      "t_min": 7,
@@ -7835,7 +7867,93 @@
     "goals_hit": false,
     "htft_hit": true,
     "settled_at": "2026-11-03"
-   }
+   },
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Bart Nieuwkoop",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Jordan Bos",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Thomas Beelen",
+     "reason": "骨折",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Gijs Smal",
+     "reason": "踝伤",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "Jeremiah St. Juste",
+     "reason": "腿伤",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "Reiss Nelson",
+     "reason": "肌肉伤",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "Shaqueel van Persie",
+     "reason": "碰撞伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Curtis Jones",
+     "reason": "大腿伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "John Stones",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Lautaro Martínez",
+     "reason": "大腿伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Luis Henrique",
+     "reason": "大腿伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Benjamin Pavard",
+     "reason": "大腿伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Ivan Provedel",
+     "reason": "疾病",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Alessandro Bastoni",
+     "reason": "红牌停赛",
+     "status": "suspended"
+    }
+   ]
   },
   {
    "match_id": "2026-11-03-008",
@@ -8277,6 +8395,57 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "Benjamin Šeško",
+        "reason": "腿伤"
+       },
+       {
+        "name": "Luke Shaw",
+        "reason": "伤情"
+       },
+       {
+        "name": "Marcus Rashford",
+        "reason": "髋伤"
+       },
+       {
+        "name": "Manuel Ugarte",
+        "reason": "膝伤"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Patrick Dorgu",
+        "reason": "腿筋伤"
+       }
+      ],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Lorenzo Pellegrini",
+        "reason": "大腿伤"
+       },
+       {
+        "name": "Manu Koné",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Mile Svilar",
+        "reason": "脚趾伤"
+       },
+       {
+        "name": "Paulo Dybala",
+        "reason": "小腿伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-11-02 14:31",
@@ -8655,57 +8824,6 @@
        "ga": 0
       }
      ]
-    },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "Benjamin Šeško",
-        "reason": "腿伤"
-       },
-       {
-        "name": "Luke Shaw",
-        "reason": "伤情"
-       },
-       {
-        "name": "Marcus Rashford",
-        "reason": "髋伤"
-       },
-       {
-        "name": "Manuel Ugarte",
-        "reason": "膝伤"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Patrick Dorgu",
-        "reason": "腿筋伤"
-       }
-      ],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Lorenzo Pellegrini",
-        "reason": "大腿伤"
-       },
-       {
-        "name": "Manu Koné",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Mile Svilar",
-        "reason": "脚趾伤"
-       },
-       {
-        "name": "Paulo Dybala",
-        "reason": "小腿伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
     },
     "weather": {
      "t_min": 9,
@@ -9365,7 +9483,63 @@
     "goals_hit": false,
     "htft_hit": false,
     "settled_at": "2026-11-03"
-   }
+   },
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Benjamin Šeško",
+     "reason": "腿伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Luke Shaw",
+     "reason": "伤情",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Marcus Rashford",
+     "reason": "髋伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Manuel Ugarte",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Patrick Dorgu",
+     "reason": "腿筋伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Lorenzo Pellegrini",
+     "reason": "大腿伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Manu Koné",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Mile Svilar",
+     "reason": "脚趾伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Paulo Dybala",
+     "reason": "小腿伤",
+     "status": "out"
+    }
+   ]
   },
   {
    "match_id": "2026-11-03-009",
@@ -9807,6 +9981,56 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "Andreas Christensen",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Dani Olmo",
+        "reason": "腹股沟伤"
+       },
+       {
+        "name": "Eric García",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Jules Koundé",
+        "reason": "踝伤"
+       },
+       {
+        "name": "Roony Bardghji",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Xavi Espart",
+        "reason": "踝伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Amadou Onana",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Aaron Wan-Bissaka",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Matteo Ruggeri",
+        "reason": "肌肉伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-11-02 14:31",
@@ -10217,65 +10441,6 @@
        "ga": 1
       }
      ]
-    },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "Andreas Christensen",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Dani Olmo",
-        "reason": "腹股沟伤"
-       },
-       {
-        "name": "Eric García",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Jules Koundé",
-        "reason": "踝伤"
-       },
-       {
-        "name": "Roony Bardghji",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Xavi Espart",
-        "reason": "踝伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Amadou Onana",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Aaron Wan-Bissaka",
-        "reason": "肌肉伤"
-       },
-       {
-        "name": "Matteo Ruggeri",
-        "reason": "肌肉伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "马乔",
-        "reason": "前锋·未进入大名单"
-       },
-       {
-        "name": "西塞",
-        "reason": "后卫·未进入大名单"
-       }
-      ]
-     }
     },
     "weather": {
      "t_min": 12,
@@ -10839,7 +11004,63 @@
     "goals_hit": true,
     "htft_hit": true,
     "settled_at": "2026-11-03"
-   }
+   },
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Andreas Christensen",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Dani Olmo",
+     "reason": "腹股沟伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Eric García",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Jules Koundé",
+     "reason": "踝伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Roony Bardghji",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Xavi Espart",
+     "reason": "踝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Amadou Onana",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Aaron Wan-Bissaka",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Matteo Ruggeri",
+     "reason": "肌肉伤",
+     "status": "out"
+    }
+   ]
   },
   {
    "match_id": "2026-11-03-010",
@@ -12775,6 +12996,50 @@
      },
      "kickoff": ""
     },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "August Mikkelsen",
+        "reason": "腹股沟伤"
+       },
+       {
+        "name": "Isak Sjong",
+        "reason": "伤情"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Håkon Evjen",
+        "reason": "膝伤"
+       }
+      ],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Ayase Ueda",
+        "reason": "足伤"
+       },
+       {
+        "name": "Hamza Igamane",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Tiago Santos",
+        "reason": "膝伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": [
+       {
+        "name": "Ethan Mbappé",
+        "reason": "红牌停赛"
+       }
+      ]
+     }
+    },
     "odds_ticks": [
      {
       "t": "2026-11-02 14:31",
@@ -13152,50 +13417,6 @@
        "ga": 2
       }
      ]
-    },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "August Mikkelsen",
-        "reason": "腹股沟伤"
-       },
-       {
-        "name": "Isak Sjong",
-        "reason": "伤情"
-       }
-      ],
-      "doubtful": [
-       {
-        "name": "Håkon Evjen",
-        "reason": "膝伤"
-       }
-      ],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "Ayase Ueda",
-        "reason": "足伤"
-       },
-       {
-        "name": "Hamza Igamane",
-        "reason": "膝伤"
-       },
-       {
-        "name": "Tiago Santos",
-        "reason": "膝伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "Ethan Mbappé",
-        "reason": "红牌停赛"
-       }
-      ]
-     }
     },
     "weather": {
      "t_min": 9,
@@ -13764,7 +13985,51 @@
     "goals_hit": false,
     "htft_hit": false,
     "settled_at": "2026-11-03"
-   }
+   },
+   "injuries": [
+    {
+     "team": "home",
+     "player": "August Mikkelsen",
+     "reason": "腹股沟伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Isak Sjong",
+     "reason": "伤情",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Håkon Evjen",
+     "reason": "膝伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "Ayase Ueda",
+     "reason": "足伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Hamza Igamane",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Tiago Santos",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Ethan Mbappé",
+     "reason": "红牌停赛",
+     "status": "suspended"
+    }
+   ]
   }
  ]
 }
