@@ -258,7 +258,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "lam_home": 1.461,
     "lam_away": 2.171,
@@ -732,7 +732,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "lam_home": 1.986,
     "lam_away": 1.554,
@@ -1325,7 +1325,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "lam_home": 1.624,
     "lam_away": 1.589,
@@ -1457,12 +1457,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 26,
+    "rank": 33,
     "points": 3,
-    "played": 3,
+    "played": 4,
     "win": 1,
     "draw": 0,
-    "loss": 2,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/116.png"
    },
@@ -1770,7 +1770,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "table": [
      {
@@ -1781,93 +1781,93 @@
      },
      {
       "rank": 2,
+      "name": "皇家马德里",
+      "pts": 12,
+      "p": 4
+     },
+     {
+      "rank": 3,
+      "name": "阿森纳",
+      "pts": 10,
+      "p": 4
+     },
+     {
+      "rank": 4,
+      "name": "科莫",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 5,
       "name": "巴塞罗那",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 3,
+      "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 4,
+      "rank": 7,
+      "name": "曼城",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 8,
       "name": "利物浦",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 5,
-      "name": "皇家马德里",
+      "rank": 9,
+      "name": "布鲁日",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 6,
+      "rank": 10,
       "name": "葡萄牙体育",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 7,
+      "rank": 11,
       "name": "皇家贝蒂斯",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 8,
+      "rank": 12,
+      "name": "多特蒙德",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 13,
       "name": "拜仁慕尼黑",
       "pts": 8,
       "p": 4
      },
      {
-      "rank": 9,
-      "name": "阿森纳",
-      "pts": 7,
-      "p": 3
-     },
-     {
-      "rank": 10,
+      "rank": 14,
       "name": "斯图加特",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "科莫",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 12,
-      "name": "曼城",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 13,
-      "name": "布鲁日",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 14,
+      "rank": 15,
       "name": "国际米兰",
       "pts": 6,
       "p": 4
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "林茨",
       "pts": 6,
       "p": 4
-     },
-     {
-      "rank": 16,
-      "name": "多特蒙德",
-      "pts": 6,
-      "p": 3
      },
      {
       "rank": 17,
@@ -1883,105 +1883,105 @@
      },
      {
       "rank": 19,
+      "name": "费内巴切",
+      "pts": 5,
+      "p": 4
+     },
+     {
+      "rank": 20,
       "name": "罗马",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 20,
+      "rank": 21,
       "name": "顿涅茨克矿工",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 21,
-      "name": "埃因霍温",
-      "pts": 4,
-      "p": 3
-     },
-     {
       "rank": 22,
-      "name": "马德里竞技",
+      "name": "Viking",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 23,
-      "name": "博德闪耀",
+      "name": "马德里竞技",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 24,
-      "name": "那不勒斯",
-      "pts": 3,
-      "p": 3
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 25,
-      "name": "Sabah",
-      "pts": 3,
-      "p": 3
+      "name": "博德闪耀",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 26,
-      "name": "朗斯",
+      "name": "波尔图",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 27,
-      "name": "雅典AEK",
+      "name": "那不勒斯",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 28,
-      "name": "RB莱比锡",
-      "pts": 3,
-      "p": 3
-     },
-     {
-      "rank": 29,
       "name": "比利亚雷亚尔",
       "pts": 3,
       "p": 4
      },
      {
+      "rank": 29,
+      "name": "雅典AEK",
+      "pts": 3,
+      "p": 4
+     },
+     {
       "rank": 30,
-      "name": "费耶诺德",
+      "name": "RB莱比锡",
       "pts": 3,
       "p": 4
      },
      {
       "rank": 31,
-      "name": "费内巴切",
-      "pts": 2,
-      "p": 3
+      "name": "Sabah",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 32,
-      "name": "布拉格斯拉维亚",
-      "pts": 1,
-      "p": 3
+      "name": "费耶诺德",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 33,
-      "name": "Viking",
-      "pts": 1,
-      "p": 3
+      "name": "朗斯",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 34,
-      "name": "里尔",
+      "name": "布拉格斯拉维亚",
       "pts": 1,
       "p": 4
      },
      {
       "rank": 35,
-      "name": "波尔图",
-      "pts": 0,
-      "p": 3
+      "name": "里尔",
+      "pts": 1,
+      "p": 4
      },
      {
       "rank": 36,
@@ -2321,7 +2321,7 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 14,
+    "rank": 15,
     "points": 6,
     "played": 4,
     "win": 2,
@@ -2335,10 +2335,10 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 13,
-    "points": 6,
-    "played": 3,
-    "win": 2,
+    "rank": 9,
+    "points": 9,
+    "played": 4,
+    "win": 3,
     "draw": 0,
     "loss": 1,
     "form": "",
@@ -2607,7 +2607,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "table": [
      {
@@ -2618,93 +2618,93 @@
      },
      {
       "rank": 2,
+      "name": "皇家马德里",
+      "pts": 12,
+      "p": 4
+     },
+     {
+      "rank": 3,
+      "name": "阿森纳",
+      "pts": 10,
+      "p": 4
+     },
+     {
+      "rank": 4,
+      "name": "科莫",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 5,
       "name": "巴塞罗那",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 3,
+      "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 4,
+      "rank": 7,
+      "name": "曼城",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 8,
       "name": "利物浦",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 5,
-      "name": "皇家马德里",
+      "rank": 9,
+      "name": "布鲁日",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 6,
+      "rank": 10,
       "name": "葡萄牙体育",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 7,
+      "rank": 11,
       "name": "皇家贝蒂斯",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 8,
+      "rank": 12,
+      "name": "多特蒙德",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 13,
       "name": "拜仁慕尼黑",
       "pts": 8,
       "p": 4
      },
      {
-      "rank": 9,
-      "name": "阿森纳",
-      "pts": 7,
-      "p": 3
-     },
-     {
-      "rank": 10,
+      "rank": 14,
       "name": "斯图加特",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "科莫",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 12,
-      "name": "曼城",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 13,
-      "name": "布鲁日",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 14,
+      "rank": 15,
       "name": "国际米兰",
       "pts": 6,
       "p": 4
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "林茨",
       "pts": 6,
       "p": 4
-     },
-     {
-      "rank": 16,
-      "name": "多特蒙德",
-      "pts": 6,
-      "p": 3
      },
      {
       "rank": 17,
@@ -2720,105 +2720,105 @@
      },
      {
       "rank": 19,
+      "name": "费内巴切",
+      "pts": 5,
+      "p": 4
+     },
+     {
+      "rank": 20,
       "name": "罗马",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 20,
+      "rank": 21,
       "name": "顿涅茨克矿工",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 21,
-      "name": "埃因霍温",
-      "pts": 4,
-      "p": 3
-     },
-     {
       "rank": 22,
-      "name": "马德里竞技",
+      "name": "Viking",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 23,
-      "name": "博德闪耀",
+      "name": "马德里竞技",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 24,
-      "name": "那不勒斯",
-      "pts": 3,
-      "p": 3
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 25,
-      "name": "Sabah",
-      "pts": 3,
-      "p": 3
+      "name": "博德闪耀",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 26,
-      "name": "朗斯",
+      "name": "波尔图",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 27,
-      "name": "雅典AEK",
+      "name": "那不勒斯",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 28,
-      "name": "RB莱比锡",
-      "pts": 3,
-      "p": 3
-     },
-     {
-      "rank": 29,
       "name": "比利亚雷亚尔",
       "pts": 3,
       "p": 4
      },
      {
+      "rank": 29,
+      "name": "雅典AEK",
+      "pts": 3,
+      "p": 4
+     },
+     {
       "rank": 30,
-      "name": "费耶诺德",
+      "name": "RB莱比锡",
       "pts": 3,
       "p": 4
      },
      {
       "rank": 31,
-      "name": "费内巴切",
-      "pts": 2,
-      "p": 3
+      "name": "Sabah",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 32,
-      "name": "布拉格斯拉维亚",
-      "pts": 1,
-      "p": 3
+      "name": "费耶诺德",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 33,
-      "name": "Viking",
-      "pts": 1,
-      "p": 3
+      "name": "朗斯",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 34,
-      "name": "里尔",
+      "name": "布拉格斯拉维亚",
       "pts": 1,
       "p": 4
      },
      {
       "rank": 35,
-      "name": "波尔图",
-      "pts": 0,
-      "p": 3
+      "name": "里尔",
+      "pts": 1,
+      "p": 4
      },
      {
       "rank": 36,
@@ -3298,10 +3298,10 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 9,
-    "points": 7,
-    "played": 3,
-    "win": 2,
+    "rank": 3,
+    "points": 10,
+    "played": 4,
+    "win": 3,
     "draw": 1,
     "loss": 0,
     "form": "",
@@ -3312,7 +3312,7 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 34,
+    "rank": 35,
     "points": 1,
     "played": 4,
     "win": 0,
@@ -3617,7 +3617,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "table": [
      {
@@ -3628,93 +3628,93 @@
      },
      {
       "rank": 2,
+      "name": "皇家马德里",
+      "pts": 12,
+      "p": 4
+     },
+     {
+      "rank": 3,
+      "name": "阿森纳",
+      "pts": 10,
+      "p": 4
+     },
+     {
+      "rank": 4,
+      "name": "科莫",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 5,
       "name": "巴塞罗那",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 3,
+      "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 4,
+      "rank": 7,
+      "name": "曼城",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 8,
       "name": "利物浦",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 5,
-      "name": "皇家马德里",
+      "rank": 9,
+      "name": "布鲁日",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 6,
+      "rank": 10,
       "name": "葡萄牙体育",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 7,
+      "rank": 11,
       "name": "皇家贝蒂斯",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 8,
+      "rank": 12,
+      "name": "多特蒙德",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 13,
       "name": "拜仁慕尼黑",
       "pts": 8,
       "p": 4
      },
      {
-      "rank": 9,
-      "name": "阿森纳",
-      "pts": 7,
-      "p": 3
-     },
-     {
-      "rank": 10,
+      "rank": 14,
       "name": "斯图加特",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "科莫",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 12,
-      "name": "曼城",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 13,
-      "name": "布鲁日",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 14,
+      "rank": 15,
       "name": "国际米兰",
       "pts": 6,
       "p": 4
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "林茨",
       "pts": 6,
       "p": 4
-     },
-     {
-      "rank": 16,
-      "name": "多特蒙德",
-      "pts": 6,
-      "p": 3
      },
      {
       "rank": 17,
@@ -3730,105 +3730,105 @@
      },
      {
       "rank": 19,
+      "name": "费内巴切",
+      "pts": 5,
+      "p": 4
+     },
+     {
+      "rank": 20,
       "name": "罗马",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 20,
+      "rank": 21,
       "name": "顿涅茨克矿工",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 21,
-      "name": "埃因霍温",
-      "pts": 4,
-      "p": 3
-     },
-     {
       "rank": 22,
-      "name": "马德里竞技",
+      "name": "Viking",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 23,
-      "name": "博德闪耀",
+      "name": "马德里竞技",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 24,
-      "name": "那不勒斯",
-      "pts": 3,
-      "p": 3
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 25,
-      "name": "Sabah",
-      "pts": 3,
-      "p": 3
+      "name": "博德闪耀",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 26,
-      "name": "朗斯",
+      "name": "波尔图",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 27,
-      "name": "雅典AEK",
+      "name": "那不勒斯",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 28,
-      "name": "RB莱比锡",
-      "pts": 3,
-      "p": 3
-     },
-     {
-      "rank": 29,
       "name": "比利亚雷亚尔",
       "pts": 3,
       "p": 4
      },
      {
+      "rank": 29,
+      "name": "雅典AEK",
+      "pts": 3,
+      "p": 4
+     },
+     {
       "rank": 30,
-      "name": "费耶诺德",
+      "name": "RB莱比锡",
       "pts": 3,
       "p": 4
      },
      {
       "rank": 31,
-      "name": "费内巴切",
-      "pts": 2,
-      "p": 3
+      "name": "Sabah",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 32,
-      "name": "布拉格斯拉维亚",
-      "pts": 1,
-      "p": 3
+      "name": "费耶诺德",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 33,
-      "name": "Viking",
-      "pts": 1,
-      "p": 3
+      "name": "朗斯",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 34,
-      "name": "里尔",
+      "name": "布拉格斯拉维亚",
       "pts": 1,
       "p": 4
      },
      {
       "rank": 35,
-      "name": "波尔图",
-      "pts": 0,
-      "p": 3
+      "name": "里尔",
+      "pts": 1,
+      "p": 4
      },
      {
       "rank": 36,
@@ -4148,7 +4148,7 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 29,
+    "rank": 28,
     "points": 3,
     "played": 4,
     "win": 1,
@@ -4162,12 +4162,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 24,
+    "rank": 27,
     "points": 3,
-    "played": 3,
+    "played": 4,
     "win": 1,
     "draw": 0,
-    "loss": 2,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/492.png"
    },
@@ -4476,7 +4476,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "table": [
      {
@@ -4487,93 +4487,93 @@
      },
      {
       "rank": 2,
+      "name": "皇家马德里",
+      "pts": 12,
+      "p": 4
+     },
+     {
+      "rank": 3,
+      "name": "阿森纳",
+      "pts": 10,
+      "p": 4
+     },
+     {
+      "rank": 4,
+      "name": "科莫",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 5,
       "name": "巴塞罗那",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 3,
+      "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 4,
+      "rank": 7,
+      "name": "曼城",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 8,
       "name": "利物浦",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 5,
-      "name": "皇家马德里",
+      "rank": 9,
+      "name": "布鲁日",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 6,
+      "rank": 10,
       "name": "葡萄牙体育",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 7,
+      "rank": 11,
       "name": "皇家贝蒂斯",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 8,
+      "rank": 12,
+      "name": "多特蒙德",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 13,
       "name": "拜仁慕尼黑",
       "pts": 8,
       "p": 4
      },
      {
-      "rank": 9,
-      "name": "阿森纳",
-      "pts": 7,
-      "p": 3
-     },
-     {
-      "rank": 10,
+      "rank": 14,
       "name": "斯图加特",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "科莫",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 12,
-      "name": "曼城",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 13,
-      "name": "布鲁日",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 14,
+      "rank": 15,
       "name": "国际米兰",
       "pts": 6,
       "p": 4
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "林茨",
       "pts": 6,
       "p": 4
-     },
-     {
-      "rank": 16,
-      "name": "多特蒙德",
-      "pts": 6,
-      "p": 3
      },
      {
       "rank": 17,
@@ -4589,105 +4589,105 @@
      },
      {
       "rank": 19,
+      "name": "费内巴切",
+      "pts": 5,
+      "p": 4
+     },
+     {
+      "rank": 20,
       "name": "罗马",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 20,
+      "rank": 21,
       "name": "顿涅茨克矿工",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 21,
-      "name": "埃因霍温",
-      "pts": 4,
-      "p": 3
-     },
-     {
       "rank": 22,
-      "name": "马德里竞技",
+      "name": "Viking",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 23,
-      "name": "博德闪耀",
+      "name": "马德里竞技",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 24,
-      "name": "那不勒斯",
-      "pts": 3,
-      "p": 3
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 25,
-      "name": "Sabah",
-      "pts": 3,
-      "p": 3
+      "name": "博德闪耀",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 26,
-      "name": "朗斯",
+      "name": "波尔图",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 27,
-      "name": "雅典AEK",
+      "name": "那不勒斯",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 28,
-      "name": "RB莱比锡",
-      "pts": 3,
-      "p": 3
-     },
-     {
-      "rank": 29,
       "name": "比利亚雷亚尔",
       "pts": 3,
       "p": 4
      },
      {
+      "rank": 29,
+      "name": "雅典AEK",
+      "pts": 3,
+      "p": 4
+     },
+     {
       "rank": 30,
-      "name": "费耶诺德",
+      "name": "RB莱比锡",
       "pts": 3,
       "p": 4
      },
      {
       "rank": 31,
-      "name": "费内巴切",
-      "pts": 2,
-      "p": 3
+      "name": "Sabah",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 32,
-      "name": "布拉格斯拉维亚",
-      "pts": 1,
-      "p": 3
+      "name": "费耶诺德",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 33,
-      "name": "Viking",
-      "pts": 1,
-      "p": 3
+      "name": "朗斯",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 34,
-      "name": "里尔",
+      "name": "布拉格斯拉维亚",
       "pts": 1,
       "p": 4
      },
      {
       "rank": 35,
-      "name": "波尔图",
-      "pts": 0,
-      "p": 3
+      "name": "里尔",
+      "pts": 1,
+      "p": 4
      },
      {
       "rank": 36,
@@ -5143,7 +5143,7 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 8,
+    "rank": 13,
     "points": 8,
     "played": 4,
     "win": 2,
@@ -5439,7 +5439,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "table": [
      {
@@ -5450,93 +5450,93 @@
      },
      {
       "rank": 2,
+      "name": "皇家马德里",
+      "pts": 12,
+      "p": 4
+     },
+     {
+      "rank": 3,
+      "name": "阿森纳",
+      "pts": 10,
+      "p": 4
+     },
+     {
+      "rank": 4,
+      "name": "科莫",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 5,
       "name": "巴塞罗那",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 3,
+      "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 4,
+      "rank": 7,
+      "name": "曼城",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 8,
       "name": "利物浦",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 5,
-      "name": "皇家马德里",
+      "rank": 9,
+      "name": "布鲁日",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 6,
+      "rank": 10,
       "name": "葡萄牙体育",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 7,
+      "rank": 11,
       "name": "皇家贝蒂斯",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 8,
+      "rank": 12,
+      "name": "多特蒙德",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 13,
       "name": "拜仁慕尼黑",
       "pts": 8,
       "p": 4
      },
      {
-      "rank": 9,
-      "name": "阿森纳",
-      "pts": 7,
-      "p": 3
-     },
-     {
-      "rank": 10,
+      "rank": 14,
       "name": "斯图加特",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "科莫",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 12,
-      "name": "曼城",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 13,
-      "name": "布鲁日",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 14,
+      "rank": 15,
       "name": "国际米兰",
       "pts": 6,
       "p": 4
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "林茨",
       "pts": 6,
       "p": 4
-     },
-     {
-      "rank": 16,
-      "name": "多特蒙德",
-      "pts": 6,
-      "p": 3
      },
      {
       "rank": 17,
@@ -5552,105 +5552,105 @@
      },
      {
       "rank": 19,
+      "name": "费内巴切",
+      "pts": 5,
+      "p": 4
+     },
+     {
+      "rank": 20,
       "name": "罗马",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 20,
+      "rank": 21,
       "name": "顿涅茨克矿工",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 21,
-      "name": "埃因霍温",
-      "pts": 4,
-      "p": 3
-     },
-     {
       "rank": 22,
-      "name": "马德里竞技",
+      "name": "Viking",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 23,
-      "name": "博德闪耀",
+      "name": "马德里竞技",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 24,
-      "name": "那不勒斯",
-      "pts": 3,
-      "p": 3
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 25,
-      "name": "Sabah",
-      "pts": 3,
-      "p": 3
+      "name": "博德闪耀",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 26,
-      "name": "朗斯",
+      "name": "波尔图",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 27,
-      "name": "雅典AEK",
+      "name": "那不勒斯",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 28,
-      "name": "RB莱比锡",
-      "pts": 3,
-      "p": 3
-     },
-     {
-      "rank": 29,
       "name": "比利亚雷亚尔",
       "pts": 3,
       "p": 4
      },
      {
+      "rank": 29,
+      "name": "雅典AEK",
+      "pts": 3,
+      "p": 4
+     },
+     {
       "rank": 30,
-      "name": "费耶诺德",
+      "name": "RB莱比锡",
       "pts": 3,
       "p": 4
      },
      {
       "rank": 31,
-      "name": "费内巴切",
-      "pts": 2,
-      "p": 3
+      "name": "Sabah",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 32,
-      "name": "布拉格斯拉维亚",
-      "pts": 1,
-      "p": 3
+      "name": "费耶诺德",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 33,
-      "name": "Viking",
-      "pts": 1,
-      "p": 3
+      "name": "朗斯",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 34,
-      "name": "里尔",
+      "name": "布拉格斯拉维亚",
       "pts": 1,
       "p": 4
      },
      {
       "rank": 35,
-      "name": "波尔图",
-      "pts": 0,
-      "p": 3
+      "name": "里尔",
+      "pts": 1,
+      "p": 4
      },
      {
       "rank": 36,
@@ -6090,12 +6090,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 28,
+    "rank": 30,
     "points": 3,
-    "played": 3,
+    "played": 4,
     "win": 1,
     "draw": 0,
-    "loss": 2,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/173.png"
    },
@@ -6104,12 +6104,12 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 21,
+    "rank": 24,
     "points": 4,
-    "played": 3,
+    "played": 4,
     "win": 1,
     "draw": 1,
-    "loss": 1,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/197.png"
    },
@@ -6409,7 +6409,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "table": [
      {
@@ -6420,93 +6420,93 @@
      },
      {
       "rank": 2,
+      "name": "皇家马德里",
+      "pts": 12,
+      "p": 4
+     },
+     {
+      "rank": 3,
+      "name": "阿森纳",
+      "pts": 10,
+      "p": 4
+     },
+     {
+      "rank": 4,
+      "name": "科莫",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 5,
       "name": "巴塞罗那",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 3,
+      "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 4,
+      "rank": 7,
+      "name": "曼城",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 8,
       "name": "利物浦",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 5,
-      "name": "皇家马德里",
+      "rank": 9,
+      "name": "布鲁日",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 6,
+      "rank": 10,
       "name": "葡萄牙体育",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 7,
+      "rank": 11,
       "name": "皇家贝蒂斯",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 8,
+      "rank": 12,
+      "name": "多特蒙德",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 13,
       "name": "拜仁慕尼黑",
       "pts": 8,
       "p": 4
      },
      {
-      "rank": 9,
-      "name": "阿森纳",
-      "pts": 7,
-      "p": 3
-     },
-     {
-      "rank": 10,
+      "rank": 14,
       "name": "斯图加特",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "科莫",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 12,
-      "name": "曼城",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 13,
-      "name": "布鲁日",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 14,
+      "rank": 15,
       "name": "国际米兰",
       "pts": 6,
       "p": 4
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "林茨",
       "pts": 6,
       "p": 4
-     },
-     {
-      "rank": 16,
-      "name": "多特蒙德",
-      "pts": 6,
-      "p": 3
      },
      {
       "rank": 17,
@@ -6522,105 +6522,105 @@
      },
      {
       "rank": 19,
+      "name": "费内巴切",
+      "pts": 5,
+      "p": 4
+     },
+     {
+      "rank": 20,
       "name": "罗马",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 20,
+      "rank": 21,
       "name": "顿涅茨克矿工",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 21,
-      "name": "埃因霍温",
-      "pts": 4,
-      "p": 3
-     },
-     {
       "rank": 22,
-      "name": "马德里竞技",
+      "name": "Viking",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 23,
-      "name": "博德闪耀",
+      "name": "马德里竞技",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 24,
-      "name": "那不勒斯",
-      "pts": 3,
-      "p": 3
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 25,
-      "name": "Sabah",
-      "pts": 3,
-      "p": 3
+      "name": "博德闪耀",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 26,
-      "name": "朗斯",
+      "name": "波尔图",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 27,
-      "name": "雅典AEK",
+      "name": "那不勒斯",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 28,
-      "name": "RB莱比锡",
-      "pts": 3,
-      "p": 3
-     },
-     {
-      "rank": 29,
       "name": "比利亚雷亚尔",
       "pts": 3,
       "p": 4
      },
      {
+      "rank": 29,
+      "name": "雅典AEK",
+      "pts": 3,
+      "p": 4
+     },
+     {
       "rank": 30,
-      "name": "费耶诺德",
+      "name": "RB莱比锡",
       "pts": 3,
       "p": 4
      },
      {
       "rank": 31,
-      "name": "费内巴切",
-      "pts": 2,
-      "p": 3
+      "name": "Sabah",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 32,
-      "name": "布拉格斯拉维亚",
-      "pts": 1,
-      "p": 3
+      "name": "费耶诺德",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 33,
-      "name": "Viking",
-      "pts": 1,
-      "p": 3
+      "name": "朗斯",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 34,
-      "name": "里尔",
+      "name": "布拉格斯拉维亚",
       "pts": 1,
       "p": 4
      },
      {
       "rank": 35,
-      "name": "波尔图",
-      "pts": 0,
-      "p": 3
+      "name": "里尔",
+      "pts": 1,
+      "p": 4
      },
      {
       "rank": 36,
@@ -7106,7 +7106,7 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 2,
+    "rank": 5,
     "points": 9,
     "played": 4,
     "win": 3,
@@ -7384,7 +7384,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "table": [
      {
@@ -7395,93 +7395,93 @@
      },
      {
       "rank": 2,
+      "name": "皇家马德里",
+      "pts": 12,
+      "p": 4
+     },
+     {
+      "rank": 3,
+      "name": "阿森纳",
+      "pts": 10,
+      "p": 4
+     },
+     {
+      "rank": 4,
+      "name": "科莫",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 5,
       "name": "巴塞罗那",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 3,
+      "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 4,
+      "rank": 7,
+      "name": "曼城",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 8,
       "name": "利物浦",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 5,
-      "name": "皇家马德里",
+      "rank": 9,
+      "name": "布鲁日",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 6,
+      "rank": 10,
       "name": "葡萄牙体育",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 7,
+      "rank": 11,
       "name": "皇家贝蒂斯",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 8,
+      "rank": 12,
+      "name": "多特蒙德",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 13,
       "name": "拜仁慕尼黑",
       "pts": 8,
       "p": 4
      },
      {
-      "rank": 9,
-      "name": "阿森纳",
-      "pts": 7,
-      "p": 3
-     },
-     {
-      "rank": 10,
+      "rank": 14,
       "name": "斯图加特",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "科莫",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 12,
-      "name": "曼城",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 13,
-      "name": "布鲁日",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 14,
+      "rank": 15,
       "name": "国际米兰",
       "pts": 6,
       "p": 4
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "林茨",
       "pts": 6,
       "p": 4
-     },
-     {
-      "rank": 16,
-      "name": "多特蒙德",
-      "pts": 6,
-      "p": 3
      },
      {
       "rank": 17,
@@ -7497,105 +7497,105 @@
      },
      {
       "rank": 19,
+      "name": "费内巴切",
+      "pts": 5,
+      "p": 4
+     },
+     {
+      "rank": 20,
       "name": "罗马",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 20,
+      "rank": 21,
       "name": "顿涅茨克矿工",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 21,
-      "name": "埃因霍温",
-      "pts": 4,
-      "p": 3
-     },
-     {
       "rank": 22,
-      "name": "马德里竞技",
+      "name": "Viking",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 23,
-      "name": "博德闪耀",
+      "name": "马德里竞技",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 24,
-      "name": "那不勒斯",
-      "pts": 3,
-      "p": 3
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 25,
-      "name": "Sabah",
-      "pts": 3,
-      "p": 3
+      "name": "博德闪耀",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 26,
-      "name": "朗斯",
+      "name": "波尔图",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 27,
-      "name": "雅典AEK",
+      "name": "那不勒斯",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 28,
-      "name": "RB莱比锡",
-      "pts": 3,
-      "p": 3
-     },
-     {
-      "rank": 29,
       "name": "比利亚雷亚尔",
       "pts": 3,
       "p": 4
      },
      {
+      "rank": 29,
+      "name": "雅典AEK",
+      "pts": 3,
+      "p": 4
+     },
+     {
       "rank": 30,
-      "name": "费耶诺德",
+      "name": "RB莱比锡",
       "pts": 3,
       "p": 4
      },
      {
       "rank": 31,
-      "name": "费内巴切",
-      "pts": 2,
-      "p": 3
+      "name": "Sabah",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 32,
-      "name": "布拉格斯拉维亚",
-      "pts": 1,
-      "p": 3
+      "name": "费耶诺德",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 33,
-      "name": "Viking",
-      "pts": 1,
-      "p": 3
+      "name": "朗斯",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 34,
-      "name": "里尔",
+      "name": "布拉格斯拉维亚",
       "pts": 1,
       "p": 4
      },
      {
       "rank": 35,
-      "name": "波尔图",
-      "pts": 0,
-      "p": 3
+      "name": "里尔",
+      "pts": 1,
+      "p": 4
      },
      {
       "rank": 36,
@@ -8083,7 +8083,7 @@
     "slug": "",
     "league": "欧冠",
     "country": "",
-    "rank": 22,
+    "rank": 23,
     "points": 4,
     "played": 4,
     "win": 1,
@@ -8411,7 +8411,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "table": [
      {
@@ -8422,93 +8422,93 @@
      },
      {
       "rank": 2,
+      "name": "皇家马德里",
+      "pts": 12,
+      "p": 4
+     },
+     {
+      "rank": 3,
+      "name": "阿森纳",
+      "pts": 10,
+      "p": 4
+     },
+     {
+      "rank": 4,
+      "name": "科莫",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 5,
       "name": "巴塞罗那",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 3,
+      "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 4,
+      "rank": 7,
+      "name": "曼城",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 8,
       "name": "利物浦",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 5,
-      "name": "皇家马德里",
+      "rank": 9,
+      "name": "布鲁日",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 6,
+      "rank": 10,
       "name": "葡萄牙体育",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 7,
+      "rank": 11,
       "name": "皇家贝蒂斯",
       "pts": 9,
-      "p": 3
+      "p": 4
      },
      {
-      "rank": 8,
+      "rank": 12,
+      "name": "多特蒙德",
+      "pts": 9,
+      "p": 4
+     },
+     {
+      "rank": 13,
       "name": "拜仁慕尼黑",
       "pts": 8,
       "p": 4
      },
      {
-      "rank": 9,
-      "name": "阿森纳",
-      "pts": 7,
-      "p": 3
-     },
-     {
-      "rank": 10,
+      "rank": 14,
       "name": "斯图加特",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "科莫",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 12,
-      "name": "曼城",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 13,
-      "name": "布鲁日",
-      "pts": 6,
-      "p": 3
-     },
-     {
-      "rank": 14,
+      "rank": 15,
       "name": "国际米兰",
       "pts": 6,
       "p": 4
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "林茨",
       "pts": 6,
       "p": 4
-     },
-     {
-      "rank": 16,
-      "name": "多特蒙德",
-      "pts": 6,
-      "p": 3
      },
      {
       "rank": 17,
@@ -8524,105 +8524,105 @@
      },
      {
       "rank": 19,
+      "name": "费内巴切",
+      "pts": 5,
+      "p": 4
+     },
+     {
+      "rank": 20,
       "name": "罗马",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 20,
+      "rank": 21,
       "name": "顿涅茨克矿工",
       "pts": 4,
       "p": 4
      },
      {
-      "rank": 21,
-      "name": "埃因霍温",
-      "pts": 4,
-      "p": 3
-     },
-     {
       "rank": 22,
-      "name": "马德里竞技",
+      "name": "Viking",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 23,
-      "name": "博德闪耀",
+      "name": "马德里竞技",
       "pts": 4,
       "p": 4
      },
      {
       "rank": 24,
-      "name": "那不勒斯",
-      "pts": 3,
-      "p": 3
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 25,
-      "name": "Sabah",
-      "pts": 3,
-      "p": 3
+      "name": "博德闪耀",
+      "pts": 4,
+      "p": 4
      },
      {
       "rank": 26,
-      "name": "朗斯",
+      "name": "波尔图",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 27,
-      "name": "雅典AEK",
+      "name": "那不勒斯",
       "pts": 3,
-      "p": 3
+      "p": 4
      },
      {
       "rank": 28,
-      "name": "RB莱比锡",
-      "pts": 3,
-      "p": 3
-     },
-     {
-      "rank": 29,
       "name": "比利亚雷亚尔",
       "pts": 3,
       "p": 4
      },
      {
+      "rank": 29,
+      "name": "雅典AEK",
+      "pts": 3,
+      "p": 4
+     },
+     {
       "rank": 30,
-      "name": "费耶诺德",
+      "name": "RB莱比锡",
       "pts": 3,
       "p": 4
      },
      {
       "rank": 31,
-      "name": "费内巴切",
-      "pts": 2,
-      "p": 3
+      "name": "Sabah",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 32,
-      "name": "布拉格斯拉维亚",
-      "pts": 1,
-      "p": 3
+      "name": "费耶诺德",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 33,
-      "name": "Viking",
-      "pts": 1,
-      "p": 3
+      "name": "朗斯",
+      "pts": 3,
+      "p": 4
      },
      {
       "rank": 34,
-      "name": "里尔",
+      "name": "布拉格斯拉维亚",
       "pts": 1,
       "p": 4
      },
      {
       "rank": 35,
-      "name": "波尔图",
-      "pts": 0,
-      "p": 3
+      "name": "里尔",
+      "pts": 1,
+      "p": 4
      },
      {
       "rank": 36,
@@ -9319,7 +9319,7 @@
     "settled_at": "2026-10-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-05T08:14:44+08:00",
+   "generated_at": "2026-11-05T14:23:54+08:00",
    "extras": {
     "lam_home": 1.123,
     "lam_away": 1.817,
