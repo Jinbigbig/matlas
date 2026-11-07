@@ -958,9 +958,14 @@ a.lg-link:hover { color: var(--accent); text-decoration: none; }
 /* ---------- 球员情报 ---------- */
 .sq-sum { margin-bottom: 10px; }
 .sq-table td:not(:first-child) { text-align: right; white-space: nowrap; }
-.sq-table td:nth-child(2) { text-align: left; }
+/* 表头必须与单元格同向对齐：此前 th 一律左对齐、td 一律右对齐，
+   「位置」「影响力」这类相邻列就会看起来列名压在列左、数值贴在列右 */
+.sq-table thead th:not(:first-child) { text-align: right; }
+.sq-table td:nth-child(2), .sq-table th:nth-child(2) { text-align: left; }
+.sq-table td:nth-child(3), .sq-table th:nth-child(3) { text-align: left; }
 @media(max-width:640px) {
   .sq-table { font-size: 0.76rem; }
+  .sq-sum th:nth-child(5), .sq-sum td:nth-child(5) { display: none; }
   .sq-table th:nth-child(5), .sq-table td:nth-child(5),
   .sq-table th:nth-child(6), .sq-table td:nth-child(6) { display: none; }
 }
@@ -1231,6 +1236,61 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
 .hc-axis { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 4px;
   margin: 6px auto 0; max-width: 620px; font-size: 0.68rem; color: var(--muted);
   text-align: center; }
+
+/* 模型视角：预期进球 / 三方向比分 / 模型与市场 / 冷门刻度 */
+.mv-block + .mv-block { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--rule); }
+.mv-block h4 { margin: 0 0 9px; font-size: 0.82rem; font-weight: 600; color: #374151; }
+.mv-goal { display: flex; align-items: baseline; gap: 10px; }
+.mv-goal-n { font-size: 1.72rem; font-weight: 700; line-height: 1;
+  font-variant-numeric: tabular-nums; color: #111; }
+.mv-goal-n em { font-size: 0.78rem; font-weight: 500; font-style: normal;
+  color: var(--muted); margin-left: 3px; }
+.mv-goal-l { font-size: 0.8rem; color: var(--muted); }
+.mv-stack { display: flex; height: 10px; border-radius: 5px; overflow: hidden;
+  margin: 11px 0 7px; background: var(--bg); }
+.mv-stack i { display: block; height: 100%; }
+.mv-stack i.h { background: linear-gradient(90deg, var(--hc-h), #93b4f8); }
+.mv-stack i.a { background: linear-gradient(90deg, #f9c877, var(--hc-a)); }
+.mv-legend { display: flex; justify-content: space-between; gap: 12px;
+  font-size: 0.78rem; color: #4b5563; }
+.mv-legend b { color: #111; font-weight: 600; }
+.mv-bands { display: grid; gap: 7px; margin-top: 13px; }
+.mv-band { display: grid; grid-template-columns: 4.8em minmax(0, 1fr) 3.8em;
+  align-items: center; gap: 9px; font-size: 0.78rem; }
+.mv-band-l { color: #4b5563; white-space: nowrap; }
+.mv-band b { text-align: right; font-variant-numeric: tabular-nums; }
+.mv-band .bar-track > i { display: block; height: 100%; border-radius: 4px; }
+.mv-band .b0 { background: linear-gradient(90deg, #34d399, #10b981); }
+.mv-band .b1 { background: linear-gradient(90deg, #60a5fa, #2563eb); }
+.mv-band .b2 { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+.mv-quad { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.mv-q { border: 1px solid var(--rule); border-radius: 10px; padding: 10px 8px;
+  text-align: center; background: #fbfcfe; }
+.mv-q-lab { display: block; font-size: 0.72rem; color: var(--muted); }
+.mv-q-score { display: block; font-size: 1.16rem; font-weight: 700; margin: 3px 0 2px;
+  font-variant-numeric: tabular-nums; color: #111; }
+.mv-q-p { display: block; font-size: 0.95rem; font-weight: 700; }
+.mv-q-d { display: block; margin-top: 5px; font-size: 0.7rem; color: var(--muted); }
+.mv-mkt3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.mv-mk-c { border: 1px solid var(--rule); border-radius: 10px; padding: 9px 11px;
+  background: #fbfcfe; text-align: center; }
+.mv-mk-l { display: block; margin-bottom: 5px; font-size: 0.72rem; color: var(--muted); }
+.mv-mk-v { display: flex; align-items: baseline; justify-content: center; gap: 7px; }
+.mv-mk-v em { font-style: normal; font-size: 0.68rem; color: var(--muted); }
+.mv-mk-v.m .pct { color: var(--muted); font-weight: 500; }
+.mv-up-h { display: flex; align-items: baseline; gap: 9px; font-size: 0.82rem; }
+.mv-up-h .mv-t { color: var(--muted); }
+.mv-up-h b { font-size: 1.02rem; font-weight: 700; }
+.mv-scale { position: relative; display: flex; height: 9px; border-radius: 5px;
+  overflow: hidden; margin: 10px 0 5px; }
+.mv-scale i { display: block; height: 100%; }
+.mv-scale .s1 { width: 50%; background: rgba(16,163,74,0.28); }
+.mv-scale .s2 { width: 15%; background: rgba(234,150,10,0.32); }
+.mv-scale .s3 { width: 35%; background: rgba(220,70,80,0.28); }
+.mv-scale em { position: absolute; top: -3px; bottom: -3px; background: #111;
+  border-radius: 1px; }
+.mv-scale-l { display: flex; justify-content: space-between; font-size: 0.72rem;
+  color: var(--muted); }
 
 /* 比赛天气卡片 */
 .wx-card { display: grid; gap: 10px; background: #f8fafc; border: 1px solid var(--rule);

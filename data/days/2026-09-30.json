@@ -280,7 +280,7 @@
     "settled_at": "2026-09-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "lam_home": 2.16,
     "lam_away": 0.671,
@@ -289,6 +289,23 @@
     "upset_level": "低",
     "rq_best_ev": 0.896,
     "rq_best_odds": 1.79,
+    "quad_top": {
+     "home": {
+      "score": "2:0",
+      "prob": 15.4
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 8.7
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 1.2
+     }
+    },
+    "prob_home": 79.7,
+    "prob_draw": 16.9,
+    "prob_away": 3.5,
     "data_n": {
      "home": 2,
      "away": 4
@@ -908,7 +925,7 @@
     "settled_at": "2026-09-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "lam_home": 1.542,
     "lam_away": 2.658,
@@ -917,6 +934,23 @@
     "upset_level": "低",
     "rq_best_ev": 0.95,
     "rq_best_odds": 2.5,
+    "quad_top": {
+     "home": {
+      "score": "2:1",
+      "prob": 3.1
+     },
+     "draw": {
+      "score": "2:2",
+      "prob": 7.5
+     },
+     "away": {
+      "score": "1:2",
+      "prob": 10.1
+     }
+    },
+    "prob_home": 12.6,
+    "prob_draw": 20.3,
+    "prob_away": 67.1,
     "data_n": {
      "home": 1,
      "away": 3

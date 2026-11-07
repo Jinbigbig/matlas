@@ -260,44 +260,7 @@
     }
    ],
    "recent_away": [],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "霍夫斯洛特",
-     "reason": "守门员·手腕损伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "法雷尔",
-     "reason": "后卫·腹股沟受伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "瓦拉蒂",
-     "reason": "前锋·踝关节受伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "霍尔曼",
-     "reason": "中场·腿筋受伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "塞恩斯伯里",
-     "reason": "后卫·跟腱受伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "久松大耀",
-     "reason": "前锋·无法出战",
-     "status": "suspended"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -428,7 +391,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "lam_home": 1.635,
     "lam_away": 0.741,
@@ -437,6 +400,23 @@
     "upset_level": "中",
     "rq_best_ev": 1.237,
     "rq_best_odds": 2.62,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 16.9
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 12.5
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 3.0
+     }
+    },
+    "prob_home": 65.6,
+    "prob_draw": 26.9,
+    "prob_away": 7.4,
     "data_n": {
      "home": 16,
      "away": 13
@@ -1776,50 +1756,7 @@
      "half_ft": "主/客"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "积高",
-     "reason": "十字韧带",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "安杜普",
-     "reason": "韧带",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "谭柏曼",
-     "reason": "膝",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "高斯迪斯",
-     "reason": "腿筋",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "迪班尼迪图",
-     "reason": "韧带",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "安祖赫特",
-     "reason": "十字韧带",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "阿克塞尔伯格曼",
-     "reason": "后卫·无法出战",
-     "status": "suspended"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -1958,7 +1895,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "lam_home": 1.563,
     "lam_away": 1.119,
@@ -1967,6 +1904,23 @@
     "upset_level": "高",
     "rq_best_ev": 0.964,
     "rq_best_odds": 1.83,
+    "quad_top": {
+     "home": {
+      "score": "2:1",
+      "prob": 11.6
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 11.8
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 7.5
+     }
+    },
+    "prob_home": 50.4,
+    "prob_draw": 23.0,
+    "prob_away": 26.6,
     "data_n": {
      "home": 10,
      "away": 2
@@ -3200,56 +3154,7 @@
      "half_ft": "客/平"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "艾文保迪",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "奥利华哈根",
-     "reason": "不详",
-     "status": "doubt"
-    },
-    {
-     "team": "home",
-     "player": "布德里",
-     "reason": "中场·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "艾夫史唐",
-     "reason": "腹股沟",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "列治拿",
-     "reason": "腹股沟",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "柏费克",
-     "reason": "不详",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "埃尔夫斯特罗姆",
-     "reason": "后卫·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "菲尔克",
-     "reason": "前锋·无法出战",
-     "status": "suspended"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -3393,7 +3298,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "lam_home": 2.321,
     "lam_away": 0.823,
@@ -3402,6 +3307,23 @@
     "upset_level": "低",
     "rq_best_ev": 1.243,
     "rq_best_odds": 3.25,
+    "quad_top": {
+     "home": {
+      "score": "2:0",
+      "prob": 12.0
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 9.1
+     },
+     "away": {
+      "score": "1:2",
+      "prob": 1.1
+     }
+    },
+    "prob_home": 78.5,
+    "prob_draw": 17.9,
+    "prob_away": 3.6,
     "data_n": {
      "home": 20,
      "away": 18
@@ -4837,56 +4759,7 @@
      "half_ft": "平/主"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "盖金",
-     "reason": "前锋·膝关节损伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "哈奇",
-     "reason": "前锋·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "home",
-     "player": "A.西索科",
-     "reason": "后卫·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "home",
-     "player": "圣卢斯",
-     "reason": "后卫·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "home",
-     "player": "米切尔",
-     "reason": "守门员·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "曼贡多",
-     "reason": "前锋·膝关节损伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "N.门迪",
-     "reason": "中场·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "马沙尔",
-     "reason": "后卫·无法出战",
-     "status": "suspended"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -5029,7 +4902,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "lam_home": 1.788,
     "lam_away": 1.055,
@@ -5038,6 +4911,23 @@
     "upset_level": "中",
     "rq_best_ev": 0.784,
     "rq_best_odds": 1.87,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 11.6
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 12.5
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 3.6
+     }
+    },
+    "prob_home": 60.7,
+    "prob_draw": 26.4,
+    "prob_away": 12.9,
     "data_n": {
      "home": 14,
      "away": 10
@@ -6295,44 +6185,7 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Amine Lachkar",
-     "reason": "腹股沟伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Justin Hoogma",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Thomas Didillon-Hödl",
-     "reason": "腿筋伤",
-     "status": "doubt"
-    },
-    {
-     "team": "home",
-     "player": "Jaden Slory",
-     "reason": "停赛",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "Filip Krastev",
-     "reason": "跟腱伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Sherel Floranus",
-     "reason": "腿筋伤",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -6476,7 +6329,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "lam_home": 1.313,
     "lam_away": 1.502,
@@ -6485,6 +6338,23 @@
     "upset_level": "高",
     "rq_best_ev": 0.945,
     "rq_best_odds": 1.6,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 7.4
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 12.4
+     },
+     "away": {
+      "score": "1:2",
+      "prob": 10.2
+     }
+    },
+    "prob_home": 31.1,
+    "prob_draw": 25.2,
+    "prob_away": 43.7,
     "data_n": {
      "home": 10,
      "away": 13
@@ -7821,26 +7691,7 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Thomas Cox",
-     "reason": "Injury",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "范德韦恩",
-     "reason": "中场·累计黄牌停赛",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "佐格德拉格",
-     "reason": "后卫·受伤",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -7983,7 +7834,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "lam_home": 1.143,
     "lam_away": 1.742,
@@ -7992,6 +7843,23 @@
     "upset_level": "高",
     "rq_best_ev": 1.033,
     "rq_best_odds": 1.93,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 4.3
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 14.5
+     },
+     "away": {
+      "score": "1:2",
+      "prob": 11.9
+     }
+    },
+    "prob_home": 16.7,
+    "prob_draw": 28.9,
+    "prob_away": 54.4,
     "data_n": {
      "home": 4,
      "away": 9
@@ -9345,104 +9213,7 @@
      "half_ft": "客/客"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Bilal Nadir",
-     "reason": "肌肉伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Fábio Vieira",
-     "reason": "大腿伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Mario Vušković",
-     "reason": "Doping ban",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Nicolai Remberg",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Nicolás Capaldo",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    },
-    {
-     "team": "home",
-     "player": "Yussuf Poulsen",
-     "reason": "髋伤",
-     "status": "doubt"
-    },
-    {
-     "team": "home",
-     "player": "武什科维奇",
-     "reason": "后卫·兴奋剂禁令",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "Enzo Leopold",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Hugo Bolin",
-     "reason": "肌肉伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Jan Leszczyński",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Nikolas-Gerrit Kühn",
-     "reason": "肌肉伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Fritz Fleck",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Franck Honorat",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Kevin Diks",
-     "reason": "个人原因",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Moritz Nicolas",
-     "reason": "伤情",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Tim Kleindienst",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -9586,7 +9357,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "table": [
      {
@@ -9705,6 +9476,23 @@
     "upset_level": "高",
     "rq_best_ev": 0.96,
     "rq_best_odds": 1.49,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 9.3
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 12.4
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 8.3
+     }
+    },
+    "prob_home": 39.9,
+    "prob_draw": 26.2,
+    "prob_away": 33.9,
     "data_n": {
      "home": 25,
      "away": 25
@@ -11366,62 +11154,7 @@
      "half_ft": "平/主"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Andrea Adorante",
-     "reason": "疝气",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Bartol Franjić",
-     "reason": "肩伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Marin Šverko",
-     "reason": "髋伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Thierry Correia",
-     "reason": "大腿伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "David Alaba",
-     "reason": "小腿伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Idrissa Gueye",
-     "reason": "踝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Alessandro Zanoli",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Oumar Solet",
-     "reason": "肌肉伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Vakoun Bayo",
-     "reason": "大腿伤",
-     "status": "doubt"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -11565,7 +11298,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "table": [
      {
@@ -11696,6 +11429,23 @@
     "upset_level": "高",
     "rq_best_ev": 1.008,
     "rq_best_odds": 1.5,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 10.5
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 12.7
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 9.0
+     }
+    },
+    "prob_home": 40.6,
+    "prob_draw": 26.6,
+    "prob_away": 32.8,
     "data_n": {
      "home": 11,
      "away": 25
@@ -13141,38 +12891,7 @@
      "half_ft": "客/客"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "梅萨利",
-     "reason": "中场·大腿受伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "尼弗洛尔",
-     "reason": "守门员·膝关节损伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "冬纳姆",
-     "reason": "后卫·累计黄牌停赛",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "帕尼切利",
-     "reason": "前锋·膝关节损伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "巴尔德",
-     "reason": "前锋·腿部受伤",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -13316,7 +13035,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "table": [
      {
@@ -13435,6 +13154,23 @@
     "upset_level": "高",
     "rq_best_ev": 1.0,
     "rq_best_odds": 1.72,
+    "quad_top": {
+     "home": {
+      "score": "2:1",
+      "prob": 9.8
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 12.7
+     },
+     "away": {
+      "score": "1:2",
+      "prob": 5.4
+     }
+    },
+    "prob_home": 49.5,
+    "prob_draw": 28.1,
+    "prob_away": 22.4,
     "data_n": {
      "home": 19,
      "away": 25
@@ -14935,62 +14671,7 @@
      "half_ft": "平/客"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Jack Grealish",
-     "reason": "教练决定",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Jarrad Branthwaite",
-     "reason": "疲劳",
-     "status": "doubt"
-    },
-    {
-     "team": "home",
-     "player": "Tyrique George",
-     "reason": "伤情",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Aurele Amenda",
-     "reason": "小腿伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Haji Wright",
-     "reason": "肌肉伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Josh Eccles",
-     "reason": "踝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Luke Woolfenden",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Bobby Thomas",
-     "reason": "小腿伤",
-     "status": "doubt"
-    },
-    {
-     "team": "away",
-     "player": "Frank Onyeka",
-     "reason": "腹股沟伤",
-     "status": "doubt"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -15134,7 +14815,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "table": [
      {
@@ -15265,6 +14946,23 @@
     "upset_level": "中",
     "rq_best_ev": 1.026,
     "rq_best_odds": 2.3,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 13.7
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 12.5
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 3.1
+     }
+    },
+    "prob_home": 64.3,
+    "prob_draw": 25.9,
+    "prob_away": 9.7,
     "data_n": {
      "home": 25,
      "away": 20
@@ -16607,80 +16305,7 @@
      "half_ft": "客/客"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Craig Forsyth",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Charlie Taylor",
-     "reason": "伤情",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Derry Murkin",
-     "reason": "腿筋伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Matt Clarke",
-     "reason": "小腿伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Patrick Agyemang",
-     "reason": "跟腱伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Sondre Langås",
-     "reason": "伤情",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "卡欣",
-     "reason": "后卫·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "Ethan Erhahon",
-     "reason": "大腿伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "John Mcatee",
-     "reason": "膝伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "Ryan Hardie",
-     "reason": "腿筋伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "尼尔森",
-     "reason": "前锋·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "托尔",
-     "reason": "后卫·无法出战",
-     "status": "suspended"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -16823,7 +16448,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "lam_home": 1.952,
     "lam_away": 1.957,
@@ -16832,6 +16457,23 @@
     "upset_level": "高",
     "rq_best_ev": 0.877,
     "rq_best_odds": 1.44,
+    "quad_top": {
+     "home": {
+      "score": "2:1",
+      "prob": 7.9
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 10.1
+     },
+     "away": {
+      "score": "1:2",
+      "prob": 7.5
+     }
+    },
+    "prob_home": 37.7,
+    "prob_draw": 26.5,
+    "prob_away": 35.8,
     "data_n": {
      "home": 10,
      "away": 4
@@ -18212,44 +17854,7 @@
      "half_ft": "平/平"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "Marcão",
-     "reason": "肌肉伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Peque Fernández",
-     "reason": "腿筋伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "Isaac",
-     "reason": "膝伤",
-     "status": "doubt"
-    },
-    {
-     "team": "home",
-     "player": "Miguel Ángel",
-     "reason": "肩伤",
-     "status": "doubt"
-    },
-    {
-     "team": "home",
-     "player": "Manu Bueno",
-     "reason": "红牌停赛",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "Mikel Rodríguez Ulacia",
-     "reason": "踝伤",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -18391,7 +17996,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "table": [
      {
@@ -18522,6 +18127,23 @@
     "upset_level": "高",
     "rq_best_ev": 0.973,
     "rq_best_odds": 1.87,
+    "quad_top": {
+     "home": {
+      "score": "2:1",
+      "prob": 11.0
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 12.5
+     },
+     "away": {
+      "score": "1:2",
+      "prob": 4.5
+     }
+    },
+    "prob_home": 56.2,
+    "prob_draw": 26.5,
+    "prob_away": 17.3,
     "data_n": {
      "home": 25,
      "away": 25
@@ -20057,14 +19679,7 @@
      "half_ft": "平/平"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "马达拉",
-     "reason": "后卫",
-     "status": "out"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -20207,7 +19822,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "lam_home": 1.452,
     "lam_away": 1.163,
@@ -20216,6 +19831,23 @@
     "upset_level": "高",
     "rq_best_ev": 1.03,
     "rq_best_odds": 1.59,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 10.6
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 13.3
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 7.9
+     }
+    },
+    "prob_home": 43.9,
+    "prob_draw": 27.9,
+    "prob_away": 28.2,
     "data_n": {
      "home": 13,
      "away": 13
@@ -21631,74 +21263,7 @@
      "half_ft": "主/主"
     }
    ],
-   "injuries": [
-    {
-     "team": "home",
-     "player": "杜度",
-     "reason": "脊髓损伤",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "尼敦文迪斯",
-     "reason": "左膝",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "马图斯施华",
-     "reason": "胸",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "拉蒙拉莫斯",
-     "reason": "右大腿",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "法比安奴苏沙",
-     "reason": "右膝",
-     "status": "out"
-    },
-    {
-     "team": "home",
-     "player": "艾曼纽拜迪斯",
-     "reason": "累积满黄牌",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "美兰",
-     "reason": "右大腿",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "马图斯马天利尼",
-     "reason": "左膝",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "约翰坚尼迪",
-     "reason": "右膝",
-     "status": "out"
-    },
-    {
-     "team": "away",
-     "player": "米兰",
-     "reason": "后卫·无法出战",
-     "status": "suspended"
-    },
-    {
-     "team": "away",
-     "player": "伊格纳西奥",
-     "reason": "后卫·累计黄牌停赛",
-     "status": "suspended"
-    }
-   ],
+   "injuries": [],
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
@@ -21841,7 +21406,7 @@
     "settled_at": "2026-11-06"
    },
    "source_url": "",
-   "generated_at": "2026-11-07T12:14:06+08:00",
+   "generated_at": "2026-11-07T14:41:08+08:00",
    "extras": {
     "lam_home": 1.219,
     "lam_away": 1.345,
@@ -21850,6 +21415,23 @@
     "upset_level": "高",
     "rq_best_ev": 0.881,
     "rq_best_odds": 1.48,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 8.8
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 13.7
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 10.2
+     }
+    },
+    "prob_home": 32.6,
+    "prob_draw": 28.3,
+    "prob_away": 39.0,
     "data_n": {
      "home": 11,
      "away": 21
