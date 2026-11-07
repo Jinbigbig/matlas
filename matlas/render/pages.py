@@ -3730,16 +3730,8 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     renderCR();
   });
   $("cr-clear").addEventListener("click", function () {
-    if (!crDate) return;
-    var d = crDate.value;
-    var n = 0;
-    DATA.rows.forEach(function (r) {
-      if (r.d === d && CRS[r.id]) { delete CRS[r.id]; n += 1; }
-    });
-    saveCRS();
-    crSettleAll();
-    $("cr-msg").textContent = n ? "🗑 已清空当日 " + n + " 场自定义赛果并重新结算" : "当日没有已保存的自定义赛果";
-    renderCR();
+    $("cr-list").innerHTML = '<p class="sub">默认不显示。点「📅 载入当日比赛」拉取场次后手动填写比分。</p>';
+    $("cr-msg").textContent = "🗑 已清空载入的赛程";
   });
 
   // ---- 记录区：统计 / 个人汇总 / 明细表 ----
