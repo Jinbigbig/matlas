@@ -376,13 +376,19 @@ def line_svg(
     h: int = 200,
     baseline: float | None = None,
     baseline_label: str = "",
+    average: float | None = None,
+    counts: Sequence[int] | None = None,
+    cls: str = "",
     color: str = "#2563eb",
 ) -> str:
-    """单序列折线走势图（纯 SVG，居中）。标签/数值不带 % 号，调用方自行处理单位。"""
+    """每日命中率走势：折线 + 当日场次淡柱 + 整体均值线，宽屏与窄屏各出一版。"""
     n = len(values)
     if n < 2 or len(labels) != n:
         return ""
-    pad_l, pad_r, pad_t, pad_b = 38, 12, 12, 26
+    dense = w >= 900
+    pad_l, pad_r, pad_t, pad_b = (38, 12, 22, 34) if dense else (38, 12, 12, 26)
+    fs = 10.5 if dense else 10
+    has_counts = bool(counts) and len(counts) == n
 
     def _x(i: int) -> float:
         return pad_l + (w - pad_l - pad_r) * i / (n - 1)
@@ -390,14 +396,30 @@ def line_svg(
     def _y(v: float) -> float:
         return pad_t + (h - pad_t - pad_b) * (1 - max(0.0, min(100.0, v)) / 100)
 
-    parts = [f'<svg class="itrend" viewBox="0 0 {w} {h}" role="img">']
+    parts = [f'<svg class="itrend {cls}" viewBox="0 0 {w} {h}" role="img">']
+
+    # 当日场次：底部淡柱，先看样本量再看命中率
+    if has_counts:
+        cmax = max(counts) or 1  # type: ignore[arg-type]
+        span = (w - pad_l - pad_r) / (n - 1)
+        bw = max(2.0, span * 0.56)
+        bar_h = 30 if dense else 18
+        base = h - pad_b
+        for i, c in enumerate(counts):  # type: ignore[arg-type]
+            bh = bar_h * c / cmax
+            x = max(pad_l, _x(i) - bw / 2)
+            parts.append(
+                f'<rect x="{x:.1f}" y="{base - bh:.1f}" width="{bw:.1f}" '
+                f'height="{bh:.1f}" rx="1.5" fill="rgba(148,163,184,.32)"/>'
+            )
+
     for gv, gl in ((0, "0"), (50, "50"), (100, "100")):
         y = _y(gv)
         parts.append(
             f'<line x1="{pad_l}" y1="{y:.1f}" x2="{w - pad_r}" y2="{y:.1f}" stroke="#e5e7eb" stroke-width="1"/>'
         )
         parts.append(
-            f'<text x="{pad_l - 6}" y="{y + 3.5:.1f}" text-anchor="end" font-size="10" fill="{MUTED}">{gl}</text>'
+            f'<text x="{pad_l - 6}" y="{y + 3.5:.1f}" text-anchor="end" font-size="{fs}" fill="{MUTED}">{gl}</text>'
         )
     if baseline is not None:
         y = _y(baseline)
@@ -407,17 +429,45 @@ def line_svg(
         )
         if baseline_label:
             parts.append(
-                f'<text x="{w - pad_r}" y="{y - 4:.1f}" text-anchor="end" font-size="10" fill="#b45309">{esc(baseline_label)}</text>'
+                f'<text x="{w - pad_r}" y="{y - 4:.1f}" text-anchor="end" font-size="{fs}" fill="#b45309">{esc(baseline_label)}</text>'
             )
+    if average is not None:
+        y = _y(average)
+        parts.append(
+            f'<line x1="{pad_l}" y1="{y:.1f}" x2="{w - pad_r}" y2="{y:.1f}" '
+            'stroke="#10b981" stroke-width="1.2" stroke-dasharray="2 3"/>'
+        )
+
     pts = " ".join(f"{_x(i):.1f},{_y(v):.1f}" for i, v in enumerate(values))
     area = f"{_x(0):.1f},{_y(0):.1f} {pts} {_x(n - 1):.1f},{_y(0):.1f}"
     parts.append(f'<polygon points="{area}" fill="rgba(37,99,235,.10)"/>')
     parts.append(f'<polyline points="{pts}" fill="none" stroke="{color}" stroke-width="2"/>')
     for i, v in enumerate(values):
-        parts.append(f'<circle cx="{_x(i):.1f}" cy="{_y(v):.1f}" r="3" fill="{color}"/>')
-    for i in sorted({0, n // 2, n - 1}):
+        tip = f"{labels[i]} · 命中 {v:.1f}%"
+        if has_counts:
+            tip += f" · {counts[i]} 场"  # type: ignore[index]
         parts.append(
-            f'<text x="{_x(i):.1f}" y="{h - 8}" text-anchor="middle" font-size="10" fill="{MUTED}">{esc(labels[i])}</text>'
+            f'<circle cx="{_x(i):.1f}" cy="{_y(v):.1f}" r="{2.8 if dense else 3}" '
+            f'fill="{color}"><title class="pct">{esc(tip)}</title></circle>'
+        )
+
+    # 最高 / 最低点直接标数值（窄屏空间不够，只留悬浮详情）
+    if dense:
+        hi = max(range(n), key=lambda i: values[i])
+        lo = min(range(n), key=lambda i: values[i])
+        for i, dy in ((hi, -9), (lo, 14)):
+            x = min(max(_x(i), pad_l + 22), w - pad_r - 22)
+            parts.append(
+                f'<text class="pct" x="{x:.1f}" y="{_y(values[i]) + dy:.1f}" text-anchor="middle" '
+                f'font-size="{fs + 1}" font-weight="700" fill="{color}">{values[i]:.1f}%</text>'
+            )
+
+    # 横轴日期：宽屏抽稀到约 10 个，窄屏约 5 个
+    step = max(1, round(n / (9 if dense else 4)))
+    for i in sorted({*range(0, n, step), n - 1}):
+        parts.append(
+            f'<text x="{_x(i):.1f}" y="{h - 8}" text-anchor="middle" font-size="{fs}" '
+            f'fill="{MUTED}">{esc(labels[i])}</text>'
         )
     parts.append("</svg>")
     return "".join(parts)

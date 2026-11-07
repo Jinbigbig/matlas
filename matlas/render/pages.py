@@ -2287,12 +2287,26 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         lg_agg.items(), key=lambda kv: (-(kv[1]["h"] / kv[1]["n"]), -kv[1]["n"], kv[0])
     )
 
+    def _rank_badge(name: str, src: str) -> str:
+        """排名表名称前的徽章：有素材用真图，没有的用首字圆徽。"""
+        if src:
+            return (f'<img class="rank-crest" src="{C.esc(src)}" alt="" '
+                    'loading="lazy" decoding="async">')
+        ch = (name or "").strip()[:1] or "·"
+        return (f'<span class="rank-crest rank-crest-ph" aria-hidden="true">'
+                f'{C.esc(ch)}</span>')
+
+    def _rank_name(name: str, src: str) -> str:
+        return (f'<span class="rank-name" title="{C.esc(name)}">'
+                f'{_rank_badge(name, src)}'
+                f'<span>{C.esc(name)}</span></span>')
+
     def _pc(pair) -> str:
         h, n = pair
         return f'<span class="pct">{h / n * 100:.0f}%</span>' if n else "—"
 
     lg_rows = [
-        [C.esc(lg), str(a["n"]), f'<span class="pct">{a["h"] / a["n"] * 100:.1f}%</span>',
+        [_rank_name(lg, logos.league_crest_url(lg)), str(a["n"]), f'<span class="pct">{a["h"] / a["n"] * 100:.1f}%</span>',
          _pc(a.get("direction", [0, 0])), _pc(a.get("score", [0, 0])),
          _pc(a.get("goals", [0, 0])), _pc(a.get("htft", [0, 0]))]
         for lg, a in lg_rows_list
@@ -2310,7 +2324,8 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
     # ---- 球队 Top 30 ----
     top_teams = compute_team_ranking(ordered, top=30)
     t_rows = [
-        [str(i), C.esc(name), str(n), f'<span class="pct">{h / n * 100:.1f}%</span>']
+        [str(i), _rank_name(name, logos.crest_url(name)), str(n),
+         f'<span class="pct">{h / n * 100:.1f}%</span>']
         for i, (name, h, n) in enumerate(top_teams, 1)
     ]
     team_box = (
@@ -2340,18 +2355,33 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
 
     viz: list[str] = []
     if len(day_acc) >= 2:
-        trend = C.line_svg(
-            [x[0] for x in day_acc], [x[1] for x in day_acc],
-            baseline=33.3, baseline_label="随机基线 33.3",
+        xs = [x[0] for x in day_acc]
+        ys = [x[1] for x in day_acc]
+        ns = [x[2] for x in day_acc]
+        kw = dict(baseline=33.3, baseline_label="随机基线 33.3",
+                  average=acc, counts=ns)
+        trend = (
+            C.line_svg(xs, ys, w=1120, h=240, cls="itrend-desk", **kw)
+            + C.line_svg(xs, ys, w=620, h=200, cls="itrend-mob", **kw)
         )
         if trend:
-            viz.append('<div class="insight-block"><h4>每日命中率走势</h4>' + trend + "</div>")
+            legend = (
+                '<div class="itrend-legend">'
+                '<span><i class="lg-bar"></i>当日场次</span>'
+                '<span><i class="lg-avg"></i>整体均值 <b class="pct">'
+                f'{acc:.1f}%</b></span>'
+                '<span><i class="lg-base"></i>随机基线</span>'
+                "</div>"
+            )
+            viz.append('<div class="insight-block"><h4>每日命中率走势</h4>'
+                       + legend + trend + "</div>")
     if dim_ok:
         bars = "".join(
             f'<div class="hbar-row"><span class="hbar-label">{C.esc(zh)}</span>'
             f'<span class="hbar-track"><span class="hbar-fill" style="width:{p:.1f}%"></span></span>'
-            f'<span class="hbar-num"><span class="pct">{p:.1f}%</span></span></div>'
-            for zh, p, _n in dim_ok
+            f'<span class="hbar-num"><span class="pct">{p:.1f}%</span></span>'
+            f'<span class="hbar-n">{n} 场</span></div>'
+            for zh, p, n in dim_ok
         )
         viz.append('<div class="insight-block"><h4>单项维度准确率</h4>' + bars + "</div>")
     chips: list[str] = []
