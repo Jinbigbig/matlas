@@ -576,8 +576,11 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
         if len(_rows) >= 8:
             _rows.sort(key=lambda x: x["rank"])
             extras["table"] = _rows
+    # quad_top / prob_* 早就在快照里，此前漏搬 → 单场页「模型视角」的
+    # 三方向最可能比分与方向概率永远是空，只剩两行文字。
     for k in ("lam_home", "lam_away", "lam_total", "upset_prob", "upset_level",
-              "rq_best_ev", "rq_best_odds"):
+              "rq_best_ev", "rq_best_odds",
+              "quad_top", "prob_home", "prob_draw", "prob_away"):
         if m.get(k) is not None:
             extras[k] = m[k]
     if m.get("data_n"):

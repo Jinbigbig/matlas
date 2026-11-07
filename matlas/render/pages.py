@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import math
 from dataclasses import replace
 from typing import Any
 
@@ -1151,30 +1152,143 @@ def _analyse_panel(m: Match) -> str:
     return C.panel("赛前分析", f'<div class="ana-grid">{blocks}</div>')
 
 
+_DIRS = (("home", "主胜"), ("draw", "平局"), ("away", "客胜"))
+_GOAL_BANDS = ((0, 1, "0–1 球"), (2, 3, "2–3 球"), (4, 99, "4 球以上"))
+
+
+def _goal_bands(lh: float, la: float) -> list[tuple[str, float]]:
+    """双方预期进球 → 总进球三档概率（两个独立计数的联合分布）。"""
+
+    def pmf(k: int, mu: float) -> float:
+        return math.exp(-mu) * mu ** k / math.factorial(k)
+
+    joint: dict[int, float] = {}
+    for i in range(13):
+        for j in range(13):
+            joint[i + j] = joint.get(i + j, 0.0) + pmf(i, lh) * pmf(j, la)
+    tot = sum(joint.values()) or 1.0
+    return [
+        (lab, sum(v for k, v in joint.items() if lo <= k <= hi) / tot)
+        for lo, hi, lab in _GOAL_BANDS
+    ]
+
+
+def _mkt_probs(m: Match) -> dict[str, float] | None:
+    """市场三方向概率：与赔率面板同取值顺序（时序最新 → 全玩法胜平负 → 基础赔率）。"""
+    cand: list[dict] = []
+    tk = (m.extras or {}).get("odds_ticks") or []
+    if tk:
+        cand.append(tk[-1] or {})
+    of = (m.extras or {}).get("odds_full") or {}
+    if of.get("spf"):
+        cand.append(of["spf"] or {})
+    if m.odds:
+        cand.append({"胜": m.odds.home, "平": m.odds.draw, "负": m.odds.away})
+    for c in cand:
+        h, d, a = _tick_num(c.get("胜")), _tick_num(c.get("平")), _tick_num(c.get("负"))
+        if h and d and a:
+            tot = 1 / h + 1 / d + 1 / a
+            return {"home": 1 / h / tot, "draw": 1 / d / tot, "away": 1 / a / tot}
+    return None
+
+
 def _model_panel(m: Match) -> str:
-    """模型视角：λ 总量 / 三方向最可能比分 / 冷门评估（来自模型快照 extras）。"""
+    """模型视角：总进球分布 / 三方向最可能比分 / 模型与市场 / 冷门评估。
+
+    四块都取自模型快照 extras，缺哪块就不画哪块：
+      lam_*      双方预期进球 → 主客占比与三档总进球概率
+      quad_top   三个方向各自最可能比分
+      prob_*     模型 1X2 概率，与去水后的市场概率并排看分歧
+      upset_*    市场首选翻车概率与档位
+    """
     ex = m.extras or {}
-    bits = []
-    if ex.get("lam_total") is not None:
-        bits.append(f"<p>模型预期总进球合计：<b>{ex['lam_total']:g}</b> 球</p>")
+    lh, la, lt = ex.get("lam_home"), ex.get("lam_away"), ex.get("lam_total")
+    probs = {
+        "home": ex.get("prob_home"),
+        "draw": ex.get("prob_draw"),
+        "away": ex.get("prob_away"),
+    }
     quad = ex.get("quad_top") or {}
-    qrows = []
-    for key, lab in (("home", "主胜"), ("draw", "平"), ("away", "客胜")):
+    parts: list[str] = []
+
+    # ① 预期进球：合计数 + 主客占比条 + 三档总进球概率
+    if isinstance(lh, (int, float)) and isinstance(la, (int, float)) and (lh + la) > 0:
+        total = lt if isinstance(lt, (int, float)) else lh + la
+        share = lh / (lh + la)
+        bands = "".join(
+            f'<div class="mv-band"><span class="mv-band-l">{lab}</span>'
+            f'<span class="bar-track"><i class="bar-fill b{i}"'
+            f' style="width:{v * 100:.1f}%"></i></span>'
+            f'<b class="pct">{v * 100:.1f}%</b></div>'
+            for i, (lab, v) in enumerate(_goal_bands(float(lh), float(la)))
+        )
+        parts.append(
+            '<div class="mv-block">'
+            f'<div class="mv-goal"><span class="mv-goal-n">{total:.2f}<em>球</em></span>'
+            '<span class="mv-goal-l">预期总进球</span></div>'
+            '<div class="mv-stack">'
+            f'<i class="h" style="width:{share * 100:.1f}%"></i>'
+            f'<i class="a" style="width:{(1 - share) * 100:.1f}%"></i></div>'
+            '<div class="mv-legend">'
+            f'<span><b>{C.esc(m.home.name)}</b> {lh:.2f}</span>'
+            f'<span><b>{C.esc(m.away.name)}</b> {la:.2f}</span></div>'
+            f'<div class="mv-bands">{bands}</div></div>'
+        )
+
+    # ② 三方向最可能比分：每格 = 方向 / 比分 / 该比分概率 / 该方向概率
+    cells = []
+    for key, lab in _DIRS:
         q = quad.get(key)
-        if isinstance(q, dict) and q.get("score"):
-            qrows.append([lab, str(q["score"]).replace(":", "-"), f"{q.get('prob', 0):g}%"])
-    if qrows:
-        bits.append(
-            "<h4>三方向最可能比分</h4>"
-            + C.table(["方向", "最可能比分", "模型概率"], qrows)
+        if not (isinstance(q, dict) and q.get("score")):
+            continue
+        dp = probs.get(key)
+        sub = (
+            f'<span class="mv-q-d">方向 <span class="pct">{dp:.1f}%</span></span>'
+            if isinstance(dp, (int, float)) else ""
         )
-    if ex.get("upset_prob") is not None:
-        lvl = ex.get("upset_level", "")
-        bits.append(
-            f"<p>冷门评估：<b>{C.esc(str(lvl))}</b>"
-            f'（冷门概率 <span class="pct mini">{ex["upset_prob"]:g}%</span>）</p>'
+        cells.append(
+            f'<div class="mv-q"><span class="mv-q-lab">{lab}</span>'
+            f'<span class="mv-q-score">{C.esc(str(q["score"]).replace(":", "-"))}</span>'
+            f'<span class="pct mv-q-p">{q.get("prob", 0):g}%</span>{sub}</div>'
         )
-    body = "".join(bits) or (
+    if cells:
+        parts.append(
+            '<div class="mv-block"><h4>三方向最可能比分</h4>'
+            f'<div class="mv-quad">{"".join(cells)}</div></div>'
+        )
+
+    # ③ 模型与市场：同一方向的模型概率与去水市场概率并排
+    imp = _mkt_probs(m)
+    if imp and all(isinstance(probs[k], (int, float)) for k, _ in _DIRS):
+        cells = "".join(
+            f'<div class="mv-mk-c"><span class="mv-mk-l">{lab}</span>'
+            f'<span class="mv-mk-v"><span class="pct">{probs[key]:.1f}%</span>'
+            f'<em>模型</em></span>'
+            f'<span class="mv-mk-v m"><span class="pct">{imp[key] * 100:.1f}%</span>'
+            f'<em>市场</em></span></div>'
+            for key, lab in _DIRS
+        )
+        parts.append(
+            '<div class="mv-block"><h4>模型与市场</h4>'
+            f'<div class="mv-mkt3">{cells}</div></div>'
+        )
+
+    # ④ 冷门评估：三档刻度 + 指针（<40 低 / 40–52 中 / ≥52 高，轴到 80%）
+    if isinstance(ex.get("upset_prob"), (int, float)):
+        up = float(ex["upset_prob"])
+        pos = min(max(up / 80 * 100, 0.0), 100.0)
+        parts.append(
+            '<div class="mv-block">'
+            '<div class="mv-up-h"><span class="mv-t">冷门评估</span>'
+            f'<b>{C.esc(str(ex.get("upset_level") or "—"))}</b>'
+            f'<span class="pct">{up:g}%</span></div>'
+            '<div class="mv-scale"><i class="s1"></i><i class="s2"></i><i class="s3"></i>'
+            f'<em style="width:2px;left:{pos:.1f}%"></em></div>'
+            '<div class="mv-scale-l"><span>低</span><span>中</span><span>高</span></div>'
+            "</div>"
+        )
+
+    body = "".join(parts) or (
         '<p class="panel-empty">模型过程数据尚未接入，框架已预留。</p>'
     )
     return C.panel("模型视角", body)
