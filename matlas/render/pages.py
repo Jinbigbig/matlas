@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import math
+import re
 from dataclasses import replace
 from typing import Any
 
@@ -2674,14 +2675,14 @@ def _ml_row(m: Match, board: dict | None = None) -> str:
     else:
         stat = '<span class="ml-st">待开赛</span>'
     return (
-        f'<a class="mline" href="matches/{m.match_id}.html">'
+        f'<a class="mline" data-jc="1" href="matches/{m.match_id}.html">'
         f'<span class="ml-t">{C.esc((m.kickoff or "")[-5:] or "—")}</span>'
         f'<span class="ml-lg">{C.esc(m.competition or "")}</span>'
         '<span class="ml-teams">'
         f'<span class="ml-h">{_ml_form(board, m.home.name)}'
-        f'<span class="ml-nm">{C.esc(m.home.name)}</span></span>'
+        f'<span class="ml-nm" title="{C.esc(m.home.name)}">{C.esc(m.home.name)}</span></span>'
         '<span class="ml-v">VS</span>'
-        f'<span class="ml-a"><span class="ml-nm">{C.esc(m.away.name)}</span>'
+        f'<span class="ml-a"><span class="ml-nm" title="{C.esc(m.away.name)}">{C.esc(m.away.name)}</span>'
         f'{_ml_form(board, m.away.name)}</span>'
         "</span>"
         f'<span class="ml-pick">{chips}</span>'
@@ -2689,37 +2690,53 @@ def _ml_row(m: Match, board: dict | None = None) -> str:
     )
 
 
+def _same_fx(a: str, b: str) -> bool:
+    """赛程库与站内队名对不上时的兜底：简称 / 全称 / 译名双向包含。"""
+    clean = lambda s: re.sub(r"[\s\u3000·\-()（）队]", "", s or "")
+    a, b = clean(a), clean(b)
+    return bool(a and b and (a == b or (len(a) >= 2 and len(b) >= 2
+                                        and (a in b or b in a))))
+
+
 def _ml_pending(r: dict, board: dict | None = None) -> str:
-    """只有赛程、还没有预测的场次：不给链接，右端标待分析。"""
+    """只有赛程的行：竞彩场次标待分析，其它联赛标仅赛程。"""
+    jc = 1 if r.get("jc") else 0
+    if jc:
+        stat = '<span class="ml-st">待分析</span>'
+    else:
+        s = str(r.get("st") or "").strip()
+        label = s if any(w in s for w in ("延期", "取消", "完场", "完赛")) else "仅赛程"
+        stat = f'<span class="ml-st">{C.esc(label)}</span>'
     return (
-        '<div class="mline off">'
+        f'<div class="mline off" data-jc="{jc}">'
         f'<span class="ml-t">{C.esc(r.get("time") or "—")}</span>'
         f'<span class="ml-lg">{C.esc(r.get("league") or "")}</span>'
         '<span class="ml-teams">'
         f'<span class="ml-h">{_ml_form(board, r.get("home") or "")}'
-        f'<span class="ml-nm">{C.esc(r.get("home") or "")}</span></span>'
+        f'<span class="ml-nm" title="{C.esc(r.get("home") or "")}">{C.esc(r.get("home") or "")}</span></span>'
         '<span class="ml-v">VS</span>'
-        f'<span class="ml-a"><span class="ml-nm">{C.esc(r.get("away") or "")}</span>'
+        f'<span class="ml-a"><span class="ml-nm" title="{C.esc(r.get("away") or "")}">{C.esc(r.get("away") or "")}</span>'
         f'{_ml_form(board, r.get("away") or "")}</span>'
         "</span>"
         '<span class="ml-pick"></span>'
-        '<span class="ml-st">待分析</span></div>'
+        f"{stat}</div>"
     )
 
 
 def render_matches(cfg: Config, days: list[Day],
                    fixtures: dict[str, list[dict]] | None = None,
                    board: dict | None = None) -> str:
-    """比赛列表：按日平铺，一行一场。
+    """比赛列表：按日平铺，一行一场，顶部切换竞彩 / 全部赛程。
 
-    三种行态：已结算（比分 + 是否命中）、已开赛待结算（方向与比分预测）、
-    待分析（只有赛程）。赛程侧的场次来自竞彩在售期次，当日预测产出后
-    同一编号会被比赛数据接管，自动变成可点行。
+    行态：已结算（比分 + 是否命中）、待开赛（方向与比分预测）、
+    待分析（只有竞彩赛程）、仅赛程（竞彩未开售的场次）。
+    站内已分析场次与赛程库按编号 + 主客队名去重，避免同一场出现两行。
     """
     base = cfg.base_url.rstrip("/")
     fixtures = fixtures or {}
     by_date = {d.date: d.matches for d in days}
-    dates = sorted({*by_date, *fixtures}, reverse=True)[:6]
+    recent = sorted(by_date, reverse=True)[:3]
+    dates = sorted({*recent, *fixtures}, reverse=True)[:12]
     head = f"<h1 class='page-h1'>{L.ICON_SPORTS} 比赛列表</h1>"
     if not dates:
         return L.page(
@@ -2730,13 +2747,20 @@ def render_matches(cfg: Config, days: list[Day],
 
     today = max(by_date) if by_date else ""
     counts: dict[str, int] = {}
+    jc_counts: dict[str, int] = {}
     sections = []
     for d in dates:
         ms = sorted(by_date.get(d) or [], key=lambda m: (m.kickoff or "", m.code or ""))
-        used = {m.code for m in ms}
-        pend = [r for r in (fixtures.get(d) or []) if r.get("code") not in used]
+        used_codes = {m.code for m in ms if m.code}
+        pairs = [(m.home.name, m.away.name) for m in ms]
+        pend = [r for r in (fixtures.get(d) or [])
+                if r.get("code") not in used_codes
+                and not any(_same_fx(r.get("home") or "", h)
+                            and _same_fx(r.get("away") or "", a) for h, a in pairs)]
         n = len(ms) + len(pend)
+        jn = len(ms) + sum(1 for r in pend if r.get("jc"))
         counts[d] = n
+        jc_counts[d] = jn
         tag = ""
         if d > today:
             tag = '<span class="mini">未开赛</span>'
@@ -2744,14 +2768,20 @@ def render_matches(cfg: Config, days: list[Day],
             tag = '<span class="mini">今日</span>'
         rows = "".join(_ml_row(m, board) for m in ms)
         rows += "".join(_ml_pending(r, board) for r in pend)
+        more = "" if jn else (
+            f'<label class="ml-more" for="ml-all">{d[5:].replace("-", "/")}'
+            f' · {n} 场赛程，查看全部</label>')
         sections.append(
-            f'<h2 class="ml-day" id="d-{d}">{d[5:].replace("-", "/")} · {n} 场{tag}</h2>'
-            f'<div class="mlines">{rows}</div>'
+            f'<section class="ml-sec{"" if jn else " empty-jc"}" id="d-{d}">'
+            f'<h2 class="ml-day">{d[5:].replace("-", "/")} · '
+            f'<span class="n-jc">{jn} 场</span><span class="n-all">{n} 场</span>{tag}</h2>'
+            f'<div class="mlines">{rows}</div>{more}</section>'
         )
 
     jump = "".join(
         f'<a class="ml-jump-a" href="#d-{d}">{d[5:].replace("-", "/")}'
-        f'<em>{counts.get(d, 0)}</em></a>'
+        f'<em class="n-jc">{jc_counts.get(d, 0)}</em>'
+        f'<em class="n-all">{counts.get(d, 0)}</em></a>'
         for d in dates
     )
     legend = (
@@ -2759,15 +2789,26 @@ def render_matches(cfg: Config, days: list[Day],
         '<span><i class="d"></i>平</span><span><i class="l"></i>负</span>'
         '<b>队名旁为近 5 场</b></p>'
     )
-    body = (
-        head
-        + f'<p class="sub">最近 {len(dates)} 个比赛日，共 '
-          f'{sum(counts.values())} 场；赛前看方向与比分，赛后就地对照赛果。</p>'
+    panel = (
+        f'<p class="sub ml-sub">最近 {len(dates)} 个比赛日，共 '
+        f'<span class="n-jc">{sum(jc_counts.values())}</span>'
+        f'<span class="n-all">{sum(counts.values())}</span> 场；'
+        '赛前看方向与比分，赛后就地对照赛果。</p>'
         + f'<div class="ml-jump">{jump}</div>'
         + legend
         + "".join(sections)
         + f'<p class="sub" style="margin-top:18px">更早的场次见 '
           f'<a href="{base}/days/">历史归档</a>。</p>'
+    )
+    body = (
+        head
+        + '<div class="ml-tabs">'
+        + '<input type="radio" name="mlscope" id="ml-jc" class="fp-radio" checked>'
+        + '<label class="fp-opt" for="ml-jc">仅竞彩</label>'
+        + '<input type="radio" name="mlscope" id="ml-all" class="fp-radio">'
+        + '<label class="fp-opt" for="ml-all">全部赛程</label>'
+        + f'<div class="ml-panel">{panel}</div>'
+        + '</div>'
     )
     return L.page(
         cfg, title="比赛列表", description="按日浏览全部赛事，方向与比分旁边就是赛果",
