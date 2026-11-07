@@ -21,6 +21,8 @@ from __future__ import annotations
 import json
 import re
 import sys
+import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from matlas.config import write_text_safe
@@ -41,6 +43,9 @@ HKJC_JSON = Path("C:/Users/Jin/jinbet/hkjc.json")
 INJURIES_EXTRA_JSON = Path("C:/Users/Jin/jinbet/injuries_extra.json")
 # 盘口时序（jinbet/_fetch_odds_ticks.py 每日 11:10 / 14:00 / 19:00 三点采集）：同一场多次快照才画得出来
 ODDS_TICKS_JSON = Path("C:/Users/Jin/jinbet/odds_ticks.json")
+# 赛程里带的主客队队徽编号，离线到站内的 assets/logo/teams/<id>.png
+CREST_DIR = Path(__file__).resolve().parent / "assets" / "logo" / "teams"
+CREST_BASE = "https://www.qiuxiaoce.com/wp-content/logo/teams"
 WEATHER_JSON = Path("C:/Users/Jin/jinbet/weather.json")
 REFEREE_JSON = Path("C:/Users/Jin/jinbet/referee.json")
 # 网易红彩「数据」tab（jinbet/_fetch_hongcai.py 产出）：统计/风格/裁判/天气/盘路/
@@ -914,6 +919,69 @@ def _inherit_extras(path: Path, matches: list[dict]) -> None:
             ex[k] = v
 
 
+
+def _download_crest(tid: str) -> bool:
+    """单张队徽；只新建不覆盖，避免触发覆盖写拦截。"""
+    dest = CREST_DIR / f"{tid}.png"
+    if dest.exists():
+        return True
+    req = urllib.request.Request(
+        f"{CREST_BASE}/{tid}.png",
+        headers={"User-Agent": "Mozilla/5.0",
+                 "Referer": "https://www.qiuxiaoce.com/"},
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=12) as r:
+            blob = r.read()
+        # 上游队徽库混用 PNG / GIF / JPEG（扩展名都叫 .png），按魔数收
+        image = (blob[:4] == b"\x89PNG" or blob[:3] == b"GIF"
+                 or blob[:2] == b"\xff\xd8")
+        if not image or len(blob) < 100:
+            return False
+        dest.write_bytes(blob)
+        return True
+    except Exception:
+        return False
+
+
+def sync_team_crests(fx_text: str) -> None:
+    """赛程里出现的队徽编号，缺的离线到 assets/logo/teams/。
+
+    定时任务每天跑一次增量；源站不可达或单张失败都只跳过，不阻断导入与发布。
+    """
+    try:
+        payload = json.loads(fx_text)
+    except Exception:
+        return
+    ids = {str(r[k]) for rows in (payload.get("days") or {}).values()
+           for r in rows for k in ("hid", "aid") if r.get(k)}
+    ids = {i for i in ids if i.isdigit()}
+    if not ids:
+        return
+    CREST_DIR.mkdir(parents=True, exist_ok=True)
+    missing = sorted(i for i in ids if not (CREST_DIR / f"{i}.png").exists())
+    if not missing:
+        print(f"[crest] 队徽素材齐全（{len(ids)} 个编号）")
+        return
+    # 先探几张：个别编号上游本就 404，不能因为恰好排第一就整轮跳过；
+    # 连续几张都失败才判定源站不可达，避免定时任务卡进几百次超时。
+    probe = missing[:5]
+    ok = sum(1 for t in probe if _download_crest(t))
+    fail = len(probe) - ok
+    if ok == 0:
+        print(f"[crest] 队徽源探测失败，本轮跳过（缺 {len(missing)} 张）")
+        return
+    rest = missing[len(probe):]
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futs = [pool.submit(_download_crest, t) for t in rest]
+        for f in as_completed(futs):
+            if f.result():
+                ok += 1
+            else:
+                fail += 1
+    print(f"[crest] 队徽 {len(ids)} 个编号 / 新下载 {ok} / 失败 {fail}")
+
+
 def main() -> None:
     dry = "--dry-run" in sys.argv
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -974,7 +1042,9 @@ def main() -> None:
         # 未来赛程（jinbet _fetch_fixtures.py 产）：比赛列表页的「待分析」场次
         fx = PRED_DIR.parent / "fixtures.json"
         if fx.exists():
-            write_text_safe(OUT_DIR.parent / "fixtures.json", fx.read_text(encoding="utf-8"))
+            fx_text = fx.read_text(encoding="utf-8")
+            write_text_safe(OUT_DIR.parent / "fixtures.json", fx_text)
+            sync_team_crests(fx_text)
         n_h2h = sum(
             1 for p in OUT_DIR.glob("*.json")
             for mm in json.loads(p.read_text(encoding="utf-8")).get("matches", [])

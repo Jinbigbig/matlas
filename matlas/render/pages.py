@@ -2641,6 +2641,21 @@ def render_preview_day(cfg: Config, d: Day, prev: Day | None = None) -> str:
     )
 
 
+def _ml_crest(name: str, tid: str = "", pre: str = "") -> str:
+    """行内小队徽：赛程带的编号优先，再退站内已注入路径 / 队名映射。"""
+    src = logos.crest_by_id(tid) if tid else ""
+    src = src or pre or logos.crest_url(name)
+    if src:
+        return (f'<img class="ml-crest" src="{C.esc(src)}" alt="" '
+                'decoding="async" width="20" height="20">')
+    return '<span class="ml-crest ml-crest-ph" aria-hidden="true"></span>'
+
+
+def _ml_code(code: str) -> str:
+    """竞彩完整编号，只有竞彩场次才有。"""
+    return f'<em class="ml-code">{C.esc(code)}</em>' if code else ""
+
+
 def _ml_form(board: dict | None, name: str) -> str:
     """队名旁五个点：该队近 5 场胜平负。榜里没有这队就不画。"""
     if not board or not name:
@@ -2660,6 +2675,8 @@ def _ml_form(board: dict | None, name: str) -> str:
 
 def _ml_row(m: Match, board: dict | None = None) -> str:
     """比赛列表的一行：已结算带比分与命中，未结算带方向与比分预测。"""
+    crest_h = _ml_crest(m.home.name, pre=getattr(m.home, "logo", "") or "")
+    crest_a = _ml_crest(m.away.name, pre=getattr(m.away, "logo", "") or "")
     fs = m.forecasts_of("direction") or []
     sc = m.forecasts_of("score") or []
     chips = "".join(
@@ -2676,13 +2693,16 @@ def _ml_row(m: Match, board: dict | None = None) -> str:
         stat = '<span class="ml-st">待开赛</span>'
     return (
         f'<a class="mline" data-jc="1" href="matches/{m.match_id}.html">'
-        f'<span class="ml-t">{C.esc((m.kickoff or "")[-5:] or "—")}</span>'
+        f'<span class="ml-t">{C.esc((m.kickoff or "")[-5:] or "—")}'
+        f'{_ml_code(m.code or "")}</span>'
         f'<span class="ml-lg">{C.esc(m.competition or "")}</span>'
         '<span class="ml-teams">'
         f'<span class="ml-h">{_ml_form(board, m.home.name)}'
-        f'<span class="ml-nm" title="{C.esc(m.home.name)}">{C.esc(m.home.name)}</span></span>'
+        f'<span class="ml-nm" title="{C.esc(m.home.name)}">{C.esc(m.home.name)}</span>'
+        f'{crest_h}</span>'
         '<span class="ml-v">VS</span>'
-        f'<span class="ml-a"><span class="ml-nm" title="{C.esc(m.away.name)}">{C.esc(m.away.name)}</span>'
+        f'<span class="ml-a">{crest_a}'
+        f'<span class="ml-nm" title="{C.esc(m.away.name)}">{C.esc(m.away.name)}</span>'
         f'{_ml_form(board, m.away.name)}</span>'
         "</span>"
         f'<span class="ml-pick">{chips}</span>'
@@ -2707,15 +2727,20 @@ def _ml_pending(r: dict, board: dict | None = None) -> str:
         s = str(r.get("st") or "").strip()
         label = s if any(w in s for w in ("延期", "取消", "完场", "完赛")) else "仅赛程"
         stat = f'<span class="ml-st">{C.esc(label)}</span>'
+    crest_h = _ml_crest(r.get("home") or "", str(r.get("hid") or ""))
+    crest_a = _ml_crest(r.get("away") or "", str(r.get("aid") or ""))
     return (
         f'<div class="mline off" data-jc="{jc}">'
-        f'<span class="ml-t">{C.esc(r.get("time") or "—")}</span>'
+        f'<span class="ml-t">{C.esc(r.get("time") or "—")}'
+        f'{_ml_code(str(r.get("code") or ""))}</span>'
         f'<span class="ml-lg">{C.esc(r.get("league") or "")}</span>'
         '<span class="ml-teams">'
         f'<span class="ml-h">{_ml_form(board, r.get("home") or "")}'
-        f'<span class="ml-nm" title="{C.esc(r.get("home") or "")}">{C.esc(r.get("home") or "")}</span></span>'
+        f'<span class="ml-nm" title="{C.esc(r.get("home") or "")}">{C.esc(r.get("home") or "")}</span>'
+        f'{crest_h}</span>'
         '<span class="ml-v">VS</span>'
-        f'<span class="ml-a"><span class="ml-nm" title="{C.esc(r.get("away") or "")}">{C.esc(r.get("away") or "")}</span>'
+        f'<span class="ml-a">{crest_a}'
+        f'<span class="ml-nm" title="{C.esc(r.get("away") or "")}">{C.esc(r.get("away") or "")}</span>'
         f'{_ml_form(board, r.get("away") or "")}</span>'
         "</span>"
         '<span class="ml-pick"></span>'

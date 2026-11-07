@@ -8,6 +8,9 @@
 
 from __future__ import annotations
 
+import functools
+from pathlib import Path
+
 TEAM_CREST: dict[str, str] = {
     "AC奥卢": "2077",
     "AC米兰": "489",
@@ -733,6 +736,18 @@ _FILL = {
     "朝鲜女": "21343", "塔吉克": "1536", "腓特烈": "2149",
 }
 TEAM_CREST.update({k: v for k, v in _FILL.items() if k not in TEAM_CREST})
+
+
+_TEAM_DIR = Path(__file__).resolve().parent.parent / "assets" / "logo" / "teams"
+
+
+@functools.lru_cache(maxsize=4096)
+def crest_by_id(tid) -> str:
+    """队徽编号 → 站点相对路径；素材没落地就返回空串，渲染层退回队名映射。"""
+    key = str(tid or "").strip()
+    if not key.isdigit() or not (_TEAM_DIR / f"{key}.png").exists():
+        return ""
+    return f"assets/logo/teams/{key}.png"
 
 
 def crest_url(name: str) -> str:
