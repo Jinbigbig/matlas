@@ -955,6 +955,15 @@ a.lg-link:hover { color: var(--accent); text-decoration: none; }
   padding: 1rem 1.25rem; margin: 1.25rem 0; font-size: 0.8rem; color: var(--muted); }
 .ledger code { font-family: 'SFMono-Regular', Consolas, monospace; background: var(--bg);
   padding: 0.1rem 0.4rem; border-radius: 4px; color: var(--ink); }
+/* ---------- 球员情报 ---------- */
+.sq-sum { margin-bottom: 10px; }
+.sq-table td:not(:first-child) { text-align: right; white-space: nowrap; }
+.sq-table td:nth-child(2) { text-align: left; }
+@media(max-width:640px) {
+  .sq-table { font-size: 0.76rem; }
+  .sq-table th:nth-child(5), .sq-table td:nth-child(5),
+  .sq-table th:nth-child(6), .sq-table td:nth-child(6) { display: none; }
+}
 .disclaimer { background: var(--bg2); border-left: 3px solid var(--rule); padding: 0.6rem 1rem;
   color: var(--muted); font-size: 0.8rem; margin: 1.5rem 0; }
 footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding: 1.5rem 0;

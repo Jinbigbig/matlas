@@ -1,14 +1,12 @@
 # Matlas
 
-> 足球赛事量化图谱。Matlas 逐场公开足球赛事的结构化量化数据与推演结论，赛前固化、赛后回填，全部历史可核验、可复算。
+> 足球赛事量化图谱。Matlas 逐场公开足球赛事的结构化量化数据与推演结论，赛前固化、赛后回填，全部历史可回溯、可复算。
 
 ## 站点性质
 
 - 定位：逐场公开足球赛事的**结构化量化数据**与赛前结论，面向数据分析与技术交流。
 - 不构成任何投注建议，不提供购买方案，不做准确率承诺。
 - 结论在赛前生成并固化；赛后只回填真实赛果，**不修改任何已发布结论**。
-- 每篇单场页面内嵌「结论指纹」（覆盖赛前全部结论字段的 SHA-256 前 12 位），
-  赛后回填后指纹不变，可用于验证结论未被事后调整。
 
 ## 数据契约
 
@@ -26,24 +24,40 @@
 
 ## 覆盖范围
 
-归档 58 个交易日、共 832 场；涉及赛事：亚冠乙、亚冠精英、亚运女足、亚运男足、国际赛、巴甲、巴西杯、德乙、德国杯、德甲、意甲、挪超、日职乙、日职联、日联赛杯、欧冠、欧协联、欧国联、欧罗巴、沙特联、法乙、法甲、澳超、瑞超、美职联、芬超、英冠、英联杯、英超、英锦标赛、荷乙、荷兰杯、荷甲、葡超、西甲、解放者杯、韩K联。
+归档 59 个交易日、共 862 场；涉及赛事：亚冠乙、亚冠精英、亚运女足、亚运男足、国际赛、巴甲、巴西杯、德乙、德国杯、德甲、意甲、挪超、日职乙、日职联、日联赛杯、欧冠、欧协联、欧国联、欧罗巴、沙特联、法乙、法甲、澳超、瑞超、美职联、芬超、英冠、英联杯、英超、英锦标赛、荷乙、荷兰杯、荷甲、葡超、西甲、解放者杯、韩K联。
 
-## 最新一日（2026-11-06，共 14 场）
+## 最新一日（2026-11-07，共 30 场）
 
-- [悉尼FC vs 中央海岸 · 澳超](https://jinbigbig.github.io/matlas/matches/2026-11-06-001.html)　周五001　2026-11-06 16:40
-- [不伦瑞克 vs 科特布斯 · 德乙](https://jinbigbig.github.io/matlas/matches/2026-11-06-002.html)　周五002　2026-11-07 01:30
-- [哈马比 vs 埃夫斯堡 · 瑞超](https://jinbigbig.github.io/matlas/matches/2026-11-06-003.html)　周五003　2026-11-07 02:00
-- [蒙彼利埃 vs 梅斯 · 法乙](https://jinbigbig.github.io/matlas/matches/2026-11-06-004.html)　周五004　2026-11-07 03:00
-- [威廉二世 vs 兹沃勒 · 荷甲](https://jinbigbig.github.io/matlas/matches/2026-11-06-005.html)　周五005　2026-11-07 03:00
-- [奥斯 vs 瓦尔韦克 · 荷乙](https://jinbigbig.github.io/matlas/matches/2026-11-06-006.html)　周五006　2026-11-07 03:00
-- [汉堡 vs 门兴 · 德甲](https://jinbigbig.github.io/matlas/matches/2026-11-06-007.html)　周五007　2026-11-07 03:30
-- [威尼斯 vs 乌迪内斯 · 意甲](https://jinbigbig.github.io/matlas/matches/2026-11-06-008.html)　周五008　2026-11-07 03:45
-- [图卢兹 vs 斯特拉斯 · 法甲](https://jinbigbig.github.io/matlas/matches/2026-11-06-009.html)　周五009　2026-11-07 03:45
-- [埃弗顿 vs 考文垂 · 英超](https://jinbigbig.github.io/matlas/matches/2026-11-06-010.html)　周五010　2026-11-07 04:00
-- [德比郡 vs 博尔顿 · 英冠](https://jinbigbig.github.io/matlas/matches/2026-11-06-011.html)　周五011　2026-11-07 04:00
-- [塞维利亚 vs 阿拉维斯 · 西甲](https://jinbigbig.github.io/matlas/matches/2026-11-06-012.html)　周五012　2026-11-07 04:00
-- [法马利康 vs 阿罗卡 · 葡超](https://jinbigbig.github.io/matlas/matches/2026-11-06-013.html)　周五013　2026-11-07 04:45
-- [维多利亚 vs 弗鲁米嫩 · 巴甲](https://jinbigbig.github.io/matlas/matches/2026-11-06-014.html)　周五014　2026-11-07 07:00
+- [横滨水手 vs 冈山绿雉 · 日职联](https://jinbigbig.github.io/matlas/matches/2026-11-07-001.html)　周六001　2026-11-07 13:00
+- [鸟栖沙岩 vs 富山胜利 · 日职乙](https://jinbigbig.github.io/matlas/matches/2026-11-07-002.html)　周六002　2026-11-07 13:00
+- [柏太阳神 vs 川崎前锋 · 日职联](https://jinbigbig.github.io/matlas/matches/2026-11-07-003.html)　周六003　2026-11-07 15:00
+- [金泉尚武 vs 安养FC · 韩K联](https://jinbigbig.github.io/matlas/matches/2026-11-07-004.html)　周六004　2026-11-07 15:30
+- [珀斯 vs 纽喷气机 · 澳超](https://jinbigbig.github.io/matlas/matches/2026-11-07-005.html)　周六005　2026-11-07 18:45
+- [利兹联 vs 热刺 · 英超](https://jinbigbig.github.io/matlas/matches/2026-11-07-006.html)　周六006　2026-11-07 20:30
+- [朴次茅斯 vs 斯托克城 · 英冠](https://jinbigbig.github.io/matlas/matches/2026-11-07-007.html)　周六007　2026-11-07 20:30
+- [马拉加 vs 桑坦德 · 西甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-008.html)　周六008　2026-11-07 21:00
+- [都灵 vs 莱切 · 意甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-009.html)　周六009　2026-11-07 22:00
+- [卡利亚里 vs 弗洛西诺 · 意甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-010.html)　周六010　2026-11-07 22:00
+- [莱红牛 vs 奥格斯堡 · 德甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-011.html)　周六011　2026-11-07 22:30
+- [帕德博恩 vs 法兰克福 · 德甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-012.html)　周六012　2026-11-07 22:30
+- [多特蒙德 vs 埃沃斯堡 · 德甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-013.html)　周六013　2026-11-07 22:30
+- [美因茨 vs 拜仁 · 德甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-014.html)　周六014　2026-11-07 22:30
+- [阿森纳 vs 赫尔城 · 英超](https://jinbigbig.github.io/matlas/matches/2026-11-07-015.html)　周六015　2026-11-07 23:00
+- [富勒姆 vs 纽卡斯尔 · 英超](https://jinbigbig.github.io/matlas/matches/2026-11-07-016.html)　周六016　2026-11-07 23:00
+- [伯明翰 vs 斯旺西 · 英冠](https://jinbigbig.github.io/matlas/matches/2026-11-07-017.html)　周六017　2026-11-07 23:00
+- [克里斯蒂 vs 瓦勒伦加 · 挪超](https://jinbigbig.github.io/matlas/matches/2026-11-07-018.html)　周六018　
+- [西班牙人 vs 拉科 · 西甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-019.html)　周六019　2026-11-07 23:15
+- [福图纳 vs 斯达 · 荷甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-020.html)　周六020　2026-11-07 23:30
+- [代格福什 vs 盖斯 · 瑞超](https://jinbigbig.github.io/matlas/matches/2026-11-07-021.html)　周六021　2026-11-08 00:30
+- [帕尔马 vs 博洛尼亚 · 意甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-022.html)　周六022　2026-11-08 01:00
+- [诺丁汉 vs 曼城 · 英超](https://jinbigbig.github.io/matlas/matches/2026-11-07-023.html)　周六023　2026-11-08 01:30
+- [斯图加特 vs 不来梅 · 德甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-024.html)　周六024　2026-11-08 01:30
+- [奥萨苏纳 vs 毕尔巴鄂 · 西甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-025.html)　周六025　2026-11-08 01:30
+- [欧塞尔 vs 巴黎FC · 法甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-026.html)　周六026　2026-11-08 02:00
+- [阿尔维卡 vs 卡萨皮亚 · 葡超](https://jinbigbig.github.io/matlas/matches/2026-11-07-027.html)　周六027　2026-11-08 02:00
+- [罗马 vs 萨索洛 · 意甲](https://jinbigbig.github.io/matlas/matches/2026-11-07-028.html)　周六028　2026-11-08 03:45
+- [米竞技 vs 格雷米奥 · 巴西杯](https://jinbigbig.github.io/matlas/matches/2026-11-07-029.html)　周六029　2026-11-08 05:00
+- [盐湖城 vs 洛城银河 · 美职联](https://jinbigbig.github.io/matlas/matches/2026-11-07-030.html)　周六030　2026-11-08 08:00
 
 ## 归档
 
