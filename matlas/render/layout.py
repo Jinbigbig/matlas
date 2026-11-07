@@ -495,6 +495,11 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .arch-cell .rank-bar-wrap { grid-column: 1 / -1; }
 .arch-cell .rank-acc, .arch-cell .mini { grid-column: 1 / -1; text-align: right; }
 .arch-lg-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.arch-head { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.arch-crest { width: 26px; height: 26px; object-fit: contain; flex: none; }
+.arch-crest-ph { border-radius: 50%; background: var(--bg); color: var(--muted);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; }
 .arch-dims { grid-column: 1 / -1; display: grid; gap: 6px; margin-top: 9px;
   padding-top: 9px; border-top: 1px solid var(--rule);
   grid-template-columns: repeat(4, minmax(0, 1fr)); }

@@ -2078,9 +2078,17 @@ def render_archive_index(cfg: Config, days: list[str],
                 parts.append(
                     f'<span class="arch-dim"><i>{label}</i>{val}{note}</span>')
             dims_html = "".join(parts)
+            crest = logos.league_crest_url(name)
+            badge = (
+                f'<img class="arch-crest" src="../{C.esc(crest)}" alt="{C.esc(name)}徽章" loading="lazy">'
+                if crest
+                else '<span class="arch-crest arch-crest-ph" aria-hidden="true">'
+                     f'{C.esc(name[:1])}</span>'
+            )
             cells.append(
                 f'<a class="arch-cell arch-lg" href="../leagues/{C.esc(name)}.html">'
-                f'<span class="arch-name">{C.esc(name)}</span>'
+                f'<span class="arch-head">{badge}'
+                f'<span class="arch-name">{C.esc(name)}</span></span>'
                 f'<span class="arch-n">已收录 {n} 场</span>'
                 f'<span class="arch-dims">{dims_html}</span></a>'
             )

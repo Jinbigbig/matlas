@@ -767,17 +767,42 @@ def apply(days) -> int:
 # 来源：qiuxiaoce 侧栏 rank-logo 按 id 离线（assets/logo/competitions/）。
 # 覆盖面随抓取逐步补充；无映射联赛退化为首字占位圆（同队徽机制）。
 LEAGUE_CREST: dict[str, str] = {
-    "葡甲": "leagues/95",
-    "英联杯": "cups/48",
-    "德国杯": "cups/81",
-    "非洲杯": "cups/6",
-    "瑞士甲": "leagues/208",
-    "意大利杯": "cups/137",
+    "亚冠乙": "leagues/18",
+    "亚冠精英": "leagues/17",
+    "巴甲": "leagues/71",
+    "巴西杯": "cups/73",
+    "德乙": "leagues/79",
+    "德国杯": "leagues/81",
+    "德甲": "leagues/78",
+    "意甲": "leagues/135",
+    "挪超": "leagues/103",
+    "日职乙": "leagues/99",
+    "日职联": "leagues/98",
+    "欧冠": "leagues/2",
+    "欧国联": "leagues/5",
+    "欧罗巴": "leagues/3",
     "沙特联": "leagues/307",
+    "法乙": "leagues/62",
+    "法甲": "leagues/61",
+    "澳超": "leagues/188",
+    "瑞超": "leagues/113",
+    "美职联": "leagues/253",
+    "芬超": "leagues/244",
+    "英冠": "leagues/40",
+    "英联杯": "leagues/48",
+    "英超": "leagues/39",
+    "英锦标赛": "leagues/46",
+    "荷乙": "leagues/89",
+    "荷兰杯": "leagues/90",
+    "荷甲": "leagues/88",
+    "葡超": "leagues/94",
+    "西甲": "leagues/140",
+    "韩K联": "leagues/292",
 }
 
 _LEAGUE_ALIAS = {
-    "英锦标赛": "英联杯", "德国杯赛": "德国杯", "意杯": "意大利杯",
+    "德国杯赛": "德国杯", "意杯": "意大利杯", "欧联": "欧罗巴",
+    "欧协": "欧协联", "瑞典超": "瑞超", "英锦赛": "英锦标赛",
 }
 
 
