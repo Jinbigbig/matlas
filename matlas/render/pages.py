@@ -2674,10 +2674,11 @@ def _ml_form(board: dict | None, name: str) -> str:
     return f'<em class="mlf">{dots}</em>'
 
 
-def _ml_row(m: Match, board: dict | None = None) -> str:
+def _ml_row(m: Match, board: dict | None = None, t: str | None = None) -> str:
     """比赛列表的一行：已结算带比分与命中，未结算带方向与比分预测。"""
     crest_h = _ml_crest(m.home.name, pre=getattr(m.home, "logo", "") or "")
     crest_a = _ml_crest(m.away.name, pre=getattr(m.away, "logo", "") or "")
+    time_txt = t if t is not None else ((m.kickoff or "")[-5:] or "—")
     fs = m.forecasts_of("direction") or []
     sc = m.forecasts_of("score") or []
     chips = "".join(
@@ -2694,7 +2695,7 @@ def _ml_row(m: Match, board: dict | None = None) -> str:
         stat = '<span class="ml-st">待开赛</span>'
     return (
         f'<a class="mline" data-jc="1" href="matches/{m.match_id}.html">'
-        f'<span class="ml-t">{C.esc((m.kickoff or "")[-5:] or "—")}'
+        f'<span class="ml-t">{C.esc(time_txt)}'
         f'{_ml_code(m.code or "")}</span>'
         f'<span class="ml-lg">{C.esc(m.competition or "")}</span>'
         '<span class="ml-teams">'
@@ -2747,6 +2748,32 @@ def _ml_pending(r: dict, board: dict | None = None) -> str:
         '<span class="ml-pick"></span>'
         f"{stat}</div>"
     )
+
+
+def _ml_time_of(m: Match, fx: list[dict]) -> str:
+    """站内场次缺开赛时间时，从赛程库同编号 / 同主客队的场次借时间。"""
+    t = (m.kickoff or "").strip()[-5:]
+    if ":" in t:
+        return t
+    code = (m.code or "").strip()
+    r = next((x for x in fx if code
+              and str(x.get("code") or "").strip() == code), None)
+    if r is None:
+        r = next((x for x in fx
+                  if _same_fx(x.get("home") or "", m.home.name)
+                  and _same_fx(x.get("away") or "", m.away.name)), None)
+    t = (str(r.get("time") or "").strip() if r else "")[:5]
+    return t if ":" in t else "—"
+
+
+def _ml_sort_key(t: str, code: str, kind: int) -> tuple:
+    """竞彩营业日内排序：凌晨场属次日，排在当夜之后；无时间场次垫底。"""
+    if not t or t == "—" or ":" not in t:
+        return (2, "99:99", code == "", code, kind)
+    h = int(t[:2]) if t[:2].isdigit() else 0
+    if h < 9:
+        return (1, f"{h + 24:02d}:{t[3:]}", code == "", code, kind)
+    return (0, t, code == "", code, kind)
 
 
 _ML_JUMP_JS = """<script>
@@ -2806,10 +2833,11 @@ def render_matches(cfg: Config, days: list[Day],
     jc_counts: dict[str, int] = {}
     sections = []
     for d in dates:
-        ms = sorted(by_date.get(d) or [], key=lambda m: (m.kickoff or "", m.code or ""))
+        fx = fixtures.get(d) or []
+        ms = list(by_date.get(d) or [])
         used_codes = {m.code for m in ms if m.code}
         pairs = [(m.home.name, m.away.name) for m in ms]
-        pend = [r for r in (fixtures.get(d) or [])
+        pend = [r for r in fx
                 if r.get("code") not in used_codes
                 and not any(_same_fx(r.get("home") or "", h)
                             and _same_fx(r.get("away") or "", a) for h, a in pairs)]
@@ -2822,8 +2850,17 @@ def render_matches(cfg: Config, days: list[Day],
             tag = '<span class="mini">未开赛</span>'
         elif d == today:
             tag = '<span class="mini">今日</span>'
-        rows = "".join(_ml_row(m, board) for m in ms)
-        rows += "".join(_ml_pending(r, board) for r in pend)
+        items = []
+        for m in ms:
+            t = _ml_time_of(m, fx)
+            items.append((_ml_sort_key(t, str(m.code or ""), 0),
+                          _ml_row(m, board, t)))
+        for r in pend:
+            t = (str(r.get("time") or "").strip() or "—")[:5]
+            items.append((_ml_sort_key(t, str(r.get("code") or ""), 1),
+                          _ml_pending(r, board)))
+        items.sort(key=lambda x: x[0])
+        rows = "".join(html for _, html in items)
         more = "" if jn else (
             f'<label class="ml-more" for="ml-all">{d[5:].replace("-", "/")}'
             f' · {n} 场赛程，查看全部</label>')
