@@ -6,7 +6,7 @@
 <title>比赛列表 - Matlas</title>
 <meta name="description" content="按日浏览全部赛事，方向与比分旁边就是赛果">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/matches.html">
-<link rel="stylesheet" href="assets/style.css?v=1794051660">
+<link rel="stylesheet" href="assets/style.css?v=1794051883">
 <meta property="og:type" content="article">
 <meta property="og:title" content="比赛列表 - Matlas">
 <meta property="og:description" content="按日浏览全部赛事，方向与比分旁边就是赛果">
@@ -41,6 +41,8 @@
   function eagerize(root){
     var h = innerHeight + 300;
     root.querySelectorAll('.mline').forEach(function(r){
+      var sec = r.closest('.ml-sec');
+      if(sec && getComputedStyle(sec).display === 'none') return;
       if(getComputedStyle(r).display === 'none') return;
       var b = r.getBoundingClientRect();
       if(b.top < h && b.bottom > -300){
@@ -53,10 +55,7 @@
     a.addEventListener('click', function(){
       var day = a.getAttribute('for').slice(4);
       var sec = document.querySelector('.ml-sec[data-day="' + day + '"]');
-      if(sec){
-        sec.querySelectorAll('img.ml-crest').forEach(function(i){ i.loading='eager'; });
-        eagerize(sec);
-      }
+      if(sec) setTimeout(function(){ eagerize(sec); }, 0);
     });
   });
 })();
