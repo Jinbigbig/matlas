@@ -2758,6 +2758,8 @@ _ML_JUMP_JS = """<script>
   function eagerize(root){
     var h = innerHeight + 300;
     root.querySelectorAll('.mline').forEach(function(r){
+      var sec = r.closest('.ml-sec');
+      if(sec && getComputedStyle(sec).display === 'none') return;
       if(getComputedStyle(r).display === 'none') return;
       var b = r.getBoundingClientRect();
       if(b.top < h && b.bottom > -300){
@@ -2770,10 +2772,7 @@ _ML_JUMP_JS = """<script>
     a.addEventListener('click', function(){
       var day = a.getAttribute('for').slice(4);
       var sec = document.querySelector('.ml-sec[data-day="' + day + '"]');
-      if(sec){
-        sec.querySelectorAll('img.ml-crest').forEach(function(i){ i.loading='eager'; });
-        eagerize(sec);
-      }
+      if(sec) setTimeout(function(){ eagerize(sec); }, 0);
     });
   });
 })();
