@@ -2027,11 +2027,12 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
 
 
 def render_archive_index(cfg: Config, days: list[str],
-                         leagues: list[tuple[str, int, int, int]] | None = None,
+                         leagues: list[tuple[str, int, dict]] | None = None,
                          teams: list[tuple[str, int, int, int]] | None = None) -> str:
     """历史归档页：交易日 / 联赛 / 球队 三视图（纯 CSS radio 切换）。
 
-    leagues/teams 元素为 (名称, 已收录场数, 命中场数, 已结算场数)。
+    leagues 元素为 (名称, 已收录场数, {维度: (命中数, 有存档场次)})；
+    teams 元素为 (名称, 已收录场数, 命中场数, 已结算场数)。
     """
     base = cfg.base_url.rstrip("/")
     ds = sorted(days, reverse=True)
@@ -2059,7 +2060,33 @@ def render_archive_index(cfg: Config, days: list[str],
             )
         return f'<div class="arch-grid">{"".join(cells)}</div>'
 
-    lg_view = _grid(leagues or [], "leagues") or '<p class="sub">暂无联赛数据。</p>'
+    dim_labels = (("direction", "方向"), ("score", "比分"),
+                  ("goals", "进球"), ("htft", "半全场"))
+
+    def _lg_grid(items: list[tuple[str, int, dict]]) -> str:
+        cells = []
+        for name, n, dims in items:
+            parts = []
+            for key, label in dim_labels:
+                hit, sample = (dims or {}).get(key, (0, 0))
+                if sample:
+                    val = f'<b class="pct flat">{hit / sample * 100:.1f}%</b>'
+                    note = f'<em>{sample} 场</em>' if key == "htft" else ""
+                else:
+                    val = '<b class="pct flat na">—</b>'
+                    note = ""
+                parts.append(
+                    f'<span class="arch-dim"><i>{label}</i>{val}{note}</span>')
+            dims_html = "".join(parts)
+            cells.append(
+                f'<a class="arch-cell arch-lg" href="../leagues/{C.esc(name)}.html">'
+                f'<span class="arch-name">{C.esc(name)}</span>'
+                f'<span class="arch-n">已收录 {n} 场</span>'
+                f'<span class="arch-dims">{dims_html}</span></a>'
+            )
+        return f'<div class="arch-grid arch-lg-grid">{"".join(cells)}</div>'
+
+    lg_view = _lg_grid(leagues or []) or '<p class="sub">暂无联赛数据。</p>'
     tm_view = _grid(teams or [], "teams") or '<p class="sub">暂无球队数据。</p>'
     body = (
         "<h1>历史归档</h1>"

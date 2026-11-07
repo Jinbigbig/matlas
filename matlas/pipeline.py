@@ -151,11 +151,28 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
         rows = [m for m in ms if m.result and m.result.direction_hit is not None]
         return sum(1 for m in rows if m.result.direction_hit), len(rows)
 
-    lg_stat: dict[str, list[int]] = {}
+    DIMS = ("direction", "score", "goals", "htft")
+
+    def _dim_stats(ms: list) -> dict[str, tuple[int, int]]:
+        """四个维度各自的命中数与有存档场次（半全场只有部分场次有存档）。"""
+        out: dict[str, list[int]] = {d: [0, 0] for d in DIMS}
+        for m in ms:
+            r = m.result
+            if r is None:
+                continue
+            for d in DIMS:
+                hit = getattr(r, f"{d}_hit", None)
+                if hit is None:
+                    continue
+                out[d][1] += 1
+                if hit:
+                    out[d][0] += 1
+        return {d: (v[0], v[1]) for d, v in out.items()}
+
+    lg_stat: dict[str, list] = {}
     tm_stat: dict[str, list[int]] = {}
     for lg, ms in lg_matches.items():
-        h, n = _dir_stats(ms)
-        lg_stat[lg] = [len(ms), h, n]
+        lg_stat[lg] = [len(ms), _dim_stats(ms)]
     for tm, ms in tm_matches.items():
         if not tm:
             continue
@@ -165,7 +182,8 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
     # 3. 归档索引（交易日 / 联赛 / 球队 三视图）+ 页头四按钮落地页
     L.write(cfg, "days/index.html", P.render_archive_index(
         cfg, [d.date for d in ordered],
-        leagues=[(k, v[0], v[1], v[2]) for k, v in lg_stat.items()],
+        leagues=[(k, v[0], v[1]) for k, v in
+                 sorted(lg_stat.items(), key=lambda x: -x[1][0])],
         teams=[(k, v[0], v[1], v[2]) for k, v in sorted(tm_stat.items(), key=lambda x: -x[1][0])],
     ))
     L.write(cfg, "data.html", P.render_stats(cfg, ordered))
