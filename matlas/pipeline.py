@@ -61,6 +61,14 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
     board = power.team_board(ordered, hist)   # 球队级六维 + 赔率/让球走势（深度页与球队页共用）
     # 右栏「AI 预测」卡：最近 6 个交易日的报告预测首选（最新在前）
     ai_digest = P.build_ai_digest(ordered)
+    # 未来赛程（今天+明天，竞彩在售期次）：比赛列表页里没有预测的场次靠它补全
+    fixtures: dict = {}
+    _fp = cfg.data_dir / "fixtures.json"
+    if _fp.exists():
+        try:
+            fixtures = (json.loads(_fp.read_text(encoding="utf-8")) or {}).get("days") or {}
+        except (json.JSONDecodeError, OSError):
+            fixtures = {}
 
     # 1. 今日首页 = 最新一日
     if latest:
@@ -165,10 +173,11 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
     L.write(cfg, "bets.html", P.render_bets(cfg, ordered))
     L.write(cfg, "preview/index.html", P.render_preview_index(cfg, ordered))
     L.write(cfg, "depth/index.html", P.render_depth(cfg, ordered, board))
+    L.write(cfg, "matches.html", P.render_matches(cfg, ordered, fixtures, board))
     L.write(cfg, "features.html", P.render_features(cfg))
     L.write(cfg, "me.html", P.render_me(cfg))
     L.write(cfg, "search.html", P.render_search(cfg, ordered))
-    stats["files"] += 8
+    stats["files"] += 9
 
     # 4. 联赛 / 球队专题页（卡片上的联赛名、球队名可点跳转；数据随导入自动生长）
     for lg, ms in sorted(lg_matches.items()):

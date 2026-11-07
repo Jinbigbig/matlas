@@ -971,6 +971,10 @@ def main() -> None:
             OUT_DIR.parent / "history.json",
             json.dumps(history, ensure_ascii=False) + "\n",
         )
+        # 未来赛程（jinbet _fetch_fixtures.py 产）：比赛列表页的「待分析」场次
+        fx = PRED_DIR.parent / "fixtures.json"
+        if fx.exists():
+            write_text_safe(OUT_DIR.parent / "fixtures.json", fx.read_text(encoding="utf-8"))
         n_h2h = sum(
             1 for p in OUT_DIR.glob("*.json")
             for mm in json.loads(p.read_text(encoding="utf-8")).get("matches", [])

@@ -2605,6 +2605,141 @@ def render_preview_day(cfg: Config, d: Day, prev: Day | None = None) -> str:
     )
 
 
+def _ml_form(board: dict | None, name: str) -> str:
+    """队名旁五个点：该队近 5 场胜平负。榜里没有这队就不画。"""
+    if not board or not name:
+        return ""
+    b = board.get(name)
+    if b is None:
+        b = next((v for k, v in board.items()
+                  if len(k) >= 2 and len(name) >= 2 and (k in name or name in k)), None)
+    if not b:
+        return ""
+    bits = [r.get("res") for r in (b.get("recent") or [])][-5:]
+    if not bits:
+        return ""
+    dots = "".join(f'<i class="{C.esc(str(x))}"></i>' for x in bits)
+    return f'<em class="mlf">{dots}</em>'
+
+
+def _ml_row(m: Match, board: dict | None = None) -> str:
+    """比赛列表的一行：已结算带比分与命中，未结算带方向与比分预测。"""
+    fs = m.forecasts_of("direction") or []
+    sc = m.forecasts_of("score") or []
+    chips = "".join(
+        f"<em>{C.esc(f[0].label)}</em>" for f in (fs, sc) if f
+    )
+    done = bool(m.result and m.result.full_score)
+    if done:
+        hit = m.result.direction_hit
+        cls = "win" if hit else ("lose" if hit is False else "")
+        stat = f'<span class="ml-st {cls}">{C.esc(m.result.full_score)}'
+        stat += " 中" if hit else (" 未中" if hit is False else "")
+        stat += "</span>"
+    else:
+        stat = '<span class="ml-st">待开赛</span>'
+    return (
+        f'<a class="mline" href="matches/{m.match_id}.html">'
+        f'<span class="ml-t">{C.esc((m.kickoff or "")[-5:] or "—")}</span>'
+        f'<span class="ml-lg">{C.esc(m.competition or "")}</span>'
+        '<span class="ml-teams">'
+        f'<span class="ml-h">{_ml_form(board, m.home.name)}'
+        f'<span class="ml-nm">{C.esc(m.home.name)}</span></span>'
+        '<span class="ml-v">VS</span>'
+        f'<span class="ml-a"><span class="ml-nm">{C.esc(m.away.name)}</span>'
+        f'{_ml_form(board, m.away.name)}</span>'
+        "</span>"
+        f'<span class="ml-pick">{chips}</span>'
+        f"{stat}</a>"
+    )
+
+
+def _ml_pending(r: dict, board: dict | None = None) -> str:
+    """只有赛程、还没有预测的场次：不给链接，右端标待分析。"""
+    return (
+        '<div class="mline off">'
+        f'<span class="ml-t">{C.esc(r.get("time") or "—")}</span>'
+        f'<span class="ml-lg">{C.esc(r.get("league") or "")}</span>'
+        '<span class="ml-teams">'
+        f'<span class="ml-h">{_ml_form(board, r.get("home") or "")}'
+        f'<span class="ml-nm">{C.esc(r.get("home") or "")}</span></span>'
+        '<span class="ml-v">VS</span>'
+        f'<span class="ml-a"><span class="ml-nm">{C.esc(r.get("away") or "")}</span>'
+        f'{_ml_form(board, r.get("away") or "")}</span>'
+        "</span>"
+        '<span class="ml-pick"></span>'
+        '<span class="ml-st">待分析</span></div>'
+    )
+
+
+def render_matches(cfg: Config, days: list[Day],
+                   fixtures: dict[str, list[dict]] | None = None,
+                   board: dict | None = None) -> str:
+    """比赛列表：按日平铺，一行一场。
+
+    三种行态：已结算（比分 + 是否命中）、已开赛待结算（方向与比分预测）、
+    待分析（只有赛程）。赛程侧的场次来自竞彩在售期次，当日预测产出后
+    同一编号会被比赛数据接管，自动变成可点行。
+    """
+    base = cfg.base_url.rstrip("/")
+    fixtures = fixtures or {}
+    by_date = {d.date: d.matches for d in days}
+    dates = sorted({*by_date, *fixtures}, reverse=True)[:6]
+    head = f"<h1 class='page-h1'>{L.ICON_SPORTS} 比赛列表</h1>"
+    if not dates:
+        return L.page(
+            cfg, title="比赛列表", description="按日浏览全部赛程与预测",
+            body=head + '<p class="sub">暂无数据。</p>',
+            canonical=f"{base}/matches.html", depth=0,
+        )
+
+    today = max(by_date) if by_date else ""
+    counts: dict[str, int] = {}
+    sections = []
+    for d in dates:
+        ms = sorted(by_date.get(d) or [], key=lambda m: (m.kickoff or "", m.code or ""))
+        used = {m.code for m in ms}
+        pend = [r for r in (fixtures.get(d) or []) if r.get("code") not in used]
+        n = len(ms) + len(pend)
+        counts[d] = n
+        tag = ""
+        if d > today:
+            tag = '<span class="mini">未开赛</span>'
+        elif d == today:
+            tag = '<span class="mini">今日</span>'
+        rows = "".join(_ml_row(m, board) for m in ms)
+        rows += "".join(_ml_pending(r, board) for r in pend)
+        sections.append(
+            f'<h2 class="ml-day" id="d-{d}">{d[5:].replace("-", "/")} · {n} 场{tag}</h2>'
+            f'<div class="mlines">{rows}</div>'
+        )
+
+    jump = "".join(
+        f'<a class="ml-jump-a" href="#d-{d}">{d[5:].replace("-", "/")}'
+        f'<em>{counts.get(d, 0)}</em></a>'
+        for d in dates
+    )
+    legend = (
+        '<p class="ml-legend"><span><i class="w"></i>胜</span>'
+        '<span><i class="d"></i>平</span><span><i class="l"></i>负</span>'
+        '<b>队名旁为近 5 场</b></p>'
+    )
+    body = (
+        head
+        + f'<p class="sub">最近 {len(dates)} 个比赛日，共 '
+          f'{sum(counts.values())} 场；赛前看方向与比分，赛后就地对照赛果。</p>'
+        + f'<div class="ml-jump">{jump}</div>'
+        + legend
+        + "".join(sections)
+        + f'<p class="sub" style="margin-top:18px">更早的场次见 '
+          f'<a href="{base}/days/">历史归档</a>。</p>'
+    )
+    return L.page(
+        cfg, title="比赛列表", description="按日浏览全部赛事，方向与比分旁边就是赛果",
+        body=body, canonical=f"{base}/matches.html", depth=0,
+    )
+
+
 def render_features(cfg: Config) -> str:
     """功能页：站点功能清单。只列已上线的能力，每条给真实入口。
 
@@ -2614,7 +2749,7 @@ def render_features(cfg: Config) -> str:
     items = [
         (L.ICON_SPORTS, "每日赛事前瞻", "每日 AI 报告列表，逐日归档可回溯", f"{base}/preview/"),
         (L.ICON_ARCHIVE, "历史归档", "逐日归档，历史结论可回溯比对", f"{base}/days/"),
-        (L.ICON_TROPHY, "赛事 / 球队 Top 榜", "按已结算场次统计联赛与球队的方向命中率", f"{base}/"),
+        (L.ICON_SPORTS, "比赛列表", "按日浏览全部赛事，方向与比分旁边就是赛果", f"{base}/matches.html"),
         (L.ICON_SEARCH, "站内搜索", "按队名、联赛、编号检索历史赛事", f"{base}/search.html"),
         (L.ICON_ACTIVITY, "深度数据", "各联赛球队六维战力、赔率与让球走势", f"{base}/depth/"),
         (L.ICON_TREND, "赔率", "竞彩赔率快照按日浏览，完赛场次附赛果对照", f"{base}/odds.html"),
