@@ -2755,13 +2755,26 @@ _ML_JUMP_JS = """<script>
   if(j && t && j.scrollWidth > j.clientWidth){
     j.scrollLeft = t.offsetLeft - j.clientWidth/2 + t.offsetWidth/2;
   }
-  var h = innerHeight + 300;
-  document.querySelectorAll('.mline').forEach(function(r){
-    if(getComputedStyle(r).display === 'none') return;
-    var b = r.getBoundingClientRect();
-    if(b.top < h && b.bottom > -300){
-      r.querySelectorAll('img.ml-crest').forEach(function(i){ i.loading='eager'; });
-    }
+  function eagerize(root){
+    var h = innerHeight + 300;
+    root.querySelectorAll('.mline').forEach(function(r){
+      if(getComputedStyle(r).display === 'none') return;
+      var b = r.getBoundingClientRect();
+      if(b.top < h && b.bottom > -300){
+        r.querySelectorAll('img.ml-crest').forEach(function(i){ i.loading='eager'; });
+      }
+    });
+  }
+  eagerize(document);
+  document.querySelectorAll('.ml-jump-a').forEach(function(a){
+    a.addEventListener('click', function(){
+      var day = a.getAttribute('for').slice(4);
+      var sec = document.querySelector('.ml-sec[data-day="' + day + '"]');
+      if(sec){
+        sec.querySelectorAll('img.ml-crest').forEach(function(i){ i.loading='eager'; });
+        eagerize(sec);
+      }
+    });
   });
 })();
 </script>"""
@@ -2816,7 +2829,7 @@ def render_matches(cfg: Config, days: list[Day],
             f'<label class="ml-more" for="ml-all">{d[5:].replace("-", "/")}'
             f' · {n} 场赛程，查看全部</label>')
         sections.append(
-            f'<section class="ml-sec{"" if jn else " empty-jc"}" id="d-{d}">'
+            f'<section class="ml-sec{"" if jn else " empty-jc"}" id="d-{d}" data-day="{d}">'
             f'<h2 class="ml-day">{d[5:].replace("-", "/")} · '
             f'<span class="n-jc">{jn} 场</span><span class="n-all">{n} 场</span>{tag}</h2>'
             f'<div class="mlines">{rows}</div>{more}</section>'
@@ -2827,19 +2840,42 @@ def render_matches(cfg: Config, days: list[Day],
     for d in sorted(dates):
         dow = "今天" if d == today else f"周{week[dt.date.fromisoformat(d).weekday()]}"
         cls = "ml-jump-a today" if d == today else "ml-jump-a"
-        cells.append(f'<a class="{cls}" href="#d-{d}">'
+        cells.append(f'<label class="{cls}" for="day-{d}">'
                      f'<span class="dow">{dow}</span>'
-                     f'<span class="dm">{d[5:]}</span></a>')
+                     f'<span class="dm">{d[5:]}</span></label>')
     jump = "".join(cells)
+    day_inputs = "".join(
+        f'<input type="radio" name="mlday" id="day-{d}" class="fp-radio"'
+        f'{" checked" if d == today else ""}>'
+        for d in sorted(dates)
+    )
+    rules = []
+    for d in sorted(dates):
+        rules.append(
+            f'#day-{d}:checked ~ .ml-panel .ml-sec[data-day="{d}"]{{display:block}}'
+            f'#day-{d}:checked ~ .ml-panel label[for="day-{d}"]'
+            f'{{background:#fff;border-color:#dbe6ff;'
+            f'box-shadow:0 3px 12px rgba(37,99,235,.13)}}'
+            f'#day-{d}:checked ~ .ml-panel label[for="day-{d}"] .dow,'
+            f'#day-{d}:checked ~ .ml-panel label[for="day-{d}"] .dm'
+            f'{{color:var(--accent)}}'
+            f'#day-{d}:checked ~ .ml-panel .sub-{d}{{display:inline}}'
+        )
+    day_css = ("<style>.ml-sec{display:none}.sub-day{display:none}"
+               + "".join(rules) + "</style>")
     legend = (
         '<p class="ml-legend"><span><i class="w"></i>胜</span>'
         '<span><i class="d"></i>平</span><span><i class="l"></i>负</span>'
         '<b>队名旁为近 5 场</b></p>'
     )
+    sub_days = "".join(
+        f'<span class="sub-day sub-{d}">'
+        f'<span class="n-jc">{jc_counts.get(d, 0)}</span>'
+        f'<span class="n-all">{counts.get(d, 0)}</span> 场</span>'
+        for d in sorted(dates)
+    )
     panel = (
-        f'<p class="sub ml-sub">最近 {len(dates)} 个比赛日，共 '
-        f'<span class="n-jc">{sum(jc_counts.values())}</span>'
-        f'<span class="n-all">{sum(counts.values())}</span> 场；'
+        f'<p class="sub ml-sub">共 {sub_days}；'
         '赛前看方向与比分，赛后就地对照赛果。</p>'
         + f'<div class="ml-jump">{jump}</div>'
         + legend
@@ -2854,6 +2890,8 @@ def render_matches(cfg: Config, days: list[Day],
         + '<label class="fp-opt" for="ml-jc">仅竞彩</label>'
         + '<input type="radio" name="mlscope" id="ml-all" class="fp-radio">'
         + '<label class="fp-opt" for="ml-all">全部赛程</label>'
+        + day_inputs
+        + day_css
         + f'<div class="ml-panel">{panel}</div>'
         + '</div>'
         + _ML_JUMP_JS

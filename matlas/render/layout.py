@@ -1336,15 +1336,11 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
 .ml-jump-a { flex: 1 0 66px; min-width: 66px; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 5px; padding: 9px 4px 10px;
   border: 1px solid transparent; border-radius: 10px; text-decoration: none;
-  color: var(--ink); background: transparent; }
+  color: var(--ink); background: transparent; cursor: pointer; }
 .ml-jump-a .dow { font-size: 0.7rem; color: var(--muted); line-height: 1.2; }
 .ml-jump-a .dm { font-size: 0.88rem; font-weight: 700; line-height: 1.2;
   font-variant-numeric: tabular-nums; }
-.ml-jump-a.today { background: #fff; border-color: #dbe6ff;
-  box-shadow: 0 3px 12px rgba(37, 99, 235, 0.13); }
-.ml-jump-a.today .dow, .ml-jump-a.today .dm { color: var(--accent); }
 .ml-jump-a:hover { background: rgba(37, 99, 235, 0.06); }
-.ml-jump-a.today:hover { background: #fff; }
 .ml-legend { display: flex; align-items: center; gap: 14px; margin: 0 0 10px;
   font-size: 0.72rem; color: var(--muted); }
 .ml-legend span, .ml-legend b { display: inline-flex; align-items: center; gap: 4px;
