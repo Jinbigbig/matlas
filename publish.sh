@@ -70,7 +70,13 @@ echo "[2/4] 清空产物工作树（保留 .git）"
 # 文件时会 fail-closed 报 Permission denied，而 rename 不受该钩子影响。
 TRASH="${TMPDIR:-/tmp}/matlas-publish-trash/$(date +%Y%m%d-%H%M%S)-$$"
 mkdir -p "$TRASH"
-find "$PUB" -mindepth 1 -maxdepth 1 ! -name .git -exec mv -t "$TRASH" {} +
+# 单项移动：偶发有目录被占用（Windows 索引 / 杀软扫描新素材）时只跳过该项，
+# 不因一个 mv 失败中断整条发布；随后的 cp 会覆盖同名内容，git add -A 照常收敛。
+find "$PUB" -mindepth 1 -maxdepth 1 ! -name .git -print0 | while IFS= read -r -d '' item; do
+  if ! mv -t "$TRASH" "$item" 2>/dev/null; then
+    echo "      占用中，保留并覆盖：$(basename "$item")"
+  fi
+done
 echo "      旧产物已移出到 $TRASH"
 
 echo "[3/4] 同步 _site → .publish"
