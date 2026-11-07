@@ -2647,7 +2647,7 @@ def _ml_crest(name: str, tid: str = "", pre: str = "") -> str:
     src = src or pre or logos.crest_url(name)
     if src:
         return (f'<img class="ml-crest" src="{C.esc(src)}" alt="" '
-                'decoding="async" width="20" height="20">')
+                'loading="lazy" decoding="async" width="20" height="20">')
     return '<span class="ml-crest ml-crest-ph" aria-hidden="true"></span>'
 
 
