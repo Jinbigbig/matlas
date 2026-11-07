@@ -1934,7 +1934,7 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
     """📊数据统计：结构与球小策 /shu-ju-tong-ji/ 对齐。
 
     区块：口径说明 → 三大总览卡 → 四维明细卡 → 近10天走势 + 球队表现查询
-    → 联赛/杯赛准确率排名 → 球队准确率 Top 30 → 机器可读数据。
+    → 联赛/杯赛准确率排名 → 球队准确率 Top 30。
     全部数字实时从已发布数据计算，不造假；准确率主口径=方向命中。
     """
     import json as _json
@@ -2153,12 +2153,6 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         f'<div class="dim-grid">{dim_cards}</div></div>'
         f'<div class="stats-duo">{trend_box}{search_box}</div>'
         f'<div class="stats-duo">{league_box}{team_box}</div>'
-        "<h2>机器可读数据</h2>"
-        '<ul class="plain-list">'
-        f'<li><a href="{base}/llms.txt">llms.txt</a> — 站点结构索引（LLM/GEO 用）</li>'
-        f'<li><a href="{base}/dataset.json">dataset.json</a> — 全量结构化数据</li>'
-        f'<li><a href="{base}/days/">📅 历史归档</a> — 逐日留档，结论指纹可核验</li>'
-        "</ul>"
     )
     return L.page(
         cfg, title="数据统计", description="站点赛事统计：总场次、四维准确率、近10天走势、联赛与球队排名",
