@@ -1430,6 +1430,7 @@ def page(
     canonical: str,
     jsonld: list[dict[str, Any]] | None = None,
     depth: int = 0,
+    head: str | None = None,
 ) -> str:
     """页面外壳。
 
@@ -1459,7 +1460,9 @@ def page(
         + _tab_item("我的", f"{pre}me.html", ICON_USER)
         + "</nav>"
     )
-    head_title = title if title.endswith(cfg.site_name) else f"{title} - {cfg.site_name}"
+    head_title = head or (
+        title if title.endswith(cfg.site_name) else f"{title} - {cfg.site_name}"
+    )
     return f"""<!DOCTYPE html>
 <html lang="{cfg.language}">
 <head>

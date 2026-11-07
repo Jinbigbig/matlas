@@ -1826,6 +1826,7 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
         cfg, title=h1, description=desc, body=body, canonical=rel_url,
         jsonld=jsonld,
         depth=0 if is_today else 1,
+        head=f"{cfg.site_name} · {cfg.site_tagline}" if is_today else None,
     )
 
 
@@ -1933,7 +1934,7 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
     """📊数据统计：结构与球小策 /shu-ju-tong-ji/ 对齐。
 
     区块：口径说明 → 三大总览卡 → 四维明细卡 → 近10天走势 + 球队表现查询
-    → 联赛/杯赛准确率排名 → 球队准确率 Top 15 → 机器可读数据。
+    → 联赛/杯赛准确率排名 → 球队准确率 Top 30 → 机器可读数据。
     全部数字实时从已发布数据计算，不造假；准确率主口径=方向命中。
     """
     import json as _json
@@ -2073,14 +2074,14 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         + "</div>"
     )
 
-    # ---- 球队 Top 15 ----
-    t15 = compute_team_ranking(ordered, top=15)
+    # ---- 球队 Top 30 ----
+    top_teams = compute_team_ranking(ordered, top=30)
     t_rows = [
         [str(i), C.esc(name), str(n), f'<span class="pct">{h / n * 100:.1f}%</span>']
-        for i, (name, h, n) in enumerate(t15, 1)
+        for i, (name, h, n) in enumerate(top_teams, 1)
     ]
     team_box = (
-        '<div class="stats-box"><h3>🛡️ 球队准确率排名 (Top 15)</h3>'
+        '<div class="stats-box"><h3>🛡️ 球队准确率排名 (Top 30)</h3>'
         + (
             C.table(["#", "球队", "已结算", "准确率"], t_rows, cls="history-table")
             if t_rows
