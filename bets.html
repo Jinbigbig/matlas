@@ -6,7 +6,7 @@
 <title>投注 - Matlas</title>
 <meta name="description" content="足彩投注：竞彩式赔率格选号、投注篮计注算奖、载入赛果自动结算与个人盈亏汇总">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/bets.html">
-<link rel="stylesheet" href="assets/style.css?v=1794052734">
+<link rel="stylesheet" href="assets/style.css?v=1794058753">
 <meta property="og:type" content="article">
 <meta property="og:title" content="投注 - Matlas">
 <meta property="og:description" content="足彩投注：竞彩式赔率格选号、投注篮计注算奖、载入赛果自动结算与个人盈亏汇总">
@@ -488,16 +488,8 @@
     renderCR();
   });
   $("cr-clear").addEventListener("click", function () {
-    if (!crDate) return;
-    var d = crDate.value;
-    var n = 0;
-    DATA.rows.forEach(function (r) {
-      if (r.d === d && CRS[r.id]) { delete CRS[r.id]; n += 1; }
-    });
-    saveCRS();
-    crSettleAll();
-    $("cr-msg").textContent = n ? "🗑 已清空当日 " + n + " 场自定义赛果并重新结算" : "当日没有已保存的自定义赛果";
-    renderCR();
+    $("cr-list").innerHTML = '<p class="sub">默认不显示。点「📅 载入当日比赛」拉取场次后手动填写比分。</p>';
+    $("cr-msg").textContent = "🗑 已清空载入的赛程";
   });
 
   // ---- 记录区：统计 / 个人汇总 / 明细表 ----
