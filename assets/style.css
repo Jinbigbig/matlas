@@ -1326,12 +1326,17 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
 .ml-day { margin: 24px 0 10px; font-size: 0.95rem; font-weight: 700; scroll-margin-top: 70px;
   display: flex; align-items: center; gap: 9px; }
 .mlines { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: #fff; }
-.mline { display: grid; grid-template-columns: 50px 64px minmax(0, 1fr) 132px 104px;
+.mline { display: grid; grid-template-columns: 60px 64px minmax(0, 1fr) 132px 104px;
   align-items: center; gap: 10px; padding: 0.56rem 14px; border-bottom: 1px solid var(--rule);
   text-decoration: none; color: var(--ink); font-size: 0.84rem; }
 .mline:last-of-type, .mlines > .mline:last-child { border-bottom: none; }
 a.mline:hover { background: rgba(0, 0, 0, 0.025); }
-.ml-t { font-variant-numeric: tabular-nums; color: #374151; }
+.ml-t { display: flex; flex-direction: column; gap: 1px; line-height: 1.25;
+  font-variant-numeric: tabular-nums; color: #374151; }
+.ml-code { font-style: normal; font-size: 0.64rem; font-weight: 600;
+  color: var(--accent); white-space: nowrap; }
+.ml-crest { width: 20px; height: 20px; object-fit: contain; flex: 0 0 auto; }
+.ml-crest-ph { display: block; border-radius: 50%; background: #f1f3f6; }
 .ml-lg { font-size: 0.74rem; color: var(--muted); white-space: nowrap;
   overflow: hidden; text-overflow: ellipsis; }
 .ml-teams { display: grid; grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr);
@@ -1367,12 +1372,24 @@ a.mline:hover { background: rgba(0, 0, 0, 0.025); }
   .ml-teams { grid-area: tms;
     grid-template-columns: minmax(0, 1fr) 26px minmax(0, 1fr); gap: 8px; }
   .mline .mlf { display: none; }
-  .ml-h { justify-content: flex-start; }
+  .ml-t { flex-direction: row; align-items: baseline; gap: 6px; }
+  .ml-code { font-size: 0.62rem; }
+  .ml-crest { width: 18px; height: 18px; }
+  .ml-h { justify-content: flex-end; }
   .ml-pick { display: none; }
   .ml-day { margin: 18px 0 8px; }
 }
 
 /* 比赛列表：竞彩 / 全部赛程切换（纯 CSS radio） */
+/* 队徽占宽后，中等屏幕让近 5 场点退位，优先保住队名完整 */
+@media(min-width:641px) and (max-width:900px) {
+  .mline .mlf { display: none; }
+}
+@media(max-width:360px) {
+  .ml-crest { width: 16px; height: 16px; }
+  .ml-h, .ml-a { gap: 4px; }
+  .ml-teams { gap: 5px; }
+}
 .ml-tabs .fp-opt { margin-bottom: 10px; cursor: pointer; }
 .ml-panel .n-all { display: none; }
 #ml-all:checked ~ .ml-panel .n-all { display: inline; }
