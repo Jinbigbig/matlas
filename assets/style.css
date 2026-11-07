@@ -1365,11 +1365,29 @@ a.mline:hover { background: rgba(0, 0, 0, 0.025); }
   .ml-lg { grid-area: lg; text-align: left; }
   .ml-st { grid-area: st; font-size: 0.76rem; }
   .ml-teams { grid-area: tms;
-    grid-template-columns: minmax(0, max-content) 26px minmax(0, 1fr); gap: 8px; }
+    grid-template-columns: minmax(0, 1fr) 26px minmax(0, 1fr); gap: 8px; }
+  .mline .mlf { display: none; }
   .ml-h { justify-content: flex-start; }
   .ml-pick { display: none; }
   .ml-day { margin: 18px 0 8px; }
 }
+
+/* 比赛列表：竞彩 / 全部赛程切换（纯 CSS radio） */
+.ml-tabs .fp-opt { margin-bottom: 10px; cursor: pointer; }
+.ml-panel .n-all { display: none; }
+#ml-all:checked ~ .ml-panel .n-all { display: inline; }
+#ml-all:checked ~ .ml-panel .n-jc { display: none; }
+#ml-jc:checked ~ .ml-panel .mline[data-jc="0"] { display: none; }
+#ml-jc:checked ~ .ml-panel .ml-sec.empty-jc .mlines,
+#ml-jc:checked ~ .ml-panel .ml-sec.empty-jc .ml-day { display: none; }
+.ml-sec { scroll-margin-top: 70px; }
+.ml-sec.empty-jc { margin-top: 8px; }
+#ml-all:checked ~ .ml-panel .ml-more { display: none; }
+.ml-more { display: block; margin: 10px 0 6px; padding: 10px 14px; text-align: center;
+  border: 1px dashed var(--rule); border-radius: 10px; background: #fff;
+  font-size: 0.8rem; color: var(--accent); cursor: pointer; }
+.ml-more:hover { border-color: var(--accent2); }
+.ml-day .n-jc, .ml-day .n-all { font-weight: 600; }
 
 /* 比赛天气卡片 */
 .wx-card { display: grid; gap: 10px; background: #f8fafc; border: 1px solid var(--rule);
