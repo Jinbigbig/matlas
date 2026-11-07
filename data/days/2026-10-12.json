@@ -226,7 +226,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-06T19:00:45+08:00",
+   "generated_at": "2026-11-07T08:13:24+08:00",
    "extras": {
     "lam_home": 0.828,
     "lam_away": 1.276,
@@ -644,7 +644,7 @@
    "metrics_home": {
     "attack": 28,
     "defence": 40,
-    "control": 40,
+    "control": 36,
     "form": 37,
     "value": 70,
     "motivation": 59,
@@ -732,13 +732,13 @@
     ],
     "away": [
      2.0,
-     2.0,
      0.0,
      1.0,
      1.0,
      0.0,
      0.0,
-     0.0
+     0.0,
+     2.0
     ]
    },
    "forecasts": [
@@ -903,7 +903,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-06T19:00:45+08:00",
+   "generated_at": "2026-11-07T08:13:24+08:00",
    "extras": {
     "table": [
      {
@@ -1487,7 +1487,7 @@
    "metrics_home": {
     "attack": 28,
     "defence": 64,
-    "control": 56,
+    "control": 49,
     "form": 41,
     "value": 51,
     "motivation": 54,
@@ -1728,7 +1728,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-06T19:00:45+08:00",
+   "generated_at": "2026-11-07T08:13:24+08:00",
    "extras": {
     "lam_home": 1.709,
     "lam_away": 0.997,
@@ -2230,7 +2230,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-06T19:00:45+08:00",
+   "generated_at": "2026-11-07T08:13:24+08:00",
    "extras": {
     "lam_home": 1.502,
     "lam_away": 1.689,
@@ -2783,14 +2783,14 @@
      0.0
     ],
     "away": [
-     1.0,
      3.0,
      0.0,
      1.0,
      0.0,
      0.0,
      0.0,
-     2.0
+     2.0,
+     1.0
     ]
    },
    "forecasts": [
@@ -2972,7 +2972,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-06T19:00:45+08:00",
+   "generated_at": "2026-11-07T08:13:24+08:00",
    "extras": {
     "table": [
      {
@@ -3327,9 +3327,9 @@
      4.0
     ],
     "away": [
-     4.0,
      0.0,
-     2.0
+     2.0,
+     3.0
     ]
    },
    "forecasts": [
@@ -3448,7 +3448,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-06T19:00:45+08:00",
+   "generated_at": "2026-11-07T08:13:24+08:00",
    "extras": {
     "lam_home": 1.381,
     "lam_away": 1.379,
@@ -3992,13 +3992,13 @@
     ],
     "home": [
      0.0,
-     0.0,
      1.0,
      1.0,
      4.0,
      1.0,
      0.0,
-     3.0
+     3.0,
+     1.0
     ],
     "away": [
      2.0,
@@ -4173,7 +4173,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-06T19:00:45+08:00",
+   "generated_at": "2026-11-07T08:13:24+08:00",
    "extras": {
     "table": [
      {
@@ -4672,8 +4672,8 @@
    },
    "metrics_home": {
     "attack": 73,
-    "defence": 20,
-    "control": 49,
+    "defence": 19,
+    "control": 48,
     "form": 29,
     "value": 24,
     "motivation": 72,
@@ -4763,11 +4763,11 @@
      1.0,
      1.0,
      1.0,
-     1.0,
      3.0,
      1.0,
      2.0,
-     1.0
+     1.0,
+     0.0
     ]
    },
    "forecasts": [
@@ -4958,7 +4958,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-06T19:00:45+08:00",
+   "generated_at": "2026-11-07T08:13:24+08:00",
    "extras": {
     "table": [
      {
@@ -5620,7 +5620,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-06T19:00:45+08:00",
+   "generated_at": "2026-11-07T08:13:24+08:00",
    "extras": {
     "lam_home": 1.599,
     "lam_away": 1.652,
@@ -5874,7 +5874,7 @@
    "metrics_home": {
     "attack": 22,
     "defence": 57,
-    "control": 45,
+    "control": 47,
     "form": 12,
     "value": 69,
     "motivation": 22,
@@ -5951,12 +5951,12 @@
      "T-1"
     ],
     "home": [
-     2.0,
      0.0,
      1.0,
      1.0,
      0.0,
      0.0,
+     1.0,
      1.0,
      1.0
     ],
@@ -6096,7 +6096,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-06T19:00:45+08:00",
+   "generated_at": "2026-11-07T08:13:24+08:00",
    "extras": {
     "lam_home": 1.484,
     "lam_away": 0.899,
