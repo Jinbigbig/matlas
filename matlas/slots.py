@@ -102,14 +102,18 @@ SLOTS: tuple[Slot, ...] = (
         ), "ready",
         "只做比对，永不参与本站概率计算；必须署名留链",
     ),
-    # ---------------- 留档区 ----------------
     Slot(
-        "ledger", "留档核验", "Match.fingerprint()",
-        ("本地计算 sha256",), "ready",
-        "只覆盖赛前字段，赛后回填不改变指纹",
+        "squad", "球员情报", "Match.squad",
+        (
+            "球小策球员数据中心 /player-rankings/（admin-ajax abv2_dc_rankings，"
+            "服务端渲染榜单 + 免费接口，51 联赛）",
+        ), "ready",
+        "对外公开 6 项：影响力 GIM / 进攻威胁 OTI / 防守参与 DII / 状态 / 稳定度 / 负荷；"
+        "每队 <8 人不出块（澳超整体省略）；只作参照，不参与本站概率计算",
     ),
+    # ---------------- 结算区 ----------------
     Slot(
-        "result", "赛果结算", "Match.result",
+        "result", "赛后结算", "Match.result",
         ("官方赛果源（results_data.json 等）",), "todo",
         "**目标缺口**：result.*_hit 目前靠人工填，没有 settle 函数按比分自动判定",
     ),

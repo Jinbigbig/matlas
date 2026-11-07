@@ -14,10 +14,15 @@ Matlas  →  负责「发」：per-match 落地页、留档核验、llms.txt / s
 
 ```bash
 python import_jinbet.py         # 从 jinbet 导入预测/赛果/积分/盘口 → data/days/
+python -m matlas.fetch_squads   # 抓球员评分 → data/squads/（公开接口，需联网）
+python -m matlas.enrich_squads  # 把评分注入近 3 天比赛的 squad 字段
 python build.py                 # 构建 data/days 下全部交易日 → _site/
 python build.py --strict        # 红线命中即以非零码退出（CI 用）
 python build.py --slots         # 重新生成 SLOTS.md 并打印槽位接线状态
 ```
+
+`fetch_squads` 不跑也能构建：`squad` 缺数据时「球员情报」整块自动不出现。
+历史页不回填评分 —— 评分源是「当下快照」，灌进旧页面会造成时间错位。
 
 零依赖、零 CDN、离线可跑。Python 3.10+。
 

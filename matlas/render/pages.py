@@ -444,8 +444,84 @@ def _injury_panel(m: Match) -> str:
     return C.panel("伤停与缺阵", C.table(["球队", "球员", "原因", "状态"], rows))
 
 
-_MOOD_TAG = ("停赛：", "上阵成疑：", "成疑：", "受伤／缺阵：", "受伤：", "缺阵：")
+_SQ_POS = {"GK": "门将", "DF": "后卫", "MF": "中场", "FW": "前锋"}
+_SQ_FAT = {"High": ("高", "tag-red"), "Medium": ("中", "tag-yellow"), "Low": ("低", "tag-green")}
+_SQ_MIN_N = 8   # 源站每队至少 8 人才出块（澳超每队仅 1-5 人，整体省略，避免以偏概全）
 
+
+def _sq_num(v, nd: int = 1) -> str:
+    """评分展示：0-100 的量纲，无值出 —。不走 pct 类（那不是概率）。"""
+    return f"{v:.{nd}f}" if isinstance(v, (int, float)) else "—"
+
+
+def _sq_rows(team: str, ts) -> list[list[str]]:
+    rows = []
+    for p in ts.top:
+        pos = _SQ_POS.get((p.pos or "").upper(), p.pos or "—")
+        fat_txt, fat_cls = _SQ_FAT.get(p.fatigue, ("—", ""))
+        fat = f'<span class="tag {fat_cls}">{fat_txt}</span>' if fat_cls else "—"
+        name = C.esc(p.name)
+        if p.watch:
+            lab = {"out": "缺阵", "doubt": "存疑", "suspended": "停赛"}.get(p.watch, p.watch)
+            name += f' <span class="tag tag-red">{C.esc(lab)}</span>'
+        rows.append([
+            C.esc(team), name, pos,
+            f"<b>{_sq_num(p.gim)}</b>", _sq_num(p.oti), _sq_num(p.dii),
+            _sq_num(p.form, 1), fat,
+        ])
+    return rows
+
+
+def _squad_panel(m: Match) -> str:
+    """球员情报：两队核心球员评分与体能状态。
+
+    外部评分源，**只做参照，不参与本站概率计算**（RULES §3.4）。缺数据整块不出；
+    单侧样本不足只省略该侧，不拿不完整名单冒充全队。
+    """
+    sq = m.squad
+    if not sq:
+        return ""
+    home = sq.home if (sq.home and sq.home.n >= _SQ_MIN_N and sq.home.top) else None
+    away = sq.away if (sq.away and sq.away.n >= _SQ_MIN_N and sq.away.top) else None
+    if not home and not away:
+        return ""
+
+    parts: list[str] = []
+    if home and away:
+        def _cell(ts, key, nd=1):
+            return _sq_num(getattr(ts, key), nd)
+
+        sum_rows = [
+            [C.esc(m.home.name), f"{home.n} 人", _cell(home, "core_avg"),
+             _cell(home, "form_avg", 2), f"{home.high_fatigue} 人"],
+            [C.esc(m.away.name), f"{away.n} 人", _cell(away, "core_avg"),
+             _cell(away, "form_avg", 2), f"{away.high_fatigue} 人"],
+        ]
+        parts.append(
+            '<div class="sq-sum">'
+            + C.table(["球队", "库内球员", "核心影响力", "平均状态", "高强度负荷"],
+                      sum_rows, cls="duo")
+            + "</div>"
+        )
+
+    rows = []
+    if home:
+        rows += _sq_rows(m.home.name, home)
+    if away:
+        rows += _sq_rows(m.away.name, away)
+    parts.append(C.table(
+        ["球队", "球员", "位置", "影响力", "进攻威胁", "防守参与", "状态", "疲劳"],
+        rows, cls="duo sq-table",
+    ))
+    parts.append(
+        f'<p class="panel-hint" style="margin-top:8px">评分源 {C.esc(sq.source)}'
+        f'（{C.esc(sq.updated[:16])} 更新）· 影响力/进攻威胁/防守参与为 0-100 综合分，'
+        f"状态为近况 0-10 分。仅作参照，不参与本站结论计算。</p>"
+    )
+    return C.panel("球员情报", "".join(parts))
+
+
+_MOOD_TAG = ("停赛：", "上阵成疑：", "成疑：", "受伤／缺阵：", "受伤：", "缺阵：")
 
 def _mood_panel(m: Match) -> str:
     """赛前军情（extras.mood，7M 联赛稿，按场次编号匹配）。"""
@@ -1179,30 +1255,28 @@ def _reference_panel(m: Match) -> str:
     return C.panel("外部对照", body) if body else ""
 
 
-def _ledger(m: Match) -> str:
-    settled = ""
-    if m.result and m.result.full_score:
-        r = m.result
-        marks = []
-        for lab, v in (("方向", r.direction_hit), ("比分", r.score_hit), ("进球", r.goals_hit), ("半全", r.htft_hit)):
-            if v is None:
-                continue
-            marks.append(f"{lab} {'命中' if v else '未中'}")
-        settled = (
-            f'<p>赛后回填：半场 {C.esc(r.half_score or "—")} · 全场 '
-            f'<strong>{C.esc(r.full_score)}</strong>　{C.esc("　".join(marks))}'
-            + (f'<br>结算于 {C.esc(r.settled_at)}' if r.settled_at else "")
-            + "</p>"
-        )
-    return (
-        '<div class="ledger">'
-        f"<strong>留档核验</strong><br>"
-        f"结论指纹 <code>{C.esc(m.fingerprint())}</code>　（仅覆盖赛前结论，赛后回填不改变该值）<br>"
-        f"生成于 {C.esc(m.generated_at or '—')}"
-        + (f'<br>数据来源 <a href="{C.esc(m.source_url)}">{C.esc(m.source_url)}</a>' if m.source_url else "")
-        + settled
-        + "</div>"
+def _settled_panel(m: Match) -> str:
+    """赛后结算：只出赛果与四维命中，无指纹、无生成时间、无来源链接。
+
+    「留档核验」整块已移除 —— 哈希指纹属于内部自证，不进公开页。
+    """
+    r = m.result
+    if not (r and r.full_score):
+        return ""
+    marks = []
+    for lab, v in (("方向", r.direction_hit), ("比分", r.score_hit),
+                   ("进球", r.goals_hit), ("半全", r.htft_hit)):
+        if v is None:
+            continue
+        cls = "hit-y" if v else "hit-n"
+        marks.append(f'{C.esc(lab)} <span class="hit {cls}">{"中" if v else "未中"}</span>')
+    body = (
+        f'<p class="sub" style="margin:0">半场 {C.esc(r.half_score or "—")} · 全场 '
+        f"<strong>{C.esc(r.full_score)}</strong></p>"
+        + (f'<p class="panel-hint" style="margin-top:6px">{"　".join(marks)}</p>' if marks else "")
     )
+    return C.panel("赛后结算", body)
+
 
 
 def render_match(cfg: Config, m: Match) -> str:
@@ -1230,28 +1304,36 @@ def render_match(cfg: Config, m: Match) -> str:
         f'<p class="sub" style="text-align:center;margin:0">{C.esc(meta)}{cold}{sample}</p>',
         "</div>",
         "</div>",
-        _odds_panel(m),         # 赔率数据（含时序变化，放在情报速览之前）
-        _intel_panel(m),        # 1. 📌 赛前情报速览
+        # 顺序按「读者决策链」排：结论 → 基本面 → 人员 → 市场与推演 → 环境。
+        # 同一层内由整体到局部；数据表在前、文字情报在后，避免长文打断表格节奏。
+        # L1 结论层：看好谁、有多确定
         _main_pick_block(m),    # 一句话主推（有才出现）
-        _compare_panel(m),      # 2. 🔍 核心数据对比（10 项场均 + 六维攻防风格雷达 + 综合总分）
-        _rank_panel(m),         # 2.1 🏅 积分排名（赛季总 / 同主客）
-        _h2h_panel(m),          # 3. ⚔️ 历史交锋（胜平负大数字 + 方块 + 对比条）
-        _form_panel(m),         # 4. 📈 近期战绩（四档样本对比条）
-        _goaldist_panel(m),     # 4.1 ⏱ 进球时段分布（双柱）
-        _conceded_panel(m),     # 4.2 ⏱ 丢球时段分布（双柱）
-        _injury_panel(m),       # 5. ⚠️ 核心球员缺阵影响
-        _mood_panel(m),         # 5.1 📰 赛前军情（7M 联赛稿）
-        _analyse_panel(m),      # 5.2 🗒 赛前分析（红彩短句）
-        _weather_panel(m),      # 5.5 🌤 比赛地天气
-        _referee_panel(m),      # 5.6 🟨 主裁判执法数据
-        _handicap_panel(m),     # 7. 🤔 让步可信度分析
-        _dish_panel(m),         # 7.1 📉 盘路走势（红彩 8 维度含赢盘率）
-        _model_panel(m),        # 8. 🧠 模型视角
-        C.panel("综合赛果推演", picks) if picks else "",   # 9. 🎯
+        C.panel("综合赛果推演", picks) if picks else "",   # 四宫格：方向/比分/进球/半全场
+        _intel_panel(m),        # 赛前情报速览：基本信息一屏
+        # L2 基本面层：谁强谁弱
+        _compare_panel(m),      # 核心数据对比（10 项场均 + 六维攻防风格雷达 + 综合总分）
+        _rank_panel(m),         # 积分排名（赛季总 / 同主客）
+        _h2h_panel(m),          # 历史交锋（胜平负大数字 + 方块 + 对比条）
+        _form_panel(m),         # 近期战绩（四档样本对比条）
+        _goaldist_panel(m),     # 进球时段分布（双柱，紧贴战绩）
+        _conceded_panel(m),     # 丢球时段分布（双柱）
+        # L3 人员层：谁能上、状态如何
+        _injury_panel(m),       # 伤停与缺阵
+        _squad_panel(m),        # 球员情报（核心球员评分 + 负荷）
+        _mood_panel(m),         # 赛前军情（7M 联赛稿）
+        _analyse_panel(m),      # 赛前分析（红彩短句）
+        # L4 市场与推演层：市场怎么给、模型怎么算
+        _odds_panel(m),         # 赔率数据（含时序变化）
+        _handicap_panel(m),     # 让步可信度分析
+        _dish_panel(m),         # 盘路走势（红彩 8 维度含赢盘率）
+        _model_panel(m),        # 模型视角
         _charts_panel(m),       # 进球威胁度走势（有数据才画）
         _situation_panel(m),    # 形势分析（有整榜才画）
+        # L5 环境与附注层
+        _weather_panel(m),      # 比赛地天气
+        _referee_panel(m),      # 主裁判执法数据
         _reference_panel(m),    # 外部对照（有才出现）
-        _ledger(m),
+        _settled_panel(m),      # 赛后结算（有赛果才出现）
     ]
 
     jsonld = _match_jsonld(cfg, m, url, title, desc)
@@ -1867,7 +1949,7 @@ def render_archive_index(cfg: Config, days: list[str],
     tm_view = _grid(teams or [], "teams") or '<p class="sub">暂无球队数据。</p>'
     body = (
         "<h1>历史归档</h1>"
-        f'<p class="sub">共 {len(ds)} 个交易日，逐日留档，结论指纹可核验；'
+        f'<p class="sub">共 {len(ds)} 个交易日，逐日归档；'
         "也可按联赛 / 球队维度浏览。</p>"
         '<div class="arch-tabs">'
         '<input type="radio" name="arch" id="at-date" class="fp-radio" checked>'
@@ -2239,7 +2321,7 @@ def render_preview_index(cfg: Config, ordered: list[Day]) -> str:
     )
     return L.page(
         cfg, title="每日赛事前瞻",
-        description="每日赛事前瞻列表：AI 报告逐日留档，方向、比分、总进球首选与信心分层",
+        description="每日赛事前瞻列表：AI 报告逐日归档，方向、比分、总进球首选与信心分层",
         body=body, canonical=f"{base}/preview/", depth=1,
     )
 
@@ -2416,8 +2498,8 @@ def render_features(cfg: Config) -> str:
     """
     base = cfg.base_url.rstrip("/")
     items = [
-        (L.ICON_SPORTS, "每日赛事前瞻", "每日 AI 报告列表，逐日留档可回溯", f"{base}/preview/"),
-        (L.ICON_ARCHIVE, "历史归档", "逐日留档，结论带哈希指纹，不删不改可核验", f"{base}/days/"),
+        (L.ICON_SPORTS, "每日赛事前瞻", "每日 AI 报告列表，逐日归档可回溯", f"{base}/preview/"),
+        (L.ICON_ARCHIVE, "历史归档", "逐日归档，历史结论可回溯比对", f"{base}/days/"),
         (L.ICON_TROPHY, "赛事 / 球队 Top 榜", "按已结算场次统计联赛与球队的方向命中率", f"{base}/"),
         (L.ICON_SEARCH, "站内搜索", "按队名、联赛、编号检索历史赛事", f"{base}/search.html"),
         (L.ICON_ACTIVITY, "深度数据", "各联赛球队六维战力、赔率与让球走势", f"{base}/depth/"),

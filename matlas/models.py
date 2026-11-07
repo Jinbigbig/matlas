@@ -184,6 +184,77 @@ class Injury:
 
 
 @dataclass
+class SquadPlayer:
+    """球员评分条目（球小策球员数据中心对外公开的 6 项）。
+
+    字段名保留源站口径，页面渲染时再转中文标签 —— 换源时只改渲染层映射。
+    `fatigue` 是 Medium / High / Low 三档，不是数字。
+    """
+
+    name: str = ""
+    pos: str = ""            # GK / DF / MF / FW
+    oti: float | None = None  # 进攻威胁
+    dii: float | None = None  # 防守参与
+    gim: float | None = None  # 比赛影响力
+    form: float | None = None  # 近期状态，0-10 EWMA
+    cons: float | None = None  # 稳定度
+    fatigue: str = ""          # High / Medium / Low
+    watch: str = ""            # out / doubt / suspended，仅在能对上伤停时填
+
+    @classmethod
+    def from_dict(cls, d: dict[str, Any]) -> "SquadPlayer":
+        return cls(**{k: v for k, v in d.items() if k in cls.__annotations__})
+
+
+@dataclass
+class TeamSquad:
+    """单队球员情报摘要。
+
+    `core_avg` = 库里影响力前 5 的 GIM 均值，用它做两队战力对比；
+    `watch` 是能在伤停名单里对上的核心球员，`loss` 为其 GIM 占比。
+    """
+
+    team: str = ""
+    n: int = 0
+    core_avg: float | None = None
+    form_avg: float | None = None
+    high_fatigue: int = 0
+    top: list[SquadPlayer] = field(default_factory=list)
+
+    @classmethod
+    def from_dict(cls, d: dict[str, Any]) -> "TeamSquad":
+        return cls(
+            team=str(d.get("team", "")),
+            n=int(d.get("n") or 0),
+            core_avg=d.get("core_avg"),
+            form_avg=d.get("form_avg"),
+            high_fatigue=int(d.get("high_fatigue") or 0),
+            top=[SquadPlayer.from_dict(x) for x in d.get("top", [])],
+        )
+
+
+@dataclass
+class Squad:
+    """球员情报（外部评分源，只做展示，不参与本站概率计算）。"""
+
+    source: str = ""
+    url: str = ""
+    updated: str = ""
+    home: TeamSquad | None = None
+    away: TeamSquad | None = None
+
+    @classmethod
+    def from_dict(cls, d: dict[str, Any]) -> "Squad":
+        return cls(
+            source=str(d.get("source", "")),
+            url=str(d.get("url", "")),
+            updated=str(d.get("updated", "")),
+            home=TeamSquad.from_dict(d["home"]) if d.get("home") else None,
+            away=TeamSquad.from_dict(d["away"]) if d.get("away") else None,
+        )
+
+
+@dataclass
 class Handicap:
     """让球结论。
 
@@ -326,6 +397,7 @@ class Match:
     recent_home: list[RecentItem] = field(default_factory=list)
     recent_away: list[RecentItem] = field(default_factory=list)
     injuries: list[Injury] = field(default_factory=list)
+    squad: Squad | None = None       # 球员情报（外部评分源，仅展示）
 
     result: Result | None = None
     source_url: str = ""
@@ -414,6 +486,7 @@ class Match:
                 "recent_home": [asdict(x) for x in self.recent_home],
                 "recent_away": [asdict(x) for x in self.recent_away],
                 "injuries": [asdict(x) for x in self.injuries],
+                "squad": asdict(self.squad) if self.squad else None,
                 "result": asdict(self.result) if self.result else None,
                 "source_url": self.source_url,
                 "generated_at": self.generated_at,
@@ -451,6 +524,7 @@ class Match:
             recent_home=[RecentItem(**x) for x in d.get("recent_home", [])],
             recent_away=[RecentItem(**x) for x in d.get("recent_away", [])],
             injuries=[Injury(**x) for x in d.get("injuries", [])],
+            squad=Squad.from_dict(d["squad"]) if d.get("squad") else None,
             result=Result.from_dict(d["result"]) if d.get("result") else None,
             source_url=str(d.get("source_url", "")),
             generated_at=str(d.get("generated_at", "")),

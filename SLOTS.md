@@ -1,14 +1,14 @@
 # 槽位登记表
 
 > 本文件由 `matlas/slots.py` 生成，**不要手改** —— 改代码里的 `SLOTS` 再重新生成。
-> 当前：槽位 16 个：已接线 13 / 待接线 2 / 待开发 1
+> 当前：槽位 16 个：已接线 14 / 待接线 1 / 待开发 1
 
 框架（渲染层）已为每个槽位铺好，缺数据时该块自动不渲染；
 数据由谁供、什么时候供，全部记在这张表里。换源只改本表和对应适配器。
 
 | 状态 | 模块 | 契约字段 | 数据来源（按优先级） | 备注 |
 | --- | --- | --- | --- | --- |
-| ⏸ | **队徽** | `Team.logo` | jinbet 球队字典（尚无 logo 字段） | 渲染层已接线且带协议校验（只放行 http(s)/相对路径）；无 logo 时退化为纯文字，不留占位框。缺的是数据源，不是框架 |
+| ✅ | **队徽** | `Team.logo` | qiuxiaoce 队徽库（已按历史球队离线至 assets/logo/teams，494 张） | 渲染层带协议校验（只放行 http(s)/相对路径），存站点相对路径、按页深补 ../；无映射队名退化为首字占位圆。映射表在 matlas/logos.py，宁缺勿错 |
 | ✅ | **主推** | `Match.main_pick` | jinbet V3.4 引擎结论摘要 | 一句话主推，页面第一视觉重心；缺则整块不出现 |
 | ✅ | **置信度** | `Match.confidence` | jinbet 引擎 | 词表固定 高/中/低/冷门 |
 | ✅ | **四宫格结论** | `Match.forecasts[]` | jinbet 引擎 V3.4 | 方向/比分/进球/半全场，各带首选+次选与概率 |
@@ -22,8 +22,8 @@
 | ✅ | **近期战绩** | `Match.recent_home / recent_away[]` | results_data.json（官方赛果库，自 2025-12-31） |  |
 | ✅ | **伤停与缺阵** | `Match.injuries[]` | lineupstoday<br>香港赛马会赛前简报<br>德甲/荷甲官方 |  |
 | ✅ | **外部对照** | `Match.reference` | 球小策开源数据集 ddzyx/qiuxiaoce-football-data（CC BY-NC 4.0，每日约 3 场）<br>Agent Skill: qiuxiaoce-football-data@2.14.0（/match-pack/{id}，50 点/场） | 只做比对，永不参与本站概率计算；必须署名留链 |
-| ✅ | **留档核验** | `Match.fingerprint()` | 本地计算 sha256 | 只覆盖赛前字段，赛后回填不改变指纹 |
-| ❌ | **赛果结算** | `Match.result` | 官方赛果源（results_data.json 等） | **目标缺口**：result.*_hit 目前靠人工填，没有 settle 函数按比分自动判定 |
+| ✅ | **球员情报** | `Match.squad` | 球小策球员数据中心 /player-rankings/（admin-ajax abv2_dc_rankings，服务端渲染榜单 + 免费接口，51 联赛） | 对外公开 6 项：影响力 GIM / 进攻威胁 OTI / 防守参与 DII / 状态 / 稳定度 / 负荷；每队 <8 人不出块（澳超整体省略）；只作参照，不参与本站概率计算 |
+| ❌ | **赛后结算** | `Match.result` | 官方赛果源（results_data.json 等） | **目标缺口**：result.*_hit 目前靠人工填，没有 settle 函数按比分自动判定 |
 
 ## 状态含义
 

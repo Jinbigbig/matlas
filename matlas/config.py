@@ -31,7 +31,7 @@ class Config:
     site_tagline: str = "足球赛事量化图谱"
     site_desc: str = (
         "Matlas 逐场公开足球赛事的结构化量化数据与推演结论，"
-        "赛前固化、赛后回填，全部历史可核验、可复算。"
+        "赛前固化、赛后回填，全部历史可回溯、可复算。"
     )
     base_url: str = DEFAULT_BASE_URL
     author: str = "Matlas"
