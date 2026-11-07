@@ -1292,6 +1292,66 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
 .mv-scale-l { display: flex; justify-content: space-between; font-size: 0.72rem;
   color: var(--muted); }
 
+/* 比赛列表：一行一场，日期锚点条 + 分组平铺 */
+.ml-jump { display: flex; gap: 8px; overflow-x: auto; padding: 2px 0 16px;
+  scrollbar-width: thin; }
+.ml-jump-a { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px;
+  padding: 0.32rem 0.82rem; border: 1px solid var(--rule); border-radius: 999px;
+  font-size: 0.8rem; color: var(--ink); background: #fff; text-decoration: none; }
+.ml-jump-a:hover { border-color: var(--accent2); }
+.ml-jump-a em { font-style: normal; font-size: 0.72rem; color: var(--muted); }
+.ml-legend { display: flex; align-items: center; gap: 14px; margin: 0 0 10px;
+  font-size: 0.72rem; color: var(--muted); }
+.ml-legend span, .ml-legend b { display: inline-flex; align-items: center; gap: 4px;
+  font-weight: 400; }
+.ml-day { margin: 24px 0 10px; font-size: 0.95rem; font-weight: 700; scroll-margin-top: 70px;
+  display: flex; align-items: center; gap: 9px; }
+.mlines { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: #fff; }
+.mline { display: grid; grid-template-columns: 50px 64px minmax(0, 1fr) 132px 104px;
+  align-items: center; gap: 10px; padding: 0.56rem 14px; border-bottom: 1px solid var(--rule);
+  text-decoration: none; color: var(--ink); font-size: 0.84rem; }
+.mline:last-of-type, .mlines > .mline:last-child { border-bottom: none; }
+a.mline:hover { background: rgba(0, 0, 0, 0.025); }
+.ml-t { font-variant-numeric: tabular-nums; color: #374151; }
+.ml-lg { font-size: 0.74rem; color: var(--muted); white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis; }
+.ml-teams { display: grid; grid-template-columns: minmax(0, 1fr) 30px minmax(0, 1fr);
+  align-items: center; gap: 10px; min-width: 0; }
+.ml-h, .ml-a { display: flex; align-items: center; gap: 6px; min-width: 0; font-weight: 600; }
+.ml-h { justify-content: flex-end; }
+.ml-a { justify-content: flex-start; }
+.ml-nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ml-v { text-align: center; font-size: 0.7rem; color: var(--muted); }
+.mlf { flex: 0 0 auto; display: inline-flex; gap: 3px; }
+.mlf i, .ml-legend i { display: block; width: 6px; height: 6px; border-radius: 50%;
+  background: #d1d5db; }
+.mlf i.w, .ml-legend i.w { background: #0f7a43; }
+.mlf i.d, .ml-legend i.d { background: #9ca3af; }
+.mlf i.l, .ml-legend i.l { background: #cf6679; }
+.ml-pick { display: flex; gap: 6px; justify-content: flex-end; font-size: 0.74rem; }
+.ml-pick em { font-style: normal; padding: 1px 7px; border-radius: 6px; background: var(--bg);
+  color: #4b5563; white-space: nowrap; }
+.ml-st { text-align: right; font-size: 0.78rem; font-variant-numeric: tabular-nums;
+  color: var(--muted); white-space: nowrap; }
+.ml-st.win { color: #0f7a43; font-weight: 600; }
+.ml-st.lose { color: #a3252f; }
+.mline.off { color: #9ca3af; background: #fcfdfe; }
+.mline.off .ml-h, .mline.off .ml-a { font-weight: 500; }
+.mline.off .mlf i { opacity: 0.55; }
+@media(max-width:640px) {
+  .mline { grid-template-columns: auto auto minmax(0, 1fr);
+    grid-template-areas: "t lg st" "tms tms tms"; row-gap: 3px; column-gap: 8px;
+    padding: 0.5rem 12px; font-size: 0.82rem; }
+  .ml-t { grid-area: t; }
+  .ml-lg { grid-area: lg; text-align: left; }
+  .ml-st { grid-area: st; font-size: 0.76rem; }
+  .ml-teams { grid-area: tms;
+    grid-template-columns: minmax(0, max-content) 26px minmax(0, 1fr); gap: 8px; }
+  .ml-h { justify-content: flex-start; }
+  .ml-pick { display: none; }
+  .ml-day { margin: 18px 0 8px; }
+}
+
 /* 比赛天气卡片 */
 .wx-card { display: grid; gap: 10px; background: #f8fafc; border: 1px solid var(--rule);
   border-radius: 12px; padding: 15px 18px; }
