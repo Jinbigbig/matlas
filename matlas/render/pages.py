@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import datetime as dt
 import math
 import re
 from dataclasses import replace
@@ -2748,6 +2749,24 @@ def _ml_pending(r: dict, board: dict | None = None) -> str:
     )
 
 
+_ML_JUMP_JS = """<script>
+(function(){
+  var j=document.querySelector('.ml-jump'), t=document.querySelector('.ml-jump-a.today');
+  if(j && t && j.scrollWidth > j.clientWidth){
+    j.scrollLeft = t.offsetLeft - j.clientWidth/2 + t.offsetWidth/2;
+  }
+  var h = innerHeight + 300;
+  document.querySelectorAll('.mline').forEach(function(r){
+    if(getComputedStyle(r).display === 'none') return;
+    var b = r.getBoundingClientRect();
+    if(b.top < h && b.bottom > -300){
+      r.querySelectorAll('img.ml-crest').forEach(function(i){ i.loading='eager'; });
+    }
+  });
+})();
+</script>"""
+
+
 def render_matches(cfg: Config, days: list[Day],
                    fixtures: dict[str, list[dict]] | None = None,
                    board: dict | None = None) -> str:
@@ -2760,7 +2779,7 @@ def render_matches(cfg: Config, days: list[Day],
     base = cfg.base_url.rstrip("/")
     fixtures = fixtures or {}
     by_date = {d.date: d.matches for d in days}
-    recent = sorted(by_date, reverse=True)[:3]
+    recent = sorted(by_date, reverse=True)[:4]
     dates = sorted({*recent, *fixtures}, reverse=True)[:12]
     head = f"<h1 class='page-h1'>{L.ICON_SPORTS} 比赛列表</h1>"
     if not dates:
@@ -2770,7 +2789,7 @@ def render_matches(cfg: Config, days: list[Day],
             canonical=f"{base}/matches.html", depth=0,
         )
 
-    today = max(by_date) if by_date else ""
+    today = min(fixtures) if fixtures else (max(by_date) if by_date else "")
     counts: dict[str, int] = {}
     jc_counts: dict[str, int] = {}
     sections = []
@@ -2803,12 +2822,15 @@ def render_matches(cfg: Config, days: list[Day],
             f'<div class="mlines">{rows}</div>{more}</section>'
         )
 
-    jump = "".join(
-        f'<a class="ml-jump-a" href="#d-{d}">{d[5:].replace("-", "/")}'
-        f'<em class="n-jc">{jc_counts.get(d, 0)}</em>'
-        f'<em class="n-all">{counts.get(d, 0)}</em></a>'
-        for d in dates
-    )
+    week = "一二三四五六日"
+    cells = []
+    for d in sorted(dates):
+        dow = "今天" if d == today else f"周{week[dt.date.fromisoformat(d).weekday()]}"
+        cls = "ml-jump-a today" if d == today else "ml-jump-a"
+        cells.append(f'<a class="{cls}" href="#d-{d}">'
+                     f'<span class="dow">{dow}</span>'
+                     f'<span class="dm">{d[5:]}</span></a>')
+    jump = "".join(cells)
     legend = (
         '<p class="ml-legend"><span><i class="w"></i>胜</span>'
         '<span><i class="d"></i>平</span><span><i class="l"></i>负</span>'
@@ -2834,6 +2856,7 @@ def render_matches(cfg: Config, days: list[Day],
         + '<label class="fp-opt" for="ml-all">全部赛程</label>'
         + f'<div class="ml-panel">{panel}</div>'
         + '</div>'
+        + _ML_JUMP_JS
     )
     return L.page(
         cfg, title="比赛列表", description="按日浏览全部赛事，方向与比分旁边就是赛果",
