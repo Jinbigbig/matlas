@@ -2080,7 +2080,7 @@ def render_archive_index(cfg: Config, days: list[str],
             dims_html = "".join(parts)
             crest = logos.league_crest_url(name)
             badge = (
-                f'<img class="arch-crest" src="../{C.esc(crest)}" alt="{C.esc(name)}徽章" loading="lazy">'
+                f'<img class="arch-crest" src="../{C.esc(crest)}" alt="{C.esc(name)}徽章" decoding="async">'
                 if crest
                 else '<span class="arch-crest arch-crest-ph" aria-hidden="true">'
                      f'{C.esc(name[:1])}</span>'
