@@ -1312,13 +1312,21 @@ footer.site { background: var(--bg2); border-top: 1px solid var(--rule); padding
   color: var(--muted); }
 
 /* 比赛列表：一行一场，日期锚点条 + 分组平铺 */
-.ml-jump { display: flex; gap: 8px; overflow-x: auto; padding: 2px 0 16px;
-  scrollbar-width: thin; }
-.ml-jump-a { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px;
-  padding: 0.32rem 0.82rem; border: 1px solid var(--rule); border-radius: 999px;
-  font-size: 0.8rem; color: var(--ink); background: #fff; text-decoration: none; }
-.ml-jump-a:hover { border-color: var(--accent2); }
-.ml-jump-a em { font-style: normal; font-size: 0.72rem; color: var(--muted); }
+.ml-jump { display: flex; gap: 0; overflow-x: auto; padding: 8px 4px 10px;
+  background: #f7f9ff; border-bottom: 2px solid var(--accent);
+  border-radius: 10px 10px 0 0; scrollbar-width: thin; }
+.ml-jump-a { flex: 1 0 66px; min-width: 66px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 5px; padding: 9px 4px 10px;
+  border: 1px solid transparent; border-radius: 10px; text-decoration: none;
+  color: var(--ink); background: transparent; }
+.ml-jump-a .dow { font-size: 0.7rem; color: var(--muted); line-height: 1.2; }
+.ml-jump-a .dm { font-size: 0.88rem; font-weight: 700; line-height: 1.2;
+  font-variant-numeric: tabular-nums; }
+.ml-jump-a.today { background: #fff; border-color: #dbe6ff;
+  box-shadow: 0 3px 12px rgba(37, 99, 235, 0.13); }
+.ml-jump-a.today .dow, .ml-jump-a.today .dm { color: var(--accent); }
+.ml-jump-a:hover { background: rgba(37, 99, 235, 0.06); }
+.ml-jump-a.today:hover { background: #fff; }
 .ml-legend { display: flex; align-items: center; gap: 14px; margin: 0 0 10px;
   font-size: 0.72rem; color: var(--muted); }
 .ml-legend span, .ml-legend b { display: inline-flex; align-items: center; gap: 4px;
@@ -1378,6 +1386,9 @@ a.mline:hover { background: rgba(0, 0, 0, 0.025); }
   .ml-h { justify-content: flex-end; }
   .ml-pick { display: none; }
   .ml-day { margin: 18px 0 8px; }
+  .ml-jump { padding: 7px 2px 9px; }
+  .ml-jump-a { flex-basis: 60px; min-width: 60px; gap: 4px; }
+  .ml-jump-a .dm { font-size: 0.8rem; }
 }
 
 /* 比赛列表：竞彩 / 全部赛程切换（纯 CSS radio） */
