@@ -586,11 +586,29 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .insight-block { min-width: 0; }
 .insight-block h4 { margin: 0 0 8px; font-size: 13px; color: var(--muted); text-align: center; font-weight: 600; }
 svg.itrend { width: 100%; height: auto; display: block; }
+svg.itrend-mob { display: none; }
+@media (max-width: 900px) {
+  svg.itrend-desk { display: none; }
+  svg.itrend-mob { display: block; }
+}
+.itrend-legend { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+  margin: 0 0 6px; font-size: 11.5px; color: var(--muted); }
+.itrend-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.itrend-legend i { width: 12px; height: 8px; border-radius: 2px; display: inline-block; flex: none; }
+.itrend-legend .lg-bar { background: rgba(148,163,184,.45); }
+.itrend-legend .lg-avg { height: 0; border-top: 2px dashed #10b981; border-radius: 0; }
+.itrend-legend .lg-base { height: 0; border-top: 2px dashed #f59e0b; border-radius: 0; }
 .hbar-row { display: flex; align-items: center; gap: 10px; font-size: 13px; margin: 6px 0; }
 .hbar-label { width: 76px; flex: none; text-align: right; color: #374151; }
 .hbar-track { flex: 1; height: 14px; background: #eef2f7; border-radius: 7px; overflow: hidden; }
 .hbar-fill { display: block; height: 100%; background: linear-gradient(90deg, #2563eb, #60a5fa); border-radius: 7px; }
 .hbar-num { width: 58px; flex: none; font-weight: 600; color: #111; }
+.hbar-n { width: 56px; flex: none; text-align: right; font-size: 12px; color: #9ca3af; }
+.rank-name { display: inline-flex; align-items: center; gap: 8px; min-width: 0; }
+.rank-name > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rank-crest { width: 20px; height: 20px; object-fit: contain; flex: none; }
+.rank-crest-ph { display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: #eaf1ff; color: #2563eb; font-size: 11px; font-weight: 700; }
 .insight-chips { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
 .insight-chip { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 999px; padding: 6px 14px; font-size: 13px; color: #374151; }
 .insight-chip b { color: #111; }
