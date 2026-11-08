@@ -1020,9 +1020,11 @@ a.lg-link:hover { color: var(--accent); text-decoration: none; }
 .sq-est { display: inline-block; padding: 0 4px; border-radius: 3px; vertical-align: 1px;
   background: #fef3c7; color: #92400e; font-size: 0.68rem; line-height: 1.5; }
 .sq-table td:not(:first-child) { text-align: right; white-space: nowrap; }
-/* 表头必须与单元格同向对齐：此前 th 一律左对齐、td 一律右对齐，
-   「位置」「影响力」这类相邻列就会看起来列名压在列左、数值贴在列右 */
-.sq-table thead th:not(:first-child) { text-align: right; }
+/* 表头与单元格必须同向对齐，且两条规则特异性要相同：
+   nth-child(2)/(3) 写在后面才覆盖得了「球员」「位置」两列。
+   曾因 thead th:not(:first-child) 特异性更高，这两个表头被强制右对齐、
+   数据却左对齐，看起来像列名错列。 */
+.sq-table th:not(:first-child) { text-align: right; }
 .sq-table td:nth-child(2), .sq-table th:nth-child(2) { text-align: left; }
 .sq-table td:nth-child(3), .sq-table th:nth-child(3) { text-align: left; }
 @media(max-width:640px) {

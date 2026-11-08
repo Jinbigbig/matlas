@@ -26,6 +26,7 @@ import re
 import sys
 import time
 import urllib.error
+from datetime import date, timedelta
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -163,6 +164,7 @@ def _wanted_leagues() -> list[tuple[str, str]]:
 
 SNAPSHOT_DIR = ROOT / "data" / "snapshots"
 SNAP_KEYS = ("gim", "oti", "dii", "form_rating", "fatigue_risk")
+SNAPSHOT_KEEP_DAYS = 30
 
 
 def _squad_files(squads_dir: Path = OUT_DIR) -> list[Path]:
@@ -237,6 +239,35 @@ def load_previous_snapshot(asof: str,
     return "", {}
 
 
+def prune_snapshots(asof: str, keep_days: int = SNAPSHOT_KEEP_DAYS,
+                    snap_dir: Path = SNAPSHOT_DIR) -> list[str]:
+    """按源站周期保留最近 keep_days 天的快照，返回被清理的文件名。
+
+    基准用源站 asof 而非本地时钟：源站停更时不会把最后几份有效快照按本地
+    日期删光。清理失败只告警不抛错，不能拖垮定时任务。
+    """
+    if not asof or not snap_dir.is_dir():
+        return []
+    try:
+        cutoff = date.fromisoformat(asof) - timedelta(days=keep_days)
+    except ValueError:
+        return []
+    removed: list[str] = []
+    for f in sorted(snap_dir.glob("*.json")):
+        try:
+            d = date.fromisoformat(f.stem)
+        except ValueError:  # 非日期命名的文件不碰
+            continue
+        if d >= cutoff:
+            continue
+        try:
+            f.unlink()
+            removed.append(f.name)
+        except OSError as e:
+            print(f"[squads] 旧快照清理失败 {f.name}：{e}")
+    return removed
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--all", action="store_true", help="抓全部联赛")
@@ -291,6 +322,9 @@ def main(argv: list[str] | None = None) -> int:
     snap = write_snapshot()
     if snap:
         print(f"[squads] 快照 {snap.name}")
+        gone = prune_snapshots(snap.stem)
+        if gone:
+            print(f"[squads] 清理 {SNAPSHOT_KEEP_DAYS} 天前快照 {len(gone)} 份")
     return 0 if fail == 0 else 1
 
 
