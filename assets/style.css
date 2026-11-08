@@ -582,8 +582,24 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 .insight-list li { font-size: 13.5px; color: #374151; background: #f8fafc; border-radius: 8px; padding: 8px 12px; }
 .insight-list li b { color: #111; }
 /* 洞察总结：线图 + 横条各自横向铺满，chips 整行居中 */
-.insight-viz { display: flex; flex-direction: column; gap: 18px; }
+.insight-viz { position: relative; display: flex; flex-direction: column; gap: 18px; }
 .insight-block { min-width: 0; }
+/* 交互浮层：折线吸附点 / 横条悬停明细共用一个卡片 */
+.iv-tip { position: absolute; z-index: 6; pointer-events: none; min-width: 148px;
+  max-width: 230px; background: #fff; border: 1px solid #e2e8f0; border-radius: 9px;
+  box-shadow: 0 6px 18px rgba(15,23,42,.12); padding: 8px 10px; font-size: 12px;
+  color: #334155; line-height: 1.55; }
+.iv-tip[hidden] { display: none; }
+.iv-tip .iv-t { display: flex; flex-direction: column; gap: 1px; }
+.iv-tip .iv-t.horiz { flex-direction: row; flex-wrap: wrap; gap: 2px 10px; max-width: 320px; }
+.iv-tip .iv-t.horiz span { white-space: nowrap; }
+.iv-tip .iv-t > b { color: #0f172a; font-size: 12.5px; }
+.iv-tip .pct { color: #2563eb; }
+.itrend-hit { cursor: crosshair; }
+.itrend-guide { opacity: 0; pointer-events: none; }
+.itrend-guide.on { opacity: 1; }
+.itrend-dot.on { stroke: #fff; stroke-width: 2; }
+.hbar-row.on { background: rgba(37,99,235,.06); border-radius: 6px; }
 .insight-block h4 { margin: 0 0 8px; font-size: 13px; color: var(--muted); text-align: center; font-weight: 600; }
 svg.itrend { width: 100%; height: auto; display: block; }
 svg.itrend-mob { display: none; }
