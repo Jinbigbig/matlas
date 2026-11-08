@@ -6,7 +6,7 @@
 <title>站内搜索 - Matlas</title>
 <meta name="description" content="按队名、联赛、竞彩编号检索全部历史赛事">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/search.html">
-<link rel="stylesheet" href="assets/style.css?v=1794151746">
+<link rel="stylesheet" href="assets/style.css?v=1794153102">
 <meta property="og:type" content="article">
 <meta property="og:title" content="站内搜索 - Matlas">
 <meta property="og:description" content="按队名、联赛、竞彩编号检索全部历史赛事">
@@ -47,13 +47,13 @@
   document.getElementById("q").value = q;
   var box = document.getElementById("search-results");
   var meta = document.getElementById("search-meta");
-  if (!q.trim()) { meta.textContent = "输入关键字开始检索，支持队名、联赛、竞彩编号与日期。"; return; }
+  if (!q.trim()) { meta.textContent = ""; return; }
   var kw = q.trim().toLowerCase();
   var hits = DATA.filter(function (r) {
     return r.some(function (v, i) { return i !== 5 && String(v).toLowerCase().indexOf(kw) !== -1; });
   }).slice(0, 50);
-  meta.textContent = "共 " + hits.length + " 场匹配（最多显示 50 条）";
-  if (!hits.length) { box.innerHTML = '<p class="sub">没有匹配的赛事，换个关键字试试。</p>'; return; }
+  meta.textContent = "共 " + hits.length + " 场匹配";
+  if (!hits.length) { box.innerHTML = '<p class="sub">没有匹配的赛事</p>'; return; }
   box.innerHTML = hits.map(function (r) {
     return '<a class="match-card" href="' + "matches/" + r[5] + '.html">'
       + '<div class="mc-header"><div class="mc-meta"><span class="date">' + r[0].slice(5).replace("-", "/")
