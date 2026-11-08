@@ -51,17 +51,23 @@ fi
 if [ -n "$(git status --porcelain)" ]; then
   # 数据变动（import 产物）允许自动提交：定时任务只跑 import+build+publish，
   # 不允许人工 commit，若这里硬性拒绝，每天 08:00/14:00/19:00 的发布会全部卡住。
-  OTHER="$(git status --porcelain | grep -v '^.. data/' || true)"
+  #
+  # 白名单含 assets/logo/：队徽与赛事徽章是 build 时抓取/下载的「离线快照」，
+  # 与 data/ 同属运行态资源，不是源码。此前只认 data/ 导致 import 每下载一批
+  # 新队徽（assets/logo/teams/*.png 未跟踪）就被判成源码改动、整条发布被拒
+  # （2026-11-08 实测：37 个新队徽卡住发布，需人工单独提交）。
+  # 其余任何路径（pages.py / build.py / README 等）仍视为源码改动，照旧拒绝。
+  OTHER="$(git status --porcelain | grep -Ev '^.. (data|assets/logo)/' || true)"
   if [ -n "$OTHER" ]; then
     echo "[!] main 工作区有未提交的源码改动，先提交再发布（产物不应夹带源码改动）。" >&2
     echo "$OTHER" >&2
     exit 1
   fi
-  echo "[1.5/4] 自动提交 data/ 数据变动（import 产物）"
-  git add data
+  echo "[1.5/4] 自动提交 data/ 与 assets/logo/ 资源变动（import/build 产物）"
+  git add -A data assets/logo
   git -c user.name="$(git -C "$ROOT" config user.name)" \
       -c user.email="$(git -C "$ROOT" config user.email)" \
-      commit -q -m "data: $(date +%Y-%m-%d) 定时任务导入快照"
+      commit -q -m "data: $(date +%Y-%m-%d) 定时任务导入快照（含 assets/logo 资源）"
   echo "      → $(git rev-parse --short HEAD)"
 fi
 
