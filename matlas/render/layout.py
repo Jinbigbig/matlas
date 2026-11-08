@@ -1043,6 +1043,11 @@ a.lg-link:hover { color: var(--accent); text-decoration: none; }
 .sq-table th:not(:first-child) { text-align: right; }
 .sq-table td:nth-child(2), .sq-table th:nth-child(2) { text-align: left; }
 .sq-table td:nth-child(3), .sq-table th:nth-child(3) { text-align: left; }
+/* 长球员名既不换行也不裁切：把「位置」列表头与数据整体右移腾出留白。
+   只在桌面 fixed 布局生效；≤640px 为 auto 布局且隐藏两列，本就不重叠。 */
+@media (min-width: 1100px) {
+  .sq-table th:nth-child(3), .sq-table td:nth-child(3) { padding-left: 90px; }
+}
 @media(max-width:640px) {
   .sq-table { font-size: 0.76rem; }
   .sq-sum th:nth-child(5), .sq-sum td:nth-child(5) { display: none; }
