@@ -280,7 +280,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "lam_home": 1.415,
     "lam_away": 1.584,
@@ -852,7 +852,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "lam_home": 1.08,
     "lam_away": 1.325,
@@ -1144,7 +1144,7 @@
    "metrics_home": {
     "attack": 28,
     "defence": 43,
-    "control": 43,
+    "control": 42,
     "form": 66,
     "value": 37,
     "motivation": 30,
@@ -1452,7 +1452,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "table": [
      {
@@ -2338,7 +2338,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "table": [
      {
@@ -3144,7 +3144,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "lam_home": 2.176,
     "lam_away": 1.278,
@@ -3674,7 +3674,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "lam_home": 1.508,
     "lam_away": 1.085,
@@ -3936,7 +3936,7 @@
    "metrics_home": {
     "attack": 74,
     "defence": 36,
-    "control": 64,
+    "control": 65,
     "form": 13,
     "value": 50,
     "motivation": 47,
@@ -3970,7 +3970,7 @@
    "metrics_away": {
     "attack": 74,
     "defence": 56,
-    "control": 69,
+    "control": 76,
     "form": 33,
     "value": 69,
     "motivation": 66,
@@ -4013,23 +4013,23 @@
      "T-1"
     ],
     "home": [
-     3.0,
      4.0,
      1.0,
      0.0,
      0.0,
      4.0,
      0.0,
-     4.0
+     4.0,
+     1.0
     ],
     "away": [
-     0.0,
      5.0,
      1.0,
      4.0,
      3.0,
      1.0,
      2.0,
+     1.0,
      1.0
     ]
    },
@@ -4244,7 +4244,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "table": [
      {
@@ -5100,7 +5100,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "lam_home": 1.537,
     "lam_away": 1.326,
@@ -5511,8 +5511,8 @@
    },
    "metrics_home": {
     "attack": 85,
-    "defence": 34,
-    "control": 70,
+    "defence": 33,
+    "control": 71,
     "form": 53,
     "value": 90,
     "motivation": 74,
@@ -5546,7 +5546,7 @@
    "metrics_away": {
     "attack": 26,
     "defence": 53,
-    "control": 46,
+    "control": 47,
     "form": 0,
     "value": 44,
     "motivation": 3,
@@ -5599,14 +5599,14 @@
      0.0
     ],
     "away": [
-     1.0,
      2.0,
      1.0,
      1.0,
      1.0,
      0.0,
      1.0,
-     1.0
+     1.0,
+     0.0
     ]
    },
    "forecasts": [
@@ -5838,7 +5838,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "table": [
      {
@@ -6420,7 +6420,7 @@
    "metrics_home": {
     "attack": 39,
     "defence": 36,
-    "control": 43,
+    "control": 42,
     "form": 16,
     "value": 52,
     "motivation": 60,
@@ -6454,7 +6454,7 @@
    "metrics_away": {
     "attack": 67,
     "defence": 15,
-    "control": 31,
+    "control": 36,
     "form": 31,
     "value": 40,
     "motivation": 69,
@@ -6746,7 +6746,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "table": [
      {
@@ -7429,14 +7429,14 @@
      "T-1"
     ],
     "home": [
-     0.0,
      2.0,
      0.0,
      0.0,
      0.0,
      1.0,
      2.0,
-     0.0
+     0.0,
+     1.0
     ],
     "away": [
      3.0,
@@ -7651,7 +7651,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "lam_home": 0.647,
     "lam_away": 2.525,
@@ -8201,7 +8201,7 @@
     "settled_at": "2026-10-30"
    },
    "source_url": "",
-   "generated_at": "2026-11-08T11:02:57+08:00",
+   "generated_at": "2026-11-08T11:13:27+08:00",
    "extras": {
     "lam_home": 1.335,
     "lam_away": 1.016,
