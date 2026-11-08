@@ -1013,6 +1013,12 @@ a.lg-link:hover { color: var(--accent); text-decoration: none; }
   padding: 0.1rem 0.4rem; border-radius: 4px; color: var(--ink); }
 /* ---------- 球员情报 ---------- */
 .sq-sum { margin-bottom: 10px; }
+.sq-chg { margin-left: 3px; font-size: 0.72rem; font-weight: 600; white-space: nowrap; }
+.sq-chg.up { color: #0d9488; }
+.sq-chg.down { color: #94a3b8; }
+.sq-chg.flat { color: #cbd5e1; }
+.sq-est { display: inline-block; padding: 0 4px; border-radius: 3px; vertical-align: 1px;
+  background: #fef3c7; color: #92400e; font-size: 0.68rem; line-height: 1.5; }
 .sq-table td:not(:first-child) { text-align: right; white-space: nowrap; }
 /* 表头必须与单元格同向对齐：此前 th 一律左对齐、td 一律右对齐，
    「位置」「影响力」这类相邻列就会看起来列名压在列左、数值贴在列右 */

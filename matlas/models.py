@@ -200,6 +200,8 @@ class SquadPlayer:
     cons: float | None = None  # 稳定度
     fatigue: str = ""          # High / Medium / Low
     watch: str = ""            # out / doubt / suspended，仅在能对上伤停时填
+    d_gim: float | None = None  # 相对上一计算周期的影响力变化，无快照为 None
+    estimated: bool = False     # 源站标为估算值（出场不足 / xG 按射门数推算）
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "SquadPlayer":
@@ -240,6 +242,8 @@ class Squad:
     source: str = ""
     url: str = ""
     updated: str = ""
+    asof: str = ""            # 源站计算周期 YYYY-MM-DD
+    prev: str = ""            # 对比的上一个快照周期，空串表示无
     home: TeamSquad | None = None
     away: TeamSquad | None = None
 
@@ -249,6 +253,8 @@ class Squad:
             source=str(d.get("source", "")),
             url=str(d.get("url", "")),
             updated=str(d.get("updated", "")),
+            asof=str(d.get("asof", "")),
+            prev=str(d.get("prev", "")),
             home=TeamSquad.from_dict(d["home"]) if d.get("home") else None,
             away=TeamSquad.from_dict(d["away"]) if d.get("away") else None,
         )

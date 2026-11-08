@@ -161,6 +161,82 @@ def _wanted_leagues() -> list[tuple[str, str]]:
     return out
 
 
+SNAPSHOT_DIR = ROOT / "data" / "snapshots"
+SNAP_KEYS = ("gim", "oti", "dii", "form_rating", "fatigue_risk")
+
+
+def _squad_files(squads_dir: Path = OUT_DIR) -> list[Path]:
+    return sorted(squads_dir.glob("*.json"))
+
+
+def snapshot_asof(squads_dir: Path = OUT_DIR) -> str:
+    """快照日期取源站 updated_at，不取本地运行日。
+
+    源站每天凌晨重算一次；用源站周期命名才不会出现「今天抓到昨天的数，
+    却写成今天的快照」这种时间错位（与 enrich_squads 不回填历史同一口径）。
+    """
+    asof = ""
+    for f in _squad_files(squads_dir):
+        try:
+            d = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        asof = max(asof, str(d.get("updated_at") or "")[:10])
+    return asof
+
+
+def write_snapshot(squads_dir: Path = OUT_DIR,
+                   snap_dir: Path = SNAPSHOT_DIR) -> Path | None:
+    """把当前球员库压成一份按源站周期命名的快照，同周期重复运行幂等。"""
+    asof = snapshot_asof(squads_dir)
+    if not asof:
+        return None
+    players: dict[str, dict] = {}
+    for f in _squad_files(squads_dir):
+        try:
+            d = json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for p in d.get("players") or []:
+            pid = str(p.get("player_id") or "")
+            if not pid:
+                continue
+            row = {k: p.get(k) for k in SNAP_KEYS}
+            row["team_name"] = p.get("team_name") or ""
+            row["display_name"] = p.get("display_name") or p.get("player_name") or ""
+            players[pid] = row
+    if not players:
+        return None
+    snap_dir.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "date": asof,
+        "generated_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "leagues": len(_squad_files(squads_dir)),
+        "players": players,
+    }
+    out = snap_dir / f"{asof}.json"
+    out.write_text(json.dumps(payload, ensure_ascii=False, indent=1) + "\n",
+                   encoding="utf-8")
+    return out
+
+
+def load_previous_snapshot(asof: str,
+                           snap_dir: Path = SNAPSHOT_DIR) -> tuple[str, dict]:
+    """取严格早于 asof 的最近一份快照 → (周期, {pid: row})；没有则 ("", {})。"""
+    if not asof or not snap_dir.is_dir():
+        return "", {}
+    cands = sorted((f.stem for f in snap_dir.glob("*.json") if f.stem < asof),
+                   reverse=True)
+    for c in cands:
+        try:
+            d = json.loads((snap_dir / f"{c}.json").read_text(encoding="utf-8"))
+            if d.get("players"):
+                return c, d["players"]
+        except Exception:
+            continue
+    return "", {}
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--all", action="store_true", help="抓全部联赛")
@@ -212,6 +288,9 @@ def main(argv: list[str] | None = None) -> int:
         time.sleep(SLEEP)
 
     print(f"[squads] 完成：新抓 {ok} / 跳过 {skip} / 失败 {fail}")
+    snap = write_snapshot()
+    if snap:
+        print(f"[squads] 快照 {snap.name}")
     return 0 if fail == 0 else 1
 
 

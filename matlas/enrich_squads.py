@@ -21,6 +21,8 @@ import json
 import sys
 from pathlib import Path
 
+from .fetch_squads import load_previous_snapshot, write_snapshot
+
 ROOT = Path(__file__).resolve().parent.parent
 SQUAD_DIR = ROOT / "data" / "squads"
 DAY_DIR = ROOT / "data" / "days"
@@ -69,7 +71,8 @@ def load_index() -> tuple[dict[str, list[dict]], str]:
     return idx, updated
 
 
-def build_side(m: dict, side: str, idx: dict[str, list[dict]]) -> dict | None:
+def build_side(m: dict, side: str, idx: dict[str, list[dict]],
+               prev: dict | None = None) -> dict | None:
     team = (m.get(side) or {}).get("name", "")
     pool = idx.get(team) or idx.get(TEAM_ALIAS.get(team, ""), [])
     if not pool:
@@ -88,6 +91,11 @@ def build_side(m: dict, side: str, idx: dict[str, list[dict]]) -> dict | None:
         watch = ""
         if name and name in inj_names:
             watch = inj_status.get(name) or "out"
+        pid = str(p.get("player_id") or "")
+        old_gim = _f(((prev or {}).get(pid) or {}).get("gim"))
+        d_gim = round(gim - old_gim, 1) if gim is not None and old_gim is not None else None
+        estimated = (str(p.get("is_estimated") or "") in ("1", "true", "True")
+                     or str(p.get("oti_xg_source") or "") == "imputed")
         rows.append({
             "name": name,
             "pos": (p.get("position") or "").strip(),
@@ -98,6 +106,8 @@ def build_side(m: dict, side: str, idx: dict[str, list[dict]]) -> dict | None:
             "cons": _f(p.get("consistency_score")),
             "fatigue": (p.get("fatigue_risk") or "").strip(),
             "watch": watch,
+            "d_gim": d_gim,
+            "estimated": estimated,
         })
 
     scored = [r for r in rows if r["gim"] is not None]
@@ -128,6 +138,11 @@ def main(argv: list[str] | None = None) -> int:
         print("[enrich] data/squads 为空，先跑 python -m matlas.fetch_squads")
         return 1
 
+    # 兜底留档：即使没显式跑 fetch_squads，也保证当前计算周期有一份快照
+    write_snapshot()
+    asof = (updated or "")[:10]
+    prev_date, prev = load_previous_snapshot(asof)
+
     all_files = sorted(DAY_DIR.glob("*.json"))
     files = all_files[-args.days:]
     stale = [f for f in all_files if f not in files]
@@ -155,8 +170,8 @@ def main(argv: list[str] | None = None) -> int:
         d = json.loads(f.read_text(encoding="utf-8"))
         changed = False
         for m in d.get("matches") or []:
-            home = build_side(m, "home", idx)
-            away = build_side(m, "away", idx)
+            home = build_side(m, "home", idx, prev)
+            away = build_side(m, "away", idx, prev)
             if not home and not away:
                 for side in ("home", "away"):
                     tn = (m.get(side) or {}).get("name", "")
@@ -173,6 +188,8 @@ def main(argv: list[str] | None = None) -> int:
                 "source": SOURCE,
                 "url": SOURCE_URL,
                 "updated": updated,
+                "asof": asof,
+                "prev": prev_date,
                 "home": home,
                 "away": away,
             }
@@ -182,6 +199,7 @@ def main(argv: list[str] | None = None) -> int:
             f.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
     print(f"[enrich] {len(files)} 天 / 注入 {touched} 场 / 评分更新于 {updated[:16]}"
+          f" / 对比 {prev_date or '—'}"
           + (f" / 清理范围外 {cleaned} 天" if cleaned else ""))
     if missing:
         miss_team = len(missing)

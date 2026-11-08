@@ -457,6 +457,15 @@ def _sq_num(v, nd: int = 1) -> str:
     return f"{v:.{nd}f}" if isinstance(v, (int, float)) else "—"
 
 
+def _sq_chg(v) -> str:
+    """较上一计算周期的影响力变化：只出箭头与数值，无对比时 —。"""
+    if not isinstance(v, (int, float)) or abs(v) < 0.05:
+        return '<span class="sq-chg flat">—</span>'
+    cls = "up" if v > 0 else "down"
+    ico = "↑" if v > 0 else "↓"
+    return f'<span class="sq-chg {cls}">{ico}{abs(v):.1f}</span>'
+
+
 def _sq_rows(team: str, ts) -> list[list[str]]:
     rows = []
     for p in ts.top:
@@ -467,9 +476,13 @@ def _sq_rows(team: str, ts) -> list[list[str]]:
         if p.watch:
             lab = {"out": "缺阵", "doubt": "存疑", "suspended": "停赛"}.get(p.watch, p.watch)
             name += f' <span class="tag tag-red">{C.esc(lab)}</span>'
+        if p.estimated:
+            name += ' <span class="sq-est">估</span>'
+        # 表格组件只对以 < 开头的单元格放行 HTML；球员名列必须以标签开头，
+        # 否则名字后的状态/估算角标会被整格转义成字面文本。
         rows.append([
-            C.esc(team), name, pos,
-            f"<b>{_sq_num(p.gim)}</b>", _sq_num(p.oti), _sq_num(p.dii),
+            C.esc(team), f'<span class="sq-who">{name}</span>', pos,
+            f'<b>{_sq_num(p.gim)}</b> {_sq_chg(p.d_gim)}', _sq_num(p.oti), _sq_num(p.dii),
             _sq_num(p.form, 1), fat,
         ])
     return rows
@@ -516,9 +529,10 @@ def _squad_panel(m: Match) -> str:
         ["球队", "球员", "位置", "影响力", "进攻威胁", "防守参与", "状态", "疲劳"],
         rows, cls="duo sq-table",
     ))
+    cmp = f" · 对比 {C.esc(sq.prev[5:])}" if sq.prev else ""
     parts.append(
         f'<p class="panel-hint" style="margin-top:8px">评分源 {C.esc(sq.source)}'
-        f'（{C.esc(sq.updated[:16])} 更新）· 影响力/进攻威胁/防守参与为 0-100 综合分，'
+        f'（{C.esc(sq.updated[:16])} 更新）{cmp} · 影响力/进攻威胁/防守参与为 0-100 综合分，'
         f"状态为近况 0-10 分。仅作参照，不参与本站结论计算。</p>"
     )
     return C.panel("球员情报", "".join(parts))
