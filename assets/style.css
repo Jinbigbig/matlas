@@ -1026,9 +1026,13 @@ a.lg-link:hover { color: var(--accent); text-decoration: none; }
 .sq-table td:nth-child(2), .sq-table th:nth-child(2) { text-align: left; }
 .sq-table td:nth-child(3), .sq-table th:nth-child(3) { text-align: left; }
 /* 长球员名既不换行也不裁切：把「位置」列表头与数据整体右移腾出留白。
-   只在桌面 fixed 布局生效；≤640px 为 auto 布局且隐藏两列，本就不重叠。 */
-@media (min-width: 1100px) {
+   641~1099px 列宽不足，锁定 1100px 表格宽交给 .tw 横向滚动，与桌面列宽一致；
+   ≤640px 为 auto 布局且隐藏两列，本就不重叠。 */
+@media (min-width: 641px) {
   .sq-table th:nth-child(3), .sq-table td:nth-child(3) { padding-left: 90px; }
+}
+@media (min-width: 641px) and (max-width: 1099px) {
+  .sq-table { min-width: 1100px; }
 }
 @media(max-width:640px) {
   .sq-table { font-size: 0.76rem; }
