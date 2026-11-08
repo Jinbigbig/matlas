@@ -5,7 +5,7 @@
 #     main      源码 + 数据   工作区  <repo>/           _site/ 与 .publish/ 均被忽略
 #     gh-pages  构建产物      工作树  <repo>/.publish/  一个提交 = 一次发布，历史连续
 #
-#   ./publish.sh           构建（strict 自检）+ 提交 + 推送 gh-pages
+#   ./publish.sh           构建（strict 自检）+ 提交 + 推送 gh-pages，并同步 main（数据留档）
 #   ./publish.sh --no-push 只构建，不动产物分支（本地预览用）
 #   SKIP_BUILD=1 ./publish.sh  跳过构建，直接同步现有 _site
 #                              （产物目录已单独清空重建好时用，避免覆盖写被拦）
@@ -102,4 +102,18 @@ else
 fi
 
 cd "$ROOT"
-echo "[√] 已发布。源码分支 main 未受影响；产物提交历史见 git -C .publish log"
+
+# 同步 main（源码 + 数据）：[1.5/4] 已在本地 main 上提交数据/资源快照，
+# 只提交不推送会让本地永久领先远端、越积越多（2026-11-08 实测堆了 3 个提交）。
+# 推送失败不阻断发布：产物此时已上线，main 落后只是留档延迟；
+# 绝不强推、不自动 rebase —— 让远端前进的情形暴露出来由人工处理。
+if [ -n "$(git log --oneline refs/remotes/origin/main..HEAD 2>/dev/null || true)" ]; then
+  echo "[4.5/4] 同步 main（源码 + 数据）"
+  if git push origin HEAD:refs/heads/main; then
+    echo "      → $(git rev-parse --short HEAD)"
+  else
+    echo "[!] main 推送失败（远端可能已前进）。产物已发布，稍后手动 git push origin main 补齐。" >&2
+  fi
+fi
+
+echo "[√] 已发布。产物提交历史见 git -C .publish log；main 同步状态见上。"
