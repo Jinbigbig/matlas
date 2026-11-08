@@ -191,8 +191,6 @@ def _odds_panel(m: Match) -> str:
 
     if not body.strip():
         return ""
-    if o and o.bookmaker:
-        body += f'<p class="panel-hint">来源：{C.esc(o.bookmaker)}</p>'
     return C.panel("赔率数据", body)
 
 
@@ -529,12 +527,6 @@ def _squad_panel(m: Match) -> str:
         ["球队", "球员", "位置", "影响力", "进攻威胁", "防守参与", "状态", "疲劳"],
         rows, cls="duo sq-table",
     ))
-    cmp = f" · 对比 {C.esc(sq.prev[5:])}" if sq.prev else ""
-    parts.append(
-        f'<p class="panel-hint" style="margin-top:8px">评分源 {C.esc(sq.source)}'
-        f'（{C.esc(sq.updated[:16])} 更新）{cmp} · 影响力/进攻威胁/防守参与为 0-100 综合分，'
-        f"状态为近况 0-10 分。仅作参照，不参与本站结论计算。</p>"
-    )
     return C.panel("球员情报", "".join(parts))
 
 
@@ -948,7 +940,6 @@ def _style_radar(m: Match) -> str:
         total = _hc_block([_hc_row("综合总分", hs["overall"], as_["overall"], nd=2)])
     return (
         '<h3 class="blk-h">攻防风格对比</h3>'
-        '<p class="panel-hint">基于本赛季同赛事场均数据</p>'
         f'<div class="radar-wrap">{radar}</div>{total}'
     )
 
@@ -975,7 +966,6 @@ def _compare_panel(m: Match) -> str:
     body = ""
     if rows_a or rows_b:
         body = (_hc_teams(m)
-                + '<p class="panel-hint">基于本赛季同赛事场均数据</p>'
                 + _hc_block(rows_a)
                 + (_hc_block(rows_b) if rows_b else ""))
     if not body and not radar:
@@ -2114,8 +2104,7 @@ def render_archive_index(cfg: Config, days: list[str],
     tm_view = _grid(teams or [], "teams") or '<p class="sub">暂无球队数据。</p>'
     body = (
         "<h1>历史归档</h1>"
-        f'<p class="sub">共 {len(ds)} 个交易日，逐日归档；'
-        "也可按联赛 / 球队维度浏览。</p>"
+        f'<p class="sub">共 {len(ds)} 个交易日</p>'
         '<div class="arch-tabs">'
         '<input type="radio" name="arch" id="at-date" class="fp-radio" checked>'
         '<label class="fp-opt" for="at-date">📅 按交易日</label>'
@@ -2334,15 +2323,15 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
     search_box = (
         '<div class="stats-box"><h3>🔍 球队表现查询</h3>'
         '<input class="search-input" id="team-q" type="text" placeholder="输入球队名，如：皇马、拜仁、利物浦" style="width:100%">'
-        '<div id="team-out" class="team-out"><p class="sub">输入球队名查看该队的已结算场次与方向命中明细。</p></div>'
+        '<div id="team-out" class="team-out"><p class="sub">暂无数据</p></div>'
         "<script>\n(function () {\n"
         f"  var DATA = {teams_js};\n"
         """  var out = document.getElementById("team-out");
   document.getElementById("team-q").addEventListener("input", function () {
     var q = this.value.trim();
-    if (!q) { out.innerHTML = '<p class="sub">输入球队名查看该队的已结算场次与方向命中明细。</p>'; return; }
+    if (!q) { out.innerHTML = '<p class="sub">暂无数据</p>'; return; }
     var rows = DATA.filter(function (r) { return r[0].indexOf(q) !== -1; }).slice(0, 8);
-    if (!rows.length) { out.innerHTML = '<p class="sub">未找到该球队（仅统计已收录且已结算的场次）。</p>'; return; }
+    if (!rows.length) { out.innerHTML = '<p class="sub">未找到该球队</p>'; return; }
     var html = "";
     rows.forEach(function (r) {
       var acc = r[2] / r[1] * 100;
@@ -2749,14 +2738,12 @@ def render_preview_day(cfg: Config, d: Day, prev: Day | None = None) -> str:
         '<div class="pv-head">'
         f'<span class="pv-w">{_pv_wd(d.date)}</span>'
         f"<span>{n} 场比赛 · {len(lgs)} 项赛事（{'、'.join(lgs[:4])}{'等' if len(lgs) > 4 else ''}）</span>"
-        "<span>首选概率为站内模型输出，仅供分析参考</span>"
         "</div>"
         f'<h2 class="pv-h2">🎯 当日前瞻总览（{n} 场，按编号排序）</h2>'
         + overview
         + env_box
         + (f'<h2 class="pv-h2">📌 重点场次（{len(hot)} 场）</h2>' + hot_cards if hot_cards else "")
         + review
-        + '<div class="disclaimer">本报告由站内模型自动生成，仅供数据分析参考，不构成投注建议。理性购彩，量力而行。</div>'
     )
     return L.page(
         cfg, title=f"{d.date} 赛事前瞻报告",
@@ -3034,13 +3021,10 @@ def render_matches(cfg: Config, days: list[Day],
         for d in sorted(dates)
     )
     panel = (
-        f'<p class="sub ml-sub">共 {sub_days}；'
-        '赛前看方向与比分，赛后就地对照赛果。</p>'
+        f'<p class="sub ml-sub">共 {sub_days}</p>'
         + f'<div class="ml-jump">{jump}</div>'
         + legend
         + "".join(sections)
-        + f'<p class="sub" style="margin-top:18px">更早的场次见 '
-          f'<a href="{base}/days/">历史归档</a>。</p>'
     )
     body = (
         head
@@ -3101,7 +3085,6 @@ def render_me(cfg: Config) -> str:
         f'<div class="me-avatar">{L.ICON_USER}</div>'
         "<h2>会员中心</h2>"
         '<p class="sub">个性化功能（订阅、收藏、推送）正在开发中，敬请期待。</p>'
-        '<p class="sub">当前无需登录，全部数据免费开放浏览。</p>'
         "</div>"
     )
     return L.page(
@@ -3137,13 +3120,13 @@ def render_search(cfg: Config, days: list[Day]) -> str:
   document.getElementById("q").value = q;
   var box = document.getElementById("search-results");
   var meta = document.getElementById("search-meta");
-  if (!q.trim()) {{ meta.textContent = "输入关键字开始检索，支持队名、联赛、竞彩编号与日期。"; return; }}
+  if (!q.trim()) {{ meta.textContent = ""; return; }}
   var kw = q.trim().toLowerCase();
   var hits = DATA.filter(function (r) {{
     return r.some(function (v, i) {{ return i !== 5 && String(v).toLowerCase().indexOf(kw) !== -1; }});
   }}).slice(0, 50);
-  meta.textContent = "共 " + hits.length + " 场匹配（最多显示 50 条）";
-  if (!hits.length) {{ box.innerHTML = '<p class="sub">没有匹配的赛事，换个关键字试试。</p>'; return; }}
+  meta.textContent = "共 " + hits.length + " 场匹配";
+  if (!hits.length) {{ box.innerHTML = '<p class="sub">没有匹配的赛事</p>'; return; }}
   box.innerHTML = hits.map(function (r) {{
     return '<a class="match-card" href="' + "matches/" + r[5] + '.html">'
       + '<div class="mc-header"><div class="mc-meta"><span class="date">' + r[0].slice(5).replace("-", "/")
@@ -3380,7 +3363,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         "</div>"
         '<div class="bets-actions"><button id="bk-loadres" type="button" class="bt-go">⇩ 载入赛果并结算</button>'
         '<span id="bk-loadres-msg" class="sub"></span></div>'
-        '<div class="bets-card"><h3>✏️ 自定义赛果结算（站内未回填时手动闭环）</h3>'
+        '<div class="bets-card"><h3>✏️ 自定义赛果结算</h3>'
         '<div class="cr-bar">'
         + _date_input(dates, dates[0] if dates else "", "bets")
         + '<button id="cr-load" type="button" class="bt-mini">📅 载入当日比赛</button>'
@@ -3388,7 +3371,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         '<a class="nb-bk-clear" id="cr-clear">清空</a>'
         '<span id="cr-msg" class="sub"></span>'
         "</div>"
-        '<div id="cr-list" class="cr-list"><p class="sub">默认不显示。点「📅 载入当日比赛」拉取场次后手动填写比分。</p></div></div>'
+        '<div id="cr-list" class="cr-list"><p class="sub">暂无比赛</p></div></div>'
         '<div class="bets-filter"><label>🔍 状态筛选：</label>'
         '<select id="bk-st"><option value="all">全部</option>'
         '<option value="pending">⏳ 待开奖</option><option value="win">✅ 中奖</option>'
@@ -3677,7 +3660,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
           + '</span><a data-k="' + esc(pKey(p)) + '" title="删除">✕</a></div>');
       });
     });
-    $("nb-bk-list").innerHTML = items.join("") || '<div class="nb-bk-empty">点击左侧赔率格选号</div>';
+    $("nb-bk-list").innerHTML = items.join("") || '<div class="nb-bk-empty">暂无选号</div>';
     $("nb-bk-list").querySelectorAll("a[data-k]").forEach(function (a) {
       a.addEventListener("click", function () { delete picks[a.getAttribute("data-k")]; syncCells(); renderBasket(); });
     });
@@ -3849,11 +3832,11 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
     });
     saveCRS();
     var games = crSettleAll();
-    $("cr-msg").textContent = "✅ 已保存 " + n + " 场赛果并重新结算 " + games + " 场（自定义优先于站内）";
+    $("cr-msg").textContent = "✅ 已保存 " + n + " 场赛果并重新结算 " + games + " 场";
     renderCR();
   });
   $("cr-clear").addEventListener("click", function () {
-    $("cr-list").innerHTML = '<p class="sub">默认不显示。点「📅 载入当日比赛」拉取场次后手动填写比分。</p>';
+    $("cr-list").innerHTML = '<p class="sub">暂无比赛</p>';
     $("cr-msg").textContent = "🗑 已清空载入的赛程";
   });
 
@@ -3911,7 +3894,7 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
         + (s.betCount * mult) + "</td><td>" + (mult * gm) + "</td><td>" + (2 * mult * gm * s.spMin).toFixed(2) + " ~ " + (2 * mult * gm * s.spMax).toFixed(2)
         + "</td><td>" + (2 * mult * gm * s.betCount).toFixed(1) + "</td><td>" + s.winAmt.toFixed(1) + "</td><td>"
         + badge[s.status] + '</td><td><a class="bt-del" data-ts="' + t.ts + '">删除</a></td></tr>';
-    }).join("") : '<tr><td colspan="10"><p class="sub">暂无记录，在上方选号后点「保 存」。</p></td></tr>';
+    }).join("") : '<tr><td colspan="10"><p class="sub">暂无记录</p></td></tr>';
     $("bk-tbody").querySelectorAll(".bt-del").forEach(function (a) {
       a.addEventListener("click", function () {
         save(load().filter(function (x) { return String(x.ts) !== a.getAttribute("data-ts"); }));
@@ -4017,7 +4000,7 @@ def _team_depth_blocks(team_name: str, b: dict, matches: list[Match]) -> str:
         vals = met.values()
         radar = C.radar_one(vals, axes, team_name, size=440)
         power = b.get("power")
-        head = (f'<p class="sub">综合战力 <b>{power}</b> · 联赛内分位 0–100</p>'
+        head = (f'<p class="sub">综合战力 <b>{power}</b></p>'
                 if power is not None else "")
         out.append(C.panel("六维战力", radar + head))
 
@@ -4082,12 +4065,10 @@ def render_depth(cfg: Config, days: list[Day], board: dict[str, dict]) -> str:
         )
     body = (
         f"<h1 class='page-h1'>{L.ICON_ACTIVITY} 深度数据</h1>"
-        f'<p class="sub">{len(rows)} 支球队 · {len(zones)} 项赛事 · '
-        "六维战力为联赛内分位（0–100），点球队看赔率与让球走势</p>"
+        f'<p class="sub">{len(rows)} 支球队 · {len(zones)} 项赛事</p>'
         '<div class="depth-tools">'
         f'<select id="dt-lg" aria-label="按赛事筛选"><option value="">全部赛事</option>{opts}</select>'
         '<span class="sub" id="dt-count"></span>'
-        f'<span class="sub" style="margin-left:auto">按综合战力排序</span>'
         "</div>"
         '<div class="depth-grid" id="depth-grid">' + "".join(cards) + "</div>"
         """<script>

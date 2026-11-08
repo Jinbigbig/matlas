@@ -828,9 +828,7 @@ def reference_table(
     note = ""
     if source:
         src = f'<a href="{esc(url)}">{esc(source)}</a>' if url else esc(source)
-        note = f'<p class="panel-hint">外部对照：{src}'
-        note += f"（{esc(license_)}）" if license_ else ""
-        note += "　仅供比对，不参与本站结论</p>"
+        note = f'<p class="panel-hint">{src}</p>'
     return (
         f'<div class="tw"><table class="ref-table"><thead><tr>{head}</tr></thead>'
         f"<tbody>{trs}</tbody></table></div>{note}"
