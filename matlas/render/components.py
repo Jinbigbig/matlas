@@ -447,7 +447,8 @@ def line_svg(
         if has_counts:
             tip += f" · {counts[i]} 场"  # type: ignore[index]
         parts.append(
-            f'<circle cx="{_x(i):.1f}" cy="{_y(v):.1f}" r="{2.8 if dense else 3}" '
+            f'<circle class="itrend-dot" cx="{_x(i):.1f}" cy="{_y(v):.1f}" '
+            f'r="{2.8 if dense else 3}" '
             f'fill="{color}"><title class="pct">{esc(tip)}</title></circle>'
         )
 
@@ -468,6 +469,25 @@ def line_svg(
         parts.append(
             f'<text x="{_x(i):.1f}" y="{h - 8}" text-anchor="middle" font-size="{fs}" '
             f'fill="{MUTED}">{esc(labels[i])}</text>'
+        )
+
+    # 交互层（最后绘制，位于最上层）：竖直参考线 + 每点一条透明命中带。
+    # 命中带覆盖整幅高度，鼠标移到图上任意位置即吸附到最近的横轴点，
+    # 不必精确指到 3px 的小圆点；具体提示由页面脚本读取 data-iv-* 生成。
+    parts.append(
+        f'<line class="itrend-guide" x1="{pad_l}" y1="{pad_t}" x2="{pad_l}" '
+        f'y2="{h - pad_b}" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 3"/>'
+    )
+    span = (w - pad_l - pad_r) / (n - 1)
+    for i, v in enumerate(values):
+        x0 = max(pad_l, _x(i) - span / 2)
+        x1 = min(w - pad_r, _x(i) + span / 2)
+        parts.append(
+            f'<rect class="itrend-hit" x="{x0:.1f}" y="0" '
+            f'width="{max(1.0, x1 - x0):.1f}" height="{h}" '
+            f'fill="#fff" fill-opacity="0" data-iv-i="{i}" data-iv-x="{_x(i):.1f}" '
+            f'data-iv-label="{esc(labels[i])}" data-iv-val="{v:.1f}" '
+            f'data-iv-n="{counts[i] if has_counts else 0}"/>'
         )
     parts.append("</svg>")
     return "".join(parts)

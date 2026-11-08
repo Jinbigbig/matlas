@@ -2177,6 +2177,82 @@ def _match_jsonld(cfg: Config, m: Match, url: str, title: str, desc: str) -> lis
 # 对齐 qiuxiaoce：每个导航项都有页面，不出现"点了跳首页"的死按钮。
 
 
+# 洞察总结交互：折线图吸附最近点 + 横条图悬停明细，共用一个浮层。
+# 纯原生 JS，不引外部库；百分比在动态 DOM 里仍用 class="pct" 包住。
+_IV_JS = """<script>
+(function(){
+  var viz=document.querySelector('.insight-viz'); if(!viz) return;
+  var tip=viz.querySelector('.iv-tip'); if(!tip) return;
+  var locked=false, cur=null;
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function clearMark(){
+    viz.querySelectorAll('.itrend-dot.on').forEach(function(d){
+      d.classList.remove('on');
+      if(d.dataset.ivR) d.setAttribute('r',d.dataset.ivR);
+    });
+    viz.querySelectorAll('.itrend-guide.on').forEach(function(g){g.classList.remove('on');});
+    viz.querySelectorAll('.hbar-row.on').forEach(function(r){r.classList.remove('on');});
+  }
+  function place(ax,ay,side){
+    var box=viz.getBoundingClientRect(), tw=tip.offsetWidth, th=tip.offsetHeight;
+    var rx=ax-box.left, ry=ay-box.top, x, y;
+    if(side==='bar'){ x=rx+14; y=ry+16; }
+    else { x=rx+16; y=ry-th/2; if(y<52) y=52; }
+    if(x+tw>box.width-6) x=rx-tw-16;
+    if(x<6) x=6;
+    if(y+th>box.height-4) y=Math.max(4,box.height-th-4);
+    if(y<4) y=4;
+    tip.style.left=x+'px'; tip.style.top=y+'px';
+  }
+  function show(el,ev){
+    var d=el.dataset, side=d.ivKind==='bar'?'bar':'line'; clearMark();
+    var html='<div class="iv-t'+(side==='bar'?' horiz':'')+'"><b>'+esc(d.ivLabel)+'</b>'
+      +'<span>命中率 <b class="pct">'+esc(d.ivVal)+'%</b></span>'
+      +'<span>样本 '+esc(d.ivN)+' 场</span>';
+    if(d.ivH) html+='<span>命中约 '+esc(d.ivH)+' 场</span>';
+    tip.innerHTML=html+'</div>'; tip.hidden=false;
+    var ax,ay,r=el.getBoundingClientRect();
+    if(d.ivKind==='bar'){
+      el.classList.add('on');
+      ax=(ev&&ev.clientX)||(r.left+r.width/2); ay=r.top;
+    }else{
+      var svg=el.ownerSVGElement;
+      var dot=svg.querySelectorAll('.itrend-dot')[Number(d.ivI)];
+      if(dot){
+        dot.dataset.ivR=dot.getAttribute('r');
+        dot.setAttribute('r','5'); dot.classList.add('on');
+        var dr=dot.getBoundingClientRect(); ax=dr.left+dr.width/2; ay=dr.top+dr.height/2;
+      }else{ ax=r.left+r.width/2; ay=r.top; }
+      var guide=svg.querySelector('.itrend-guide');
+      if(guide){guide.setAttribute('x1',d.ivX);guide.setAttribute('x2',d.ivX);guide.classList.add('on');}
+    }
+    place(ax,ay,side); cur=el;
+  }
+  function hide(){if(locked)return;clearMark();tip.hidden=true;cur=null;}
+  viz.addEventListener('pointermove',function(e){
+    if(locked)return;
+    var el=e.target.closest?e.target.closest('.itrend-hit,.hbar-row'):null;
+    if(!el){hide();return;}
+    if(el!==cur) show(el,e);
+    else if(el.dataset.ivKind==='bar'){
+      var r=el.getBoundingClientRect(); place(e.clientX,r.top,'bar');
+    }
+  });
+  viz.addEventListener('pointerdown',function(e){
+    var el=e.target.closest?e.target.closest('.itrend-hit,.hbar-row'):null;
+    if(!el){if(locked){locked=false;hide();}return;}
+    if(locked&&el===cur){locked=false;hide();return;}
+    locked=true; show(el,e);
+  });
+  viz.addEventListener('pointerleave',hide);
+  document.addEventListener('pointerdown',function(e){
+    if(!viz.contains(e.target)&&locked){locked=false;hide();}
+  });
+})();
+</script>"""
+
+
 def render_stats(cfg: Config, days: list[Day]) -> str:
     """📊数据统计：结构与球小策 /shu-ju-tong-ji/ 对齐。
 
@@ -2391,7 +2467,9 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
                        + legend + trend + "</div>")
     if dim_ok:
         bars = "".join(
-            f'<div class="hbar-row"><span class="hbar-label">{C.esc(zh)}</span>'
+            f'<div class="hbar-row" data-iv-kind="bar" data-iv-label="{C.esc(zh)}"'
+            f' data-iv-val="{p:.1f}" data-iv-n="{n}" data-iv-h="{round(p * n / 100)}">'
+            f'<span class="hbar-label">{C.esc(zh)}</span>'
             f'<span class="hbar-track"><span class="hbar-fill" style="width:{p:.1f}%"></span></span>'
             f'<span class="hbar-num"><span class="pct">{p:.1f}%</span></span>'
             f'<span class="hbar-n">{n} 场</span></div>'
@@ -2415,7 +2493,8 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         )
         insight_box = (
             '<div class="stats-box insight-box"><h3>🧾 洞察总结</h3>'
-            '<div class="insight-viz">' + "".join(viz) + chip_html + "</div></div>"
+            '<div class="insight-viz">' + "".join(viz) + chip_html
+            + '<div class="iv-tip" hidden></div></div></div>' + _IV_JS
         )
 
     body = (
