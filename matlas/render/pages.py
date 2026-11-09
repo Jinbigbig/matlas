@@ -2034,42 +2034,39 @@ def render_day(cfg: Config, day: Day, *, is_today: bool = False, rel: str = "",
 
 def render_archive_index(cfg: Config, days: list[str],
                          leagues: list[tuple[str, int, dict]] | None = None,
-                         teams: list[tuple[str, int, int, int]] | None = None) -> str:
+                         teams: list[tuple[str, int, dict]] | None = None) -> str:
     """历史归档页：交易日 / 联赛 / 球队 三视图（纯 CSS radio 切换）。
 
-    leagues 元素为 (名称, 已收录场数, {维度: (命中数, 有存档场次)})；
-    teams 元素为 (名称, 已收录场数, 命中场数, 已结算场数)。
+    leagues / teams 元素为 (名称, 已收录场数, {维度: (命中数, 有存档场次)})。
     """
     base = cfg.base_url.rstrip("/")
     ds = sorted(days, reverse=True)
-    date_items = "".join(
-        f'<a class="arch-day" href="{d}.html">'
-        f'<span class="arch-date">{C.esc(d)}</span><span class="arch-go">查看 →</span></a>'
-        for d in ds
-    )
-
-    def _grid(items: list[tuple[str, int, int, int]], kind: str) -> str:
-        cells = []
-        for name, n, hit, total in items:
-            acc = (hit / total * 100) if total else 0.0
-            bar = (
-                f'<div class="rank-bar-wrap"><div class="rank-bar" style="width:{acc:.1f}%"></div></div>'
-                if total
-                else '<div class="rank-bar-wrap"></div>'
-            )
-            acc_txt = f'<span class="rank-acc pct">{acc:.1f}%</span>' if total else '<span class="mini">待回填</span>'
-            cells.append(
-                f'<a class="arch-cell" href="../{kind}/{C.esc(name)}.html">'
-                f'<span class="arch-name">{C.esc(name)}</span>'
-                f'<span class="arch-n">{n} 场</span>'
-                f'{bar}{acc_txt}</a>'
-            )
-        return f'<div class="arch-grid">{"".join(cells)}</div>'
+    months: dict[str, list[str]] = {}
+    for d in ds:
+        months.setdefault(d[:7], []).append(d)
+    month_items = []
+    for i, (ym, dts) in enumerate(months.items()):
+        y, m = ym.split("-", 1)
+        cards = "".join(
+            f'<a class="arch-day" href="{d}.html">'
+            f'<span class="arch-date">{C.esc(d)}</span><span class="arch-go">查看 →</span></a>'
+            for d in dts
+        )
+        open_attr = " open" if i == 0 else ""
+        month_items.append(
+            f'<details class="arch-month"{open_attr}>'
+            f'<summary><span class="arch-m-title">{y} 年 {int(m)} 月</span>'
+            f'<span class="arch-m-n">{len(dts)} 个交易日</span></summary>'
+            f'<div class="arch-days">{cards}</div></details>'
+        )
 
     dim_labels = (("direction", "方向"), ("score", "比分"),
                   ("goals", "进球"), ("htft", "半全场"))
 
-    def _lg_grid(items: list[tuple[str, int, dict]]) -> str:
+    def _dim_grid(items: list[tuple[str, int, dict]], kind: str, alt: str,
+                  crest_fn) -> str:
+        if not items:
+            return ""
         cells = []
         for name, n, dims in items:
             parts = []
@@ -2084,15 +2081,16 @@ def render_archive_index(cfg: Config, days: list[str],
                 parts.append(
                     f'<span class="arch-dim"><i>{label}</i>{val}{note}</span>')
             dims_html = "".join(parts)
-            crest = logos.league_crest_url(name)
+            crest = crest_fn(name)
             badge = (
-                f'<img class="arch-crest" src="../{C.esc(crest)}" alt="{C.esc(name)}徽章" decoding="async">'
+                f'<img class="arch-crest" src="../{C.esc(crest)}" '
+                f'alt="{C.esc(name)}{alt}" loading="lazy" decoding="async">'
                 if crest
                 else '<span class="arch-crest arch-crest-ph" aria-hidden="true">'
                      f'{C.esc(name[:1])}</span>'
             )
             cells.append(
-                f'<a class="arch-cell arch-lg" href="../leagues/{C.esc(name)}.html">'
+                f'<a class="arch-cell arch-lg" href="../{kind}/{C.esc(name)}.html">'
                 f'<span class="arch-head">{badge}'
                 f'<span class="arch-name">{C.esc(name)}</span></span>'
                 f'<span class="arch-n">已收录 {n} 场</span>'
@@ -2100,8 +2098,10 @@ def render_archive_index(cfg: Config, days: list[str],
             )
         return f'<div class="arch-grid arch-lg-grid">{"".join(cells)}</div>'
 
-    lg_view = _lg_grid(leagues or []) or '<p class="sub">暂无联赛数据。</p>'
-    tm_view = _grid(teams or [], "teams") or '<p class="sub">暂无球队数据。</p>'
+    lg_view = _dim_grid(leagues or [], "leagues", "徽章",
+                        logos.league_crest_url) or '<p class="sub">暂无联赛数据。</p>'
+    tm_view = _dim_grid(teams or [], "teams", "队徽",
+                        logos.crest_url) or '<p class="sub">暂无球队数据。</p>'
     body = (
         "<h1>历史归档</h1>"
         f'<p class="sub">共 {len(ds)} 个交易日</p>'
@@ -2113,7 +2113,7 @@ def render_archive_index(cfg: Config, days: list[str],
         '<input type="radio" name="arch" id="at-tm" class="fp-radio">'
         '<label class="fp-opt" for="at-tm">按球队</label>'
         '<div class="arch-view av-date">'
-        f'<div class="arch-days">{date_items}</div>'
+        f'<div class="arch-months">{"".join(month_items)}</div>'
         "</div>"
         f'<div class="arch-view av-lg">{lg_view}</div>'
         f'<div class="arch-view av-tm">{tm_view}</div>'

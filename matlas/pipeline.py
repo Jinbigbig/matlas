@@ -170,21 +170,20 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
         return {d: (v[0], v[1]) for d, v in out.items()}
 
     lg_stat: dict[str, list] = {}
-    tm_stat: dict[str, list[int]] = {}
+    tm_stat: dict[str, list] = {}
     for lg, ms in lg_matches.items():
         lg_stat[lg] = [len(ms), _dim_stats(ms)]
     for tm, ms in tm_matches.items():
         if not tm:
             continue
-        h, n = _dir_stats(ms)
-        tm_stat[tm] = [len(ms), h, n]
+        tm_stat[tm] = [len(ms), _dim_stats(ms)]
 
     # 3. 归档索引（交易日 / 联赛 / 球队 三视图）+ 页头四按钮落地页
     L.write(cfg, "days/index.html", P.render_archive_index(
         cfg, [d.date for d in ordered],
         leagues=[(k, v[0], v[1]) for k, v in
                  sorted(lg_stat.items(), key=lambda x: -x[1][0])],
-        teams=[(k, v[0], v[1], v[2]) for k, v in sorted(tm_stat.items(), key=lambda x: -x[1][0])],
+        teams=[(k, v[0], v[1]) for k, v in sorted(tm_stat.items(), key=lambda x: -x[1][0])],
     ))
     L.write(cfg, "data.html", P.render_stats(cfg, ordered))
     L.write(cfg, "odds.html", P.render_odds(cfg, ordered))
