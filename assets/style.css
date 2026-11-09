@@ -459,6 +459,17 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 #at-date:checked ~ .av-date, #at-lg:checked ~ .av-lg, #at-tm:checked ~ .av-tm { display: block; }
 #at-date:checked + label[for="at-date"], #at-lg:checked + label[for="at-lg"],
 #at-tm:checked + label[for="at-tm"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+.arch-months { display: grid; gap: 10px; }
+.arch-month { background: #fff; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+.arch-month > summary { list-style: none; display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px; cursor: pointer; }
+.arch-month > summary::-webkit-details-marker { display: none; }
+.arch-month > summary::after { content: "▾"; margin-left: auto; color: var(--muted);
+  font-size: 13px; line-height: 1; transition: transform 0.18s; }
+.arch-month[open] > summary::after { transform: rotate(180deg); }
+.arch-m-title { font-size: 15px; font-weight: 700; color: #111; }
+.arch-m-n { font-size: 12px; color: var(--muted); }
+.arch-month .arch-days { padding: 0 14px 14px; }
 .arch-days { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
 .arch-day { display: flex; justify-content: space-between; align-items: center; gap: 6px;
   background: #fff; border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px;
