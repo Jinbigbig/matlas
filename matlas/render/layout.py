@@ -477,6 +477,12 @@ a.lg-link:hover, .lg-link:hover, .team-link:hover span:last-child { color: var(-
 #at-date:checked ~ .av-date, #at-lg:checked ~ .av-lg, #at-tm:checked ~ .av-tm { display: block; }
 #at-date:checked + label[for="at-date"], #at-lg:checked + label[for="at-lg"],
 #at-tm:checked + label[for="at-tm"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+.arch-count > span { display: none; }
+.arch-count .ac-date { display: inline; }
+body:has(#at-lg:checked) .arch-count .ac-date,
+body:has(#at-tm:checked) .arch-count .ac-date { display: none; }
+body:has(#at-lg:checked) .arch-count .ac-lg,
+body:has(#at-tm:checked) .arch-count .ac-tm { display: inline; }
 .arch-months { display: grid; gap: 10px; }
 .arch-month { background: #fff; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
 .arch-month > summary { list-style: none; display: flex; align-items: center; gap: 10px;

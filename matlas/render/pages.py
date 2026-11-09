@@ -2104,7 +2104,11 @@ def render_archive_index(cfg: Config, days: list[str],
                         logos.crest_url) or '<p class="sub">暂无球队数据。</p>'
     body = (
         "<h1>历史归档</h1>"
-        f'<p class="sub">共 {len(ds)} 个交易日</p>'
+        '<p class="sub arch-count">'
+        f'<span class="ac-date">共 {len(ds)} 个交易日</span>'
+        f'<span class="ac-lg">共 {len(leagues or [])} 项赛事</span>'
+        f'<span class="ac-tm">共 {len(teams or [])} 支球队</span>'
+        "</p>"
         '<div class="arch-tabs">'
         '<input type="radio" name="arch" id="at-date" class="fp-radio" checked>'
         '<label class="fp-opt" for="at-date">📅 按交易日</label>'
