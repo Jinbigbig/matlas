@@ -234,7 +234,7 @@
     "settled_at": "2026-09-22"
    },
    "source_url": "",
-   "generated_at": "2026-11-10T08:06:50+08:00",
+   "generated_at": "2026-11-10T12:06:30+08:00",
    "extras": {
     "lam_home": 2.185,
     "lam_away": 0.558,
@@ -267,6 +267,35 @@
     "headline": {
      "score": "2:0",
      "prob": 14.1
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ],
+     "away_away": []
     },
     "odds_full": {
      "spf": {
@@ -337,136 +366,6 @@
       "负负": "17"
      },
      "kickoff": ""
-    },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 2,
-       "ga": 5
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 4,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 6,
-       "ga": 4
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 6,
-       "ga": 4
-      }
-     ]
     }
    }
   },
@@ -503,11 +402,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 40,
+    "attack": 33,
     "defence": 0,
-    "control": 20,
-    "form": 20,
-    "value": 20,
+    "control": 22,
+    "form": 22,
+    "value": 22,
     "motivation": 0,
     "AXES": [
      [
@@ -537,11 +436,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 40,
+    "attack": 33,
     "defence": 0,
-    "control": 20,
-    "form": 20,
-    "value": 20,
+    "control": 22,
+    "form": 22,
+    "value": 22,
     "motivation": 0,
     "AXES": [
      [
@@ -676,7 +575,7 @@
     "settled_at": "2026-09-22"
    },
    "source_url": "",
-   "generated_at": "2026-11-10T08:06:50+08:00",
+   "generated_at": "2026-11-10T12:06:30+08:00",
    "extras": {
     "lam_home": 1.937,
     "lam_away": 0.717,
@@ -709,6 +608,17 @@
     "headline": {
      "score": "2:1",
      "prob": 12.4
+    },
+    "form_net": {
+     "home_7": [],
+     "home_home": [],
+     "away_7": [
+      {
+       "gf": 4,
+       "ga": 1
+      }
+     ],
+     "away_away": []
     },
     "odds_full": {
      "spf": {
@@ -779,264 +689,6 @@
       "负负": "14.5"
      },
      "kickoff": ""
-    },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 5,
-       "ga": 1
-      },
-      {
-       "gf": 4,
-       "ga": 2
-      },
-      {
-       "gf": 4,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 4,
-       "ga": 2
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 6,
-       "ga": 2
-      },
-      {
-       "gf": 4,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 4,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 5,
-       "ga": 1
-      },
-      {
-       "gf": 4,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 3,
-       "ga": 1
-      },
-      {
-       "gf": 6,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 0
-      },
-      {
-       "gf": 1,
-       "ga": 3
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 4
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 3
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      }
-     ],
-     "away_away": [
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 2,
-       "ga": 1
-      },
-      {
-       "gf": 3,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 0
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 2,
-       "ga": 2
-      },
-      {
-       "gf": 1,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      },
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      },
-      {
-       "gf": 1,
-       "ga": 1
-      }
-     ]
     }
    }
   },
@@ -1073,11 +725,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 40,
+    "attack": 33,
     "defence": 0,
-    "control": 20,
-    "form": 20,
-    "value": 20,
+    "control": 22,
+    "form": 22,
+    "value": 22,
     "motivation": 0,
     "AXES": [
      [
@@ -1107,11 +759,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 40,
+    "attack": 33,
     "defence": 0,
-    "control": 20,
-    "form": 20,
-    "value": 20,
+    "control": 22,
+    "form": 22,
+    "value": 22,
     "motivation": 0,
     "AXES": [
      [
@@ -1246,7 +898,7 @@
     "settled_at": "2026-09-22"
    },
    "source_url": "",
-   "generated_at": "2026-11-10T08:06:50+08:00",
+   "generated_at": "2026-11-10T12:06:30+08:00",
    "extras": {
     "lam_home": 1.398,
     "lam_away": 1.103,
@@ -1415,9 +1067,9 @@
    },
    "metrics_home": {
     "attack": 0,
-    "defence": 80,
-    "control": 0,
-    "form": 0,
+    "defence": 89,
+    "control": 11,
+    "form": 11,
     "value": 100,
     "motivation": 0,
     "AXES": [
@@ -1448,10 +1100,10 @@
     ]
    },
    "metrics_away": {
-    "attack": 20,
+    "attack": 22,
     "defence": 100,
-    "control": 100,
-    "form": 100,
+    "control": 78,
+    "form": 78,
     "value": 0,
     "motivation": 0,
     "AXES": [
@@ -1601,7 +1253,7 @@
     "settled_at": "2026-09-22"
    },
    "source_url": "",
-   "generated_at": "2026-11-10T08:06:50+08:00",
+   "generated_at": "2026-11-10T12:06:30+08:00",
    "extras": {
     "lam_home": 0.784,
     "lam_away": 0.939,
