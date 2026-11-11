@@ -2,7 +2,7 @@
 
 **Matlas（Match Atlas · 赛图）** —— 足球赛事量化图谱，纯静态发布层。
 
-源码与 jinbet **完全分离**，规则与 jinbet **完全一致**（见 [RULES.md](RULES.md)）：
+源码与 jinbet **完全分离**（见 [RULES.md](RULES.md)）：
 
 ```
 jinbet  →  负责「算」：V3.4 引擎、Platt 校准、Brier_opt / Kalman
@@ -63,7 +63,7 @@ git worktree add .publish gh-pages   # 首次：建产物工作树
 | **结论指纹** | 覆盖赛前全部结论字段的 SHA-256 前 12 位，赛后回填不改变该值 |
 | **纯 SVG 可视化** | 六维战力雷达 + 0–90 分钟进球威胁度曲线，无第三方 JS |
 | **GEO 基建** | `llms.txt` / `robots.txt` / `sitemap.xml` / `dataset.json` / Schema.org |
-| **红线自检** | `matlas/rules.py` 构建后自动扫描产物，见下方规则清单 |
+| **红线自检** | `matlas/rules.py` 构建后自动扫描产物 |
 
 ## 数据来源
 
@@ -103,20 +103,6 @@ git worktree add .publish gh-pages   # 首次：建产物工作树
 `forecasts` 的 `kind` 限定 `direction | score | goals | htft`；
 `confidence` 限定 `high | medium | low | none`；其余字段全可选。
 缺字段自动降级：任何维度缺失，对应区块不出现，不做补白。
-
-## 构建期规则
-
-`matlas/rules.py` 在每次构建结束后扫描 `_site/**/*.html`，违规即报文件名与行号（`--strict` 时非零退出）。
-
-| 规则 | 内容 |
-| --- | --- |
-| 内部术语 | 不得出现 目标函数 / 口径一致性 / 偏差归因 / probe / χ² / Brier / argmax / McNemar 等 |
-| 推演痕迹 | 不得出现 λ= / 校准后 / 零封修正 / 泊松 / 蒙特卡洛 等推导过程 |
-| 说明句 | 不写「怎么看这张表」这类解释，数据缺口只给最短一句 |
-| 投注诱导 | 不得出现 必中 / 稳赚 / 内幕 / 包中 等 |
-| 概率渲染 | 必须走 `prob_tag()`；阈值 ≥60% 强 / 45–60% 中 / <45% 弱，统一 1 位小数 |
-| 评级词表 | 只允许 **可用 / 慎用 / 别跟** |
-| 留档不可篡改 | 赛后回填不得改变结论指纹 |
 
 ## 目录
 
