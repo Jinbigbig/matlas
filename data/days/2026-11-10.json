@@ -34,11 +34,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 11,
-    "defence": 56,
+    "attack": 8,
+    "defence": 62,
     "control": 0,
     "form": 0,
-    "value": 89,
+    "value": 92,
     "motivation": 0,
     "AXES": [
      [
@@ -68,12 +68,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 89,
-    "defence": 67,
-    "control": 78,
-    "form": 78,
-    "value": 11,
-    "motivation": 89,
+    "attack": 92,
+    "defence": 69,
+    "control": 85,
+    "form": 85,
+    "value": 15,
+    "motivation": 92,
     "AXES": [
      [
       "attack",
@@ -284,7 +284,7 @@
     "settled_at": "2026-11-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-11T08:05:35+08:00",
+   "generated_at": "2026-11-11T12:05:30+08:00",
    "extras": {
     "lam_home": 1.077,
     "lam_away": 1.204,
@@ -333,35 +333,6 @@
      "客/主": 1.6,
      "客/平": 4.8,
      "客/客": 22.5
-    },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 2,
-       "ga": 1
-      }
-     ],
-     "away_away": []
     },
     "odds_full": {
      "spf": {
@@ -433,40 +404,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "home": {
-      "out": [],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "洛夫特豪斯",
-        "reason": "后卫·无法出战"
-       }
-      ]
-     },
-     "away": {
-      "out": [
-       {
-        "name": "阿卡尤",
-        "reason": "前锋·受伤"
-       },
-       {
-        "name": "马卡里",
-        "reason": "后卫·腿部骨折"
-       },
-       {
-        "name": "贝克",
-        "reason": "前锋·肌肉受伤"
-       },
-       {
-        "name": "波利",
-        "reason": "后卫·肌肉受伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
     "odds_ticks": [
      {
       "t": "2026-11-10 11:11",
@@ -525,6 +462,69 @@
       ]
      }
     ],
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ],
+     "away_away": []
+    },
+    "injuries": {
+     "home": {
+      "out": [],
+      "doubtful": [],
+      "suspended": [
+       {
+        "name": "洛夫特豪斯",
+        "reason": "后卫·无法出战"
+       }
+      ]
+     },
+     "away": {
+      "out": [
+       {
+        "name": "阿卡尤",
+        "reason": "前锋·受伤"
+       },
+       {
+        "name": "马卡里",
+        "reason": "后卫·腿部骨折"
+       },
+       {
+        "name": "贝克",
+        "reason": "前锋·肌肉受伤"
+       },
+       {
+        "name": "波利",
+        "reason": "后卫·肌肉受伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "weather": {
      "t_min": 8,
      "t_max": 8,
@@ -1288,11 +1288,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 33,
+    "attack": 31,
     "defence": 0,
-    "control": 22,
-    "form": 22,
-    "value": 22,
+    "control": 15,
+    "form": 23,
+    "value": 23,
     "motivation": 0,
     "AXES": [
      [
@@ -1323,11 +1323,11 @@
    },
    "metrics_away": {
     "attack": 100,
-    "defence": 67,
+    "defence": 69,
     "control": 100,
-    "form": 78,
-    "value": 78,
-    "motivation": 89,
+    "form": 85,
+    "value": 85,
+    "motivation": 92,
     "AXES": [
      [
       "attack",
@@ -1524,7 +1524,7 @@
     "settled_at": "2026-11-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-11T08:05:35+08:00",
+   "generated_at": "2026-11-11T12:05:30+08:00",
    "extras": {
     "lam_home": 0.868,
     "lam_away": 1.7,
@@ -1573,17 +1573,6 @@
      "客/主": 1.1,
      "客/平": 4.4,
      "客/客": 35.7
-    },
-    "form_net": {
-     "home_7": [],
-     "home_home": [],
-     "away_7": [
-      {
-       "gf": 4,
-       "ga": 1
-      }
-     ],
-     "away_away": []
     },
     "odds_full": {
      "spf": {
@@ -1655,41 +1644,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "查尔斯",
-        "reason": "中场·膝关节损伤"
-       },
-       {
-        "name": "伍德尔曼",
-        "reason": "中场·肌肉受伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "巴尼特",
-        "reason": "中场·受伤"
-       },
-       {
-        "name": "威尔逊",
-        "reason": "后卫·膝关节损伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "墨菲",
-        "reason": "前锋·无法出战"
-       }
-      ]
-     }
-    },
     "odds_ticks": [
      {
       "t": "2026-11-10 11:11",
@@ -1748,6 +1702,52 @@
       ]
      }
     ],
+    "form_net": {
+     "home_7": [],
+     "home_home": [],
+     "away_7": [
+      {
+       "gf": 4,
+       "ga": 1
+      }
+     ],
+     "away_away": []
+    },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "查尔斯",
+        "reason": "中场·膝关节损伤"
+       },
+       {
+        "name": "伍德尔曼",
+        "reason": "中场·肌肉受伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "巴尼特",
+        "reason": "中场·受伤"
+       },
+       {
+        "name": "威尔逊",
+        "reason": "后卫·膝关节损伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": [
+       {
+        "name": "墨菲",
+        "reason": "前锋·无法出战"
+       }
+      ]
+     }
+    },
     "weather": {
      "t_min": 9,
      "t_max": 9,

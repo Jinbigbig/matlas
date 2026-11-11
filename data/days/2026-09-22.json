@@ -234,7 +234,7 @@
     "settled_at": "2026-09-22"
    },
    "source_url": "",
-   "generated_at": "2026-11-11T08:05:35+08:00",
+   "generated_at": "2026-11-11T12:05:30+08:00",
    "extras": {
     "lam_home": 2.185,
     "lam_away": 0.558,
@@ -267,35 +267,6 @@
     "headline": {
      "score": "2:0",
      "prob": 14.1
-    },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 2,
-       "ga": 1
-      }
-     ],
-     "away_away": []
     },
     "odds_full": {
      "spf": {
@@ -366,6 +337,35 @@
       "负负": "17"
      },
      "kickoff": ""
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ],
+     "away_away": []
     }
    }
   },
@@ -402,11 +402,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 33,
+    "attack": 31,
     "defence": 0,
-    "control": 22,
-    "form": 22,
-    "value": 22,
+    "control": 15,
+    "form": 23,
+    "value": 23,
     "motivation": 0,
     "AXES": [
      [
@@ -436,11 +436,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 33,
+    "attack": 31,
     "defence": 0,
-    "control": 22,
-    "form": 22,
-    "value": 22,
+    "control": 15,
+    "form": 23,
+    "value": 23,
     "motivation": 0,
     "AXES": [
      [
@@ -575,7 +575,7 @@
     "settled_at": "2026-09-22"
    },
    "source_url": "",
-   "generated_at": "2026-11-11T08:05:35+08:00",
+   "generated_at": "2026-11-11T12:05:30+08:00",
    "extras": {
     "lam_home": 1.937,
     "lam_away": 0.717,
@@ -608,17 +608,6 @@
     "headline": {
      "score": "2:1",
      "prob": 12.4
-    },
-    "form_net": {
-     "home_7": [],
-     "home_home": [],
-     "away_7": [
-      {
-       "gf": 4,
-       "ga": 1
-      }
-     ],
-     "away_away": []
     },
     "odds_full": {
      "spf": {
@@ -689,6 +678,17 @@
       "负负": "14.5"
      },
      "kickoff": ""
+    },
+    "form_net": {
+     "home_7": [],
+     "home_home": [],
+     "away_7": [
+      {
+       "gf": 4,
+       "ga": 1
+      }
+     ],
+     "away_away": []
     }
    }
   },
@@ -725,11 +725,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 33,
+    "attack": 31,
     "defence": 0,
-    "control": 22,
-    "form": 22,
-    "value": 22,
+    "control": 15,
+    "form": 23,
+    "value": 23,
     "motivation": 0,
     "AXES": [
      [
@@ -759,11 +759,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 33,
+    "attack": 31,
     "defence": 0,
-    "control": 22,
-    "form": 22,
-    "value": 22,
+    "control": 15,
+    "form": 23,
+    "value": 23,
     "motivation": 0,
     "AXES": [
      [
@@ -898,7 +898,7 @@
     "settled_at": "2026-09-22"
    },
    "source_url": "",
-   "generated_at": "2026-11-11T08:05:35+08:00",
+   "generated_at": "2026-11-11T12:05:30+08:00",
    "extras": {
     "lam_home": 1.398,
     "lam_away": 1.103,
@@ -1067,9 +1067,9 @@
    },
    "metrics_home": {
     "attack": 0,
-    "defence": 89,
-    "control": 11,
-    "form": 11,
+    "defence": 92,
+    "control": 8,
+    "form": 8,
     "value": 100,
     "motivation": 0,
     "AXES": [
@@ -1100,11 +1100,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 22,
+    "attack": 15,
     "defence": 100,
-    "control": 78,
-    "form": 78,
-    "value": 0,
+    "control": 85,
+    "form": 85,
+    "value": 8,
     "motivation": 0,
     "AXES": [
      [
@@ -1253,7 +1253,7 @@
     "settled_at": "2026-09-22"
    },
    "source_url": "",
-   "generated_at": "2026-11-11T08:05:35+08:00",
+   "generated_at": "2026-11-11T12:05:30+08:00",
    "extras": {
     "lam_home": 0.784,
     "lam_away": 0.939,
