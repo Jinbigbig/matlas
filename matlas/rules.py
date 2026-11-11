@@ -2,8 +2,6 @@
 
 RULES.md 里写的规则不能只靠自觉 —— 这个文件把 §3.1～§3.4 变成可执行检查，
 每次 build 结束自动扫描 `_site/` 下所有 HTML，命中即报出文件名与行号。
-
-规则来源：jinbet 长期约定（见 RULES.md「继承的规则」），两边必须逐条一致。
 """
 
 from __future__ import annotations

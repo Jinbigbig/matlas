@@ -122,7 +122,7 @@ git worktree add .publish gh-pages   # 首次：建产物工作树
 
 ```
 matlas/
-├── RULES.md          项目定义 + 继承规则（必读）
+├── RULES.md          项目定义 + 规则（必读）
 ├── SLOTS.md          槽位登记表（由 matlas/slots.py 生成）
 ├── build.py          构建入口
 ├── import_jinbet.py  jinbet 数据导入（预测/赛果/积分/盘口）
