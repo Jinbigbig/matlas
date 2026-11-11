@@ -117,35 +117,6 @@
     "prob_home": 41.0,
     "prob_draw": 40.8,
     "prob_away": 18.2,
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 2,
-       "ga": 1
-      }
-     ],
-     "away_away": []
-    },
     "odds_full": {
      "spf": {
       "胜": "2.58",
@@ -215,6 +186,35 @@
       "负负": "4.05"
      },
      "kickoff": ""
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ],
+     "away_away": []
     }
    },
    "odds": {
@@ -354,17 +354,6 @@
     "prob_home": 50.3,
     "prob_draw": 28.4,
     "prob_away": 21.3,
-    "form_net": {
-     "home_7": [],
-     "home_home": [],
-     "away_7": [
-      {
-       "gf": 4,
-       "ga": 1
-      }
-     ],
-     "away_away": []
-    },
     "odds_full": {
      "spf": {
       "胜": "1.59",
@@ -434,6 +423,17 @@
       "负负": "7.9"
      },
      "kickoff": ""
+    },
+    "form_net": {
+     "home_7": [],
+     "home_home": [],
+     "away_7": [
+      {
+       "gf": 4,
+       "ga": 1
+      }
+     ],
+     "away_away": []
     }
    },
    "odds": {

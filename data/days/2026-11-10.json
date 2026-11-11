@@ -159,35 +159,6 @@
      "客/平": 4.8,
      "客/客": 22.5
     },
-    "form_net": {
-     "home_7": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      }
-     ],
-     "home_home": [
-      {
-       "gf": 0,
-       "ga": 1
-      },
-      {
-       "gf": 0,
-       "ga": 2
-      }
-     ],
-     "away_7": [
-      {
-       "gf": 2,
-       "ga": 1
-      }
-     ],
-     "away_away": []
-    },
     "odds_full": {
      "spf": {
       "胜": "2.3",
@@ -258,40 +229,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "home": {
-      "out": [],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "洛夫特豪斯",
-        "reason": "后卫·无法出战"
-       }
-      ]
-     },
-     "away": {
-      "out": [
-       {
-        "name": "阿卡尤",
-        "reason": "前锋·受伤"
-       },
-       {
-        "name": "马卡里",
-        "reason": "后卫·腿部骨折"
-       },
-       {
-        "name": "贝克",
-        "reason": "前锋·肌肉受伤"
-       },
-       {
-        "name": "波利",
-        "reason": "后卫·肌肉受伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     }
-    },
     "odds_ticks": [
      {
       "t": "2026-11-10 11:11",
@@ -350,6 +287,69 @@
       ]
      }
     ],
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ],
+     "away_away": []
+    },
+    "injuries": {
+     "home": {
+      "out": [],
+      "doubtful": [],
+      "suspended": [
+       {
+        "name": "洛夫特豪斯",
+        "reason": "后卫·无法出战"
+       }
+      ]
+     },
+     "away": {
+      "out": [
+       {
+        "name": "阿卡尤",
+        "reason": "前锋·受伤"
+       },
+       {
+        "name": "马卡里",
+        "reason": "后卫·腿部骨折"
+       },
+       {
+        "name": "贝克",
+        "reason": "前锋·肌肉受伤"
+       },
+       {
+        "name": "波利",
+        "reason": "后卫·肌肉受伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
     "weather": {
      "t_min": 8,
      "t_max": 8,
@@ -1290,17 +1290,6 @@
      "客/平": 4.4,
      "客/客": 35.7
     },
-    "form_net": {
-     "home_7": [],
-     "home_home": [],
-     "away_7": [
-      {
-       "gf": 4,
-       "ga": 1
-      }
-     ],
-     "away_away": []
-    },
     "odds_full": {
      "spf": {
       "胜": "4.15",
@@ -1371,41 +1360,6 @@
      },
      "kickoff": ""
     },
-    "injuries": {
-     "home": {
-      "out": [
-       {
-        "name": "查尔斯",
-        "reason": "中场·膝关节损伤"
-       },
-       {
-        "name": "伍德尔曼",
-        "reason": "中场·肌肉受伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": []
-     },
-     "away": {
-      "out": [
-       {
-        "name": "巴尼特",
-        "reason": "中场·受伤"
-       },
-       {
-        "name": "威尔逊",
-        "reason": "后卫·膝关节损伤"
-       }
-      ],
-      "doubtful": [],
-      "suspended": [
-       {
-        "name": "墨菲",
-        "reason": "前锋·无法出战"
-       }
-      ]
-     }
-    },
     "odds_ticks": [
      {
       "t": "2026-11-10 11:11",
@@ -1464,6 +1418,52 @@
       ]
      }
     ],
+    "form_net": {
+     "home_7": [],
+     "home_home": [],
+     "away_7": [
+      {
+       "gf": 4,
+       "ga": 1
+      }
+     ],
+     "away_away": []
+    },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "查尔斯",
+        "reason": "中场·膝关节损伤"
+       },
+       {
+        "name": "伍德尔曼",
+        "reason": "中场·肌肉受伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "巴尼特",
+        "reason": "中场·受伤"
+       },
+       {
+        "name": "威尔逊",
+        "reason": "后卫·膝关节损伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": [
+       {
+        "name": "墨菲",
+        "reason": "前锋·无法出战"
+       }
+      ]
+     }
+    },
     "weather": {
      "t_min": 9,
      "t_max": 9,
