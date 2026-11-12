@@ -6,9 +6,9 @@
 
 已实现：
   - LocalDirSource    读 data/days/*.json（默认，离线可用）
-  - QiuxiaoceReference 对照源适配器（默认关闭，见 RULES.md §5）
+  - QiuxiaoceReference 对照源适配器（默认关闭）
 
-待接线（等下一步指示）：
+待接线：
   - JinbetBridge     接 jinbet V3.4 引擎产物
   - OddsScraper      赔率 / 积分榜 / 阵容抓取
 """

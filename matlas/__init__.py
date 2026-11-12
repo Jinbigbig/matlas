@@ -1,6 +1,6 @@
 """Matlas —— 足球赛事量化图谱，静态发布层。
 
-源码与 jinbet 完全分离（见 RULES.md）。
+源码与 jinbet 完全分离。
 """
 
 __version__ = "0.1.0"

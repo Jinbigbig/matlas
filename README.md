@@ -2,7 +2,7 @@
 
 **Matlas（Match Atlas · 赛图）** —— 足球赛事量化图谱，纯静态发布层。
 
-源码与 jinbet **完全分离**（见 [RULES.md](RULES.md)）：
+源码与 jinbet **完全分离**：
 
 ```
 jinbet  →  负责「算」：V3.4 引擎、Platt 校准、Brier_opt / Kalman
@@ -14,15 +14,12 @@ Matlas  →  负责「发」：per-match 落地页、留档核验、llms.txt / s
 
 ```bash
 python import_jinbet.py         # 从 jinbet 导入预测/赛果/积分/盘口 → data/days/
-python -m matlas.fetch_squads   # 抓球员评分 → data/squads/（公开接口，需联网）
+python -m matlas.fetch_squads   # 抓球员评分 → data/squads/
 python -m matlas.enrich_squads  # 把评分注入近 3 天比赛的 squad 字段
 python build.py                 # 构建 data/days 下全部交易日 → _site/
-python build.py --strict        # 红线命中即以非零码退出（CI 用）
+python build.py --strict        # 红线命中即以非零码退出
 python build.py --slots         # 重新生成 SLOTS.md 并打印槽位接线状态
 ```
-
-`fetch_squads` 不跑也能构建：`squad` 缺数据时「球员情报」整块自动不出现。
-历史页不回填评分 —— 评分源是「当下快照」，灌进旧页面会造成时间错位。
 
 零依赖、零 CDN、离线可跑。Python 3.10+。
 
@@ -34,15 +31,13 @@ python build.py --slots         # 重新生成 SLOTS.md 并打印槽位接线状
 | `gh-pages` | 构建产物 | 工作树 `<repo>/.publish/`（一个提交 = 一次发布） |
 
 ```bash
-git worktree add .publish gh-pages   # 首次：建产物工作树
+git worktree add .publish gh-pages   # 建产物工作树
 ./publish.sh                         # 构建（strict）→ 同步到 .publish → 提交 → 推送
 ./publish.sh --no-push               # 只构建到 _site，不动产物分支
 ```
 
-发布脚本的安全阀：工作区有未提交改动时拒绝发布；`.publish` 不在 `gh-pages` 分支时拒绝写入。
-
 **线上地址**：<https://jinbigbig.github.io/matlas/>（canonical / sitemap / llms.txt 全部指向这里）。
-域名只在 `matlas/config.py::DEFAULT_BASE_URL` 定义一处，换域名只改这一行再发布。
+域名定义在 `matlas/config.py::DEFAULT_BASE_URL`。
 
 ## 功能
 
@@ -80,7 +75,7 @@ git worktree add .publish gh-pages   # 首次：建产物工作树
 
 ## 数据契约
 
-唯一对外接口，定义在 [matlas/models.py](matlas/models.py)。上游只要产出符合它的 JSON 即可接入：
+唯一对外接口，定义在 [matlas/models.py](matlas/models.py)：
 
 ```json
 {
@@ -108,7 +103,6 @@ git worktree add .publish gh-pages   # 首次：建产物工作树
 
 ```
 matlas/
-├── RULES.md          项目定义 + 规则（必读）
 ├── SLOTS.md          槽位登记表（由 matlas/slots.py 生成）
 ├── build.py          构建入口
 ├── import_jinbet.py  jinbet 数据导入（预测/赛果/积分/盘口）
