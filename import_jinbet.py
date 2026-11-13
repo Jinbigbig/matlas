@@ -449,7 +449,8 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                   times_idx: dict | None = None,
                   times_days: set | None = None,
                   env: dict | None = None,
-                  h2h_idx: dict | None = None) -> dict:
+                  h2h_idx: dict | None = None,
+                  crest_idx: dict | None = None) -> dict:
     standings = standings or {}
     net_form = net_form or {}
     code = str(m.get("id", "")).strip()
@@ -800,6 +801,11 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
         "is_cold_start": bool(m.get("cold")),
         "extras": extras,
     }
+    crest_h, crest_a = _crest_path(crest_idx or {}, date, home, away)
+    if crest_h:
+        out["home"]["logo"] = crest_h
+    if crest_a:
+        out["away"]["logo"] = crest_a
     if odds:
         out["odds"] = odds
     if pick and spread is not None:
@@ -982,6 +988,48 @@ def sync_team_crests(fx_text: str) -> None:
     print(f"[crest] 队徽 {len(ids)} 个编号 / 新下载 {ok} / 失败 {fail}")
 
 
+def _fixture_crest_index(fx_text: str) -> dict:
+    """赛程源里的主客队队徽编号：按场次与单队名两套索引。"""
+    pair: dict[tuple[str, str, str], tuple[str, str]] = {}
+    names: dict[str, str] = {}
+    conflicts: set[str] = set()
+    try:
+        payload = json.loads(fx_text)
+    except (ValueError, TypeError):
+        return {"pair": pair, "names": names}
+    for day, rows in (payload.get("days") or {}).items():
+        for r in rows:
+            h = str(r.get("home") or "").strip()
+            a = str(r.get("away") or "").strip()
+            hid = str(r.get("hid") or "").strip()
+            aid = str(r.get("aid") or "").strip()
+            if h and a:
+                pair.setdefault((day, h, a), (hid, aid))
+            for nm, tid in ((h, hid), (a, aid)):
+                if not nm or not tid.isdigit():
+                    continue
+                if nm in names and names[nm] != tid:
+                    conflicts.add(nm)
+                else:
+                    names.setdefault(nm, tid)
+    for nm in conflicts:
+        names.pop(nm, None)
+    return {"pair": pair, "names": names}
+
+
+def _crest_path(crest_idx: dict, date: str, home: str, away: str) -> tuple[str, str]:
+    """站内竞彩行的队徽路径：先按场次匹配赛程源，再按单队名兜底。"""
+    pair = (crest_idx.get("pair") or {}).get((date, home, away), ("", ""))
+    names = crest_idx.get("names") or {}
+    ids = (pair[0] or names.get(home, ""), pair[1] or names.get(away, ""))
+    out = []
+    for tid in ids:
+        tid = str(tid or "").strip()
+        out.append(f"assets/logo/teams/{tid}.png"
+                   if tid.isdigit() and (CREST_DIR / f"{tid}.png").exists() else "")
+    return out[0], out[1]
+
+
 def main() -> None:
     dry = "--dry-run" in sys.argv
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -992,6 +1040,11 @@ def main() -> None:
     env = _load_env()
     h2h_idx = _h2h_index()
     history = _history_pool()
+    fx_path = PRED_DIR.parent / "fixtures.json"
+    fx_text = fx_path.read_text(encoding="utf-8") if fx_path.exists() else ""
+    crest_idx = _fixture_crest_index(fx_text)
+    if fx_text and not dry:
+        sync_team_crests(fx_text)
     n_days = n_matches = n_results = 0
     for d in sorted(PRED_DIR.iterdir()):
         if len(d.name) != 10 or not d.is_dir():
@@ -1009,7 +1062,8 @@ def main() -> None:
                                standings=standings, net_form=net_form,
                                odds_idx=odds_idx,
                                times_idx=times_idx, times_days=times_days,
-                               env=env, h2h_idx=h2h_idx)
+                               env=env, h2h_idx=h2h_idx,
+                               crest_idx=crest_idx)
             if not cm["match_id"] or cm["match_id"] in seen:
                 cm["match_id"] = f"{date}-{i + 1:03d}"
             seen.add(cm["match_id"])
@@ -1040,11 +1094,8 @@ def main() -> None:
             json.dumps(history, ensure_ascii=False) + "\n",
         )
         # 未来赛程（jinbet _fetch_fixtures.py 产）：比赛列表页的「待分析」场次
-        fx = PRED_DIR.parent / "fixtures.json"
-        if fx.exists():
-            fx_text = fx.read_text(encoding="utf-8")
+        if fx_text:
             write_text_safe(OUT_DIR.parent / "fixtures.json", fx_text)
-            sync_team_crests(fx_text)
         n_h2h = sum(
             1 for p in OUT_DIR.glob("*.json")
             for mm in json.loads(p.read_text(encoding="utf-8")).get("matches", [])
