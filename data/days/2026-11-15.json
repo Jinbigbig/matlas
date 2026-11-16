@@ -370,7 +370,7 @@
     "settled_at": "2026-11-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:01:19+08:00",
+   "generated_at": "2026-11-16T19:15:44+08:00",
    "extras": {
     "lam_home": 1.621,
     "lam_away": 1.291,
@@ -1924,7 +1924,7 @@
     "settled_at": "2026-11-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:01:19+08:00",
+   "generated_at": "2026-11-16T19:15:44+08:00",
    "extras": {
     "lam_home": 2.452,
     "lam_away": 1.463,
@@ -3328,7 +3328,7 @@
     "settled_at": "2026-11-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:01:19+08:00",
+   "generated_at": "2026-11-16T19:15:44+08:00",
    "extras": {
     "lam_home": 1.325,
     "lam_away": 1.396,
@@ -4815,7 +4815,7 @@
     "settled_at": "2026-11-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:01:19+08:00",
+   "generated_at": "2026-11-16T19:15:44+08:00",
    "extras": {
     "lam_home": 2.418,
     "lam_away": 1.536,
@@ -6217,7 +6217,7 @@
     "settled_at": "2026-11-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:01:19+08:00",
+   "generated_at": "2026-11-16T19:15:44+08:00",
    "extras": {
     "lam_home": 0.936,
     "lam_away": 1.194,
@@ -7283,6 +7283,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 4,
+    "points": 2,
+    "played": 6,
+    "win": 0,
+    "draw": 2,
+    "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/1092.png"
    },
@@ -7291,6 +7297,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 3,
+    "points": 6,
+    "played": 6,
+    "win": 1,
+    "draw": 3,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/1094.png"
    },
@@ -7591,8 +7603,34 @@
     "settled_at": "2026-11-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:01:19+08:00",
+   "generated_at": "2026-11-16T19:15:44+08:00",
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "黑山",
+      "pts": 16,
+      "p": 6
+     },
+     {
+      "rank": 2,
+      "name": "塞浦路斯",
+      "pts": 8,
+      "p": 6
+     },
+     {
+      "rank": 3,
+      "name": "亚美尼亚",
+      "pts": 6,
+      "p": 6
+     },
+     {
+      "rank": 4,
+      "name": "拉脱维亚",
+      "pts": 2,
+      "p": 6
+     }
+    ],
     "lam_home": 1.109,
     "lam_away": 1.424,
     "lam_total": 2.533,
@@ -7822,6 +7860,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 2,
+    "points": 8,
+    "played": 6,
+    "win": 2,
+    "draw": 2,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/1106.png"
    },
@@ -7830,6 +7874,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 1,
+    "points": 16,
+    "played": 6,
+    "win": 5,
+    "draw": 1,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/1109.png"
    },
@@ -8133,8 +8183,34 @@
     "settled_at": "2026-11-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:01:19+08:00",
+   "generated_at": "2026-11-16T19:15:44+08:00",
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "黑山",
+      "pts": 16,
+      "p": 6
+     },
+     {
+      "rank": 2,
+      "name": "塞浦路斯",
+      "pts": 8,
+      "p": 6
+     },
+     {
+      "rank": 3,
+      "name": "亚美尼亚",
+      "pts": 6,
+      "p": 6
+     },
+     {
+      "rank": 4,
+      "name": "拉脱维亚",
+      "pts": 2,
+      "p": 6
+     }
+    ],
     "lam_home": 1.503,
     "lam_away": 1.85,
     "lam_total": 3.353,
@@ -8405,6 +8481,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 3,
+    "points": 10,
+    "played": 6,
+    "win": 3,
+    "draw": 1,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/1099.png"
    },
@@ -8413,6 +8495,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 4,
+    "points": 0,
+    "played": 6,
+    "win": 0,
+    "draw": 0,
+    "loss": 6,
     "form": "",
     "logo": "assets/logo/teams/1115.png"
    },
@@ -8629,8 +8717,34 @@
     "settled_at": "2026-11-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:01:19+08:00",
+   "generated_at": "2026-11-16T19:15:44+08:00",
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "阿尔巴尼",
+      "pts": 15,
+      "p": 6
+     },
+     {
+      "rank": 2,
+      "name": "白俄罗斯",
+      "pts": 10,
+      "p": 6
+     },
+     {
+      "rank": 3,
+      "name": "芬兰",
+      "pts": 10,
+      "p": 6
+     },
+     {
+      "rank": 4,
+      "name": "圣马力诺",
+      "pts": 0,
+      "p": 6
+     }
+    ],
     "lam_home": 2.984,
     "lam_away": 0.195,
     "lam_total": 3.179,
@@ -8801,6 +8915,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 3,
+    "points": 6,
+    "played": 6,
+    "win": 2,
+    "draw": 0,
+    "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/3.png"
    },
@@ -8809,6 +8929,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 4,
+    "points": 0,
+    "played": 6,
+    "win": 0,
+    "draw": 0,
+    "loss": 6,
     "form": "",
     "logo": "assets/logo/teams/770.png"
    },
@@ -9130,8 +9256,34 @@
     "settled_at": "2026-11-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:01:19+08:00",
+   "generated_at": "2026-11-16T19:15:44+08:00",
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "英格兰",
+      "pts": 15,
+      "p": 6
+     },
+     {
+      "rank": 2,
+      "name": "西班牙",
+      "pts": 15,
+      "p": 6
+     },
+     {
+      "rank": 3,
+      "name": "克罗地亚",
+      "pts": 6,
+      "p": 6
+     },
+     {
+      "rank": 4,
+      "name": "捷克",
+      "pts": 0,
+      "p": 6
+     }
+    ],
     "lam_home": 2.097,
     "lam_away": 0.849,
     "lam_total": 2.946,
@@ -9492,6 +9644,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 2,
+    "points": 15,
+    "played": 6,
+    "win": 5,
+    "draw": 0,
+    "loss": 1,
     "form": "",
     "logo": "assets/logo/teams/9.png"
    },
@@ -9500,6 +9658,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 1,
+    "points": 15,
+    "played": 6,
+    "win": 5,
+    "draw": 0,
+    "loss": 1,
     "form": "",
     "logo": "assets/logo/teams/10.png"
    },
@@ -9821,8 +9985,34 @@
     "settled_at": "2026-11-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:01:19+08:00",
+   "generated_at": "2026-11-16T19:15:44+08:00",
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "英格兰",
+      "pts": 15,
+      "p": 6
+     },
+     {
+      "rank": 2,
+      "name": "西班牙",
+      "pts": 15,
+      "p": 6
+     },
+     {
+      "rank": 3,
+      "name": "克罗地亚",
+      "pts": 6,
+      "p": 6
+     },
+     {
+      "rank": 4,
+      "name": "捷克",
+      "pts": 0,
+      "p": 6
+     }
+    ],
     "lam_home": 1.965,
     "lam_away": 1.354,
     "lam_total": 3.319,
@@ -10227,6 +10417,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 2,
+    "points": 12,
+    "played": 6,
+    "win": 4,
+    "draw": 0,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/1.png"
    },
@@ -10235,6 +10431,12 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
+    "rank": 3,
+    "points": 10,
+    "played": 6,
+    "win": 3,
+    "draw": 1,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/768.png"
    },
@@ -10547,8 +10749,34 @@
     "settled_at": "2026-11-15"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:01:19+08:00",
+   "generated_at": "2026-11-16T19:15:44+08:00",
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "法国",
+      "pts": 13,
+      "p": 6
+     },
+     {
+      "rank": 2,
+      "name": "比利时",
+      "pts": 12,
+      "p": 6
+     },
+     {
+      "rank": 3,
+      "name": "意大利",
+      "pts": 10,
+      "p": 6
+     },
+     {
+      "rank": 4,
+      "name": "土耳其",
+      "pts": 0,
+      "p": 6
+     }
+    ],
     "lam_home": 2.081,
     "lam_away": 1.747,
     "lam_total": 3.828,
