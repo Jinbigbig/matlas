@@ -34,7 +34,7 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 33,
+    "attack": 34,
     "defence": 36,
     "control": 32,
     "form": 17,
@@ -68,7 +68,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 8,
+    "attack": 21,
     "defence": 28,
     "control": 12,
     "form": 17,
@@ -103,6 +103,7 @@
    },
    "momentum": {
     "labels": [
+     "T-4",
      "T-3",
      "T-2",
      "T-1"
@@ -110,12 +111,14 @@
     "home": [
      1.0,
      2.0,
+     1.0,
      1.0
     ],
     "away": [
      0.0,
      1.0,
-     1.0
+     1.0,
+     0.0
     ]
    },
    "forecasts": [
@@ -244,7 +247,7 @@
     "settled_at": "2026-10-05"
    },
    "source_url": "",
-   "generated_at": "2026-11-15T19:01:01+08:00",
+   "generated_at": "2026-11-16T08:06:22+08:00",
    "extras": {
     "lam_home": 1.403,
     "lam_away": 0.524,
@@ -667,7 +670,7 @@
    "metrics_home": {
     "attack": 90,
     "defence": 79,
-    "control": 92,
+    "control": 90,
     "form": 74,
     "value": 96,
     "motivation": 93,
@@ -754,14 +757,14 @@
      4.0
     ],
     "away": [
-     5.0,
      2.0,
      4.0,
      1.0,
      2.0,
      0.0,
      1.0,
-     2.0
+     2.0,
+     4.0
     ]
    },
    "forecasts": [
@@ -917,7 +920,7 @@
     "settled_at": "2026-10-05"
    },
    "source_url": "",
-   "generated_at": "2026-11-15T19:01:01+08:00",
+   "generated_at": "2026-11-16T08:06:22+08:00",
    "extras": {
     "lam_home": 2.322,
     "lam_away": 1.075,
@@ -1643,7 +1646,7 @@
     "settled_at": "2026-10-05"
    },
    "source_url": "",
-   "generated_at": "2026-11-15T19:01:01+08:00",
+   "generated_at": "2026-11-16T08:06:22+08:00",
    "extras": {
     "lam_home": 1.328,
     "lam_away": 2.208,
@@ -2043,7 +2046,7 @@
    },
    "metrics_away": {
     "attack": 51,
-    "defence": 57,
+    "defence": 61,
     "control": 61,
     "form": 15,
     "value": 88,
@@ -2077,6 +2080,7 @@
    },
    "momentum": {
     "labels": [
+     "T-8",
      "T-7",
      "T-6",
      "T-5",
@@ -2092,9 +2096,11 @@
      1.0,
      0.0,
      4.0,
-     3.0
+     3.0,
+     1.0
     ],
     "away": [
+     2.0,
      0.0,
      0.0,
      3.0,
@@ -2257,7 +2263,7 @@
     "settled_at": "2026-10-05"
    },
    "source_url": "",
-   "generated_at": "2026-11-15T19:01:01+08:00",
+   "generated_at": "2026-11-16T08:06:22+08:00",
    "extras": {
     "lam_home": 1.929,
     "lam_away": 0.704,
@@ -2728,7 +2734,7 @@
    "metrics_home": {
     "attack": 5,
     "defence": 54,
-    "control": 18,
+    "control": 19,
     "form": 35,
     "value": 23,
     "motivation": 75,
@@ -2760,7 +2766,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 8,
+    "attack": 17,
     "defence": 67,
     "control": 32,
     "form": 17,
@@ -2957,7 +2963,7 @@
     "settled_at": "2026-10-05"
    },
    "source_url": "",
-   "generated_at": "2026-11-15T19:01:01+08:00",
+   "generated_at": "2026-11-16T08:06:22+08:00",
    "extras": {
     "lam_home": 0.972,
     "lam_away": 0.777,
@@ -3198,8 +3204,8 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 79,
-    "defence": 28,
+    "attack": 80,
+    "defence": 32,
     "control": 68,
     "form": 80,
     "value": 46,
@@ -3232,9 +3238,9 @@
     ]
    },
    "metrics_away": {
-    "attack": 70,
+    "attack": 73,
     "defence": 36,
-    "control": 66,
+    "control": 65,
     "form": 61,
     "value": 23,
     "motivation": 39,
@@ -3267,6 +3273,7 @@
    },
    "momentum": {
     "labels": [
+     "T-5",
      "T-4",
      "T-3",
      "T-2",
@@ -3276,13 +3283,15 @@
      2.0,
      3.0,
      0.0,
-     2.0
+     2.0,
+     4.0
     ],
     "away": [
      2.0,
      2.0,
      0.0,
-     1.0
+     1.0,
+     0.0
     ]
    },
    "forecasts": [
@@ -3438,7 +3447,7 @@
     "settled_at": "2026-10-05"
    },
    "source_url": "",
-   "generated_at": "2026-11-15T19:01:01+08:00",
+   "generated_at": "2026-11-16T08:06:22+08:00",
    "extras": {
     "lam_home": 2.373,
     "lam_away": 1.211,
@@ -3941,7 +3950,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 59,
+    "attack": 55,
     "defence": 20,
     "control": 28,
     "form": 29,
@@ -4156,7 +4165,7 @@
     "settled_at": "2026-10-05"
    },
    "source_url": "",
-   "generated_at": "2026-11-15T19:01:01+08:00",
+   "generated_at": "2026-11-16T08:06:22+08:00",
    "extras": {
     "lam_home": 1.282,
     "lam_away": 1.525,
