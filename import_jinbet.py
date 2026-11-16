@@ -61,6 +61,8 @@ STANDINGS_JSON = Path("C:/Users/Jin/jinbet/qq_standings.json")
 FOX_STANDINGS_JSON = Path("C:/Users/Jin/jinbet/fox_standings.json")
 # uefa_standings.json：欧协联积分榜，同 fox 的分组结构
 UEFA_STANDINGS_JSON = Path("C:/Users/Jin/jinbet/uefa_standings.json")
+# sporttery_standings.json：体彩官方积分榜（欧国联等），分组结构 group[:].teams[]
+SPORTTERY_STANDINGS_JSON = Path("C:/Users/Jin/jinbet/sporttery_standings.json")
 # scripts/matches_data.json：网易当日抓取，home_recent 等 gf/ga 近况序列
 MATCHES_DATA_JSON = Path("C:/Users/Jin/jinbet/scripts/matches_data.json")
 
@@ -129,6 +131,18 @@ def _load_standings() -> dict[str, dict[str, dict]]:
             for g in v.get("groups") or []:
                 for t in g.get("teams") or []:
                     _merge(lg, t, t.get("zh") or "")
+    # 体彩榜：欧国联按 League A/B/C/D + Group 分组，行键直接用中文简称。
+    # 每行带 _group，形势分析据此只取两队所在小组，避免跨组混算名次。
+    try:
+        d = json.loads(SPORTTERY_STANDINGS_JSON.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        d = {}
+    for lg, v in (d.get("leagues") or {}).items():
+        for g in v.get("groups") or []:
+            for t in g.get("teams") or []:
+                row = dict(t)
+                row["_group"] = g.get("name") or t.get("group") or ""
+                _merge(lg, row, t.get("name") or "")
     return out
 
 
@@ -576,10 +590,18 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
     # 整榜快照：形势分析要算「赢/平/负后的名次区间」，必须有全联赛而非只有两队
     _tbl = standings.get(league) or {}
     if len(_tbl) >= 8:
+        # 分组积分榜（体彩欧国联）：只保留两队所在小组，形势分析不能跨组算名次。
+        _grp = ((_tbl.get(home) or {}).get("_group")
+                or (_tbl.get(TEAM_ALIAS.get(home, "")) or {}).get("_group"))
+        _filtered = {n: r for n, r in _tbl.items()
+                     if not _grp or not r.get("_group") or r["_group"] == _grp} \
+            if _grp else _tbl
         _rows = [{"rank": r["rank"], "name": name, "pts": r["pts"], "p": r.get("p")}
-                 for name, r in _tbl.items()
+                 for name, r in _filtered.items()
                  if r.get("rank") and r.get("pts") is not None]
-        if len(_rows) >= 8:
+        # 大联赛要 8 队才成榜；分组榜（体彩欧国联小组 4 队）按组放宽。
+        _min = 4 if _grp else 8
+        if len(_rows) >= _min:
             _rows.sort(key=lambda x: x["rank"])
             extras["table"] = _rows
     # quad_top / prob_* 早就在快照里，此前漏搬 → 单场页「模型视角」的

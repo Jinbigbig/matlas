@@ -485,11 +485,23 @@
    "home": {
     "name": "哈萨克",
     "league": "欧国联",
+    "rank": 4,
+    "points": 2,
+    "played": 5,
+    "win": 0,
+    "draw": 2,
+    "loss": 3,
     "logo": "assets/logo/teams/1095.png"
    },
    "away": {
     "name": "法罗群岛",
     "league": "欧国联",
+    "rank": 3,
+    "points": 5,
+    "played": 5,
+    "win": 0,
+    "draw": 5,
+    "loss": 0,
     "logo": "assets/logo/teams/1098.png"
    },
    "forecasts": [
@@ -569,6 +581,32 @@
    "confidence": "low",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "斯洛伐克",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 2,
+      "name": "摩尔多瓦",
+      "pts": 7,
+      "p": 5
+     },
+     {
+      "rank": 3,
+      "name": "法罗群岛",
+      "pts": 5,
+      "p": 5
+     },
+     {
+      "rank": 4,
+      "name": "哈萨克",
+      "pts": 2,
+      "p": 5
+     }
+    ],
     "lam_home": 1.085,
     "lam_away": 0.98,
     "lam_total": 2.065,
@@ -741,11 +779,23 @@
    "home": {
     "name": "爱沙尼亚",
     "league": "欧国联",
+    "rank": 2,
+    "points": 9,
+    "played": 5,
+    "win": 2,
+    "draw": 3,
+    "loss": 0,
     "logo": "assets/logo/teams/1101.png"
    },
    "away": {
     "name": "冰岛",
     "league": "欧国联",
+    "rank": 1,
+    "points": 11,
+    "played": 5,
+    "win": 3,
+    "draw": 2,
+    "loss": 0,
     "logo": "assets/logo/teams/18.png"
    },
    "forecasts": [
@@ -825,6 +875,32 @@
    "confidence": "low",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "冰岛",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 2,
+      "name": "爱沙尼亚",
+      "pts": 9,
+      "p": 5
+     },
+     {
+      "rank": 3,
+      "name": "保加利亚",
+      "pts": 4,
+      "p": 5
+     },
+     {
+      "rank": 4,
+      "name": "卢森堡",
+      "pts": 3,
+      "p": 5
+     }
+    ],
     "lam_home": 0.537,
     "lam_away": 1.208,
     "lam_total": 1.745,
@@ -1198,11 +1274,23 @@
    "home": {
     "name": "卢森堡",
     "league": "欧国联",
+    "rank": 4,
+    "points": 3,
+    "played": 5,
+    "win": 1,
+    "draw": 0,
+    "loss": 4,
     "logo": "assets/logo/teams/1102.png"
    },
    "away": {
     "name": "保加利亚",
     "league": "欧国联",
+    "rank": 3,
+    "points": 4,
+    "played": 5,
+    "win": 1,
+    "draw": 1,
+    "loss": 3,
     "logo": "assets/logo/teams/1103.png"
    },
    "forecasts": [
@@ -1282,6 +1370,32 @@
    "confidence": "low",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "冰岛",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 2,
+      "name": "爱沙尼亚",
+      "pts": 9,
+      "p": 5
+     },
+     {
+      "rank": 3,
+      "name": "保加利亚",
+      "pts": 4,
+      "p": 5
+     },
+     {
+      "rank": 4,
+      "name": "卢森堡",
+      "pts": 3,
+      "p": 5
+     }
+    ],
     "lam_home": 1.003,
     "lam_away": 0.597,
     "lam_total": 1.6,
@@ -1795,11 +1909,23 @@
    "home": {
     "name": "苏格兰",
     "league": "欧国联",
+    "rank": 3,
+    "points": 7,
+    "played": 5,
+    "win": 2,
+    "draw": 1,
+    "loss": 2,
     "logo": "assets/logo/teams/1108.png"
    },
    "away": {
     "name": "斯洛文尼",
     "league": "欧国联",
+    "rank": 2,
+    "points": 8,
+    "played": 5,
+    "win": 2,
+    "draw": 2,
+    "loss": 1,
     "logo": "assets/logo/teams/1091.png"
    },
    "forecasts": [
@@ -1879,6 +2005,32 @@
    "confidence": "low",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "瑞士",
+      "pts": 13,
+      "p": 5
+     },
+     {
+      "rank": 2,
+      "name": "斯洛文尼",
+      "pts": 8,
+      "p": 5
+     },
+     {
+      "rank": 3,
+      "name": "苏格兰",
+      "pts": 7,
+      "p": 5
+     },
+     {
+      "rank": 4,
+      "name": "北马其顿",
+      "pts": 0,
+      "p": 5
+     }
+    ],
     "lam_home": 1.313,
     "lam_away": 0.713,
     "lam_total": 2.026,
@@ -2232,11 +2384,23 @@
    "home": {
     "name": "英格兰",
     "league": "欧国联",
+    "rank": 1,
+    "points": 15,
+    "played": 6,
+    "win": 5,
+    "draw": 0,
+    "loss": 1,
     "logo": "assets/logo/teams/10.png"
    },
    "away": {
     "name": "捷克",
     "league": "欧国联",
+    "rank": 4,
+    "points": 0,
+    "played": 6,
+    "win": 0,
+    "draw": 0,
+    "loss": 6,
     "logo": "assets/logo/teams/770.png"
    },
    "forecasts": [
@@ -2316,6 +2480,32 @@
    "confidence": "medium",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "英格兰",
+      "pts": 15,
+      "p": 6
+     },
+     {
+      "rank": 2,
+      "name": "西班牙",
+      "pts": 15,
+      "p": 6
+     },
+     {
+      "rank": 3,
+      "name": "克罗地亚",
+      "pts": 6,
+      "p": 6
+     },
+     {
+      "rank": 4,
+      "name": "捷克",
+      "pts": 0,
+      "p": 6
+     }
+    ],
     "lam_home": 2.46,
     "lam_away": 0.538,
     "lam_total": 2.999,
@@ -2797,11 +2987,23 @@
    "home": {
     "name": "克罗地亚",
     "league": "欧国联",
+    "rank": 3,
+    "points": 6,
+    "played": 6,
+    "win": 2,
+    "draw": 0,
+    "loss": 4,
     "logo": "assets/logo/teams/3.png"
    },
    "away": {
     "name": "西班牙",
     "league": "欧国联",
+    "rank": 2,
+    "points": 15,
+    "played": 6,
+    "win": 5,
+    "draw": 0,
+    "loss": 1,
     "logo": "assets/logo/teams/9.png"
    },
    "forecasts": [
@@ -2881,6 +3083,32 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "英格兰",
+      "pts": 15,
+      "p": 6
+     },
+     {
+      "rank": 2,
+      "name": "西班牙",
+      "pts": 15,
+      "p": 6
+     },
+     {
+      "rank": 3,
+      "name": "克罗地亚",
+      "pts": 6,
+      "p": 6
+     },
+     {
+      "rank": 4,
+      "name": "捷克",
+      "pts": 0,
+      "p": 6
+     }
+    ],
     "lam_home": 0.57,
     "lam_away": 2.038,
     "lam_total": 2.607,
@@ -3354,11 +3582,23 @@
    "home": {
     "name": "瑞士",
     "league": "欧国联",
+    "rank": 1,
+    "points": 13,
+    "played": 5,
+    "win": 4,
+    "draw": 1,
+    "loss": 0,
     "logo": "assets/logo/teams/15.png"
    },
    "away": {
     "name": "北马其顿",
     "league": "欧国联",
+    "rank": 4,
+    "points": 0,
+    "played": 5,
+    "win": 0,
+    "draw": 0,
+    "loss": 5,
     "logo": "assets/logo/teams/1105.png"
    },
    "forecasts": [
@@ -3438,6 +3678,32 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "瑞士",
+      "pts": 13,
+      "p": 5
+     },
+     {
+      "rank": 2,
+      "name": "斯洛文尼",
+      "pts": 8,
+      "p": 5
+     },
+     {
+      "rank": 3,
+      "name": "苏格兰",
+      "pts": 7,
+      "p": 5
+     },
+     {
+      "rank": 4,
+      "name": "北马其顿",
+      "pts": 0,
+      "p": 5
+     }
+    ],
     "lam_home": 1.921,
     "lam_away": 0.155,
     "lam_total": 2.076,
@@ -3943,11 +4209,23 @@
    "home": {
     "name": "摩尔多瓦",
     "league": "欧国联",
+    "rank": 2,
+    "points": 7,
+    "played": 5,
+    "win": 2,
+    "draw": 1,
+    "loss": 2,
     "logo": "assets/logo/teams/1114.png"
    },
    "away": {
     "name": "斯洛伐克",
     "league": "欧国联",
+    "rank": 1,
+    "points": 11,
+    "played": 5,
+    "win": 3,
+    "draw": 2,
+    "loss": 0,
     "logo": "assets/logo/teams/773.png"
    },
    "forecasts": [
@@ -4027,6 +4305,32 @@
    "confidence": "high",
    "is_cold_start": true,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "斯洛伐克",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 2,
+      "name": "摩尔多瓦",
+      "pts": 7,
+      "p": 5
+     },
+     {
+      "rank": 3,
+      "name": "法罗群岛",
+      "pts": 5,
+      "p": 5
+     },
+     {
+      "rank": 4,
+      "name": "哈萨克",
+      "pts": 2,
+      "p": 5
+     }
+    ],
     "lam_home": 0.553,
     "lam_away": 1.737,
     "lam_total": 2.29,

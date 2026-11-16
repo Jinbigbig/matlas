@@ -229,7 +229,7 @@ def _rank_range(table: list[dict], name: str, pts: int) -> tuple[int, int]:
 def _situation_panel(m: Match) -> str:
     """形势分析：三种结果各自把两队推到什么名次，一张满宽表说清。"""
     table = (m.extras or {}).get("table") or []
-    if len(table) < 8:
+    if len(table) < 4:
         return ""
     h_row = _table_row(table, m.home.name)
     a_row = _table_row(table, m.away.name)
@@ -3154,7 +3154,8 @@ def render_search(cfg: Config, days: list[Day]) -> str:
 def _odds_payload(ordered: list[Day]) -> tuple[list, list]:
     """全玩法赔率数据集：(倒序日期表, 场次行)。只收带 extras.odds_full 的场次。
 
-    行内含赛果数字（未开赛为 null），赔率页用于对照高亮、投注页用于自动结算。
+    日期最新在前，每天内按竞彩编号升序。行内含赛果数字（未开赛为 null），
+    赔率页用于对照高亮、投注页用于自动结算。
     """
     import re as _re
 
@@ -3186,7 +3187,17 @@ def _odds_payload(ordered: list[Day]) -> tuple[list, list]:
                 "tm": (m.kickoff or "")[-5:],
                 "gh": gh, "ga": ga, "hh": hh, "ha": ha, "of": of,
             })
-    rows.reverse()
+
+    def _code_key(row: dict) -> tuple[int, int]:
+        """竞彩编号「周一008」→(0,8)；无编号排最后，同编号维持原顺序。"""
+        m = _re.search(r"[^\d](\d+)\s*$", row["c"] or "")
+        return (0, int(m.group(1))) if m else (1, 0)
+
+    grouped: dict[str, list] = {}
+    for r in rows:
+        grouped.setdefault(r["d"], []).append(r)
+    rows = [r for day in sorted(grouped, reverse=True)
+            for r in sorted(grouped[day], key=_code_key)]
     dates: list[str] = []
     for r in rows:
         if r["d"] not in dates:
