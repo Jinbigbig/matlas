@@ -547,6 +547,28 @@ def _mood_panel(m: Match) -> str:
     return C.panel("赛前军情", '<div class="mood-text">' + "".join(parts) + "</div>")
 
 
+def _news_intel_panel(m: Match) -> str:
+    """赛前情报：直播吧公开新闻（标题+来源+摘要），按竞彩编号注入。"""
+    arts = (m.extras or {}).get("intel") or []
+    if not arts:
+        return ""
+    items = []
+    for a in arts:
+        title = str(a.get("title") or "")
+        url = str(a.get("url") or "")
+        src = str(a.get("source") or "直播吧")
+        text = str(a.get("text") or "")
+        link = (f'<a href="{C.esc(url)}" target="_blank" rel="noopener">{C.esc(title)}</a>'
+                if url else C.esc(title))
+        items.append(
+            '<div class="ni-item">'
+            f'<div class="ni-title">{link}<span class="ni-src">{C.esc(src)}</span></div>'
+            f'<div class="ni-text">{C.esc(text)}</div>'
+            '</div>'
+        )
+    return C.panel("赛前情报", '<div class="news-intel">' + "".join(items) + "</div>")
+
+
 def _pct_or(v) -> str:
     """百分比单元格：无值出 —，有值走 pct 类（红线口径）。"""
     return f'<span class="pct">{v}%</span>' if isinstance(v, (int, float)) else "—"
@@ -1430,6 +1452,7 @@ def render_match(cfg: Config, m: Match) -> str:
         _main_pick_block(m),    # 一句话主推（有才出现）
         C.panel("综合赛果推演", picks) if picks else "",   # 四宫格：方向/比分/进球/半全场
         _intel_panel(m),        # 赛前情报速览：基本信息一屏
+        _news_intel_panel(m),   # 赛前情报：公开新闻（标题+来源+摘要）
         # L2 基本面层：谁强谁弱
         _compare_panel(m),      # 核心数据对比（10 项场均 + 六维攻防风格雷达 + 综合总分）
         _rank_panel(m),         # 积分排名（赛季总 / 同主客）

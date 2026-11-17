@@ -51,6 +51,8 @@ REFEREE_JSON = Path("C:/Users/Jin/jinbet/referee.json")
 # 网易红彩「数据」tab（jinbet/_fetch_hongcai.py 产出）：统计/风格/裁判/天气/盘路/
 # 交锋/进球时段/赛前分析/伤停，按竞彩编号索引，与 jinbet 报告生成共用同一份
 HONGCAI_JSON = Path("C:/Users/Jin/jinbet/hongcai.json")
+# 赛前情报（jinbet/_fetch_intel.py 产出）：直播吧公开新闻，按竞彩编号索引
+INTEL_JSON = Path("C:/Users/Jin/jinbet/intel.json")
 _results_data_cache: dict | None = None
 OUT_DIR = Path("C:/Users/Jin/matlas/data/days")
 
@@ -362,6 +364,10 @@ def _load_env() -> dict:
         env["hc"] = d.get("matches") or {}
         env["hc_date"] = str(d.get("date", ""))[:10]
         env["hc_updated"] = str(d.get("updated", ""))
+    d = _read(INTEL_JSON)
+    if d:
+        env["intel"] = d.get("matches") or {}
+        env["intel_date"] = str(d.get("updated", ""))[:10]
     return env
 
 
@@ -474,6 +480,61 @@ def _mood_clean(raw: str, teams: tuple[str, ...] = ()) -> str:
     if out and not out[-1].endswith(("。", "；", "！", "？", "）", "」", "…")):
         out[-1] += "…"
     return "\n".join(out)
+
+
+def _clean_intel(arts: list) -> list:
+    """整理赛前情报：只留有正文的条目，按关键动态词排序，控制数量。"""
+    if not arts:
+        return []
+    PRIORITY = ("告别", "伤", "缺", "停赛", "首发", "主帅", "离队", "退出",
+                "执教", "出战", "存疑", "恢复", "回归", "入选", "征召", "复仇",
+                "轮换", "反弹")
+    def rank(a):
+        t = str(a.get("title") or "")
+        # 保留抓取时的优先级顺序（jinbet 侧已按关键动态排好），这里只微调：
+        # 强匹配（标题含双方队名）优先，其余稳定保序
+        return (1 if a.get("strong") else 0,)
+    picked = sorted((a for a in arts if a.get("text")), key=rank, reverse=True)[:6]
+    out = []
+    for a in picked:
+        out.append({
+            "title": str(a.get("title") or ""),
+            "url": str(a.get("url") or ""),
+            "source": str(a.get("source") or "直播吧"),
+            "text": str(a.get("text") or "")[:240],
+        })
+    return out
+
+
+def _intel_pick(intel: list) -> str:
+    """左下角短句：取最关键情报标题的主干（一行人话），无情报返回空串。"""
+    if not intel:
+        return ""
+    title = str(intel[0].get("title") or "")
+    # 去来源前缀：「巴媒：」「日媒：」「北青：」「记者：」等
+    title = re.sub(r'^[^：:]{2,6}[：:]', '', title)
+    # 去句首引导/套话
+    title = re.sub(r'^(独家|官方|记者|媒体|报道|消息|据|曝|重磅|焦点|盘点|盘点|这次如何\？|期待反弹！)', '', title)
+    title = title.strip('　 ')
+    # 冒号处理：「主语：结论」取结论；引语「XX：他说…」也取后半
+    if '：' in title or ':' in title:
+        parts = re.split(r'[：:]', title, maxsplit=1)
+        head, tail = parts[0], parts[1]
+        # head 是人名/身份（≤8字）时用结论；否则用 head（它本身已是信息）
+        core = tail if len(head) <= 12 else head
+    else:
+        core = title
+    # 取第一个完整分句：逗号/空格/问号都算边界（中文媒体标题常用空格分两段）
+    core = re.split(r'[，,。！？!?；;\s]', core)[0].strip('　 ')
+    # 控制在 20 字内（左下角一行可读范围），去掉断尾虚词/半词
+    if len(core) > 20:
+        core = core[:20]
+        for tail in ('的', '是', '在', '和', '与', '无', '简', '了', '把', '被',
+                     '对', '榜', '巨', '很', '将', '为', '中', '上', '人'):
+            if core.endswith(tail):
+                core = core[:-1]
+                break
+    return core.strip() or ""
 
 
 def _one_line_pick(confidence: str, extras: dict, top_dir: str) -> str:
@@ -858,6 +919,13 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                 extras[key] = v
         if hc_ok:
             extras["hc_at"] = str(env.get("hc_updated") or "")
+    # 赛前情报：仅注入 intel 快照当天（源端每天只留当日一份，历史天靠继承保留）
+    intel_raw = (env.get("intel") or {}).get(code) or []
+    if intel_raw and str(env.get("intel_date") or "") == date:
+        clean = _clean_intel(intel_raw)
+        if clean:
+            extras["intel"] = clean
+            extras["intel_at"] = str(env.get("intel_date") or "")
     def _team_side(name: str) -> dict:
         """队侧槽位：积分榜命中则填 rank/points/played/win/draw/loss。"""
         side = {"name": name, "league": league}
@@ -884,8 +952,9 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
         "is_cold_start": bool(m.get("cold")),
         "extras": extras,
     }
-    # 卡片左下角一句话主推：由已有字段生成，取不到强信号则留空
-    out["main_pick"] = _one_line_pick(confidence, extras, top_dir)
+    # 卡片左下角一句话主推：有赛前情报时优先用新闻标题提炼的人话，否则回退模型信号
+    out["main_pick"] = _intel_pick(extras.get("intel") or []) \
+        or _one_line_pick(confidence, extras, top_dir)
     crest_h, crest_a = _crest_path(crest_idx or {}, date, home, away)
     if crest_h:
         out["home"]["logo"] = crest_h
@@ -978,7 +1047,9 @@ def _load_odds_index() -> dict[tuple, dict]:
 _ONESHOT_EXTRAS = ("mood", "weather", "injuries", "referee", "form_net",
                    # 红彩数据块同属「当日抓一次」的采集字段，隔天重导会空，一并继承
                    "hc_stats", "hc_style", "hc_dish", "hc_meeting",
-                   "hc_goal_dist", "hc_analyse", "hc_range", "hc_at")
+                   "hc_goal_dist", "hc_analyse", "hc_range", "hc_at",
+                   # 赛前情报（直播吧新闻）同为当日一次性采集，隔天重导需继承
+                   "intel", "intel_at")
 
 
 def _inherit_extras(path: Path, matches: list[dict]) -> None:
