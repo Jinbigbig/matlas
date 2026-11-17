@@ -460,11 +460,23 @@
    "home": {
     "name": "纽伦堡",
     "league": "德乙",
+    "rank": 2,
+    "points": 24,
+    "played": 11,
+    "win": 7,
+    "draw": 3,
+    "loss": 1,
     "logo": "assets/logo/teams/171.png"
    },
    "away": {
     "name": "汉诺威96",
-    "league": "德乙"
+    "league": "德乙",
+    "rank": 11,
+    "points": 12,
+    "played": 11,
+    "win": 3,
+    "draw": 3,
+    "loss": 5
    },
    "forecasts": [
     {
@@ -543,6 +555,116 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "柏林赫塔",
+      "pts": 31,
+      "p": 11
+     },
+     {
+      "rank": 2,
+      "name": "纽伦堡",
+      "pts": 24,
+      "p": 11
+     },
+     {
+      "rank": 3,
+      "name": "凯泽",
+      "pts": 21,
+      "p": 11
+     },
+     {
+      "rank": 4,
+      "name": "马格德堡",
+      "pts": 20,
+      "p": 11
+     },
+     {
+      "rank": 5,
+      "name": "沃夫斯堡",
+      "pts": 19,
+      "p": 11
+     },
+     {
+      "rank": 6,
+      "name": "比勒费",
+      "pts": 17,
+      "p": 11
+     },
+     {
+      "rank": 7,
+      "name": "海登海姆",
+      "pts": 16,
+      "p": 11
+     },
+     {
+      "rank": 8,
+      "name": "波鸿",
+      "pts": 14,
+      "p": 11
+     },
+     {
+      "rank": 9,
+      "name": "圣保利",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 10,
+      "name": "菲尔特",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 11,
+      "name": "汉诺威96",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 12,
+      "name": "科特布斯",
+      "pts": 11,
+      "p": 11
+     },
+     {
+      "rank": 13,
+      "name": "不伦瑞克",
+      "pts": 11,
+      "p": 11
+     },
+     {
+      "rank": 14,
+      "name": "奥斯纳",
+      "pts": 11,
+      "p": 11
+     },
+     {
+      "rank": 15,
+      "name": "德累斯顿",
+      "pts": 11,
+      "p": 11
+     },
+     {
+      "rank": 16,
+      "name": "卡斯鲁厄",
+      "pts": 11,
+      "p": 11
+     },
+     {
+      "rank": 17,
+      "name": "达姆施塔",
+      "pts": 9,
+      "p": 11
+     },
+     {
+      "rank": 18,
+      "name": "基尔",
+      "pts": 8,
+      "p": 11
+     }
+    ],
     "lam_home": 1.558,
     "lam_away": 1.544,
     "lam_total": 3.102,
@@ -731,11 +853,23 @@
    "kickoff": "",
    "home": {
     "name": "赫根",
-    "league": "瑞超"
+    "league": "瑞超",
+    "rank": 4,
+    "points": 49,
+    "played": 28,
+    "win": 13,
+    "draw": 10,
+    "loss": 5
    },
    "away": {
     "name": "米亚尔比",
     "league": "瑞超",
+    "rank": 12,
+    "points": 28,
+    "played": 28,
+    "win": 6,
+    "draw": 10,
+    "loss": 12,
     "logo": "assets/logo/teams/2240.png"
    },
    "forecasts": [
@@ -815,6 +949,104 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "哈马比",
+      "pts": 58,
+      "p": 28
+     },
+     {
+      "rank": 2,
+      "name": "天狼星",
+      "pts": 58,
+      "p": 28
+     },
+     {
+      "rank": 3,
+      "name": "佐加顿斯",
+      "pts": 52,
+      "p": 28
+     },
+     {
+      "rank": 4,
+      "name": "赫根",
+      "pts": 49,
+      "p": 28
+     },
+     {
+      "rank": 5,
+      "name": "埃夫斯堡",
+      "pts": 46,
+      "p": 28
+     },
+     {
+      "rank": 6,
+      "name": "韦斯特罗",
+      "pts": 45,
+      "p": 28
+     },
+     {
+      "rank": 7,
+      "name": "马尔默",
+      "pts": 41,
+      "p": 28
+     },
+     {
+      "rank": 8,
+      "name": "索尔纳",
+      "pts": 41,
+      "p": 28
+     },
+     {
+      "rank": 9,
+      "name": "盖斯",
+      "pts": 40,
+      "p": 28
+     },
+     {
+      "rank": 10,
+      "name": "哥德堡",
+      "pts": 39,
+      "p": 28
+     },
+     {
+      "rank": 11,
+      "name": "布鲁马波",
+      "pts": 35,
+      "p": 28
+     },
+     {
+      "rank": 12,
+      "name": "米亚尔比",
+      "pts": 28,
+      "p": 28
+     },
+     {
+      "rank": 13,
+      "name": "卡尔马",
+      "pts": 26,
+      "p": 28
+     },
+     {
+      "rank": 14,
+      "name": "代格福什",
+      "pts": 20,
+      "p": 28
+     },
+     {
+      "rank": 15,
+      "name": "厄格里特",
+      "pts": 20,
+      "p": 28
+     },
+     {
+      "rank": 16,
+      "name": "哈尔姆斯",
+      "pts": 20,
+      "p": 28
+     }
+    ],
     "lam_home": 2.009,
     "lam_away": 1.057,
     "lam_total": 3.066,
@@ -1035,11 +1267,23 @@
    "kickoff": "",
    "home": {
     "name": "阿尔克马",
-    "league": "荷甲"
+    "league": "荷甲",
+    "rank": 5,
+    "points": 23,
+    "played": 12,
+    "win": 7,
+    "draw": 2,
+    "loss": 3
    },
    "away": {
     "name": "威廉二世",
-    "league": "荷甲"
+    "league": "荷甲",
+    "rank": 18,
+    "points": 3,
+    "played": 12,
+    "win": 0,
+    "draw": 3,
+    "loss": 9
    },
    "forecasts": [
     {
@@ -1118,6 +1362,116 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "埃因霍温",
+      "pts": 26,
+      "p": 12
+     },
+     {
+      "rank": 2,
+      "name": "费耶诺德",
+      "pts": 25,
+      "p": 12
+     },
+     {
+      "rank": 3,
+      "name": "阿贾克斯",
+      "pts": 25,
+      "p": 12
+     },
+     {
+      "rank": 4,
+      "name": "特温特",
+      "pts": 24,
+      "p": 12
+     },
+     {
+      "rank": 5,
+      "name": "阿尔克马",
+      "pts": 23,
+      "p": 12
+     },
+     {
+      "rank": 6,
+      "name": "海伦芬",
+      "pts": 21,
+      "p": 12
+     },
+     {
+      "rank": 7,
+      "name": "福图纳",
+      "pts": 20,
+      "p": 12
+     },
+     {
+      "rank": 8,
+      "name": "前进之鹰",
+      "pts": 17,
+      "p": 12
+     },
+     {
+      "rank": 9,
+      "name": "格罗宁根",
+      "pts": 15,
+      "p": 12
+     },
+     {
+      "rank": 10,
+      "name": "坎布尔",
+      "pts": 15,
+      "p": 12
+     },
+     {
+      "rank": 11,
+      "name": "奈梅亨",
+      "pts": 14,
+      "p": 12
+     },
+     {
+      "rank": 12,
+      "name": "鹿斯巴达",
+      "pts": 12,
+      "p": 12
+     },
+     {
+      "rank": 13,
+      "name": "兹沃勒",
+      "pts": 12,
+      "p": 12
+     },
+     {
+      "rank": 14,
+      "name": "乌德勒支",
+      "pts": 12,
+      "p": 12
+     },
+     {
+      "rank": 15,
+      "name": "SBV精英",
+      "pts": 11,
+      "p": 12
+     },
+     {
+      "rank": 16,
+      "name": "特尔斯达",
+      "pts": 10,
+      "p": 12
+     },
+     {
+      "rank": 17,
+      "name": "海牙",
+      "pts": 9,
+      "p": 12
+     },
+     {
+      "rank": 18,
+      "name": "威廉二世",
+      "pts": 3,
+      "p": 12
+     }
+    ],
     "lam_home": 2.186,
     "lam_away": 0.996,
     "lam_total": 3.182,
@@ -1345,11 +1699,23 @@
    "home": {
     "name": "马斯特里",
     "league": "荷乙",
+    "rank": 7,
+    "points": 23,
+    "played": 15,
+    "win": 7,
+    "draw": 2,
+    "loss": 6,
     "logo": "assets/logo/teams/412.png"
    },
    "away": {
     "name": "阿尔梅勒",
     "league": "荷乙",
+    "rank": 2,
+    "points": 31,
+    "played": 15,
+    "win": 10,
+    "draw": 1,
+    "loss": 4,
     "logo": "assets/logo/teams/419.png"
    },
    "forecasts": [
@@ -1429,6 +1795,128 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "赫拉克勒",
+      "pts": 38,
+      "p": 15
+     },
+     {
+      "rank": 2,
+      "name": "阿尔梅勒",
+      "pts": 31,
+      "p": 15
+     },
+     {
+      "rank": 3,
+      "name": "芬洛",
+      "pts": 29,
+      "p": 15
+     },
+     {
+      "rank": 4,
+      "name": "布雷达",
+      "pts": 28,
+      "p": 15
+     },
+     {
+      "rank": 5,
+      "name": "罗达JC",
+      "pts": 28,
+      "p": 15
+     },
+     {
+      "rank": 6,
+      "name": "埃门",
+      "pts": 25,
+      "p": 15
+     },
+     {
+      "rank": 7,
+      "name": "马斯特里",
+      "pts": 23,
+      "p": 15
+     },
+     {
+      "rank": 8,
+      "name": "福伦丹",
+      "pts": 22,
+      "p": 15
+     },
+     {
+      "rank": 9,
+      "name": "瓦尔韦克",
+      "pts": 20,
+      "p": 15
+     },
+     {
+      "rank": 10,
+      "name": "登博思",
+      "pts": 19,
+      "p": 15
+     },
+     {
+      "rank": 11,
+      "name": "维迪斯",
+      "pts": 18,
+      "p": 14
+     },
+     {
+      "rank": 12,
+      "name": "阿尔青年",
+      "pts": 17,
+      "p": 14
+     },
+     {
+      "rank": 13,
+      "name": "埃因青年",
+      "pts": 17,
+      "p": 14
+     },
+     {
+      "rank": 14,
+      "name": "奥斯",
+      "pts": 17,
+      "p": 15
+     },
+     {
+      "rank": 15,
+      "name": "阿贾青年",
+      "pts": 16,
+      "p": 14
+     },
+     {
+      "rank": 16,
+      "name": "格拉夫",
+      "pts": 15,
+      "p": 14
+     },
+     {
+      "rank": 17,
+      "name": "埃因FC",
+      "pts": 14,
+      "p": 15
+     },
+     {
+      "rank": 18,
+      "name": "海尔蒙特",
+      "pts": 12,
+      "p": 15
+     },
+     {
+      "rank": 19,
+      "name": "多德勒支",
+      "pts": 12,
+      "p": 15
+     },
+     {
+      "rank": 20,
+      "name": "乌德青年",
+      "pts": 11,
+      "p": 14
+     }
+    ],
     "lam_home": 1.257,
     "lam_away": 1.683,
     "lam_total": 2.94,
@@ -1718,6 +2206,12 @@
       "p": 9
      },
      {
+      "rank": 1,
+      "name": "拜仁",
+      "pts": 21,
+      "p": 9
+     },
+     {
       "rank": 2,
       "name": "多特蒙德",
       "pts": 21,
@@ -1736,6 +2230,12 @@
       "p": 9
      },
      {
+      "rank": 4,
+      "name": "莱红牛",
+      "pts": 18,
+      "p": 9
+     },
+     {
       "rank": 5,
       "name": "勒沃库森",
       "pts": 16,
@@ -1748,8 +2248,20 @@
       "p": 9
      },
      {
+      "rank": 6,
+      "name": "不来梅",
+      "pts": 15,
+      "p": 9
+     },
+     {
       "rank": 7,
       "name": "埃弗斯堡",
+      "pts": 13,
+      "p": 9
+     },
+     {
+      "rank": 7,
+      "name": "埃沃斯堡",
       "pts": 13,
       "p": 9
      },
@@ -1816,6 +2328,12 @@
      {
       "rank": 18,
       "name": "门兴格拉德巴赫",
+      "pts": 4,
+      "p": 9
+     },
+     {
+      "rank": 18,
+      "name": "门兴",
       "pts": 4,
       "p": 9
      }
@@ -2113,6 +2631,12 @@
      {
       "rank": 6,
       "name": "弗罗西诺内",
+      "pts": 20,
+      "p": 11
+     },
+     {
+      "rank": 6,
+      "name": "弗洛西诺",
       "pts": 20,
       "p": 11
      },
@@ -2568,6 +3092,12 @@
       "p": 10
      },
      {
+      "rank": 1,
+      "name": "巴黎圣曼",
+      "pts": 23,
+      "p": 10
+     },
+     {
       "rank": 2,
       "name": "里尔",
       "pts": 21,
@@ -2640,6 +3170,12 @@
       "p": 10
      },
      {
+      "rank": 13,
+      "name": "斯特拉斯",
+      "pts": 10,
+      "p": 10
+     },
+     {
       "rank": 14,
       "name": "欧塞尔",
       "pts": 10,
@@ -2648,6 +3184,12 @@
      {
       "rank": 15,
       "name": "Le Mans",
+      "pts": 8,
+      "p": 10
+     },
+     {
+      "rank": 15,
+      "name": "勒芒",
       "pts": 8,
       "p": 10
      },
@@ -2837,11 +3379,23 @@
    "home": {
     "name": "西汉姆联",
     "league": "英冠",
+    "rank": 9,
+    "points": 23,
+    "played": 15,
+    "win": 6,
+    "draw": 5,
+    "loss": 4,
     "logo": "assets/logo/teams/48.png"
    },
    "away": {
     "name": "雷克斯",
     "league": "英冠",
+    "rank": 15,
+    "points": 18,
+    "played": 15,
+    "win": 4,
+    "draw": 6,
+    "loss": 5,
     "logo": "assets/logo/teams/1837.png"
    },
    "forecasts": [
@@ -2921,6 +3475,152 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "伯明翰",
+      "pts": 29,
+      "p": 15
+     },
+     {
+      "rank": 2,
+      "name": "米堡",
+      "pts": 29,
+      "p": 15
+     },
+     {
+      "rank": 3,
+      "name": "斯托克城",
+      "pts": 29,
+      "p": 15
+     },
+     {
+      "rank": 4,
+      "name": "伍尔弗",
+      "pts": 28,
+      "p": 15
+     },
+     {
+      "rank": 5,
+      "name": "西布罗姆",
+      "pts": 28,
+      "p": 15
+     },
+     {
+      "rank": 6,
+      "name": "斯旺西",
+      "pts": 26,
+      "p": 15
+     },
+     {
+      "rank": 7,
+      "name": "南安普敦",
+      "pts": 24,
+      "p": 15
+     },
+     {
+      "rank": 8,
+      "name": "女王巡游",
+      "pts": 24,
+      "p": 15
+     },
+     {
+      "rank": 9,
+      "name": "西汉姆联",
+      "pts": 23,
+      "p": 15
+     },
+     {
+      "rank": 10,
+      "name": "谢菲联",
+      "pts": 22,
+      "p": 15
+     },
+     {
+      "rank": 11,
+      "name": "朴次茅斯",
+      "pts": 22,
+      "p": 15
+     },
+     {
+      "rank": 12,
+      "name": "诺维奇",
+      "pts": 21,
+      "p": 15
+     },
+     {
+      "rank": 13,
+      "name": "布莱克本",
+      "pts": 21,
+      "p": 15
+     },
+     {
+      "rank": 14,
+      "name": "加的夫城",
+      "pts": 18,
+      "p": 15
+     },
+     {
+      "rank": 15,
+      "name": "雷克斯",
+      "pts": 18,
+      "p": 15
+     },
+     {
+      "rank": 16,
+      "name": "米尔沃尔",
+      "pts": 18,
+      "p": 15
+     },
+     {
+      "rank": 17,
+      "name": "布城",
+      "pts": 18,
+      "p": 15
+     },
+     {
+      "rank": 18,
+      "name": "博尔顿",
+      "pts": 17,
+      "p": 15
+     },
+     {
+      "rank": 19,
+      "name": "查尔顿",
+      "pts": 17,
+      "p": 15
+     },
+     {
+      "rank": 20,
+      "name": "沃特福德",
+      "pts": 15,
+      "p": 15
+     },
+     {
+      "rank": 21,
+      "name": "林肯城",
+      "pts": 15,
+      "p": 15
+     },
+     {
+      "rank": 22,
+      "name": "伯恩利",
+      "pts": 10,
+      "p": 15
+     },
+     {
+      "rank": 23,
+      "name": "德比郡",
+      "pts": 10,
+      "p": 15
+     },
+     {
+      "rank": 24,
+      "name": "普雷斯顿",
+      "pts": 8,
+      "p": 15
+     }
+    ],
     "lam_home": 2.02,
     "lam_away": 1.154,
     "lam_total": 3.174,
@@ -3160,6 +3860,12 @@
    "away": {
     "name": "巴伦西亚",
     "league": "西甲",
+    "rank": 19,
+    "points": 9,
+    "played": 12,
+    "win": 2,
+    "draw": 3,
+    "loss": 7,
     "logo": "assets/logo/teams/532.png"
    },
    "forecasts": [
@@ -3247,8 +3953,20 @@
       "p": 12
      },
      {
+      "rank": 1,
+      "name": "巴萨",
+      "pts": 33,
+      "p": 12
+     },
+     {
       "rank": 2,
       "name": "皇家马德里",
+      "pts": 30,
+      "p": 12
+     },
+     {
+      "rank": 2,
+      "name": "皇马",
       "pts": 30,
       "p": 12
      },
@@ -3259,8 +3977,20 @@
       "p": 12
      },
      {
+      "rank": 3,
+      "name": "马竞",
+      "pts": 28,
+      "p": 12
+     },
+     {
       "rank": 4,
       "name": "皇家贝蒂斯",
+      "pts": 26,
+      "p": 12
+     },
+     {
+      "rank": 4,
+      "name": "贝蒂斯",
       "pts": 26,
       "p": 12
      },
@@ -3283,8 +4013,20 @@
       "p": 11
      },
      {
+      "rank": 7,
+      "name": "毕尔巴鄂",
+      "pts": 16,
+      "p": 11
+     },
+     {
       "rank": 8,
       "name": "比利亚雷亚尔",
+      "pts": 15,
+      "p": 12
+     },
+     {
+      "rank": 8,
+      "name": "比利亚雷",
       "pts": 15,
       "p": 12
      },
@@ -3295,8 +4037,20 @@
       "p": 12
      },
      {
+      "rank": 9,
+      "name": "拉科",
+      "pts": 15,
+      "p": 12
+     },
+     {
       "rank": 10,
       "name": "桑坦德竞技",
+      "pts": 14,
+      "p": 12
+     },
+     {
+      "rank": 10,
+      "name": "桑坦德",
       "pts": 14,
       "p": 12
      },
@@ -3351,6 +4105,12 @@
      {
       "rank": 19,
       "name": "瓦伦西亚",
+      "pts": 9,
+      "p": 12
+     },
+     {
+      "rank": 19,
+      "name": "巴伦西亚",
       "pts": 9,
       "p": 12
      },

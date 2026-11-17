@@ -10,11 +10,23 @@
    "kickoff": "",
    "home": {
     "name": "中国亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 1,
+    "points": 5,
+    "played": 3,
+    "win": 1,
+    "draw": 2,
+    "loss": 0
    },
    "away": {
     "name": "泰国亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 2,
+    "points": 6,
+    "played": 3,
+    "win": 2,
+    "draw": 0,
+    "loss": 1
    },
    "forecasts": [
     {
@@ -93,6 +105,32 @@
    "confidence": "medium",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "中国亚",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "朝鲜亚",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "伊朗亚",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "阿联酋亚",
+      "pts": 2,
+      "p": 3
+     }
+    ],
     "lam_home": 1.195,
     "lam_away": 0.5,
     "lam_total": 1.695,
@@ -1818,11 +1856,23 @@
    "kickoff": "",
    "home": {
     "name": "日本亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 1,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0
    },
    "away": {
     "name": "朝鲜亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 2,
+    "points": 4,
+    "played": 3,
+    "win": 1,
+    "draw": 1,
+    "loss": 1
    },
    "forecasts": [
     {
@@ -1901,6 +1951,32 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "日本亚",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "泰国亚",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "吉尔吉亚",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "中国港亚",
+      "pts": 0,
+      "p": 3
+     }
+    ],
     "lam_home": 3.15,
     "lam_away": 0.961,
     "lam_total": 4.11,
@@ -2567,11 +2643,23 @@
    "home": {
     "name": "赫拉克勒",
     "league": "荷乙",
+    "rank": 1,
+    "points": 38,
+    "played": 15,
+    "win": 12,
+    "draw": 2,
+    "loss": 1,
     "logo": "assets/logo/teams/206.png"
    },
    "away": {
     "name": "维迪斯",
-    "league": "荷乙"
+    "league": "荷乙",
+    "rank": 11,
+    "points": 18,
+    "played": 14,
+    "win": 5,
+    "draw": 3,
+    "loss": 6
    },
    "forecasts": [
     {
@@ -2650,6 +2738,128 @@
    "confidence": "high",
    "is_cold_start": true,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "赫拉克勒",
+      "pts": 38,
+      "p": 15
+     },
+     {
+      "rank": 2,
+      "name": "阿尔梅勒",
+      "pts": 31,
+      "p": 15
+     },
+     {
+      "rank": 3,
+      "name": "芬洛",
+      "pts": 29,
+      "p": 15
+     },
+     {
+      "rank": 4,
+      "name": "布雷达",
+      "pts": 28,
+      "p": 15
+     },
+     {
+      "rank": 5,
+      "name": "罗达JC",
+      "pts": 28,
+      "p": 15
+     },
+     {
+      "rank": 6,
+      "name": "埃门",
+      "pts": 25,
+      "p": 15
+     },
+     {
+      "rank": 7,
+      "name": "马斯特里",
+      "pts": 23,
+      "p": 15
+     },
+     {
+      "rank": 8,
+      "name": "福伦丹",
+      "pts": 22,
+      "p": 15
+     },
+     {
+      "rank": 9,
+      "name": "瓦尔韦克",
+      "pts": 20,
+      "p": 15
+     },
+     {
+      "rank": 10,
+      "name": "登博思",
+      "pts": 19,
+      "p": 15
+     },
+     {
+      "rank": 11,
+      "name": "维迪斯",
+      "pts": 18,
+      "p": 14
+     },
+     {
+      "rank": 12,
+      "name": "阿尔青年",
+      "pts": 17,
+      "p": 14
+     },
+     {
+      "rank": 13,
+      "name": "埃因青年",
+      "pts": 17,
+      "p": 14
+     },
+     {
+      "rank": 14,
+      "name": "奥斯",
+      "pts": 17,
+      "p": 15
+     },
+     {
+      "rank": 15,
+      "name": "阿贾青年",
+      "pts": 16,
+      "p": 14
+     },
+     {
+      "rank": 16,
+      "name": "格拉夫",
+      "pts": 15,
+      "p": 14
+     },
+     {
+      "rank": 17,
+      "name": "埃因FC",
+      "pts": 14,
+      "p": 15
+     },
+     {
+      "rank": 18,
+      "name": "海尔蒙特",
+      "pts": 12,
+      "p": 15
+     },
+     {
+      "rank": 19,
+      "name": "多德勒支",
+      "pts": 12,
+      "p": 15
+     },
+     {
+      "rank": 20,
+      "name": "乌德青年",
+      "pts": 11,
+      "p": 14
+     }
+    ],
     "lam_home": 1.915,
     "lam_away": 0.799,
     "lam_total": 2.714,
@@ -3972,11 +4182,23 @@
    "home": {
     "name": "罗达JC",
     "league": "荷乙",
+    "rank": 5,
+    "points": 28,
+    "played": 15,
+    "win": 8,
+    "draw": 4,
+    "loss": 3,
     "logo": "assets/logo/teams/414.png"
    },
    "away": {
     "name": "瓦尔韦克",
     "league": "荷乙",
+    "rank": 9,
+    "points": 20,
+    "played": 15,
+    "win": 4,
+    "draw": 8,
+    "loss": 3,
     "logo": "assets/logo/teams/417.png"
    },
    "forecasts": [
@@ -4056,6 +4278,128 @@
    "confidence": "low",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "赫拉克勒",
+      "pts": 38,
+      "p": 15
+     },
+     {
+      "rank": 2,
+      "name": "阿尔梅勒",
+      "pts": 31,
+      "p": 15
+     },
+     {
+      "rank": 3,
+      "name": "芬洛",
+      "pts": 29,
+      "p": 15
+     },
+     {
+      "rank": 4,
+      "name": "布雷达",
+      "pts": 28,
+      "p": 15
+     },
+     {
+      "rank": 5,
+      "name": "罗达JC",
+      "pts": 28,
+      "p": 15
+     },
+     {
+      "rank": 6,
+      "name": "埃门",
+      "pts": 25,
+      "p": 15
+     },
+     {
+      "rank": 7,
+      "name": "马斯特里",
+      "pts": 23,
+      "p": 15
+     },
+     {
+      "rank": 8,
+      "name": "福伦丹",
+      "pts": 22,
+      "p": 15
+     },
+     {
+      "rank": 9,
+      "name": "瓦尔韦克",
+      "pts": 20,
+      "p": 15
+     },
+     {
+      "rank": 10,
+      "name": "登博思",
+      "pts": 19,
+      "p": 15
+     },
+     {
+      "rank": 11,
+      "name": "维迪斯",
+      "pts": 18,
+      "p": 14
+     },
+     {
+      "rank": 12,
+      "name": "阿尔青年",
+      "pts": 17,
+      "p": 14
+     },
+     {
+      "rank": 13,
+      "name": "埃因青年",
+      "pts": 17,
+      "p": 14
+     },
+     {
+      "rank": 14,
+      "name": "奥斯",
+      "pts": 17,
+      "p": 15
+     },
+     {
+      "rank": 15,
+      "name": "阿贾青年",
+      "pts": 16,
+      "p": 14
+     },
+     {
+      "rank": 16,
+      "name": "格拉夫",
+      "pts": 15,
+      "p": 14
+     },
+     {
+      "rank": 17,
+      "name": "埃因FC",
+      "pts": 14,
+      "p": 15
+     },
+     {
+      "rank": 18,
+      "name": "海尔蒙特",
+      "pts": 12,
+      "p": 15
+     },
+     {
+      "rank": 19,
+      "name": "多德勒支",
+      "pts": 12,
+      "p": 15
+     },
+     {
+      "rank": 20,
+      "name": "乌德青年",
+      "pts": 11,
+      "p": 14
+     }
+    ],
     "lam_home": 1.623,
     "lam_away": 1.449,
     "lam_total": 3.072,
@@ -5372,6 +5716,104 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "澳大利20",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "沙特20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "伊朗20",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "韩国20",
+      "pts": 7,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "中国20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "伊拉克20",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "乌兹别20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "日本20",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "卡塔尔20",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "约旦20",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Indonesia U20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Syria U20",
+      "pts": 2,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Kyrgyz Republic U20",
+      "pts": 0,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "朝鲜20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Yemen U20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "泰国20",
+      "pts": 1,
+      "p": 3
+     }
+    ],
     "lam_home": 2.115,
     "lam_away": 1.071,
     "lam_total": 3.186,
@@ -5768,6 +6210,104 @@
    "confidence": "medium",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "澳大利20",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "沙特20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "伊朗20",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "韩国20",
+      "pts": 7,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "中国20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "伊拉克20",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "乌兹别20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "日本20",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "卡塔尔20",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "约旦20",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Indonesia U20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Syria U20",
+      "pts": 2,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Kyrgyz Republic U20",
+      "pts": 0,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "朝鲜20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Yemen U20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "泰国20",
+      "pts": 1,
+      "p": 3
+     }
+    ],
     "lam_home": 2.013,
     "lam_away": 1.347,
     "lam_total": 3.36,

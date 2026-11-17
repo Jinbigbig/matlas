@@ -10,11 +10,23 @@
    "kickoff": "",
    "home": {
     "name": "朝鲜女",
-    "league": "亚运女足"
+    "league": "亚运女足",
+    "rank": 1,
+    "points": 7,
+    "played": 3,
+    "win": 2,
+    "draw": 1,
+    "loss": 0
    },
    "away": {
     "name": "中国女",
-    "league": "亚运女足"
+    "league": "亚运女足",
+    "rank": 1,
+    "points": 7,
+    "played": 3,
+    "win": 2,
+    "draw": 1,
+    "loss": 0
    },
    "forecasts": [
     {
@@ -93,6 +105,32 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "朝鲜女",
+      "pts": 7,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "韩国女",
+      "pts": 7,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Myanmar",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Bangladesh",
+      "pts": 1,
+      "p": 3
+     }
+    ],
     "lam_home": 2.279,
     "lam_away": 1.125,
     "lam_total": 3.404,
@@ -349,6 +387,104 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "澳大利20",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "沙特20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "伊朗20",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "韩国20",
+      "pts": 7,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "中国20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "伊拉克20",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "乌兹别20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "日本20",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "卡塔尔20",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "约旦20",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Indonesia U20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Syria U20",
+      "pts": 2,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Kyrgyz Republic U20",
+      "pts": 0,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "朝鲜20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Yemen U20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "泰国20",
+      "pts": 1,
+      "p": 3
+     }
+    ],
     "lam_home": 0.727,
     "lam_away": 2.299,
     "lam_total": 3.026,
@@ -2143,11 +2279,23 @@
    "kickoff": "",
    "home": {
     "name": "日本女",
-    "league": "亚运女足"
+    "league": "亚运女足",
+    "rank": 1,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0
    },
    "away": {
     "name": "韩国女",
-    "league": "亚运女足"
+    "league": "亚运女足",
+    "rank": 2,
+    "points": 7,
+    "played": 3,
+    "win": 2,
+    "draw": 1,
+    "loss": 0
    },
    "forecasts": [
     {
@@ -2226,6 +2374,32 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "日本女",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "中国台女",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "越南女",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "泰国女",
+      "pts": 1,
+      "p": 3
+     }
+    ],
     "lam_home": 2.858,
     "lam_away": 1.342,
     "lam_total": 4.2,
@@ -5917,6 +6091,104 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "澳大利20",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "沙特20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "伊朗20",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "韩国20",
+      "pts": 7,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "中国20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "伊拉克20",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "乌兹别20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "日本20",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "卡塔尔20",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "约旦20",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Indonesia U20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Syria U20",
+      "pts": 2,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Kyrgyz Republic U20",
+      "pts": 0,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "朝鲜20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Yemen U20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "泰国20",
+      "pts": 1,
+      "p": 3
+     }
+    ],
     "lam_home": 2.715,
     "lam_away": 1.276,
     "lam_total": 3.991,

@@ -10,11 +10,23 @@
    "kickoff": "",
    "home": {
     "name": "上海申花",
-    "league": "亚冠乙"
+    "league": "亚冠乙",
+    "rank": 3,
+    "points": 4,
+    "played": 4,
+    "win": 1,
+    "draw": 1,
+    "loss": 2
    },
    "away": {
     "name": "町田泽维",
     "league": "亚冠乙",
+    "rank": 1,
+    "points": 12,
+    "played": 4,
+    "win": 4,
+    "draw": 0,
+    "loss": 0,
     "logo": "assets/logo/teams/303.png"
    },
    "forecasts": [
@@ -112,6 +124,32 @@
    "confidence": "medium",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "町田泽维",
+      "pts": 12,
+      "p": 4
+     },
+     {
+      "rank": 2,
+      "name": "Svay Rieng",
+      "pts": 7,
+      "p": 4
+     },
+     {
+      "rank": 3,
+      "name": "上海申花",
+      "pts": 4,
+      "p": 4
+     },
+     {
+      "rank": 4,
+      "name": "淡宾尼士",
+      "pts": 0,
+      "p": 4
+     }
+    ],
     "lam_home": 1.149,
     "lam_away": 1.675,
     "lam_total": 2.823,
@@ -411,7 +449,13 @@
    },
    "away": {
     "name": "赫尔辛基",
-    "league": "芬超"
+    "league": "芬超",
+    "rank": 3,
+    "points": 37,
+    "played": 22,
+    "win": 11,
+    "draw": 4,
+    "loss": 7
    },
    "forecasts": [
     {
@@ -508,6 +552,80 @@
    "confidence": "low",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "库奥皮奥",
+      "pts": 43,
+      "p": 22
+     },
+     {
+      "rank": 2,
+      "name": "国际图尔",
+      "pts": 42,
+      "p": 22
+     },
+     {
+      "rank": 3,
+      "name": "赫尔辛基",
+      "pts": 37,
+      "p": 22
+     },
+     {
+      "rank": 4,
+      "name": "赫尔火花",
+      "pts": 36,
+      "p": 22
+     },
+     {
+      "rank": 5,
+      "name": "AC奥卢",
+      "pts": 34,
+      "p": 22
+     },
+     {
+      "rank": 6,
+      "name": "瓦萨",
+      "pts": 33,
+      "p": 22
+     },
+     {
+      "rank": 7,
+      "name": "拉赫蒂",
+      "pts": 32,
+      "p": 22
+     },
+     {
+      "rank": 8,
+      "name": "TPS图尔",
+      "pts": 31,
+      "p": 22
+     },
+     {
+      "rank": 9,
+      "name": "坦山猫",
+      "pts": 25,
+      "p": 22
+     },
+     {
+      "rank": 10,
+      "name": "塞伊奈",
+      "pts": 19,
+      "p": 22
+     },
+     {
+      "rank": 11,
+      "name": "雅罗",
+      "pts": 15,
+      "p": 22
+     },
+     {
+      "rank": 12,
+      "name": "玛丽港",
+      "pts": 14,
+      "p": 22
+     }
+    ],
     "lam_home": 1.471,
     "lam_away": 1.228,
     "lam_total": 2.699,
@@ -649,7 +767,13 @@
    "kickoff": "",
    "home": {
     "name": "弗洛西诺",
-    "league": "意甲"
+    "league": "意甲",
+    "rank": 6,
+    "points": 20,
+    "played": 11,
+    "win": 6,
+    "draw": 2,
+    "loss": 3
    },
    "away": {
     "name": "莱切",
@@ -791,6 +915,12 @@
      {
       "rank": 6,
       "name": "弗罗西诺内",
+      "pts": 20,
+      "p": 11
+     },
+     {
+      "rank": 6,
+      "name": "弗洛西诺",
       "pts": 20,
       "p": 11
      },
@@ -1069,11 +1199,23 @@
    "kickoff": "",
    "home": {
     "name": "哈马比",
-    "league": "瑞超"
+    "league": "瑞超",
+    "rank": 1,
+    "points": 58,
+    "played": 28,
+    "win": 18,
+    "draw": 4,
+    "loss": 6
    },
    "away": {
     "name": "天狼星",
-    "league": "瑞超"
+    "league": "瑞超",
+    "rank": 2,
+    "points": 58,
+    "played": 28,
+    "win": 18,
+    "draw": 4,
+    "loss": 6
    },
    "forecasts": [
     {
@@ -1170,6 +1312,104 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "哈马比",
+      "pts": 58,
+      "p": 28
+     },
+     {
+      "rank": 2,
+      "name": "天狼星",
+      "pts": 58,
+      "p": 28
+     },
+     {
+      "rank": 3,
+      "name": "佐加顿斯",
+      "pts": 52,
+      "p": 28
+     },
+     {
+      "rank": 4,
+      "name": "赫根",
+      "pts": 49,
+      "p": 28
+     },
+     {
+      "rank": 5,
+      "name": "埃夫斯堡",
+      "pts": 46,
+      "p": 28
+     },
+     {
+      "rank": 6,
+      "name": "韦斯特罗",
+      "pts": 45,
+      "p": 28
+     },
+     {
+      "rank": 7,
+      "name": "马尔默",
+      "pts": 41,
+      "p": 28
+     },
+     {
+      "rank": 8,
+      "name": "索尔纳",
+      "pts": 41,
+      "p": 28
+     },
+     {
+      "rank": 9,
+      "name": "盖斯",
+      "pts": 40,
+      "p": 28
+     },
+     {
+      "rank": 10,
+      "name": "哥德堡",
+      "pts": 39,
+      "p": 28
+     },
+     {
+      "rank": 11,
+      "name": "布鲁马波",
+      "pts": 35,
+      "p": 28
+     },
+     {
+      "rank": 12,
+      "name": "米亚尔比",
+      "pts": 28,
+      "p": 28
+     },
+     {
+      "rank": 13,
+      "name": "卡尔马",
+      "pts": 26,
+      "p": 28
+     },
+     {
+      "rank": 14,
+      "name": "代格福什",
+      "pts": 20,
+      "p": 28
+     },
+     {
+      "rank": 15,
+      "name": "厄格里特",
+      "pts": 20,
+      "p": 28
+     },
+     {
+      "rank": 16,
+      "name": "哈尔姆斯",
+      "pts": 20,
+      "p": 28
+     }
+    ],
     "lam_home": 2.254,
     "lam_away": 1.225,
     "lam_total": 3.479,
@@ -1890,6 +2130,12 @@
      {
       "rank": 6,
       "name": "弗罗西诺内",
+      "pts": 20,
+      "p": 11
+     },
+     {
+      "rank": 6,
+      "name": "弗洛西诺",
       "pts": 20,
       "p": 11
      },

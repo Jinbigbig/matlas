@@ -10,11 +10,23 @@
    "kickoff": "",
    "home": {
     "name": "中国亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 1,
+    "points": 5,
+    "played": 3,
+    "win": 1,
+    "draw": 2,
+    "loss": 0
    },
    "away": {
     "name": "阿联酋亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 4,
+    "points": 2,
+    "played": 3,
+    "win": 0,
+    "draw": 2,
+    "loss": 1
    },
    "forecasts": [
     {
@@ -93,6 +105,32 @@
    "confidence": "low",
    "is_cold_start": true,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "中国亚",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "朝鲜亚",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "伊朗亚",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "阿联酋亚",
+      "pts": 2,
+      "p": 3
+     }
+    ],
     "lam_home": 1.411,
     "lam_away": 0.936,
     "lam_total": 2.347,
@@ -404,11 +442,23 @@
    "kickoff": "",
    "home": {
     "name": "日本亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 1,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0
    },
    "away": {
     "name": "泰国亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 2,
+    "points": 6,
+    "played": 3,
+    "win": 2,
+    "draw": 0,
+    "loss": 1
    },
    "forecasts": [
     {
@@ -487,6 +537,32 @@
    "confidence": "high",
    "is_cold_start": true,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "日本亚",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "泰国亚",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "吉尔吉亚",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "中国港亚",
+      "pts": 0,
+      "p": 3
+     }
+    ],
     "lam_home": 2.37,
     "lam_away": 0.219,
     "lam_total": 2.589,

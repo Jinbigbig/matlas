@@ -10,11 +10,23 @@
    "kickoff": "",
    "home": {
     "name": "韩国亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 1,
+    "points": 6,
+    "played": 2,
+    "win": 2,
+    "draw": 0,
+    "loss": 0
    },
    "away": {
     "name": "中国亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 1,
+    "points": 5,
+    "played": 3,
+    "win": 1,
+    "draw": 2,
+    "loss": 0
    },
    "forecasts": [
     {
@@ -404,11 +416,23 @@
    "kickoff": "",
    "home": {
     "name": "乌兹别亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 1,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0
    },
    "away": {
     "name": "日本亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 1,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0
    },
    "forecasts": [
     {
@@ -487,6 +511,32 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "乌兹别亚",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "越南亚",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Philippines U23",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "科威特23",
+      "pts": 1,
+      "p": 3
+     }
+    ],
     "lam_home": 1.542,
     "lam_away": 2.658,
     "lam_total": 4.2,

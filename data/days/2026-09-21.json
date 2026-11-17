@@ -10,11 +10,23 @@
    "kickoff": "",
    "home": {
     "name": "中国女",
-    "league": "亚运女足"
+    "league": "亚运女足",
+    "rank": 1,
+    "points": 7,
+    "played": 3,
+    "win": 2,
+    "draw": 1,
+    "loss": 0
    },
    "away": {
     "name": "菲律宾女",
-    "league": "亚运女足"
+    "league": "亚运女足",
+    "rank": 3,
+    "points": 4,
+    "played": 3,
+    "win": 1,
+    "draw": 1,
+    "loss": 1
    },
    "forecasts": [
     {
@@ -93,6 +105,32 @@
    "confidence": "high",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "中国女",
+      "pts": 7,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "乌兹别女",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "菲律宾女",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "中国港女",
+      "pts": 0,
+      "p": 3
+     }
+    ],
     "lam_home": 2.496,
     "lam_away": 0.258,
     "lam_total": 2.754,

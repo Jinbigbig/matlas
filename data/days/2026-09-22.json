@@ -10,7 +10,13 @@
    "kickoff": "",
    "home": {
     "name": "韩国亚",
-    "league": "亚运男足"
+    "league": "亚运男足",
+    "rank": 1,
+    "points": 6,
+    "played": 2,
+    "win": 2,
+    "draw": 0,
+    "loss": 0
    },
    "away": {
     "name": "沙特阿拉伯",
@@ -257,11 +263,23 @@
    "home": {
     "name": "米尔顿",
     "league": "英锦标赛",
+    "rank": 1,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0,
     "logo": "assets/logo/teams/1348.png"
    },
    "away": {
     "name": "克劳利",
     "league": "英锦标赛",
+    "rank": 3,
+    "points": 3,
+    "played": 3,
+    "win": 1,
+    "draw": 0,
+    "loss": 2,
     "logo": "assets/logo/teams/1362.png"
    },
    "forecasts": [
@@ -341,6 +359,32 @@
    "confidence": "high",
    "is_cold_start": true,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "米尔顿",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "Brentford",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "克劳利",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "布罗姆利",
+      "pts": 0,
+      "p": 3
+     }
+    ],
     "lam_home": 1.937,
     "lam_away": 0.717,
     "lam_total": 2.654,
@@ -486,11 +530,23 @@
    "home": {
     "name": "诺茨郡",
     "league": "英锦标赛",
+    "rank": 1,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0,
     "logo": "assets/logo/teams/1376.png"
    },
    "away": {
     "name": "格里姆",
     "league": "英锦标赛",
+    "rank": 4,
+    "points": 1,
+    "played": 3,
+    "win": 0,
+    "draw": 1,
+    "loss": 2,
     "logo": "assets/logo/teams/1365.png"
    },
    "forecasts": [
@@ -570,6 +626,32 @@
    "confidence": "low",
    "is_cold_start": true,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "诺茨郡",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "Nottingham",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "伯顿",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "格里姆",
+      "pts": 1,
+      "p": 3
+     }
+    ],
     "lam_home": 1.398,
     "lam_away": 1.103,
     "lam_total": 2.501,
@@ -733,11 +815,23 @@
    "home": {
     "name": "维冈",
     "league": "英锦标赛",
+    "rank": 1,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0,
     "logo": "assets/logo/teams/61.png"
    },
    "away": {
     "name": "布莱克浦",
     "league": "英锦标赛",
+    "rank": 2,
+    "points": 5,
+    "played": 3,
+    "win": 1,
+    "draw": 1,
+    "loss": 1,
     "logo": "assets/logo/teams/1356.png"
    },
    "forecasts": [
@@ -817,6 +911,32 @@
    "confidence": "low",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "维冈",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "布莱克浦",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "克鲁",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Aston Villa",
+      "pts": 0,
+      "p": 3
+     }
+    ],
     "lam_home": 0.784,
     "lam_away": 0.939,
     "lam_total": 1.723,

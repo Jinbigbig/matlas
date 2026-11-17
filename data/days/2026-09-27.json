@@ -574,6 +574,104 @@
    "confidence": "low",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "澳大利20",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "沙特20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "伊朗20",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 1,
+      "name": "韩国20",
+      "pts": 7,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "中国20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "伊拉克20",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "乌兹别20",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "日本20",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "卡塔尔20",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "约旦20",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Indonesia U20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "Syria U20",
+      "pts": 2,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Kyrgyz Republic U20",
+      "pts": 0,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "朝鲜20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "Yemen U20",
+      "pts": 1,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "泰国20",
+      "pts": 1,
+      "p": 3
+     }
+    ],
     "lam_home": 1.334,
     "lam_away": 1.738,
     "lam_total": 3.072,
@@ -906,11 +1004,23 @@
    "home": {
     "name": "格拉夫",
     "league": "荷乙",
+    "rank": 16,
+    "points": 15,
+    "played": 14,
+    "win": 4,
+    "draw": 3,
+    "loss": 7,
     "logo": "assets/logo/teams/199.png"
    },
    "away": {
     "name": "登博思",
     "league": "荷乙",
+    "rank": 10,
+    "points": 19,
+    "played": 15,
+    "win": 5,
+    "draw": 4,
+    "loss": 6,
     "logo": "assets/logo/teams/421.png"
    },
    "forecasts": [
@@ -990,6 +1100,128 @@
    "confidence": "low",
    "is_cold_start": false,
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "赫拉克勒",
+      "pts": 38,
+      "p": 15
+     },
+     {
+      "rank": 2,
+      "name": "阿尔梅勒",
+      "pts": 31,
+      "p": 15
+     },
+     {
+      "rank": 3,
+      "name": "芬洛",
+      "pts": 29,
+      "p": 15
+     },
+     {
+      "rank": 4,
+      "name": "布雷达",
+      "pts": 28,
+      "p": 15
+     },
+     {
+      "rank": 5,
+      "name": "罗达JC",
+      "pts": 28,
+      "p": 15
+     },
+     {
+      "rank": 6,
+      "name": "埃门",
+      "pts": 25,
+      "p": 15
+     },
+     {
+      "rank": 7,
+      "name": "马斯特里",
+      "pts": 23,
+      "p": 15
+     },
+     {
+      "rank": 8,
+      "name": "福伦丹",
+      "pts": 22,
+      "p": 15
+     },
+     {
+      "rank": 9,
+      "name": "瓦尔韦克",
+      "pts": 20,
+      "p": 15
+     },
+     {
+      "rank": 10,
+      "name": "登博思",
+      "pts": 19,
+      "p": 15
+     },
+     {
+      "rank": 11,
+      "name": "维迪斯",
+      "pts": 18,
+      "p": 14
+     },
+     {
+      "rank": 12,
+      "name": "阿尔青年",
+      "pts": 17,
+      "p": 14
+     },
+     {
+      "rank": 13,
+      "name": "埃因青年",
+      "pts": 17,
+      "p": 14
+     },
+     {
+      "rank": 14,
+      "name": "奥斯",
+      "pts": 17,
+      "p": 15
+     },
+     {
+      "rank": 15,
+      "name": "阿贾青年",
+      "pts": 16,
+      "p": 14
+     },
+     {
+      "rank": 16,
+      "name": "格拉夫",
+      "pts": 15,
+      "p": 14
+     },
+     {
+      "rank": 17,
+      "name": "埃因FC",
+      "pts": 14,
+      "p": 15
+     },
+     {
+      "rank": 18,
+      "name": "海尔蒙特",
+      "pts": 12,
+      "p": 15
+     },
+     {
+      "rank": 19,
+      "name": "多德勒支",
+      "pts": 12,
+      "p": 15
+     },
+     {
+      "rank": 20,
+      "name": "乌德青年",
+      "pts": 11,
+      "p": 14
+     }
+    ],
     "lam_home": 1.862,
     "lam_away": 1.721,
     "lam_total": 3.584,
