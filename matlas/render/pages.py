@@ -815,8 +815,8 @@ def _intel_panel(m: Match) -> str:
     rows = [
         ["赛事", m.competition or "—", "编号", m.code or "—"],
         ["比赛日", m.day, "开球时间", m.kickoff or "待定"],
-        ["AI 置信度", zh_conf, "冷启动", "是（不进精选）" if m.is_cold_start else "否"],
-        ["结论模型", "量化推演引擎", "数据样本", f"主 {dn.get('home', '—')} 场 / 客 {dn.get('away', '—')} 场"],
+        ["AI 置信度", zh_conf, "结论模型", "量化推演引擎"],
+        ["数据样本", f"主 {dn.get('home', '—')} 场 / 客 {dn.get('away', '—')} 场", "", ""],
     ]
     # 半场胜平负概率（2026-10-22 起引擎输出 htft_half）。
     # table 对以 '<' 开头的单元格按原文输出（内部值均为受控数字/固定枚举）。
@@ -1432,7 +1432,6 @@ def render_match(cfg: Config, m: Match) -> str:
 
     head_bits = [m.round or "", m.kickoff, m.venue]
     meta = " · ".join([b for b in head_bits if b])
-    cold = ' <span class="mini">样本不足 · 不进精选</span>' if m.is_cold_start else ""
     sample = ' <span class="mini">示例数据</span>' if m.extras.get("sample") else ""
 
     teams_row = f'<h1 class="sr-only">{C.esc(m.home.name)} vs {C.esc(m.away.name)}</h1>' + _mc_teams(m, pre="../")
@@ -1443,7 +1442,7 @@ def render_match(cfg: Config, m: Match) -> str:
         header,
         '<div class="mc-body">',
         teams_row,
-        f'<p class="sub" style="text-align:center;margin:0">{C.esc(meta)}{cold}{sample}</p>',
+        f'<p class="sub" style="text-align:center;margin:0">{C.esc(meta)}{sample}</p>',
         "</div>",
         "</div>",
         # 顺序按「读者决策链」排：结论 → 基本面 → 人员 → 市场与推演 → 环境。

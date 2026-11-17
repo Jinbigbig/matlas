@@ -483,25 +483,42 @@ def _mood_clean(raw: str, teams: tuple[str, ...] = ()) -> str:
 
 
 def _clean_intel(arts: list) -> list:
-    """整理赛前情报：只留有正文的条目，按关键动态词排序，控制数量。"""
+    """整理赛前情报：按关键影响因素分层排序，只留有正文的条目。"""
     if not arts:
         return []
-    PRIORITY = ("告别", "伤", "缺", "停赛", "首发", "主帅", "离队", "退出",
-                "执教", "出战", "存疑", "恢复", "回归", "入选", "征召", "复仇",
-                "轮换", "反弹")
+    # 影响本场的关键度分层：伤停 > 首发/轮换 > 告别战/换帅 > 战意/走势 > 历史交锋
+    TIERS = (
+        ("伤", "缺阵", "停赛", "存疑", "伤退", "受伤", "病", "缺席", "无缘"),
+        ("首发", "轮换", "出战", "出场", "名单", "征召", "入选", "大名单", "先发"),
+        ("告别", "主帅", "执教", "离队", "退出", "就任", "换帅", "教鞭", "上任"),
+        ("复仇", "反弹", "战意", "力争", "冲击", "连败", "连胜", "保级", "争冠", "承诺"),
+        ("历史", "交锋", "战绩", "往绩", "不败", "纪录", "交手"),
+    )
+    def tier(a):
+        t = str(a.get("title") or "") + str(a.get("text") or "")[:60]
+        for i, ks in enumerate(TIERS):
+            if any(k in t for k in ks):
+                return i
+        return len(TIERS)
+
     def rank(a):
-        t = str(a.get("title") or "")
-        # 保留抓取时的优先级顺序（jinbet 侧已按关键动态排好），这里只微调：
-        # 强匹配（标题含双方队名）优先，其余稳定保序
-        return (1 if a.get("strong") else 0,)
-    picked = sorted((a for a in arts if a.get("text")), key=rank, reverse=True)[:6]
+        # 关键层小的在前；同层内强匹配（标题含双方队名）优先
+        return (tier(a), 0 if a.get("strong") else 1)
+
+    picked = sorted((a for a in arts if a.get("text")), key=rank)[:6]
     out = []
     for a in picked:
+        text = str(a.get("text") or "")
+        # 摘要只留 1~2 句（约110字），按完整句截断
+        if len(text) > 110:
+            head = text[:110]
+            last = max(head.rfind("。"), head.rfind("！"), head.rfind("？"))
+            text = head[:last + 1] if last >= 55 else head[:max(head.find("，"), 55)] + "…"
         out.append({
             "title": str(a.get("title") or ""),
             "url": str(a.get("url") or ""),
             "source": str(a.get("source") or "直播吧"),
-            "text": str(a.get("text") or "")[:240],
+            "text": text,
         })
     return out
 

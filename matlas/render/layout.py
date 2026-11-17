@@ -439,14 +439,15 @@ svg.trend { width: 100%; height: auto; display: block; margin-top: 0.25rem; max-
 .mood-text { display: grid; gap: 7px; }
 .mood-text p { margin: 0; line-height: 1.9; }
 .mood-text p.mk { color: #374151; font-size: 0.92em; padding-left: 10px; border-left: 2px solid var(--rule); }
-/* 赛前情报：公开新闻标题+来源+摘要 */
-.news-intel { display: grid; gap: 10px; }
-.ni-item { padding-left: 11px; border-left: 3px solid #2563eb; }
+/* 赛前情报：与赛前军情同构的克制排版（细灰边框、单行标题、一句摘要） */
+.news-intel { display: grid; gap: 8px; }
+.ni-item { padding-left: 10px; border-left: 2px solid var(--rule); }
+.ni-item:hover { border-left-color: var(--accent); }
 .ni-title { font-size: 0.92em; font-weight: 600; line-height: 1.6; }
-.ni-title a { color: #1f2937; text-decoration: none; }
-.ni-title a:hover { color: #2563eb; }
-.ni-src { font-size: 0.74em; font-weight: 400; color: #9ca3af; margin-left: 7px; }
-.ni-text { font-size: 0.85em; color: #6b7280; line-height: 1.75; margin-top: 3px; }
+.ni-title a { color: var(--ink); text-decoration: none; }
+.ni-title a:hover { color: var(--accent); }
+.ni-src { font-size: 0.72em; font-weight: 400; color: var(--muted); margin-left: 7px; }
+.ni-text { font-size: 0.85em; color: var(--muted); line-height: 1.8; margin-top: 2px; }
 /* 形势分析：三种结果 × 两队，一张满宽推演表 */
 .sit-t th, .sit-t td { text-align: center; }
 .sit-t th.rk, .sit-t td.rk { width: 5.2em; text-align: left; }
