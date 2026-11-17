@@ -87,6 +87,26 @@ TEAM_ALIAS = {
     "德尔瓦耶独立": "山谷独立", "普拉滕斯": "普拉滕塞", "拉普大学": "大学生",
 }
 
+# 赛程源（qiuxiaoce）部分国家队写英文，matlas 场次写中文简称；按场次匹配队徽前先归一。
+# 只收译名确定的国家队，俱乐部/青年队不在此列（它们本来中英同名或不在站点展示）。
+CREST_EN2CN = {
+    "Bahrain": "巴林", "Syria": "叙利亚", "Kuwait": "科威特", "Yemen": "也门",
+    "Vietnam": "越南", "India": "印度", "Jordan": "约旦", "Lebanon": "黎巴嫩",
+    "Palestine": "巴勒斯坦", "Oman": "阿曼", "Iraq": "伊拉克", "Iran": "伊朗",
+    "Qatar": "卡塔尔", "United Arab Emirates": "阿联酋", "Saudi Arabia": "沙特",
+    "Uzbekistan": "乌兹别克斯坦", "Kyrgyzstan": "吉尔吉斯斯坦",
+    "Kazakhstan": "哈萨克斯坦", "Azerbaijan": "阿塞拜疆",
+    "Indonesia": "印尼", "Thailand": "泰国", "Singapore": "新加坡",
+    "China PR": "中国", "Korea Republic": "韩国", "Korea DPR": "朝鲜", "Japan": "日本",
+    "Australia": "澳大利亚", "New Zealand": "新西兰",
+}
+
+
+def _crest_cn(name: str) -> str:
+    """赛程源英文队名 → matlas 中文简称；已是中文或不在表内的原样返回。"""
+    return CREST_EN2CN.get(name, name)
+
+
 # 联赛名归一：与 matlas 既有叫法/队徽映射（logos.LEAGUE_CREST）对齐。
 LEAGUE_ALIAS = {
     "日职": "日职联",
@@ -456,6 +476,47 @@ def _mood_clean(raw: str, teams: tuple[str, ...] = ()) -> str:
     return "\n".join(out)
 
 
+def _one_line_pick(confidence: str, extras: dict, top_dir: str) -> str:
+    """卡片左下角一句话主推：只用站内已有字段，取一条最强信号，短句不写推演。
+
+    优先级：冷门风险 > 让球价值 > 高置信方向 > 胶着平局 > 低置信谨慎。
+    宁缺勿滥——没有任何强信号时返回空串，渲染层自动不画提示条。
+    """
+    ph = _f(extras.get("prob_home"))
+    pd = _f(extras.get("prob_draw"))
+    pa = _f(extras.get("prob_away"))
+    up = str(extras.get("upset_level") or "")
+    upp = _f(extras.get("upset_prob"))
+    ev = _f(extras.get("rq_best_ev"))
+
+    probs = [p for p in (ph, pd, pa) if p is not None]
+    hi, lo = (max(probs), min(probs)) if probs else (None, None)
+
+    # 让球价值明显（期望值 > 1.05），信号最有区分度，优先
+    if ev is not None and ev >= 1.05:
+        return "让球盘口存在价值"
+
+    # 高置信 + 明确方向：模型最有把握的判断
+    if confidence == "high" and top_dir and hi is not None and hi - lo > 8:
+        return f"{top_dir}方向占优，可重点关注"
+
+    # 冷门风险高：带概率数值，比笼统提示更有信息量
+    if up == "高" or (upp is not None and upp >= 52):
+        if upp is not None:
+            return f"冷门概率{upp:.0f}%，谨防意外"
+        return "冷门风险偏高，谨防意外"
+
+    if hi is not None and hi - lo <= 8:
+        return "三方势均力敌，谨慎选择"
+    if hi is not None and hi >= 60 and top_dir:
+        return f"{top_dir}胜面较大"
+    if top_dir and confidence == "medium":
+        return f"略看好{top_dir}，把握不大"
+    if confidence == "low":
+        return "信号偏弱，宜观望"
+    return ""
+
+
 def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
                   standings: dict | None = None,
                   net_form: dict | None = None,
@@ -823,6 +884,8 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
         "is_cold_start": bool(m.get("cold")),
         "extras": extras,
     }
+    # 卡片左下角一句话主推：由已有字段生成，取不到强信号则留空
+    out["main_pick"] = _one_line_pick(confidence, extras, top_dir)
     crest_h, crest_a = _crest_path(crest_idx or {}, date, home, away)
     if crest_h:
         out["home"]["logo"] = crest_h
@@ -1021,8 +1084,8 @@ def _fixture_crest_index(fx_text: str) -> dict:
         return {"pair": pair, "names": names}
     for day, rows in (payload.get("days") or {}).items():
         for r in rows:
-            h = str(r.get("home") or "").strip()
-            a = str(r.get("away") or "").strip()
+            h = _crest_cn(str(r.get("home") or "").strip())
+            a = _crest_cn(str(r.get("away") or "").strip())
             hid = str(r.get("hid") or "").strip()
             aid = str(r.get("aid") or "").strip()
             if h and a:
@@ -1041,6 +1104,7 @@ def _fixture_crest_index(fx_text: str) -> dict:
 
 def _crest_path(crest_idx: dict, date: str, home: str, away: str) -> tuple[str, str]:
     """站内竞彩行的队徽路径：先按场次匹配赛程源，再按单队名兜底。"""
+    home, away = _crest_cn(home), _crest_cn(away)
     pair = (crest_idx.get("pair") or {}).get((date, home, away), ("", ""))
     names = crest_idx.get("names") or {}
     ids = (pair[0] or names.get(home, ""), pair[1] or names.get(away, ""))
