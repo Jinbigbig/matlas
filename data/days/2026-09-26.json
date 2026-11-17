@@ -271,7 +271,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
@@ -675,7 +675,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 0.928,
     "lam_away": 1.482,
@@ -1075,7 +1075,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 1.164,
     "lam_away": 1.238,
@@ -1562,7 +1562,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 1.169,
     "lam_away": 0.879,
@@ -1967,7 +1967,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 1.664,
     "lam_away": 0.836,
@@ -2399,7 +2399,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 1.159,
     "lam_away": 1.118,
@@ -2823,7 +2823,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
@@ -3092,9 +3092,9 @@
     "league": "欧国联",
     "country": "",
     "rank": 2,
-    "points": 8,
-    "played": 5,
-    "win": 2,
+    "points": 11,
+    "played": 6,
+    "win": 3,
     "draw": 2,
     "loss": 1,
     "form": "",
@@ -3107,10 +3107,10 @@
     "country": "",
     "rank": 3,
     "points": 7,
-    "played": 5,
+    "played": 6,
     "win": 2,
     "draw": 1,
-    "loss": 2,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/1108.png"
    },
@@ -3123,11 +3123,11 @@
    },
    "metrics_home": {
     "attack": 46,
-    "defence": 36,
-    "control": 37,
+    "defence": 37,
+    "control": 38,
     "form": 36,
-    "value": 41,
-    "motivation": 40,
+    "value": 39,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -3158,10 +3158,10 @@
    "metrics_away": {
     "attack": 49,
     "defence": 77,
-    "control": 65,
-    "form": 75,
-    "value": 65,
-    "motivation": 40,
+    "control": 66,
+    "form": 74,
+    "value": 64,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -3327,32 +3327,32 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "瑞士",
-      "pts": 13,
-      "p": 5
+      "pts": 16,
+      "p": 6
      },
      {
       "rank": 2,
       "name": "斯洛文尼",
-      "pts": 8,
-      "p": 5
+      "pts": 11,
+      "p": 6
      },
      {
       "rank": 3,
       "name": "苏格兰",
       "pts": 7,
-      "p": 5
+      "p": 6
      },
      {
       "rank": 4,
       "name": "北马其顿",
       "pts": 0,
-      "p": 5
+      "p": 6
      }
     ],
     "lam_home": 1.197,
@@ -3845,7 +3845,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
@@ -4197,10 +4197,10 @@
     "slug": "",
     "league": "欧国联",
     "country": "",
-    "rank": 3,
-    "points": 5,
-    "played": 5,
-    "win": 0,
+    "rank": 2,
+    "points": 8,
+    "played": 6,
+    "win": 1,
     "draw": 5,
     "loss": 0,
     "form": "",
@@ -4212,10 +4212,10 @@
     "league": "欧国联",
     "country": "",
     "rank": 4,
-    "points": 2,
-    "played": 5,
+    "points": 3,
+    "played": 6,
     "win": 0,
-    "draw": 2,
+    "draw": 3,
     "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/1095.png"
@@ -4229,11 +4229,11 @@
    },
    "metrics_home": {
     "attack": 57,
-    "defence": 41,
-    "control": 43,
+    "defence": 42,
+    "control": 44,
     "form": 60,
     "value": 7,
-    "motivation": 40,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -4263,11 +4263,11 @@
    },
    "metrics_away": {
     "attack": 43,
-    "defence": 11,
-    "control": 15,
+    "defence": 10,
+    "control": 14,
     "form": 18,
     "value": 1,
-    "motivation": 40,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -4421,32 +4421,32 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "斯洛伐克",
-      "pts": 11,
-      "p": 5
+      "pts": 12,
+      "p": 6
      },
      {
       "rank": 2,
-      "name": "摩尔多瓦",
-      "pts": 7,
-      "p": 5
+      "name": "法罗群岛",
+      "pts": 8,
+      "p": 6
      },
      {
       "rank": 3,
-      "name": "法罗群岛",
-      "pts": 5,
-      "p": 5
+      "name": "摩尔多瓦",
+      "pts": 7,
+      "p": 6
      },
      {
       "rank": 4,
       "name": "哈萨克",
-      "pts": 2,
-      "p": 5
+      "pts": 3,
+      "p": 6
      }
     ],
     "lam_home": 1.222,
@@ -4658,9 +4658,9 @@
     "league": "欧国联",
     "country": "",
     "rank": 1,
-    "points": 11,
-    "played": 5,
-    "win": 3,
+    "points": 14,
+    "played": 6,
+    "win": 4,
     "draw": 2,
     "loss": 0,
     "form": "",
@@ -4672,9 +4672,9 @@
     "league": "欧国联",
     "country": "",
     "rank": 2,
-    "points": 9,
-    "played": 5,
-    "win": 2,
+    "points": 12,
+    "played": 6,
+    "win": 3,
     "draw": 3,
     "loss": 0,
     "form": "",
@@ -4689,11 +4689,11 @@
    },
    "metrics_home": {
     "attack": 16,
-    "defence": 16,
+    "defence": 15,
     "control": 10,
     "form": 11,
-    "value": 11,
-    "motivation": 40,
+    "value": 10,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -4723,11 +4723,11 @@
    },
    "metrics_away": {
     "attack": 57,
-    "defence": 41,
-    "control": 43,
+    "defence": 42,
+    "control": 44,
     "form": 60,
     "value": 7,
-    "motivation": 40,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -4884,32 +4884,32 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "冰岛",
-      "pts": 11,
-      "p": 5
+      "pts": 14,
+      "p": 6
      },
      {
       "rank": 2,
       "name": "爱沙尼亚",
-      "pts": 9,
-      "p": 5
+      "pts": 12,
+      "p": 6
      },
      {
       "rank": 3,
       "name": "保加利亚",
       "pts": 4,
-      "p": 5
+      "p": 6
      },
      {
       "rank": 4,
       "name": "卢森堡",
       "pts": 3,
-      "p": 5
+      "p": 6
      }
     ],
     "lam_home": 2.001,
@@ -5114,10 +5114,10 @@
     "country": "",
     "rank": 3,
     "points": 4,
-    "played": 5,
+    "played": 6,
     "win": 1,
     "draw": 1,
-    "loss": 3,
+    "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/1103.png"
    },
@@ -5128,10 +5128,10 @@
     "country": "",
     "rank": 4,
     "points": 3,
-    "played": 5,
+    "played": 6,
     "win": 1,
     "draw": 0,
-    "loss": 4,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/1102.png"
    },
@@ -5148,7 +5148,7 @@
     "control": 30,
     "form": 18,
     "value": 5,
-    "motivation": 40,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -5182,7 +5182,7 @@
     "control": 30,
     "form": 18,
     "value": 2,
-    "motivation": 40,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -5342,32 +5342,32 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "冰岛",
-      "pts": 11,
-      "p": 5
+      "pts": 14,
+      "p": 6
      },
      {
       "rank": 2,
       "name": "爱沙尼亚",
-      "pts": 9,
-      "p": 5
+      "pts": 12,
+      "p": 6
      },
      {
       "rank": 3,
       "name": "保加利亚",
       "pts": 4,
-      "p": 5
+      "p": 6
      },
      {
       "rank": 4,
       "name": "卢森堡",
       "pts": 3,
-      "p": 5
+      "p": 6
      }
     ],
     "lam_home": 0.913,
@@ -5871,7 +5871,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
@@ -6167,9 +6167,9 @@
     "attack": 37,
     "defence": 27,
     "control": 25,
-    "form": 30,
-    "value": 56,
-    "motivation": 40,
+    "form": 29,
+    "value": 55,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -6198,12 +6198,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 54,
+    "attack": 55,
     "defence": 19,
     "control": 29,
-    "form": 75,
-    "value": 65,
-    "motivation": 40,
+    "form": 74,
+    "value": 64,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -6369,7 +6369,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
@@ -6619,10 +6619,10 @@
     "country": "",
     "rank": 4,
     "points": 0,
-    "played": 5,
+    "played": 6,
     "win": 0,
     "draw": 0,
-    "loss": 5,
+    "loss": 6,
     "form": "",
     "logo": "assets/logo/teams/1105.png"
    },
@@ -6632,9 +6632,9 @@
     "league": "欧国联",
     "country": "",
     "rank": 1,
-    "points": 13,
-    "played": 5,
-    "win": 4,
+    "points": 16,
+    "played": 6,
+    "win": 5,
     "draw": 1,
     "loss": 0,
     "form": "",
@@ -6652,8 +6652,8 @@
     "defence": 6,
     "control": 4,
     "form": 11,
-    "value": 17,
-    "motivation": 40,
+    "value": 16,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -6686,8 +6686,8 @@
     "defence": 78,
     "control": 80,
     "form": 88,
-    "value": 67,
-    "motivation": 40,
+    "value": 66,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -6853,32 +6853,32 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "瑞士",
-      "pts": 13,
-      "p": 5
+      "pts": 16,
+      "p": 6
      },
      {
       "rank": 2,
       "name": "斯洛文尼",
-      "pts": 8,
-      "p": 5
+      "pts": 11,
+      "p": 6
      },
      {
       "rank": 3,
       "name": "苏格兰",
       "pts": 7,
-      "p": 5
+      "p": 6
      },
      {
       "rank": 4,
       "name": "北马其顿",
       "pts": 0,
-      "p": 5
+      "p": 6
      }
     ],
     "lam_home": 0.521,
@@ -7165,11 +7165,11 @@
    },
    "metrics_home": {
     "attack": 92,
-    "defence": 63,
+    "defence": 62,
     "control": 88,
-    "form": 81,
-    "value": 68,
-    "motivation": 40,
+    "form": 80,
+    "value": 67,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -7203,7 +7203,7 @@
     "control": 93,
     "form": 98,
     "value": 77,
-    "motivation": 40,
+    "motivation": 39,
     "AXES": [
      [
       "attack",
@@ -7369,7 +7369,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
@@ -7600,12 +7600,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 84,
-    "defence": 11,
-    "control": 38,
+    "attack": 82,
+    "defence": 13,
+    "control": 36,
     "form": 73,
-    "value": 76,
-    "motivation": 8,
+    "value": 71,
+    "motivation": 11,
     "AXES": [
      [
       "attack",
@@ -7634,12 +7634,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 43,
-    "defence": 16,
-    "control": 14,
-    "form": 11,
-    "value": 5,
-    "motivation": 8,
+    "attack": 47,
+    "defence": 18,
+    "control": 16,
+    "form": 13,
+    "value": 4,
+    "motivation": 11,
     "AXES": [
      [
       "attack",
@@ -7787,7 +7787,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
@@ -8202,12 +8202,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 59,
-    "defence": 73,
-    "control": 70,
-    "form": 49,
-    "value": 92,
-    "motivation": 49,
+    "attack": 60,
+    "defence": 71,
+    "control": 69,
+    "form": 44,
+    "value": 89,
+    "motivation": 44,
     "AXES": [
      [
       "attack",
@@ -8236,10 +8236,10 @@
     ]
    },
    "metrics_away": {
-    "attack": 81,
-    "defence": 5,
+    "attack": 80,
+    "defence": 7,
     "control": 24,
-    "form": 35,
+    "form": 33,
     "value": 22,
     "motivation": 27,
     "AXES": [
@@ -8401,7 +8401,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "table": [
      {
@@ -9011,7 +9011,7 @@
    "recent_away": [],
    "injuries": [],
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 1.14,
     "lam_away": 1.731,
@@ -9504,7 +9504,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 2.609,
     "lam_away": 1.591,
@@ -10112,7 +10112,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 1.244,
     "lam_away": 1.247,
@@ -10572,7 +10572,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 2.006,
     "lam_away": 0.831,
@@ -11283,7 +11283,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 1.162,
     "lam_away": 1.303,
@@ -11981,7 +11981,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 2.104,
     "lam_away": 1.606,
@@ -12571,7 +12571,7 @@
     "settled_at": "2026-09-26"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T08:15:21+08:00",
+   "generated_at": "2026-11-17T12:10:34+08:00",
    "extras": {
     "lam_home": 0.993,
     "lam_away": 0.934,
