@@ -15,6 +15,12 @@
     "slug": "",
     "league": "亚运女足",
     "country": "",
+    "rank": 1,
+    "points": 7,
+    "played": 3,
+    "win": 2,
+    "draw": 1,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/10932.png"
    },
@@ -23,6 +29,12 @@
     "slug": "",
     "league": "亚运女足",
     "country": "",
+    "rank": 3,
+    "points": 4,
+    "played": 3,
+    "win": 1,
+    "draw": 1,
+    "loss": 1,
     "form": "",
     "logo": "assets/logo/teams/17892.png"
    },
@@ -243,8 +255,34 @@
     "settled_at": "2026-09-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:15:44+08:00",
+   "generated_at": "2026-11-17T08:15:21+08:00",
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "中国女",
+      "pts": 7,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "乌兹别女",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "菲律宾女",
+      "pts": 4,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "中国港女",
+      "pts": 0,
+      "p": 3
+     }
+    ],
     "lam_home": 2.496,
     "lam_away": 0.258,
     "lam_total": 2.754,

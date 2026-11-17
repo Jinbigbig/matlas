@@ -15,6 +15,12 @@
     "slug": "",
     "league": "英锦标赛",
     "country": "",
+    "rank": 3,
+    "points": 3,
+    "played": 3,
+    "win": 0,
+    "draw": 2,
+    "loss": 1,
     "form": "",
     "logo": "assets/logo/teams/748.png"
    },
@@ -23,6 +29,12 @@
     "slug": "",
     "league": "英锦标赛",
     "country": "",
+    "rank": 1,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/1376.png"
    },
@@ -253,8 +265,34 @@
     "settled_at": "2026-11-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:15:44+08:00",
+   "generated_at": "2026-11-17T08:15:21+08:00",
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "诺茨郡",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "Nottingham",
+      "pts": 5,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "伯顿",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "格里姆",
+      "pts": 1,
+      "p": 3
+     }
+    ],
     "lam_home": 1.077,
     "lam_away": 1.204,
     "lam_total": 2.281,
@@ -1238,6 +1276,12 @@
     "slug": "",
     "league": "英锦标赛",
     "country": "",
+    "rank": 4,
+    "points": 0,
+    "played": 3,
+    "win": 0,
+    "draw": 0,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/1832.png"
    },
@@ -1246,6 +1290,12 @@
     "slug": "",
     "league": "英锦标赛",
     "country": "",
+    "rank": 1,
+    "points": 9,
+    "played": 3,
+    "win": 3,
+    "draw": 0,
+    "loss": 0,
     "form": "",
     "logo": "assets/logo/teams/1348.png"
    },
@@ -1462,8 +1512,34 @@
     "settled_at": "2026-11-10"
    },
    "source_url": "",
-   "generated_at": "2026-11-16T19:15:44+08:00",
+   "generated_at": "2026-11-17T08:15:21+08:00",
    "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "米尔顿",
+      "pts": 9,
+      "p": 3
+     },
+     {
+      "rank": 2,
+      "name": "Brentford",
+      "pts": 6,
+      "p": 3
+     },
+     {
+      "rank": 3,
+      "name": "克劳利",
+      "pts": 3,
+      "p": 3
+     },
+     {
+      "rank": 4,
+      "name": "布罗姆利",
+      "pts": 0,
+      "p": 3
+     }
+    ],
     "lam_home": 0.868,
     "lam_away": 1.7,
     "lam_total": 2.568,
