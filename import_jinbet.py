@@ -500,10 +500,10 @@ def _one_line_pick(confidence: str, extras: dict, top_dir: str) -> str:
     if confidence == "high" and top_dir and hi is not None and hi - lo > 8:
         return f"{top_dir}方向占优，可重点关注"
 
-    # 冷门风险高：带概率数值，比笼统提示更有信息量
+    # 冷门风险高：按概率分档，比笼统提示更有区分度（不写百分号，避免裸百分比）
     if up == "高" or (upp is not None and upp >= 52):
-        if upp is not None:
-            return f"冷门概率{upp:.0f}%，谨防意外"
+        if upp is not None and upp >= 62:
+            return "冷门风险很高，谨防意外"
         return "冷门风险偏高，谨防意外"
 
     if hi is not None and hi - lo <= 8:
