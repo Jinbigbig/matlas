@@ -524,34 +524,61 @@ def _clean_intel(arts: list) -> list:
 
 
 def _intel_pick(intel: list) -> str:
-    """左下角短句：取最关键情报标题的主干（一行人话），无情报返回空串。"""
+    """左下角短句：取最关键情报，拼成有主语的完整句；无情报返回空串。"""
     if not intel:
         return ""
     title = str(intel[0].get("title") or "")
-    # 去来源前缀：「巴媒：」「日媒：」「北青：」「记者：」等
-    title = re.sub(r'^[^：:]{2,6}[：:]', '', title)
-    # 去句首引导/套话
-    title = re.sub(r'^(独家|官方|记者|媒体|报道|消息|据|曝|重磅|焦点|盘点|盘点|这次如何\？|期待反弹！)', '', title)
+    # 剥掉标题前的情绪化引子与来源电头
+    title = re.sub(r'^[^：:！？!?]{2,14}[！!]', '', title)
+    title = re.sub(r'^直播吧\d{1,2}月\d{1,2}日(?:讯|消息)', '', title)
     title = title.strip('　 ')
-    # 冒号处理：「主语：结论」取结论；引语「XX：他说…」也取后半
+
+    _src_exact = frozenset(('官方', '记者', '独家', '外媒', '媒体', '直播吧',
+                            '央视', '新华社', '北青', '马卡', '米体', '阿斯',
+                            '全市场', '罗马诺', '今晚报'))
+    _src_tail = ('媒', '报', '网', '台', '体育', '资讯', '新闻')
+
+    def is_source(s):
+        s = s.strip()
+        return bool(s) and len(s) <= 8 and (s in _src_exact or s.endswith(_src_tail))
+
+    subject, content = "", title
     if '：' in title or ':' in title:
-        parts = re.split(r'[：:]', title, maxsplit=1)
-        head, tail = parts[0], parts[1]
-        # head 是人名/身份（≤8字）时用结论；否则用 head（它本身已是信息）
-        core = tail if len(head) <= 12 else head
-    else:
-        core = title
-    # 取第一个完整分句：逗号/空格/问号都算边界（中文媒体标题常用空格分两段）
-    core = re.split(r'[，,。！？!?；;\s]', core)[0].strip('　 ')
-    # 控制在 20 字内（左下角一行可读范围），去掉断尾虚词/半词
-    if len(core) > 20:
-        core = core[:20]
-        for tail in ('的', '是', '在', '和', '与', '无', '简', '了', '把', '被',
-                     '对', '榜', '巨', '很', '将', '为', '中', '上', '人'):
-            if core.endswith(tail):
-                core = core[:-1]
+        head, tail = re.split(r'[：:]', title, maxsplit=1)
+        head, tail = head.strip('　 '), tail.strip('　 ')
+        # 「津媒谈国足对巴林」→ 用「谈」后主体作主语
+        m = re.match(r'^(.{1,6}?)(?:谈|透露)(.{2,20})$', head)
+        if m and is_source(m.group(1)):
+            cand = m.group(2)
+            if len(cand) <= 12 and '，' not in cand:
+                subject = cand
+                content = tail
+        elif is_source(head):
+            content = tail          # 纯来源标签剥掉，content 用冒号后半
+        elif len(head) <= 12 and '，' not in head and '、' not in head:
+            subject = head          # 人名/身份保留，不能当来源丢掉
+            content = tail
+        # head 过长/是复合句时不作主语，content 保持整条标题
+
+    # 优先按句末/空格取完整句（保留逗号连接），超长才退到逗号边界
+    core = re.split(r'[。！？!?；;\s]', content)[0].strip('　 ')
+    if not core:
+        return ""
+    out = f"{subject}：{core}" if subject else core
+    if len(out) > 24:
+        core = re.split(r'[，,]', core)[0].strip('　 ')
+        out = f"{subject}：{core}" if subject else core
+    # 仍超长才截到完整词尾
+    if len(out) > 24:
+        allow = max(8, 24 - len(subject) - (1 if subject else 0))
+        cut = core[:allow]
+        for w in ('的', '是', '在', '和', '与', '了', '把', '被', '对',
+                  '将', '为', '中', '上', '人', '队', '国'):
+            if cut.endswith(w):
+                cut = cut[:-1]
                 break
-    return core.strip() or ""
+        out = f"{subject}：{cut}" if subject else cut
+    return out.strip() or ""
 
 
 def _one_line_pick(confidence: str, extras: dict, top_dir: str) -> str:
