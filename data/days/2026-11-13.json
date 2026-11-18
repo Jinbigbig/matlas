@@ -34,7 +34,7 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 47,
+    "attack": 49,
     "defence": 22,
     "control": 29,
     "form": 13,
@@ -68,7 +68,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 7,
+    "attack": 2,
     "defence": 51,
     "control": 27,
     "form": 27,
@@ -103,16 +103,19 @@
    },
    "momentum": {
     "labels": [
+     "T-3",
      "T-2",
      "T-1"
     ],
     "home": [
      1.0,
-     1.0
+     1.0,
+     0.0
     ],
     "away": [
      0.0,
-     4.0
+     4.0,
+     2.0
     ]
    },
    "forecasts": [
@@ -243,7 +246,7 @@
     "settled_at": "2026-11-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T19:11:23+08:00",
+   "generated_at": "2026-11-18T08:07:50+08:00",
    "extras": {
     "table": [
      {
@@ -817,7 +820,7 @@
     "settled_at": "2026-11-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T19:11:23+08:00",
+   "generated_at": "2026-11-18T08:07:50+08:00",
    "extras": {
     "table": [
      {
@@ -1819,7 +1822,7 @@
    },
    "metrics_away": {
     "attack": 27,
-    "defence": 66,
+    "defence": 63,
     "control": 41,
     "form": 29,
     "value": 50,
@@ -2061,7 +2064,7 @@
     "settled_at": "2026-11-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T19:11:23+08:00",
+   "generated_at": "2026-11-18T08:07:50+08:00",
    "extras": {
     "table": [
      {
@@ -2990,7 +2993,7 @@
    },
    "metrics_home": {
     "attack": 25,
-    "defence": 62,
+    "defence": 64,
     "control": 37,
     "form": 2,
     "value": 80,
@@ -3272,7 +3275,7 @@
     "settled_at": "2026-11-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T19:11:23+08:00",
+   "generated_at": "2026-11-18T08:07:50+08:00",
    "extras": {
     "table": [
      {
@@ -4283,7 +4286,7 @@
    },
    "metrics_away": {
     "attack": 95,
-    "defence": 62,
+    "defence": 64,
     "control": 91,
     "form": 29,
     "value": 96,
@@ -4507,7 +4510,7 @@
     "settled_at": "2026-11-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T19:11:23+08:00",
+   "generated_at": "2026-11-18T08:07:50+08:00",
    "extras": {
     "table": [
      {
@@ -5795,7 +5798,7 @@
     "settled_at": "2026-11-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T19:11:23+08:00",
+   "generated_at": "2026-11-18T08:07:50+08:00",
    "extras": {
     "table": [
      {
@@ -6721,7 +6724,7 @@
    "metrics_home": {
     "attack": 98,
     "defence": 25,
-    "control": 79,
+    "control": 78,
     "form": 73,
     "value": 59,
     "motivation": 93,
@@ -6972,7 +6975,7 @@
     "settled_at": "2026-11-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T19:11:23+08:00",
+   "generated_at": "2026-11-18T08:07:50+08:00",
    "extras": {
     "table": [
      {
@@ -7875,7 +7878,7 @@
    "metrics_away": {
     "attack": 85,
     "defence": 96,
-    "control": 95,
+    "control": 96,
     "form": 88,
     "value": 91,
     "motivation": 98,
@@ -8122,7 +8125,7 @@
     "settled_at": "2026-11-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T19:11:23+08:00",
+   "generated_at": "2026-11-18T08:07:50+08:00",
    "extras": {
     "table": [
      {
@@ -9419,7 +9422,7 @@
     "settled_at": "2026-11-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T19:11:23+08:00",
+   "generated_at": "2026-11-18T08:07:50+08:00",
    "extras": {
     "table": [
      {
@@ -10522,7 +10525,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 38,
+    "attack": 36,
     "defence": 47,
     "control": 40,
     "form": 27,
@@ -10734,7 +10737,7 @@
     "settled_at": "2026-11-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T19:11:23+08:00",
+   "generated_at": "2026-11-18T08:07:50+08:00",
    "extras": {
     "table": [
      {
@@ -11178,7 +11181,7 @@
    },
    "metrics_home": {
     "attack": 40,
-    "defence": 87,
+    "defence": 89,
     "control": 69,
     "form": 98,
     "value": 82,
@@ -11417,7 +11420,7 @@
     "settled_at": "2026-11-13"
    },
    "source_url": "",
-   "generated_at": "2026-11-17T19:11:23+08:00",
+   "generated_at": "2026-11-18T08:07:50+08:00",
    "extras": {
     "table": [
      {
