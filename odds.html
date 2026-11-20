@@ -6,7 +6,7 @@
 <title>赔率 - Matlas</title>
 <meta name="description" content="竞彩全玩法赔率快照：胜平负、让球、比分、总进球、半全场，完赛对照高亮">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/odds.html">
-<link rel="stylesheet" href="assets/style.css?v=1795194165">
+<link rel="stylesheet" href="assets/style.css?v=1795198713">
 <meta property="og:type" content="article">
 <meta property="og:title" content="赔率 - Matlas">
 <meta property="og:description" content="竞彩全玩法赔率快照：胜平负、让球、比分、总进球、半全场，完赛对照高亮">
@@ -207,6 +207,51 @@ document.addEventListener("change", function (e) {
   if (e.target && e.target.name === "aid") aiSyncArrows();
 });
 aiSyncArrows();
+</script>
+<script>
+
+// ===== 实时数据（方案②/③切换点）=====
+window.LIVE_MODE = "remote";
+window.LIVE_API_BASE = "https://live.你的域名";
+(function () {
+  // 域名未配置（仍是占位符）时不请求，避免线上页面空跑轮询
+  if (window.LIVE_API_BASE.indexOf("你的域名") >= 0) return;
+  var card = document.querySelector("[data-live-match]");
+  if (!card) return;
+  var mid = card.getAttribute("data-live-match");
+  var date = mid.slice(0, 10);
+  function liveUrl() {
+    var stamp = Date.now();
+    if (window.LIVE_MODE === "static")
+      return (window.LIVE_API_BASE || "") + "/data/live/" + date + ".json?v=" + stamp;
+    return window.LIVE_API_BASE + "/api/live?date=" + date + "&v=" + stamp;
+  }
+  function pick(d) {
+    if (!d) return null;
+    if (d.match && d.match.match_id === mid) return d.match;
+    var ms = d.matches || [];
+    for (var i = 0; i < ms.length; i++) if (ms[i].match_id === mid) return ms[i];
+    return null;
+  }
+  function apply(m) {
+    if (!m) return;
+    var sc = card.querySelector("[data-live='score']");
+    if (sc && m.score) {
+      sc.innerHTML = '<div class="main">' + m.score + '</div>'
+        + (m.half ? '<div class="sub">(' + m.half + ')</div>' : '');
+    }
+    var tr = card.querySelector("[data-live='trend']");
+    if (tr && m.trend_html) tr.outerHTML = m.trend_html;
+  }
+  function poll() {
+    fetch(liveUrl(), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { apply(pick(d)); })
+      .catch(function () {});
+  }
+  poll();
+  setInterval(poll, 60000);
+})();
 </script>
 </body>
 </html>
