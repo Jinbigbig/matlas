@@ -1689,6 +1689,55 @@ def _jsonld(blocks: list[dict[str, Any]]) -> str:
     return body
 
 
+# 实时数据接入：方案②（本地服务 + 固定域名隧道）与方案③（gh-pages 静态 JSON）共用。
+# 切换只需改这两行：方案② LIVE_MODE="remote" + 真域名；方案③ LIVE_MODE="static" + LIVE_API_BASE=""。
+# fetch 失败时静默保留静态内容，域名未配置或离线不影响页面。
+_LIVE_JS = """
+// ===== 实时数据（方案②/③切换点）=====
+window.LIVE_MODE = "remote";
+window.LIVE_API_BASE = "https://live.你的域名";
+(function () {
+  // 域名未配置（仍是占位符）时不请求，避免线上页面空跑轮询
+  if (window.LIVE_API_BASE.indexOf("你的域名") >= 0) return;
+  var card = document.querySelector("[data-live-match]");
+  if (!card) return;
+  var mid = card.getAttribute("data-live-match");
+  var date = mid.slice(0, 10);
+  function liveUrl() {
+    var stamp = Date.now();
+    if (window.LIVE_MODE === "static")
+      return (window.LIVE_API_BASE || "") + "/data/live/" + date + ".json?v=" + stamp;
+    return window.LIVE_API_BASE + "/api/live?date=" + date + "&v=" + stamp;
+  }
+  function pick(d) {
+    if (!d) return null;
+    if (d.match && d.match.match_id === mid) return d.match;
+    var ms = d.matches || [];
+    for (var i = 0; i < ms.length; i++) if (ms[i].match_id === mid) return ms[i];
+    return null;
+  }
+  function apply(m) {
+    if (!m) return;
+    var sc = card.querySelector("[data-live='score']");
+    if (sc && m.score) {
+      sc.innerHTML = '<div class="main">' + m.score + '</div>'
+        + (m.half ? '<div class="sub">(' + m.half + ')</div>' : '');
+    }
+    var tr = card.querySelector("[data-live='trend']");
+    if (tr && m.trend_html) tr.outerHTML = m.trend_html;
+  }
+  function poll() {
+    fetch(liveUrl(), { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { apply(pick(d)); })
+      .catch(function () {});
+  }
+  poll();
+  setInterval(poll, 60000);
+})();
+"""
+
+
 def page(
     cfg: Config,
     *,
@@ -1852,6 +1901,8 @@ document.addEventListener("change", function (e) {{
 }});
 aiSyncArrows();
 </script>
+<script>
+{_LIVE_JS}</script>
 </body>
 </html>
 """

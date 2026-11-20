@@ -14,3 +14,9 @@ __pycache__/
 
 _tmp_*.py
 .playwright-cli/
+
+# 实时数据导出产物（方案③后门，运行时生成，不进仓库）
+data/live/
+
+# cloudflared 二进制（winget 安装或单独下载，体积大不进仓库）
+tools/

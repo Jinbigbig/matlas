@@ -1,0 +1,9 @@
+# Cloudflare Named Tunnel 配置
+# tunnel: 填 2_create_tunnel.bat 输出的隧道 ID（也可留空，start_live_named.bat 会自动取）
+tunnel: 00000000-0000-0000-0000-000000000000
+credentials-file: C:\Users\Jin\.cloudflared\00000000-0000-0000-0000-000000000000.json
+
+ingress:
+  - hostname: live.你的域名
+    service: http://127.0.0.1:8787
+  - service: http_status:404

@@ -115,7 +115,7 @@ def _odds_trend(m: Match) -> str:
         rows.append([p["label"], *cells, hcp_txt, " · ".join(bits) or "未变"])
     table = C.table(["时点", "主胜", "平", "客胜", "让球", "较初盘"], rows)
     has_hcp = any(p["hcp"] is not None for p in pts)
-    return ('<div class="of-sec"><div class="of-h">赔率变化</div>'
+    return ('<div class="of-sec" data-live="trend"><div class="of-h">赔率变化</div>'
             + C.odds_lines_legend(has_hcp)
             + chart + table + "</div>")
 
@@ -1438,7 +1438,7 @@ def render_match(cfg: Config, m: Match) -> str:
     header = _mc_header(m, pre="../")
     picks = _picks(m)
     body_parts = [
-        '<div class="card card-match">',
+        f'<div class="card card-match" data-live-match="{C.esc(m.match_id)}">',
         header,
         '<div class="mc-body">',
         teams_row,
@@ -1556,7 +1556,8 @@ def _mc_teams(m: Match, pre: str = "") -> str:
         top = '<div class="vs">VS</div>'
         sub = "0-0"
     score = (
-        f'<div class="mc-score">{top}'
+        '<div class="mc-score" data-live="score">'
+        + top
         + (f'<div class="sub">({sub})</div>' if sub else "")
         + "</div>"
     )
