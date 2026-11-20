@@ -565,12 +565,12 @@ def _intel_pick(intel: list) -> str:
     if not core:
         return ""
     out = f"{subject}：{core}" if subject else core
-    if len(out) > 24:
+    if len(out) > 30:
         core = re.split(r'[，,]', core)[0].strip('　 ')
         out = f"{subject}：{core}" if subject else core
     # 仍超长才截到完整词尾
-    if len(out) > 24:
-        allow = max(8, 24 - len(subject) - (1 if subject else 0))
+    if len(out) > 30:
+        allow = max(8, 30 - len(subject) - (1 if subject else 0))
         cut = core[:allow]
         for w in ('的', '是', '在', '和', '与', '了', '把', '被', '对',
                   '将', '为', '中', '上', '人', '队', '国'):
