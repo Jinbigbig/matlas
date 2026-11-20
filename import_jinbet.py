@@ -523,62 +523,211 @@ def _clean_intel(arts: list) -> list:
     return out
 
 
-def _intel_pick(intel: list) -> str:
-    """左下角短句：取最关键情报，拼成有主语的完整句；无情报返回空串。"""
+def _intel_pick(intel: list, teams=()) -> str:
+    """左下角短句：优先具体伤停/首发/换帅事实，不取通用前瞻标题。"""
     if not intel:
         return ""
-    title = str(intel[0].get("title") or "")
-    # 剥掉标题前的情绪化引子与来源电头
-    title = re.sub(r'^[^：:！？!?]{2,14}[！!]', '', title)
-    title = re.sub(r'^直播吧\d{1,2}月\d{1,2}日(?:讯|消息)', '', title)
-    title = title.strip('　 ')
+    team_names = sorted({str(t) for t in teams if t}, key=len, reverse=True)
 
-    _src_exact = frozenset(('官方', '记者', '独家', '外媒', '媒体', '直播吧',
-                            '央视', '新华社', '北青', '马卡', '米体', '阿斯',
-                            '全市场', '罗马诺', '今晚报'))
-    _src_tail = ('媒', '报', '网', '台', '体育', '资讯', '新闻')
+    # 这些标题只描述文章类型，不含本场可用事实
+    generic = re.compile(
+        r'(前瞻|全知道|伤停与阵容|首发难题|首发公布|双方首发|首发十一人|'
+        r'赛前情报|赛前分析|今日之战|之战|展望|形势|综述|大名单[:：]|预计首发)'
+    )
+    # 具体事实词：命中才说明这条短句对判断有用
+    facts = ('伤情', '伤缺', '缺阵', '停赛', '受伤', '伤愈', '复出', '入选',
+             '进入首发', '首发名单', '先发', '伤缠', '绷带', '出任', '上任',
+             '签约', '换帅', '离队', '回归', '撕裂', '手术', '零封', '连败',
+             '连胜', '报销', '黄牌', '红牌')
+    leads = ('30秒看懂', '赛前', '前瞻', '公布', '大名单', '比赛名单', '名单',
+             '预计', '对阵', '迎战', '客场', '主场', '周五', '周六', '周日',
+             '本轮', '联赛', '今日', '明晚', '今晚', '重启', '联', '尔德', '费尔德',
+             '霍温', 'FC', 'fc')
+    fact_re = re.compile('|'.join(re.escape(w) for w in sorted(facts, key=len, reverse=True)))
+    name_fact_re = re.compile(
+        r'((?:[\u4e00-\u9fa5·]{2,8}、)*[\u4e00-\u9fa5·]{2,8}'
+        r'(?:因[^，。；]{0,12})?'
+        r'(?:进入首发|首发名单|先发|伤缠|绷带|伤愈复出|伤缺|缺阵|停赛|受伤|伤愈|复出|'
+        r'入选|出任|上任|签约|换帅|离队|回归|撕裂|手术|零封|连败|连胜|报销|黄牌|红牌))'
+    )
 
-    def is_source(s):
-        s = s.strip()
-        return bool(s) and len(s) <= 8 and (s in _src_exact or s.endswith(_src_tail))
+    def tidy(s: str) -> str:
+        s = re.sub(r'^[\s"“”‘’,，、:：\-—/0-9A-Za-z]+', '', str(s or '').strip())
+        changed = True
+        while changed:
+            changed = False
+            for name in team_names:
+                if s.startswith(name) and len(s) > len(name) + 3:
+                    rest = s[len(name):]
+                    # 队名后面直接接事实时保留主语，只剥「公布/迎战/主场」这类铺垫
+                    if rest.startswith(('多人', '数人', '球员', '本季', '近', '上轮',
+                                        '新帅', '赛季', '目前', '核心', '锋线', '后防')):
+                        continue
+                    for suf in ('流浪者', '竞技', '联', '队', '市', '人', '尔德', '尔', '斯', 'FC', 'fc'):
+                        if rest.startswith(suf):
+                            rest = rest[len(suf):]
+                            break
+                    s = rest
+                    changed = True
+                    break
+            else:
+                for name in team_names:
+                    i = s.find(name)
+                    if 0 < i <= 10:
+                        s = s[i:]
+                        changed = True
+                        break
+        for w in leads:
+            while s.startswith(w) and len(s) > len(w) + 3:
+                s = s[len(w):]
+        s = re.sub(r'^约?[\d一二三四五六七八九十两]+(?:周|天|个月)后(?:重启|开赛|进行)?', '', s)
+        return re.sub(r'^[\s,，、:：]+', '', s).strip()
 
-    subject, content = "", title
-    if '：' in title or ':' in title:
-        head, tail = re.split(r'[：:]', title, maxsplit=1)
-        head, tail = head.strip('　 '), tail.strip('　 ')
-        # 「津媒谈国足对巴林」→ 用「谈」后主体作主语
-        m = re.match(r'^(.{1,6}?)(?:谈|透露)(.{2,20})$', head)
-        if m and is_source(m.group(1)):
-            cand = m.group(2)
-            if len(cand) <= 12 and '，' not in cand:
-                subject = cand
+    def from_title(title: str) -> str:
+        t = str(title or '')
+        t = re.sub(r'^[^：:！？!?]{2,14}[！!]', '', t)
+        t = re.sub(r'^直播吧\d{1,2}月\d{1,2}日(?:讯|消息)', '', t)
+        t = t.strip('　 ')
+        if not t:
+            return ""
+        src_exact = frozenset(('官方', '记者', '独家', '外媒', '媒体', '直播吧',
+                               '央视', '新华社', '北青', '马卡', '米体', '阿斯',
+                               '全市场', '罗马诺', '今晚报'))
+        src_tail = ('媒', '报', '网', '台', '体育', '资讯', '新闻')
+
+        def is_source(s: str) -> bool:
+            s = s.strip()
+            return bool(s) and len(s) <= 8 and (s in src_exact or s.endswith(src_tail))
+
+        subject, content = "", t
+        if '：' in t or ':' in t:
+            head, tail = re.split(r'[：:]', t, maxsplit=1)
+            head, tail = head.strip('　 '), tail.strip('　 ')
+            m = re.match(r'^(.{1,6}?)(?:谈|透露)(.{2,20})$', head)
+            if m and is_source(m.group(1)):
+                cand = m.group(2)
+                if len(cand) <= 12 and '，' not in cand:
+                    subject, content = cand, tail
+            elif is_source(head):
                 content = tail
-        elif is_source(head):
-            content = tail          # 纯来源标签剥掉，content 用冒号后半
-        elif len(head) <= 12 and '，' not in head and '、' not in head:
-            subject = head          # 人名/身份保留，不能当来源丢掉
-            content = tail
-        # head 过长/是复合句时不作主语，content 保持整条标题
+            elif len(head) <= 12 and '，' not in head and '、' not in head:
+                subject, content = head, tail
 
-    # 优先按句末/空格取完整句（保留逗号连接），超长才退到逗号边界
-    core = re.split(r'[。！？!?；;\s]', content)[0].strip('　 ')
-    if not core:
-        return ""
-    out = f"{subject}：{core}" if subject else core
-    if len(out) > 30:
-        core = re.split(r'[，,]', core)[0].strip('　 ')
+        core = re.split(r'[。！？!?；;\s]', content)[0].strip('　 ')
+        if not core:
+            return ""
         out = f"{subject}：{core}" if subject else core
-    # 仍超长才截到完整词尾
-    if len(out) > 30:
-        allow = max(8, 30 - len(subject) - (1 if subject else 0))
-        cut = core[:allow]
-        for w in ('的', '是', '在', '和', '与', '了', '把', '被', '对',
-                  '将', '为', '中', '上', '人', '队', '国'):
-            if cut.endswith(w):
-                cut = cut[:-1]
-                break
-        out = f"{subject}：{cut}" if subject else cut
-    return out.strip() or ""
+        if len(out) > 30:
+            core = re.split(r'[，,]', core)[0].strip('　 ')
+            out = f"{subject}：{core}" if subject else core
+        if len(out) > 30:
+            allow = max(8, 30 - len(subject) - (1 if subject else 0))
+            cut = core[:allow]
+            for w in ('的', '是', '在', '和', '与', '了', '把', '被', '对',
+                      '将', '为', '中', '上', '人', '队', '国'):
+                if cut.endswith(w):
+                    cut = cut[:-1]
+                    break
+            out = f"{subject}：{cut}" if subject else cut
+        return out.strip()
+
+    def from_text(text: str) -> list:
+        t = re.sub(r'^30秒看懂', '', str(text or ''))
+        out = []
+        for sent in re.split(r'[。！？!?；;\n]', t):
+            pending = ""
+            for cl in re.split(r'[，,]', sent):
+                c = tidy(cl)
+                if not c:
+                    continue
+                m = fact_re.search(c)
+                if not m:
+                    pending = ""
+                    continue
+                opts = []
+                if len(c) <= 30:
+                    opts.append(c)
+                else:
+                    raw = []
+                    for span in (8, 12, 16):
+                        st = max(0, m.start() - span)
+                        w = tidy(c[st:m.end()])
+                        if 4 <= len(w) <= 30:
+                            raw.append((st, w))
+                    boundary = [o for o in raw
+                                if o[0] == 0 or not re.match(r'[\u4e00-\u9fa5]', c[o[0] - 1])]
+                    named = [o for o in raw if name_fact_re.search(o[1])]
+                    pool = boundary or named or raw
+                    if pool:
+                        picked = max(pool, key=lambda o: len(o[1])) if boundary \
+                            else min(pool, key=lambda o: len(o[1]))
+                        opts.append(picked[1])
+                tight = name_fact_re.search(c)
+                if tight:
+                    w = tidy(tight.group(1))
+                    if 4 <= len(w) <= 30:
+                        opts.append(w)
+                if not opts:
+                    pending = ""
+                    continue
+                cand = min(opts, key=len)
+                for alt in opts:
+                    if alt != cand:
+                        out.append(alt)
+                if pending and len(pending) + len(cand) + 1 <= 30:
+                    merged = pending + '，' + cand
+                    out.append(merged)
+                    pending = merged
+                else:
+                    out.append(cand)
+                    pending = cand
+        return out[:10]
+
+    def score(s: str, idx: int, is_title: bool) -> float:
+        if not s or len(s) < 4:
+            return -99.0
+        if s[0] in '了的场前后中在是和与把被对将为上下名单':
+            return -99.0
+        v = 0.0
+        if generic.search(s):
+            v -= 8
+        hit = [w for w in facts if w in s]
+        if hit:
+            v += 4
+            if len(set(hit)) >= 2:
+                v += 2
+        else:
+            v -= 6
+        if re.search(r'[\u4e00-\u9fa5·]{2,8}因[^，。]{0,12}(?:停赛|缺阵|伤缺|受伤)', s):
+            v += 2
+        if '、' in s:
+            v += 2
+        if is_title:
+            v += 1.5
+        n = len(s)
+        if 8 <= n <= 28:
+            v += 1
+        elif n > 30:
+            v -= 2
+        elif n < 6:
+            v -= 1
+        v -= n * 0.03
+        v += max(0, 6 - idx) * 0.15
+        return v
+
+    candidates = []
+    for i, a in enumerate(intel[:6]):
+        title = str(a.get('title') or '')
+        if not generic.search(title):
+            cand = from_title(title)
+            if cand and not generic.search(cand):
+                candidates.append((cand, i, True))
+        for cand in from_text(a.get('text') or ''):
+            candidates.append((cand, i, False))
+    if not candidates:
+        return ""
+    best = max(candidates, key=lambda x: score(*x))
+    return best[0] if score(*best) >= 3 else ""
 
 
 def _one_line_pick(confidence: str, extras: dict, top_dir: str) -> str:
@@ -997,8 +1146,10 @@ def convert_match(date: str, m: dict, by_code: dict, by_name: dict,
         "extras": extras,
     }
     # 卡片左下角一句话主推：有赛前情报时优先用新闻标题提炼的人话，否则回退模型信号
-    out["main_pick"] = _intel_pick(extras.get("intel") or []) \
-        or _one_line_pick(confidence, extras, top_dir)
+    out["main_pick"] = _intel_pick(
+        extras.get("intel") or [],
+        (home, away, TEAM_ALIAS.get(home, ""), TEAM_ALIAS.get(away, "")),
+    ) or _one_line_pick(confidence, extras, top_dir)
     crest_h, crest_a = _crest_path(crest_idx or {}, date, home, away)
     if crest_h:
         out["home"]["logo"] = crest_h
