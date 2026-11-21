@@ -1659,7 +1659,7 @@ def _card(cfg: Config, m: Match, *, pre: str = "", lg: str = "") -> str:
         )
     attr = f' data-lg="{C.esc(lg)}"' if lg else ""
     return (
-        f'<a class="match-card" href="{url}"{attr}>'
+        f'<a class="match-card" href="{url}" data-live-card="{C.esc(m.match_id)}"{attr}>'
         + _mc_header(m, pre=pre)
         + '<div class="mc-body">'
         + _mc_teams(m, pre=pre)

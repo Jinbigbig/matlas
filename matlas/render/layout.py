@@ -1740,6 +1740,40 @@ window.LIVE_API_BASE = "https://www.matlas.top";
     return;
   }
 
+  // 首页/归档/联赛/球队卡片：比分实时替换（data-live-card = match_id）
+  var cards = [].slice.call(document.querySelectorAll("[data-live-card]"));
+  if (cards.length) {
+    var cardDates = {};
+    cards.forEach(function (c) {
+      var mid = c.getAttribute("data-live-card") || "";
+      var d = mid.slice(0, 10);
+      if (d.length === 10) (cardDates[d] = cardDates[d] || []).push(c);
+    });
+    function applyCard(c, m) {
+      var sc = c.querySelector("[data-live='score']");
+      if (sc && m.score) {
+        sc.innerHTML = '<div class="main">' + m.score + '</div>'
+          + (m.half ? '<div class="sub">(' + m.half + ')</div>' : '');
+      }
+    }
+    function pollCards() {
+      Object.keys(cardDates).forEach(function (d) {
+        getJson(url(d, true)).then(function (res) {
+          if (!res || !res.matches) return;
+          var map = {};
+          res.matches.forEach(function (m) { map[m.match_id] = m; });
+          cardDates[d].forEach(function (c) {
+            var m = map[c.getAttribute("data-live-card")];
+            if (m) applyCard(c, m);
+          });
+        });
+      });
+    }
+    pollCards();
+    setInterval(pollCards, 60000);
+    return;
+  }
+
   // 比赛列表：按日期聚合，比分 / 状态替换；已结算行不动。
   var rows = [].slice.call(document.querySelectorAll("[data-live-row]"));
   if (!rows.length) return;
