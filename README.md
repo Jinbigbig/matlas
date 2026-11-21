@@ -19,6 +19,9 @@ python -m matlas.enrich_squads  # 把评分注入近 3 天比赛的 squad 字段
 python build.py                 # 构建 data/days 下全部交易日 → _site/
 python build.py --strict        # 红线命中即以非零码退出
 python build.py --slots         # 重新生成 SLOTS.md 并打印槽位接线状态
+python update_live.py           # 实时链路：采集（盘口/赛程/比分）→ 快照 → 部署
+python update_live.py --only live   # 只采比分直播
+python update_live.py --dry-run     # 采集 + 出快照，不部署
 ```
 
 零依赖、零 CDN、离线可跑。Python 3.10+。
