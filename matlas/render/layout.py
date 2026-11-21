@@ -1693,47 +1693,90 @@ def _jsonld(blocks: list[dict[str, Any]]) -> str:
 # 切换点：LIVE_MODE="off" 暂停；"remote" 方案②（真域名）；"static" 方案③（BASE 留空走同域）。
 # fetch 失败时静默保留静态内容，域名未生效或离线不影响页面。
 _LIVE_JS = """
-// ===== 实时数据（方案②/③切换点）=====
+// ===== 实时数据（远程 / 静态切换点）=====
 window.LIVE_MODE = "remote";
 window.LIVE_API_BASE = "https://www.matlas.top";
 (function () {
-  // 域名未生效或隧道未就绪时 LIVE_MODE="off"，暂停轮询
   if (window.LIVE_MODE === "off" || window.LIVE_API_BASE.indexOf("你的域名") >= 0) return;
-  var card = document.querySelector("[data-live-match]");
-  if (!card) return;
-  var mid = card.getAttribute("data-live-match");
-  var date = mid.slice(0, 10);
-  function liveUrl() {
+  function url(date, light) {
     var stamp = Date.now();
     if (window.LIVE_MODE === "static")
       return (window.LIVE_API_BASE || "") + "/data/live/" + date + ".json?v=" + stamp;
-    return window.LIVE_API_BASE + "/api/live?date=" + date + "&v=" + stamp;
+    return window.LIVE_API_BASE + "/api/live?date=" + date + (light ? "&light=1" : "") + "&v=" + stamp;
   }
-  function pick(d) {
-    if (!d) return null;
-    if (d.match && d.match.match_id === mid) return d.match;
-    var ms = d.matches || [];
-    for (var i = 0; i < ms.length; i++) if (ms[i].match_id === mid) return ms[i];
+  function getJson(u) {
+    return fetch(u, { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .catch(function () { return null; });
+  }
+  function nameHit(a, b) {
+    a = (a || "").trim(); b = (b || "").trim();
+    return a.length >= 2 && b.length >= 2 && (a.indexOf(b) >= 0 || b.indexOf(a) >= 0);
+  }
+
+  // 单场详情：比分 + 赔率曲线
+  var card = document.querySelector("[data-live-match]");
+  if (card) {
+    var mid = card.getAttribute("data-live-match");
+    var date = mid.slice(0, 10);
+    function pollSingle() {
+      getJson(url(date, false)).then(function (d) {
+        if (!d) return;
+        var m = null, ms = d.matches || [];
+        if (d.match && d.match.match_id === mid) m = d.match;
+        else for (var i = 0; i < ms.length; i++) if (ms[i].match_id === mid) { m = ms[i]; break; }
+        if (!m) return;
+        var sc = card.querySelector("[data-live='score']");
+        if (sc && m.score) {
+          sc.innerHTML = '<div class="main">' + m.score + '</div>'
+            + (m.half ? '<div class="sub">(' + m.half + ')</div>' : '');
+        }
+        var tr = card.querySelector("[data-live='trend']");
+        if (tr && m.trend_html) tr.outerHTML = m.trend_html;
+      });
+    }
+    pollSingle();
+    setInterval(pollSingle, 60000);
+    return;
+  }
+
+  // 比赛列表：按日期聚合，比分 / 状态替换；已结算行不动。
+  var rows = [].slice.call(document.querySelectorAll("[data-live-row]"));
+  if (!rows.length) return;
+  var byDate = {};
+  rows.forEach(function (row) {
+    var st = row.querySelector(".ml-st");
+    if (st && (st.classList.contains("win") || st.classList.contains("lose"))) return;
+    var d = row.getAttribute("data-live-date");
+    if (d) (byDate[d] = byDate[d] || []).push(row);
+  });
+  function findMatch(list, row) {
+    var key = row.getAttribute("data-live-row") || "";
+    for (var i = 0; i < list.length; i++) if (list[i].match_id === key) return list[i];
+    var h = row.getAttribute("data-live-home");
+    var a = row.getAttribute("data-live-away");
+    if (h && a) for (var j = 0; j < list.length; j++)
+      if (nameHit(list[j].home, h) && nameHit(list[j].away, a)) return list[j];
     return null;
   }
-  function apply(m) {
-    if (!m) return;
-    var sc = card.querySelector("[data-live='score']");
-    if (sc && m.score) {
-      sc.innerHTML = '<div class="main">' + m.score + '</div>'
-        + (m.half ? '<div class="sub">(' + m.half + ')</div>' : '');
-    }
-    var tr = card.querySelector("[data-live='trend']");
-    if (tr && m.trend_html) tr.outerHTML = m.trend_html;
+  function pollDate(date, group) {
+    getJson(url(date, true)).then(function (d) {
+      if (!d || !d.matches) return;
+      group.forEach(function (row) {
+        var m = findMatch(d.matches, row);
+        if (!m) return;
+        var v = row.querySelector(".ml-v");
+        if (v && m.score) v.textContent = m.score;
+        var st = row.querySelector(".ml-st");
+        if (st && m.status) st.textContent = m.status;
+      });
+    });
   }
-  function poll() {
-    fetch(liveUrl(), { cache: "no-store" })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (d) { apply(pick(d)); })
-      .catch(function () {});
+  function pollList() {
+    Object.keys(byDate).forEach(function (d) { pollDate(d, byDate[d]); });
   }
-  poll();
-  setInterval(poll, 60000);
+  pollList();
+  setInterval(pollList, 60000);
 })();
 """
 

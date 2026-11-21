@@ -113,23 +113,51 @@ def _trend_html(tk: list) -> str:
         return ""
 
 
-def live_for(date: str) -> dict | None:
-    """生成某日的实时数据（HTTP 与静态导出共用）。"""
-    day_path = DAYS_DIR / f"{date}.json"
-    day = _read(day_path)
-    if not day:
+def _skeleton(date: str, day: dict | None, fx_rows: list[dict]) -> list[tuple[str, str, str, str]]:
+    """统一场次骨架 → [(match_id, code, home, away)]。
+
+    优先 data/days（含 match_id、分析数据）；当日未 import 时用 fixtures 兜底，
+    使「今天有赛程但还没 import」时实时接口仍有数据（本地云自采集后常态）。
+    """
+    out: list[tuple[str, str, str, str]] = []
+    if day:
+        for m in day.get("matches") or []:
+            out.append((
+                str(m.get("match_id") or ""),
+                str(m.get("code") or ""),
+                str((m.get("home") or {}).get("name") or ""),
+                str((m.get("away") or {}).get("name") or ""),
+            ))
+        return out
+    for r in fx_rows:
+        fid = str(r.get("fid") or r.get("mid") or "")
+        mid = f"fx-{fid}" if fid else f"fx-{r.get('home')}-{r.get('away')}"
+        out.append((mid, str(r.get("code") or ""),
+                    str(r.get("home") or ""), str(r.get("away") or "")))
+    return out
+
+
+def live_for(date: str, *, light: bool = False) -> dict | None:
+    """生成某日的实时数据（HTTP 与静态导出共用）。
+
+    light=True 供比赛列表用：只回比分/状态/盘口数字，去掉体积大的 trend_html，
+    避免整页 12 天各拉一份完整曲线。
+    """
+    day = _read(DAYS_DIR / f"{date}.json")
+    fx_days = ((_read(FIXTURES) or {}).get("days")) or {}
+    fx_rows = fx_days.get(date) or []
+    if not day and not fx_rows:
+        return None
+
+    skeleton = _skeleton(date, day, fx_rows)
+    if not skeleton:
         return None
 
     ticks_src = ((_read(ODDS_TICKS) or {}).get("ticks")) or {}
     results_src = _read(RESULTS) or {}
-    fx_days = ((_read(FIXTURES) or {}).get("days")) or {}
 
     matches = []
-    for m in day.get("matches") or []:
-        home = (m.get("home") or {}).get("name", "")
-        away = (m.get("away") or {}).get("name", "")
-        code = str(m.get("code") or "")
-
+    for match_id, code, home, away in skeleton:
         tk = _lookup(ticks_src, date, home, away) or []
         res = _lookup(results_src, date, home, away) or {}
 
@@ -146,8 +174,8 @@ def live_for(date: str) -> dict | None:
             if hcp is not None:
                 odds["handicap"] = hcp
 
-        matches.append({
-            "match_id": m.get("match_id", ""),
+        item = {
+            "match_id": match_id,
             "code": code,
             "home": home,
             "away": away,
@@ -155,9 +183,11 @@ def live_for(date: str) -> dict | None:
             "score": str(res.get("fullScore") or "").replace(":", "-"),
             "half": str(res.get("halfScore") or "").replace(":", "-"),
             "odds": odds,
-            "odds_ticks": tk,
-            "trend_html": _trend_html(tk),
-        })
+        }
+        if not light:
+            item["odds_ticks"] = tk
+            item["trend_html"] = _trend_html(tk)
+        matches.append(item)
 
     return {
         "date": date,
@@ -218,7 +248,8 @@ class Handler(BaseHTTPRequestHandler):
             if not date:
                 dates = available_dates()
                 date = dates[-1] if dates else ""
-            obj = live_for(date)
+            light = (qs.get("light") or [""])[0] in ("1", "true", "yes")
+            obj = live_for(date, light=light)
             return self._send(200, obj) if obj else self._send(404, {"error": f"no data for {date}"})
         if u.path.startswith("/api/live/"):
             mid = u.path.rsplit("/", 1)[-1]

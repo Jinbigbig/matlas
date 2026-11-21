@@ -2811,7 +2811,8 @@ def _ml_form(board: dict | None, name: str) -> str:
     return f'<em class="mlf">{dots}</em>'
 
 
-def _ml_row(m: Match, board: dict | None = None, t: str | None = None) -> str:
+def _ml_row(m: Match, board: dict | None = None, t: str | None = None,
+            date: str = "") -> str:
     """比赛列表的一行：已结算带比分与命中，未结算带方向与比分预测。"""
     crest_h = _ml_crest(m.home.name, pre=getattr(m.home, "logo", "") or "")
     crest_a = _ml_crest(m.away.name, pre=getattr(m.away, "logo", "") or "")
@@ -2830,8 +2831,10 @@ def _ml_row(m: Match, board: dict | None = None, t: str | None = None) -> str:
         stat += "</span>"
     else:
         stat = '<span class="ml-st">待开赛</span>'
+    live = (f' data-live-row="{C.esc(m.match_id)}" data-live-date="{C.esc(date)}"'
+            if date else "")
     return (
-        f'<a class="mline" data-jc="1" href="matches/{m.match_id}.html">'
+        f'<a class="mline" data-jc="1" href="matches/{m.match_id}.html"{live}>'
         f'<span class="ml-t">{C.esc(time_txt)}'
         f'{_ml_code(m.code or "")}</span>'
         f'<span class="ml-lg">{C.esc(m.competition or "")}</span>'
@@ -2857,7 +2860,7 @@ def _same_fx(a: str, b: str) -> bool:
                                         and (a in b or b in a))))
 
 
-def _ml_pending(r: dict, board: dict | None = None) -> str:
+def _ml_pending(r: dict, board: dict | None = None, date: str = "") -> str:
     """只有赛程的行：竞彩场次标待分析，其它联赛标仅赛程。"""
     jc = 1 if r.get("jc") else 0
     if jc:
@@ -2868,8 +2871,14 @@ def _ml_pending(r: dict, board: dict | None = None) -> str:
         stat = f'<span class="ml-st">{C.esc(label)}</span>'
     crest_h = _ml_crest(r.get("home") or "", str(r.get("hid") or ""))
     crest_a = _ml_crest(r.get("away") or "", str(r.get("aid") or ""))
+    fid = str(r.get("fid") or r.get("mid") or "")
+    key = ("fx-" + fid) if fid else f"{r.get('home')}|{r.get('away')}"
+    live = (f' data-live-row="{C.esc(key)}" data-live-date="{C.esc(date)}"'
+            f' data-live-home="{C.esc(r.get("home") or "")}"'
+            f' data-live-away="{C.esc(r.get("away") or "")}"'
+            if date else "")
     return (
-        f'<div class="mline off" data-jc="{jc}">'
+        f'<div class="mline off" data-jc="{jc}"{live}>'
         f'<span class="ml-t">{C.esc(r.get("time") or "—")}'
         f'{_ml_code(str(r.get("code") or ""))}</span>'
         f'<span class="ml-lg">{C.esc(r.get("league") or "")}</span>'
@@ -2991,11 +3000,11 @@ def render_matches(cfg: Config, days: list[Day],
         for m in ms:
             t = _ml_time_of(m, fx)
             items.append((_ml_sort_key(t, str(m.code or ""), 0),
-                          _ml_row(m, board, t)))
+                          _ml_row(m, board, t, d)))
         for r in pend:
             t = (str(r.get("time") or "").strip() or "—")[:5]
             items.append((_ml_sort_key(t, str(r.get("code") or ""), 1),
-                          _ml_pending(r, board)))
+                          _ml_pending(r, board, d)))
         items.sort(key=lambda x: x[0])
         rows = "".join(html for _, html in items)
         more = "" if jn else (
