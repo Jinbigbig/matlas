@@ -3341,6 +3341,16 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
     out.innerHTML = html || '<p class="sub">当日无盘口数据。</p>';
   }
   window.renderOddsDay = render; // 日历控件 change 时由全局 JS 调用
+  // 实时全玩法赔率：由全局实时脚本按 match_id 注入后重渲染当前日期
+  window.updateOddsFull = function (map) {
+    var n = 0;
+    DATA.rows.forEach(function (r) {
+      var of = map[r.id];
+      if (of && of.spf) { r.of = of; n++; }
+    });
+    if (n) render(DATA.dates[0]);
+    return n;
+  };
   render(DATA.dates[0]);
 })();
 </script>'''
@@ -3953,6 +3963,20 @@ def render_bets(cfg: Config, ordered: list[Day]) -> str:
   if (DATA.dates.length) renderMatches(DATA.dates[0]);
   renderBasket();
   render();
+  // 实时全玩法赔率：由全局实时脚本按 match_id 注入后重渲染
+  window.updateOddsFull = function (map) {
+    var n = 0;
+    DATA.rows.forEach(function (r) {
+      var of = map[r.id];
+      if (of && of.spf) { r.of = of; n++; }
+    });
+    if (!n) return 0;
+    var cal = document.querySelector(".nb-topbar .date-cal");
+    renderMatches(cal && cal.value ? cal.value : DATA.dates[0]);
+    renderBasket();
+    render();
+    return n;
+  };
 })();
 </script>'''
     )

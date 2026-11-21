@@ -9,31 +9,32 @@
      生成 data/live/<日期>.json + index.json，推到 gh-pages 后前端 fetch 同域 JSON。
      切换②→③时前端只改 LIVE_API_BASE 一个地址，无需重写逻辑。
 
-数据源（混合源）：
+数据源（全部 matlas 自采，不读 jinbet）：
   - 场次骨架（match_id / code / 简称队名）：matlas data/days/*.json
-  - 实时盘口时序：jinbet odds_ticks.json
-  - 赛果比分：jinbet results_data.json
-  - 开赛状态：jinbet fixtures.json
-  队名匹配沿用 import_jinbet.py 的双向包含兜底，避免简称/全称对不上。
+  - 实时盘口时序：data/odds_ticks.json（宿主任务采集）
+  - 赛果比分：data/results_data.json（基线 + 赛程源实时兜底）
+  - 开赛状态：data/fixtures.json（宿主任务采集）
+  - 全玩法赔率：data/odds_full.json（宿主任务采集）
+  队名匹配沿用双向包含兜底，避免简称/全称对不上。
 """
 from __future__ import annotations
 
 import argparse
 import datetime as dt
 import json
-import os
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parent
-DAYS_DIR = ROOT / "data" / "days"
-EXPORT_DIR = ROOT / "data" / "live"
-JINBET = Path(os.environ.get("MATLAS_JINBET", "C:/Users/Jin/jinbet"))
-ODDS_TICKS = JINBET / "odds_ticks.json"
-RESULTS = JINBET / "results_data.json"
-FIXTURES = JINBET / "fixtures.json"
+DATA = ROOT / "data"
+DAYS_DIR = DATA / "days"
+EXPORT_DIR = DATA / "live"
+ODDS_TICKS = DATA / "odds_ticks.json"
+RESULTS = DATA / "results_data.json"
+FIXTURES = DATA / "fixtures.json"
+ODDS_FULL = DATA / "odds_full.json"
 
 CACHE: dict[str, tuple[float, object]] = {}
 
@@ -191,12 +192,15 @@ def live_for(date: str, *, light: bool = False) -> dict | None:
 
     ticks_src = ((_read(ODDS_TICKS) or {}).get("ticks")) or {}
     results_src = _read(RESULTS) or {}
+    full_src = ((_read(ODDS_FULL) or {}).get("data")) or {}
 
     matches = []
     for match_id, code, home, away in skeleton:
         tk = _lookup(ticks_src, date, home, away) or []
         res = _lookup(results_src, date, home, away) or {}
         fx_row = _fixture_row(fx_days, date, code, home, away)
+        # 全玩法赔率：key 为「日期_竞彩编号」，与 match_id 同源
+        of = full_src.get(f"{date}_{code}") or {}
 
         # 最新盘口（胜平负 + 让球首档），供前端替换表头数字
         odds = {}
@@ -223,6 +227,8 @@ def live_for(date: str, *, light: bool = False) -> dict | None:
             "half": str(res.get("halfScore") or "").replace(":", "-"),
             "odds": odds,
         }
+        if of:
+            item["odds_full"] = of
         if not light:
             item["odds_ticks"] = tk
             item["trend_html"] = _trend_html(tk)

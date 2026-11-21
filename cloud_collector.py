@@ -1,8 +1,9 @@
-"""本地云采集器：常驻循环调度 jinbet 采集脚本，喂给本机实时服务。
+"""本地云采集器：常驻循环调度 matlas 自己的采集脚本，喂给本机实时服务。
 
-定位：这台机器是「本地云」——采集、计算、服务都在本机闭环。
-采集器只调度现成脚本（不重写抓取逻辑），按数据时效性分层跑：
-  盘口 1 分钟 / 赛程 15 分钟 / 天气·情报·阵容 30 分钟 / 伤停·裁判·积分榜 60 分钟。
+定位：这台机器是「本地云」——采集、计算、服务都在本机闭环，不读 jinbet。
+全部脚本在 scripts/collectors/，按数据时效性分层跑：
+  对阵上下文 5 分钟 / 天气·情报·阵容 30 分钟 / 伤停·裁判·积分榜 60 分钟。
+体彩源（盘口/赛程/全玩法赔率）因容器内 HTTP 567 走宿主侧 collect_lottery.py 任务。
 每个脚本独立进程 + 超时 + 异常隔离，单个失败不影响其它；单点运行锁防多开。
 
 用法：
@@ -21,15 +22,21 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-JINBET = Path("C:/Users/Jin/jinbet")
+COLLECTORS = ROOT / "scripts" / "collectors"
 PY = Path(sys.executable)
 LOCK = ROOT / "data" / ".cloud_collector.lock"
 LOG = ROOT / "data" / "cloud_collector.log"
+SYNC_AFTER_RUN = os.environ.get("MATLAS_SYNC_AFTER_RUN", "1") not in ("0", "false", "no")
+# 容器内 PID 命名空间隔离：主进程恒为 1，文件锁会误判"已在运行"。
+# Compose 已保证单实例，容器模式跳过文件锁；宿主直跑仍保留。
+SKIP_LOCK = os.environ.get("MATLAS_SKIP_LOCK", "0") not in ("0", "false", "no")
+_sync_pending = False
 
 # 频率分层（秒）：脚本按数据变化速度分组，避免高频抓冷数据。
+# 体彩源（盘口时序/赛程赛果/全玩法赔率）容器出口被 HTTP 567 拒，走宿主侧
+# collect_lottery.py 任务；这里只调度公开网页源与对阵上下文生成。
 TASKS: dict[int, list[tuple[str, str]]] = {
-    60: [("盘口时序", "_fetch_odds_ticks.py")],
-    900: [("赛程赛果", "_fetch_fixtures.py")],
+    300: [("对阵上下文", "_context")],  # 特殊标签：调用 make_today_context.py
     1800: [
         ("天气", "_fetch_weather.py"),
         ("赛前情报", "_fetch_intel.py"),
@@ -51,6 +58,28 @@ TASKS: dict[int, list[tuple[str, str]]] = {
 TIMEOUT = 180
 
 
+def _mark_sync() -> None:
+    """标记本轮有采集写入，稍后统一入库，避免每个脚本各连一次库。"""
+    global _sync_pending
+    if SYNC_AFTER_RUN:
+        _sync_pending = True
+
+
+def _flush_sync() -> None:
+    """把变化的 JSON 增量写进 PostgreSQL；失败不影响采集循环。"""
+    global _sync_pending
+    if not _sync_pending:
+        return
+    _sync_pending = False
+    try:
+        import db_sync
+        result = db_sync.sync_once()
+        if result.get("written"):
+            log(f"入库 {result['written']} 项（ PostgreSQL ）")
+    except Exception as e:  # noqa: BLE001
+        log(f"入库跳过：{type(e).__name__}: {e}")
+
+
 def log(msg: str) -> None:
     stamp = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     line = f"[{stamp}] {msg}"
@@ -67,7 +96,9 @@ def log(msg: str) -> None:
 
 
 def run_task(label: str, script: str) -> None:
-    path = JINBET / script
+    # 全部脚本在 scripts/collectors/；cwd=ROOT，脚本内相对路径（scripts/matches_data.json 等）基于此。
+    name = "make_today_context.py" if script == "_context" else script
+    path = COLLECTORS / name
     if not path.exists():
         log(f"跳过 {label}：脚本不存在 {path}")
         return
@@ -75,7 +106,7 @@ def run_task(label: str, script: str) -> None:
     env = dict(os.environ, PYTHONIOENCODING="utf-8")
     try:
         p = subprocess.run(
-            [str(PY), str(path)], cwd=str(JINBET), timeout=TIMEOUT,
+            [str(PY), str(path)], cwd=str(ROOT), timeout=TIMEOUT,
             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=env,
         )
         secs = time.time() - t0
@@ -83,6 +114,7 @@ def run_task(label: str, script: str) -> None:
         if p.returncode == 0:
             tail = out.splitlines()[-1:] or [""]
             log(f"完成 {label}（{secs:.0f}s）：{tail[0][:120]}")
+            _mark_sync()
         else:
             log(f"失败 {label}（{secs:.0f}s，exit={p.returncode}）：{out[-200:]}")
     except subprocess.TimeoutExpired:
@@ -129,13 +161,14 @@ def once(only: str | None = None) -> None:
     for interval in sorted(TASKS):
         for label, script in TASKS[interval]:
             run_task(label, script)
+    _flush_sync()
 
 
 def loop() -> None:
-    if not acquire_lock():
+    if not SKIP_LOCK and not acquire_lock():
         log("已有采集器在运行，退出")
         return
-    log(f"本地云采集器启动：jinbet={JINBET}，python={PY}")
+    log(f"本地云采集器启动：collectors={COLLECTORS}，python={PY}")
     next_run = {interval: 0.0 for interval in TASKS}
     try:
         while True:
@@ -145,6 +178,7 @@ def loop() -> None:
                     for label, script in TASKS[interval]:
                         run_task(label, script)
                     next_run[interval] = time.time() + interval
+            _flush_sync()
             time.sleep(5)
     except KeyboardInterrupt:
         log("采集器收到中断，退出")

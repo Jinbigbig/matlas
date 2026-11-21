@@ -1,0 +1,10 @@
+# Cloudflare Pages 项目配置（方案 A）
+# Pages Functions 从 cf_pages/functions 复制到 _site/functions 后随站点部署。
+# KV namespace id 由 cf_bootstrap.py 自动写入 .env；下方 id 部署前需替换为真实值。
+name = "matlas"
+compatibility_date = "2026-11-19"
+pages_build_output_dir = "_site"
+
+[[kv_namespaces]]
+binding = "MATLAS_KV"
+id = "REPLACE_WITH_CF_KV_NAMESPACE_ID"

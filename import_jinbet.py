@@ -31,28 +31,28 @@ from matlas.t2s import to_simplified
 PRED_DIR = Path("C:/Users/Jin/jinbet/predictions")
 RES_DIR = Path("C:/Users/Jin/jinbet/results_history")
 # 引擎全量赛果库（results_history 归档缺失时回退）：key = {date}_{主}_{客}
-RESULTS_DATA_JSON = Path("C:/Users/Jin/jinbet/results_data.json")
+RESULTS_DATA_JSON = Path("C:/Users/Jin/matlas/data/results_data.json")
 ODDS_JSON = Path("C:/Users/Jin/jinbet/odds_data.json")
 # 网易竞彩赛程开赛时间（jinbet/_fetch_match_times.py 抓取维护）
-MATCH_TIMES_JSON = Path("C:/Users/Jin/jinbet/match_times.json")
+MATCH_TIMES_JSON = Path("C:/Users/Jin/matlas/data/match_times.json")
 # 赛前环境（jinbet/_fetch_* 产出，缺失自动跳过）
-INJURIES_JSON = Path("C:/Users/Jin/jinbet/injuries.json")
-LINEUPS_JSON = Path("C:/Users/Jin/jinbet/lineups.json")
-HKJC_JSON = Path("C:/Users/Jin/jinbet/hkjc.json")
+INJURIES_JSON = Path("C:/Users/Jin/matlas/data/injuries.json")
+LINEUPS_JSON = Path("C:/Users/Jin/matlas/data/lineups.json")
+HKJC_JSON = Path("C:/Users/Jin/matlas/data/hkjc.json")
 # 补充源：7M 联赛军情（港式中文）+ lineupstoday 联赛伤停汇总页（jinbet/_fetch_injuries_extra.py）
-INJURIES_EXTRA_JSON = Path("C:/Users/Jin/jinbet/injuries_extra.json")
+INJURIES_EXTRA_JSON = Path("C:/Users/Jin/matlas/data/injuries_extra.json")
 # 盘口时序（jinbet/_fetch_odds_ticks.py 每日 11:10 / 14:00 / 19:00 三点采集）：同一场多次快照才画得出来
-ODDS_TICKS_JSON = Path("C:/Users/Jin/jinbet/odds_ticks.json")
+ODDS_TICKS_JSON = Path("C:/Users/Jin/matlas/data/odds_ticks.json")
 # 赛程里带的主客队队徽编号，离线到站内的 assets/logo/teams/<id>.png
 CREST_DIR = Path(__file__).resolve().parent / "assets" / "logo" / "teams"
 CREST_BASE = "https://www.qiuxiaoce.com/wp-content/logo/teams"
-WEATHER_JSON = Path("C:/Users/Jin/jinbet/weather.json")
-REFEREE_JSON = Path("C:/Users/Jin/jinbet/referee.json")
+WEATHER_JSON = Path("C:/Users/Jin/matlas/data/weather.json")
+REFEREE_JSON = Path("C:/Users/Jin/matlas/data/referee.json")
 # 网易红彩「数据」tab（jinbet/_fetch_hongcai.py 产出）：统计/风格/裁判/天气/盘路/
 # 交锋/进球时段/赛前分析/伤停，按竞彩编号索引，与 jinbet 报告生成共用同一份
-HONGCAI_JSON = Path("C:/Users/Jin/jinbet/hongcai.json")
+HONGCAI_JSON = Path("C:/Users/Jin/matlas/data/hongcai.json")
 # 赛前情报（jinbet/_fetch_intel.py 产出）：直播吧公开新闻，按竞彩编号索引
-INTEL_JSON = Path("C:/Users/Jin/jinbet/intel.json")
+INTEL_JSON = Path("C:/Users/Jin/matlas/data/intel.json")
 _results_data_cache: dict | None = None
 OUT_DIR = Path("C:/Users/Jin/matlas/data/days")
 
@@ -64,7 +64,7 @@ FOX_STANDINGS_JSON = Path("C:/Users/Jin/jinbet/fox_standings.json")
 # uefa_standings.json：欧协联积分榜，同 fox 的分组结构
 UEFA_STANDINGS_JSON = Path("C:/Users/Jin/jinbet/uefa_standings.json")
 # sporttery_standings.json：体彩官方积分榜（欧国联等），分组结构 group[:].teams[]
-SPORTTERY_STANDINGS_JSON = Path("C:/Users/Jin/jinbet/sporttery_standings.json")
+SPORTTERY_STANDINGS_JSON = Path("C:/Users/Jin/matlas/data/sporttery_standings.json")
 # scripts/matches_data.json：网易当日抓取，home_recent 等 gf/ga 近况序列
 MATCHES_DATA_JSON = Path("C:/Users/Jin/jinbet/scripts/matches_data.json")
 

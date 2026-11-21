@@ -18,15 +18,41 @@ _tmp_*.py
 # 实时数据导出产物（方案③后门，运行时生成，不进仓库）
 data/live/
 
-# 本地云采集器运行时产物（锁文件与日志）
+# 本地云采集器运行时产物（锁文件、日志、同步状态）
 data/.cloud_collector.lock
 data/cloud_collector.log
+data/.db_sync_state.json
+data/odds_full.json
+data/odds_full.log
+data/.migration_backup/
+
+# matlas 自采数据源（collectors 运行时落地，非构建输入，不进仓库）
+data/odds_ticks.json
+data/results_data.json
+data/fixtures.json
+data/match_times.json
+data/injuries.json
+data/injuries_extra.json
+data/intel.json
+data/lineups.json
+data/hkjc.json
+data/hongcai.json
+data/referee.json
+data/weather.json
+data/stadium_geo.json
+data/league_data.json
+data/sporttery_standings.json
+_calc_result.json
+scripts/matches_data.json
 
 # cloudflared 二进制（winget 安装或单独下载，体积大不进仓库）
 tools/
 
 # tunnel 目录的临时空文件（双击 bat 时输入法误触产生）
 tunnel/生成
+
+# 本机路径配置（仓库携带 .env.example 模板）
+/.env
 
 # 实时服务运维脚本与使用说明：私有资料库备份，不进公开仓库
 /LIVE.md
@@ -36,3 +62,16 @@ tunnel/生成
 /uninstall_autostart.bat
 /tunnel/
 /matlas-live-private-backup-*.zip
+/matlas-local-cloud-backup-*.zip
+
+# 方案 A：Cloudflare Pages 部署说明（私有）与运行时生成配置
+/CLOUDFLARE.md
+/cf_setup.bat
+/install_push_task.bat
+/uninstall_push_task.bat
+/matlas-lottery-task.xml
+/wrangler.toml
+/.wrangler/
+/cf_deploy_last.log
+/sandbox/
+data/tunnel-*.log

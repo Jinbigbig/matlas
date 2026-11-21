@@ -1714,6 +1714,38 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
     return a.length >= 2 && b.length >= 2 && (a.indexOf(b) >= 0 || b.indexOf(a) >= 0);
   }
 
+  // 赔率页 / 投注页：全玩法赔率实时替换（页面暴露 window.updateOddsFull）
+  if (typeof window.updateOddsFull === "function") {
+    var ofDates = {}, ofCal = document.querySelector("#odds-dates, .nb-topbar .date-cal");
+    var ofDate = (ofCal && ofCal.value) || "";
+    if (ofDate) ofDates[ofDate] = 1;
+    // 同时拉明天（在售盘口跨日），保证日历切换后也有数据
+    var ofTomorrow = new Date(ofDate + "T00:00:00");
+    if (!isNaN(ofTomorrow.getTime())) {
+      ofTomorrow.setDate(ofTomorrow.getDate() + 1);
+      var tStr = ofTomorrow.toISOString().slice(0, 10);
+      if (tStr !== ofDate) ofDates[tStr] = 1;
+    }
+    function pollOddsFull() {
+      var pending = Object.keys(ofDates).length;
+      if (!pending) return;
+      Object.keys(ofDates).forEach(function (d) {
+        getJson(url(d, true)).then(function (res) {
+          pending--;
+          if (!res || !res.matches) return;
+          var map = {};
+          res.matches.forEach(function (m) {
+            if (m.odds_full) map[m.match_id] = m.odds_full;
+          });
+          if (Object.keys(map).length) window.updateOddsFull(map);
+        });
+      });
+    }
+    pollOddsFull();
+    setInterval(pollOddsFull, 60000);
+    return;
+  }
+
   // 单场详情：比分 + 赔率曲线
   var card = document.querySelector("[data-live-match]");
   if (card) {
