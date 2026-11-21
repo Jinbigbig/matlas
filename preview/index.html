@@ -6,7 +6,7 @@
 <title>每日赛事前瞻 - Matlas</title>
 <meta name="description" content="每日赛事前瞻列表：AI 报告逐日归档，方向、比分、总进球首选与信心分层">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/preview/">
-<link rel="stylesheet" href="../assets/style.css?v=1795261716">
+<link rel="stylesheet" href="../assets/style.css?v=1795266114">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每日赛事前瞻 - Matlas">
 <meta property="og:description" content="每日赛事前瞻列表：AI 报告逐日归档，方向、比分、总进球首选与信心分层">
@@ -266,6 +266,13 @@ window.LIVE_MODE = "remote";
       if (sc && m.score) {
         sc.innerHTML = '<div class="main">' + m.score + '</div>'
           + (m.half ? '<div class="sub">(' + m.half + ')</div>' : '');
+      }
+      var badge = c.querySelector("[data-live='status']");
+      if (badge && m.status) {
+        var live = m.status === "进行中";
+        badge.textContent = live ? (m.minute ? m.minute + "'" : "进行中") : m.status;
+        badge.className = "mc-live" + (live ? " live" : "");
+        badge.hidden = false;
       }
     }
     function pollCards() {

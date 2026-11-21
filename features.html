@@ -6,7 +6,7 @@
 <title>功能 - Matlas</title>
 <meta name="description" content="站点功能清单：每日前瞻、历史归档、赛事Top、站内搜索、机器可读数据">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/features.html">
-<link rel="stylesheet" href="assets/style.css?v=1795261716">
+<link rel="stylesheet" href="assets/style.css?v=1795266114">
 <meta property="og:type" content="article">
 <meta property="og:title" content="功能 - Matlas">
 <meta property="og:description" content="站点功能清单：每日前瞻、历史归档、赛事Top、站内搜索、机器可读数据">
@@ -266,6 +266,13 @@ window.LIVE_MODE = "remote";
       if (sc && m.score) {
         sc.innerHTML = '<div class="main">' + m.score + '</div>'
           + (m.half ? '<div class="sub">(' + m.half + ')</div>' : '');
+      }
+      var badge = c.querySelector("[data-live='status']");
+      if (badge && m.status) {
+        var live = m.status === "进行中";
+        badge.textContent = live ? (m.minute ? m.minute + "'" : "进行中") : m.status;
+        badge.className = "mc-live" + (live ? " live" : "");
+        badge.hidden = false;
       }
     }
     function pollCards() {

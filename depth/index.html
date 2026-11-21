@@ -6,7 +6,7 @@
 <title>深度数据 - Matlas</title>
 <meta name="description" content="470 支球队六维战力、赔率与让球走势，按赛事分类浏览">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/depth/">
-<link rel="stylesheet" href="../assets/style.css?v=1795261716">
+<link rel="stylesheet" href="../assets/style.css?v=1795266114">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度数据 - Matlas">
 <meta property="og:description" content="470 支球队六维战力、赔率与让球走势，按赛事分类浏览">
@@ -284,6 +284,13 @@ window.LIVE_MODE = "remote";
       if (sc && m.score) {
         sc.innerHTML = '<div class="main">' + m.score + '</div>'
           + (m.half ? '<div class="sub">(' + m.half + ')</div>' : '');
+      }
+      var badge = c.querySelector("[data-live='status']");
+      if (badge && m.status) {
+        var live = m.status === "进行中";
+        badge.textContent = live ? (m.minute ? m.minute + "'" : "进行中") : m.status;
+        badge.className = "mc-live" + (live ? " live" : "");
+        badge.hidden = false;
       }
     }
     function pollCards() {
