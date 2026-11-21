@@ -1753,12 +1753,23 @@ window.LIVE_MODE = "remote";
     }
     return best;
   }
+  // 同一页面会话内记住已拿到的最新一份。CF 接口偶发超时时，
+  // 不让落后的同域静态快照把页面上的新分钟覆盖回去。
+  var _lastGood = {};
   function fetchLive(date, light) {
+    var key = date + (light ? "|l" : "|f");
     var urls = [staticUrl(date, light)];
     if (!LOCAL) urls.push(apiUrl(date, light));
     return Promise.all(urls.map(getJson)).then(function (list) {
       var best = pickNewest(list);
-      if (best) { _fail = 0; return best; }
+      var prev = _lastGood[key];
+      if (best) {
+        if (prev && String(best.updated || "") < String(prev.updated || "")) best = prev;
+        else _lastGood[key] = best;
+        _fail = 0;
+        return best;
+      }
+      if (prev) return prev;
       if (LOCAL || ON_GH) return null;
       return getJson(ghUrl(date, light));
     });
