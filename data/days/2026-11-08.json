@@ -35,10 +35,10 @@
    },
    "metrics_home": {
     "attack": 46,
-    "defence": 83,
+    "defence": 84,
     "control": 72,
-    "form": 77,
-    "value": 98,
+    "form": 78,
+    "value": 99,
     "motivation": 68,
     "AXES": [
      [
@@ -69,11 +69,11 @@
    },
    "metrics_away": {
     "attack": 94,
-    "defence": 54,
-    "control": 91,
+    "defence": 55,
+    "control": 90,
     "form": 88,
     "value": 91,
-    "motivation": 75,
+    "motivation": 77,
     "AXES": [
      [
       "attack",
@@ -335,7 +335,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "lam_home": 1.355,
     "lam_away": 1.654,
@@ -1934,7 +1934,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "lam_home": 2.25,
     "lam_away": 1.925,
@@ -2950,10 +2950,10 @@
     "country": "",
     "rank": 12,
     "points": 1,
-    "played": 3,
+    "played": 4,
     "win": 0,
     "draw": 1,
-    "loss": 2,
+    "loss": 3,
     "form": "",
     "logo": "assets/logo/teams/948.png"
    },
@@ -2979,12 +2979,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 32,
-    "defence": 37,
-    "control": 37,
-    "form": 26,
-    "value": 58,
-    "motivation": 53,
+    "attack": 38,
+    "defence": 38,
+    "control": 38,
+    "form": 24,
+    "value": 52,
+    "motivation": 52,
     "AXES": [
      [
       "attack",
@@ -3014,11 +3014,11 @@
    },
    "metrics_away": {
     "attack": 95,
-    "defence": 79,
+    "defence": 76,
     "control": 95,
-    "form": 74,
+    "form": 71,
     "value": 95,
-    "motivation": 74,
+    "motivation": 76,
     "AXES": [
      [
       "attack",
@@ -3261,7 +3261,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -3272,32 +3272,32 @@
      },
      {
       "rank": 2,
+      "name": "西悉尼",
+      "pts": 8,
+      "p": 5
+     },
+     {
+      "rank": 3,
       "name": "悉尼FC",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 3,
+      "rank": 4,
       "name": "布里斯班",
       "pts": 7,
       "p": 3
      },
      {
-      "rank": 4,
+      "rank": 5,
       "name": "墨尔本城",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 5,
+      "rank": 6,
       "name": "珀斯",
       "pts": 6,
-      "p": 4
-     },
-     {
-      "rank": 6,
-      "name": "西悉尼",
-      "pts": 5,
       "p": 4
      },
      {
@@ -3334,7 +3334,7 @@
       "rank": 12,
       "name": "阿德莱德",
       "pts": 1,
-      "p": 3
+      "p": 4
      }
     ],
     "lam_home": 1.453,
@@ -4414,11 +4414,11 @@
    },
    "metrics_home": {
     "attack": 32,
-    "defence": 54,
+    "defence": 55,
     "control": 45,
     "form": 29,
     "value": 51,
-    "motivation": 6,
+    "motivation": 7,
     "AXES": [
      [
       "attack",
@@ -4450,9 +4450,9 @@
     "attack": 29,
     "defence": 68,
     "control": 45,
-    "form": 46,
-    "value": 60,
-    "motivation": 8,
+    "form": 48,
+    "value": 61,
+    "motivation": 10,
     "AXES": [
      [
       "attack",
@@ -4723,7 +4723,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "lam_home": 1.42,
     "lam_away": 1.264,
@@ -6249,7 +6249,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "lam_home": 1.046,
     "lam_away": 1.079,
@@ -7134,7 +7134,7 @@
    },
    "metrics_home": {
     "attack": 76,
-    "defence": 20,
+    "defence": 19,
     "control": 53,
     "form": 45,
     "value": 72,
@@ -7167,12 +7167,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 89,
+    "attack": 88,
     "defence": 91,
     "control": 96,
     "form": 98,
-    "value": 73,
-    "motivation": 88,
+    "value": 72,
+    "motivation": 87,
     "AXES": [
      [
       "attack",
@@ -7469,7 +7469,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -8587,11 +8587,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 82,
+    "attack": 81,
     "defence": 53,
-    "control": 81,
-    "form": 52,
-    "value": 91,
+    "control": 80,
+    "form": 51,
+    "value": 90,
     "motivation": 86,
     "AXES": [
      [
@@ -8889,7 +8889,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -8962,7 +8962,7 @@
       "rank": 7,
       "name": "毕尔巴鄂",
       "pts": 16,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 8,
@@ -8996,26 +8996,26 @@
      },
      {
       "rank": 10,
+      "name": "西班牙人",
+      "pts": 15,
+      "p": 13
+     },
+     {
+      "rank": 11,
       "name": "桑坦德",
       "pts": 14,
       "p": 12
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "塞尔塔",
       "pts": 13,
       "p": 12
      },
      {
-      "rank": 12,
+      "rank": 13,
       "name": "阿拉维斯",
       "pts": 13,
-      "p": 12
-     },
-     {
-      "rank": 13,
-      "name": "西班牙人",
-      "pts": 12,
       "p": 12
      },
      {
@@ -10362,7 +10362,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -11343,10 +11343,10 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 87,
+    "attack": 88,
     "defence": 94,
     "control": 89,
-    "form": 87,
+    "form": 88,
     "value": 86,
     "motivation": 94,
     "AXES": [
@@ -11378,11 +11378,11 @@
    },
    "metrics_away": {
     "attack": 94,
-    "defence": 84,
+    "defence": 83,
     "control": 94,
-    "form": 87,
+    "form": 88,
     "value": 100,
-    "motivation": 81,
+    "motivation": 80,
     "AXES": [
      [
       "attack",
@@ -11662,7 +11662,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -12876,10 +12876,10 @@
     "slug": "",
     "league": "挪超",
     "country": "",
-    "rank": 2,
-    "points": 62,
-    "played": 26,
-    "win": 20,
+    "rank": 1,
+    "points": 65,
+    "played": 27,
+    "win": 21,
     "draw": 2,
     "loss": 4,
     "form": "",
@@ -13203,18 +13203,18 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "维京",
-      "pts": 62,
-      "p": 26
+      "name": "博德闪耀",
+      "pts": 65,
+      "p": 27
      },
      {
       "rank": 2,
-      "name": "博德闪耀",
+      "name": "维京",
       "pts": 62,
       "p": 26
      },
@@ -13234,7 +13234,7 @@
       "rank": 5,
       "name": "莫尔德",
       "pts": 44,
-      "p": 26
+      "p": 27
      },
      {
       "rank": 6,
@@ -14402,11 +14402,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 18,
+    "attack": 17,
     "defence": 8,
     "control": 3,
     "form": 20,
-    "value": 84,
+    "value": 83,
     "motivation": 21,
     "AXES": [
      [
@@ -14436,12 +14436,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 94,
-    "defence": 17,
+    "attack": 92,
+    "defence": 19,
     "control": 76,
     "form": 79,
     "value": 67,
-    "motivation": 57,
+    "motivation": 59,
     "AXES": [
      [
       "attack",
@@ -14730,7 +14730,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -16000,12 +16000,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 51,
-    "defence": 0,
+    "attack": 52,
+    "defence": 1,
     "control": 5,
     "form": 20,
-    "value": 5,
-    "motivation": 33,
+    "value": 6,
+    "motivation": 34,
     "AXES": [
      [
       "attack",
@@ -16034,12 +16034,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 94,
+    "attack": 92,
     "defence": 90,
-    "control": 95,
+    "control": 94,
     "form": 95,
-    "value": 87,
-    "motivation": 82,
+    "value": 86,
+    "motivation": 81,
     "AXES": [
      [
       "attack",
@@ -16319,7 +16319,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -17767,12 +17767,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 44,
-    "defence": 34,
-    "control": 47,
+    "attack": 45,
+    "defence": 35,
+    "control": 49,
     "form": 20,
-    "value": 44,
-    "motivation": 5,
+    "value": 43,
+    "motivation": 6,
     "AXES": [
      [
       "attack",
@@ -17801,12 +17801,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 80,
-    "defence": 17,
+    "attack": 79,
+    "defence": 19,
     "control": 59,
-    "form": 44,
-    "value": 93,
-    "motivation": 63,
+    "form": 45,
+    "value": 92,
+    "motivation": 65,
     "AXES": [
      [
       "attack",
@@ -18095,7 +18095,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -19488,11 +19488,11 @@
    },
    "metrics_home": {
     "attack": 70,
-    "defence": 11,
+    "defence": 10,
     "control": 37,
     "form": 12,
-    "value": 24,
-    "motivation": 7,
+    "value": 25,
+    "motivation": 6,
     "AXES": [
      [
       "attack",
@@ -19525,7 +19525,7 @@
     "defence": 6,
     "control": 20,
     "form": 8,
-    "value": 66,
+    "value": 65,
     "motivation": 54,
     "AXES": [
      [
@@ -19806,7 +19806,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -21166,8 +21166,8 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 23,
-    "defence": 43,
+    "attack": 24,
+    "defence": 44,
     "control": 31,
     "form": 86,
     "value": 36,
@@ -21201,10 +21201,10 @@
    },
    "metrics_away": {
     "attack": 76,
-    "defence": 33,
+    "defence": 34,
     "control": 67,
-    "form": 37,
-    "value": 87,
+    "form": 38,
+    "value": 86,
     "motivation": 68,
     "AXES": [
      [
@@ -21494,7 +21494,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -22830,11 +22830,11 @@
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 15,
-    "points": 9,
-    "played": 9,
+    "rank": 14,
+    "points": 10,
+    "played": 10,
     "win": 2,
-    "draw": 3,
+    "draw": 4,
     "loss": 4,
     "form": "",
     "logo": "assets/logo/teams/192.png"
@@ -22864,7 +22864,7 @@
     "attack": 25,
     "defence": 53,
     "control": 43,
-    "form": 62,
+    "form": 60,
     "value": 38,
     "motivation": 12,
     "AXES": [
@@ -22895,12 +22895,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 64,
-    "defence": 74,
-    "control": 80,
-    "form": 33,
+    "attack": 66,
+    "defence": 73,
+    "control": 81,
+    "form": 32,
     "value": 99,
-    "motivation": 61,
+    "motivation": 60,
     "AXES": [
      [
       "attack",
@@ -23189,7 +23189,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -23201,8 +23201,8 @@
      {
       "rank": 1,
       "name": "拜仁",
-      "pts": 21,
-      "p": 9
+      "pts": 22,
+      "p": 10
      },
      {
       "rank": 2,
@@ -23296,13 +23296,13 @@
      },
      {
       "rank": 14,
-      "name": "奥格斯堡",
-      "pts": 9,
-      "p": 9
+      "name": "科隆",
+      "pts": 10,
+      "p": 10
      },
      {
       "rank": 15,
-      "name": "科隆",
+      "name": "奥格斯堡",
       "pts": 9,
       "p": 9
      },
@@ -24639,10 +24639,10 @@
    "metrics_home": {
     "attack": 91,
     "defence": 41,
-    "control": 88,
+    "control": 89,
     "form": 82,
     "value": 90,
-    "motivation": 79,
+    "motivation": 78,
     "AXES": [
      [
       "attack",
@@ -24965,7 +24965,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -25038,7 +25038,7 @@
       "rank": 7,
       "name": "毕尔巴鄂",
       "pts": 16,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 8,
@@ -25072,26 +25072,26 @@
      },
      {
       "rank": 10,
+      "name": "西班牙人",
+      "pts": 15,
+      "p": 13
+     },
+     {
+      "rank": 11,
       "name": "桑坦德",
       "pts": 14,
       "p": 12
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "塞尔塔",
       "pts": 13,
       "p": 12
      },
      {
-      "rank": 12,
+      "rank": 13,
       "name": "阿拉维斯",
       "pts": 13,
-      "p": 12
-     },
-     {
-      "rank": 13,
-      "name": "西班牙人",
-      "pts": 12,
       "p": 12
      },
      {
@@ -26670,7 +26670,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -27907,11 +27907,11 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 44,
-    "defence": 67,
+    "attack": 43,
+    "defence": 66,
     "control": 52,
     "form": 0,
-    "value": 44,
+    "value": 45,
     "motivation": 52,
     "AXES": [
      [
@@ -27941,11 +27941,11 @@
     ]
    },
    "metrics_away": {
-    "attack": 59,
+    "attack": 58,
     "defence": 6,
-    "control": 37,
+    "control": 35,
     "form": 14,
-    "value": 56,
+    "value": 55,
     "motivation": 48,
     "AXES": [
      [
@@ -28217,7 +28217,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -29440,7 +29440,7 @@
     "slug": "",
     "league": "法甲",
     "country": "",
-    "rank": 15,
+    "rank": 16,
     "points": 8,
     "played": 10,
     "win": 1,
@@ -29471,12 +29471,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 16,
+    "attack": 17,
     "defence": 79,
     "control": 59,
-    "form": 56,
+    "form": 57,
     "value": 52,
-    "motivation": 11,
+    "motivation": 12,
     "AXES": [
      [
       "attack",
@@ -29506,11 +29506,11 @@
    },
    "metrics_away": {
     "attack": 41,
-    "defence": 86,
-    "control": 81,
-    "form": 56,
+    "defence": 85,
+    "control": 80,
+    "form": 57,
     "value": 79,
-    "motivation": 67,
+    "motivation": 68,
     "AXES": [
      [
       "attack",
@@ -29754,7 +29754,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -29843,12 +29843,18 @@
      },
      {
       "rank": 13,
+      "name": "特鲁瓦",
+      "pts": 11,
+      "p": 11
+     },
+     {
+      "rank": 14,
       "name": "斯特拉斯",
       "pts": 10,
       "p": 10
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "欧塞尔",
       "pts": 10,
       "p": 10
@@ -29860,20 +29866,14 @@
       "p": 10
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "勒芒",
       "pts": 8,
       "p": 10
      },
      {
-      "rank": 16,
-      "name": "昂热",
-      "pts": 8,
-      "p": 10
-     },
-     {
       "rank": 17,
-      "name": "特鲁瓦",
+      "name": "昂热",
       "pts": 8,
       "p": 10
      },
@@ -29881,7 +29881,7 @@
       "rank": 18,
       "name": "勒阿弗尔",
       "pts": 2,
-      "p": 10
+      "p": 11
      }
     ],
     "lam_home": 0.87,
@@ -30846,12 +30846,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 18,
+    "attack": 17,
     "defence": 11,
     "control": 5,
-    "form": 15,
-    "value": 46,
-    "motivation": 76,
+    "form": 13,
+    "value": 44,
+    "motivation": 77,
     "AXES": [
      [
       "attack",
@@ -30880,12 +30880,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 89,
-    "defence": 34,
+    "attack": 88,
+    "defence": 35,
     "control": 79,
-    "form": 44,
-    "value": 73,
-    "motivation": 57,
+    "form": 45,
+    "value": 72,
+    "motivation": 59,
     "AXES": [
      [
       "attack",
@@ -31174,7 +31174,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -32651,12 +32651,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 57,
-    "defence": 79,
-    "control": 79,
-    "form": 33,
+    "attack": 60,
+    "defence": 78,
+    "control": 80,
+    "form": 32,
     "value": 40,
-    "motivation": 61,
+    "motivation": 60,
     "AXES": [
      [
       "attack",
@@ -32685,12 +32685,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 7,
-    "defence": 2,
+    "attack": 8,
+    "defence": 3,
     "control": 2,
-    "form": 33,
-    "value": 11,
-    "motivation": 6,
+    "form": 32,
+    "value": 12,
+    "motivation": 7,
     "AXES": [
      [
       "attack",
@@ -32979,7 +32979,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -32991,8 +32991,8 @@
      {
       "rank": 1,
       "name": "拜仁",
-      "pts": 21,
-      "p": 9
+      "pts": 22,
+      "p": 10
      },
      {
       "rank": 2,
@@ -33086,13 +33086,13 @@
      },
      {
       "rank": 14,
-      "name": "奥格斯堡",
-      "pts": 9,
-      "p": 9
+      "name": "科隆",
+      "pts": 10,
+      "p": 10
      },
      {
       "rank": 15,
-      "name": "科隆",
+      "name": "奥格斯堡",
       "pts": 9,
       "p": 9
      },
@@ -34428,8 +34428,8 @@
    },
    "metrics_home": {
     "attack": 92,
-    "defence": 26,
-    "control": 82,
+    "defence": 25,
+    "control": 81,
     "form": 86,
     "value": 99,
     "motivation": 97,
@@ -34461,7 +34461,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 95,
+    "attack": 94,
     "defence": 84,
     "control": 96,
     "form": 98,
@@ -34771,7 +34771,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -36469,7 +36469,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -36542,7 +36542,7 @@
       "rank": 7,
       "name": "毕尔巴鄂",
       "pts": 16,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 8,
@@ -36576,26 +36576,26 @@
      },
      {
       "rank": 10,
+      "name": "西班牙人",
+      "pts": 15,
+      "p": 13
+     },
+     {
+      "rank": 11,
       "name": "桑坦德",
       "pts": 14,
       "p": 12
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "塞尔塔",
       "pts": 13,
       "p": 12
      },
      {
-      "rank": 12,
+      "rank": 13,
       "name": "阿拉维斯",
       "pts": 13,
-      "p": 12
-     },
-     {
-      "rank": 13,
-      "name": "西班牙人",
-      "pts": 12,
       "p": 12
      },
      {
@@ -37920,7 +37920,7 @@
     "slug": "",
     "league": "西甲",
     "country": "",
-    "rank": 11,
+    "rank": 12,
     "points": 13,
     "played": 12,
     "win": 2,
@@ -37954,9 +37954,9 @@
     "attack": 25,
     "defence": 78,
     "control": 62,
-    "form": 52,
+    "form": 51,
     "value": 77,
-    "motivation": 45,
+    "motivation": 46,
     "AXES": [
      [
       "attack",
@@ -37985,7 +37985,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 70,
+    "attack": 69,
     "defence": 19,
     "control": 47,
     "form": 29,
@@ -38279,7 +38279,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -38352,7 +38352,7 @@
       "rank": 7,
       "name": "毕尔巴鄂",
       "pts": 16,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 8,
@@ -38386,26 +38386,26 @@
      },
      {
       "rank": 10,
+      "name": "西班牙人",
+      "pts": 15,
+      "p": 13
+     },
+     {
+      "rank": 11,
       "name": "桑坦德",
       "pts": 14,
       "p": 12
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "塞尔塔",
       "pts": 13,
       "p": 12
      },
      {
-      "rank": 12,
+      "rank": 13,
       "name": "阿拉维斯",
       "pts": 13,
-      "p": 12
-     },
-     {
-      "rank": 13,
-      "name": "西班牙人",
-      "pts": 12,
       "p": 12
      },
      {
@@ -40041,7 +40041,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -41358,8 +41358,8 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 35,
-    "defence": 61,
+    "attack": 36,
+    "defence": 60,
     "control": 52,
     "form": 78,
     "value": 80,
@@ -41392,12 +41392,12 @@
     ]
    },
    "metrics_away": {
-    "attack": 2,
-    "defence": 85,
-    "control": 36,
-    "form": 3,
+    "attack": 3,
+    "defence": 84,
+    "control": 37,
+    "form": 4,
     "value": 14,
-    "motivation": 2,
+    "motivation": 4,
     "AXES": [
      [
       "attack",
@@ -41677,7 +41677,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -41689,8 +41689,8 @@
      {
       "rank": 1,
       "name": "拜仁",
-      "pts": 21,
-      "p": 9
+      "pts": 22,
+      "p": 10
      },
      {
       "rank": 2,
@@ -41784,13 +41784,13 @@
      },
      {
       "rank": 14,
-      "name": "奥格斯堡",
-      "pts": 9,
-      "p": 9
+      "name": "科隆",
+      "pts": 10,
+      "p": 10
      },
      {
       "rank": 15,
-      "name": "科隆",
+      "name": "奥格斯堡",
       "pts": 9,
       "p": 9
      },
@@ -43097,9 +43097,9 @@
    "metrics_away": {
     "attack": 76,
     "defence": 84,
-    "control": 80,
+    "control": 79,
     "form": 70,
-    "value": 96,
+    "value": 97,
     "motivation": 79,
     "AXES": [
      [
@@ -43380,7 +43380,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -44826,12 +44826,12 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 12,
+    "attack": 13,
     "defence": 0,
     "control": 0,
-    "form": 10,
-    "value": 16,
-    "motivation": 58,
+    "form": 9,
+    "value": 17,
+    "motivation": 57,
     "AXES": [
      [
       "attack",
@@ -44861,9 +44861,9 @@
    },
    "metrics_away": {
     "attack": 41,
-    "defence": 44,
+    "defence": 43,
     "control": 52,
-    "form": 67,
+    "form": 68,
     "value": 41,
     "motivation": 49,
     "AXES": [
@@ -45154,7 +45154,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -45243,12 +45243,18 @@
      },
      {
       "rank": 13,
+      "name": "特鲁瓦",
+      "pts": 11,
+      "p": 11
+     },
+     {
+      "rank": 14,
       "name": "斯特拉斯",
       "pts": 10,
       "p": 10
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "欧塞尔",
       "pts": 10,
       "p": 10
@@ -45260,20 +45266,14 @@
       "p": 10
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "勒芒",
       "pts": 8,
       "p": 10
      },
      {
-      "rank": 16,
-      "name": "昂热",
-      "pts": 8,
-      "p": 10
-     },
-     {
       "rank": 17,
-      "name": "特鲁瓦",
+      "name": "昂热",
       "pts": 8,
       "p": 10
      },
@@ -45281,7 +45281,7 @@
       "rank": 18,
       "name": "勒阿弗尔",
       "pts": 2,
-      "p": 10
+      "p": 11
      }
     ],
     "lam_home": 1.918,
@@ -46531,7 +46531,7 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 82,
+    "attack": 81,
     "defence": 100,
     "control": 92,
     "form": 82,
@@ -46568,7 +46568,7 @@
     "attack": 98,
     "defence": 47,
     "control": 98,
-    "form": 78,
+    "form": 77,
     "value": 100,
     "motivation": 98,
     "AXES": [
@@ -46891,7 +46891,7 @@
     "settled_at": "2026-11-08"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T09:39:24+08:00",
+   "generated_at": "2026-11-21T12:17:24+08:00",
    "extras": {
     "table": [
      {
@@ -46964,7 +46964,7 @@
       "rank": 7,
       "name": "毕尔巴鄂",
       "pts": 16,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 8,
@@ -46998,26 +46998,26 @@
      },
      {
       "rank": 10,
+      "name": "西班牙人",
+      "pts": 15,
+      "p": 13
+     },
+     {
+      "rank": 11,
       "name": "桑坦德",
       "pts": 14,
       "p": 12
      },
      {
-      "rank": 11,
+      "rank": 12,
       "name": "塞尔塔",
       "pts": 13,
       "p": 12
      },
      {
-      "rank": 12,
+      "rank": 13,
       "name": "阿拉维斯",
       "pts": 13,
-      "p": 12
-     },
-     {
-      "rank": 13,
-      "name": "西班牙人",
-      "pts": 12,
       "p": 12
      },
      {
