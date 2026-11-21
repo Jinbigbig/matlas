@@ -18,19 +18,33 @@ PY="${PY:-python}"
 PUB="$ROOT/.publish"
 PUSH=1
 SKIP_BUILD="${SKIP_BUILD:-0}"
+GH_BASE="${GH_BASE:-https://jinbigbig.github.io/matlas}"
 [ "${1:-}" = "--no-push" ] && PUSH=0
 
 cd "$ROOT"
 
 if [ "$SKIP_BUILD" -eq 0 ]; then
-  echo "[1/4] 构建（红线自检 strict）"
+  echo "[1/5] 构建 CF 产物（红线自检 strict）"
   "$PY" build.py --strict
+  echo "[1.5/5] 构建 GitHub Pages 产物（canonical → $GH_BASE）"
+  "$PY" build.py --strict --out "$ROOT/_site_gh" --base-url "$GH_BASE"
+  # 实时快照由 update_live.py 写进 _site，构建期不产出，这里随产物带过去，
+  # 作为 GH 站取不到 CF 接口时的兜底数据。
+  if [ -d "$ROOT/_site/data/live" ]; then
+    mkdir -p "$ROOT/_site_gh/data/live"
+    cp -r "$ROOT/_site/data/live/." "$ROOT/_site_gh/data/live/"
+  fi
 else
-  echo "[1/4] 跳过构建（SKIP_BUILD=1，直接同步现有 _site）"
+  echo "[1/5] 跳过构建（SKIP_BUILD=1，直接同步现有 _site）"
   if [ ! -d "$ROOT/_site" ]; then
     echo "[!] _site 不存在，无法跳过构建。" >&2
     exit 1
   fi
+  # 用移走代替删除：安全删除钩子会把 rm 转回收站，目录大时 fail-closed
+  if [ -d "$ROOT/_site_gh" ]; then
+    mv "$ROOT/_site_gh" "${TMPDIR:-/tmp}/matlas-gh-$(date +%Y%m%d-%H%M%S)-$$" 2>/dev/null || true
+  fi
+  cp -r "$ROOT/_site" "$ROOT/_site_gh"
 fi
 
 if [ "$PUSH" -eq 0 ]; then
@@ -63,7 +77,7 @@ if [ -n "$(git status --porcelain)" ]; then
     echo "$OTHER" >&2
     exit 1
   fi
-  echo "[1.5/4] 自动提交 data/ 与 assets/logo/ 资源变动（import/build 产物）"
+  echo "[2.2/5] 自动提交 data/ 与 assets/logo/ 资源变动（import/build 产物）"
   git add -A data assets/logo
   git -c user.name="$(git -C "$ROOT" config user.name)" \
       -c user.email="$(git -C "$ROOT" config user.email)" \
@@ -71,7 +85,7 @@ if [ -n "$(git status --porcelain)" ]; then
   echo "      → $(git rev-parse --short HEAD)"
 fi
 
-echo "[2/4] 清空产物工作树（保留 .git）"
+echo "[2/5] 清空产物工作树（保留 .git）"
 # 用「移走」代替删除：安全删除钩子会把 rm 转成回收站操作，产物目录上千个
 # 文件时会 fail-closed 报 Permission denied，而 rename 不受该钩子影响。
 TRASH="${TMPDIR:-/tmp}/matlas-publish-trash/$(date +%Y%m%d-%H%M%S)-$$"
@@ -85,11 +99,11 @@ find "$PUB" -mindepth 1 -maxdepth 1 ! -name .git -print0 | while IFS= read -r -d
 done
 echo "      旧产物已移出到 $TRASH"
 
-echo "[3/4] 同步 _site → .publish"
-cp -r "$ROOT/_site/." "$PUB/"
+echo "[3/5] 同步 _site_gh → .publish"
+cp -r "$ROOT/_site_gh/." "$PUB/"
 touch "$PUB/.nojekyll"
 
-echo "[4/4] 提交并推送 gh-pages"
+echo "[4/5] 提交并推送 gh-pages"
 cd "$PUB"
 git add -A
 if git diff --cached --quiet; then
@@ -108,7 +122,7 @@ cd "$ROOT"
 # 推送失败不阻断发布：产物此时已上线，main 落后只是留档延迟；
 # 绝不强推、不自动 rebase —— 让远端前进的情形暴露出来由人工处理。
 if [ -n "$(git log --oneline refs/remotes/origin/main..HEAD 2>/dev/null || true)" ]; then
-  echo "[4.5/4] 同步 main（源码 + 数据）"
+  echo "[4.5/5] 同步 main（源码 + 数据）"
   if git push origin HEAD:refs/heads/main; then
     echo "      → $(git rev-parse --short HEAD)"
   else

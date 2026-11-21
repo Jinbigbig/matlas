@@ -39,7 +39,7 @@ git worktree add .publish gh-pages   # 建产物工作树
 ./publish.sh --no-push               # 只构建到 _site，不动产物分支
 ```
 
-**线上地址**：<https://jinbigbig.github.io/matlas/>（canonical / sitemap / llms.txt 全部指向这里）。
+**线上地址**：<https://www.matlas.top/>（Cloudflare Pages）与 <https://jinbigbig.github.io/matlas/>（gh-pages）。两份产物由 `publish.sh` 分别构建：CF 用 `_site`，GitHub 用 `_site_gh`（`--base-url https://jinbigbig.github.io/matlas`），canonical 各自指向本域。
 域名定义在 `matlas/config.py::DEFAULT_BASE_URL`。
 
 ## 功能

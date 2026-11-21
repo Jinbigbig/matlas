@@ -1689,20 +1689,36 @@ def _jsonld(blocks: list[dict[str, Any]]) -> str:
     return body
 
 
-# 实时数据接入：方案②（本地服务 + 固定域名隧道）与方案③（gh-pages 静态 JSON）共用。
-# 切换点：LIVE_MODE="off" 暂停；"remote" 方案②（真域名）；"static" 方案③（BASE 留空走同域）。
-# fetch 失败时静默保留静态内容，域名未生效或离线不影响页面。
+# 实时数据接入：两个站点（CF Pages / GitHub Pages）共用同一套取数逻辑。
+# 数据源三类，按 updated 取较新的一份：
+#   ① 同域 data/live/<date>.json       两站各自构建产物的静态快照
+#   ② CF /api/live                     边缘函数，KV 与快照取新，最实时
+#   ③ GitHub Pages 静态（跨域）         ① ② 都拿不到时的兜底
+# 页面资源全部走相对路径，因此同一份产物可直接挂在域名根或 /matlas/ 子路径。
+# fetch 失败时静默保留静态内容，离线或接口挂掉不影响页面。
 _LIVE_JS = """
-// ===== 实时数据（远程 / 静态切换点）=====
+// ===== 实时数据：多源择新 =====
 window.LIVE_MODE = "remote";
-window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname === "localhost") ? "" : "https://www.matlas.top";
 (function () {
-  if (window.LIVE_MODE === "off" || window.LIVE_API_BASE.indexOf("你的域名") >= 0) return;
-  function url(date, light) {
-    var stamp = Date.now();
-    if (window.LIVE_MODE === "static")
-      return (window.LIVE_API_BASE || "") + "/data/live/" + date + ".json?v=" + stamp;
-    return window.LIVE_API_BASE + "/api/live?date=" + date + (light ? "&light=1" : "") + "&v=" + stamp;
+  if (window.LIVE_MODE === "off") return;
+  var HOST = location.hostname;
+  var LOCAL = HOST === "127.0.0.1" || HOST === "localhost";
+  var ROOT = "__SITE_ROOT__";                                  // 站点根相对前缀，构建期注入
+  var CF = LOCAL ? "" : "https://www.matlas.top";
+  var GH = "https://jinbigbig.github.io/matlas";
+  var ON_GH = HOST === "jinbigbig.github.io";
+  function stamp() { return Date.now(); }
+  // 源①：同域静态快照
+  function staticUrl(date, light) {
+    return ROOT + "data/live/" + (light ? "light-" : "") + date + ".json?v=" + stamp();
+  }
+  // 源②：CF 边缘接口（KV 优先，KV 落后时内部回落 CF 静态快照）
+  function apiUrl(date, light) {
+    return CF + "/api/live?date=" + date + (light ? "&light=1" : "") + "&v=" + stamp();
+  }
+  // 源③：GitHub Pages 静态（跨域，仅两源皆空时用）
+  function ghUrl(date, light) {
+    return GH + "/data/live/" + (light ? "light-" : "") + date + ".json?v=" + stamp();
   }
   // 实时请求：8 秒超时 + 全局并发上限 3 + 页面隐藏时静默跳过。
   // 慢链路下若无超时，挂起的请求会占满浏览器对同域的连接，导致点击后整页长时间转圈。
@@ -1722,6 +1738,26 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
     return fetch(u, opt)
       .then(function (r) { if (r.ok) { _fail = 0; } else { _fail++; } return r.ok ? r.json() : null; })
       .then(function (v) { done(); return v; }, function () { _fail++; done(); return null; });
+  }
+  // 多源择新：并发取同域静态与 CF 接口，按 updated 取较晚的一份。
+  function pickNewest(list) {
+    var best = null;
+    for (var i = 0; i < list.length; i++) {
+      var v = list[i];
+      if (!v || !v.matches) continue;
+      if (!best || String(v.updated || "") > String(best.updated || "")) best = v;
+    }
+    return best;
+  }
+  function fetchLive(date, light) {
+    var urls = [staticUrl(date, light)];
+    if (!LOCAL) urls.push(apiUrl(date, light));
+    return Promise.all(urls.map(getJson)).then(function (list) {
+      var best = pickNewest(list);
+      if (best) { _fail = 0; return best; }
+      if (LOCAL || ON_GH) return null;
+      return getJson(ghUrl(date, light));
+    });
   }
   // 轮询节拍：首次延迟 1.5s 让首屏资源先加载；正常 60s 一次，连续失败 3 次后降到 5 分钟。
   function loop(fn) {
@@ -1752,7 +1788,7 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
       var pending = Object.keys(ofDates).length;
       if (!pending) return;
       Object.keys(ofDates).forEach(function (d) {
-        getJson(url(d, true)).then(function (res) {
+        fetchLive(d, true).then(function (res) {
           pending--;
           if (!res || !res.matches) return;
           var map = {};
@@ -1773,7 +1809,7 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
     var mid = card.getAttribute("data-live-match");
     var date = mid.slice(0, 10);
     function pollSingle() {
-      getJson(url(date, false)).then(function (d) {
+      fetchLive(date, false).then(function (d) {
         if (!d) return;
         var m = null, ms = d.matches || [];
         if (d.match && d.match.match_id === mid) m = d.match;
@@ -1810,7 +1846,7 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
     }
     function pollCards() {
       Object.keys(cardDates).forEach(function (d) {
-        getJson(url(d, true)).then(function (res) {
+        fetchLive(d, true).then(function (res) {
           if (!res || !res.matches) return;
           var map = {};
           res.matches.forEach(function (m) { map[m.match_id] = m; });
@@ -1845,7 +1881,7 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
     return null;
   }
   function pollDate(date, group) {
-    getJson(url(date, true)).then(function (d) {
+    fetchLive(date, true).then(function (d) {
       if (!d || !d.matches) return;
       group.forEach(function (row) {
         var m = findMatch(d.matches, row);
@@ -2035,7 +2071,7 @@ document.addEventListener("change", function (e) {{
 aiSyncArrows();
 </script>
 <script>
-{_LIVE_JS}</script>
+{_LIVE_JS.replace("__SITE_ROOT__", pre)}</script>
 </body>
 </html>
 """
