@@ -6,12 +6,12 @@
 <title>毕尔巴鄂 vs 埃尔切 · 西甲 - Matlas</title>
 <meta name="description" content="2026-09-12 西甲 周六024 毕尔巴鄂 对阵 埃尔切 的赛前量化数据与结论">
 <link rel="canonical" href="https://www.matlas.top/matches/2026-09-12-024.html">
-<link rel="stylesheet" href="../assets/style.css?v=1795234644">
+<link rel="stylesheet" href="../assets/style.css?v=1795244748">
 <meta property="og:type" content="article">
 <meta property="og:title" content="毕尔巴鄂 vs 埃尔切 · 西甲 - Matlas">
 <meta property="og:description" content="2026-09-12 西甲 周六024 毕尔巴鄂 对阵 埃尔切 的赛前量化数据与结论">
 <meta name="robots" content="index,follow">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","AnalysisNewsArticle"],"@id":"https://www.matlas.top/matches/2026-09-12-024.html","url":"https://www.matlas.top/matches/2026-09-12-024.html","headline":"毕尔巴鄂 vs 埃尔切 · 西甲","description":"2026-09-12 西甲 周六024 毕尔巴鄂 对阵 埃尔切 的赛前量化数据与结论","datePublished":"2026-11-21T12:17:24","dateModified":"2026-11-21T12:17:24","author":{"@type":"Organization","name":"Matlas","url":"https://www.matlas.top"},"publisher":{"@type":"Organization","name":"Matlas","url":"https://www.matlas.top"},"inLanguage":"zh-CN"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","AnalysisNewsArticle"],"@id":"https://www.matlas.top/matches/2026-09-12-024.html","url":"https://www.matlas.top/matches/2026-09-12-024.html","headline":"毕尔巴鄂 vs 埃尔切 · 西甲","description":"2026-09-12 西甲 周六024 毕尔巴鄂 对阵 埃尔切 的赛前量化数据与结论","datePublished":"2026-11-21T15:05:48","dateModified":"2026-11-21T15:05:48","author":{"@type":"Organization","name":"Matlas","url":"https://www.matlas.top"},"publisher":{"@type":"Organization","name":"Matlas","url":"https://www.matlas.top"},"inLanguage":"zh-CN"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsEvent","name":"毕尔巴鄂 vs 埃尔切","startDate":"","location":{"@type":"Place","name":"—"},"competition":"西甲","homeTeam":{"@type":"SportsTeam","name":"毕尔巴鄂"},"awayTeam":{"@type":"SportsTeam","name":"埃尔切"}}</script>
 </head>
 <body>
@@ -166,6 +166,40 @@ window.LIVE_API_BASE = "https://www.matlas.top";
     }
     pollSingle();
     setInterval(pollSingle, 60000);
+    return;
+  }
+
+  // 首页/归档/联赛/球队卡片：比分实时替换（data-live-card = match_id）
+  var cards = [].slice.call(document.querySelectorAll("[data-live-card]"));
+  if (cards.length) {
+    var cardDates = {};
+    cards.forEach(function (c) {
+      var mid = c.getAttribute("data-live-card") || "";
+      var d = mid.slice(0, 10);
+      if (d.length === 10) (cardDates[d] = cardDates[d] || []).push(c);
+    });
+    function applyCard(c, m) {
+      var sc = c.querySelector("[data-live='score']");
+      if (sc && m.score) {
+        sc.innerHTML = '<div class="main">' + m.score + '</div>'
+          + (m.half ? '<div class="sub">(' + m.half + ')</div>' : '');
+      }
+    }
+    function pollCards() {
+      Object.keys(cardDates).forEach(function (d) {
+        getJson(url(d, true)).then(function (res) {
+          if (!res || !res.matches) return;
+          var map = {};
+          res.matches.forEach(function (m) { map[m.match_id] = m; });
+          cardDates[d].forEach(function (c) {
+            var m = map[c.getAttribute("data-live-card")];
+            if (m) applyCard(c, m);
+          });
+        });
+      });
+    }
+    pollCards();
+    setInterval(pollCards, 60000);
     return;
   }
 

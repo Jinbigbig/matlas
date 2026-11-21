@@ -70,7 +70,7 @@
    "metrics_away": {
     "attack": 46,
     "defence": 55,
-    "control": 54,
+    "control": 52,
     "form": 88,
     "value": 54,
     "motivation": 10,
@@ -258,7 +258,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "lam_home": 1.414,
     "lam_away": 1.773,
@@ -294,6 +294,10 @@
     },
     "form_net": {
      "home_7": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
       {
        "gf": 0,
        "ga": 0
@@ -357,6 +361,10 @@
      ],
      "home_home": [
       {
+       "gf": 2,
+       "ga": 2
+      },
+      {
        "gf": 6,
        "ga": 1
       },
@@ -386,6 +394,10 @@
       }
      ],
      "away_7": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
       {
        "gf": 2,
        "ga": 3
@@ -444,6 +456,10 @@
       }
      ],
      "away_away": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
       {
        "gf": 2,
        "ga": 3
@@ -510,7 +526,7 @@
    },
    "metrics_home": {
     "attack": 35,
-    "defence": 26,
+    "defence": 32,
     "control": 23,
     "form": 42,
     "value": 35,
@@ -543,7 +559,7 @@
     ]
    },
    "metrics_away": {
-    "attack": 35,
+    "attack": 55,
     "defence": 74,
     "control": 68,
     "form": 81,
@@ -588,9 +604,9 @@
      1.0
     ],
     "away": [
-     0.0,
      2.0,
-     2.0
+     2.0,
+     0.0
     ]
    },
    "forecasts": [
@@ -699,7 +715,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "lam_home": 1.081,
     "lam_away": 1.527,
@@ -736,6 +752,10 @@
     "form_net": {
      "home_7": [
       {
+       "gf": 2,
+       "ga": 0
+      },
+      {
        "gf": 1,
        "ga": 1
       },
@@ -744,8 +764,17 @@
        "ga": 1
       }
      ],
-     "home_home": [],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 0
+      }
+     ],
      "away_7": [
+      {
+       "gf": 0,
+       "ga": 2
+      },
       {
        "gf": 2,
        "ga": 1
@@ -776,6 +805,10 @@
       }
      ],
      "away_away": [
+      {
+       "gf": 0,
+       "ga": 2
+      },
       {
        "gf": 2,
        "ga": 1
@@ -1151,7 +1184,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "lam_home": 1.167,
     "lam_away": 1.836,
@@ -1458,7 +1491,7 @@
    "metrics_away": {
     "attack": 55,
     "defence": 22,
-    "control": 32,
+    "control": 30,
     "form": 20,
     "value": 9,
     "motivation": 26,
@@ -1502,11 +1535,11 @@
     ],
     "home": [
      2.0,
-     2.0,
      0.0,
      2.0,
      4.0,
      1.0,
+     2.0,
      2.0,
      2.0
     ],
@@ -1637,7 +1670,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "lam_home": 1.756,
     "lam_away": 1.303,
@@ -2253,7 +2286,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -3069,7 +3102,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -3818,7 +3851,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -4669,7 +4702,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -5459,7 +5492,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -6248,7 +6281,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -7001,7 +7034,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -7861,7 +7894,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -8754,7 +8787,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -9607,7 +9640,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -10499,7 +10532,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -11384,7 +11417,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -12277,7 +12310,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -12999,7 +13032,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -13845,7 +13878,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -14764,7 +14797,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -15498,7 +15531,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -16424,7 +16457,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -17190,7 +17223,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -18123,7 +18156,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -18891,7 +18924,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -19716,7 +19749,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -20438,7 +20471,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -21088,7 +21121,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -21938,7 +21971,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "table": [
      {
@@ -22439,7 +22472,7 @@
     "settled_at": "2026-09-19"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T12:17:24+08:00",
+   "generated_at": "2026-11-21T15:05:48+08:00",
    "extras": {
     "lam_home": 1.288,
     "lam_away": 1.11,
