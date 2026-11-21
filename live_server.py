@@ -15,6 +15,7 @@
   - 赛果比分：data/results_data.json（基线 + 赛程源实时兜底）
   - 开赛状态：data/fixtures.json（宿主任务采集）
   - 全玩法赔率：data/odds_full.json（宿主任务采集）
+  - 比分直播：data/live_scores.json（体彩官方，补半场比分/细状态/比赛分钟）
   队名匹配沿用双向包含兜底，避免简称/全称对不上。
 """
 from __future__ import annotations
@@ -35,6 +36,7 @@ ODDS_TICKS = DATA / "odds_ticks.json"
 RESULTS = DATA / "results_data.json"
 FIXTURES = DATA / "fixtures.json"
 ODDS_FULL = DATA / "odds_full.json"
+LIVE_SCORES = DATA / "live_scores.json"  # 体彩官方比分直播
 
 CACHE: dict[str, tuple[float, object]] = {}
 
@@ -193,12 +195,15 @@ def live_for(date: str, *, light: bool = False) -> dict | None:
     ticks_src = ((_read(ODDS_TICKS) or {}).get("ticks")) or {}
     results_src = _read(RESULTS) or {}
     full_src = ((_read(ODDS_FULL) or {}).get("data")) or {}
+    # 体彩比分直播：key 为「日期|竞彩编号」，与 match_id 同源
+    live_src = ((_read(LIVE_SCORES) or {}).get("matches")) or {}
 
     matches = []
     for match_id, code, home, away in skeleton:
         tk = _lookup(ticks_src, date, home, away) or []
         res = _lookup(results_src, date, home, away) or {}
         fx_row = _fixture_row(fx_days, date, code, home, away)
+        ls = (live_src.get(f"{date}|{code}") if code else None) or {}
         # 全玩法赔率：key 为「日期_竞彩编号」，与 match_id 同源
         of = full_src.get(f"{date}_{code}") or {}
 
@@ -220,13 +225,20 @@ def live_for(date: str, *, light: bool = False) -> dict | None:
             "code": code,
             "home": home,
             "away": away,
-            "status": str(fx_row.get("st") or ""),
-            # 赛后补录 results_data 优先；缺失时用赛程源的实时比分兜底
+            # 体彩状态更细（进行中 / 已完成），优先采用；缺失回退赛程源
+            "status": str(ls.get("status") or fx_row.get("st") or ""),
+            # 赛后补录 results_data 优先；其次赛程源；最后体彩直播比分
             "score": (str(res.get("fullScore") or "").replace(":", "-")
-                      or str(fx_row.get("score") or "")),
-            "half": str(res.get("halfScore") or "").replace(":", "-"),
+                      or str(fx_row.get("score") or "")
+                      or str(ls.get("score") or "").replace(":", "-")),
+            "half": (str(res.get("halfScore") or "").replace(":", "-")
+                     or str(ls.get("half") or "").replace(":", "-")),
             "odds": odds,
         }
+        # 分钟数只在体彩判定「进行中」时才有意义：直播接口的 matchMinute
+        # 会滞后于竞彩状态（已结束时仍回旧分钟），挂到已结束场次会自相矛盾。
+        if ls.get("minute") and ls.get("status") == "进行中":
+            item["minute"] = str(ls["minute"])
         if of:
             item["odds_full"] = of
         if not light:

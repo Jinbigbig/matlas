@@ -1853,7 +1853,8 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
         var v = row.querySelector(".ml-v");
         if (v && m.score) v.textContent = m.score;
         var st = row.querySelector(".ml-st");
-        if (st && m.status) st.textContent = m.status;
+        // 进行中优先显示比赛分钟（比「进行中」更短，不会撑破状态列）
+        if (st && m.status) st.textContent = m.minute ? m.minute + "'" : m.status;
       });
     });
   }

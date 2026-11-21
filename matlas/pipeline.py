@@ -42,18 +42,27 @@ def _copy_assets(cfg: Config) -> int:
 
 
 def _write_headers(cfg: Config) -> None:
-    """产出 Pages 的 `_headers`：给 HTML 与数据声明可缓存时长。
+    """产出 Pages 平台文件：`_headers` + `_routes.json`。
 
-    页面是构建快照，实时比分/赔率由前端调 /api 取，因此 HTML 短缓存即可
-    让重复访问命中边缘；静态图与分日数据放长缓存。
+    `_headers` 给 HTML 与数据声明可缓存时长——页面是构建快照，实时比分/赔率
+    由前端调 /api 取，因此 HTML 短缓存即可让重复访问命中边缘；静态图与分日
+    数据放长缓存，`data/live/*` 是实时快照必须极短。
+
+    `_routes.json` 限定只有 /api/* 走 Functions：否则 Pages 会把所有路径都
+    交给 Functions，函数里的 env.ASSETS.fetch 读静态快照时被路由回来，导致
+    永远拿不到文件（KV 配额耗尽后的回退通道就失效）。
     """
-    content = (
+    headers = (
+        # 实时快照必须短缓存，否则部署后边缘会留着旧数据
+        "/data/live/*\n  Cache-Control: public, max-age=20\n\n"
         "/\n  Cache-Control: public, max-age=300\n\n"
         "/*.html\n  Cache-Control: public, max-age=300\n\n"
         "/data/*\n  Cache-Control: public, max-age=1800\n\n"
         "/assets/*\n  Cache-Control: public, max-age=604800, immutable\n"
     )
-    write_text_safe(cfg.out_dir / "_headers", content)
+    write_text_safe(cfg.out_dir / "_headers", headers)
+    write_text_safe(cfg.out_dir / "_routes.json",
+                    json.dumps({"version": 1, "include": ["/api/*"], "exclude": []}))
 
 
 def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> dict[str, int]:

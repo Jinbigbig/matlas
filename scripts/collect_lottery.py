@@ -1,10 +1,10 @@
-"""宿主侧体彩源采集入口：盘口时序 + 赛程赛果，写 matlas/data/。
+"""宿主侧体彩源采集入口：盘口时序 + 赛程赛果 + 比分直播，写 matlas/data/。
 
 容器内访问体彩接口 webapi.sporttery.cn 一律 HTTP 567（出口 IP 被拒），
-故这两个脚本由宿主计划任务调度（走 127.0.0.1:65053 代理）。
+故这几个脚本由宿主计划任务调度（走 127.0.0.1:65053 代理）。
 全玩法赔率仍由 scripts/fetch_odds_full.py 单独任务采集。
 
-用法：python scripts/collect_lottery.py [--only ticks|fixtures]
+用法：python scripts/collect_lottery.py [--only ticks|fixtures|live]
 """
 from __future__ import annotations
 
@@ -19,6 +19,7 @@ PY = Path(sys.executable)
 TASKS = {
     "ticks": ("盘口时序", "_fetch_odds_ticks.py"),
     "fixtures": ("赛程赛果", "_fetch_fixtures.py"),
+    "live": ("比分直播", "_fetch_live_scores.py"),
 }
 
 
