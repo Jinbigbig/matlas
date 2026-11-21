@@ -41,32 +41,51 @@ STATUS_MAP = {
 }
 
 
-def _opener():
-    """体彩接口需走本地代理，计划任务环境不继承会话变量，显式 fallback。"""
+def _get(query: str) -> dict:
+    """直连优先，代理兜底。
+
+    体彩接口公网直连可达；宿主代理（127.0.0.1:65053）常随会话关闭，
+    强制走代理会在代理停止后静默拿不到任何数据。直连失败才回退代理。
+    """
+    req = urllib.request.Request(API + query, headers=HEADERS)
     proxy = (os.environ.get("HTTPS_PROXY") or os.environ.get("https_proxy")
              or "http://127.0.0.1:65053")
-    return urllib.request.build_opener(
-        urllib.request.ProxyHandler({"http": proxy, "https": proxy}))
+    openers = [
+        urllib.request.build_opener(urllib.request.ProxyHandler({})),
+        urllib.request.build_opener(
+            urllib.request.ProxyHandler({"http": proxy, "https": proxy})),
+    ]
+    last = None
+    for op in openers:
+        try:
+            with op.open(req, timeout=25) as resp:
+                return json.loads(resp.read().decode("utf-8", "ignore"))
+        except Exception as ex:  # noqa: BLE001
+            last = ex
+    raise last
 
 
-def _get(query: str) -> dict:
-    req = urllib.request.Request(API + query, headers=HEADERS)
-    with _opener().open(req, timeout=25) as resp:
-        return json.loads(resp.read().decode("utf-8", "ignore"))
+def fetch_live() -> dict[str, dict]:
+    """直播中/刚结束场次的真实状态、比分与分钟，按 matchId 索引。
 
-
-def fetch_minutes() -> dict[str, str]:
-    """直播中比赛的分钟数，按 matchId 建索引；该接口不给队名。"""
+    列表接口（getMatchDataPageListV1）对刚开赛场次的状态与比分更新滞后：
+    20:30 开赛的场次在列表里仍是「10 待开奖 / 比分为空」，
+    而本接口已给出「5 直播中 / 第 10 分钟 / 0:0」。以本接口为准。
+    """
     try:
         data = _get("getMatchLiveV1.qry?channel=c")
     except Exception as ex:  # noqa: BLE001
-        print(f"[live] 分钟接口失败：{ex}")
+        print(f"[live] 直播接口失败：{ex}")
         return {}
     out = {}
     for m in data.get("value") or []:
-        minute = str(m.get("matchMinute") or "").strip()
-        if minute:
-            out[str(m.get("matchId"))] = minute
+        out[str(m.get("matchId"))] = {
+            "status": STATUS_MAP.get(str(m.get("matchStatus") or ""), ""),
+            "status_text": str(m.get("matchStatusName") or ""),
+            "minute": str(m.get("matchMinute") or "").strip(),
+            "score": str(m.get("sectionsNo999") or "").strip(),
+            "half": str(m.get("sectionsNo1") or "").strip(),
+        }
     return out
 
 
@@ -84,7 +103,7 @@ def fetch_list() -> dict | None:
 
 
 def build() -> dict | None:
-    minutes = fetch_minutes()
+    live = fetch_live()
     value = fetch_list()
     if value is None:
         return None
@@ -96,16 +115,21 @@ def build() -> dict | None:
             if not date or not num:
                 continue
             raw_status = str(m.get("matchStatus") or "")
-            rows[f"{date}|{num}"] = {
+            row = {
                 "score": str(m.get("sectionsNo999") or ""),
                 "half": str(m.get("sectionsNo1") or ""),
                 "status": STATUS_MAP.get(raw_status, ""),
                 "status_text": str(m.get("matchStatusName") or ""),
-                "minute": minutes.get(str(m.get("matchId")), ""),
+                "minute": "",
                 "home": str(m.get("homeTeamAbbName") or ""),
                 "away": str(m.get("awayTeamAbbName") or ""),
                 "match_id": m.get("matchId"),
             }
+            # 直播接口为准：覆盖状态/比分/半场/分钟（列表接口状态滞后）
+            ov = live.get(str(m.get("matchId")))
+            if ov:
+                row.update(ov)
+            rows[f"{date}|{num}"] = row
     if not rows:
         return None
     return {
