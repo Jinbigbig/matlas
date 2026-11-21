@@ -1695,7 +1695,7 @@ def _jsonld(blocks: list[dict[str, Any]]) -> str:
 _LIVE_JS = """
 // ===== 实时数据（远程 / 静态切换点）=====
 window.LIVE_MODE = "remote";
-window.LIVE_API_BASE = "https://www.matlas.top";
+window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname === "localhost") ? "" : "https://www.matlas.top";
 (function () {
   if (window.LIVE_MODE === "off" || window.LIVE_API_BASE.indexOf("你的域名") >= 0) return;
   function url(date, light) {
