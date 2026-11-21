@@ -13,10 +13,8 @@ from pathlib import Path
 #
 # 必须是「无需任何前置参数即可打开」的公开地址 —— canonical / sitemap / llms.txt
 # 里的 URL 会被搜索引擎与 AI 爬虫直接抓取，带 sharecode 才有权限的地址等于 403。
-# 现用 GitHub Pages（gh-pages 分支，允许子路径 /matlas/）。
-# 内置通道 https://matlas.app.workbuddy.host 需带 ?sharecode=... 才能访问，
-# 仅作人工预览镜像，不可作为 canonical。
-DEFAULT_BASE_URL = "https://jinbigbig.github.io/matlas"
+# 现用 www.matlas.top（Cloudflare Tunnel，静态站点与 /api 同域）。
+DEFAULT_BASE_URL = "https://www.matlas.top"
 
 
 @dataclass(frozen=True)
