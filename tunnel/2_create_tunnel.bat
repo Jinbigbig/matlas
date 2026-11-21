@@ -11,11 +11,8 @@ set CF=C:\Program Files (x86)\cloudflared\cloudflared.exe
 if not exist "%CF%" set CF=C:\Program Files\cloudflared\cloudflared.exe
 
 set SUB=%1
-if "%SUB%"=="" (
-  echo 用法：2_create_tunnel.bat 子域名
-  echo 例：  2_create_tunnel.bat live
-  exit /b 1
-)
+if "%SUB%"=="" set SUB=www
+echo 使用子域名: %SUB%
 
 echo [1/3] 创建隧道 matlas-live ...
 "%CF%" tunnel create matlas-live
