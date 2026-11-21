@@ -186,6 +186,18 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
         teams=[(k, v[0], v[1]) for k, v in sorted(tm_stat.items(), key=lambda x: -x[1][0])],
     ))
     L.write(cfg, "data.html", P.render_stats(cfg, ordered))
+    # 全玩法赔率按日切片：赔率页首屏只内联最近一日，历史日期按需拉 data/odds/<date>.json
+    _odds_dates, _odds_rows = P._odds_payload(ordered)
+    if _odds_rows:
+        from collections import defaultdict as _dd
+
+        _by_day: dict[str, list] = _dd(list)
+        for _r in _odds_rows:
+            _by_day[_r["d"]].append(_r)
+        for _d, _rows in _by_day.items():
+            L.write(cfg, f"data/odds/{_d}.json",
+                    json.dumps(_rows, ensure_ascii=False, separators=(",", ":")))
+            stats["files"] += 1
     L.write(cfg, "odds.html", P.render_odds(cfg, ordered))
     L.write(cfg, "bets.html", P.render_bets(cfg, ordered))
     L.write(cfg, "preview/index.html", P.render_preview_index(cfg, ordered))

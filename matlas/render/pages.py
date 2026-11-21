@@ -3247,7 +3247,11 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
 
     base = cfg.base_url.rstrip("/")
     dates, rows = _odds_payload(ordered)
-    data_js = _json.dumps({"dates": dates, "rows": rows},
+    # 首屏只内联最近一日：历史日期的全玩法赔率按需拉 data/odds/<date>.json，
+    # 避免把全部交易日的赔率（数百场、600KB+）一次性塞进 HTML 阻塞首屏。
+    head_date = dates[0] if dates else ""
+    head_rows = [r for r in rows if r["d"] == head_date]
+    data_js = _json.dumps({"dates": dates, "rows": head_rows},
                           ensure_ascii=False, separators=(",", ":"))
     body = (
         f"<h1 class='page-h1'>{L.ICON_TREND} 赔率</h1>"
@@ -3258,6 +3262,7 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
         "<script>\n(function () {\n"
         f"  var DATA = {data_js};\n"
         '''  var out = document.getElementById("odds-out");
+  var loading = {};
   if (!DATA.dates.length) { out.innerHTML = '<p class="sub">暂无盘口数据。</p>'; return; }
   function pill(lab, val, hit, cls) {
     if (val === undefined || val === null || val === "") return "";
@@ -3270,6 +3275,23 @@ def render_odds(cfg: Config, ordered: list[Day]) -> str:
   }
   function render(d) {
     var rows = DATA.rows.filter(function (r) { return r.d === d; });
+    if (!rows.length && !loading[d] && window.fetch) {
+      loading[d] = true;
+      out.innerHTML = '<p class="sub">加载中…</p>';
+      fetch("data/odds/" + d + ".json").then(function (resp) { return resp.json(); })
+        .then(function (list) {
+          if (!list || !list.length) {
+            loading[d] = false;
+            out.innerHTML = '<p class="sub">暂无盘口数据。</p>';
+            return;
+          }
+          list.forEach(function (x) { DATA.rows.push(x); });
+          loading[d] = false;
+          render(d);
+        })
+        .catch(function () { loading[d] = false; out.innerHTML = '<p class="sub">暂无盘口数据。</p>'; });
+      return;
+    }
     var html = "";
     rows.forEach(function (r) {
       var of = r.of, done = r.gh !== null && r.gh !== undefined;
