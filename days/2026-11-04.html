@@ -6,7 +6,7 @@
 <title>2026-11-04 赛事量化归档 - Matlas</title>
 <meta name="description" content="2026-11-04 共 12 场赛事的结构化量化数据与结论，含 亚冠精英、欧冠、欧罗巴、英冠。">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/days/2026-11-04.html">
-<link rel="stylesheet" href="../assets/style.css?v=1795219642">
+<link rel="stylesheet" href="../assets/style.css?v=1795222853">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2026-11-04 赛事量化归档 - Matlas">
 <meta property="og:description" content="2026-11-04 共 12 场赛事的结构化量化数据与结论，含 亚冠精英、欧冠、欧罗巴、英冠。">
@@ -122,11 +122,11 @@ aiSyncArrows();
 <script>
 
 // ===== 实时数据（方案②/③切换点）=====
-window.LIVE_MODE = "remote";
-window.LIVE_API_BASE = "https://live.你的域名";
+window.LIVE_MODE = "off";
+window.LIVE_API_BASE = "https://www.matlas.top";
 (function () {
-  // 域名未配置（仍是占位符）时不请求，避免线上页面空跑轮询
-  if (window.LIVE_API_BASE.indexOf("你的域名") >= 0) return;
+  // 域名未生效或隧道未就绪时 LIVE_MODE="off"，暂停轮询
+  if (window.LIVE_MODE === "off" || window.LIVE_API_BASE.indexOf("你的域名") >= 0) return;
   var card = document.querySelector("[data-live-match]");
   if (!card) return;
   var mid = card.getAttribute("data-live-match");
