@@ -1704,10 +1704,32 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
       return (window.LIVE_API_BASE || "") + "/data/live/" + date + ".json?v=" + stamp;
     return window.LIVE_API_BASE + "/api/live?date=" + date + (light ? "&light=1" : "") + "&v=" + stamp;
   }
+  // 实时请求：8 秒超时 + 全局并发上限 3 + 页面隐藏时静默跳过。
+  // 慢链路下若无超时，挂起的请求会占满浏览器对同域的连接，导致点击后整页长时间转圈。
+  var _pending = 0, _PMAX = 3, _fail = 0;
   function getJson(u) {
-    return fetch(u, { cache: "no-store" })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .catch(function () { return null; });
+    if (document.hidden || _pending >= _PMAX) return Promise.resolve(null);
+    _pending++;
+    var ctl = window.AbortController ? new AbortController() : null;
+    var opt = { cache: "no-store" };
+    if (ctl) opt.signal = ctl.signal;
+    var timer = ctl ? setTimeout(function () { try { ctl.abort(); } catch (e) {} }, 8000) : null;
+    function done() {
+      if (timer) clearTimeout(timer);
+      timer = null;
+      _pending = Math.max(0, _pending - 1);
+    }
+    return fetch(u, opt)
+      .then(function (r) { if (r.ok) { _fail = 0; } else { _fail++; } return r.ok ? r.json() : null; })
+      .then(function (v) { done(); return v; }, function () { _fail++; done(); return null; });
+  }
+  // 轮询节拍：首次延迟 1.5s 让首屏资源先加载；正常 60s 一次，连续失败 3 次后降到 5 分钟。
+  function loop(fn) {
+    function tick() {
+      fn();
+      setTimeout(tick, _fail >= 3 ? 300000 : 60000);
+    }
+    setTimeout(tick, 1500);
   }
   function nameHit(a, b) {
     a = (a || "").trim(); b = (b || "").trim();
@@ -1741,8 +1763,7 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
         });
       });
     }
-    pollOddsFull();
-    setInterval(pollOddsFull, 60000);
+    loop(pollOddsFull);
     return;
   }
 
@@ -1767,8 +1788,7 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
         if (tr && m.trend_html) tr.outerHTML = m.trend_html;
       });
     }
-    pollSingle();
-    setInterval(pollSingle, 60000);
+    loop(pollSingle);
     return;
   }
 
@@ -1801,8 +1821,7 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
         });
       });
     }
-    pollCards();
-    setInterval(pollCards, 60000);
+    loop(pollCards);
     return;
   }
 
@@ -1838,11 +1857,15 @@ window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname =
       });
     });
   }
+  var _listIdx = 0;
   function pollList() {
-    Object.keys(byDate).forEach(function (d) { pollDate(d, byDate[d]); });
+    var ds = Object.keys(byDate);
+    if (!ds.length) return;
+    // 每轮只拉一个日期（轮转），避免列表页一次并发多个日期请求占满连接
+    var d = ds[_listIdx++ % ds.length];
+    pollDate(d, byDate[d]);
   }
-  pollList();
-  setInterval(pollList, 60000);
+  loop(pollList);
 })();
 """
 
