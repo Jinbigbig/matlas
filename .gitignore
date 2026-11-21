@@ -75,3 +75,8 @@ tunnel/生成
 /cf_deploy_last.log
 /sandbox/
 data/tunnel-*.log
+
+# 队徽压缩前的原图备份（本地保留）
+data/.crest_backup/
+# CF KV 推送状态（每日写入计数）
+data/.cf_push_state.json

@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import os
 import sys
@@ -29,6 +30,21 @@ sys.path.insert(0, str(ROOT))
 import live_server  # noqa: E402
 
 CF_API = "https://api.cloudflare.com/client/v4"
+
+# CF 免费版 KV 每日写入上限 1000 次，留出余量避免打穿后整轮 429。
+DAILY_BUDGET = 900
+# 比分没变时，赔率最多回刷一次的间隔（秒），保证赔率不会长期停在旧值。
+REFRESH_SEC = 600
+# 参与「是否推送」判定的字段：只有比分与状态变化才触发写入。
+CORE_FIELDS = ("match_id", "status", "score", "half")
+# 赔率类字段不进核心指纹：它们每分钟都在动，若参与判定会瞬间耗尽配额。
+SKIP_FIELDS = {"updated", "odds", "odds_ticks", "trend_html", "odds_full"}
+
+STATE_FILE = ROOT / "data" / ".cf_push_state.json"
+
+
+class Quota(Exception):
+    """当日写入预算或 CF 配额用尽，本轮必须停下。"""
 
 
 def _env(name: str, default: str = "") -> str:
@@ -51,7 +67,7 @@ def _load_dotenv() -> None:
 
 
 def _kv_write(key: str, obj) -> bool:
-    """PUT 一个 JSON 值到 CF KV。返回是否成功。"""
+    """PUT 一个 JSON 值到 CF KV。返回是否成功；配额用尽抛 Quota。"""
     account = _env("CF_ACCOUNT_ID")
     token = _env("CF_API_TOKEN")
     ns = _env("CF_KV_NAMESPACE_ID")
@@ -72,52 +88,135 @@ def _kv_write(key: str, obj) -> bool:
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             return 200 <= resp.status < 300
+    except urllib.error.HTTPError as ex:
+        if ex.code == 429:
+            raise Quota("CF KV 写入额度已用尽（429）") from ex
+        print(f"[push] KV 写入失败 {key}: HTTP {ex.code}", file=sys.stderr)
+        return False
     except Exception as ex:  # noqa: BLE001
         print(f"[push] KV 写入失败 {key}: {ex}", file=sys.stderr)
         return False
 
 
-def push_date(date: str) -> bool:
-    """生成并推送某日的完整版 + 轻量版 + 更新 index。"""
+def _utc_today() -> str:
+    return dt.datetime.now(dt.timezone.utc).date().isoformat()
+
+
+def _load_state() -> dict:
+    """读推送状态；跨 UTC 日自动清零计数。"""
+    try:
+        st = json.loads(STATE_FILE.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        st = {}
+    if not isinstance(st, dict) or st.get("budget_date") != _utc_today():
+        st = {"budget_date": _utc_today(), "writes": 0, "fp": {}, "ts": {}, "index_ts": 0}
+    st.setdefault("fp", {})
+    st.setdefault("ts", {})
+    st.setdefault("writes", 0)
+    st.setdefault("index_ts", 0)
+    return st
+
+
+def _save_state(st: dict) -> None:
+    try:
+        STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        STATE_FILE.write_text(
+            json.dumps(st, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    except Exception:  # noqa: BLE001
+        pass
+
+
+def _fingerprint(obj, *, core: bool = True) -> str:
+    """内容指纹。core=True 只算比分/状态，赔率变动不参与判定。"""
+    if not isinstance(obj, dict):
+        return ""
+    if core:
+        slim = {
+            "date": obj.get("date"),
+            "m": [{k: m.get(k) for k in CORE_FIELDS} for m in (obj.get("matches") or [])],
+        }
+    else:
+        slim = {k: v for k, v in obj.items() if k not in SKIP_FIELDS}
+    raw = json.dumps(slim, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.md5(raw.encode("utf-8")).hexdigest()
+
+
+def push_date(date: str, st: dict) -> bool:
+    """推送某日数据：比分/状态变了才写，否则每 REFRESH_SEC 回刷一次赔率。"""
     full = live_server.live_for(date, light=False)
     if not full:
         print(f"[push] {date} 无数据，跳过")
         return False
     light = live_server.live_for(date, light=True)
-    ok1 = _kv_write(f"live/{date}.json", full)
-    ok2 = _kv_write(f"light/{date}.json", light) if light else True
-    print(f"[push] {date}: 完整 {len(full.get('matches', []))} 场 / "
-          f"轻量 {len((light or {}).get('matches', []))} 场 → "
-          f"{'OK' if ok1 and ok2 else 'FAIL'}")
-    return ok1 and ok2
-
-
-def push_index() -> bool:
-    dates = live_server.available_dates()
-    idx = {
-        "updated": dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "dates": dates,
-    }
-    ok = _kv_write("index.json", idx)
-    print(f"[push] index（{len(dates)} 天）→ {'OK' if ok else 'FAIL'}")
+    now = int(time.time())
+    ok = True
+    wrote = 0
+    for suffix, obj in (("live", full), ("light", light)):
+        if not obj:
+            continue
+        key = f"{suffix}/{date}.json"
+        fp = _fingerprint(obj)
+        stale = now - int(st["ts"].get(key, 0)) >= REFRESH_SEC
+        if st["fp"].get(key) == fp and not stale:
+            continue
+        if st["writes"] >= DAILY_BUDGET:
+            raise Quota(f"已达每日写入预算 {DAILY_BUDGET}")
+        if _kv_write(key, obj):
+            st["fp"][key] = fp
+            st["ts"][key] = now
+            st["writes"] += 1
+            wrote += 1
+            _save_state(st)
+        else:
+            ok = False
+    if wrote:
+        print(f"[push] {date}: 完整 {len(full.get('matches', []))} 场 / 写入 {wrote} 项"
+              f" / 今日累计 {st['writes']} → {'OK' if ok else 'FAIL'}")
     return ok
 
 
-def push_all(*, only_date: str | None = None, days: int = 3) -> bool:
-    """推送最近 N 天（覆盖比赛列表跨日显示），再写 index。"""
+def push_index(st: dict, *, force: bool = False) -> bool:
+    """日期列表变了才推；否则每 REFRESH_SEC 回刷一次 updated 时间。"""
+    dates = live_server.available_dates()
+    idx = {"updated": dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "dates": dates}
+    fp = hashlib.md5(json.dumps(dates, ensure_ascii=False).encode("utf-8")).hexdigest()
+    now = int(time.time())
+    stale = now - int(st.get("index_ts", 0)) >= REFRESH_SEC
+    if not force and st["fp"].get("index.json") == fp and not stale:
+        return True
+    if st["writes"] >= DAILY_BUDGET:
+        raise Quota(f"已达每日写入预算 {DAILY_BUDGET}")
+    if _kv_write("index.json", idx):
+        st["fp"]["index.json"] = fp
+        st["index_ts"] = now
+        st["writes"] += 1
+        _save_state(st)
+        print(f"[push] index（{len(dates)} 天）→ OK / 今日累计 {st['writes']}")
+        return True
+    print("[push] index → FAIL")
+    return False
+
+
+def push_all(*, only_date: str | None = None, days: int = 2) -> bool:
+    """推今天与明天的实时数据。
+
+    免费版 KV 只有 1000 写/天，历史日期与更远未来由构建产物提供，
+    不重复占配额；实时比分只在这两天有意义。
+    """
     if only_date:
         targets = [only_date]
     else:
-        dates = live_server.available_dates()
-        # 加上 fixtures 里当天有赛程但尚未 import 的日期
-        fx_days = ((live_server._read(live_server.FIXTURES) or {}).get("days")) or {}
-        today = dt.date.today().isoformat()
-        all_dates = sorted(set(dates) | set(fx_days.keys()))
-        targets = [d for d in all_dates if d >= (dt.date.today() - dt.timedelta(days=days - 1)).isoformat()]
-        if today not in targets:
-            targets.append(today)
-    results = [push_date(d) for d in sorted(set(targets))]
-    results.append(push_index())
+        today = dt.date.today()
+        targets = [(today + dt.timedelta(days=i)).isoformat() for i in range(days)]
+    st = _load_state()
+    try:
+        results = [push_date(d, st) for d in targets]
+        results.append(push_index(st))
+    except Quota as ex:
+        print(f"[push] 停止本轮：{ex}", file=sys.stderr)
+        _save_state(st)
+        return False
+    _save_state(st)
     return all(results)
 
 
@@ -127,7 +226,7 @@ def main() -> int:
     ap.add_argument("--loop", action="store_true", help="常驻循环推送")
     ap.add_argument("--date", help="只推指定日期 YYYY-MM-DD")
     ap.add_argument("--interval", type=int, default=int(_env("PUSH_INTERVAL", "60")), help="循环间隔秒（默认 60）")
-    ap.add_argument("--days", type=int, default=3, help="推送最近 N 天（默认 3）")
+    ap.add_argument("--days", type=int, default=2, help="推送今天起 N 天（默认 2）")
     args = ap.parse_args()
 
     _load_dotenv()
