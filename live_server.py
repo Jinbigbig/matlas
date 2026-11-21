@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -29,16 +30,46 @@ from urllib.parse import parse_qs, urlparse
 ROOT = Path(__file__).resolve().parent
 DAYS_DIR = ROOT / "data" / "days"
 EXPORT_DIR = ROOT / "data" / "live"
-JINBET = Path("C:/Users/Jin/jinbet")
+JINBET = Path(os.environ.get("MATLAS_JINBET", "C:/Users/Jin/jinbet"))
 ODDS_TICKS = JINBET / "odds_ticks.json"
 RESULTS = JINBET / "results_data.json"
 FIXTURES = JINBET / "fixtures.json"
 
 CACHE: dict[str, tuple[float, object]] = {}
 
+try:
+    import pg_store
+except ImportError:  # 未随仓库部署时退回纯文件模式
+    pg_store = None  # type: ignore[assignment]
+
+_KEY_BY_PATH = {
+    str(ODDS_TICKS): "odds_ticks",
+    str(RESULTS): "results_data",
+    str(FIXTURES): "fixtures",
+}
+
+
+def _key_for(path: Path) -> str | None:
+    """数据源路径 → live_data 表 key；days 文件按日期命名。"""
+    s = str(path)
+    if s in _KEY_BY_PATH:
+        return _KEY_BY_PATH[s]
+    if path.parent == DAYS_DIR and path.stem.startswith("20"):
+        return f"days/{path.stem}"
+    return None
+
 
 def _read(path: Path):
-    """读 JSON，带 mtime 缓存：文件没变就不重复解析。"""
+    """读数据源：优先 PostgreSQL（db_sync 已同步），库不可用回退文件。
+
+    文件读取带 mtime 缓存；库读取由 pg_store 内部处理连接失败，
+    返回 None 时自动落到文件，保证任何部署形态都能出数据。
+    """
+    key = _key_for(path)
+    if key and pg_store is not None:
+        data = pg_store.read(key)
+        if data is not None:
+            return data
     try:
         mt = path.stat().st_mtime
     except OSError:
@@ -78,17 +109,22 @@ def _lookup(src: dict, date: str, home: str, away: str):
     return None
 
 
-def _fixture_status(fx_days: dict, date: str, code: str, home: str, away: str) -> str:
-    """从赛程源取开赛状态：优先竞彩编号，退回队名双向包含。"""
+def _fixture_row(fx_days: dict, date: str, code: str, home: str, away: str) -> dict:
+    """从赛程源找对应场次行：优先竞彩编号，退回队名双向包含。"""
     rows = fx_days.get(date) or []
     if code:
         for r in rows:
             if r.get("code") == code:
-                return str(r.get("st") or "")
+                return r
     for r in rows:
         if _name_match(home, r.get("home")) and _name_match(away, r.get("away")):
-            return str(r.get("st") or "")
-    return ""
+            return r
+    return {}
+
+
+def _fixture_status(fx_days: dict, date: str, code: str, home: str, away: str) -> str:
+    """从赛程源取开赛状态：优先竞彩编号，退回队名双向包含。"""
+    return str(_fixture_row(fx_days, date, code, home, away).get("st") or "")
 
 
 def _tick_num(v):
@@ -160,6 +196,7 @@ def live_for(date: str, *, light: bool = False) -> dict | None:
     for match_id, code, home, away in skeleton:
         tk = _lookup(ticks_src, date, home, away) or []
         res = _lookup(results_src, date, home, away) or {}
+        fx_row = _fixture_row(fx_days, date, code, home, away)
 
         # 最新盘口（胜平负 + 让球首档），供前端替换表头数字
         odds = {}
@@ -179,8 +216,10 @@ def live_for(date: str, *, light: bool = False) -> dict | None:
             "code": code,
             "home": home,
             "away": away,
-            "status": _fixture_status(fx_days, date, code, home, away),
-            "score": str(res.get("fullScore") or "").replace(":", "-"),
+            "status": str(fx_row.get("st") or ""),
+            # 赛后补录 results_data 优先；缺失时用赛程源的实时比分兜底
+            "score": (str(res.get("fullScore") or "").replace(":", "-")
+                      or str(fx_row.get("score") or "")),
             "half": str(res.get("halfScore") or "").replace(":", "-"),
             "odds": odds,
         }
@@ -242,6 +281,7 @@ class Handler(BaseHTTPRequestHandler):
                 "ok": True,
                 "now": dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 "dates": len(available_dates()),
+                "postgres": bool(pg_store and pg_store.available()),
             })
         if u.path == "/api/live":
             date = (qs.get("date") or [""])[0]
