@@ -25,6 +25,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
+from ingest_finished_results import ingest as ingest_results  # noqa: E402
 from push_live_pages import OUT, _load_dotenv, build_snapshot, deploy  # noqa: E402
 
 PY = Path(sys.executable)
@@ -95,8 +96,24 @@ def sync_gh() -> bool:
     return True
 
 
+def rebuild_and_publish() -> bool:
+    """有新增赛果时：import 回填命中 → 构建 → 发布两站。"""
+    for label, cmd in (
+        ("import", [str(PY), str(ROOT / "import_jinbet.py")]),
+        ("build", [str(PY), str(ROOT / "build.py"), "--strict"]),
+    ):
+        t0 = time.time()
+        p = subprocess.run(cmd, cwd=str(ROOT))
+        print(f"[update] {label}: exit={p.returncode}（{time.time() - t0:.0f}s）")
+        if p.returncode != 0:
+            return False
+    p = subprocess.run(["bash", str(ROOT / "publish.sh")], cwd=str(ROOT))
+    print(f"[update] publish: exit={p.returncode}")
+    return p.returncode == 0
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(description="实时链路：采集 → 快照 → 部署")
+    ap = argparse.ArgumentParser(description="实时链路：采集 → 赛果录入 → 快照 → 部署")
     ap.add_argument("--only", choices=list(COLLECT_ITEMS) + ["all"], default="all")
     ap.add_argument("--no-collect", action="store_true", help="跳过采集")
     ap.add_argument("--dry-run", action="store_true", help="只生成快照，不部署")
@@ -111,6 +128,11 @@ def main() -> int:
             print("[update] 采集失败，终止（未部署，线上保持上一版）")
             return 1
 
+    # 采集后有已结束场次就补录赛果，重建页面让四维命中标签上线。
+    added = ingest_results()
+    if added and not args.dry_run:
+        if not rebuild_and_publish():
+            print("[update] 赛果回填/发布失败，仍继续实时快照部署")
     written = build_snapshot(args.days)
     if not written:
         print("[update] 快照为空，终止")
