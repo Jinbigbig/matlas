@@ -6,12 +6,12 @@
 <title>奥萨苏纳 vs 毕尔巴鄂 · 西甲 - Matlas</title>
 <meta name="description" content="2026-11-07 西甲 周六025 奥萨苏纳 对阵 毕尔巴鄂 的赛前量化数据与结论">
 <link rel="canonical" href="https://jinbigbig.github.io/matlas/matches/2026-11-07-025.html">
-<link rel="stylesheet" href="../assets/style.css?v=1795266114">
+<link rel="stylesheet" href="../assets/style.css?v=1795266764">
 <meta property="og:type" content="article">
 <meta property="og:title" content="奥萨苏纳 vs 毕尔巴鄂 · 西甲 - Matlas">
 <meta property="og:description" content="2026-11-07 西甲 周六025 奥萨苏纳 对阵 毕尔巴鄂 的赛前量化数据与结论">
 <meta name="robots" content="index,follow">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","AnalysisNewsArticle"],"@id":"https://jinbigbig.github.io/matlas/matches/2026-11-07-025.html","url":"https://jinbigbig.github.io/matlas/matches/2026-11-07-025.html","headline":"奥萨苏纳 vs 毕尔巴鄂 · 西甲","description":"2026-11-07 西甲 周六025 奥萨苏纳 对阵 毕尔巴鄂 的赛前量化数据与结论","datePublished":"2026-11-21T21:01:54","dateModified":"2026-11-21T21:01:54","author":{"@type":"Organization","name":"Matlas","url":"https://jinbigbig.github.io/matlas"},"publisher":{"@type":"Organization","name":"Matlas","url":"https://jinbigbig.github.io/matlas"},"inLanguage":"zh-CN"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","AnalysisNewsArticle"],"@id":"https://jinbigbig.github.io/matlas/matches/2026-11-07-025.html","url":"https://jinbigbig.github.io/matlas/matches/2026-11-07-025.html","headline":"奥萨苏纳 vs 毕尔巴鄂 · 西甲","description":"2026-11-07 西甲 周六025 奥萨苏纳 对阵 毕尔巴鄂 的赛前量化数据与结论","datePublished":"2026-11-21T21:12:45","dateModified":"2026-11-21T21:12:45","author":{"@type":"Organization","name":"Matlas","url":"https://jinbigbig.github.io/matlas"},"publisher":{"@type":"Organization","name":"Matlas","url":"https://jinbigbig.github.io/matlas"},"inLanguage":"zh-CN"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsEvent","name":"奥萨苏纳 vs 毕尔巴鄂","startDate":"","location":{"@type":"Place","name":"—"},"competition":"西甲","homeTeam":{"@type":"SportsTeam","name":"奥萨苏纳"},"awayTeam":{"@type":"SportsTeam","name":"毕尔巴鄂"}}</script>
 </head>
 <body>
@@ -326,14 +326,29 @@ window.LIVE_MODE = "remote";
       });
     });
   }
-  var _listIdx = 0;
+  function visibleDay() {
+    var secs = document.querySelectorAll(".ml-sec[data-day]");
+    for (var i = 0; i < secs.length; i++) {
+      if (secs[i].offsetParent !== null) return secs[i].getAttribute("data-day");
+    }
+    return "";
+  }
   function pollList() {
+    // 当前显示的日期优先刷新（原来按 DOM 顺序轮转，今天排第 7 要等 6 分钟才轮到）
+    var d = visibleDay();
+    if (d && byDate[d]) { pollDate(d, byDate[d]); return; }
     var ds = Object.keys(byDate);
     if (!ds.length) return;
-    // 每轮只拉一个日期（轮转），避免列表页一次并发多个日期请求占满连接
-    var d = ds[_listIdx++ % ds.length];
-    pollDate(d, byDate[d]);
+    pollDate(ds[0], byDate[ds[0]]);
   }
+  // 切换日期立即拉该日期，不等下一轮
+  [].slice.call(document.querySelectorAll('input[name="mlday"]')).forEach(function (inp) {
+    inp.addEventListener("change", function () {
+      if (!inp.checked) return;
+      var d = inp.id.slice(4);
+      if (byDate[d]) pollDate(d, byDate[d]);
+    });
+  });
   loop(pollList);
 })();
 </script>
