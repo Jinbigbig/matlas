@@ -1,8 +1,8 @@
 @echo off
 chcp 65001 >nul
 REM 第二步：创建 Named Tunnel 并绑定固定域名。
-REM 用法：2_create_tunnel.bat 你的子域名
-REM 例：  2_create_tunnel.bat live     -> 生成 live.你的域名
+REM 用法：2_create_tunnel.bat 子域名
+REM 例：  2_create_tunnel.bat www     -> 生成 www.matlas.top
 
 setlocal
 cd /d "%~dp0"
@@ -32,12 +32,12 @@ if "%TID%"=="" (
 )
 echo 隧道 ID: %TID%
 
-echo [3/3] 配置 DNS 路由 %SUB%.你的域名 ...
+echo [3/3] 配置 DNS 路由 %SUB%.matlas.top ...
 "%CF%" tunnel route dns matlas-live %SUB%
 
 echo.
 echo 配置完成。请把下面的隧道 ID 填到 config.yml 的 tunnel 字段：
 echo   %TID%
-echo 并把 LIVE_API_BASE 设为 https://%SUB%.你的域名
+echo 前端 LIVE_API_BASE 已设为 https://www.matlas.top（子域名必须是 www）
 pause
 endlocal

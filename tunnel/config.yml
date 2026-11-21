@@ -4,6 +4,6 @@ tunnel: 00000000-0000-0000-0000-000000000000
 credentials-file: C:\Users\Jin\.cloudflared\00000000-0000-0000-0000-000000000000.json
 
 ingress:
-  - hostname: live.你的域名
+  - hostname: www.matlas.top
     service: http://127.0.0.1:8787
   - service: http_status:404

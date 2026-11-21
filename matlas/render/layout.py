@@ -1690,15 +1690,15 @@ def _jsonld(blocks: list[dict[str, Any]]) -> str:
 
 
 # 实时数据接入：方案②（本地服务 + 固定域名隧道）与方案③（gh-pages 静态 JSON）共用。
-# 切换只需改这两行：方案② LIVE_MODE="remote" + 真域名；方案③ LIVE_MODE="static" + LIVE_API_BASE=""。
-# fetch 失败时静默保留静态内容，域名未配置或离线不影响页面。
+# 切换点：LIVE_MODE="off" 暂停；"remote" 方案②（真域名）；"static" 方案③（BASE 留空走同域）。
+# fetch 失败时静默保留静态内容，域名未生效或离线不影响页面。
 _LIVE_JS = """
 // ===== 实时数据（方案②/③切换点）=====
-window.LIVE_MODE = "remote";
-window.LIVE_API_BASE = "https://live.你的域名";
+window.LIVE_MODE = "off";
+window.LIVE_API_BASE = "https://www.matlas.top";
 (function () {
-  // 域名未配置（仍是占位符）时不请求，避免线上页面空跑轮询
-  if (window.LIVE_API_BASE.indexOf("你的域名") >= 0) return;
+  // 域名未生效或隧道未就绪时 LIVE_MODE="off"，暂停轮询
+  if (window.LIVE_MODE === "off" || window.LIVE_API_BASE.indexOf("你的域名") >= 0) return;
   var card = document.querySelector("[data-live-match]");
   if (!card) return;
   var mid = card.getAttribute("data-live-match");
