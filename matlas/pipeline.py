@@ -10,7 +10,7 @@ import json
 import shutil
 from datetime import datetime, timezone
 
-from .config import Config
+from .config import Config, write_text_safe
 from .models import Day, Match
 from .render import layout as L
 from .render import pages as P
@@ -39,6 +39,21 @@ def _copy_assets(cfg: Config) -> int:
         shutil.copy2(p, t)
         n += 1
     return n
+
+
+def _write_headers(cfg: Config) -> None:
+    """产出 Pages 的 `_headers`：给 HTML 与数据声明可缓存时长。
+
+    页面是构建快照，实时比分/赔率由前端调 /api 取，因此 HTML 短缓存即可
+    让重复访问命中边缘；静态图与分日数据放长缓存。
+    """
+    content = (
+        "/\n  Cache-Control: public, max-age=300\n\n"
+        "/*.html\n  Cache-Control: public, max-age=300\n\n"
+        "/data/*\n  Cache-Control: public, max-age=1800\n\n"
+        "/assets/*\n  Cache-Control: public, max-age=604800, immutable\n"
+    )
+    write_text_safe(cfg.out_dir / "_headers", content)
 
 
 def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> dict[str, int]:
@@ -221,6 +236,7 @@ def render(cfg: Config, days: list[Day], source: DataSource | None = None) -> di
 
     # 4. 静态资源（队徽）
     stats["assets"] = _copy_assets(cfg)
+    _write_headers(cfg)
 
     # 5. GEO 基建
     seo.write_llms(cfg, ordered, latest)
