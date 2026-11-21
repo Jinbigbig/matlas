@@ -3086,16 +3086,15 @@ def render_features(cfg: Config) -> str:
 
     版式与全站统一：白卡网格 + 单色线性 SVG 图标（不用 emoji）。
     """
-    base = cfg.base_url.rstrip("/")
     items = [
-        (L.ICON_SPORTS, "每日赛事前瞻", "每日 AI 报告列表，逐日归档可回溯", f"{base}/preview/"),
-        (L.ICON_ARCHIVE, "历史归档", "逐日归档，历史结论可回溯比对", f"{base}/days/"),
-        (L.ICON_SPORTS, "比赛列表", "按日浏览全部赛事，方向与比分旁边就是赛果", f"{base}/matches.html"),
-        (L.ICON_SEARCH, "站内搜索", "按队名、联赛、编号检索历史赛事", f"{base}/search.html"),
-        (L.ICON_ACTIVITY, "深度数据", "各联赛球队六维战力、赔率与让球走势", f"{base}/depth/"),
-        (L.ICON_TREND, "赔率", "竞彩赔率快照按日浏览，完赛场次附赛果对照", f"{base}/odds.html"),
-        (L.ICON_CPU, "投注", "投注记录本地留存，赛果自动结算与盈亏统计", f"{base}/bets.html"),
-        (L.ICON_CPU, "机器可读数据", "llms.txt / dataset.json，供 LLM 与工具直接消费", f"{base}/llms.txt"),
+        (L.ICON_SPORTS, "每日赛事前瞻", "每日 AI 报告列表，逐日归档可回溯", "preview/"),
+        (L.ICON_ARCHIVE, "历史归档", "逐日归档，历史结论可回溯比对", "days/"),
+        (L.ICON_SPORTS, "比赛列表", "按日浏览全部赛事，方向与比分旁边就是赛果", "matches.html"),
+        (L.ICON_SEARCH, "站内搜索", "按队名、联赛、编号检索历史赛事", "search.html"),
+        (L.ICON_ACTIVITY, "深度数据", "各联赛球队六维战力、赔率与让球走势", "depth/"),
+        (L.ICON_TREND, "赔率", "竞彩赔率快照按日浏览，完赛场次附赛果对照", "odds.html"),
+        (L.ICON_CPU, "投注", "投注记录本地留存，赛果自动结算与盈亏统计", "bets.html"),
+        (L.ICON_CPU, "机器可读数据", "llms.txt / dataset.json，供 LLM 与工具直接消费", "llms.txt"),
     ]
     cards = "".join(
         f'<a class="feat-item" href="{url}">'
