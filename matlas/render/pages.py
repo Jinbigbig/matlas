@@ -1526,6 +1526,7 @@ def _mc_header(m: Match, pre: str = "") -> str:
         + (f'<span class="num">{C.esc(m.code)}</span>' if m.code else "")
         + f'<span class="time">{C.esc(time_txt)}</span>'
         '</div><div class="mc-status">'
+        '<span class="mc-live" data-live="status" hidden></span>'
         f'<span class="mc-conf {conf_cls}">AI置信度:{C.esc(conf_lab)}</span>{stamp}'
         "</div></div>"
     )

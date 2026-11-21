@@ -404,6 +404,10 @@ svg.trend { width: 100%; height: auto; display: block; margin-top: 0.25rem; max-
   font-size: 12px; font-weight: 600; }
 .mc-meta .time { font-weight: 700; color: #111; }
 .mc-status { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+.mc-live { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;
+  color: #fff; white-space: nowrap; }
+.mc-live.live { background: #dc2626; }
+.mc-live[hidden] { display: none; }
 .mc-conf { padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;
   color: #fff; background: #6b7280; white-space: nowrap; }
 .mc-conf.high { background: #dc2626; }
@@ -1842,6 +1846,13 @@ window.LIVE_MODE = "remote";
       if (sc && m.score) {
         sc.innerHTML = '<div class="main">' + m.score + '</div>'
           + (m.half ? '<div class="sub">(' + m.half + ')</div>' : '');
+      }
+      var badge = c.querySelector("[data-live='status']");
+      if (badge && m.status) {
+        var live = m.status === "进行中";
+        badge.textContent = live ? (m.minute ? m.minute + "'" : "进行中") : m.status;
+        badge.className = "mc-live" + (live ? " live" : "");
+        badge.hidden = false;
       }
     }
     function pollCards() {
