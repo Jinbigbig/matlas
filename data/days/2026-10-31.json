@@ -114,12 +114,12 @@
     ],
     "home": [
      2.0,
-     2.0,
      1.0,
      2.0,
      1.0,
      1.0,
      0.0,
+     1.0,
      1.0
     ],
     "away": [
@@ -308,7 +308,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "lam_home": 1.177,
     "lam_away": 1.724,
@@ -983,7 +983,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "lam_home": 1.557,
     "lam_away": 1.303,
@@ -1227,7 +1227,7 @@
    "metrics_home": {
     "attack": 88,
     "defence": 29,
-    "control": 67,
+    "control": 68,
     "form": 62,
     "value": 72,
     "motivation": 96,
@@ -1526,7 +1526,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "lam_home": 2.139,
     "lam_away": 1.687,
@@ -2233,7 +2233,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "lam_home": 1.364,
     "lam_away": 1.577,
@@ -2508,7 +2508,7 @@
     "slug": "",
     "league": "澳超",
     "country": "",
-    "rank": 7,
+    "rank": 8,
     "points": 5,
     "played": 4,
     "win": 1,
@@ -2783,7 +2783,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -2800,55 +2800,55 @@
      },
      {
       "rank": 3,
+      "name": "珀斯",
+      "pts": 7,
+      "p": 5
+     },
+     {
+      "rank": 4,
       "name": "悉尼FC",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 4,
+      "rank": 5,
       "name": "布里斯班",
       "pts": 7,
       "p": 3
      },
      {
-      "rank": 5,
+      "rank": 6,
       "name": "墨尔本城",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 6,
-      "name": "珀斯",
-      "pts": 6,
-      "p": 4
-     },
-     {
       "rank": 7,
-      "name": "麦克阿瑟",
-      "pts": 5,
-      "p": 4
+      "name": "奥克兰FC",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 8,
-      "name": "奥克兰FC",
+      "name": "麦克阿瑟",
       "pts": 5,
       "p": 4
      },
      {
       "rank": 9,
       "name": "墨胜利",
-      "pts": 3,
-      "p": 4
+      "pts": 4,
+      "p": 5
      },
      {
       "rank": 10,
-      "name": "纽喷气机",
-      "pts": 2,
-      "p": 4
+      "name": "中央海岸",
+      "pts": 3,
+      "p": 5
      },
      {
       "rank": 11,
-      "name": "中央海岸",
+      "name": "纽喷气机",
       "pts": 2,
       "p": 4
      },
@@ -3657,7 +3657,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -4489,7 +4489,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -5511,7 +5511,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -6552,7 +6552,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -7530,7 +7530,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -8485,7 +8485,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -9481,7 +9481,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -10524,7 +10524,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -11557,7 +11557,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -12557,7 +12557,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -13599,7 +13599,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -14673,7 +14673,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -15553,7 +15553,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -16570,7 +16570,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -17472,7 +17472,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -18364,7 +18364,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -19405,7 +19405,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -20108,13 +20108,13 @@
      "T-1"
     ],
     "home": [
-     3.0,
      6.0,
      2.0,
      3.0,
      2.0,
      2.0,
      2.0,
+     1.0,
      1.0
     ],
     "away": [
@@ -20365,7 +20365,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -21332,7 +21332,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -22398,7 +22398,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -23408,7 +23408,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -24210,7 +24210,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -25042,7 +25042,7 @@
     "settled_at": "2026-10-31"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {

@@ -15,7 +15,7 @@
     "slug": "",
     "league": "澳超",
     "country": "",
-    "rank": 4,
+    "rank": 5,
     "points": 7,
     "played": 3,
     "win": 2,
@@ -29,11 +29,11 @@
     "slug": "",
     "league": "澳超",
     "country": "",
-    "rank": 6,
-    "points": 6,
-    "played": 4,
+    "rank": 3,
+    "points": 7,
+    "played": 5,
     "win": 2,
-    "draw": 0,
+    "draw": 1,
     "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/940.png"
@@ -82,7 +82,7 @@
    "metrics_away": {
     "attack": 29,
     "defence": 57,
-    "control": 48,
+    "control": 52,
     "form": 38,
     "value": 5,
     "motivation": 29,
@@ -126,13 +126,13 @@
     ],
     "home": [
      1.0,
-     1.0,
      2.0,
      1.0,
      0.0,
      2.0,
      2.0,
-     1.0
+     1.0,
+     0.0
     ],
     "away": [
      1.0,
@@ -290,7 +290,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -307,55 +307,55 @@
      },
      {
       "rank": 3,
+      "name": "珀斯",
+      "pts": 7,
+      "p": 5
+     },
+     {
+      "rank": 4,
       "name": "悉尼FC",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 4,
+      "rank": 5,
       "name": "布里斯班",
       "pts": 7,
       "p": 3
      },
      {
-      "rank": 5,
+      "rank": 6,
       "name": "墨尔本城",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 6,
-      "name": "珀斯",
-      "pts": 6,
-      "p": 4
-     },
-     {
       "rank": 7,
-      "name": "麦克阿瑟",
-      "pts": 5,
-      "p": 4
+      "name": "奥克兰FC",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 8,
-      "name": "奥克兰FC",
+      "name": "麦克阿瑟",
       "pts": 5,
       "p": 4
      },
      {
       "rank": 9,
       "name": "墨胜利",
-      "pts": 3,
-      "p": 4
+      "pts": 4,
+      "p": 5
      },
      {
       "rank": 10,
-      "name": "纽喷气机",
-      "pts": 2,
-      "p": 4
+      "name": "中央海岸",
+      "pts": 3,
+      "p": 5
      },
      {
       "rank": 11,
-      "name": "中央海岸",
+      "name": "纽喷气机",
       "pts": 2,
       "p": 4
      },
@@ -904,7 +904,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -1645,7 +1645,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -2285,7 +2285,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -2840,7 +2840,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -3527,7 +3527,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -4442,7 +4442,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -5174,7 +5174,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -6067,7 +6067,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -6733,7 +6733,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -7471,7 +7471,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {
@@ -8150,7 +8150,7 @@
     "settled_at": "2026-10-23"
    },
    "source_url": "",
-   "generated_at": "2026-11-21T15:05:48+08:00",
+   "generated_at": "2026-11-21T19:18:47+08:00",
    "extras": {
     "table": [
      {

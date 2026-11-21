@@ -6,12 +6,12 @@
 <title>长崎航海 vs 大阪樱花 · 日职联 - Matlas</title>
 <meta name="description" content="2026-09-19 日职联 周六001 长崎航海 对阵 大阪樱花 的赛前量化数据与结论">
 <link rel="canonical" href="https://www.matlas.top/matches/2026-09-19-001.html">
-<link rel="stylesheet" href="../assets/style.css?v=1795244748">
+<link rel="stylesheet" href="../assets/style.css?v=1795259927">
 <meta property="og:type" content="article">
 <meta property="og:title" content="长崎航海 vs 大阪樱花 · 日职联 - Matlas">
 <meta property="og:description" content="2026-09-19 日职联 周六001 长崎航海 对阵 大阪樱花 的赛前量化数据与结论">
 <meta name="robots" content="index,follow">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","AnalysisNewsArticle"],"@id":"https://www.matlas.top/matches/2026-09-19-001.html","url":"https://www.matlas.top/matches/2026-09-19-001.html","headline":"长崎航海 vs 大阪樱花 · 日职联","description":"2026-09-19 日职联 周六001 长崎航海 对阵 大阪樱花 的赛前量化数据与结论","datePublished":"2026-11-21T15:05:48","dateModified":"2026-11-21T15:05:48","author":{"@type":"Organization","name":"Matlas","url":"https://www.matlas.top"},"publisher":{"@type":"Organization","name":"Matlas","url":"https://www.matlas.top"},"inLanguage":"zh-CN"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["Article","AnalysisNewsArticle"],"@id":"https://www.matlas.top/matches/2026-09-19-001.html","url":"https://www.matlas.top/matches/2026-09-19-001.html","headline":"长崎航海 vs 大阪樱花 · 日职联","description":"2026-09-19 日职联 周六001 长崎航海 对阵 大阪樱花 的赛前量化数据与结论","datePublished":"2026-11-21T19:18:47","dateModified":"2026-11-21T19:18:47","author":{"@type":"Organization","name":"Matlas","url":"https://www.matlas.top"},"publisher":{"@type":"Organization","name":"Matlas","url":"https://www.matlas.top"},"inLanguage":"zh-CN"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsEvent","name":"长崎航海 vs 大阪樱花","startDate":"","location":{"@type":"Place","name":"—"},"competition":"日职联","homeTeam":{"@type":"SportsTeam","name":"长崎航海"},"awayTeam":{"@type":"SportsTeam","name":"大阪樱花"}}</script>
 </head>
 <body>
@@ -124,7 +124,7 @@ aiSyncArrows();
 
 // ===== 实时数据（远程 / 静态切换点）=====
 window.LIVE_MODE = "remote";
-window.LIVE_API_BASE = "https://www.matlas.top";
+window.LIVE_API_BASE = (location.hostname === "127.0.0.1" || location.hostname === "localhost") ? "" : "https://www.matlas.top";
 (function () {
   if (window.LIVE_MODE === "off" || window.LIVE_API_BASE.indexOf("你的域名") >= 0) return;
   function url(date, light) {
@@ -133,14 +133,67 @@ window.LIVE_API_BASE = "https://www.matlas.top";
       return (window.LIVE_API_BASE || "") + "/data/live/" + date + ".json?v=" + stamp;
     return window.LIVE_API_BASE + "/api/live?date=" + date + (light ? "&light=1" : "") + "&v=" + stamp;
   }
+  // 实时请求：8 秒超时 + 全局并发上限 3 + 页面隐藏时静默跳过。
+  // 慢链路下若无超时，挂起的请求会占满浏览器对同域的连接，导致点击后整页长时间转圈。
+  var _pending = 0, _PMAX = 3, _fail = 0;
   function getJson(u) {
-    return fetch(u, { cache: "no-store" })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .catch(function () { return null; });
+    if (document.hidden || _pending >= _PMAX) return Promise.resolve(null);
+    _pending++;
+    var ctl = window.AbortController ? new AbortController() : null;
+    var opt = { cache: "no-store" };
+    if (ctl) opt.signal = ctl.signal;
+    var timer = ctl ? setTimeout(function () { try { ctl.abort(); } catch (e) {} }, 8000) : null;
+    function done() {
+      if (timer) clearTimeout(timer);
+      timer = null;
+      _pending = Math.max(0, _pending - 1);
+    }
+    return fetch(u, opt)
+      .then(function (r) { if (r.ok) { _fail = 0; } else { _fail++; } return r.ok ? r.json() : null; })
+      .then(function (v) { done(); return v; }, function () { _fail++; done(); return null; });
+  }
+  // 轮询节拍：首次延迟 1.5s 让首屏资源先加载；正常 60s 一次，连续失败 3 次后降到 5 分钟。
+  function loop(fn) {
+    function tick() {
+      fn();
+      setTimeout(tick, _fail >= 3 ? 300000 : 60000);
+    }
+    setTimeout(tick, 1500);
   }
   function nameHit(a, b) {
     a = (a || "").trim(); b = (b || "").trim();
     return a.length >= 2 && b.length >= 2 && (a.indexOf(b) >= 0 || b.indexOf(a) >= 0);
+  }
+
+  // 赔率页 / 投注页：全玩法赔率实时替换（页面暴露 window.updateOddsFull）
+  if (typeof window.updateOddsFull === "function") {
+    var ofDates = {}, ofCal = document.querySelector("#odds-dates, .nb-topbar .date-cal");
+    var ofDate = (ofCal && ofCal.value) || "";
+    if (ofDate) ofDates[ofDate] = 1;
+    // 同时拉明天（在售盘口跨日），保证日历切换后也有数据
+    var ofTomorrow = new Date(ofDate + "T00:00:00");
+    if (!isNaN(ofTomorrow.getTime())) {
+      ofTomorrow.setDate(ofTomorrow.getDate() + 1);
+      var tStr = ofTomorrow.toISOString().slice(0, 10);
+      if (tStr !== ofDate) ofDates[tStr] = 1;
+    }
+    function pollOddsFull() {
+      var pending = Object.keys(ofDates).length;
+      if (!pending) return;
+      Object.keys(ofDates).forEach(function (d) {
+        getJson(url(d, true)).then(function (res) {
+          pending--;
+          if (!res || !res.matches) return;
+          var map = {};
+          res.matches.forEach(function (m) {
+            if (m.odds_full) map[m.match_id] = m.odds_full;
+          });
+          if (Object.keys(map).length) window.updateOddsFull(map);
+        });
+      });
+    }
+    loop(pollOddsFull);
+    return;
   }
 
   // 单场详情：比分 + 赔率曲线
@@ -164,8 +217,7 @@ window.LIVE_API_BASE = "https://www.matlas.top";
         if (tr && m.trend_html) tr.outerHTML = m.trend_html;
       });
     }
-    pollSingle();
-    setInterval(pollSingle, 60000);
+    loop(pollSingle);
     return;
   }
 
@@ -198,8 +250,7 @@ window.LIVE_API_BASE = "https://www.matlas.top";
         });
       });
     }
-    pollCards();
-    setInterval(pollCards, 60000);
+    loop(pollCards);
     return;
   }
 
@@ -231,15 +282,20 @@ window.LIVE_API_BASE = "https://www.matlas.top";
         var v = row.querySelector(".ml-v");
         if (v && m.score) v.textContent = m.score;
         var st = row.querySelector(".ml-st");
-        if (st && m.status) st.textContent = m.status;
+        // 进行中优先显示比赛分钟（比「进行中」更短，不会撑破状态列）
+        if (st && m.status) st.textContent = m.minute ? m.minute + "'" : m.status;
       });
     });
   }
+  var _listIdx = 0;
   function pollList() {
-    Object.keys(byDate).forEach(function (d) { pollDate(d, byDate[d]); });
+    var ds = Object.keys(byDate);
+    if (!ds.length) return;
+    // 每轮只拉一个日期（轮转），避免列表页一次并发多个日期请求占满连接
+    var d = ds[_listIdx++ % ds.length];
+    pollDate(d, byDate[d]);
   }
-  pollList();
-  setInterval(pollList, 60000);
+  loop(pollList);
 })();
 </script>
 </body>
