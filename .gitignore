@@ -20,3 +20,6 @@ data/live/
 
 # cloudflared 二进制（winget 安装或单独下载，体积大不进仓库）
 tools/
+
+# tunnel 目录的临时空文件（双击 bat 时输入法误触产生）
+tunnel/生成
