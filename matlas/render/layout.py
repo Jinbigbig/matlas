@@ -1694,7 +1694,7 @@ def _jsonld(blocks: list[dict[str, Any]]) -> str:
 # fetch 失败时静默保留静态内容，域名未生效或离线不影响页面。
 _LIVE_JS = """
 // ===== 实时数据（方案②/③切换点）=====
-window.LIVE_MODE = "off";
+window.LIVE_MODE = "remote";
 window.LIVE_API_BASE = "https://www.matlas.top";
 (function () {
   // 域名未生效或隧道未就绪时 LIVE_MODE="off"，暂停轮询
