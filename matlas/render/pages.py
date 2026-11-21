@@ -3086,6 +3086,7 @@ def render_features(cfg: Config) -> str:
 
     版式与全站统一：白卡网格 + 单色线性 SVG 图标（不用 emoji）。
     """
+    base = cfg.base_url.rstrip("/")
     items = [
         (L.ICON_SPORTS, "每日赛事前瞻", "每日 AI 报告列表，逐日归档可回溯", "preview/"),
         (L.ICON_ARCHIVE, "历史归档", "逐日归档，历史结论可回溯比对", "days/"),
