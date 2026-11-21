@@ -1,9 +1,0 @@
-# Cloudflare Named Tunnel 配置
-# tunnel: 填 2_create_tunnel.bat 输出的隧道 ID（也可留空，start_live_named.bat 会自动取）
-tunnel: 518c10e0-4bac-4ecf-bdb8-a882edb321c3
-credentials-file: C:\Users\Jin\.cloudflared\518c10e0-4bac-4ecf-bdb8-a882edb321c3.json
-
-ingress:
-  - hostname: www.matlas.top
-    service: http://127.0.0.1:8787
-  - service: http_status:404

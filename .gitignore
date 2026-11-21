@@ -23,3 +23,12 @@ tools/
 
 # tunnel 目录的临时空文件（双击 bat 时输入法误触产生）
 tunnel/生成
+
+# 实时服务运维脚本与使用说明：私有资料库备份，不进公开仓库
+/LIVE.md
+/start_live.bat
+/stop_live.bat
+/install_autostart.bat
+/uninstall_autostart.bat
+/tunnel/
+/matlas-live-private-backup-*.zip
