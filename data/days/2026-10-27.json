@@ -1416,8 +1416,7 @@
    },
    "away": {
     "name": "法兰克福",
-    "league": "德国杯",
-    "logo": "assets/logo/teams/169.png"
+    "league": "德国杯"
    },
    "forecasts": [
     {
@@ -1773,7 +1772,7 @@
    "home": {
     "name": "萨索洛",
     "league": "意甲",
-    "rank": 17,
+    "rank": 16,
     "points": 8,
     "played": 11,
     "win": 2,
@@ -1785,12 +1784,11 @@
     "name": "拉齐奥",
     "league": "意甲",
     "rank": 1,
-    "points": 29,
-    "played": 11,
-    "win": 9,
+    "points": 32,
+    "played": 12,
+    "win": 10,
     "draw": 2,
-    "loss": 0,
-    "logo": "assets/logo/teams/487.png"
+    "loss": 0
    },
    "forecasts": [
     {
@@ -1891,31 +1889,31 @@
      {
       "rank": 1,
       "name": "拉齐奥",
-      "pts": 29,
-      "p": 11
+      "pts": 32,
+      "p": 12
      },
      {
       "rank": 2,
+      "name": "罗马",
+      "pts": 30,
+      "p": 12
+     },
+     {
+      "rank": 3,
       "name": "国际米兰",
       "pts": 28,
       "p": 11
      },
      {
-      "rank": 3,
-      "name": "罗马",
-      "pts": 27,
-      "p": 11
-     },
-     {
       "rank": 4,
-      "name": "AC米兰",
-      "pts": 24,
-      "p": 11
+      "name": "科莫",
+      "pts": 26,
+      "p": 12
      },
      {
       "rank": 5,
-      "name": "科莫",
-      "pts": 23,
+      "name": "AC米兰",
+      "pts": 24,
       "p": 11
      },
      {
@@ -1938,33 +1936,33 @@
      },
      {
       "rank": 8,
+      "name": "那不勒斯",
+      "pts": 18,
+      "p": 12
+     },
+     {
+      "rank": 9,
       "name": "博洛尼亚",
       "pts": 17,
       "p": 11
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "卡利亚里",
       "pts": 16,
-      "p": 11
-     },
-     {
-      "rank": 10,
-      "name": "那不勒斯",
-      "pts": 15,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 11,
-      "name": "都灵",
+      "name": "亚特兰大",
       "pts": 14,
       "p": 11
      },
      {
       "rank": 12,
-      "name": "亚特兰大",
+      "name": "都灵",
       "pts": 14,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 13,
@@ -1976,7 +1974,7 @@
       "rank": 14,
       "name": "莱切",
       "pts": 10,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 15,
@@ -1986,15 +1984,15 @@
      },
      {
       "rank": 16,
-      "name": "帕尔马",
+      "name": "萨索洛",
       "pts": 8,
       "p": 11
      },
      {
       "rank": 17,
-      "name": "萨索洛",
+      "name": "帕尔马",
       "pts": 8,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 18,
@@ -2275,13 +2273,12 @@
    "home": {
     "name": "索尔纳",
     "league": "瑞超",
-    "rank": 8,
-    "points": 41,
-    "played": 28,
+    "rank": 9,
+    "points": 42,
+    "played": 29,
     "win": 11,
-    "draw": 8,
-    "loss": 9,
-    "logo": "assets/logo/teams/377.png"
+    "draw": 9,
+    "loss": 9
    },
    "away": {
     "name": "埃夫斯堡",
@@ -2424,25 +2421,25 @@
       "rank": 6,
       "name": "韦斯特罗",
       "pts": 45,
-      "p": 28
+      "p": 29
      },
      {
       "rank": 7,
-      "name": "马尔默",
-      "pts": 41,
-      "p": 28
+      "name": "盖斯",
+      "pts": 43,
+      "p": 29
      },
      {
       "rank": 8,
-      "name": "索尔纳",
-      "pts": 41,
-      "p": 28
+      "name": "马尔默",
+      "pts": 42,
+      "p": 29
      },
      {
       "rank": 9,
-      "name": "盖斯",
-      "pts": 40,
-      "p": 28
+      "name": "索尔纳",
+      "pts": 42,
+      "p": 29
      },
      {
       "rank": 10,
@@ -2459,8 +2456,8 @@
      {
       "rank": 12,
       "name": "米亚尔比",
-      "pts": 28,
-      "p": 28
+      "pts": 29,
+      "p": 29
      },
      {
       "rank": 13,
@@ -2471,8 +2468,8 @@
      {
       "rank": 14,
       "name": "代格福什",
-      "pts": 20,
-      "p": 28
+      "pts": 21,
+      "p": 29
      },
      {
       "rank": 15,
@@ -3444,10 +3441,10 @@
    "home": {
     "name": "罗马",
     "league": "意甲",
-    "rank": 3,
-    "points": 27,
-    "played": 11,
-    "win": 8,
+    "rank": 2,
+    "points": 30,
+    "played": 12,
+    "win": 9,
     "draw": 3,
     "loss": 0,
     "logo": "assets/logo/teams/497.png"
@@ -3455,13 +3452,12 @@
    "away": {
     "name": "卡利亚里",
     "league": "意甲",
-    "rank": 9,
+    "rank": 10,
     "points": 16,
-    "played": 11,
+    "played": 12,
     "win": 5,
     "draw": 1,
-    "loss": 5,
-    "logo": "assets/logo/teams/490.png"
+    "loss": 6
    },
    "forecasts": [
     {
@@ -3562,31 +3558,31 @@
      {
       "rank": 1,
       "name": "拉齐奥",
-      "pts": 29,
-      "p": 11
+      "pts": 32,
+      "p": 12
      },
      {
       "rank": 2,
+      "name": "罗马",
+      "pts": 30,
+      "p": 12
+     },
+     {
+      "rank": 3,
       "name": "国际米兰",
       "pts": 28,
       "p": 11
      },
      {
-      "rank": 3,
-      "name": "罗马",
-      "pts": 27,
-      "p": 11
-     },
-     {
       "rank": 4,
-      "name": "AC米兰",
-      "pts": 24,
-      "p": 11
+      "name": "科莫",
+      "pts": 26,
+      "p": 12
      },
      {
       "rank": 5,
-      "name": "科莫",
-      "pts": 23,
+      "name": "AC米兰",
+      "pts": 24,
       "p": 11
      },
      {
@@ -3609,33 +3605,33 @@
      },
      {
       "rank": 8,
+      "name": "那不勒斯",
+      "pts": 18,
+      "p": 12
+     },
+     {
+      "rank": 9,
       "name": "博洛尼亚",
       "pts": 17,
       "p": 11
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "卡利亚里",
       "pts": 16,
-      "p": 11
-     },
-     {
-      "rank": 10,
-      "name": "那不勒斯",
-      "pts": 15,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 11,
-      "name": "都灵",
+      "name": "亚特兰大",
       "pts": 14,
       "p": 11
      },
      {
       "rank": 12,
-      "name": "亚特兰大",
+      "name": "都灵",
       "pts": 14,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 13,
@@ -3647,7 +3643,7 @@
       "rank": 14,
       "name": "莱切",
       "pts": 10,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 15,
@@ -3657,15 +3653,15 @@
      },
      {
       "rank": 16,
-      "name": "帕尔马",
+      "name": "萨索洛",
       "pts": 8,
       "p": 11
      },
      {
       "rank": 17,
-      "name": "萨索洛",
+      "name": "帕尔马",
       "pts": 8,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 18,
@@ -3970,21 +3966,21 @@
    "home": {
     "name": "都灵",
     "league": "意甲",
-    "rank": 11,
+    "rank": 12,
     "points": 14,
-    "played": 11,
+    "played": 12,
     "win": 4,
     "draw": 2,
-    "loss": 5,
+    "loss": 6,
     "logo": "assets/logo/teams/503.png"
    },
    "away": {
     "name": "科莫",
     "league": "意甲",
-    "rank": 5,
-    "points": 23,
-    "played": 11,
-    "win": 7,
+    "rank": 4,
+    "points": 26,
+    "played": 12,
+    "win": 8,
     "draw": 2,
     "loss": 2,
     "logo": "assets/logo/teams/895.png"
@@ -4088,31 +4084,31 @@
      {
       "rank": 1,
       "name": "拉齐奥",
-      "pts": 29,
-      "p": 11
+      "pts": 32,
+      "p": 12
      },
      {
       "rank": 2,
+      "name": "罗马",
+      "pts": 30,
+      "p": 12
+     },
+     {
+      "rank": 3,
       "name": "国际米兰",
       "pts": 28,
       "p": 11
      },
      {
-      "rank": 3,
-      "name": "罗马",
-      "pts": 27,
-      "p": 11
-     },
-     {
       "rank": 4,
-      "name": "AC米兰",
-      "pts": 24,
-      "p": 11
+      "name": "科莫",
+      "pts": 26,
+      "p": 12
      },
      {
       "rank": 5,
-      "name": "科莫",
-      "pts": 23,
+      "name": "AC米兰",
+      "pts": 24,
       "p": 11
      },
      {
@@ -4135,33 +4131,33 @@
      },
      {
       "rank": 8,
+      "name": "那不勒斯",
+      "pts": 18,
+      "p": 12
+     },
+     {
+      "rank": 9,
       "name": "博洛尼亚",
       "pts": 17,
       "p": 11
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "卡利亚里",
       "pts": 16,
-      "p": 11
-     },
-     {
-      "rank": 10,
-      "name": "那不勒斯",
-      "pts": 15,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 11,
-      "name": "都灵",
+      "name": "亚特兰大",
       "pts": 14,
       "p": 11
      },
      {
       "rank": 12,
-      "name": "亚特兰大",
+      "name": "都灵",
       "pts": 14,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 13,
@@ -4173,7 +4169,7 @@
       "rank": 14,
       "name": "莱切",
       "pts": 10,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 15,
@@ -4183,15 +4179,15 @@
      },
      {
       "rank": 16,
-      "name": "帕尔马",
+      "name": "萨索洛",
       "pts": 8,
       "p": 11
      },
      {
       "rank": 17,
-      "name": "萨索洛",
+      "name": "帕尔马",
       "pts": 8,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 18,
