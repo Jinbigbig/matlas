@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>功能 - Matlas</title>
 <meta name="description" content="站点功能清单：每日前瞻、历史归档、赛事Top、站内搜索、机器可读数据">
-<link rel="canonical" href="https://jinbigbig.github.io/matlas/features.html">
-<link rel="stylesheet" href="assets/style.css?v=1795331249">
+<link rel="canonical" href="https://www.matlas.top/features.html">
+<link rel="stylesheet" href="assets/style.css?v=1795333340">
 <meta property="og:type" content="article">
 <meta property="og:title" content="功能 - Matlas">
 <meta property="og:description" content="站点功能清单：每日前瞻、历史归档、赛事Top、站内搜索、机器可读数据">
@@ -288,6 +288,19 @@ window.LIVE_MODE = "remote";
         badge.textContent = live ? (m.minute ? m.minute + "'" : "进行中") : m.status;
         badge.className = "mc-live" + (live ? " live" : "");
         badge.hidden = false;
+      }
+      // 命中印章：赛果一结束就按「预测方向 vs 实际比分」现算，不等重建页面。
+      var st = c.querySelector("[data-live='stamp']");
+      if (st && m.status === "已结束" && m.score) {
+        var want = { "主胜": "H", "平": "D", "客胜": "A" }[st.getAttribute("data-pick")];
+        var g = String(m.score).match(/(\d+)\s*[:：]\s*(\d+)/);
+        if (want && g) {
+          var gf = Number(g[1]) > Number(g[2]) ? "H" : (Number(g[1]) < Number(g[2]) ? "A" : "D");
+          var hit = want === gf;
+          st.className = "prediction-stamp " + (hit ? "stamp-red" : "stamp-black");
+          st.textContent = hit ? "✔" : "✘";
+          st.hidden = false;
+        }
       }
     }
     function pollCards() {
