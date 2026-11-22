@@ -36,7 +36,7 @@
    "metrics_home": {
     "attack": 14,
     "defence": 86,
-    "control": 41,
+    "control": 39,
     "form": 41,
     "value": 22,
     "motivation": 24,
@@ -113,22 +113,22 @@
      "T-1"
     ],
     "home": [
-     1.0,
      0.0,
      1.0,
      2.0,
      0.0,
      2.0,
      1.0,
-     1.0
+     1.0,
+     0.0
     ],
     "away": [
      3.0,
-     3.0,
      1.0,
      1.0,
      3.0,
      0.0,
+     1.0,
      1.0,
      1.0
     ]
@@ -157,92 +157,92 @@
     },
     {
      "kind": "score",
-     "label": "1-1",
-     "prob": 0.145,
+     "label": "1-0",
+     "prob": 0.14,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "1-0",
-     "prob": 0.1,
+     "label": "1-1",
+     "prob": 0.136,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "score",
      "label": "0-1",
-     "prob": 0.091,
+     "prob": 0.127,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "2-1",
-     "prob": 0.086,
+     "label": "0-0",
+     "prob": 0.12,
      "rank": 4,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "0-0",
-     "prob": 0.081,
+     "label": "2-1",
+     "prob": 0.079,
      "rank": 5,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "1-2",
-     "prob": 0.075,
+     "label": "2-0",
+     "prob": 0.069,
      "rank": 6,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "1 球",
-     "prob": 0.191,
+     "prob": 0.267,
      "rank": 1,
-     "note": ""
-    },
-    {
-     "kind": "goals",
-     "label": "3 球",
-     "prob": 0.161,
-     "rank": 2,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "2 球",
-     "prob": 0.145,
+     "prob": 0.205,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "0 球",
+     "prob": 0.12,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "htft",
-     "label": "客/客",
-     "prob": 0.215,
+     "label": "平/平",
+     "prob": 0.214,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "htft",
-     "label": "主/主",
-     "prob": 0.209,
+     "label": "客/客",
+     "prob": 0.204,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "htft",
-     "label": "平/平",
-     "prob": 0.167,
+     "label": "主/主",
+     "prob": 0.186,
      "rank": 3,
      "note": ""
     }
    ],
    "confidence": "low",
    "is_cold_start": false,
-   "main_pick": "金泉尚武力争擒济州SK取主场两连胜",
+   "main_pick": "卢京镐、政载民进入首发",
    "handicap": {
     "spread": -1.0,
     "pick": "让球负"
@@ -349,214 +349,72 @@
      "status": "doubt"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "金泉尚武",
-     "n": 9,
-     "core_avg": 51.3,
-     "form_avg": 6.51,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "吴在赫",
-       "pos": "MF",
-       "oti": 54.2,
-       "dii": 61.66,
-       "gim": 65.21,
-       "form": 6.7,
-       "cons": 71.7,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "Byeon Jun-Soo",
-       "pos": "DF",
-       "oti": 41.41,
-       "dii": 18.64,
-       "gim": 64.67,
-       "form": 6.6,
-       "cons": 24.53,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "朴哲宇",
-       "pos": "DF",
-       "oti": 61.0,
-       "dii": 51.78,
-       "gim": 54.74,
-       "form": 6.5,
-       "cons": 81.46,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "朴泰俊",
-       "pos": "MF",
-       "oti": 51.93,
-       "dii": 73.21,
-       "gim": 42.1,
-       "form": 6.5,
-       "cons": 8.49,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "高在贤",
-       "pos": "MF",
-       "oti": 60.51,
-       "dii": 52.37,
-       "gim": 30.02,
-       "form": 6.5,
-       "cons": 64.9,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    },
-    "away": {
-     "team": "济州SK",
-     "n": 17,
-     "core_avg": 63.1,
-     "form_avg": 6.37,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "金伦成",
-       "pos": "DF",
-       "oti": 72.43,
-       "dii": 46.91,
-       "gim": 78.45,
-       "form": 6.3,
-       "cons": 47.17,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "朱尔·塞莱斯廷",
-       "pos": "DF",
-       "oti": 51.32,
-       "dii": 62.73,
-       "gim": 68.83,
-       "form": 6.1,
-       "cons": 17.92,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "柳仁秀",
-       "pos": "DF",
-       "oti": 63.09,
-       "dii": 51.73,
-       "gim": 58.27,
-       "form": 5.9,
-       "cons": 4.09,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "金泰焕",
-       "pos": "DF",
-       "oti": 49.74,
-       "dii": 60.05,
-       "gim": 56.88,
-       "form": 6.4,
-       "cons": 41.51,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "托比亚斯·菲格雷多",
-       "pos": "DF",
-       "oti": 35.69,
-       "dii": 43.3,
-       "gim": 53.09,
-       "form": 6.2,
-       "cons": 24.53,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
+   "result": {
+    "half_score": "0-0",
+    "full_score": "0-1",
+    "direction_hit": false,
+    "score_hit": false,
+    "goals_hit": true,
+    "htft_hit": false,
+    "settled_at": "2026-11-22"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
-    "lam_home": 1.25,
-    "lam_away": 1.269,
-    "lam_total": 2.519,
-    "upset_prob": 64.6,
+    "lam_home": 0.987,
+    "lam_away": 1.042,
+    "lam_total": 2.028,
+    "upset_prob": 68.1,
     "upset_level": "高",
-    "rq_best_ev": 0.919,
+    "rq_best_ev": 0.964,
     "rq_best_odds": 1.43,
     "quad_top": {
      "home": {
       "score": "1:0",
-      "prob": 10.0
+      "prob": 14.0
      },
      "draw": {
       "score": "1:1",
-      "prob": 14.5
+      "prob": 13.6
      },
      "away": {
       "score": "0:1",
-      "prob": 9.1
+      "prob": 12.7
      }
     },
     "prob_home": 37.0,
     "prob_draw": 29.5,
     "prob_away": 33.5,
     "data_n": {
-     "home": 23,
-     "away": 17
+     "home": 24,
+     "away": 18
     },
     "headline": {
      "score": "1:1",
      "prob": 14.1
     },
     "htft_half": {
-     "home": 28.0,
-     "draw": 43.4,
-     "away": 28.6
+     "home": 24.7,
+     "draw": 48.9,
+     "away": 26.4
     },
     "htft_cells": {
-     "主/主": 20.9,
-     "主/平": 5.1,
-     "主/客": 2.0,
-     "平/主": 13.2,
-     "平/平": 16.7,
-     "平/客": 13.5,
-     "客/主": 2.0,
-     "客/平": 5.1,
-     "客/客": 21.5
+     "主/主": 18.6,
+     "主/平": 4.6,
+     "主/客": 1.5,
+     "平/主": 13.3,
+     "平/平": 21.4,
+     "平/客": 14.2,
+     "客/主": 1.4,
+     "客/平": 4.6,
+     "客/客": 20.4
     },
     "form_net": {
      "home_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
       {
        "gf": 1,
        "ga": 0
@@ -652,6 +510,10 @@
      ],
      "home_home": [
       {
+       "gf": 0,
+       "ga": 1
+      },
+      {
        "gf": 1,
        "ga": 0
       },
@@ -697,6 +559,10 @@
       }
      ],
      "away_7": [
+      {
+       "gf": 1,
+       "ga": 0
+      },
       {
        "gf": 1,
        "ga": 3
@@ -767,6 +633,10 @@
       }
      ],
      "away_away": [
+      {
+       "gf": 1,
+       "ga": 0
+      },
       {
        "gf": 1,
        "ga": 3
@@ -1000,29 +870,23 @@
      "t_max": 3.2,
      "pop": 0,
      "rain": 0.0,
-     "wind": 7.1,
+     "wind": 6.9,
      "grade": "ok",
      "city": "金泉"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
+     {
+      "title": "金泉尚武主场迎战济州SK，双方首发公布",
+      "url": "https://m.dongqiudi.com/xinwen/216952",
+      "source": "懂球帝",
+      "text": "30秒看懂金泉尚武主场对济州SK，11月22日13:00开球金泉尚武金仁均、卢京镐、政载民进入首发济州SK任仓…"
+     },
      {
       "title": "洪允相完成K联赛百场 目标入选国家队",
       "url": "https://m.dongqiudi.com/xinwen/205662",
       "source": "懂球帝",
       "text": "30秒看懂洪允相7日对阵FC安养完成K联赛100场出场洪允相表示作为球员的下一目标是国家队金泉22日主场迎战济州SK时举行百场纪念仪式金泉尚武球员洪允相完成了K联赛通算100场出场。"
-     },
-     {
-      "title": "曼联前锋11个月未进球，怒怼批评球迷：闭嘴，你自己来踢",
-      "url": "https://m.dongqiudi.com/xinwen/196065",
-      "source": "懂球帝",
-      "text": "30秒看懂阿马德回击批评他进球荒的内容创作者，称“你自己上去踢我的位置试试”11月18日科特迪瓦2-2冈比亚，…"
-     },
-     {
-      "title": "告别第11期！金泉尚武力争擒济州SK取主场两连胜",
-      "url": "https://m.dongqiudi.com/xinwen/201740",
-      "source": "懂球帝",
-      "text": "30秒看懂金泉尚武22日主场迎战济州SK，冲击主场连胜本赛季三次交手全部战平，金泉尚武求首胜第11期球员最后主…"
      },
      {
       "title": "告别第11期！金泉尚武力争擒济州SK取主场两连胜",
@@ -1031,16 +895,22 @@
       "text": "30秒看懂金泉尚武22日主场对阵济州SK，冲击主场两连胜本赛季两队三次交手全部战平，金泉尚武争首胜此役是金泉尚…"
      },
      {
+      "title": "告别第11期！金泉尚武力争擒济州SK取主场两连胜",
+      "url": "https://m.dongqiudi.com/xinwen/201740",
+      "source": "懂球帝",
+      "text": "30秒看懂金泉尚武22日主场迎战济州SK，冲击主场连胜本赛季三次交手全部战平，金泉尚武求首胜第11期球员最后主…"
+     },
+     {
       "title": "金泉尚武主场迎济州SK，11期球员告别战",
       "url": "https://m.dongqiudi.com/xinwen/196672",
       "source": "懂球帝",
       "text": "30秒看懂金泉尚武22日主场迎战济州SK，冲击主场两连胜两队本赛季三次交手全部战平，各取1分金泉尚武上轮1-0…"
      },
      {
-      "title": "浦项进攻回暖，主场迎战安养瞄准胜利",
-      "url": "https://m.dongqiudi.com/xinwen/199134",
+      "title": "李正孝引援大获成功，三年黑暗史彻底清算……水原三星成就史上第二次一二级联赛双冠伟业",
+      "url": "https://m.dongqiudi.com/xinwen/207692",
       "source": "懂球帝",
-      "text": "30秒看懂浦项21日下午2时在浦项钢园主场对阵安养朴泰夏离任后金成宰代理执教3场均平局浦项近3场分别1-1、3-3、2-2均有进球浦项制铁将在K联赛12026赛季第36轮主场迎战FC安养。"
+      "text": "30秒看懂水原三星主场3-1击败庆南FC，提前一轮锁定K联赛2冠军水原积69分，已获K联赛1升级资格，时隔4年…"
      }
     ],
     "intel_at": "2026-11-22"
@@ -1115,7 +985,7 @@
    "metrics_away": {
     "attack": 49,
     "defence": 18,
-    "control": 41,
+    "control": 39,
     "form": 61,
     "value": 6,
     "motivation": 45,
@@ -1160,22 +1030,22 @@
     "home": [
      1.0,
      1.0,
-     1.0,
      0.0,
      1.0,
      2.0,
      4.0,
-     1.0
+     1.0,
+     4.0
     ],
     "away": [
-     2.0,
      1.0,
      1.0,
      2.0,
      1.0,
      3.0,
      3.0,
-     1.0
+     1.0,
+     2.0
     ]
    },
    "forecasts": [
@@ -1203,21 +1073,21 @@
     {
      "kind": "score",
      "label": "1-1",
-     "prob": 0.128,
+     "prob": 0.123,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "score",
      "label": "2-1",
-     "prob": 0.095,
+     "prob": 0.093,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "1-0",
-     "prob": 0.088,
+     "label": "2-2",
+     "prob": 0.076,
      "rank": 3,
      "note": ""
     },
@@ -1230,64 +1100,64 @@
     },
     {
      "kind": "score",
-     "label": "0-1",
-     "prob": 0.069,
+     "label": "1-0",
+     "prob": 0.07,
      "rank": 5,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "2-2",
-     "prob": 0.066,
+     "label": "0-1",
+     "prob": 0.057,
      "rank": 6,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "3 球",
-     "prob": 0.165,
+     "prob": 0.163,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "1 球",
-     "prob": 0.157,
+     "prob": 0.127,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "2 球",
-     "prob": 0.128,
+     "prob": 0.123,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "主/主",
-     "prob": 0.228,
+     "prob": 0.243,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "客/客",
-     "prob": 0.216,
+     "prob": 0.215,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "htft",
-     "label": "平/平",
-     "prob": 0.143,
+     "label": "平/主",
+     "prob": 0.132,
      "rank": 3,
      "note": ""
     }
    ],
    "confidence": "low",
    "is_cold_start": false,
-   "main_pick": "冷门风险很高，谨防意外",
+   "main_pick": "冷门风险偏高，谨防意外",
    "handicap": {
     "spread": -1.0,
     "pick": "让球负"
@@ -1331,105 +1201,33 @@
      "status": "out"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "光州FC",
-     "n": 14,
-     "core_avg": 72.6,
-     "form_avg": 6.56,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "J. Iredale",
-       "pos": "FW",
-       "oti": 82.24,
-       "dii": 34.06,
-       "gim": 85.95,
-       "form": 7.0,
-       "cons": 32.39,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "A. Ba Loua",
-       "pos": "MF",
-       "oti": 75.45,
-       "dii": 35.55,
-       "gim": 75.5,
-       "form": 6.7,
-       "cons": 8.49,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "Kwon Sung-Yun",
-       "pos": "DF",
-       "oti": 43.95,
-       "dii": 39.05,
-       "gim": 70.79,
-       "form": 6.4,
-       "cons": 86.79,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "文民瑞",
-       "pos": "MF",
-       "oti": 55.4,
-       "dii": 32.1,
-       "gim": 67.11,
-       "form": 6.3,
-       "cons": 4.09,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "João Pedro",
-       "pos": "DF",
-       "oti": 68.89,
-       "dii": 48.55,
-       "gim": 63.62,
-       "form": 6.7,
-       "cons": 81.45,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
+   "result": {
+    "half_score": "1-2",
+    "full_score": "4-2",
+    "direction_hit": true,
+    "score_hit": false,
+    "goals_hit": false,
+    "htft_hit": false,
+    "settled_at": "2026-11-22"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
-    "lam_home": 1.452,
-    "lam_away": 1.414,
-    "lam_total": 2.866,
-    "upset_prob": 63.3,
+    "lam_home": 1.616,
+    "lam_away": 1.521,
+    "lam_total": 3.137,
+    "upset_prob": 60.3,
     "upset_level": "高",
-    "rq_best_ev": 0.992,
+    "rq_best_ev": 0.943,
     "rq_best_odds": 1.53,
     "quad_top": {
      "home": {
       "score": "2:1",
-      "prob": 9.5
+      "prob": 9.3
      },
      "draw": {
       "score": "1:1",
-      "prob": 12.8
+      "prob": 12.3
      },
      "away": {
       "score": "1:2",
@@ -1440,31 +1238,35 @@
     "prob_draw": 27.0,
     "prob_away": 31.2,
     "data_n": {
-     "home": 22,
-     "away": 10
+     "home": 23,
+     "away": 11
     },
     "headline": {
      "score": "1:1",
      "prob": 14.4
     },
     "htft_half": {
-     "home": 30.4,
-     "draw": 40.2,
-     "away": 29.4
+     "home": 32.2,
+     "draw": 38.1,
+     "away": 29.7
     },
     "htft_cells": {
-     "主/主": 22.8,
-     "主/平": 5.3,
-     "主/客": 2.4,
+     "主/主": 24.3,
+     "主/平": 5.4,
+     "主/客": 2.6,
      "平/主": 13.2,
-     "平/平": 14.3,
-     "平/客": 12.7,
-     "客/主": 2.4,
-     "客/平": 5.3,
-     "客/客": 21.6
+     "平/平": 12.9,
+     "平/客": 12.1,
+     "客/主": 2.8,
+     "客/平": 5.4,
+     "客/客": 21.5
     },
     "form_net": {
      "home_7": [
+      {
+       "gf": 4,
+       "ga": 2
+      },
       {
        "gf": 1,
        "ga": 1
@@ -1556,6 +1358,10 @@
      ],
      "home_home": [
       {
+       "gf": 4,
+       "ga": 2
+      },
+      {
        "gf": 1,
        "ga": 1
       },
@@ -1606,6 +1412,10 @@
      ],
      "away_7": [
       {
+       "gf": 2,
+       "ga": 4
+      },
+      {
        "gf": 1,
        "ga": 2
       },
@@ -1647,6 +1457,10 @@
       }
      ],
      "away_away": [
+      {
+       "gf": 2,
+       "ga": 4
+      },
       {
        "gf": 1,
        "ga": 2
@@ -1922,21 +1736,33 @@
      }
     ],
     "weather": {
-     "t_min": 4.8,
-     "t_max": 6.7,
+     "t_min": 4.9,
+     "t_max": 6.6,
      "pop": 0,
      "rain": 0.0,
      "wind": 7.2,
      "grade": "ok",
      "city": "光州"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
+     {
+      "title": "K联赛保级组：光州主场迎战富川1995首发公布",
+      "url": "https://m.dongqiudi.com/xinwen/216759",
+      "source": "懂球帝",
+      "text": "30秒看懂光州主场对富川1995，11月22日13:00开球光州首发九人较上一场更换，弗里德容松在列富川199…"
+     },
      {
       "title": "浦项进攻复苏，主场迎战安养瞄准胜利",
       "url": "https://m.dongqiudi.com/xinwen/199134",
       "source": "懂球帝",
       "text": "30秒看懂浦项21日下午2时在浦项钢园主场对阵安养朴泰夏离任后金成宰代理执教3场均平局浦项近3场分别1-1、3-3、2-2均有进球浦项制铁将在K联赛12026赛季第36轮主场迎战FC安养。"
+     },
+     {
+      "title": "光州主场收官战瞄准富川，盼用胜利回馈球迷",
+      "url": "https://m.dongqiudi.com/xinwen/217427",
+      "source": "懂球帝",
+      "text": "30秒看懂光州22日主场对富川，为赛季最后一个主场光州已确定K联赛1垫底，将踢升降级附加赛光州近3场1胜2平，…"
      }
     ],
     "intel_at": "2026-11-22"
@@ -2336,163 +2162,8 @@
      "status": "out"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "特温特",
-     "n": 13,
-     "core_avg": 77.8,
-     "form_avg": 7.17,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "韦霍斯特",
-       "pos": "FW",
-       "oti": 78.07,
-       "dii": 44.2,
-       "gim": 84.04,
-       "form": 7.4,
-       "cons": 5.39,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "范鲁伊",
-       "pos": "DF",
-       "oti": 84.31,
-       "dii": 36.04,
-       "gim": 78.77,
-       "form": 7.2,
-       "cons": 16.81,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "塞·奥尔亚塞特",
-       "pos": "MF",
-       "oti": 84.77,
-       "dii": 35.24,
-       "gim": 76.95,
-       "form": 7.4,
-       "cons": 6.9,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "迪·魏德曼",
-       "pos": "MF",
-       "oti": 65.8,
-       "dii": 50.47,
-       "gim": 74.68,
-       "form": 7.3,
-       "cons": 20.69,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "塔哈",
-       "pos": "FW",
-       "oti": 58.53,
-       "dii": 58.05,
-       "gim": 74.42,
-       "form": 6.8,
-       "cons": 64.22,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    },
-    "away": {
-     "team": "威廉二世",
-     "n": 14,
-     "core_avg": 48.6,
-     "form_avg": 6.36,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "哈恩",
-       "pos": "FW",
-       "oti": 33.62,
-       "dii": 28.54,
-       "gim": 55.52,
-       "form": 6.7,
-       "cons": 29.09,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "特维赫特",
-       "pos": "MF",
-       "oti": 32.81,
-       "dii": 51.38,
-       "gim": 48.87,
-       "form": 6.6,
-       "cons": 37.93,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "乔阿翁",
-       "pos": "DF",
-       "oti": 66.24,
-       "dii": 79.88,
-       "gim": 47.62,
-       "form": 6.3,
-       "cons": 18.53,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "特尔阿韦斯特",
-       "pos": "DF",
-       "oti": 53.27,
-       "dii": 49.26,
-       "gim": 47.04,
-       "form": 6.5,
-       "cons": 45.04,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "T. Vilhena",
-       "pos": "MF",
-       "oti": 38.11,
-       "dii": 58.12,
-       "gim": 43.76,
-       "form": 6.6,
-       "cons": 55.17,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -2928,12 +2599,12 @@
      "goals": {
       "0": "55",
       "1": "13",
-      "2": "7.4",
-      "3": "4.7",
-      "4": "4.3",
+      "2": "7.6",
+      "3": "4.8",
+      "4": "4.4",
       "5": "4.6",
-      "6": "6.2",
-      "7+": "5"
+      "6": "6",
+      "7+": "4.8"
      },
      "htft": {
       "胜胜": "1.19",
@@ -2998,14 +2669,14 @@
     "mood": "特温特上仗联赛续以「4-2-3-1」阵式出战，韦达文抢得正选防中之位，发挥一般，但今场仍可保住正选。老将中锋韦格贺斯今季表现稳定出色，同场又攻入1球，今季联赛12场入9球，把握力佳，在锋线铺桥搭路作用大。威廉二世上仗联赛续以「4-2-3-1」阵式出战，由芬恩史谭统领的防线，表现稍见进步，但也与对手偏弱有关。球队失球数字 …… 施禾利博和使命必「达」 2026-11-21 推介：主客和–和推介：半场主客和–和军情斯达上仗联赛续以「4-2-3-1」阵式出战，左中场柏德列保华抢得正选，表现突出，交出1入球1助攻，今场都会是争胜重心。中坚苏亚希亚助攻助守，表现出色，连续2场联赛士哥，是防线最可靠一员。施禾利上仗联赛转踢「4-2-3-1」阵式，中坚位置加入维科奥斯，表现不俗，防线发挥稳定。前锋云贺奥当同场早开纪录，名将之后有不俗实力 …… 海伦芬势劲连「根」拔 2026-11-21 推介：主客和–客胜推介：半场主客和–客胜军情格罗宁根上仗联赛续以原班人脚的「4-2-3-1」阵式出战，以中坚兰迪为首的防线表现不济，错漏百出。右闸夏迪保亚与门将华艾辛更先后领红牌被逐，今场都要停赛；改由派连斯及门将史杜比查顶上，今场防线恐会更不稳。海伦芬上仗联赛遇强转踢「5-4-1」阵式，表现出色，人脚不变，今场预计会转回较进取的「4-2-3-1」阵式。守将 …… 费耶诺德遇弱反弹在望 2026-11-21 军情费耶诺德上仗联赛以原班人脚的「4-3-3」阵式出战，前锋拿祖交出1入球2助攻，表现光芒四射；今季联赛上阵11场7入球3助攻，作用巨大。另一前锋夏积穆沙同场亦有入球，但此子出战国际赛受伤，今场或会缺阵，其位置将由森史迪积顶上，锋力仍可维持。以渡边刚为首的防线，同场发挥平平，但级数十足，今场遇弱可望回稳。精英队上仗联赛转踢「4-2-3-1」阵式，防守未见改善， …… 甘堡尔除「乌」反客为主 2026-11-21 军情乌德勒支上仗联赛转踢「4-3-3」阵式，双闸换上卡路斯达保亚及韦斯达隆特，防线却仍不稳；门将巴卡斯表现低迷，甩漏不少。主力前锋史迪彭洛夫同场回归正选，伤愈后状态暂未起，有待提升。前锋约翰卡夫连近2场联赛都有入波，要撑起锋线。甘堡尔上仗联赛转踢「4-4-2」阵式，主力中场苏云攻入个人今季联赛首球，增强信心。前锋艾阿基奥在锋线铺桥搭路，发挥作用；后备前锋汉斯 …… 埃因霍温锋猛事事「亨」通 2026-11-21 军情奈梅亨上仗联赛转踢「3-4-2-1」阵式，防线加入方维利及加比尔巴斯担正，却依然不稳。前线老将杜辛泰迪治伤愈复出，马上梅开二度，交出好表现；但锋线始终支援不足，前锋白赖仁连斯臣长期低迷，拖累锋线。埃因霍温上仗联赛改踢「4-2-3-1」阵式，依然发挥强大锋力，主力攻中米南斯大演帽子戏法，今季联赛已入9球，把握力佳，表现进步。翼锋鲁宾云邦美同场交出1入球1助攻…",
     "weather": {
      "t_min": -0.2,
-     "t_max": 3.4,
+     "t_max": 2.6,
      "pop": 0,
      "rain": 0.0,
-     "wind": 8.3,
+     "wind": 6.8,
      "grade": "ok",
      "city": "恩斯赫德"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
       "title": "威廉二世三将伤缺，主帅称门将周日难出战",
@@ -3300,7 +2971,7 @@
    ],
    "confidence": "high",
    "is_cold_start": false,
-   "main_pick": "热格罗瓦和孔塞桑伤愈复出，卡卢卢、米利克等缺阵",
+   "main_pick": "卡卢卢和尼科·冈萨雷斯因伤缺阵斯帕莱蒂排出3-4-2-1",
    "handicap": {
     "spread": -1.0,
     "pick": "让球胜"
@@ -3468,163 +3139,8 @@
      "status": "doubt"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "尤文图斯",
-     "n": 14,
-     "core_avg": 73.3,
-     "form_avg": 6.93,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "洛卡特利",
-       "pos": "MF",
-       "oti": 69.29,
-       "dii": 79.23,
-       "gim": 80.33,
-       "form": 7.4,
-       "cons": 7.12,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "道格拉斯·路易斯",
-       "pos": "MF",
-       "oti": 60.2,
-       "dii": 39.74,
-       "gim": 79.2,
-       "form": 7.3,
-       "cons": 26.46,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "布雷默",
-       "pos": "DF",
-       "oti": 54.13,
-       "dii": 50.74,
-       "gim": 75.54,
-       "form": 6.9,
-       "cons": 53.1,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "弗朗西斯科·孔塞桑",
-       "pos": "MF",
-       "oti": 70.67,
-       "dii": 27.02,
-       "gim": 69.25,
-       "form": 6.9,
-       "cons": 97.63,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "科普迈纳斯",
-       "pos": "MF",
-       "oti": 54.87,
-       "dii": 43.03,
-       "gim": 62.11,
-       "form": 7.0,
-       "cons": 35.77,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      }
-     ]
-    },
-    "away": {
-     "team": "威尼斯",
-     "n": 15,
-     "core_avg": 59.5,
-     "form_avg": 6.63,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "埃诺",
-       "pos": "MF",
-       "oti": 57.39,
-       "dii": 46.04,
-       "gim": 73.5,
-       "form": 6.8,
-       "cons": 56.93,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "基克·佩雷斯",
-       "pos": "MF",
-       "oti": 55.54,
-       "dii": 62.78,
-       "gim": 64.03,
-       "form": 7.1,
-       "cons": 44.34,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "托马·巴西奇",
-       "pos": "MF",
-       "oti": 49.7,
-       "dii": 33.68,
-       "gim": 57.25,
-       "form": 6.8,
-       "cons": 90.51,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "亚当斯",
-       "pos": "FW",
-       "oti": 42.67,
-       "dii": 29.95,
-       "gim": 52.23,
-       "form": 6.7,
-       "cons": 11.5,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "胡安·热苏斯",
-       "pos": "DF",
-       "oti": 33.33,
-       "dii": 65.54,
-       "gim": 50.7,
-       "form": 6.7,
-       "cons": 93.07,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -4101,13 +3617,13 @@
      },
      "goals": {
       "0": "18",
-      "1": "6",
-      "2": "3.9",
-      "3": "3.5",
-      "4": "4.6",
-      "5": "7.5",
-      "6": "12.5",
-      "7+": "17"
+      "1": "6.05",
+      "2": "3.95",
+      "3": "3.4",
+      "4": "4.4",
+      "5": "7.7",
+      "6": "13",
+      "7+": "19"
      },
      "htft": {
       "胜胜": "1.75",
@@ -4352,15 +3868,15 @@
      }
     ],
     "weather": {
-     "t_min": 4.4,
+     "t_min": 4.2,
      "t_max": 7.5,
      "pop": 0,
      "rain": 0.0,
-     "wind": 3.6,
+     "wind": 5.2,
      "grade": "ok",
      "city": "都灵"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
       "title": "尤文图斯对威尼斯前瞻：伤停和预计首发",
@@ -4369,10 +3885,22 @@
       "text": "30秒看懂尤文主场迎威尼斯，斯帕莱蒂执教意甲第600场需取胜庆祝尤文近10场联赛未连续同结果，目前排名意甲第七威尼斯客场尚无积分，射门转化率5.4%为意甲最低意甲周日午间场，尤文图斯将在都灵主场迎战威尼斯。"
      },
      {
-      "title": "尤文图斯对威尼斯预计首发：斯帕莱蒂三处待定，热格罗瓦和孔塞桑伤愈；尼科拉倚重亚当斯",
-      "url": "https://m.dongqiudi.com/xinwen/201282",
+      "title": "尤文主场迎威尼斯 多名伤员复出",
+      "url": "https://m.dongqiudi.com/xinwen/217676",
       "source": "懂球帝",
-      "text": "30秒看懂尤文11月22日12:30主场对威尼斯，斯帕莱蒂用3-4-2-1尼古拉坚持3-5-2，亚当斯首发搭档耶博阿热格罗瓦和孔塞桑伤愈复出，卡卢卢、米利克等缺阵国家队比赛间歇期结束，意甲联赛即将重启。"
+      "text": "30秒看懂尤文意甲11轮18分排第七，主场迎战威尼斯洛卡特利、伊尔迪兹、图拉姆、格拉巴拉长期伤缺坎比亚索、切利…"
+     },
+     {
+      "title": "斯帕莱蒂公布尤文锋线三叉戟 卡卢卢、尼科缺阵",
+      "url": "https://m.dongqiudi.com/xinwen/217670",
+      "source": "懂球帝",
+      "text": "30秒看懂尤文12:30对阵威尼斯，卡卢卢和尼科·冈萨雷斯因伤缺阵斯帕莱蒂排出3-4-2-1，锋线为科洛·穆阿…"
+     },
+     {
+      "title": "尤文主场迎威尼斯 斯帕莱蒂球队多人伤缺",
+      "url": "https://m.dongqiudi.com/xinwen/217541",
+      "source": "懂球帝",
+      "text": "30秒看懂尤文第7、威尼斯第19，意甲第12轮都灵交锋尤文九人伤缺，威尼斯五人无法出战近4次交锋尤文2胜2平，上次客场3比2取胜意甲第12轮，尤文图斯在都灵安联球场迎战威尼斯，比赛于当地时间13点30分开球。"
      },
      {
       "title": "尤文图斯主场迎战威尼斯，意甲第12轮双方预计首发公布",
@@ -4381,22 +3909,10 @@
       "text": "30秒看懂尤文图斯主场迎战威尼斯，意甲第12轮尤文18分列第7，威尼斯6分列第19两队预计首发阵容已公布意甲第12轮，尤文图斯将于本周日在都灵安联球场主场迎战威尼斯。比赛开球时间为巴西利亚时间8时30分。"
      },
      {
-      "title": "斯帕莱蒂回应孔蒂言论：无队教练盼执教豪门很正常",
-      "url": "https://m.dongqiudi.com/xinwen/213957",
-      "source": "懂球帝",
-      "text": "30秒看懂斯帕莱蒂在尤文对威尼斯赛前发布会上回应孔蒂言论孔蒂此前未排除未来回归尤文执教的可能性斯帕莱蒂称无队教练盼执教重要球队很正常尤文图斯主帅斯帕莱蒂在对阵威尼斯的联赛赛前新闻发布会上回应了前尤文主帅孔蒂近期的言论。"
-     },
-     {
       "title": "尤文图斯 vs 威尼斯历史交锋：4次交手尤文图斯2胜2平0负",
       "url": "https://m.dongqiudi.com/xinwen/214483",
       "source": "懂球帝",
       "text": "30秒看懂两队4次交手尤文图斯2胜2平0负4场交手场均3.5球，双方都有进球尤文图斯主场对威尼斯1胜1平0负北京时间2026年11月22日19:30，意甲第12轮，尤文图斯主场对阵威尼斯。"
-     },
-     {
-      "title": "托特纳姆热刺与1660万英镑的瓦雷拉初步接触，但尤文图斯占优",
-      "url": "https://m.dongqiudi.com/xinwen/202658",
-      "source": "懂球帝",
-      "text": "30秒看懂热刺已就1月签下蒙扎前锋瓦雷拉展开初步接触。瓦雷拉倾向留在意甲，尤文图斯已进行内部讨论。蒙扎要价3500万欧元，不愿赛季中途出售球员。"
      }
     ],
     "intel_at": "2026-11-22"
@@ -4440,9 +3956,9 @@
     "logo": "assets/logo/teams/67.png"
    },
    "odds": {
-    "home": 1.81,
-    "draw": 3.4,
-    "away": 3.42,
+    "home": 1.78,
+    "draw": 3.35,
+    "away": 3.6,
     "handicap": -1.0,
     "bookmaker": ""
    },
@@ -4550,91 +4066,91 @@
     {
      "kind": "direction",
      "label": "主胜",
-     "prob": 0.485,
+     "prob": 0.494,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "平",
-     "prob": 0.258,
+     "prob": 0.262,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "客胜",
-     "prob": 0.257,
+     "prob": 0.244,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-0",
-     "prob": 0.163,
+     "prob": 0.165,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-1",
-     "prob": 0.117,
+     "prob": 0.118,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "score",
      "label": "0-0",
-     "prob": 0.105,
+     "prob": 0.107,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "0-1",
+     "label": "2-0",
      "prob": 0.101,
      "rank": 4,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "2-0",
-     "prob": 0.099,
+     "label": "0-1",
+     "prob": 0.097,
      "rank": 5,
      "note": ""
     },
     {
      "kind": "score",
      "label": "2-1",
-     "prob": 0.09,
+     "prob": 0.091,
      "rank": 6,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "1 球",
-     "prob": 0.264,
+     "prob": 0.262,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "2 球",
-     "prob": 0.216,
+     "prob": 0.219,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "0 球",
-     "prob": 0.105,
+     "prob": 0.107,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "主/主",
-     "prob": 0.251,
+     "prob": 0.256,
      "rank": 1,
      "note": ""
     },
@@ -4648,14 +4164,14 @@
     {
      "kind": "htft",
      "label": "平/主",
-     "prob": 0.162,
+     "prob": 0.165,
      "rank": 3,
      "note": ""
     }
    ],
    "confidence": "low",
    "is_cold_start": false,
-   "main_pick": "冷门风险偏高，谨防意外",
+   "main_pick": "门将托特因国家队比赛受伤缺阵",
    "handicap": {
     "spread": -1.0,
     "pick": "让球负"
@@ -4696,8 +4212,26 @@
     },
     {
      "team": "home",
+     "player": "Louis Beyer",
+     "reason": "体能不足",
+     "status": "out"
+    },
+    {
+     "team": "home",
      "player": "Jacob Bruun Larsen",
      "reason": "腿伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Mike Tresor",
+     "reason": "体能不足",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Shurandy Sambo",
+     "reason": "手伤",
      "status": "out"
     },
     {
@@ -4714,180 +4248,25 @@
     },
     {
      "team": "away",
-     "player": "Mathias Jörgensen",
-     "reason": "肌肉伤",
-     "status": "out"
-    },
-    {
-     "team": "away",
      "player": "Ryan Alebiosu",
      "reason": "伤情",
      "status": "out"
     },
     {
      "team": "away",
+     "player": "Mathias Jörgensen",
+     "reason": "肌肉伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
      "player": "Ryoya Morishita",
      "reason": "踝伤",
-     "status": "out"
+     "status": "doubt"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "伯恩利",
-     "n": 18,
-     "core_avg": 67.7,
-     "form_avg": 6.51,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "拉马扎尼",
-       "pos": "FW",
-       "oti": 54.76,
-       "dii": 82.13,
-       "gim": 76.05,
-       "form": 7.1,
-       "cons": 25.64,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "卢卡斯·皮雷斯",
-       "pos": "DF",
-       "oti": 84.64,
-       "dii": 86.19,
-       "gim": 69.93,
-       "form": 6.4,
-       "cons": 27.71,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "雅各布·布鲁恩·拉森",
-       "pos": "MF",
-       "oti": 83.55,
-       "dii": 18.98,
-       "gim": 69.75,
-       "form": 7.3,
-       "cons": 7.09,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "凯尔·沃克",
-       "pos": "DF",
-       "oti": 48.2,
-       "dii": 49.87,
-       "gim": 61.96,
-       "form": 6.4,
-       "cons": 61.34,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "伊戈尔",
-       "pos": "DF",
-       "oti": 53.7,
-       "dii": 32.96,
-       "gim": 61.04,
-       "form": 6.3,
-       "cons": 74.87,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    },
-    "away": {
-     "team": "布莱克本",
-     "n": 13,
-     "core_avg": 69.0,
-     "form_avg": 6.54,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "古德约翰森",
-       "pos": "FW",
-       "oti": 73.33,
-       "dii": 42.11,
-       "gim": 85.68,
-       "form": 7.8,
-       "cons": 1.55,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "肖恩·麦克洛林",
-       "pos": "DF",
-       "oti": 42.15,
-       "dii": 57.48,
-       "gim": 74.31,
-       "form": 6.6,
-       "cons": 29.25,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "O. Afolayan",
-       "pos": "MF",
-       "oti": 56.87,
-       "dii": 53.8,
-       "gim": 65.01,
-       "form": 6.6,
-       "cons": 10.05,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "萨姆·莫尔西",
-       "pos": "MF",
-       "oti": 33.27,
-       "dii": 55.8,
-       "gim": 61.55,
-       "form": 6.6,
-       "cons": 69.46,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "费夫里耶",
-       "pos": "FW",
-       "oti": 47.36,
-       "dii": 56.2,
-       "gim": 58.44,
-       "form": 6.6,
-       "cons": 74.87,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -5035,53 +4414,53 @@
       "p": 16
      }
     ],
-    "lam_home": 1.216,
-    "lam_away": 0.913,
+    "lam_home": 1.231,
+    "lam_away": 0.898,
     "lam_total": 2.129,
-    "upset_prob": 60.4,
+    "upset_prob": 59.8,
     "upset_level": "高",
-    "rq_best_ev": 1.013,
-    "rq_best_odds": 1.75,
+    "rq_best_ev": 1.023,
+    "rq_best_odds": 1.78,
     "quad_top": {
      "home": {
       "score": "1:0",
-      "prob": 16.3
+      "prob": 16.5
      },
      "draw": {
       "score": "1:1",
-      "prob": 11.7
+      "prob": 11.8
      },
      "away": {
       "score": "0:1",
-      "prob": 10.1
+      "prob": 9.7
      }
     },
-    "prob_home": 48.5,
-    "prob_draw": 25.8,
-    "prob_away": 25.7,
+    "prob_home": 49.4,
+    "prob_draw": 26.2,
+    "prob_away": 24.4,
     "data_n": {
      "home": 21,
      "away": 9
     },
     "headline": {
      "score": "1:1",
-     "prob": 13.6
+     "prob": 13.5
     },
     "htft_half": {
-     "home": 30.9,
-     "draw": 47.5,
-     "away": 21.6
+     "home": 31.4,
+     "draw": 47.4,
+     "away": 21.2
     },
     "htft_cells": {
-     "主/主": 25.1,
-     "主/平": 4.6,
-     "主/客": 1.3,
-     "平/主": 16.2,
+     "主/主": 25.6,
+     "主/平": 4.5,
+     "主/客": 1.2,
+     "平/主": 16.5,
      "平/平": 20.1,
-     "平/客": 11.2,
+     "平/客": 10.9,
      "客/主": 1.8,
-     "客/平": 4.6,
-     "客/客": 15.2
+     "客/平": 4.5,
+     "客/客": 14.8
     },
     "form_net": {
      "home_7": [
@@ -5275,16 +4654,16 @@
     },
     "odds_full": {
      "spf": {
-      "胜": "1.81",
-      "平": "3.4",
-      "负": "3.42"
+      "胜": "1.78",
+      "平": "3.35",
+      "负": "3.6"
      },
      "rq": [
       {
        "handicap": "-1",
-       "胜": "3.4",
-       "平": "3.65",
-       "负": "1.75"
+       "胜": "3.35",
+       "平": "3.6",
+       "负": "1.78"
       }
      ],
      "score": {
@@ -5367,8 +4746,20 @@
         "reason": "腿筋伤"
        },
        {
+        "name": "Louis Beyer",
+        "reason": "体能不足"
+       },
+       {
         "name": "Jacob Bruun Larsen",
         "reason": "腿伤"
+       },
+       {
+        "name": "Mike Tresor",
+        "reason": "体能不足"
+       },
+       {
+        "name": "Shurandy Sambo",
+        "reason": "手伤"
        }
       ],
       "doubtful": [],
@@ -5385,19 +4776,20 @@
         "reason": "跟腱伤"
        },
        {
-        "name": "Mathias Jörgensen",
-        "reason": "肌肉伤"
-       },
-       {
         "name": "Ryan Alebiosu",
         "reason": "伤情"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Mathias Jörgensen",
+        "reason": "肌肉伤"
        },
        {
         "name": "Ryoya Morishita",
         "reason": "踝伤"
        }
       ],
-      "doubtful": [],
       "suspended": []
      }
     },
@@ -5572,16 +4964,34 @@
      }
     ],
     "weather": {
-     "t_min": 1.6,
-     "t_max": 3.6,
+     "t_min": 1.2,
+     "t_max": 3.5,
      "pop": 0,
      "rain": 0.0,
-     "wind": 10.1,
+     "wind": 10.4,
      "grade": "ok",
      "city": "伯恩利"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
+     {
+      "title": "伯恩利战布莱克本前伤停：阿赫梅德霍季奇或回归，罗伯茨停赛",
+      "url": "https://m.dongqiudi.com/xinwen/203768",
+      "source": "懂球帝",
+      "text": "30秒看懂伯恩利周日英冠德比战布莱克本，阿赫梅德霍季奇病愈或回归罗伯茨因对加的夫红牌停赛三场，本场为第一场库伦…"
+     },
+     {
+      "title": "布莱克本多人伤情待评估，若尔根森缺战伯恩利",
+      "url": "https://m.dongqiudi.com/xinwen/203185",
+      "source": "懂球帝",
+      "text": "30秒看懂沃顿和莫西仍在评估，能否出战伯恩利待定森下龙矢伤停一个月后恢复训练，有望进入名单若尔根森确定缺席伯恩…"
+     },
+     {
+      "title": "布莱克本流浪者对阵伯恩利德比预计首发",
+      "url": "https://m.dongqiudi.com/xinwen/217717",
+      "source": "懂球帝",
+      "text": "30秒看懂布莱克本客场对阵伯恩利，门将托特因国家队比赛受伤缺阵皮尔斯将顶替托特出场，贝尤库继续镇守后防莫西出战…"
+     },
      {
       "title": "英冠第16轮伯恩利迎战布莱克本预计首发",
       "url": "https://m.dongqiudi.com/xinwen/206480",
@@ -5589,28 +4999,10 @@
       "text": "30秒看懂伯恩利主场迎战布莱克本流浪者，北京时间11月22日20:00开球伯恩利预计首发与11月7日负卡迪夫城…"
      },
      {
-      "title": "谢菲尔德联在伯恩利600万英镑交易上笑到最后",
-      "url": "https://m.dongqiudi.com/xinwen/211330",
-      "source": "懂球帝",
-      "text": "30秒看懂阿赫梅多日奇600万镑加盟伯恩利，英冠仅6次出场。伯恩利15轮英冠仅1胜，排名降级区。谢菲联租借基钦，已10次联赛出场。"
-     },
-     {
       "title": "伯恩利队长乔什·卡伦放下对立情绪，祝愿托尼·莫布雷一切顺利",
       "url": "https://m.dongqiudi.com/xinwen/202077",
       "source": "懂球帝",
       "text": "30秒看懂布莱克本主帅莫布雷因健康原因暂时离任伯恩利队长卡伦代表全队祝莫布雷早日康复约翰逊和杜兹暂管布莱克本一队…"
-     },
-     {
-      "title": "“不只是场比赛”：法比奥·切莱斯蒂尼谈伯恩利与布莱克本流浪者的德比",
-      "url": "https://m.dongqiudi.com/xinwen/212486",
-      "source": "懂球帝",
-      "text": "30秒看懂伯恩利主帅塞莱斯蒂尼称东兰开夏德比“不止是一场比赛”。伯恩利本赛季前15场仅1胜，但德比前已16年对布莱克本不败。塞莱斯蒂尼执教三周，这是他的首场CottonMills德比。"
-     },
-     {
-      "title": "“周日拿三分和下周拿三分是一样的，但对球迷和这座城市来说，这其中承载的情感要多得多。”肖恩·麦卡锡谈明天的德比。",
-      "url": "https://m.dongqiudi.com/xinwen/211441",
-      "source": "懂球帝",
-      "text": "30秒看懂肖恩·麦卡谈德比战意义强调三分对球迷和全城的分量肖恩·麦卡谈到即将到来的德比战，他表示周日拿下三分与下周拿三分在积分上没有区别，但对球迷和全城来说，这场比赛承载的情感要多得多。"
      },
      {
       "title": "伯恩利vs布莱克本流浪者历史交锋：11次交手伯恩利7胜4平0负",
@@ -5875,7 +5267,7 @@
    ],
    "confidence": "high",
    "is_cold_start": false,
-   "main_pick": "明天如有需要将坐在替补席德容、奥尔莫回归",
+   "main_pick": "福伊特等四人因伤缺",
    "handicap": {
     "spread": -2.0,
     "pick": "让球负"
@@ -5985,89 +5377,8 @@
     }
    ],
    "injuries": [],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "away": {
-     "team": "比利亚雷",
-     "n": 18,
-     "core_avg": 69.4,
-     "form_avg": 6.61,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "帕普·盖伊",
-       "pos": "MF",
-       "oti": 57.51,
-       "dii": 43.23,
-       "gim": 71.7,
-       "form": 6.8,
-       "cons": 4.31,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "阿·弗里曼",
-       "pos": "DF",
-       "oti": 76.31,
-       "dii": 73.13,
-       "gim": 71.06,
-       "form": 6.8,
-       "cons": 81.38,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "阿尔贝托·莫莱罗",
-       "pos": "MF",
-       "oti": 86.83,
-       "dii": 20.75,
-       "gim": 70.73,
-       "form": 6.4,
-       "cons": 15.52,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "胡安·福伊斯",
-       "pos": "DF",
-       "oti": 42.77,
-       "dii": 62.17,
-       "gim": 67.66,
-       "form": 6.6,
-       "cons": 50.69,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "尼古拉·佩佩",
-       "pos": "MF",
-       "oti": 72.77,
-       "dii": 32.5,
-       "gim": 65.8,
-       "form": 6.5,
-       "cons": 21.72,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -6250,8 +5561,8 @@
     "lam_total": 4.042,
     "upset_prob": 16.2,
     "upset_level": "低",
-    "rq_best_ev": 1.142,
-    "rq_best_odds": 2.4,
+    "rq_best_ev": 1.162,
+    "rq_best_odds": 2.47,
     "quad_top": {
      "home": {
       "score": "2:1",
@@ -6652,9 +5963,9 @@
      "rq": [
       {
        "handicap": "-2",
-       "胜": "2",
+       "胜": "1.95",
        "平": "4.5",
-       "负": "2.4"
+       "负": "2.47"
       }
      ],
      "score": {
@@ -6714,21 +6025,33 @@
      "kickoff": ""
     },
     "weather": {
-     "t_min": 14.0,
+     "t_min": 14.2,
      "t_max": 16.3,
      "pop": 0,
      "rain": 0.0,
-     "wind": 23.6,
+     "wind": 21.9,
      "grade": "ok",
      "city": "巴塞罗那"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
-      "title": "弗利克：克里斯滕森伤缺两场，巴萨主场迎战比利亚雷亚尔",
-      "url": "https://m.dongqiudi.com/xinwen/215594",
+      "title": "肌肉伤情复发：巴塞罗那官方通报新伤病",
+      "url": "https://m.dongqiudi.com/xinwen/212493",
       "source": "懂球帝",
-      "text": "30秒看懂弗利克确认克里斯滕森将缺席两场比赛库巴西有伤，明天如有需要将坐在替补席德容、奥尔莫回归，孔德已恢复巴塞罗那主帅弗利克在新闻发布会上确认，丹麦中卫克里斯滕森将缺席接下来的两场比赛。"
+      "text": "30秒看懂巴萨官方通报克里斯滕森左小腿比目鱼肌轻度不适克里斯滕森能否出战周日对维拉雷亚尔存疑弗利克防线仅八人，…"
+     },
+     {
+      "title": "比利亚雷亚尔客战巴萨，佩雷斯伤兵满营力求首胜",
+      "url": "https://m.dongqiudi.com/xinwen/217745",
+      "source": "懂球帝",
+      "text": "30秒看懂伊尼戈·佩雷斯执教生涯五战巴萨四负一平比利亚雷亚尔近五次客访巴萨赢下三场赫拉德·莫雷诺、福伊特等四人因伤缺阵比利亚雷亚尔主帅伊尼戈·佩雷斯将在今天中午14点率队客场对阵巴塞罗那…"
+     },
+     {
+      "title": "克里斯滕森伤缺存疑，巴萨迎战比利亚雷亚尔",
+      "url": "https://m.dongqiudi.com/xinwen/216794",
+      "source": "懂球帝",
+      "text": "30秒看懂克里斯滕森左小腿不适，缺席周五训练巴萨称其下场比赛存疑，恢复时间待定西媒统计他因伤已缺席巴萨100场比赛巴塞罗那中卫安德烈亚斯·克里斯滕森再度遭遇身体问题。"
      },
      {
       "title": "弗利克确认克里斯滕森库巴西缺阵，巴萨迎战比利亚雷亚尔",
@@ -6737,28 +6060,16 @@
       "text": "30秒看懂克里斯滕森左小腿受伤，至少缺席两场库巴西髋部受伤，巴萨出于保护让其休战孔德伤愈恢复合练，可能出战比利…"
      },
      {
-      "title": "弗利克：不担心皇马，巴萨迎战比利亚雷亚尔德容奥尔莫孔德伤愈",
-      "url": "https://m.dongqiudi.com/xinwen/215322",
+      "title": "巴塞罗那对比利亚雷亚尔预计首发：西甲赛前评估防线两将",
+      "url": "https://m.dongqiudi.com/xinwen/200973",
       "source": "懂球帝",
-      "text": "30秒看懂弗利克称不关心皇马，巴萨以三分优势领跑西甲德容、奥尔莫、孔德伤愈，可出战比利亚雷亚尔库巴西大概率替补…"
+      "text": "30秒看懂巴萨周日西甲对阵比利亚雷亚尔，孔德、库巴西需赛前评估孔德10月中脚踝受伤，库巴西代表西班牙出战髋部不…"
      },
      {
       "title": "克里斯滕森复出后再感不适，巴萨迎战比利亚雷亚尔出战成疑",
       "url": "https://m.dongqiudi.com/xinwen/216532",
       "source": "懂球帝",
       "text": "30秒看懂克里斯滕森缺阵7场后复出，左小腿又感不适巴萨官方称他下场比赛出战成疑克里斯滕森为巴萨出场106次，身价800万欧巴塞罗那中卫安德烈亚斯·克里斯滕森刚刚伤愈复出，就再次出现身体问题。"
-     },
-     {
-      "title": "巴塞罗那 vs 比利亚雷亚尔历史交锋：32次交手巴萨25胜",
-      "url": "https://m.dongqiudi.com/xinwen/214543",
-      "source": "懂球帝",
-      "text": "30秒看懂两队32次交手，巴塞罗那25胜4平3负。巴塞罗那进86球失36球，场均3.8球。巴萨主场16战13胜0平3负。北京时间2026年11月22日21:00，西甲第13轮，巴塞罗那主场迎战比利亚雷亚尔。"
-     },
-     {
-      "title": "伊尼戈·佩雷斯：我们知道巴萨的水平，但每逢这种比赛，我总认为这是机会而非障碍。",
-      "url": "https://m.dongqiudi.com/xinwen/202366",
-      "source": "懂球帝",
-      "text": "30秒看懂伊尼戈·佩雷斯谈对阵巴萨他表示这是机会而非障碍伊尼戈·佩雷斯谈到与巴萨的交手，他表示球队清楚巴萨的水平，但自己始终把这类比赛视为机会，而不是障碍。"
      }
     ],
     "intel_at": "2026-11-22"
@@ -7125,89 +6436,8 @@
      "status": "out"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "鹿斯巴达",
-     "n": 13,
-     "core_avg": 63.1,
-     "form_avg": 6.64,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "佐内费尔德",
-       "pos": "FW",
-       "oti": 74.81,
-       "dii": 40.57,
-       "gim": 82.03,
-       "form": 7.3,
-       "cons": 19.18,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "卢·马尔特斯",
-       "pos": "DF",
-       "oti": 64.1,
-       "dii": 69.88,
-       "gim": 61.18,
-       "form": 6.5,
-       "cons": 76.94,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "克伊珀斯",
-       "pos": "DF",
-       "oti": 68.1,
-       "dii": 27.37,
-       "gim": 59.78,
-       "form": 6.5,
-       "cons": 69.18,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "扬恩",
-       "pos": "MF",
-       "oti": 31.49,
-       "dii": 59.76,
-       "gim": 56.47,
-       "form": 6.7,
-       "cons": 37.93,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "巴巴迪",
-       "pos": "MF",
-       "oti": 77.74,
-       "dii": 33.99,
-       "gim": 55.81,
-       "form": 7.0,
-       "cons": 45.04,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -7999,7 +7229,7 @@
       "gd": 19
      }
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
       "title": "鹿特丹斯巴达对阿尔克马尔前瞻：伤停和预计首发",
@@ -8079,9 +7309,9 @@
     "logo": "assets/logo/teams/494.png"
    },
    "odds": {
-    "home": 1.52,
-    "draw": 3.6,
-    "away": 4.9,
+    "home": 1.49,
+    "draw": 3.7,
+    "away": 5.05,
     "handicap": -1.0,
     "bookmaker": ""
    },
@@ -8189,49 +7419,49 @@
     {
      "kind": "direction",
      "label": "主胜",
-     "prob": 0.635,
+     "prob": 0.648,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "平",
-     "prob": 0.26,
+     "prob": 0.255,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "客胜",
-     "prob": 0.105,
+     "prob": 0.097,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-0",
-     "prob": 0.132,
+     "prob": 0.134,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-1",
-     "prob": 0.124,
+     "prob": 0.121,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "score",
      "label": "2-0",
-     "prob": 0.116,
+     "prob": 0.119,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
      "label": "2-1",
-     "prob": 0.111,
+     "prob": 0.112,
      "rank": 4,
      "note": ""
     },
@@ -8245,7 +7475,7 @@
     {
      "kind": "score",
      "label": "3-0",
-     "prob": 0.068,
+     "prob": 0.071,
      "rank": 6,
      "note": ""
     },
@@ -8259,35 +7489,35 @@
     {
      "kind": "goals",
      "label": "3 球",
-     "prob": 0.179,
+     "prob": 0.183,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "1 球",
-     "prob": 0.132,
+     "prob": 0.134,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "主/主",
-     "prob": 0.353,
+     "prob": 0.36,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "平/主",
-     "prob": 0.182,
+     "prob": 0.184,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "平/平",
-     "prob": 0.143,
+     "prob": 0.142,
      "rank": 3,
      "note": ""
     }
@@ -8462,163 +7692,8 @@
      "status": "doubt"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "博洛尼亚",
-     "n": 14,
-     "core_avg": 68.4,
-     "form_avg": 6.65,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "胡安·米兰达",
-       "pos": "DF",
-       "oti": 89.97,
-       "dii": 55.66,
-       "gim": 73.05,
-       "form": 6.8,
-       "cons": 51.28,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "弗格森",
-       "pos": "MF",
-       "oti": 33.43,
-       "dii": 61.09,
-       "gim": 68.79,
-       "form": 6.3,
-       "cons": 37.77,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "费德里科·贝尔纳代斯基",
-       "pos": "FW",
-       "oti": 53.53,
-       "dii": 39.05,
-       "gim": 67.8,
-       "form": 6.7,
-       "cons": 59.85,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "霍尔姆",
-       "pos": "DF",
-       "oti": 36.38,
-       "dii": 84.76,
-       "gim": 66.92,
-       "form": 7.0,
-       "cons": 53.1,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "坎比亚吉",
-       "pos": "MF",
-       "oti": 61.16,
-       "dii": 59.44,
-       "gim": 65.38,
-       "form": 6.9,
-       "cons": 39.78,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    },
-    "away": {
-     "team": "乌迪内斯",
-     "n": 15,
-     "core_avg": 59.8,
-     "form_avg": 6.47,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "哈萨内·卡马拉",
-       "pos": "MF",
-       "oti": 54.41,
-       "dii": 45.53,
-       "gim": 64.87,
-       "form": 6.7,
-       "cons": 35.77,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "朱利安·埃克尔肯坎普",
-       "pos": "FW",
-       "oti": 45.94,
-       "dii": 55.72,
-       "gim": 63.82,
-       "form": 6.7,
-       "cons": 46.53,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "帕尔马",
-       "pos": "DF",
-       "oti": 45.13,
-       "dii": 55.97,
-       "gim": 62.27,
-       "form": 6.7,
-       "cons": 59.85,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "奥雷连·索莱",
-       "pos": "DF",
-       "oti": 47.73,
-       "dii": 50.98,
-       "gim": 55.86,
-       "form": 6.9,
-       "cons": 41.97,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "梅尔文·沃伊沃达",
-       "pos": "MF",
-       "oti": 47.88,
-       "dii": 46.99,
-       "gim": 52.02,
-       "form": 6.2,
-       "cons": 31.02,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -8748,30 +7823,30 @@
       "p": 11
      }
     ],
-    "lam_home": 1.759,
-    "lam_away": 0.957,
+    "lam_home": 1.779,
+    "lam_away": 0.936,
     "lam_total": 2.716,
-    "upset_prob": 48.2,
+    "upset_prob": 47.2,
     "upset_level": "中",
-    "rq_best_ev": 1.038,
-    "rq_best_odds": 2.1,
+    "rq_best_ev": 1.055,
+    "rq_best_odds": 2.16,
     "quad_top": {
      "home": {
       "score": "1:0",
-      "prob": 13.2
+      "prob": 13.4
      },
      "draw": {
       "score": "1:1",
-      "prob": 12.4
+      "prob": 12.1
      },
      "away": {
       "score": "0:1",
-      "prob": 3.3
+      "prob": 3.1
      }
     },
-    "prob_home": 63.5,
-    "prob_draw": 26.0,
-    "prob_away": 10.5,
+    "prob_home": 64.8,
+    "prob_draw": 25.5,
+    "prob_away": 9.7,
     "data_n": {
      "home": 25,
      "away": 25
@@ -8781,20 +7856,20 @@
      "prob": 13.1
     },
     "htft_half": {
-     "home": 41.1,
-     "draw": 40.4,
-     "away": 18.5
+     "home": 41.7,
+     "draw": 40.3,
+     "away": 18.0
     },
     "htft_cells": {
-     "主/主": 35.3,
+     "主/主": 36.0,
      "主/平": 4.5,
-     "主/客": 1.3,
-     "平/主": 18.2,
-     "平/平": 14.3,
-     "平/客": 7.9,
+     "主/客": 1.2,
+     "平/主": 18.4,
+     "平/平": 14.2,
+     "平/客": 7.6,
      "客/主": 2.8,
      "客/平": 4.5,
-     "客/客": 11.2
+     "客/客": 10.8
     },
     "form_net": {
      "home_7": [
@@ -9136,40 +8211,40 @@
     },
     "odds_full": {
      "spf": {
-      "胜": "1.52",
-      "平": "3.6",
-      "负": "4.9"
+      "胜": "1.49",
+      "平": "3.7",
+      "负": "5.05"
      },
      "rq": [
       {
        "handicap": "-1",
-       "胜": "2.78",
-       "平": "3.3",
-       "负": "2.1"
+       "胜": "2.75",
+       "平": "3.2",
+       "负": "2.16"
       }
      ],
      "score": {
       "1:0": "6",
       "2:0": "6.75",
-      "2:1": "6.75",
+      "2:1": "6.5",
       "3:0": "11",
       "3:1": "12",
-      "3:2": "25",
-      "4:0": "26",
-      "4:1": "30",
-      "4:2": "60",
+      "3:2": "23",
+      "4:0": "24",
+      "4:1": "28",
+      "4:2": "50",
       "5:0": "75",
-      "5:1": "90",
-      "5:2": "150",
+      "5:1": "80",
+      "5:2": "125",
       "胜其他": "50",
       "0:0": "12",
       "1:1": "6",
       "2:2": "14",
       "3:3": "75",
       "平其他": "350",
-      "0:1": "10.5",
-      "0:2": "24",
-      "1:2": "11",
+      "0:1": "12",
+      "0:2": "25",
+      "1:2": "12",
       "0:3": "75",
       "1:3": "50",
       "2:3": "50",
@@ -9264,7 +8339,6 @@
       "suspended": []
      }
     },
-    "mood": "尤文上仗意甲续踢双箭头，由高路梅安尼伙拍禾达美迪攻坚，二人亦有不俗表现；尤其禾达美迪与中坚基尔臣比尔马，分别取得士哥，助球队两度落后下，逼和对手而回。威尼斯上仗意甲改派约翰耶保亚伙拍艾哥阿当斯攻坚，但二人表现平平无奇，一同食白果；幸好中场杜马巴锡及杰基佩雷斯演出可人，下半场各入一球，即使守将马迪亚斯摩兰奴摆乌龙， …… 那不勒斯博反弹可捧场 2026-11-21 推介：主客和–主胜推介：半场主客和–主胜军情那不勒斯上仗意甲续以海伦踢正中锋，配合翼锋翼锋路亚兰治及球星奇云迪布尼后上取分，中场球星麦汤米尼亦正选上阵；可惜一众好手表现平平未有士哥，加上后防演出欠稳先失一球，幸好换边后藉对手摆乌龙扳平，得以逼和对手。都灵上仗意甲改派古兰奴域伙拍基奥云尼施蒙尼踢双箭头，但二人表现麻麻，空手而回；虽然球队下半场早段藉对手摆乌龙取 …… 意甲前瞻：帕尔马 VS 罗马 2026-11-21 北京时间11月22日01:00，2026-27赛季意甲联赛继续进行第12轮的较量，帕尔默将主场迎战罗马。目前在积分榜上，帕尔马排名第16，罗马排名第三。帕尔马上一场意甲主场1-2不敌博洛尼亚，未能延续胜绩，近6场联赛仅赢了1场，战绩甚为低迷。本赛季前11轮战罢，帕尔马仅取得2胜2平7负，积8分排名第16，仅高出降级区1分，保级压力明显。帕尔马进攻端表现乏力， …… 罗马作客出色有力言胜 2026-11-21 军情帕尔马上仗意甲续踢双前锋，由大卫罗美路伙拍隆坦尼攻坚，但他们表现平平无奇，未有建树；加上中坚艾杜拉耶尼戴耶于比赛初段已领红牌离场，球队少踢一人下连失2球，即使中场维辛施亚路尾段射入12码破蛋，亦于事无补。罗马上仗意甲续派射手唐耶尔马伦踢正箭头，配合攻中马迪亚斯索利及洛迪高摩拉后上取分；当中以洛迪高摩拉的表现最抢镜，与中坚马里奥靴莫素各入一球，加上对手摆乌 …… 罗马「马」到功成 2026-11-21 周日凌晨，意甲继续进行，罗马客场挑战帕尔马。罗马今季11轮联赛保持不败，而且近3轮悉数获胜，期间火力全开，此番走访各方面都不如己队的帕尔马，罗马不胜无归。帕尔马今季目前仅积8分，保组压力初显，球队上轮联赛主场对阵博洛尼亚输球又输人，尼卡哈迪戴亚耶早段就染红离场(今仗坐波监)，他们最终1比2输球。更为糟糕的是，帕尔马今季主场争胜力极其有限，6个主场仅取得1胜2 …… < 上一页 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 下一页 > 新 闻 球 队 球 员 巴塞罗那 皇家马德里 曼联 切尔西 梅西 C罗 范佩西 鲁尼 热点推荐 [赛前] 英超前瞻：纽卡 vs 阿森纳 [赛前] 前瞻：帕尔马 VS 罗马 [赛前] 前瞻：拜仁 VS 科隆 [赛前] 德甲前瞻:门兴VS多特蒙德 [赛前] 利兹联有力挡「车」开半和 [赛前] 悉尼F…",
     "odds_ticks": [
      {
       "t": "2026-11-21 11:03",
@@ -9436,15 +8510,15 @@
      }
     ],
     "weather": {
-     "t_min": 7.1,
-     "t_max": 8.8,
-     "pop": 90,
-     "rain": 3.8,
-     "wind": 17.1,
+     "t_min": 6.8,
+     "t_max": 8.5,
+     "pop": 100,
+     "rain": 5.9,
+     "wind": 16.4,
      "grade": "bad",
      "city": "博洛尼亚"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
       "title": "博洛尼亚对乌迪内斯前瞻：伤停和预计首发",
@@ -9483,7 +8557,8 @@
       "text": "30秒看懂扎内蒂出席赛前发布会他表示客战博洛尼亚要谦逊、不找借口乌迪内斯主帅保罗·扎内蒂在赛前新闻发布会上谈到了球队客场对阵博洛尼亚的比赛，他表示球队必须带着谦逊、不找借口的态度前往博洛尼亚。"
      }
     ],
-    "intel_at": "2026-11-22"
+    "intel_at": "2026-11-22",
+    "mood": "尤文上仗意甲续踢双箭头，由高路梅安尼伙拍禾达美迪攻坚，二人亦有不俗表现；尤其禾达美迪与中坚基尔臣比尔马，分别取得士哥，助球队两度落后下，逼和对手而回。威尼斯上仗意甲改派约翰耶保亚伙拍艾哥阿当斯攻坚，但二人表现平平无奇，一同食白果；幸好中场杜马巴锡及杰基佩雷斯演出可人，下半场各入一球，即使守将马迪亚斯摩兰奴摆乌龙， …… 那不勒斯博反弹可捧场 2026-11-21 推介：主客和–主胜推介：半场主客和–主胜军情那不勒斯上仗意甲续以海伦踢正中锋，配合翼锋翼锋路亚兰治及球星奇云迪布尼后上取分，中场球星麦汤米尼亦正选上阵；可惜一众好手表现平平未有士哥，加上后防演出欠稳先失一球，幸好换边后藉对手摆乌龙扳平，得以逼和对手。都灵上仗意甲改派古兰奴域伙拍基奥云尼施蒙尼踢双箭头，但二人表现麻麻，空手而回；虽然球队下半场早段藉对手摆乌龙取 …… 意甲前瞻：帕尔马 VS 罗马 2026-11-21 北京时间11月22日01:00，2026-27赛季意甲联赛继续进行第12轮的较量，帕尔默将主场迎战罗马。目前在积分榜上，帕尔马排名第16，罗马排名第三。帕尔马上一场意甲主场1-2不敌博洛尼亚，未能延续胜绩，近6场联赛仅赢了1场，战绩甚为低迷。本赛季前11轮战罢，帕尔马仅取得2胜2平7负，积8分排名第16，仅高出降级区1分，保级压力明显。帕尔马进攻端表现乏力， …… 罗马作客出色有力言胜 2026-11-21 军情帕尔马上仗意甲续踢双前锋，由大卫罗美路伙拍隆坦尼攻坚，但他们表现平平无奇，未有建树；加上中坚艾杜拉耶尼戴耶于比赛初段已领红牌离场，球队少踢一人下连失2球，即使中场维辛施亚路尾段射入12码破蛋，亦于事无补。罗马上仗意甲续派射手唐耶尔马伦踢正箭头，配合攻中马迪亚斯索利及洛迪高摩拉后上取分；当中以洛迪高摩拉的表现最抢镜，与中坚马里奥靴莫素各入一球，加上对手摆乌 …… 罗马「马」到功成 2026-11-21 周日凌晨，意甲继续进行，罗马客场挑战帕尔马。罗马今季11轮联赛保持不败，而且近3轮悉数获胜，期间火力全开，此番走访各方面都不如己队的帕尔马，罗马不胜无归。帕尔马今季目前仅积8分，保组压力初显，球队上轮联赛主场对阵博洛尼亚输球又输人，尼卡哈迪戴亚耶早段就染红离场(今仗坐波监)，他们最终1比2输球。更为糟糕的是，帕尔马今季主场争胜力极其有限，6个主场仅取得1胜2 …… < 上一页 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 下一页 > 新 闻 球 队 球 员 巴塞罗那 皇家马德里 曼联 切尔西 梅西 C罗 范佩西 鲁尼 热点推荐 [赛前] 英超前瞻：纽卡 vs 阿森纳 [赛前] 前瞻：帕尔马 VS 罗马 [赛前] 前瞻：拜仁 VS 科隆 [赛前] 德甲前瞻:门兴VS多特蒙德 [赛前] 利兹联有力挡「车」开半和 [赛前] 悉尼F…"
    }
   },
   {
@@ -9524,9 +8599,9 @@
     "logo": "assets/logo/teams/495.png"
    },
    "odds": {
-    "home": 2.45,
-    "draw": 3.15,
-    "away": 2.42,
+    "home": 2.55,
+    "draw": 3.06,
+    "away": 2.38,
     "handicap": 1.0,
     "bookmaker": ""
    },
@@ -9634,98 +8709,98 @@
     {
      "kind": "direction",
      "label": "客胜",
-     "prob": 0.363,
+     "prob": 0.369,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "主胜",
-     "prob": 0.358,
+     "prob": 0.344,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "平",
-     "prob": 0.279,
+     "prob": 0.287,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-1",
-     "prob": 0.132,
+     "prob": 0.136,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "score",
      "label": "0-1",
-     "prob": 0.085,
+     "prob": 0.086,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-0",
-     "prob": 0.085,
+     "prob": 0.082,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-2",
-     "prob": 0.081,
+     "prob": 0.082,
      "rank": 4,
      "note": ""
     },
     {
      "kind": "score",
      "label": "2-1",
-     "prob": 0.08,
+     "prob": 0.078,
      "rank": 5,
      "note": ""
     },
     {
      "kind": "score",
      "label": "0-0",
-     "prob": 0.069,
+     "prob": 0.071,
      "rank": 6,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "1 球",
-     "prob": 0.17,
+     "prob": 0.168,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "3 球",
-     "prob": 0.161,
+     "prob": 0.16,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "2 球",
-     "prob": 0.132,
+     "prob": 0.136,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "客/客",
-     "prob": 0.22,
+     "prob": 0.226,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "主/主",
-     "prob": 0.218,
+     "prob": 0.212,
      "rank": 2,
      "note": ""
     },
@@ -9892,163 +8967,8 @@
      "status": "doubt"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "萨索洛",
-     "n": 16,
-     "core_avg": 60.7,
-     "form_avg": 6.49,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "阿马德·洛里安特",
-       "pos": "FW",
-       "oti": 41.62,
-       "dii": 41.5,
-       "gim": 69.47,
-       "form": 7.0,
-       "cons": 1.64,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "莱森",
-       "pos": "DF",
-       "oti": 49.22,
-       "dii": 51.82,
-       "gim": 62.58,
-       "form": 6.8,
-       "cons": 96.9,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "萨尔瓦托雷·埃斯波西托",
-       "pos": "FW",
-       "oti": 52.03,
-       "dii": 71.78,
-       "gim": 58.89,
-       "form": 6.5,
-       "cons": 34.12,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "贝拉尔迪",
-       "pos": "FW",
-       "oti": 49.04,
-       "dii": 81.76,
-       "gim": 57.67,
-       "form": 6.3,
-       "cons": 9.31,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "多伊格",
-       "pos": "DF",
-       "oti": 46.01,
-       "dii": 48.07,
-       "gim": 54.91,
-       "form": 6.3,
-       "cons": 77.74,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    },
-    "away": {
-     "team": "热那亚",
-     "n": 15,
-     "core_avg": 63.3,
-     "form_avg": 6.7,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "儒尼奥尔·梅西亚斯",
-       "pos": "FW",
-       "oti": 51.9,
-       "dii": 93.0,
-       "gim": 76.78,
-       "form": 7.1,
-       "cons": 34.12,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "厄斯蒂高",
-       "pos": "DF",
-       "oti": 41.42,
-       "dii": 50.33,
-       "gim": 68.68,
-       "form": 6.8,
-       "cons": 54.74,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "米洛什·奥斯马伊奇",
-       "pos": "FW",
-       "oti": 47.88,
-       "dii": 22.05,
-       "gim": 58.27,
-       "form": 7.0,
-       "cons": 11.5,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "米卡尔·埃勒特松",
-       "pos": "MF",
-       "oti": 43.38,
-       "dii": 52.97,
-       "gim": 56.54,
-       "form": 7.2,
-       "cons": 44.34,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "巴斯克斯",
-       "pos": "DF",
-       "oti": 40.76,
-       "dii": 74.78,
-       "gim": 56.3,
-       "form": 6.8,
-       "cons": 41.97,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -10178,53 +9098,53 @@
       "p": 11
      }
     ],
-    "lam_home": 1.372,
-    "lam_away": 1.38,
+    "lam_home": 1.352,
+    "lam_away": 1.399,
     "lam_total": 2.752,
     "upset_prob": 60.9,
     "upset_level": "高",
-    "rq_best_ev": 0.854,
-    "rq_best_odds": 1.4,
+    "rq_best_ev": 0.859,
+    "rq_best_odds": 1.42,
     "quad_top": {
      "home": {
       "score": "1:0",
-      "prob": 8.5
+      "prob": 8.2
      },
      "draw": {
       "score": "1:1",
-      "prob": 13.2
+      "prob": 13.6
      },
      "away": {
       "score": "0:1",
-      "prob": 8.5
+      "prob": 8.6
      }
     },
-    "prob_home": 35.8,
-    "prob_draw": 27.9,
-    "prob_away": 36.3,
+    "prob_home": 34.4,
+    "prob_draw": 28.7,
+    "prob_away": 36.9,
     "data_n": {
      "home": 25,
      "away": 25
     },
     "headline": {
      "score": "1:1",
-     "prob": 14.0
+     "prob": 13.9
     },
     "htft_half": {
-     "home": 29.3,
+     "home": 28.7,
      "draw": 41.2,
-     "away": 29.5
+     "away": 30.1
     },
     "htft_cells": {
-     "主/主": 21.8,
+     "主/主": 21.2,
      "主/平": 5.2,
      "主/客": 2.3,
-     "平/主": 13.0,
+     "平/主": 12.8,
      "平/平": 15.1,
-     "平/客": 13.1,
-     "客/主": 2.3,
+     "平/客": 13.4,
+     "客/主": 2.2,
      "客/平": 5.2,
-     "客/客": 22.0
+     "客/客": 22.6
     },
     "form_net": {
      "home_7": [
@@ -10754,15 +9674,15 @@
      }
     ],
     "weather": {
-     "t_min": 6.6,
+     "t_min": 6.7,
      "t_max": 7.5,
-     "pop": 83,
-     "rain": 2.7,
-     "wind": 11.2,
+     "pop": 88,
+     "rain": 2.3,
+     "wind": 10.8,
      "grade": "bad",
      "city": "雷焦艾米利亚"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
       "title": "萨索洛对热那亚前瞻：伤停和预计首发",
@@ -10842,9 +9762,9 @@
     "logo": "assets/logo/teams/164.png"
    },
    "odds": {
-    "home": 2.6,
-    "draw": 3.65,
-    "away": 2.08,
+    "home": 2.7,
+    "draw": 3.75,
+    "away": 1.99,
     "handicap": 1.0,
     "bookmaker": ""
    },
@@ -10952,63 +9872,63 @@
     {
      "kind": "direction",
      "label": "客胜",
-     "prob": 0.422,
+     "prob": 0.441,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "主胜",
-     "prob": 0.338,
+     "prob": 0.325,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "平",
-     "prob": 0.24,
+     "prob": 0.234,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-1",
-     "prob": 0.12,
+     "prob": 0.117,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-2",
-     "prob": 0.097,
+     "prob": 0.1,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "score",
      "label": "0-1",
-     "prob": 0.084,
+     "prob": 0.087,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
      "label": "2-1",
-     "prob": 0.083,
+     "prob": 0.081,
      "rank": 4,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-0",
-     "prob": 0.076,
+     "prob": 0.074,
      "rank": 5,
      "note": ""
     },
     {
      "kind": "score",
      "label": "0-2",
-     "prob": 0.063,
+     "prob": 0.066,
      "rank": 6,
      "note": ""
     },
@@ -11022,34 +9942,34 @@
     {
      "kind": "goals",
      "label": "3 球",
-     "prob": 0.18,
+     "prob": 0.181,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "1 球",
-     "prob": 0.16,
+     "prob": 0.161,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "客/客",
-     "prob": 0.249,
+     "prob": 0.259,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "主/主",
-     "prob": 0.194,
+     "prob": 0.185,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "htft",
-     "label": "平/平",
+     "label": "平/客",
      "prob": 0.146,
      "rank": 3,
      "note": ""
@@ -11228,163 +10148,8 @@
      "status": "out"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "奥格斯堡",
-     "n": 13,
-     "core_avg": 64.7,
-     "form_avg": 6.62,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "法比安·里德",
-       "pos": "MF",
-       "oti": 75.53,
-       "dii": 59.7,
-       "gim": 80.84,
-       "form": 6.8,
-       "cons": 67.49,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "克里斯蒂安·马齐马",
-       "pos": "DF",
-       "oti": 38.75,
-       "dii": 56.42,
-       "gim": 62.08,
-       "form": 6.4,
-       "cons": 46.64,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "布拉克尔曼",
-       "pos": "DF",
-       "oti": 46.88,
-       "dii": 58.01,
-       "gim": 61.51,
-       "form": 6.6,
-       "cons": 46.64,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "亨内斯·贝伦斯",
-       "pos": "MF",
-       "oti": 53.2,
-       "dii": 88.74,
-       "gim": 59.76,
-       "form": 6.8,
-       "cons": 29.37,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "卡德",
-       "pos": "FW",
-       "oti": 64.88,
-       "dii": 45.75,
-       "gim": 59.18,
-       "form": 6.8,
-       "cons": 3.59,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      }
-     ]
-    },
-    "away": {
-     "team": "美因茨",
-     "n": 11,
-     "core_avg": 67.5,
-     "form_avg": 6.59,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "贝克尔",
-       "pos": "FW",
-       "oti": 68.53,
-       "dii": 23.75,
-       "gim": 80.35,
-       "form": 6.6,
-       "cons": 24.44,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "安东尼·卡西",
-       "pos": "MF",
-       "oti": 78.47,
-       "dii": 74.08,
-       "gim": 77.57,
-       "form": 6.8,
-       "cons": 8.52,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "蒂茨",
-       "pos": "FW",
-       "oti": 61.41,
-       "dii": 35.74,
-       "gim": 67.5,
-       "form": 6.9,
-       "cons": 2.02,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "丹尼尔·达科斯塔",
-       "pos": "DF",
-       "oti": 47.7,
-       "dii": 58.99,
-       "gim": 58.61,
-       "form": 6.2,
-       "cons": 26.23,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "纳迪姆·阿米里",
-       "pos": "MF",
-       "oti": 64.59,
-       "dii": 26.96,
-       "gim": 53.48,
-       "form": 6.6,
-       "cons": 12.11,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -11526,30 +10291,30 @@
       "p": 10
      }
     ],
-    "lam_home": 1.318,
-    "lam_away": 1.5,
+    "lam_home": 1.286,
+    "lam_away": 1.532,
     "lam_total": 2.818,
-    "upset_prob": 55.1,
+    "upset_prob": 54.2,
     "upset_level": "高",
-    "rq_best_ev": 0.836,
-    "rq_best_odds": 1.53,
+    "rq_best_ev": 0.851,
+    "rq_best_odds": 1.59,
     "quad_top": {
      "home": {
       "score": "2:1",
-      "prob": 8.3
+      "prob": 8.1
      },
      "draw": {
       "score": "1:1",
-      "prob": 12.0
+      "prob": 11.7
      },
      "away": {
       "score": "1:2",
-      "prob": 9.7
+      "prob": 10.0
      }
     },
-    "prob_home": 33.8,
-    "prob_draw": 24.0,
-    "prob_away": 42.2,
+    "prob_home": 32.5,
+    "prob_draw": 23.4,
+    "prob_away": 44.1,
     "data_n": {
      "home": 25,
      "away": 25
@@ -11559,20 +10324,20 @@
      "prob": 7.9
     },
     "htft_half": {
-     "home": 27.2,
-     "draw": 40.6,
-     "away": 32.3
+     "home": 26.3,
+     "draw": 40.5,
+     "away": 33.2
     },
     "htft_cells": {
-     "主/主": 19.4,
+     "主/主": 18.5,
      "主/平": 5.2,
-     "主/客": 2.5,
-     "平/主": 11.8,
-     "平/平": 14.6,
-     "平/客": 14.2,
+     "主/客": 2.6,
+     "平/主": 11.4,
+     "平/平": 14.5,
+     "平/客": 14.6,
      "客/主": 2.1,
      "客/平": 5.2,
-     "客/客": 24.9
+     "客/客": 25.9
     },
     "form_net": {
      "home_7": [
@@ -12122,15 +10887,15 @@
      }
     ],
     "weather": {
-     "t_min": 1.0,
-     "t_max": 1.6,
-     "pop": 68,
-     "rain": 0.6,
-     "wind": 5.6,
+     "t_min": 1.7,
+     "t_max": 2.2,
+     "pop": 60,
+     "rain": 0.4,
+     "wind": 6.1,
      "grade": "warn",
      "city": "奥格斯堡"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
       "title": "奥格斯堡对美因茨前瞻：伤停和预计首发",
@@ -12145,10 +10910,10 @@
       "text": "30秒看懂奥格斯堡德甲7轮不胜，2胜3平4负积9分排第15马齐马、班克斯等多名后卫伤缺，布拉克尔曼感染薛英佑本…"
      },
      {
-      "title": "奥格斯堡主场迎美因茨，鲍姆多名后卫缺阵",
-      "url": "https://m.dongqiudi.com/xinwen/203762",
+      "title": "奥格斯堡七轮不胜 三中卫伤缺战美因茨",
+      "url": "https://m.dongqiudi.com/xinwen/203760",
       "source": "懂球帝",
-      "text": "30秒看懂奥格斯堡已七轮德甲不胜，上轮客场2比5负莱比锡对美因茨前班克斯、马齐马、布拉克尔曼等后卫缺阵鲍姆表示…"
+      "text": "30秒看懂奥格斯堡联赛七轮不胜，仅领先降级附加赛区两分马齐马、班克斯、布拉克尔曼三名中卫缺阵主帅鲍姆称困境中也要看到机会奥格斯堡在德甲已经连续七轮联赛不胜，目前只领先降级附加赛区两分。"
      },
      {
       "title": "德甲第10轮奥格斯堡迎战美因茨预计首发",
@@ -12569,163 +11334,8 @@
      "status": "out"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "桑坦德",
-     "n": 14,
-     "core_avg": 64.7,
-     "form_avg": 6.61,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "扎比里",
-       "pos": "FW",
-       "oti": 68.45,
-       "dii": 38.64,
-       "gim": 78.12,
-       "form": 7.1,
-       "cons": 0.52,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "伊尼戈·比森特",
-       "pos": "MF",
-       "oti": 72.27,
-       "dii": 46.68,
-       "gim": 72.66,
-       "form": 6.6,
-       "cons": 2.07,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "伊万·马丁",
-       "pos": "MF",
-       "oti": 34.59,
-       "dii": 55.64,
-       "gim": 60.56,
-       "form": 6.4,
-       "cons": 60.52,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "豪尔赫·萨利纳斯",
-       "pos": "DF",
-       "oti": 68.28,
-       "dii": 84.45,
-       "gim": 59.02,
-       "form": 6.4,
-       "cons": 31.72,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "若·贝洛西安",
-       "pos": "DF",
-       "oti": 44.0,
-       "dii": 27.92,
-       "gim": 53.27,
-       "form": 6.7,
-       "cons": 21.72,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    },
-    "away": {
-     "team": "皇家社会",
-     "n": 17,
-     "core_avg": 66.9,
-     "form_avg": 6.89,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "卢卡·苏契奇",
-       "pos": "MF",
-       "oti": 59.56,
-       "dii": 29.62,
-       "gim": 69.69,
-       "form": 7.3,
-       "cons": 13.1,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "卡洛斯·索莱尔",
-       "pos": "MF",
-       "oti": 72.81,
-       "dii": 25.98,
-       "gim": 69.33,
-       "form": 7.1,
-       "cons": 57.93,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "米克尔·奥亚萨瓦尔",
-       "pos": "FW",
-       "oti": 52.63,
-       "dii": 40.67,
-       "gim": 69.09,
-       "form": 7.1,
-       "cons": 6.38,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "洪·马丁",
-       "pos": "DF",
-       "oti": 46.67,
-       "dii": 63.54,
-       "gim": 65.5,
-       "form": 6.9,
-       "cons": 65.34,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "塞尔希奥·戈麦斯",
-       "pos": "DF",
-       "oti": 61.84,
-       "dii": 45.17,
-       "gim": 60.71,
-       "form": 6.9,
-       "cons": 27.93,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -13247,9 +11857,9 @@
      "goals": {
       "0": "28",
       "1": "9",
-      "2": "4.9",
+      "2": "5",
       "3": "3.65",
-      "4": "4.05",
+      "4": "3.95",
       "5": "5.9",
       "6": "9",
       "7+": "10"
@@ -13479,7 +12089,7 @@
       ]
      }
     ],
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
       "title": "桑坦德主帅洛佩斯澄清扎比里未受伤",
@@ -13774,7 +12384,7 @@
    ],
    "confidence": "medium",
    "is_cold_start": false,
-   "main_pick": "波切蒂诺需新帅效应打破曼联糟糕的换帅循环",
+   "main_pick": "格拉文贝赫盼复出迎战曼联，尼奥尼竞争利物浦首发",
    "handicap": {
     "spread": -1.0,
     "pick": "让球负"
@@ -13981,163 +12591,8 @@
      "status": "doubt"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "利物浦",
-     "n": 12,
-     "core_avg": 74.8,
-     "form_avg": 6.84,
-     "high_fatigue": 1,
-     "top": [
-      {
-       "name": "伊萨克",
-       "pos": "FW",
-       "oti": 72.47,
-       "dii": 25.4,
-       "gim": 82.13,
-       "form": 7.1,
-       "cons": 7.81,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": -0.4,
-       "estimated": false
-      },
-      {
-       "name": "雅凯",
-       "pos": "DF",
-       "oti": 49.06,
-       "dii": 84.63,
-       "gim": 79.71,
-       "form": 6.6,
-       "cons": 79.49,
-       "fatigue": "High",
-       "watch": "",
-       "d_gim": 0.1,
-       "estimated": false
-      },
-      {
-       "name": "麦卡利斯特",
-       "pos": "MF",
-       "oti": 42.96,
-       "dii": 52.6,
-       "gim": 71.6,
-       "form": 6.9,
-       "cons": 7.81,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.6,
-       "estimated": false
-      },
-      {
-       "name": "范迪克",
-       "pos": "DF",
-       "oti": 42.45,
-       "dii": 41.86,
-       "gim": 71.22,
-       "form": 6.8,
-       "cons": 81.84,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.2,
-       "estimated": false
-      },
-      {
-       "name": "索博斯洛伊",
-       "pos": "MF",
-       "oti": 75.07,
-       "dii": 31.18,
-       "gim": 69.24,
-       "form": 7.2,
-       "cons": 30.86,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.6,
-       "estimated": false
-      }
-     ]
-    },
-    "away": {
-     "team": "曼联",
-     "n": 13,
-     "core_avg": 61.8,
-     "form_avg": 6.62,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "布鲁诺·费尔南德斯",
-       "pos": "MF",
-       "oti": 81.76,
-       "dii": 20.3,
-       "gim": 76.17,
-       "form": 7.2,
-       "cons": 1.95,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.5,
-       "estimated": false
-      },
-      {
-       "name": "梅努",
-       "pos": "MF",
-       "oti": 43.17,
-       "dii": 72.9,
-       "gim": 67.1,
-       "form": 6.7,
-       "cons": 57.23,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.6,
-       "estimated": false
-      },
-      {
-       "name": "姆贝乌莫",
-       "pos": "MF",
-       "oti": 65.99,
-       "dii": 27.17,
-       "gim": 63.39,
-       "form": 6.6,
-       "cons": 19.34,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.5,
-       "estimated": false
-      },
-      {
-       "name": "马奎尔",
-       "pos": "DF",
-       "oti": 39.91,
-       "dii": 58.68,
-       "gim": 51.38,
-       "form": 6.1,
-       "cons": 25.2,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.1,
-       "estimated": false
-      },
-      {
-       "name": "卢克·肖",
-       "pos": "DF",
-       "oti": 75.33,
-       "dii": 71.0,
-       "gim": 50.86,
-       "form": 6.6,
-       "cons": 75.98,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.1,
-       "estimated": true
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -14785,7 +13240,6 @@
       "suspended": []
      }
     },
-    "mood": "纽卡斯尔上仗联赛排出「4-2-3-1」阵式迎战，韦利安奥索拿挂帅，安东尼艾兰加、尤尼韦沙及积及梅菲后上支援攻坚。球队全场跟对手拉成均势，并在尾段由积及梅菲打开缺口；可惜全场已作出5次扑救的门将汉尼锡，在球队领先后不久后终要失守，作客打和而回。阿森纳上仗联赛排出「4-2-3-1」，夏维斯挂帅，谢索利斯、马田奥迪加特及马度基后上支援进攻。球队全场围攻对手，但受 …… < 上一页 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 下一页 > 新 闻 球 队 球 员 巴塞罗那 皇家马德里 曼联 切尔西 梅西 C罗 范佩西 鲁尼 热点推荐 [赛前] 英超前瞻：纽卡 vs 阿森纳 [赛前] 前瞻：帕尔马 VS 罗马 [赛前] 前瞻：拜仁 VS 科隆 [赛前] 德甲前瞻:门兴VS多特蒙德 [赛前] 利兹联有力挡「车」开半和 [赛前] 悉尼FC气势如虹无惧狮吼 [赛前] 曼城主场「富」丽堂皇 [赛前] 阿森纳打「卡」收工 [赛前] 切尔西誓要击退利兹联 [赛前] 比勒菲尔德 VS 马格德堡 本站声明 | 联系我们 | 报告错误 | 网站导航 | 返回页顶 提醒：第三方机构可能在7M体育宣传他们的产品或服务，7M体育将不保证其宣传信息的准确。 您跟第三方机构的任何交易与7M体育无关，7M体育将不会对可能引起的任何损失负责。 Copyright © 2003 - 版权所有 www.7m.com.cn All Rights Reserved. 保留全部权利. 粤ICP备08004827号 本站搜索 的资料 搜索百度关于 的新闻 搜索Google关于 的新闻…",
     "odds_ticks": [
      {
       "t": "2026-11-21 12:00",
@@ -14958,26 +13412,26 @@
     ],
     "weather": {
      "t_min": 4.5,
-     "t_max": 6.4,
+     "t_max": 5.9,
      "pop": 0,
      "rain": 0.0,
-     "wind": 12.6,
+     "wind": 12.2,
      "grade": "ok",
      "city": "利物浦"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
-      "title": "利物浦对曼联伤停与预计首发",
-      "url": "https://m.dongqiudi.com/xinwen/211563",
+      "title": "格拉文贝赫盼复出迎战曼联，尼奥尼竞争利物浦首发",
+      "url": "https://m.dongqiudi.com/xinwen/217505",
       "source": "懂球帝",
-      "text": "30秒看懂利物浦主场迎战曼联，波切蒂诺迎来英超回归战利物浦埃基蒂克、布拉德利、莱奥尼因伤缺阵曼联巴莱巴、乌加特…"
+      "text": "30秒看懂格拉文贝赫因伤缺席利物浦近两场，恐周日对曼联复出19岁尼奥尼本月对阿森纳首发，格拉文贝赫替补前球探金…"
      },
      {
-      "title": "波切蒂诺首秀曼联客战利物浦，伤停与往绩成焦点",
-      "url": "https://m.dongqiudi.com/xinwen/216399",
+      "title": "特雷·尼奥尼获看好首发对曼联，中场“毫不怯场”",
+      "url": "https://m.dongqiudi.com/xinwen/217559",
       "source": "懂球帝",
-      "text": "30秒看懂波切蒂诺11月22日首秀，率曼联客战利物浦曼联10轮8分排第18，已8轮英超不胜波切蒂诺19次对阵利…"
+      "text": "30秒看懂因斯建议利物浦让19岁尼奥尼首发对阵曼联尼奥尼本季已为利物浦出场13次并打进首球因斯认为利物浦中场缺乏保护后防的平衡前利物浦和曼联中场保罗·因斯建议…"
      },
      {
       "title": "利物浦主帅认为曼联的决定给了他们周日优势",
@@ -14986,25 +13440,26 @@
       "text": "30秒看懂伊拉奥拉称波切蒂诺上任让曼联有“小优势”曼联上周解雇卡里克，当时身处降级区伊拉奥拉质疑无人机拍摄训练…"
      },
      {
-      "title": "波切蒂诺需新帅效应打破曼联糟糕的换帅循环",
-      "url": "https://m.dongqiudi.com/xinwen/213055",
+      "title": "因斯忆双色生涯，波切蒂诺执教曼联首战利物浦",
+      "url": "https://m.dongqiudi.com/xinwen/217447",
       "source": "懂球帝",
-      "text": "30秒看懂波切蒂诺接手曼联，周日首战做客安菲尔德卡里克在曼联开局客场负于赫尔城后下课研究称新帅前五场场均积分提升约41%毛里西奥·波切蒂诺成为曼联新任主教练，他将于周日做客安菲尔德迎来执教曼联的首场比赛。"
+      "text": "30秒看懂因斯称利物浦球迷对他非常接纳，仍住在威勒尔。因斯1993年随曼联夺得首届英超冠军，后经国米转投利物浦。波切蒂诺执教曼联首战客场对利物浦，此前19次交手仅3胜。"
      },
      {
-      "title": "波切蒂诺执教曼联首秀客战利物浦，埃雷拉盼其快速适应",
-      "url": "https://m.dongqiudi.com/xinwen/216531",
+      "title": "波切蒂诺正式出任曼联主帅，周日客战利物浦",
+      "url": "https://m.dongqiudi.com/xinwen/217032",
       "source": "懂球帝",
-      "text": "30秒看懂曼联正式任命波切蒂诺为新任主教练卡里克因近15场仅3胜下课埃雷拉盼波切蒂诺在曼联快速适应曼联已正式任命毛里西奥·波切蒂诺为球队新任主教练。这位阿根廷教头接替的是本月离任的迈克尔·卡里克。"
+      "text": "30秒看懂波切蒂诺18日抵达卡灵顿，正式出任曼联主帅。他此前率美国2-0胜海地，总比分8-0结束两回合。波切蒂诺周日将率曼联客战利物浦。毛里西奥·波切蒂诺正式出任曼联主教练。"
      },
      {
-      "title": "曼联CEO谈换帅：客战利物浦波切蒂诺迎首秀",
-      "url": "https://m.dongqiudi.com/xinwen/216328",
+      "title": "利物浦主场迎战曼联，多项数据暴露隐忧",
+      "url": "https://m.dongqiudi.com/xinwen/217691",
       "source": "懂球帝",
-      "text": "30秒看懂曼联英超排名第18，CEO贝拉达称这一位置不可接受曼联11月国际比赛日解雇卡里克，波切蒂诺周末客战利…"
+      "text": "30秒看懂利物浦近14场英超对六大豪门仅两胜，积9分垫底。利物浦本季英超主场5场仅1胜，进4球为同期最少之一。自1月1日以来利物浦英超主场仅3场零封，两场对富勒姆。"
      }
     ],
-    "intel_at": "2026-11-22"
+    "intel_at": "2026-11-22",
+    "mood": "纽卡斯尔上仗联赛排出「4-2-3-1」阵式迎战，韦利安奥索拿挂帅，安东尼艾兰加、尤尼韦沙及积及梅菲后上支援攻坚。球队全场跟对手拉成均势，并在尾段由积及梅菲打开缺口；可惜全场已作出5次扑救的门将汉尼锡，在球队领先后不久后终要失守，作客打和而回。阿森纳上仗联赛排出「4-2-3-1」，夏维斯挂帅，谢索利斯、马田奥迪加特及马度基后上支援进攻。球队全场围攻对手，但受 …… < 上一页 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 下一页 > 新 闻 球 队 球 员 巴塞罗那 皇家马德里 曼联 切尔西 梅西 C罗 范佩西 鲁尼 热点推荐 [赛前] 英超前瞻：纽卡 vs 阿森纳 [赛前] 前瞻：帕尔马 VS 罗马 [赛前] 前瞻：拜仁 VS 科隆 [赛前] 德甲前瞻:门兴VS多特蒙德 [赛前] 利兹联有力挡「车」开半和 [赛前] 悉尼FC气势如虹无惧狮吼 [赛前] 曼城主场「富」丽堂皇 [赛前] 阿森纳打「卡」收工 [赛前] 切尔西誓要击退利兹联 [赛前] 比勒菲尔德 VS 马格德堡 本站声明 | 联系我们 | 报告错误 | 网站导航 | 返回页顶 提醒：第三方机构可能在7M体育宣传他们的产品或服务，7M体育将不保证其宣传信息的准确。 您跟第三方机构的任何交易与7M体育无关，7M体育将不会对可能引起的任何损失负责。 Copyright © 2003 - 版权所有 www.7m.com.cn All Rights Reserved. 保留全部权利. 粤ICP备08004827号 本站搜索 的资料 搜索百度关于 的新闻 搜索Google关于 的新闻…"
    }
   },
   {
@@ -15045,9 +13500,9 @@
     "logo": "assets/logo/teams/175.png"
    },
    "odds": {
-    "home": 1.46,
-    "draw": 4.15,
-    "away": 4.7,
+    "home": 1.44,
+    "draw": 4.2,
+    "away": 4.85,
     "handicap": -1.0,
     "bookmaker": ""
    },
@@ -15155,42 +13610,42 @@
     {
      "kind": "direction",
      "label": "主胜",
-     "prob": 0.654,
+     "prob": 0.663,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "平",
-     "prob": 0.253,
+     "prob": 0.25,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "客胜",
-     "prob": 0.093,
+     "prob": 0.087,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-0",
-     "prob": 0.136,
+     "prob": 0.137,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "score",
      "label": "2-0",
-     "prob": 0.121,
+     "prob": 0.123,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-1",
-     "prob": 0.121,
+     "prob": 0.119,
      "rank": 3,
      "note": ""
     },
@@ -15203,15 +13658,15 @@
     },
     {
      "kind": "score",
-     "label": "0-0",
-     "prob": 0.073,
+     "label": "3-0",
+     "prob": 0.074,
      "rank": 5,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "3-0",
-     "prob": 0.072,
+     "label": "0-0",
+     "prob": 0.073,
      "rank": 6,
      "note": ""
     },
@@ -15225,28 +13680,28 @@
     {
      "kind": "goals",
      "label": "3 球",
-     "prob": 0.184,
+     "prob": 0.186,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "1 球",
-     "prob": 0.136,
+     "prob": 0.137,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "主/主",
-     "prob": 0.363,
+     "prob": 0.369,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "平/主",
-     "prob": 0.186,
+     "prob": 0.188,
      "rank": 2,
      "note": ""
     },
@@ -15455,162 +13910,8 @@
      "status": "doubt"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "不来梅",
-     "n": 10,
-     "core_avg": 70.0,
-     "form_avg": 6.64,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "马库斯·格吕尔",
-       "pos": "FW",
-       "oti": 66.37,
-       "dii": 90.42,
-       "gim": 85.31,
-       "form": 6.8,
-       "cons": 33.86,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "菲尔克鲁格",
-       "pos": "FW",
-       "oti": 81.94,
-       "dii": 52.78,
-       "gim": 77.57,
-       "form": 7.1,
-       "cons": 15.25,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "阿莫斯·皮珀",
-       "pos": "DF",
-       "oti": 39.84,
-       "dii": 74.37,
-       "gim": 65.27,
-       "form": 6.8,
-       "cons": 93.72,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "尤里安·雷格尔",
-       "pos": "MF",
-       "oti": 41.78,
-       "dii": 73.88,
-       "gim": 61.84,
-       "form": 6.7,
-       "cons": 88.34,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "弗里德尔",
-       "pos": "DF",
-       "oti": 31.41,
-       "dii": 27.25,
-       "gim": 60.26,
-       "form": 6.6,
-       "cons": 31.17,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    },
-    "away": {
-     "team": "汉堡",
-     "n": 17,
-     "core_avg": 58.7,
-     "form_avg": 6.52,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "穆海姆",
-       "pos": "DF",
-       "oti": 94.4,
-       "dii": 42.91,
-       "gim": 75.79,
-       "form": 7.1,
-       "cons": 71.08,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "格伦贝克",
-       "pos": "FW",
-       "oti": 59.19,
-       "dii": 75.39,
-       "gim": 75.32,
-       "form": 7.3,
-       "cons": 0.0,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "尤素福·鲍尔森",
-       "pos": "FW",
-       "oti": 54.25,
-       "dii": 71.55,
-       "gim": 53.1,
-       "form": 6.8,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "博尔瑙",
-       "pos": "DF",
-       "oti": 34.87,
-       "dii": 56.35,
-       "gim": 45.2,
-       "form": 6.4,
-       "cons": 33.86,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "威尔逊·奥马里",
-       "pos": "DF",
-       "oti": 37.65,
-       "dii": 54.35,
-       "gim": 44.32,
-       "form": 6.5,
-       "cons": 37.44,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -15752,53 +14053,53 @@
       "p": 10
      }
     ],
-    "lam_home": 1.782,
-    "lam_away": 0.92,
+    "lam_home": 1.797,
+    "lam_away": 0.905,
     "lam_total": 2.702,
-    "upset_prob": 42.2,
+    "upset_prob": 41.5,
     "upset_level": "中",
-    "rq_best_ev": 0.976,
-    "rq_best_odds": 2.27,
+    "rq_best_ev": 0.988,
+    "rq_best_odds": 2.32,
     "quad_top": {
      "home": {
       "score": "1:0",
-      "prob": 13.6
+      "prob": 13.7
      },
      "draw": {
       "score": "1:1",
-      "prob": 12.1
+      "prob": 11.9
      },
      "away": {
       "score": "0:1",
-      "prob": 3.0
+      "prob": 2.8
      }
     },
-    "prob_home": 65.4,
-    "prob_draw": 25.3,
-    "prob_away": 9.3,
+    "prob_home": 66.3,
+    "prob_draw": 25.0,
+    "prob_away": 8.7,
     "data_n": {
      "home": 25,
      "away": 25
     },
     "headline": {
      "score": "2:1",
-     "prob": 12.0
+     "prob": 12.3
     },
     "htft_half": {
-     "home": 42.0,
-     "draw": 40.3,
-     "away": 17.7
+     "home": 42.5,
+     "draw": 40.2,
+     "away": 17.3
     },
     "htft_cells": {
-     "主/主": 36.3,
+     "主/主": 36.9,
      "主/平": 4.4,
      "主/客": 1.2,
-     "平/主": 18.6,
+     "平/主": 18.8,
      "平/平": 14.2,
-     "平/客": 7.5,
+     "平/客": 7.3,
      "客/主": 2.7,
      "客/平": 4.4,
-     "客/客": 10.5
+     "客/客": 10.2
     },
     "form_net": {
      "home_7": [
@@ -16112,39 +14413,39 @@
     },
     "odds_full": {
      "spf": {
-      "胜": "1.46",
-      "平": "4.15",
-      "负": "4.7"
+      "胜": "1.44",
+      "平": "4.2",
+      "负": "4.85"
      },
      "rq": [
       {
        "handicap": "-1",
-       "胜": "2.4",
-       "平": "3.54",
-       "负": "2.27"
+       "胜": "2.37",
+       "平": "3.5",
+       "负": "2.32"
       }
      ],
      "score": {
       "1:0": "10",
       "2:0": "9",
-      "2:1": "6.5",
+      "2:1": "6.3",
       "3:0": "12",
-      "3:1": "9.25",
-      "3:2": "14",
+      "3:1": "9",
+      "3:2": "13",
       "4:0": "24",
       "4:1": "18",
-      "4:2": "28",
+      "4:2": "26",
       "5:0": "55",
       "5:1": "41",
       "5:2": "60",
       "胜其他": "21",
       "0:0": "21",
-      "1:1": "8",
+      "1:1": "8.5",
       "2:2": "11",
       "3:3": "37",
       "平其他": "175",
-      "0:1": "18",
-      "0:2": "28",
+      "0:1": "20",
+      "0:2": "30",
       "1:2": "12.5",
       "0:3": "75",
       "1:3": "32",
@@ -16423,15 +14724,15 @@
      }
     ],
     "weather": {
-     "t_min": -0.0,
+     "t_min": 0.1,
      "t_max": 1.7,
      "pop": 0,
      "rain": 0.0,
-     "wind": 7.9,
+     "wind": 8.0,
      "grade": "ok",
      "city": "不来梅"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
       "title": "云达不莱梅对汉堡前瞻：伤停和预计首发",
@@ -16446,16 +14747,16 @@
       "text": "30秒看懂不来梅北德比前两将伤缺，格吕尔和魏泽出战存疑不来梅排名德甲第六，积分领先汉堡汉堡带着战胜门兴的势头以及武斯科维奇解禁复出德甲第111次北德比将于周日打响，云达不来梅主场迎战汉堡。"
      },
      {
-      "title": "穆海姆伤愈，北方德比可全力出战不来梅",
-      "url": "https://m.dongqiudi.com/xinwen/208367",
-      "source": "懂球帝",
-      "text": "30秒看懂穆海姆肌肉伤愈，可出战周日对不来梅主帅波尔津称他已为周日一切需要做好准备穆海姆伤前连续首发汉堡最近四场德甲汉堡左后卫米罗·穆海姆已经摆脱肌肉伤势，可以出战周日德甲对阵云达不来梅的比赛。"
-     },
-     {
       "title": "北方德比赛前发布会开始。主帅通报人员情况：“兰博、比莱尔、桑比、乔丹和尤西无法出战，不会进入名单。马里奥和法比奥则重新成为名单选项。最终谁入选，我们明天最后一练后决定。”",
       "url": "https://m.dongqiudi.com/xinwen/201853",
       "source": "懂球帝",
       "text": "30秒看懂五名球员确定缺席且不会进入大名单马里奥和法比奥重新成为名单选项最终名单将在最后一次训练后决定汉堡主帅梅林·波尔钦在北部德比赛前发布会上公布人员情况：兰博、比莱尔、桑比、乔丹和尤西无法出场…"
+     },
+     {
+      "title": "武什科维奇解禁回归，HSV北德比大名单待定",
+      "url": "https://m.dongqiudi.com/xinwen/216684",
+      "source": "懂球帝",
+      "text": "30秒看懂武什科维奇结束四年禁赛，有望进入汉堡北德比名单汉堡中场纳迪尔、伦贝格、洛孔加等多人缺阵不莱梅格吕尔和…"
      },
      {
       "title": "赖斯首次以不莱梅身份出战北部德比，客战汉堡",
@@ -16726,7 +15027,7 @@
    ],
    "confidence": "high",
    "is_cold_start": false,
-   "main_pick": "阿莫林：很乐意长留米兰，盼伤员尽快回归",
+   "main_pick": "利西奇萨勒马克斯、加比亚、托莫里等六人因伤缺阵",
    "handicap": {
     "spread": -1.0,
     "pick": "让球负"
@@ -16846,163 +15147,8 @@
      "status": "out"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "AC米兰",
-     "n": 14,
-     "core_avg": 80.3,
-     "form_avg": 6.79,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "迭戈·莫雷拉",
-       "pos": "FW",
-       "oti": 78.02,
-       "dii": 70.78,
-       "gim": 90.47,
-       "form": 7.2,
-       "cons": 3.28,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "阿德里安·拉比奥",
-       "pos": "MF",
-       "oti": 85.28,
-       "dii": 35.11,
-       "gim": 86.23,
-       "form": 6.9,
-       "cons": 8.76,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "克里斯蒂安·普利西奇",
-       "pos": "MF",
-       "oti": 80.97,
-       "dii": 37.21,
-       "gim": 82.94,
-       "form": 7.8,
-       "cons": 4.93,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "楚克乌泽",
-       "pos": "MF",
-       "oti": 70.31,
-       "dii": 39.11,
-       "gim": 70.85,
-       "form": 6.9,
-       "cons": 62.96,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "马里奥·希拉",
-       "pos": "DF",
-       "oti": 47.73,
-       "dii": 54.6,
-       "gim": 70.83,
-       "form": 6.8,
-       "cons": 54.74,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    },
-    "away": {
-     "team": "弗洛西诺",
-     "n": 12,
-     "core_avg": 76.3,
-     "form_avg": 6.67,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "卡洛",
-       "pos": "MF",
-       "oti": 88.07,
-       "dii": 28.54,
-       "gim": 87.62,
-       "form": 7.6,
-       "cons": 24.09,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "克韦尔纳泽",
-       "pos": "MF",
-       "oti": 83.86,
-       "dii": 50.51,
-       "gim": 80.73,
-       "form": 6.6,
-       "cons": 6.2,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "弗·盖杰米斯",
-       "pos": "FW",
-       "oti": 71.06,
-       "dii": 34.04,
-       "gim": 76.89,
-       "form": 6.8,
-       "cons": 4.93,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "赖蒙多",
-       "pos": "FW",
-       "oti": 69.68,
-       "dii": 29.74,
-       "gim": 73.34,
-       "form": 7.3,
-       "cons": 2.74,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "罗曼·施密德",
-       "pos": "MF",
-       "oti": 80.55,
-       "dii": 30.61,
-       "gim": 63.0,
-       "form": 6.8,
-       "cons": 22.26,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -17481,11 +15627,11 @@
       "0": "32",
       "1": "9.5",
       "2": "5",
-      "3": "3.75",
-      "4": "4",
+      "3": "3.65",
+      "4": "3.9",
       "5": "5.6",
-      "6": "8.5",
-      "7+": "9.5"
+      "6": "9",
+      "7+": "10.5"
      },
      "htft": {
       "胜胜": "2",
@@ -17691,11 +15837,11 @@
      }
     ],
     "weather": {
-     "t_min": 5.9,
+     "t_min": 5.6,
      "t_max": 8.1,
-     "pop": 33,
-     "rain": 0.1,
-     "wind": 8.8,
+     "pop": 15,
+     "rain": 0.0,
+     "wind": 8.9,
      "grade": "ok",
      "city": "米兰"
     },
@@ -17802,7 +15948,7 @@
       "gd": -3
      }
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
       "title": "AC米兰对弗罗西诺内前瞻：状态、伤停、预计首发等",
@@ -17817,16 +15963,10 @@
       "text": "30秒看懂阿莫林称很乐意留在米兰，甚至愿意长留米兰明天18点主场对弗罗西诺内，意甲第12轮阿莫林希望萨勒马克尔…"
      },
      {
-      "title": "阿莫林：“没有拉莫斯，米兰不进球，巴尔迪尼帮助卡马尔达更快乐地回归”",
-      "url": "https://m.dongqiudi.com/xinwen/210670",
+      "title": "米兰主场迎战弗罗西诺内，阿莫林公布预计首发",
+      "url": "https://m.dongqiudi.com/xinwen/217699",
       "source": "懂球帝",
-      "text": "30秒看懂阿莫林称米兰进攻推进不足，拉莫斯进球少是球队的问题帕夫洛维奇伤情好转将随队出征，是否首发待定卡马尔达…"
-     },
-     {
-      "title": "米兰主场迎战弗罗西诺内，莫德里奇领衔首发",
-      "url": "https://m.dongqiudi.com/xinwen/213560",
-      "source": "懂球帝",
-      "text": "30秒看懂米兰主场对弗罗西诺内，意甲第12轮周日14时开球米兰24分第4，弗罗西诺内20分第6米兰首发含莫德里…"
+      "text": "30秒看懂米兰22日18时圣西罗迎弗罗西诺内，意甲第12轮预计首发含迈尼昂、莫德里奇、拉莫斯、普利西奇萨勒马克斯、加比亚、托莫里等六人因伤缺阵2026年最后一个国际比赛日间歇期结束后，阿莫林执教的米兰重返联赛赛场。"
      },
      {
       "title": "AC米兰 vs 弗罗西诺内历史交锋：6次交手AC米兰4胜2平0负",
@@ -17839,6 +15979,12 @@
       "url": "https://m.dongqiudi.com/xinwen/202536",
       "source": "懂球帝",
       "text": "30秒看懂施密德称对手是热门，比赛将与对卡利亚里一战完全不同他表示意甲与德甲完全不同，中场对抗必须时刻在线他称…"
+     },
+     {
+      "title": "阿莫林盛赞普利西奇，称这位美国国脚是AC米兰的现在和未来",
+      "url": "https://m.dongqiudi.com/xinwen/214085",
+      "source": "懂球帝",
+      "text": "30秒看懂阿莫林称普利西奇是AC米兰的现在与未来普利西奇本赛季意甲8场4球，德比战破门米兰本赛季联赛仅一负，普…"
      }
     ],
     "intel_at": "2026-11-22"
@@ -18156,89 +16302,8 @@
     }
    ],
    "injuries": [],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "away": {
-     "team": "利勒斯特",
-     "n": 15,
-     "core_avg": 73.1,
-     "form_avg": 6.79,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "兰格",
-       "pos": "DF",
-       "oti": 61.14,
-       "dii": 79.41,
-       "gim": 76.44,
-       "form": 6.7,
-       "cons": 22.44,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "R. Gabrielsen",
-       "pos": "DF",
-       "oti": 42.08,
-       "dii": 45.38,
-       "gim": 76.43,
-       "form": 7.4,
-       "cons": 10.22,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "弗拉迪米罗",
-       "pos": "FW",
-       "oti": 55.11,
-       "dii": 78.09,
-       "gim": 75.47,
-       "form": 6.9,
-       "cons": 21.11,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "福斯",
-       "pos": "DF",
-       "oti": 34.56,
-       "dii": 42.16,
-       "gim": 73.76,
-       "form": 7.2,
-       "cons": 21.11,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "吉·尼海姆",
-       "pos": "FW",
-       "oti": 44.29,
-       "dii": 91.0,
-       "gim": 63.29,
-       "form": 6.9,
-       "cons": 19.33,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -18816,7 +16881,7 @@
       ]
      }
     ],
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
       "title": "租借小将回归萨普斯堡08：已成为更成熟的球员",
@@ -18896,9 +16961,9 @@
     "logo": "assets/logo/teams/505.png"
    },
    "odds": {
-    "home": 4.7,
-    "draw": 4.4,
-    "away": 1.43,
+    "home": 4.95,
+    "draw": 4.5,
+    "away": 1.4,
     "handicap": 1.0,
     "bookmaker": ""
    },
@@ -19006,21 +17071,21 @@
     {
      "kind": "direction",
      "label": "客胜",
-     "prob": 0.73,
+     "prob": 0.742,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "平",
-     "prob": 0.202,
+     "prob": 0.197,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "主胜",
-     "prob": 0.068,
+     "prob": 0.062,
      "rank": 3,
      "note": ""
     },
@@ -19034,20 +17099,20 @@
     {
      "kind": "score",
      "label": "0-2",
-     "prob": 0.094,
+     "prob": 0.096,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "1-1",
-     "prob": 0.091,
+     "label": "1-3",
+     "prob": 0.09,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "1-3",
+     "label": "1-1",
      "prob": 0.089,
      "rank": 4,
      "note": ""
@@ -19055,21 +17120,21 @@
     {
      "kind": "score",
      "label": "0-1",
-     "prob": 0.082,
+     "prob": 0.083,
      "rank": 5,
      "note": ""
     },
     {
      "kind": "score",
      "label": "0-3",
-     "prob": 0.071,
+     "prob": 0.074,
      "rank": 6,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "3 球",
-     "prob": 0.188,
+     "prob": 0.191,
      "rank": 1,
      "note": ""
     },
@@ -19083,38 +17148,38 @@
     {
      "kind": "goals",
      "label": "4 球",
-     "prob": 0.089,
+     "prob": 0.09,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "客/客",
-     "prob": 0.397,
+     "prob": 0.407,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "平/客",
-     "prob": 0.17,
+     "prob": 0.172,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "主/主",
-     "prob": 0.113,
+     "prob": 0.107,
      "rank": 3,
      "note": ""
     }
    ],
    "confidence": "high",
    "is_cold_start": false,
-   "main_pick": "今夏换帅萨里",
+   "main_pick": "此后因伤缺阵泽林斯…",
    "handicap": {
     "spread": 1.0,
-    "pick": "让球胜"
+    "pick": "让球负"
    },
    "h2h": [
     {
@@ -19288,163 +17353,8 @@
      "status": "doubt"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "亚特兰大",
-     "n": 18,
-     "core_avg": 69.0,
-     "form_avg": 6.81,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "尼古拉·克尔斯托维奇",
-       "pos": "FW",
-       "oti": 80.89,
-       "dii": 35.24,
-       "gim": 78.16,
-       "form": 8.2,
-       "cons": 0.73,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "扎莱夫斯基",
-       "pos": "FW",
-       "oti": 65.23,
-       "dii": 92.56,
-       "gim": 72.15,
-       "form": 6.9,
-       "cons": 22.26,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "夏尔·德凯特拉雷",
-       "pos": "FW",
-       "oti": 53.11,
-       "dii": 59.22,
-       "gim": 70.89,
-       "form": 7.2,
-       "cons": 54.74,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "斯卡尔维尼",
-       "pos": "DF",
-       "oti": 30.08,
-       "dii": 38.62,
-       "gim": 63.85,
-       "form": 6.6,
-       "cons": 90.51,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "拉乌尔·贝拉诺瓦",
-       "pos": "DF",
-       "oti": 71.87,
-       "dii": 47.28,
-       "gim": 60.01,
-       "form": 6.5,
-       "cons": 93.07,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    },
-    "away": {
-     "team": "国际米兰",
-     "n": 14,
-     "core_avg": 81.7,
-     "form_avg": 6.91,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "马库斯·图拉姆",
-       "pos": "FW",
-       "oti": 78.97,
-       "dii": 49.86,
-       "gim": 89.43,
-       "form": 7.3,
-       "cons": 31.02,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "哈坎·恰尔汗奥卢",
-       "pos": "MF",
-       "oti": 83.54,
-       "dii": 50.66,
-       "gim": 81.8,
-       "form": 6.7,
-       "cons": 26.46,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "卡洛斯·奥古斯托",
-       "pos": "DF",
-       "oti": 91.91,
-       "dii": 70.73,
-       "gim": 81.32,
-       "form": 6.8,
-       "cons": 32.66,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "劳塔罗·马丁内斯",
-       "pos": "FW",
-       "oti": 79.81,
-       "dii": 56.11,
-       "gim": 80.28,
-       "form": 7.3,
-       "cons": 8.03,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "阿坎吉",
-       "pos": "DF",
-       "oti": 60.73,
-       "dii": 71.49,
-       "gim": 75.49,
-       "form": 7.0,
-       "cons": 95.44,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -19574,53 +17484,53 @@
       "p": 11
      }
     ],
-    "lam_home": 1.242,
-    "lam_away": 2.271,
+    "lam_home": 1.213,
+    "lam_away": 2.301,
     "lam_total": 3.513,
-    "upset_prob": 35.5,
+    "upset_prob": 34.3,
     "upset_level": "低",
-    "rq_best_ev": 0.895,
-    "rq_best_odds": 2.32,
+    "rq_best_ev": 0.866,
+    "rq_best_odds": 2.25,
     "quad_top": {
      "home": {
       "score": "2:1",
-      "prob": 2.0
+      "prob": 1.8
      },
      "draw": {
       "score": "1:1",
-      "prob": 9.1
+      "prob": 8.9
      },
      "away": {
       "score": "1:2",
       "prob": 11.7
      }
     },
-    "prob_home": 6.8,
-    "prob_draw": 20.2,
-    "prob_away": 73.0,
+    "prob_home": 6.2,
+    "prob_draw": 19.7,
+    "prob_away": 74.2,
     "data_n": {
      "home": 25,
      "away": 25
     },
     "headline": {
      "score": "1:2",
-     "prob": 11.5
+     "prob": 12.3
     },
     "htft_half": {
-     "home": 19.8,
-     "draw": 34.1,
-     "away": 46.1
+     "home": 19.1,
+     "draw": 34.0,
+     "away": 46.9
     },
     "htft_cells": {
-     "主/主": 11.3,
-     "主/平": 4.7,
+     "主/主": 10.7,
+     "主/平": 4.6,
      "主/客": 3.8,
-     "平/主": 6.9,
-     "平/平": 10.1,
-     "平/客": 17.0,
-     "客/主": 1.7,
-     "客/平": 4.7,
-     "客/客": 39.7
+     "平/主": 6.7,
+     "平/平": 10.0,
+     "平/客": 17.2,
+     "客/主": 1.6,
+     "客/平": 4.6,
+     "客/客": 40.7
     },
     "form_net": {
      "home_7": [
@@ -20207,33 +18117,39 @@
      }
     ],
     "weather": {
-     "t_min": 5.0,
-     "t_max": 7.0,
-     "pop": 5,
+     "t_min": 4.9,
+     "t_max": 7.3,
+     "pop": 0,
      "rain": 0.0,
-     "wind": 3.7,
+     "wind": 3.1,
      "grade": "ok",
      "city": "贝加莫"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
-      "title": "齐林斯基脚伤未愈，国米客战亚特兰大存疑",
-      "url": "https://m.dongqiudi.com/xinwen/214332",
+      "title": "泽林斯基带伤归队，国米客战亚特兰大前出战成疑",
+      "url": "https://m.dongqiudi.com/xinwen/217558",
       "source": "懂球帝",
-      "text": "30秒看懂齐林斯基脚伤未愈，连续单独训练，出战亚特兰大成疑。国米周六上午完成赛前最后一练，齐林斯基未随队合练。恰尔汗奥卢和巴雷拉将坐镇中场，苏契奇与姆希塔良争另一位置。"
+      "text": "30秒看懂泽林斯基带脚伤从波兰队返回国际米兰意媒称他可能缺席周日客战亚特兰大国米将在周六决定他能否出战国际米兰中场彼得·泽林斯基从波兰国家队归来时带有伤病问题。"
+     },
+     {
+      "title": "国米客战亚特兰大，奇武考虑让柯蒂斯·琼斯首发",
+      "url": "https://m.dongqiudi.com/xinwen/217842",
+      "source": "懂球帝",
+      "text": "30秒看懂国米今晚客场对亚特兰大，奇武考虑让柯蒂斯·琼斯首发琼斯上次出场是9月19日对罗马，此后因伤缺阵泽林斯…"
+     },
+     {
+      "title": "亚特兰大迎战国际米兰，近5次交锋国米4胜1平",
+      "url": "https://m.dongqiudi.com/xinwen/217587",
+      "source": "懂球帝",
+      "text": "30秒看懂意甲第12轮亚特兰大主场对阵国际米兰国米28分列第二，亚特兰大14分排第12近5次交锋国米4胜1平，…"
      },
      {
       "title": "亚特兰大vs国际米兰历史交锋：31次交手亚特兰大5胜11平15负",
       "url": "https://m.dongqiudi.com/xinwen/214789",
       "source": "懂球帝",
       "text": "30秒看懂31次交手亚特兰大5胜11平15负亚特兰大进30球失55球，场均2.7球国际米兰近16次交手不败北京时间2026年11月23日03:45，意甲第12轮，亚特兰大坐镇主场对阵国际米兰。"
-     },
-     {
-      "title": "意甲第12轮国米客战亚特兰大，历史数据回顾",
-      "url": "https://m.dongqiudi.com/xinwen/213968",
-      "source": "懂球帝",
-      "text": "30秒看懂国米28分列第二，亚特兰大14分排第十二意甲130次交锋国米71胜35平24负国米近8次联赛对亚特兰大7胜1平国家队比赛日结束后意甲重燃战火，国际米兰将客场挑战亚特兰大，这是本赛季意甲第12轮的比赛。"
      },
      {
       "title": "对手分析：亚特兰大",
@@ -20246,12 +18162,6 @@
       "url": "https://m.dongqiudi.com/xinwen/214085",
       "source": "懂球帝",
       "text": "30秒看懂阿莫林称普利西奇是AC米兰的现在与未来普利西奇本赛季意甲8场4球，德比战破门米兰本赛季联赛仅一负，普…"
-     },
-     {
-      "title": "卢加诺新球场项目获国际奖项",
-      "url": "https://m.dongqiudi.com/xinwen/197018",
-      "source": "懂球帝",
-      "text": "30秒看懂卢加诺AILArena获ESSMA球场发展类别一等奖颁奖礼11月9日在尼斯举行，26国250多名从业者出席副主席布拉泽称新球场是俱乐部战略性基础设施卢加诺的新球场AILArena获得了一项国际奖项。"
      }
     ],
     "intel_at": "2026-11-22"
@@ -20295,9 +18205,9 @@
     "logo": "assets/logo/teams/1298.png"
    },
    "odds": {
-    "home": 1.27,
-    "draw": 4.85,
-    "away": 6.9,
+    "home": 1.25,
+    "draw": 5.0,
+    "away": 7.2,
     "handicap": -1.0,
     "bookmaker": ""
    },
@@ -20405,63 +18315,63 @@
     {
      "kind": "direction",
      "label": "主胜",
-     "prob": 0.735,
+     "prob": 0.744,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "平",
-     "prob": 0.224,
+     "prob": 0.218,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "客胜",
-     "prob": 0.042,
+     "prob": 0.038,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-0",
-     "prob": 0.169,
+     "prob": 0.17,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "score",
      "label": "2-0",
-     "prob": 0.155,
+     "prob": 0.158,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "score",
      "label": "2-1",
-     "prob": 0.105,
+     "prob": 0.104,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-1",
-     "prob": 0.104,
+     "prob": 0.101,
      "rank": 4,
      "note": ""
     },
     {
      "kind": "score",
      "label": "3-0",
-     "prob": 0.095,
+     "prob": 0.098,
      "rank": 5,
      "note": ""
     },
     {
      "kind": "score",
      "label": "0-0",
-     "prob": 0.083,
+     "prob": 0.082,
      "rank": 6,
      "note": ""
     },
@@ -20475,35 +18385,35 @@
     {
      "kind": "goals",
      "label": "3 球",
-     "prob": 0.2,
+     "prob": 0.202,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "1 球",
-     "prob": 0.169,
+     "prob": 0.17,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "主/主",
-     "prob": 0.418,
+     "prob": 0.426,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "平/主",
-     "prob": 0.209,
+     "prob": 0.211,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "平/平",
-     "prob": 0.145,
+     "prob": 0.144,
      "rank": 3,
      "note": ""
     }
@@ -20621,163 +18531,8 @@
      "status": "doubt"
     }
    ],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "马赛",
-     "n": 11,
-     "core_avg": 74.5,
-     "form_avg": 6.8,
-     "high_fatigue": 2,
-     "top": [
-      {
-       "name": "阿明·古伊里",
-       "pos": "FW",
-       "oti": 74.13,
-       "dii": 26.59,
-       "gim": 90.3,
-       "form": 7.0,
-       "cons": 7.01,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "希马德·阿卜德利",
-       "pos": "MF",
-       "oti": 47.36,
-       "dii": 35.28,
-       "gim": 72.18,
-       "form": 6.4,
-       "cons": 20.14,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "伊戈尔·派尚",
-       "pos": "MF",
-       "oti": 65.8,
-       "dii": 51.94,
-       "gim": 70.25,
-       "form": 7.0,
-       "cons": 38.46,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "阿明·阿里特",
-       "pos": "MF",
-       "oti": 70.8,
-       "dii": 45.1,
-       "gim": 70.08,
-       "form": 6.8,
-       "cons": 0.0,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "蒂莫西·维阿",
-       "pos": "DF",
-       "oti": 75.28,
-       "dii": 45.46,
-       "gim": 69.8,
-       "form": 7.0,
-       "cons": 21.72,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    },
-    "away": {
-     "team": "勒芒",
-     "n": 15,
-     "core_avg": 61.9,
-     "form_avg": 6.53,
-     "high_fatigue": 0,
-     "top": [
-      {
-       "name": "阿·布拉巴",
-       "pos": "MF",
-       "oti": 87.36,
-       "dii": 47.64,
-       "gim": 74.57,
-       "form": 7.3,
-       "cons": 67.19,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "卡洛达",
-       "pos": "DF",
-       "oti": 89.47,
-       "dii": 64.08,
-       "gim": 68.66,
-       "form": 6.5,
-       "cons": 50.68,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "路易斯·马富塔",
-       "pos": "FW",
-       "oti": 51.28,
-       "dii": 29.93,
-       "gim": 65.21,
-       "form": 6.6,
-       "cons": 50.68,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "布雷泰勒",
-       "pos": "MF",
-       "oti": 41.67,
-       "dii": 80.33,
-       "gim": 57.11,
-       "form": 6.8,
-       "cons": 58.14,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "拉明·布阿德",
-       "pos": "MF",
-       "oti": 27.89,
-       "dii": 65.68,
-       "gim": 43.71,
-       "form": 6.5,
-       "cons": 40.27,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -20907,53 +18662,53 @@
       "p": 11
      }
     ],
-    "lam_home": 1.836,
-    "lam_away": 0.677,
+    "lam_home": 1.857,
+    "lam_away": 0.656,
     "lam_total": 2.513,
-    "upset_prob": 42.5,
+    "upset_prob": 41.3,
     "upset_level": "中",
-    "rq_best_ev": 1.487,
-    "rq_best_odds": 2.88,
+    "rq_best_ev": 1.53,
+    "rq_best_odds": 3.0,
     "quad_top": {
      "home": {
       "score": "1:0",
-      "prob": 16.9
+      "prob": 17.0
      },
      "draw": {
       "score": "1:1",
-      "prob": 10.4
+      "prob": 10.1
      },
      "away": {
       "score": "0:1",
-      "prob": 1.7
+      "prob": 1.6
      }
     },
-    "prob_home": 73.5,
-    "prob_draw": 22.4,
-    "prob_away": 4.2,
+    "prob_home": 74.4,
+    "prob_draw": 21.8,
+    "prob_away": 3.8,
     "data_n": {
      "home": 25,
      "away": 11
     },
     "headline": {
      "score": "2:1",
-     "prob": 11.5
+     "prob": 11.4
     },
     "htft_half": {
-     "home": 46.2,
-     "draw": 40.9,
-     "away": 12.9
+     "home": 46.8,
+     "draw": 40.7,
+     "away": 12.4
     },
     "htft_cells": {
-     "主/主": 41.8,
-     "主/平": 3.6,
+     "主/主": 42.6,
+     "主/平": 3.5,
      "主/客": 0.7,
-     "平/主": 20.9,
-     "平/平": 14.5,
-     "平/客": 5.5,
+     "平/主": 21.1,
+     "平/平": 14.4,
+     "平/客": 5.3,
      "客/主": 2.4,
-     "客/平": 3.6,
-     "客/客": 6.9
+     "客/平": 3.5,
+     "客/客": 6.5
     },
     "form_net": {
      "home_7": [
@@ -21171,16 +18926,16 @@
     },
     "odds_full": {
      "spf": {
-      "胜": "1.27",
-      "平": "4.85",
-      "负": "6.9"
+      "胜": "1.25",
+      "平": "5",
+      "负": "7.2"
      },
      "rq": [
       {
        "handicap": "-1",
-       "胜": "1.93",
+       "胜": "1.88",
        "平": "3.65",
-       "负": "2.88"
+       "负": "3"
       }
      ],
      "score": {
@@ -21218,24 +18973,24 @@
      },
      "goals": {
       "0": "19",
-      "1": "6.75",
-      "2": "4.2",
-      "3": "3.5",
-      "4": "4.4",
+      "1": "6.9",
+      "2": "4.4",
+      "3": "3.4",
+      "4": "4.3",
       "5": "6.9",
       "6": "11",
       "7+": "15"
      },
      "htft": {
-      "胜胜": "1.85",
+      "胜胜": "1.78",
       "胜平": "18",
       "胜负": "50",
       "平胜": "4",
-      "平平": "7.7",
-      "平负": "15",
+      "平平": "8.2",
+      "平负": "17",
       "负胜": "22",
       "负平": "18",
-      "负负": "11"
+      "负负": "12"
      },
      "kickoff": ""
     },
@@ -21450,15 +19205,15 @@
      }
     ],
     "weather": {
-     "t_min": 13.7,
-     "t_max": 15.1,
+     "t_min": 13.9,
+     "t_max": 15.0,
      "pop": 0,
      "rain": 0.0,
-     "wind": 34.0,
+     "wind": 32.6,
      "grade": "warn",
      "city": "马赛"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
      {
       "title": "马赛对勒芒前瞻：伤停和预计首发",
@@ -21491,10 +19246,10 @@
       "text": "30秒看懂马赛主场对勒芒，11月23日03:45开球马赛预计首发与11月8日胜朗斯一役相同勒芒预计首发与11月…"
      },
      {
-      "title": "马赛迎战勒芒前，埃甘-莱利谈重获重用：找到了节奏",
-      "url": "https://m.dongqiudi.com/xinwen/207619",
+      "title": "马赛主场迎战勒芒前，韦洛德罗姆上座率下滑引关注",
+      "url": "https://m.dongqiudi.com/xinwen/217787",
       "source": "懂球帝",
-      "text": "30秒看懂埃甘-莱利上赛季仅16次出场，本赛季成为马赛主力中卫马赛1-0勒沃库森，热内西奥称赞其防守表现埃甘-莱利称与阿格尔德搭档逐场建立默契马赛后卫CJ·埃甘-莱利本赛季在队内的处境发生了明显变化。"
+      "text": "30秒看懂马赛对勒芒预计约54000名观众到场本季韦洛德罗姆场均上座58578人马赛近5场法甲连胜，热内西奥称…"
      }
     ],
     "intel_at": "2026-11-22"
@@ -21538,9 +19293,9 @@
     "logo": "assets/logo/teams/530.png"
    },
    "odds": {
-    "home": 6.4,
-    "draw": 4.05,
-    "away": 1.36,
+    "home": 7.0,
+    "draw": 4.3,
+    "away": 1.31,
     "handicap": 1.0,
     "bookmaker": ""
    },
@@ -21648,112 +19403,112 @@
     {
      "kind": "direction",
      "label": "客胜",
-     "prob": 0.715,
+     "prob": 0.734,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "平",
-     "prob": 0.254,
+     "prob": 0.241,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "direction",
      "label": "主胜",
-     "prob": 0.031,
+     "prob": 0.025,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
      "label": "0-1",
-     "prob": 0.209,
+     "prob": 0.212,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "score",
      "label": "0-2",
-     "prob": 0.165,
+     "prob": 0.173,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "1-1",
-     "prob": 0.114,
+     "label": "0-0",
+     "prob": 0.107,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "score",
-     "label": "0-0",
-     "prob": 0.109,
+     "label": "1-1",
+     "prob": 0.107,
      "rank": 4,
      "note": ""
     },
     {
      "kind": "score",
      "label": "1-2",
-     "prob": 0.098,
+     "prob": 0.096,
      "rank": 5,
      "note": ""
     },
     {
      "kind": "score",
      "label": "0-3",
-     "prob": 0.087,
+     "prob": 0.094,
      "rank": 6,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "2 球",
-     "prob": 0.279,
+     "prob": 0.28,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "1 球",
-     "prob": 0.209,
+     "prob": 0.212,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "goals",
      "label": "3 球",
-     "prob": 0.185,
+     "prob": 0.19,
      "rank": 3,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "客/客",
-     "prob": 0.383,
+     "prob": 0.399,
      "rank": 1,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "平/客",
-     "prob": 0.213,
+     "prob": 0.218,
      "rank": 2,
      "note": ""
     },
     {
      "kind": "htft",
      "label": "平/平",
-     "prob": 0.177,
+     "prob": 0.174,
      "rank": 3,
      "note": ""
     }
    ],
    "confidence": "high",
    "is_cold_start": false,
-   "main_pick": "马竞客战赫塔费，卢克曼伤缺力争避免三连败",
+   "main_pick": "赫塔菲罗梅罗、普比尔、卢克曼伤缺，茨科赫塔菲古德利停赛",
    "handicap": {
     "spread": 1.0,
     "pick": "让球胜"
@@ -21863,89 +19618,8 @@
     }
    ],
    "injuries": [],
-   "squad": {
-    "source": "球小策球员数据中心",
-    "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
-    "home": {
-     "team": "赫塔费",
-     "n": 14,
-     "core_avg": 55.6,
-     "form_avg": 6.49,
-     "high_fatigue": 1,
-     "top": [
-      {
-       "name": "拉蒙·特拉茨",
-       "pos": "MF",
-       "oti": 50.8,
-       "dii": 48.43,
-       "gim": 59.63,
-       "form": 6.4,
-       "cons": 29.48,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "罗梅罗",
-       "pos": "DF",
-       "oti": 34.53,
-       "dii": 69.3,
-       "gim": 59.21,
-       "form": 6.7,
-       "cons": 36.03,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "莫希卡",
-       "pos": "DF",
-       "oti": 65.48,
-       "dii": 37.75,
-       "gim": 55.39,
-       "form": 6.1,
-       "cons": 26.03,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "马丁·萨特里亚诺",
-       "pos": "FW",
-       "oti": 45.94,
-       "dii": 56.58,
-       "gim": 52.81,
-       "form": 6.6,
-       "cons": 5.69,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "达科南",
-       "pos": "DF",
-       "oti": 31.81,
-       "dii": 52.38,
-       "gim": 51.04,
-       "form": 6.7,
-       "cons": 43.97,
-       "fatigue": "High",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      }
-     ]
-    }
-   },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -22123,53 +19797,53 @@
       "p": 12
      }
     ],
-    "lam_home": 0.594,
-    "lam_away": 1.585,
+    "lam_home": 0.554,
+    "lam_away": 1.626,
     "lam_total": 2.18,
-    "upset_prob": 39.2,
+    "upset_prob": 36.7,
     "upset_level": "低",
-    "rq_best_ev": 1.027,
-    "rq_best_odds": 2.58,
+    "rq_best_ev": 1.064,
+    "rq_best_odds": 2.75,
     "quad_top": {
      "home": {
       "score": "1:0",
-      "prob": 1.5
+      "prob": 1.2
      },
      "draw": {
-      "score": "1:1",
-      "prob": 11.4
+      "score": "0:0",
+      "prob": 10.7
      },
      "away": {
       "score": "0:1",
-      "prob": 20.9
+      "prob": 21.2
      }
     },
-    "prob_home": 3.1,
-    "prob_draw": 25.4,
-    "prob_away": 71.5,
+    "prob_home": 2.5,
+    "prob_draw": 24.1,
+    "prob_away": 73.4,
     "data_n": {
      "home": 25,
      "away": 25
     },
     "headline": {
      "score": "0:1",
-     "prob": 15.8
+     "prob": 16.2
     },
     "htft_half": {
-     "home": 12.6,
-     "draw": 45.0,
-     "away": 42.4
+     "home": 11.6,
+     "draw": 44.7,
+     "away": 43.8
     },
     "htft_cells": {
-     "主/主": 7.1,
-     "主/平": 3.5,
+     "主/主": 6.3,
+     "主/平": 3.3,
      "主/客": 1.9,
-     "平/主": 6.0,
-     "平/平": 17.7,
-     "平/客": 21.3,
-     "客/主": 0.6,
-     "客/平": 3.5,
-     "客/客": 38.3
+     "平/主": 5.4,
+     "平/平": 17.4,
+     "平/客": 21.8,
+     "客/主": 0.5,
+     "客/平": 3.3,
+     "客/客": 39.9
     },
     "form_net": {
      "home_7": [
@@ -22720,27 +20394,27 @@
      }
     ],
     "weather": {
-     "t_min": 7.0,
-     "t_max": 11.2,
+     "t_min": 7.5,
+     "t_max": 11.5,
      "pop": 0,
      "rain": 0.0,
-     "wind": 10.6,
+     "wind": 10.0,
      "grade": "ok",
      "city": "赫塔费"
     },
-    "hc_at": "2026-11-22 11:11",
+    "hc_at": "2026-11-22 14:29",
     "intel": [
+     {
+      "title": "马竞客战赫塔菲 西蒙尼后防伤兵满营",
+      "url": "https://m.dongqiudi.com/xinwen/217852",
+      "source": "懂球帝",
+      "text": "30秒看懂马竞连败拜仁和巴萨后客场对阵赫塔菲罗梅罗、普比尔、卢克曼伤缺，勒诺尔芒搭档汉茨科赫塔菲古德利停赛，乌…"
+     },
      {
       "title": "西蒙尼确认罗梅罗等三人缺阵，马竞客战赫塔费",
       "url": "https://m.dongqiudi.com/xinwen/212415",
       "source": "懂球帝",
       "text": "30秒看懂西蒙尼确认罗梅罗、普比尔和卢克曼缺席客战赫塔费西蒙尼称对勒诺尔芒有信心，但未确认其是否首发奥尔蒂斯或…"
-     },
-     {
-      "title": "马竞客战赫塔费，卢克曼伤缺力争避免三连败",
-      "url": "https://m.dongqiudi.com/xinwen/210871",
-      "source": "懂球帝",
-      "text": "30秒看懂马竞周日西甲客场挑战赫塔费，目前排名第三卢克曼膝伤缺阵，罗梅罗伤停，普比尔出战成疑马竞近四个联赛客场全胜，近两场零封对手马德里竞技将于周日晚间做客科利塞姆球场，在西甲联赛中对阵赫塔费。"
      },
      {
       "title": "卡瓦哈尔第35次马德里德比，赫塔费迎战马竞预计首发",
@@ -22755,16 +20429,16 @@
       "text": "30秒看懂赫塔费球迷协会在“蓝色情感”晚会颁奖，索里亚、萨特里亚诺、德尔莫拉尔获奖。索里亚因在西甲创造连续首发出场纪录获认可。萨特里亚诺被评为2025/2026赛季最佳球员。"
      },
      {
+      "title": "马竞客战赫塔费前，西蒙尼回应锋线进球少问题",
+      "url": "https://m.dongqiudi.com/xinwen/217855",
+      "source": "懂球帝",
+      "text": "30秒看懂马竞23日客场对阵赫塔费，此前已遭遇两连败西蒙尼称锋线不进球也能走到现在，进球后成绩会更好中卫普维尔…"
+     },
+     {
       "title": "赫塔费 vs 马德里竞技历史交锋：33次交手赫塔费2胜6平25负",
       "url": "https://m.dongqiudi.com/xinwen/214802",
       "source": "懂球帝",
       "text": "30秒看懂两队33次交手，赫塔费2胜6平25负。赫塔费进14球失64球，场均2.4球。马竞主场对赫塔费17战15胜2平0负。北京时间2026年11月23日04:00，西甲第13轮，赫塔费主场对阵马德里竞技。"
-     },
-     {
-      "title": "马德里竞技收购厄瓜多尔俱乐部，扩大国际网络",
-      "url": "https://m.dongqiudi.com/xinwen/198319",
-      "source": "懂球帝",
-      "text": "30秒看懂马竞完成对厄瓜多尔瓜亚基尔竞技俱乐部50%股份的收购，交易于11月13日公布。交易完成后两家所有者各在六人董事会中占三席，首次会议将选出马竞提名的主席。"
      }
     ],
     "intel_at": "2026-11-22"

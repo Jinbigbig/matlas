@@ -273,14 +273,14 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "惠灵顿",
       "pts": 10,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 2,
@@ -302,27 +302,27 @@
      },
      {
       "rank": 5,
+      "name": "麦克阿瑟",
+      "pts": 8,
+      "p": 5
+     },
+     {
+      "rank": 6,
       "name": "珀斯",
       "pts": 7,
       "p": 5
      },
      {
-      "rank": 6,
+      "rank": 7,
       "name": "墨尔本城",
       "pts": 7,
       "p": 4
      },
      {
-      "rank": 7,
+      "rank": 8,
       "name": "奥克兰FC",
       "pts": 6,
       "p": 5
-     },
-     {
-      "rank": 8,
-      "name": "麦克阿瑟",
-      "pts": 5,
-      "p": 4
      },
      {
       "rank": 9,
@@ -399,6 +399,10 @@
     },
     "form_net": {
      "home_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
       {
        "gf": 1,
        "ga": 0
@@ -494,6 +498,10 @@
      ],
      "home_home": [
       {
+       "gf": 0,
+       "ga": 1
+      },
+      {
        "gf": 1,
        "ga": 0
       },
@@ -539,6 +547,10 @@
       }
      ],
      "away_7": [
+      {
+       "gf": 1,
+       "ga": 0
+      },
       {
        "gf": 1,
        "ga": 3
@@ -609,6 +621,10 @@
       }
      ],
      "away_away": [
+      {
+       "gf": 1,
+       "ga": 0
+      },
       {
        "gf": 1,
        "ga": 3
@@ -1001,7 +1017,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "lam_home": 0.855,
     "lam_away": 1.609,
@@ -1053,6 +1069,10 @@
     },
     "form_net": {
      "home_7": [
+      {
+       "gf": 4,
+       "ga": 2
+      },
       {
        "gf": 1,
        "ga": 1
@@ -1144,6 +1164,10 @@
      ],
      "home_home": [
       {
+       "gf": 4,
+       "ga": 2
+      },
+      {
        "gf": 1,
        "ga": 1
       },
@@ -1194,6 +1218,10 @@
      ],
      "away_7": [
       {
+       "gf": 2,
+       "ga": 4
+      },
+      {
        "gf": 1,
        "ga": 2
       },
@@ -1235,6 +1263,10 @@
       }
      ],
      "away_away": [
+      {
+       "gf": 2,
+       "ga": 4
+      },
       {
        "gf": 1,
        "ga": 2
@@ -1636,7 +1668,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "lam_home": 1.946,
     "lam_away": 0.541,
@@ -2324,7 +2356,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "lam_home": 1.521,
     "lam_away": 0.995,
@@ -3053,7 +3085,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -3868,7 +3900,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -4813,7 +4845,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -5614,7 +5646,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -6183,7 +6215,7 @@
    "metrics_away": {
     "attack": 0,
     "defence": 65,
-    "control": 9,
+    "control": 13,
     "form": 26,
     "value": 35,
     "motivation": 87,
@@ -6456,7 +6488,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -7339,7 +7371,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -8319,7 +8351,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -9149,7 +9181,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -10237,7 +10269,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -11197,7 +11229,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -12086,7 +12118,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -12950,7 +12982,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -13952,7 +13984,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -14838,7 +14870,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -15916,7 +15948,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -16809,7 +16841,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -17589,7 +17621,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -18599,7 +18631,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -19625,7 +19657,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -20600,7 +20632,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -21659,7 +21691,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -22657,7 +22689,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -23518,7 +23550,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -24452,7 +24484,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "table": [
      {
@@ -25351,7 +25383,7 @@
     "settled_at": "2026-10-25"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T12:12:16+08:00",
+   "generated_at": "2026-11-22T15:07:29+08:00",
    "extras": {
     "lam_home": 1.83,
     "lam_away": 0.92,
