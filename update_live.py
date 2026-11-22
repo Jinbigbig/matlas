@@ -12,7 +12,7 @@ collect_lottery.py 和 push_live_pages.py 两个脚本，漏掉任一步都会
     python update_live.py --only live      # 只采比分直播
     python update_live.py --no-collect     # 跳过采集，重新出快照并发布
     python update_live.py --dry-run        # 采集 + 快照，不部署
-    python update_live.py --days 3         # 快照推今天起 3 天
+    python update_live.py --days 3         # 快照推昨天起 3 天（默认）
 """
 from __future__ import annotations
 
@@ -72,7 +72,7 @@ def main() -> int:
     ap.add_argument("--only", choices=list(COLLECT_ITEMS) + ["all"], default="all")
     ap.add_argument("--no-collect", action="store_true", help="跳过采集")
     ap.add_argument("--dry-run", action="store_true", help="只生成快照，不部署")
-    ap.add_argument("--days", type=int, default=2, help="快照推今天起 N 天（默认 2）")
+    ap.add_argument("--days", type=int, default=3, help="快照推昨天起 N 天（默认 3）")
     args = ap.parse_args()
 
     _load_dotenv()

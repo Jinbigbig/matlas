@@ -243,7 +243,17 @@ def _git_pub(args: list[str]) -> subprocess.CompletedProcess:
                           capture_output=True, text=True)
 
 
-def push_gh_snapshot(days: int = 2, *, publish: bool = True) -> bool:
+def window_dates(days: int) -> list[str]:
+    """推送窗口：昨天起 days 天（默认 3 = 昨天/今天/明天）。
+
+    跨夜结束的场次归属昨天，必须回写昨天那份快照；只推今天起会把
+    凌晨才结束的场次永远留在开赛时的进行中状态。
+    """
+    base = dt.date.today() - dt.timedelta(days=1)
+    return [(base + dt.timedelta(days=i)).isoformat() for i in range(days)]
+
+
+def push_gh_snapshot(days: int = 3, *, publish: bool = True) -> bool:
     """把实时快照写到唯一落点 GH（.publish/data/live → gh-pages），不写 CF 静态。
 
     无条件写入（手动 update_live 用）；是否触发由调用方判断。
@@ -254,8 +264,7 @@ def push_gh_snapshot(days: int = 2, *, publish: bool = True) -> bool:
         return False
     SNAP_DIR.mkdir(parents=True, exist_ok=True)
     wrote = []
-    for i in range(days):
-        d = (dt.date.today() + dt.timedelta(days=i)).isoformat()
+    for d in window_dates(days):
         full = live_server.live_for(d, light=False)
         lght = live_server.live_for(d, light=True)
         if not full:
@@ -298,24 +307,25 @@ def freeze_snapshot(st: dict) -> bool:
     light = live_server.live_for(today, light=True)
     if not _day_settled(light):
         return False
-    ok = push_gh_snapshot(days=2)
+    ok = push_gh_snapshot(days=3)
     if ok:
         st["frozen"] = today
         _save_state(st)
     return ok
 
 
-def push_all(*, only_date: str | None = None, days: int = 2) -> bool:
-    """推今天与明天的实时数据。
+def push_all(*, only_date: str | None = None, days: int = 3) -> bool:
+    """推昨天、今天、明天三天的实时数据。
 
-    免费版 KV 只有 1000 写/天，历史日期与更远未来由构建产物提供，
-    不重复占配额；实时比分只在这两天有意义。
+    昨天必须纳入窗口：跨夜结束的场次归属昨天，凌晨补录的终态要回流到
+    KV/快照，否则前端读到的还是开赛时的进行中状态。
+    免费版 KV 只有 1000 写/天，更早日期与更远未来由构建产物提供，
+    不重复占配额；指纹去重后每日写入仍远低于预算。
     """
     if only_date:
         targets = [only_date]
     else:
-        today = dt.date.today()
-        targets = [(today + dt.timedelta(days=i)).isoformat() for i in range(days)]
+        targets = window_dates(days)
     st = _load_state()
     try:
         results = [push_date(d, st) for d in targets]
@@ -341,7 +351,7 @@ def main() -> int:
     ap.add_argument("--loop", action="store_true", help="常驻循环推送")
     ap.add_argument("--date", help="只推指定日期 YYYY-MM-DD")
     ap.add_argument("--interval", type=int, default=int(_env("PUSH_INTERVAL", "60")), help="循环间隔秒（默认 60）")
-    ap.add_argument("--days", type=int, default=2, help="推送今天起 N 天（默认 2）")
+    ap.add_argument("--days", type=int, default=3, help="推送昨天起 N 天（默认 3：昨天/今天/明天）")
     args = ap.parse_args()
 
     _load_dotenv()
