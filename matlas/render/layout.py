@@ -1874,7 +1874,7 @@ window.LIVE_MODE = "remote";
       var st = c.querySelector("[data-live='stamp']");
       if (st && m.status === "已结束" && m.score) {
         var want = { "主胜": "H", "平": "D", "客胜": "A" }[st.getAttribute("data-pick")];
-        var g = String(m.score).match(/(\\d+)\\s*[:：]\\s*(\\d+)/);
+        var g = String(m.score).match(/(\\d+)\\s*[-:：]\\s*(\\d+)/);
         if (want && g) {
           var gf = Number(g[1]) > Number(g[2]) ? "H" : (Number(g[1]) < Number(g[2]) ? "A" : "D");
           var hit = want === gf;
