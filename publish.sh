@@ -95,11 +95,16 @@ echo "[2/5] 清空产物工作树（保留 .git）"
 TRASH="${TMPDIR:-/tmp}/matlas-publish-trash/$(date +%Y%m%d-%H%M%S)-$$"
 mkdir -p "$TRASH"
 # 实时快照是独立维护的唯一一份（data/live），页面发布不碰它：先移出保护，末尾移回。
+# 快照必须移出成功才继续：否则下面的 git add -A 会把 gh-pages 上这份快照提交删除，
+# 这是唯一兜底数据，一旦误删 GH 站在 KV 挂掉时就完全没数据（2026-11-22 实测丢过一次）。
 SNAP_KEEP=""
 if [ -d "$PUB/data/live" ]; then
   SNAP_KEEP="$TRASH/__snap_keep"
   mkdir -p "$SNAP_KEEP"
-  mv "$PUB/data/live" "$SNAP_KEEP/live" 2>/dev/null || SNAP_KEEP=""
+  if ! mv "$PUB/data/live" "$SNAP_KEEP/live" 2>/dev/null; then
+    echo "[!] 唯一快照 data/live 移出保护失败，中止发布以免误删。" >&2
+    exit 1
+  fi
 fi
 # 单项移动：偶发有目录被占用（Windows 索引 / 杀软扫描新素材）时只跳过该项，
 # 不因一个 mv 失败中断整条发布；随后的 cp 会覆盖同名内容，git add -A 照常收敛。
@@ -114,9 +119,13 @@ echo "[3/5] 同步 _site_gh → .publish"
 cp -r "$ROOT/_site_gh/." "$PUB/"
 touch "$PUB/.nojekyll"
 # 恢复被保护的唯一快照（data/live），确保页面发布不会抹掉实时数据。
+# 移回失败同样中止：产物可能已推送，但至少本地快照还在 SNAP_KEEP 里可人工找回。
 if [ -n "$SNAP_KEEP" ] && [ -d "$SNAP_KEEP/live" ]; then
   mkdir -p "$PUB/data"
-  mv "$SNAP_KEEP/live" "$PUB/data/live"
+  if ! mv "$SNAP_KEEP/live" "$PUB/data/live" 2>/dev/null; then
+    echo "[!] 唯一快照恢复失败，快照保留在 $SNAP_KEEP/live，请人工移回。" >&2
+    exit 1
+  fi
 fi
 
 echo "[4/5] 提交并推送 gh-pages"
