@@ -6,7 +6,7 @@
 <title>柏林联合 赛事专题 - Matlas</title>
 <meta name="description" content="柏林联合 全部已收录场次的方向命中率与逐场分析">
 <link rel="canonical" href="https://www.matlas.top/teams/柏林联合.html">
-<link rel="stylesheet" href="../assets/style.css?v=1795333340">
+<link rel="stylesheet" href="../assets/style.css?v=1795333608">
 <meta property="og:type" content="article">
 <meta property="og:title" content="柏林联合 赛事专题 - Matlas">
 <meta property="og:description" content="柏林联合 全部已收录场次的方向命中率与逐场分析">
@@ -293,7 +293,7 @@ window.LIVE_MODE = "remote";
       var st = c.querySelector("[data-live='stamp']");
       if (st && m.status === "已结束" && m.score) {
         var want = { "主胜": "H", "平": "D", "客胜": "A" }[st.getAttribute("data-pick")];
-        var g = String(m.score).match(/(\d+)\s*[:：]\s*(\d+)/);
+        var g = String(m.score).match(/(\d+)\s*[-:：]\s*(\d+)/);
         if (want && g) {
           var gf = Number(g[1]) > Number(g[2]) ? "H" : (Number(g[1]) < Number(g[2]) ? "A" : "D");
           var hit = want === gf;

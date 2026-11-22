@@ -6,7 +6,7 @@
 <title>赔率 - Matlas</title>
 <meta name="description" content="竞彩全玩法赔率快照：胜平负、让球、比分、总进球、半全场，完赛对照高亮">
 <link rel="canonical" href="https://www.matlas.top/odds.html">
-<link rel="stylesheet" href="assets/style.css?v=1795333340">
+<link rel="stylesheet" href="assets/style.css?v=1795333608">
 <meta property="og:type" content="article">
 <meta property="og:title" content="赔率 - Matlas">
 <meta property="og:description" content="竞彩全玩法赔率快照：胜平负、让球、比分、总进球、半全场，完赛对照高亮">
@@ -410,7 +410,7 @@ window.LIVE_MODE = "remote";
       var st = c.querySelector("[data-live='stamp']");
       if (st && m.status === "已结束" && m.score) {
         var want = { "主胜": "H", "平": "D", "客胜": "A" }[st.getAttribute("data-pick")];
-        var g = String(m.score).match(/(\d+)\s*[:：]\s*(\d+)/);
+        var g = String(m.score).match(/(\d+)\s*[-:：]\s*(\d+)/);
         if (want && g) {
           var gf = Number(g[1]) > Number(g[2]) ? "H" : (Number(g[1]) < Number(g[2]) ? "A" : "D");
           var hit = want === gf;

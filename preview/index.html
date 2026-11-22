@@ -6,7 +6,7 @@
 <title>每日赛事前瞻 - Matlas</title>
 <meta name="description" content="每日赛事前瞻列表：AI 报告逐日归档，方向、比分、总进球首选与信心分层">
 <link rel="canonical" href="https://www.matlas.top/preview/">
-<link rel="stylesheet" href="../assets/style.css?v=1795333340">
+<link rel="stylesheet" href="../assets/style.css?v=1795333608">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每日赛事前瞻 - Matlas">
 <meta property="og:description" content="每日赛事前瞻列表：AI 报告逐日归档，方向、比分、总进球首选与信心分层">
@@ -293,7 +293,7 @@ window.LIVE_MODE = "remote";
       var st = c.querySelector("[data-live='stamp']");
       if (st && m.status === "已结束" && m.score) {
         var want = { "主胜": "H", "平": "D", "客胜": "A" }[st.getAttribute("data-pick")];
-        var g = String(m.score).match(/(\d+)\s*[:：]\s*(\d+)/);
+        var g = String(m.score).match(/(\d+)\s*[-:：]\s*(\d+)/);
         if (want && g) {
           var gf = Number(g[1]) > Number(g[2]) ? "H" : (Number(g[1]) < Number(g[2]) ? "A" : "D");
           var hit = want === gf;
