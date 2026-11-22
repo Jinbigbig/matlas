@@ -1511,14 +1511,17 @@ def _mc_header(m: Match, pre: str = "") -> str:
     conf_lab = {"high": "高", "medium": "中", "low": "低", "none": "冷门"}.get(
         m.confidence, "未评级"
     )
-    # 已结算即出章：命中红✔，未中黑✘
-    stamp = ""
+    # 印章：已结算出章（红✔/黑✘），未结算留隐藏占位，带预测方向供前端按实时比分现算
+    top_dir = (m.forecasts_of("direction") or [None])[0]
+    pick_attr = f' data-pick="{C.esc(top_dir.label)}"' if top_dir else ""
     if m.result and m.result.direction_hit is not None:
         stamp = (
-            '<div class="prediction-stamp stamp-red">✔</div>'
+            f'<div class="prediction-stamp stamp-red" data-live="stamp"{pick_attr}>✔</div>'
             if m.result.direction_hit
-            else '<div class="prediction-stamp stamp-black">✘</div>'
+            else f'<div class="prediction-stamp stamp-black" data-live="stamp"{pick_attr}>✘</div>'
         )
+    else:
+        stamp = f'<div class="prediction-stamp" data-live="stamp"{pick_attr} hidden></div>'
     return (
         '<div class="mc-header"><div class="mc-meta">'
         f'<span class="date">{C.esc(date_txt)}</span>'

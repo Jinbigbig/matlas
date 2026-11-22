@@ -553,6 +553,7 @@ body:has(#at-tm:checked) .arch-count .ac-tm { display: inline; }
 .prediction-stamp { display: inline-flex; align-items: center; justify-content: center;
   width: 22px; height: 22px; font-size: 12px; line-height: 20px; border-width: 1px;
   border-radius: 50%; flex-shrink: 0; }
+.prediction-stamp[hidden] { display: none; }
 .stamp-red { color: #dc2626; border: 1px solid #dc2626; background: #fff1f2; }
 .stamp-black { color: #374151; border: 1px solid #374151; background: #f3f4f6; }
 
@@ -1868,6 +1869,19 @@ window.LIVE_MODE = "remote";
         badge.textContent = live ? (m.minute ? m.minute + "'" : "进行中") : m.status;
         badge.className = "mc-live" + (live ? " live" : "");
         badge.hidden = false;
+      }
+      // 命中印章：赛果一结束就按「预测方向 vs 实际比分」现算，不等重建页面。
+      var st = c.querySelector("[data-live='stamp']");
+      if (st && m.status === "已结束" && m.score) {
+        var want = { "主胜": "H", "平": "D", "客胜": "A" }[st.getAttribute("data-pick")];
+        var g = String(m.score).match(/(\\d+)\\s*[:：]\\s*(\\d+)/);
+        if (want && g) {
+          var gf = Number(g[1]) > Number(g[2]) ? "H" : (Number(g[1]) < Number(g[2]) ? "A" : "D");
+          var hit = want === gf;
+          st.className = "prediction-stamp " + (hit ? "stamp-red" : "stamp-black");
+          st.textContent = hit ? "✔" : "✘";
+          st.hidden = false;
+        }
       }
     }
     function pollCards() {
