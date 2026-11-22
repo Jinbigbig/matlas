@@ -1724,9 +1724,9 @@ window.LIVE_MODE = "remote";
   function ghUrl(date, light) {
     return GH + "/data/live/" + (light ? "light-" : "") + date + ".json?v=" + stamp();
   }
-  // 实时请求：8 秒超时 + 全局并发上限 3 + 页面隐藏时静默跳过。
+  // 实时请求：8 秒超时 + 全局并发上限 9（三源×多天）+ 页面隐藏时静默跳过。
   // 慢链路下若无超时，挂起的请求会占满浏览器对同域的连接，导致点击后整页长时间转圈。
-  var _pending = 0, _PMAX = 3, _fail = 0;
+  var _pending = 0, _PMAX = 9, _fail = 0;
   function getJson(u) {
     if (document.hidden || _pending >= _PMAX) return Promise.resolve(null);
     _pending++;
@@ -1759,7 +1759,12 @@ window.LIVE_MODE = "remote";
   function fetchLive(date, light) {
     var key = date + (light ? "|l" : "|f");
     var urls = [staticUrl(date, light)];
-    if (!LOCAL) urls.push(apiUrl(date, light));
+    if (!LOCAL) {
+      urls.push(apiUrl(date, light));
+      // CF 站把 GH 静态纳入并发择新：KV 挂掉时仍能读到唯一那份快照。
+      // GH 站的 staticUrl 本身就是同域 GH 静态，无需重复跨域请求。
+      if (!ON_GH) urls.push(ghUrl(date, light));
+    }
     return Promise.all(urls.map(getJson)).then(function (list) {
       var best = pickNewest(list);
       var prev = _lastGood[key];
@@ -1770,8 +1775,7 @@ window.LIVE_MODE = "remote";
         return best;
       }
       if (prev) return prev;
-      if (LOCAL || ON_GH) return null;
-      return getJson(ghUrl(date, light));
+      return null;
     });
   }
   // 轮询节拍：首次延迟 1.5s 让首屏资源先加载；正常 60s 一次，连续失败 3 次后降到 5 分钟。

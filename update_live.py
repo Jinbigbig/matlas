@@ -1,22 +1,22 @@
-"""一条命令跑完实时链路：采集 → 快照 → 部署（CF + GH 两站）。
+"""一条命令跑完实时链路：采集 → 赛果录入 → 页面重建 → 快照发布。
 
-采集只写本地 data/*.json，页面读的是边缘上的 /api/live，必须把
-_site/data/live/*.json 重新生成并部署，线上才会变。此前要手动跑
+静态快照只维护 GH 一份（.publish → gh-pages）；CF 站靠 KV，KV 不可达时
+前端跨域读 GH 那份兜底，两站不再各存一份（2026-11-22 架构红线）。
+
+采集只写本地 data/*.json；页面读的是边缘 KV / GH 静态快照。此前要手动跑
 collect_lottery.py 和 push_live_pages.py 两个脚本，漏掉任一步都会
 「脚本跑了但页面没变」。
 
 用法：
-    python update_live.py                  # 采集（盘口/赛程/比分）+ 快照 + 部署
+    python update_live.py                  # 采集 + 赛果录入 + 重建 + GH 快照发布
     python update_live.py --only live      # 只采比分直播
-    python update_live.py --no-collect     # 跳过采集，重新出快照并部署
+    python update_live.py --no-collect     # 跳过采集，重新出快照并发布
     python update_live.py --dry-run        # 采集 + 快照，不部署
     python update_live.py --days 3         # 快照推今天起 3 天
 """
 from __future__ import annotations
 
 import argparse
-import datetime as dt
-import shutil
 import subprocess
 import sys
 import time
@@ -26,12 +26,11 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
 from ingest_finished_results import ingest as ingest_results  # noqa: E402
-from push_live_pages import OUT, _load_dotenv, build_snapshot, deploy  # noqa: E402
+from cf_push import push_gh_snapshot  # noqa: E402
+from push_live_pages import _load_dotenv, deploy  # noqa: E402
 
 PY = Path(sys.executable)
 COLLECT_ITEMS = ("ticks", "fixtures", "live")
-GH_SITE = ROOT / "_site_gh"
-PUB = ROOT / ".publish"
 
 
 def collect(only: str) -> bool:
@@ -45,59 +44,8 @@ def collect(only: str) -> bool:
     return p.returncode == 0
 
 
-def _git(args: list[str]) -> subprocess.CompletedProcess:
-    return subprocess.run(["git", "-C", str(PUB)] + args, cwd=str(ROOT),
-                          capture_output=True, text=True)
-
-
-def sync_gh() -> bool:
-    """把刚写好的快照同步到 GH 产物并推送；失败只告警，不影响 CF 已上线。"""
-    if not OUT.is_dir():
-        return False
-    dests = []
-    if GH_SITE.is_dir():
-        dests.append(GH_SITE / "data" / "live")
-    if (PUB / ".git").exists():
-        dests.append(PUB / "data" / "live")
-    if not dests:
-        print("[update] 未找到 GH 产物目录，跳过同步")
-        return False
-    copied = 0
-    for dest in dests:
-        dest.mkdir(parents=True, exist_ok=True)
-        for f in sorted(OUT.glob("*.json")):
-            shutil.copy2(f, dest / f.name)
-            copied += 1
-    print(f"[update] GH 快照已同步 {copied} 个文件")
-    if not (PUB / ".git").exists():
-        return True
-    br = _git(["rev-parse", "--abbrev-ref", "HEAD"])
-    if br.returncode or br.stdout.strip() != "gh-pages":
-        print("[update] .publish 不在 gh-pages，跳过推送", file=sys.stderr)
-        return False
-    _git(["add", "-A", "data/live"])
-    if _git(["diff", "--cached", "--quiet"]).returncode == 0:
-        print("[update] GH 快照无变化，跳过提交")
-        return True
-    name = _git(["config", "user.name"]).stdout.strip()
-    email = _git(["config", "user.email"]).stdout.strip()
-    msg = f"site: 实时快照同步 {dt.datetime.now():%Y-%m-%d %H:%M}"
-    cmd = ["-c", f"user.name={name}", "-c", f"user.email={email}",
-           "commit", "-q", "-m", msg, "--only", "--", "data/live"]
-    c = _git(cmd)
-    if c.returncode:
-        print(f"[update] GH 提交失败：{c.stderr.strip()[:200]}", file=sys.stderr)
-        return False
-    p = _git(["push", "origin", "gh-pages"])
-    if p.returncode:
-        print(f"[update] GH 推送失败：{p.stderr.strip()[:200]}", file=sys.stderr)
-        return False
-    print(f"[update] GH 已发布：{msg}")
-    return True
-
-
 def rebuild_and_publish() -> bool:
-    """有新增赛果时：import 回填命中 → 构建 → 发布两站。"""
+    """有新增赛果时：import 回填命中 → 构建 → 发布两站页面（快照最后单独写）。"""
     for label, cmd in (
         ("import", [str(PY), str(ROOT / "import_jinbet.py")]),
         ("build", [str(PY), str(ROOT / "build.py"), "--strict"]),
@@ -107,13 +55,20 @@ def rebuild_and_publish() -> bool:
         print(f"[update] {label}: exit={p.returncode}（{time.time() - t0:.0f}s）")
         if p.returncode != 0:
             return False
+    # publish.sh 构建并发布 GH 页面（会清空 .publish，故快照须在其后写）。
     p = subprocess.run(["bash", str(ROOT / "publish.sh")], cwd=str(ROOT))
-    print(f"[update] publish: exit={p.returncode}")
-    return p.returncode == 0
+    print(f"[update] publish(GH 页面): exit={p.returncode}")
+    if p.returncode != 0:
+        return False
+    # CF 页面 HTML 独立部署（与本页快照无关；CF 实时数据走 KV）。
+    if not deploy():
+        print("[update] CF 页面部署失败", file=sys.stderr)
+        return False
+    return True
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="实时链路：采集 → 赛果录入 → 快照 → 部署")
+    ap = argparse.ArgumentParser(description="实时链路：采集 → 赛果录入 → 重建 → GH 快照")
     ap.add_argument("--only", choices=list(COLLECT_ITEMS) + ["all"], default="all")
     ap.add_argument("--no-collect", action="store_true", help="跳过采集")
     ap.add_argument("--dry-run", action="store_true", help="只生成快照，不部署")
@@ -132,20 +87,13 @@ def main() -> int:
     added = ingest_results()
     if added and not args.dry_run:
         if not rebuild_and_publish():
-            print("[update] 赛果回填/发布失败，仍继续实时快照部署")
-    written = build_snapshot(args.days)
-    if not written:
-        print("[update] 快照为空，终止")
-        return 1
-    if args.dry_run:
-        print(f"[update] dry-run：快照已生成，未部署（{time.time() - t0:.0f}s）")
-        return 0
+            print("[update] 赛果回填/页面发布失败，仍继续快照发布")
 
-    if not deploy():
-        print("[update] 部署失败")
+    # 唯一快照：只写 GH 那份。放在页面发布之后，避免被 publish.sh 的清空抹掉。
+    if not push_gh_snapshot(args.days, publish=not args.dry_run):
+        print("[update] 快照发布失败")
         return 1
-    sync_gh()
-    print(f"[update] 完成：{len(written)} 天快照已上线（{time.time() - t0:.0f}s）")
+    print(f"[update] 完成：{args.days} 天快照已上线 GH（{time.time() - t0:.0f}s）")
     return 0
 
 

@@ -28,11 +28,11 @@ if [ "$SKIP_BUILD" -eq 0 ]; then
   "$PY" build.py --strict
   echo "[1.5/5] 构建 GitHub Pages 产物（canonical → $GH_BASE）"
   "$PY" build.py --strict --out "$ROOT/_site_gh" --base-url "$GH_BASE"
-  # 实时快照由 update_live.py 写进 _site，构建期不产出，这里随产物带过去，
-  # 作为 GH 站取不到 CF 接口时的兜底数据。
+  # 实时快照只维护 GH 一份（.publish/data/live → gh-pages），由 cf_push/update_live
+  # 单独写入；构建产物不带快照，两站不再各存一份（2026-11-22 架构红线）。
+  # _site 若残留旧 CF 快照（历史遗留），移走，避免 CF Pages 上多存一份。
   if [ -d "$ROOT/_site/data/live" ]; then
-    mkdir -p "$ROOT/_site_gh/data/live"
-    cp -r "$ROOT/_site/data/live/." "$ROOT/_site_gh/data/live/"
+    mv "$ROOT/_site/data/live" "${TMPDIR:-/tmp}/matlas-cf-live-$(date +%Y%m%d-%H%M%S)-$$" 2>/dev/null || true
   fi
 else
   echo "[1/5] 跳过构建（SKIP_BUILD=1，直接同步现有 _site）"
@@ -45,6 +45,10 @@ else
     mv "$ROOT/_site_gh" "${TMPDIR:-/tmp}/matlas-gh-$(date +%Y%m%d-%H%M%S)-$$" 2>/dev/null || true
   fi
   cp -r "$ROOT/_site" "$ROOT/_site_gh"
+  # SKIP_BUILD 时 _site 可能残留旧 CF 快照，移走它，GH 快照只由固化逻辑写 .publish
+  if [ -d "$ROOT/_site_gh/data/live" ]; then
+    mv "$ROOT/_site_gh/data/live" "${TMPDIR:-/tmp}/matlas-gh-live-$(date +%Y%m%d-%H%M%S)-$$" 2>/dev/null || true
+  fi
 fi
 
 if [ "$PUSH" -eq 0 ]; then
@@ -90,6 +94,13 @@ echo "[2/5] 清空产物工作树（保留 .git）"
 # 文件时会 fail-closed 报 Permission denied，而 rename 不受该钩子影响。
 TRASH="${TMPDIR:-/tmp}/matlas-publish-trash/$(date +%Y%m%d-%H%M%S)-$$"
 mkdir -p "$TRASH"
+# 实时快照是独立维护的唯一一份（data/live），页面发布不碰它：先移出保护，末尾移回。
+SNAP_KEEP=""
+if [ -d "$PUB/data/live" ]; then
+  SNAP_KEEP="$TRASH/__snap_keep"
+  mkdir -p "$SNAP_KEEP"
+  mv "$PUB/data/live" "$SNAP_KEEP/live" 2>/dev/null || SNAP_KEEP=""
+fi
 # 单项移动：偶发有目录被占用（Windows 索引 / 杀软扫描新素材）时只跳过该项，
 # 不因一个 mv 失败中断整条发布；随后的 cp 会覆盖同名内容，git add -A 照常收敛。
 find "$PUB" -mindepth 1 -maxdepth 1 ! -name .git -print0 | while IFS= read -r -d '' item; do
@@ -102,6 +113,11 @@ echo "      旧产物已移出到 $TRASH"
 echo "[3/5] 同步 _site_gh → .publish"
 cp -r "$ROOT/_site_gh/." "$PUB/"
 touch "$PUB/.nojekyll"
+# 恢复被保护的唯一快照（data/live），确保页面发布不会抹掉实时数据。
+if [ -n "$SNAP_KEEP" ] && [ -d "$SNAP_KEEP/live" ]; then
+  mkdir -p "$PUB/data"
+  mv "$SNAP_KEEP/live" "$PUB/data/live"
+fi
 
 echo "[4/5] 提交并推送 gh-pages"
 cd "$PUB"

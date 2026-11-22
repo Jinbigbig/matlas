@@ -6,8 +6,8 @@
 //   /api/live?date=...&light=1   轻量版（比赛列表用）
 //   /api/live/<match_id>         单场数据
 // KV key：live/<date>.json  light/<date>.json  index.json
-// 回退：KV 拿不到（如免费版当日写入配额耗尽）时读同站静态快照
-//       data/live/<date>.json / light-<date>.json / index.json
+// 数据统一（2026-11-22）：静态快照只维护 GH 一份（gh-pages data/live/），
+// 本接口只读 KV；KV 不可达时返回 404，前端跨域读 GH 那份兜底，不在 CF 另存静态。
 
 function json(obj, status = 200) {
   return new Response(JSON.stringify(obj), {
@@ -21,34 +21,19 @@ function json(obj, status = 200) {
   });
 }
 
-// 同时取 KV 与静态快照，按 updated 取较新的一份。
-// KV 配额耗尽时它停在最后一次成功写入的时刻，此时部署上来的静态快照更新。
-async function readJson(env, origin, kvKey, staticPath) {
-  const kv = await env.MATLAS_KV.get(kvKey, "json").catch(() => null);
-  let snap = null;
-  if (staticPath) {
-    try {
-      const res = await env.ASSETS.fetch(new URL(staticPath, origin));
-      if (res.ok) snap = await res.json();
-    } catch (e) {
-      /* 静态快照缺失时只用 KV */
-    }
-  }
-  if (kv && snap) {
-    // updated 为 "YYYY-MM-DD HH:MM:SS"，同格式可直接按字符串比较
-    return String(snap.updated || "") >= String(kv.updated || "") ? snap : kv;
-  }
-  return kv || snap || null;
+// 只读 KV：静态快照统一由 GH 那份维护，CF 不再读同站静态兜底。
+// KV 配额耗尽时返回 null，前端按 updated 择新时会跨域取 GH 静态。
+async function readJson(env, kvKey) {
+  return await env.MATLAS_KV.get(kvKey, "json").catch(() => null);
 }
 
 export async function onRequestGet(context) {
   const { env, request } = context;
   const url = new URL(request.url);
   const path = url.pathname;
-  const origin = url.origin;
 
   if (path === "/api/health") {
-    const idx = await readJson(env, origin, "index.json", "/data/live/index.json");
+    const idx = await readJson(env, "index.json");
     return json({
       ok: true,
       now: new Date().toISOString(),
@@ -59,7 +44,7 @@ export async function onRequestGet(context) {
   }
 
   if (path === "/api/dates") {
-    const idx = await readJson(env, origin, "index.json", "/data/live/index.json");
+    const idx = await readJson(env, "index.json");
     return json({ dates: (idx && idx.dates) || [] });
   }
 
@@ -67,21 +52,19 @@ export async function onRequestGet(context) {
     let date = url.searchParams.get("date") || "";
     const light = ["1", "true", "yes"].includes(url.searchParams.get("light"));
     if (!date) {
-      const idx = await readJson(env, origin, "index.json", "/data/live/index.json");
+      const idx = await readJson(env, "index.json");
       date = idx && idx.dates && idx.dates.length ? idx.dates[idx.dates.length - 1] : "";
     }
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return json({ error: "bad date" }, 400);
     const key = (light ? "light/" : "live/") + date + ".json";
-    const snap = "/data/live/" + (light ? "light-" : "") + date + ".json";
-    const obj = await readJson(env, origin, key, snap);
+    const obj = await readJson(env, key);
     return obj ? json(obj) : json({ error: "no data for " + date }, 404);
   }
 
   if (path.startsWith("/api/live/")) {
     const mid = decodeURIComponent(path.slice("/api/live/".length));
     const date = mid.slice(0, 10);
-    const obj = await readJson(env, origin, "live/" + date + ".json",
-                               "/data/live/" + date + ".json");
+    const obj = await readJson(env, "live/" + date + ".json");
     if (obj && obj.matches) {
       const hit = obj.matches.find((m) => m.match_id === mid);
       if (hit) return json({ date, match: hit });
