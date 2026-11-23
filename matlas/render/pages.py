@@ -2283,7 +2283,8 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
     import json as _json
 
     base = cfg.base_url.rstrip("/")
-    ordered = sorted(days, key=lambda d: d.date)
+    # 统计口径：最近 10 个交易日（有比赛数据的日期），整页所有数字统一取此范围
+    ordered = sorted(days, key=lambda d: d.date)[-10:]
     n_matches = sum(len(d.matches) for d in ordered)
     settled = [m for d in ordered for m in d.matches if m.result and m.result.full_score]
     hit = sum(1 for m in settled if m.result.direction_hit)
