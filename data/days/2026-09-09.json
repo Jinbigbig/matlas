@@ -628,7 +628,8 @@
     "played": 4,
     "win": 3,
     "draw": 0,
-    "loss": 1
+    "loss": 1,
+    "logo": "assets/logo/teams/529.png"
    },
    "away": {
     "name": "费耶诺德",
@@ -1950,18 +1951,17 @@
    "home": {
     "name": "特温特",
     "league": "荷甲",
-    "rank": 4,
-    "points": 24,
-    "played": 12,
-    "win": 7,
+    "rank": 3,
+    "points": 27,
+    "played": 13,
+    "win": 8,
     "draw": 3,
     "loss": 2,
     "logo": "assets/logo/teams/415.png"
    },
    "away": {
     "name": "斯达",
-    "league": "荷甲",
-    "logo": "assets/logo/teams/334.png"
+    "league": "荷甲"
    },
    "forecasts": [
     {
@@ -2038,38 +2038,38 @@
      {
       "rank": 2,
       "name": "阿贾克斯",
-      "pts": 25,
-      "p": 12
+      "pts": 28,
+      "p": 13
      },
      {
       "rank": 3,
+      "name": "特温特",
+      "pts": 27,
+      "p": 13
+     },
+     {
+      "rank": 4,
+      "name": "阿尔克马",
+      "pts": 26,
+      "p": 13
+     },
+     {
+      "rank": 5,
       "name": "费耶诺德",
       "pts": 25,
       "p": 13
      },
      {
-      "rank": 4,
-      "name": "特温特",
-      "pts": 24,
-      "p": 12
-     },
-     {
-      "rank": 5,
+      "rank": 6,
       "name": "海伦芬",
       "pts": 24,
       "p": 13
      },
      {
-      "rank": 6,
-      "name": "阿尔克马",
-      "pts": 23,
-      "p": 12
-     },
-     {
       "rank": 7,
       "name": "福图纳",
-      "pts": 20,
-      "p": 12
+      "pts": 23,
+      "p": 13
      },
      {
       "rank": 8,
@@ -2081,7 +2081,7 @@
       "rank": 9,
       "name": "前进之鹰",
       "pts": 17,
-      "p": 12
+      "p": 13
      },
      {
       "rank": 10,
@@ -2111,7 +2111,7 @@
       "rank": 14,
       "name": "鹿斯巴达",
       "pts": 12,
-      "p": 12
+      "p": 13
      },
      {
       "rank": 15,
@@ -2129,13 +2129,13 @@
       "rank": 17,
       "name": "海牙",
       "pts": 9,
-      "p": 12
+      "p": 13
      },
      {
       "rank": 18,
       "name": "威廉二世",
       "pts": 3,
-      "p": 12
+      "p": 13
      }
     ],
     "lam_home": 2.524,
@@ -5195,8 +5195,8 @@
      {
       "rank": 13,
       "name": "布莱克本",
-      "pts": 21,
-      "p": 15
+      "pts": 22,
+      "p": 16
      },
      {
       "rank": 14,
@@ -5249,8 +5249,8 @@
      {
       "rank": 22,
       "name": "伯恩利",
-      "pts": 10,
-      "p": 15
+      "pts": 11,
+      "p": 16
      },
      {
       "rank": 23,
@@ -7218,7 +7218,8 @@
     "played": 6,
     "win": 2,
     "draw": 3,
-    "loss": 1
+    "loss": 1,
+    "logo": "assets/logo/teams/450.png"
    },
    "away": {
     "name": "科林蒂安",
