@@ -2201,7 +2201,7 @@ def _match_jsonld(cfg: Config, m: Match, url: str, title: str, desc: str) -> lis
 # 纯原生 JS，不引外部库；百分比在动态 DOM 里仍用 class="pct" 包住。
 _IV_JS = """<script>
 (function(){
-  var viz=document.querySelector('.insight-viz'); if(!viz) return;
+  document.querySelectorAll('.insight-viz').forEach(function(viz){
   var tip=viz.querySelector('.iv-tip'); if(!tip) return;
   var locked=false, cur=null;
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
@@ -2268,6 +2268,7 @@ _IV_JS = """<script>
   viz.addEventListener('pointerleave',hide);
   document.addEventListener('pointerdown',function(e){
     if(!viz.contains(e.target)&&locked){locked=false;hide();}
+  });
   });
 })();
 </script>"""
@@ -2475,7 +2476,8 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
             by_lg_acc[m.competition] = (h2 + (1 if m.result.direction_hit else 0), n2 + 1)
     lg_ok = [(k, v[0] / v[1] * 100, v[1]) for k, v in by_lg_acc.items() if v[1] >= 5]
 
-    viz: list[str] = []
+    # 折线图区块（全量）—— 洞察总结
+    line_viz: list[str] = []
     if len(day_acc) >= 2:
         xs = [x[0] for x in day_acc]
         ys = [x[1] for x in day_acc]
@@ -2495,8 +2497,18 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
                 '<span><i class="lg-base"></i>随机基线</span>'
                 "</div>"
             )
-            viz.append('<div class="insight-block"><h4>每日命中率走势</h4>'
-                       + legend + trend + "</div>")
+            line_viz.append('<div class="insight-block"><h4>每日命中率走势</h4>'
+                            + legend + trend + "</div>")
+    insight_box = ""
+    if line_viz:
+        insight_box = (
+            '<div class="stats-box insight-box"><h3>🧾 洞察总结</h3>'
+            '<div class="insight-viz">' + "".join(line_viz)
+            + '<div class="iv-tip" hidden></div></div></div>'
+        )
+
+    # 维度横条 + chips 区块（近10个交易日）—— 与走势柱状图并排
+    dim_viz: list[str] = []
     if dim_ok:
         bars = "".join(
             f'<div class="hbar-row" data-iv-kind="bar" data-iv-label="{C.esc(zh)}"'
@@ -2507,7 +2519,7 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
             f'<span class="hbar-n">{n} 场</span></div>'
             for zh, p, n in dim_ok
         )
-        viz.append('<div class="insight-block"><h4>单项维度准确率</h4>' + bars + "</div>")
+        dim_viz.append('<div class="insight-block"><h4>单项维度准确率</h4>' + bars + "</div>")
     chips: list[str] = []
     if settled10:
         chips.append(
@@ -2517,16 +2529,16 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
     if lg_ok:
         blg = max(lg_ok, key=lambda x: x[1])
         chips.append(f'🏆 表现最佳赛事：「{C.esc(blg[0])}」<span class="pct"><b>{blg[1]:.1f}%</b></span>（{blg[2]} 场）')
-    insight_box = ""
-    if viz or chips:
-        chip_html = (
-            '<div class="insight-chips">' + "".join(f'<span class="insight-chip">{x}</span>' for x in chips) + "</div>"
-            if chips else ""
-        )
-        insight_box = (
-            '<div class="stats-box insight-box"><h3>🧾 洞察总结</h3>'
-            '<div class="insight-viz">' + "".join(viz) + chip_html
-            + '<div class="iv-tip" hidden></div></div></div>' + _IV_JS
+    chip_html = (
+        '<div class="insight-chips">' + "".join(f'<span class="insight-chip">{x}</span>' for x in chips) + "</div>"
+        if chips else ""
+    )
+    dim10_box = ""
+    if dim_viz or chip_html:
+        dim10_box = (
+            '<div class="stats-box insight-box dim10-box"><h3>📊 单项维度准确率（近10个交易日）</h3>'
+            '<div class="insight-viz">' + "".join(dim_viz) + chip_html
+            + '<div class="iv-tip" hidden></div></div></div>'
         )
 
     body = (
@@ -2539,8 +2551,10 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         + insight_box
         + '<div class="stats-box"><h3>🔍 单项维度准确率</h3>'
         f'<div class="dim-grid">{dim_cards}</div></div>'
-        f'<div class="stats-duo">{trend_box}{search_box}</div>'
-        f'<div class="stats-duo">{league_box}{team_box}</div>'
+        f'<div class="stats-duo">{trend_box}{dim10_box}</div>'
+        + search_box
+        + f'<div class="stats-duo">{league_box}{team_box}</div>'
+        + _IV_JS
     )
     return L.page(
         cfg, title="数据统计", description="站点赛事统计：总场次、四维准确率、近10天走势、联赛与球队排名",
