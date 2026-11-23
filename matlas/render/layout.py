@@ -675,6 +675,7 @@ svg.itrend-mob { display: none; }
 .rank-crest-ph { display: inline-flex; align-items: center; justify-content: center;
   border-radius: 50%; background: #eaf1ff; color: #2563eb; font-size: 11px; font-weight: 700; }
 .insight-chips { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.stats-box > .insight-chips { margin-top: 14px; }
 .insight-chip { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: 999px; padding: 6px 14px; font-size: 13px; color: #374151; }
 .insight-chip b { color: #111; }
 .stats-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;

@@ -2332,7 +2332,6 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
             if bars
             else '<p class="panel-empty">暂无已结算样本。</p>'
         )
-        + "</div>"
     )
 
     # ---- 球队表现查询（内嵌全量球队汇总，前端过滤）----
@@ -2520,24 +2519,29 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
             for zh, p, n in dim_ok
         )
         dim_viz.append('<div class="insight-block"><h4>单项维度准确率</h4>' + bars + "</div>")
-    chips: list[str] = []
+    # 总体描述放到左侧柱状图下方；最佳赛事留在右侧维度卡片下方（左右高度对齐）
+    overall_chip = ""
     if settled10:
-        chips.append(
+        overall_chip = (
             f'🎯 已结算 <b>{len(settled10)}</b> 场 · 命中 <b>{hit10}</b> 场 · '
             f'整体 <span class="pct"><b>{acc10:.1f}%</b></span>'
         )
+    best_chip = ""
     if lg_ok:
         blg = max(lg_ok, key=lambda x: x[1])
-        chips.append(f'🏆 表现最佳赛事：「{C.esc(blg[0])}」<span class="pct"><b>{blg[1]:.1f}%</b></span>（{blg[2]} 场）')
-    chip_html = (
-        '<div class="insight-chips">' + "".join(f'<span class="insight-chip">{x}</span>' for x in chips) + "</div>"
-        if chips else ""
+        best_chip = f'🏆 表现最佳赛事：「{C.esc(blg[0])}」<span class="pct"><b>{blg[1]:.1f}%</b></span>（{blg[2]} 场）'
+
+    trend_box += (f'<div class="insight-chips"><span class="insight-chip">{overall_chip}</span></div>'
+                  if overall_chip else "") + "</div>"
+    best_chip_html = (
+        f'<div class="insight-chips"><span class="insight-chip">{best_chip}</span></div>'
+        if best_chip else ""
     )
     dim10_box = ""
-    if dim_viz or chip_html:
+    if dim_viz or best_chip_html:
         dim10_box = (
             '<div class="stats-box insight-box dim10-box"><h3>📊 单项维度准确率（近10个交易日）</h3>'
-            '<div class="insight-viz">' + "".join(dim_viz) + chip_html
+            '<div class="insight-viz">' + "".join(dim_viz) + best_chip_html
             + '<div class="iv-tip" hidden></div></div></div>'
         )
 
