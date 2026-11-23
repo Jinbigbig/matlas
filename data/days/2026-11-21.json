@@ -8,7 +8,7 @@
    "code": "周六001",
    "competition": "日职联",
    "round": "",
-   "kickoff": "2026-11-21 13:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "广岛三箭",
@@ -346,79 +346,79 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "广岛三箭",
      "n": 14,
-     "core_avg": 69.8,
-     "form_avg": 6.89,
+     "core_avg": 69.4,
+     "form_avg": 6.83,
      "high_fatigue": 0,
      "top": [
       {
        "name": "中野就斗",
        "pos": "MF",
-       "oti": 51.95,
-       "dii": 49.12,
-       "gim": 74.5,
-       "form": 7.3,
-       "cons": 5.24,
-       "fatigue": "Low",
+       "oti": 51.09,
+       "dii": 48.52,
+       "gim": 73.9,
+       "form": 6.9,
+       "cons": 5.94,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -0.6,
        "estimated": false
       },
       {
        "name": "佐佐木翔",
        "pos": "DF",
-       "oti": 57.7,
-       "dii": 53.69,
-       "gim": 70.74,
+       "oti": 57.74,
+       "dii": 53.7,
+       "gim": 70.84,
        "form": 7.3,
-       "cons": 89.19,
+       "cons": 87.79,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.1,
        "estimated": false
       },
       {
        "name": "东俊希",
        "pos": "MF",
-       "oti": 75.92,
-       "dii": 23.72,
-       "gim": 69.18,
-       "form": 7.1,
-       "cons": 43.75,
+       "oti": 73.44,
+       "dii": 25.19,
+       "gim": 68.95,
+       "form": 6.9,
+       "cons": 40.1,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -0.2,
        "estimated": false
       },
       {
        "name": "铃木章斗",
        "pos": "FW",
-       "oti": 66.66,
-       "dii": 40.41,
-       "gim": 68.7,
-       "form": 7.3,
-       "cons": 1.01,
+       "oti": 66.39,
+       "dii": 40.87,
+       "gim": 67.53,
+       "form": 7.1,
+       "cons": 1.16,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -1.2,
        "estimated": false
       },
       {
        "name": "川边骏",
        "pos": "MF",
-       "oti": 38.54,
-       "dii": 51.46,
-       "gim": 65.75,
-       "form": 7.0,
-       "cons": 78.38,
-       "fatigue": "Low",
+       "oti": 38.5,
+       "dii": 54.21,
+       "gim": 65.92,
+       "form": 6.8,
+       "cons": 75.41,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.2,
        "estimated": false
       }
      ]
@@ -426,73 +426,73 @@
     "away": {
      "team": "横滨水手",
      "n": 15,
-     "core_avg": 59.6,
-     "form_avg": 6.64,
+     "core_avg": 59.9,
+     "form_avg": 6.63,
      "high_fatigue": 0,
      "top": [
       {
        "name": "基尼奥内斯",
        "pos": "DF",
-       "oti": 45.19,
-       "dii": 41.49,
-       "gim": 65.03,
-       "form": 7.0,
-       "cons": 76.52,
-       "fatigue": "Low",
+       "oti": 44.92,
+       "dii": 42.66,
+       "gim": 64.61,
+       "form": 7.1,
+       "cons": 75.41,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -0.4,
        "estimated": false
       },
       {
        "name": "T. Kondo",
        "pos": "MF",
-       "oti": 59.77,
-       "dii": 65.96,
-       "gim": 60.23,
+       "oti": 59.54,
+       "dii": 63.88,
+       "gim": 60.04,
        "form": 7.0,
-       "cons": 7.09,
-       "fatigue": "Low",
+       "cons": 8.09,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -0.2,
        "estimated": false
       },
       {
        "name": "诹访间幸成",
        "pos": "DF",
-       "oti": 41.19,
-       "dii": 38.39,
-       "gim": 58.69,
+       "oti": 41.18,
+       "dii": 38.27,
+       "gim": 58.94,
        "form": 6.6,
-       "cons": 88.18,
+       "cons": 86.8,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.2,
        "estimated": true
       },
       {
        "name": "松村航希",
        "pos": "MF",
-       "oti": 53.45,
-       "dii": 55.97,
-       "gim": 58.4,
-       "form": 6.7,
-       "cons": 90.03,
+       "oti": 52.09,
+       "dii": 56.33,
+       "gim": 58.84,
+       "form": 6.6,
+       "cons": 87.79,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.4,
        "estimated": false
       },
       {
-       "name": "T. Inoue",
-       "pos": "DF",
-       "oti": 47.54,
-       "dii": 49.3,
-       "gim": 55.9,
-       "form": 6.5,
-       "cons": 32.94,
+       "name": "山根陆",
+       "pos": "MF",
+       "oti": 43.17,
+       "dii": 41.79,
+       "gim": 57.17,
+       "form": 6.8,
+       "cons": 77.56,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 1.6,
        "estimated": false
       }
      ]
@@ -508,7 +508,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "lam_home": 2.309,
     "lam_away": 1.174,
@@ -1817,7 +1817,7 @@
    "code": "周六002",
    "competition": "日职乙",
    "round": "",
-   "kickoff": "2026-11-21 13:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "磐田喜悦",
@@ -2101,7 +2101,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "lam_home": 1.367,
     "lam_away": 1.332,
@@ -3271,7 +3271,7 @@
    "code": "周六003",
    "competition": "日职联",
    "round": "",
-   "kickoff": "2026-11-21 15:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "大阪钢巴",
@@ -3600,79 +3600,79 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "大阪钢巴",
      "n": 16,
-     "core_avg": 60.1,
-     "form_avg": 6.74,
+     "core_avg": 61.0,
+     "form_avg": 6.7,
      "high_fatigue": 0,
      "top": [
       {
        "name": "三浦弦太",
        "pos": "DF",
-       "oti": 40.97,
-       "dii": 35.9,
-       "gim": 67.12,
-       "form": 6.9,
-       "cons": 20.61,
+       "oti": 40.96,
+       "dii": 35.76,
+       "gim": 67.51,
+       "form": 6.7,
+       "cons": 16.17,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.4,
        "estimated": false
       },
       {
        "name": "杰巴利",
        "pos": "MF",
-       "oti": 67.87,
-       "dii": 43.27,
-       "gim": 61.66,
+       "oti": 67.51,
+       "dii": 43.1,
+       "gim": 62.81,
        "form": 7.2,
-       "cons": 11.66,
+       "cons": 10.89,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 1.2,
        "estimated": false
       },
       {
        "name": "中谷进之介",
        "pos": "DF",
-       "oti": 53.21,
-       "dii": 29.65,
-       "gim": 59.03,
+       "oti": 53.23,
+       "dii": 29.49,
+       "gim": 59.92,
        "form": 6.8,
-       "cons": 52.53,
-       "fatigue": "Low",
+       "cons": 50.0,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.9,
        "estimated": false
       },
       {
        "name": "山下谅也",
        "pos": "MF",
-       "oti": 58.63,
-       "dii": 35.41,
-       "gim": 57.24,
+       "oti": 58.14,
+       "dii": 35.42,
+       "gim": 58.57,
        "form": 6.7,
-       "cons": 16.72,
-       "fatigue": "Low",
+       "cons": 19.47,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 1.3,
        "estimated": false
       },
       {
        "name": "福冈将太",
        "pos": "DF",
-       "oti": 38.28,
-       "dii": 35.39,
-       "gim": 55.66,
+       "oti": 38.27,
+       "dii": 35.26,
+       "gim": 56.35,
        "form": 6.4,
-       "cons": 18.75,
+       "cons": 17.82,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.7,
        "estimated": false
       }
      ]
@@ -3680,10 +3680,23 @@
     "away": {
      "team": "冈山绿雉",
      "n": 16,
-     "core_avg": 57.9,
-     "form_avg": 6.44,
+     "core_avg": 58.8,
+     "form_avg": 6.47,
      "high_fatigue": 0,
      "top": [
+      {
+       "name": "奥伯丹",
+       "pos": "MF",
+       "oti": 46.2,
+       "dii": 58.74,
+       "gim": 60.52,
+       "form": 6.8,
+       "cons": 61.88,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": 1.3,
+       "estimated": false
+      },
       {
        "name": "亚·铃木",
        "pos": "DF",
@@ -3697,55 +3710,42 @@
        "estimated": true
       },
       {
-       "name": "奥伯丹",
-       "pos": "MF",
-       "oti": 46.08,
-       "dii": 58.71,
-       "gim": 59.25,
-       "form": 6.9,
-       "cons": 60.64,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
        "name": "大森",
        "pos": "DF",
        "oti": 41.84,
-       "dii": 71.23,
-       "gim": 58.46,
+       "dii": 71.39,
+       "gim": 59.1,
        "form": 6.7,
-       "cons": 46.62,
+       "cons": 44.88,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.6,
        "estimated": false
       },
       {
        "name": "立田悠悟",
        "pos": "DF",
        "oti": 43.95,
-       "dii": 50.42,
-       "gim": 58.13,
-       "form": 6.5,
-       "cons": 55.74,
-       "fatigue": "Low",
+       "dii": 50.06,
+       "gim": 58.84,
+       "form": 6.6,
+       "cons": 53.3,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.7,
        "estimated": false
       },
       {
        "name": "铃木义武",
        "pos": "DF",
-       "oti": 52.93,
-       "dii": 51.01,
-       "gim": 53.65,
+       "oti": 52.96,
+       "dii": 51.39,
+       "gim": 55.2,
        "form": 6.2,
-       "cons": 40.71,
+       "cons": 40.1,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 1.6,
        "estimated": false
       }
      ]
@@ -3761,7 +3761,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "lam_home": 1.438,
     "lam_away": 1.039,
@@ -5081,7 +5081,7 @@
    "code": "周六004",
    "competition": "澳超",
    "round": "",
-   "kickoff": "2026-11-21 16:40",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "布里斯班",
@@ -5121,7 +5121,7 @@
    "metrics_home": {
     "attack": 29,
     "defence": 14,
-    "control": 24,
+    "control": 19,
     "form": 38,
     "value": 76,
     "motivation": 10,
@@ -5386,141 +5386,152 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "布里斯班",
-     "n": 4,
-     "core_avg": 85.5,
-     "form_avg": 7.05,
+     "n": 9,
+     "core_avg": 82.5,
+     "form_avg": 6.98,
      "high_fatigue": 0,
      "top": [
       {
        "name": "T. Aldred",
        "pos": "DF",
-       "oti": 48.48,
-       "dii": 57.72,
-       "gim": 91.54,
+       "oti": 43.83,
+       "dii": 63.46,
+       "gim": 90.79,
        "form": 7.3,
-       "cons": 16.94,
+       "cons": 42.17,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -0.8,
        "estimated": true
       },
       {
        "name": "维迪奇",
        "pos": "FW",
-       "oti": 81.6,
-       "dii": 25.22,
-       "gim": 91.1,
-       "form": 7.0,
-       "cons": 65.32,
+       "oti": 71.16,
+       "dii": 37.01,
+       "gim": 87.4,
+       "form": 7.1,
+       "cons": 61.45,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -3.7,
        "estimated": true
       },
       {
        "name": "尼·马伊罗尼",
        "pos": "MF",
-       "oti": 34.31,
-       "dii": 87.67,
-       "gim": 84.51,
-       "form": 7.0,
-       "cons": 43.55,
+       "oti": 32.11,
+       "dii": 86.58,
+       "gim": 81.53,
+       "form": 7.1,
+       "cons": 45.18,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -3.0,
+       "estimated": true
+      },
+      {
+       "name": "南泰熙",
+       "pos": "MF",
+       "oti": 53.92,
+       "dii": 31.51,
+       "gim": 76.62,
+       "form": 7.1,
+       "cons": 49.4,
+       "fatigue": "Low",
+       "watch": "",
        "estimated": true
       },
       {
        "name": "乔西·金",
        "pos": "DF",
-       "oti": 34.3,
-       "dii": 35.81,
-       "gim": 74.94,
-       "form": 6.9,
-       "cons": 25.0,
+       "oti": 33.3,
+       "dii": 39.87,
+       "gim": 76.17,
+       "form": 7.0,
+       "cons": 25.3,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 1.2,
        "estimated": true
       }
      ]
     },
     "away": {
      "team": "悉尼FC",
-     "n": 7,
-     "core_avg": 56.0,
-     "form_avg": 6.8,
+     "n": 10,
+     "core_avg": 70.0,
+     "form_avg": 6.85,
      "high_fatigue": 0,
      "top": [
       {
-       "name": "R. Youlley",
+       "name": "A. Toure",
        "pos": "MF",
-       "oti": 37.34,
-       "dii": 46.43,
-       "gim": 72.37,
-       "form": 6.9,
-       "cons": 38.71,
+       "oti": 72.41,
+       "dii": 21.98,
+       "gim": 90.47,
+       "form": 7.4,
+       "cons": 10.24,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
        "estimated": true
+      },
+      {
+       "name": "R. Youlley",
+       "pos": "MF",
+       "oti": 38.46,
+       "dii": 50.39,
+       "gim": 68.11,
+       "form": 6.8,
+       "cons": 45.18,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -4.3,
+       "estimated": false
+      },
+      {
+       "name": "A. Popovic",
+       "pos": "DF",
+       "oti": 42.22,
+       "dii": 36.13,
+       "gim": 67.25,
+       "form": 7.1,
+       "cons": 45.18,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 17.5,
+       "estimated": false
       },
       {
        "name": "J. Courtney-Perkins",
        "pos": "DF",
-       "oti": 34.34,
-       "dii": 59.84,
-       "gim": 62.45,
-       "form": 6.9,
-       "cons": 60.48,
+       "oti": 34.79,
+       "dii": 56.81,
+       "gim": 67.25,
+       "form": 7.0,
+       "cons": 65.66,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 4.8,
        "estimated": true
       },
       {
        "name": "加鲁乔",
        "pos": "DF",
-       "oti": 67.22,
-       "dii": 69.43,
-       "gim": 58.33,
+       "oti": 64.67,
+       "dii": 60.88,
+       "gim": 56.88,
        "form": 7.0,
-       "cons": 82.26,
+       "cons": 81.93,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "A. Popovic",
-       "pos": "DF",
-       "oti": 43.44,
-       "dii": 24.66,
-       "gim": 49.78,
-       "form": 6.8,
-       "cons": 49.19,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "瑞安·格兰特",
-       "pos": "DF",
-       "oti": 42.45,
-       "dii": 60.54,
-       "gim": 37.13,
-       "form": 6.8,
-       "cons": 60.48,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
+       "d_gim": -1.4,
+       "estimated": false
       }
      ]
     }
@@ -5535,7 +5546,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -6894,7 +6905,7 @@
    "code": "周六005",
    "competition": "英超",
    "round": "",
-   "kickoff": "2026-11-21 20:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "曼城",
@@ -6968,7 +6979,7 @@
    "metrics_away": {
     "attack": 4,
     "defence": 85,
-    "control": 29,
+    "control": 32,
     "form": 61,
     "value": 56,
     "motivation": 18,
@@ -7253,15 +7264,15 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "曼城",
      "n": 14,
      "core_avg": 75.7,
-     "form_avg": 6.82,
-     "high_fatigue": 0,
+     "form_avg": 6.81,
+     "high_fatigue": 4,
      "top": [
       {
        "name": "哈兰德",
@@ -7269,11 +7280,11 @@
        "oti": 77.88,
        "dii": 24.16,
        "gim": 90.94,
-       "form": 7.6,
-       "cons": 0.59,
-       "fatigue": "Medium",
+       "form": 7.2,
+       "cons": 0.78,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": -0.6,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -7282,11 +7293,11 @@
        "oti": 43.44,
        "dii": 77.79,
        "gim": 75.42,
-       "form": 6.8,
-       "cons": 63.09,
-       "fatigue": "Medium",
+       "form": 7.2,
+       "cons": 51.55,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": -1.9,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -7295,11 +7306,11 @@
        "oti": 57.98,
        "dii": 55.95,
        "gim": 71.64,
-       "form": 7.2,
-       "cons": 5.27,
-       "fatigue": "Medium",
+       "form": 7.0,
+       "cons": 5.04,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": -0.3,
+       "d_gim": 0.0,
        "estimated": true
       },
       {
@@ -7309,10 +7320,10 @@
        "dii": 24.69,
        "gim": 71.53,
        "form": 7.0,
-       "cons": 12.5,
+       "cons": 12.02,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 1.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -7322,10 +7333,10 @@
        "dii": 74.97,
        "gim": 68.86,
        "form": 6.4,
-       "cons": 43.16,
-       "fatigue": "Low",
+       "cons": 40.5,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": -2.5,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -7334,7 +7345,7 @@
      "team": "富勒姆",
      "n": 11,
      "core_avg": 66.0,
-     "form_avg": 6.69,
+     "form_avg": 6.63,
      "high_fatigue": 0,
      "top": [
       {
@@ -7343,11 +7354,11 @@
        "oti": 60.29,
        "dii": 21.53,
        "gim": 80.8,
-       "form": 6.9,
-       "cons": 75.98,
-       "fatigue": "Low",
+       "form": 6.7,
+       "cons": 66.47,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -7356,11 +7367,11 @@
        "oti": 62.85,
        "dii": 29.89,
        "gim": 66.97,
-       "form": 6.6,
-       "cons": 47.07,
+       "form": 6.5,
+       "cons": 49.42,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -7369,11 +7380,11 @@
        "oti": 31.37,
        "dii": 46.45,
        "gim": 63.53,
-       "form": 6.7,
-       "cons": 88.48,
+       "form": 6.5,
+       "cons": 82.36,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -7382,11 +7393,11 @@
        "oti": 42.02,
        "dii": 30.94,
        "gim": 59.57,
-       "form": 6.8,
-       "cons": 86.33,
+       "form": 6.7,
+       "cons": 86.24,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -7395,11 +7406,11 @@
        "oti": 31.49,
        "dii": 54.97,
        "gim": 59.25,
-       "form": 6.7,
-       "cons": 63.09,
+       "form": 6.6,
+       "cons": 62.21,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -7415,7 +7426,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -7434,7 +7445,7 @@
       "rank": 2,
       "name": "布赖顿",
       "pts": 22,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 3,
@@ -7444,15 +7455,15 @@
      },
      {
       "rank": 4,
-      "name": "伯恩茅斯",
-      "pts": 18,
+      "name": "利物浦",
+      "pts": 21,
       "p": 11
      },
      {
       "rank": 5,
-      "name": "利物浦",
+      "name": "伯恩茅斯",
       "pts": 18,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
@@ -7504,7 +7515,7 @@
      },
      {
       "rank": 11,
-      "name": "维拉",
+      "name": "赫尔城",
       "pts": 14,
       "p": 11
      },
@@ -7516,27 +7527,27 @@
      },
      {
       "rank": 12,
-      "name": "纽卡斯尔",
-      "pts": 13,
+      "name": "维拉",
+      "pts": 14,
       "p": 11
      },
      {
       "rank": 13,
-      "name": "考文垂",
-      "pts": 12,
+      "name": "纽卡斯尔",
+      "pts": 13,
       "p": 11
-     },
-     {
-      "rank": 14,
-      "name": "赫尔城",
-      "pts": 11,
-      "p": 10
      },
      {
       "rank": 14,
       "name": "伊普斯维奇",
       "pts": 11,
       "p": 10
+     },
+     {
+      "rank": 14,
+      "name": "考文垂",
+      "pts": 12,
+      "p": 11
      },
      {
       "rank": 15,
@@ -7572,7 +7583,7 @@
       "rank": 19,
       "name": "曼联",
       "pts": 8,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 20,
@@ -9057,7 +9068,7 @@
    "code": "周六006",
    "competition": "英冠",
    "round": "",
-   "kickoff": "2026-11-21 20:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "米尔沃尔",
@@ -9353,14 +9364,14 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "米尔沃尔",
      "n": 13,
      "core_avg": 69.5,
-     "form_avg": 6.48,
+     "form_avg": 6.4,
      "high_fatigue": 0,
      "top": [
       {
@@ -9369,8 +9380,8 @@
        "oti": 54.3,
        "dii": 51.81,
        "gim": 72.64,
-       "form": 6.5,
-       "cons": 14.05,
+       "form": 6.2,
+       "cons": 9.59,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -9382,9 +9393,9 @@
        "oti": 66.47,
        "dii": 30.54,
        "gim": 71.45,
-       "form": 6.7,
-       "cons": 11.86,
-       "fatigue": "Low",
+       "form": 6.5,
+       "cons": 10.62,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -9395,9 +9406,9 @@
        "oti": 55.5,
        "dii": 74.45,
        "gim": 70.56,
-       "form": 6.4,
-       "cons": 23.84,
-       "fatigue": "Low",
+       "form": 6.5,
+       "cons": 23.32,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -9408,9 +9419,9 @@
        "oti": 47.09,
        "dii": 43.78,
        "gim": 67.83,
-       "form": 6.7,
-       "cons": 5.67,
-       "fatigue": "Low",
+       "form": 6.4,
+       "cons": 5.7,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -9421,9 +9432,9 @@
        "oti": 52.42,
        "dii": 74.39,
        "gim": 65.1,
-       "form": 6.8,
-       "cons": 34.92,
-       "fatigue": "Low",
+       "form": 6.7,
+       "cons": 35.75,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -9441,7 +9452,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -9519,8 +9530,8 @@
      {
       "rank": 13,
       "name": "布莱克本",
-      "pts": 21,
-      "p": 15
+      "pts": 22,
+      "p": 16
      },
      {
       "rank": 14,
@@ -9573,8 +9584,8 @@
      {
       "rank": 22,
       "name": "伯恩利",
-      "pts": 10,
-      "p": 15
+      "pts": 11,
+      "p": 16
      },
      {
       "rank": 23,
@@ -9877,14 +9888,14 @@
    "code": "周六007",
    "competition": "意甲",
    "round": "",
-   "kickoff": "2026-11-21 22:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "科莫",
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 4,
+    "rank": 5,
     "points": 26,
     "played": 12,
     "win": 8,
@@ -9898,7 +9909,7 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 10,
+    "rank": 11,
     "points": 16,
     "played": 12,
     "win": 5,
@@ -9917,7 +9928,7 @@
    "metrics_home": {
     "attack": 89,
     "defence": 78,
-    "control": 93,
+    "control": 94,
     "form": 86,
     "value": 87,
     "motivation": 91,
@@ -10236,15 +10247,15 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "科莫",
      "n": 14,
      "core_avg": 73.9,
-     "form_avg": 6.89,
-     "high_fatigue": 0,
+     "form_avg": 6.9,
+     "high_fatigue": 1,
      "top": [
       {
        "name": "尼·帕斯",
@@ -10252,8 +10263,8 @@
        "oti": 81.53,
        "dii": 70.57,
        "gim": 85.68,
-       "form": 7.6,
-       "cons": 0.0,
+       "form": 7.3,
+       "cons": 0.36,
        "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
@@ -10265,8 +10276,8 @@
        "oti": 51.23,
        "dii": 54.57,
        "gim": 77.52,
-       "form": 7.1,
-       "cons": 51.28,
+       "form": 7.3,
+       "cons": 52.73,
        "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
@@ -10279,7 +10290,7 @@
        "dii": 69.68,
        "gim": 69.59,
        "form": 6.9,
-       "cons": 16.06,
+       "cons": 15.64,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -10291,8 +10302,8 @@
        "oti": 84.16,
        "dii": 52.49,
        "gim": 68.8,
-       "form": 6.6,
-       "cons": 16.06,
+       "form": 6.7,
+       "cons": 21.09,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -10304,9 +10315,9 @@
        "oti": 46.58,
        "dii": 26.47,
        "gim": 67.87,
-       "form": 7.0,
-       "cons": 82.12,
-       "fatigue": "Medium",
+       "form": 7.2,
+       "cons": 73.82,
+       "fatigue": "High",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -10317,7 +10328,7 @@
      "team": "卡利亚里",
      "n": 12,
      "core_avg": 59.4,
-     "form_avg": 6.52,
+     "form_avg": 6.48,
      "high_fatigue": 0,
      "top": [
       {
@@ -10327,7 +10338,7 @@
        "dii": 44.05,
        "gim": 68.38,
        "form": 6.5,
-       "cons": 53.1,
+       "cons": 54.18,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -10339,8 +10350,8 @@
        "oti": 33.87,
        "dii": 70.24,
        "gim": 58.01,
-       "form": 6.6,
-       "cons": 93.07,
+       "form": 6.5,
+       "cons": 88.73,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -10352,8 +10363,8 @@
        "oti": 62.48,
        "dii": 63.22,
        "gim": 57.75,
-       "form": 6.3,
-       "cons": 26.46,
+       "form": 6.2,
+       "cons": 27.64,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -10366,7 +10377,7 @@
        "dii": 54.14,
        "gim": 57.57,
        "form": 6.4,
-       "cons": 59.85,
+       "cons": 56.55,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -10379,7 +10390,7 @@
        "dii": 33.49,
        "gim": 55.29,
        "form": 6.7,
-       "cons": 68.25,
+       "cons": 67.64,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -10398,7 +10409,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -10416,20 +10427,20 @@
      {
       "rank": 3,
       "name": "国际米兰",
-      "pts": 28,
-      "p": 11
+      "pts": 29,
+      "p": 12
      },
      {
       "rank": 4,
-      "name": "科莫",
-      "pts": 26,
+      "name": "AC米兰",
+      "pts": 27,
       "p": 12
      },
      {
       "rank": 5,
-      "name": "AC米兰",
-      "pts": 24,
-      "p": 11
+      "name": "科莫",
+      "pts": 26,
+      "p": 12
      },
      {
       "rank": 6,
@@ -10439,15 +10450,15 @@
      },
      {
       "rank": 6,
-      "name": "弗洛西诺",
-      "pts": 20,
-      "p": 11
+      "name": "尤文图斯",
+      "pts": 21,
+      "p": 12
      },
      {
       "rank": 7,
-      "name": "尤文图斯",
-      "pts": 18,
-      "p": 11
+      "name": "弗洛西诺",
+      "pts": 20,
+      "p": 12
      },
      {
       "rank": 8,
@@ -10458,32 +10469,32 @@
      {
       "rank": 9,
       "name": "博洛尼亚",
-      "pts": 17,
-      "p": 11
+      "pts": 18,
+      "p": 12
      },
      {
       "rank": 10,
-      "name": "卡利亚里",
+      "name": "热那亚",
       "pts": 16,
       "p": 12
      },
      {
       "rank": 11,
-      "name": "亚特兰大",
-      "pts": 14,
-      "p": 11
+      "name": "卡利亚里",
+      "pts": 16,
+      "p": 12
      },
      {
       "rank": 12,
-      "name": "都灵",
-      "pts": 14,
+      "name": "亚特兰大",
+      "pts": 15,
       "p": 12
      },
      {
       "rank": 13,
-      "name": "热那亚",
-      "pts": 13,
-      "p": 11
+      "name": "都灵",
+      "pts": 14,
+      "p": 12
      },
      {
       "rank": 14,
@@ -10499,13 +10510,13 @@
      },
      {
       "rank": 16,
-      "name": "萨索洛",
+      "name": "帕尔马",
       "pts": 8,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 17,
-      "name": "帕尔马",
+      "name": "萨索洛",
       "pts": 8,
       "p": 12
      },
@@ -10517,15 +10528,15 @@
      },
      {
       "rank": 19,
-      "name": "威尼斯",
+      "name": "乌迪内斯",
       "pts": 6,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 20,
-      "name": "乌迪内斯",
-      "pts": 5,
-      "p": 11
+      "name": "威尼斯",
+      "pts": 6,
+      "p": 12
      }
     ],
     "lam_home": 2.243,
@@ -11908,7 +11919,7 @@
    "code": "周六008",
    "competition": "德甲",
    "round": "",
-   "kickoff": "2026-11-21 22:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "门兴",
@@ -12267,79 +12278,79 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "away": {
      "team": "多特蒙德",
      "n": 13,
-     "core_avg": 75.8,
-     "form_avg": 6.81,
-     "high_fatigue": 0,
+     "core_avg": 72.7,
+     "form_avg": 6.82,
+     "high_fatigue": 2,
      "top": [
+      {
+       "name": "法比奥·席尔瓦",
+       "pos": "FW",
+       "oti": 80.29,
+       "dii": 37.5,
+       "gim": 78.49,
+       "form": 6.9,
+       "cons": 38.44,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": 3.5,
+       "estimated": true
+      },
       {
        "name": "费利克斯·恩梅沙",
        "pos": "MF",
-       "oti": 57.72,
-       "dii": 67.91,
-       "gim": 83.69,
-       "form": 7.4,
-       "cons": 22.42,
-       "fatigue": "Low",
+       "oti": 58.03,
+       "dii": 67.83,
+       "gim": 74.91,
+       "form": 7.6,
+       "cons": 20.22,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -8.8,
        "estimated": false
       },
       {
        "name": "施洛特贝克",
        "pos": "DF",
-       "oti": 52.79,
-       "dii": 75.47,
-       "gim": 80.97,
-       "form": 7.3,
-       "cons": 46.64,
+       "oti": 53.07,
+       "dii": 65.57,
+       "gim": 74.21,
+       "form": 7.2,
+       "cons": 48.89,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -6.8,
        "estimated": false
       },
       {
        "name": "安东",
        "pos": "DF",
-       "oti": 41.31,
-       "dii": 78.08,
-       "gim": 75.16,
-       "form": 6.7,
-       "cons": 97.76,
-       "fatigue": "Low",
+       "oti": 41.4,
+       "dii": 79.45,
+       "gim": 70.29,
+       "form": 6.8,
+       "cons": 98.67,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -4.9,
        "estimated": false
       },
       {
-       "name": "法比奥·席尔瓦",
+       "name": "塞尔胡·吉拉西",
        "pos": "FW",
-       "oti": 80.24,
-       "dii": 37.48,
-       "gim": 75.03,
-       "form": 7.1,
-       "cons": 41.26,
+       "oti": 60.62,
+       "dii": 22.25,
+       "gim": 65.36,
+       "form": 7.2,
+       "cons": 3.78,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
-      },
-      {
-       "name": "斯文松",
-       "pos": "DF",
-       "oti": 51.87,
-       "dii": 59.77,
-       "gim": 64.39,
-       "form": 6.7,
-       "cons": 65.25,
-       "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 2.8,
        "estimated": false
       }
      ]
@@ -12355,7 +12366,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -12409,8 +12420,8 @@
      {
       "rank": 6,
       "name": "不来梅",
-      "pts": 15,
-      "p": 9
+      "pts": 18,
+      "p": 10
      },
      {
       "rank": 7,
@@ -12438,39 +12449,39 @@
      },
      {
       "rank": 10,
-      "name": "霍芬海姆",
+      "name": "奥格斯堡",
       "pts": 12,
       "p": 10
      },
      {
       "rank": 11,
-      "name": "汉堡",
+      "name": "霍芬海姆",
       "pts": 12,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 12,
-      "name": "美因茨",
-      "pts": 10,
-      "p": 9
+      "name": "汉堡",
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 13,
-      "name": "科隆",
+      "name": "美因茨",
       "pts": 10,
       "p": 10
      },
      {
       "rank": 14,
-      "name": "帕德博恩",
+      "name": "科隆",
       "pts": 10,
       "p": 10
      },
      {
       "rank": 15,
-      "name": "奥格斯堡",
-      "pts": 9,
-      "p": 9
+      "name": "帕德博恩",
+      "pts": 10,
+      "p": 10
      },
      {
       "rank": 16,
@@ -13990,7 +14001,7 @@
    "code": "周六009",
    "competition": "德甲",
    "round": "",
-   "kickoff": "2026-11-21 22:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "埃沃斯堡",
@@ -14340,79 +14351,79 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "埃沃斯堡",
      "n": 12,
-     "core_avg": 62.1,
-     "form_avg": 6.48,
+     "core_avg": 62.7,
+     "form_avg": 6.46,
      "high_fatigue": 0,
      "top": [
       {
        "name": "佩特科夫",
        "pos": "MF",
-       "oti": 55.85,
-       "dii": 69.96,
-       "gim": 68.61,
-       "form": 6.2,
-       "cons": 6.28,
+       "oti": 55.93,
+       "dii": 69.85,
+       "gim": 69.28,
+       "form": 6.3,
+       "cons": 6.22,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.7,
        "estimated": false
       },
       {
        "name": "凯德尔",
        "pos": "MF",
-       "oti": 53.46,
-       "dii": 57.12,
-       "gim": 66.71,
-       "form": 7.0,
-       "cons": 71.08,
-       "fatigue": "Low",
+       "oti": 53.55,
+       "dii": 57.04,
+       "gim": 67.4,
+       "form": 6.8,
+       "cons": 70.89,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.7,
        "estimated": false
       },
       {
        "name": "罗尔",
        "pos": "DF",
-       "oti": 37.22,
-       "dii": 60.75,
-       "gim": 61.69,
+       "oti": 37.33,
+       "dii": 60.74,
+       "gim": 62.19,
        "form": 6.7,
-       "cons": 39.46,
-       "fatigue": "Low",
+       "cons": 38.44,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.5,
        "estimated": false
       },
       {
        "name": "马·克拉滕马赫尔",
        "pos": "MF",
-       "oti": 70.23,
-       "dii": 65.89,
-       "gim": 60.55,
+       "oti": 70.46,
+       "dii": 65.84,
+       "gim": 61.37,
        "form": 6.4,
-       "cons": 21.52,
+       "cons": 21.56,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.8,
        "estimated": false
       },
       {
        "name": "平克特",
        "pos": "DF",
-       "oti": 42.18,
-       "dii": 43.0,
-       "gim": 52.97,
+       "oti": 42.28,
+       "dii": 43.02,
+       "gim": 53.3,
        "form": 6.7,
-       "cons": 67.49,
+       "cons": 65.11,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.3,
        "estimated": false
       }
      ]
@@ -14420,32 +14431,19 @@
     "away": {
      "team": "弗赖堡",
      "n": 10,
-     "core_avg": 74.2,
-     "form_avg": 6.85,
+     "core_avg": 75.1,
+     "form_avg": 6.84,
      "high_fatigue": 0,
      "top": [
       {
        "name": "马塔诺维奇",
        "pos": "FW",
-       "oti": 66.54,
-       "dii": 56.61,
-       "gim": 84.27,
-       "form": 7.0,
-       "cons": 2.02,
+       "oti": 66.48,
+       "dii": 56.62,
+       "gim": 84.32,
+       "form": 7.2,
+       "cons": 7.11,
        "fatigue": "Medium",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "铃木",
-       "pos": "MF",
-       "oti": 64.04,
-       "dii": 25.18,
-       "gim": 73.73,
-       "form": 6.7,
-       "cons": 14.8,
-       "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -14453,40 +14451,53 @@
       {
        "name": "马蒂亚斯·金特",
        "pos": "DF",
-       "oti": 74.5,
-       "dii": 55.89,
-       "gim": 72.3,
+       "oti": 74.77,
+       "dii": 55.91,
+       "gim": 75.01,
        "form": 7.1,
-       "cons": 55.16,
-       "fatigue": "Low",
+       "cons": 52.89,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 2.7,
+       "estimated": false
+      },
+      {
+       "name": "铃木",
+       "pos": "MF",
+       "oti": 64.37,
+       "dii": 25.17,
+       "gim": 74.28,
+       "form": 6.7,
+       "cons": 15.33,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": 0.5,
        "estimated": false
       },
       {
        "name": "林哈特",
        "pos": "DF",
-       "oti": 35.3,
-       "dii": 44.22,
-       "gim": 70.82,
-       "form": 7.0,
-       "cons": 95.07,
+       "oti": 35.38,
+       "dii": 44.13,
+       "gim": 71.49,
+       "form": 6.8,
+       "cons": 90.44,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.7,
        "estimated": false
       },
       {
        "name": "恩格尔哈特",
        "pos": "MF",
-       "oti": 47.19,
-       "dii": 44.31,
-       "gim": 69.68,
-       "form": 7.0,
-       "cons": 13.68,
-       "fatigue": "Low",
+       "oti": 47.3,
+       "dii": 44.25,
+       "gim": 70.3,
+       "form": 6.9,
+       "cons": 14.0,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.6,
        "estimated": false
       }
      ]
@@ -14502,7 +14513,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -14556,8 +14567,8 @@
      {
       "rank": 6,
       "name": "不来梅",
-      "pts": 15,
-      "p": 9
+      "pts": 18,
+      "p": 10
      },
      {
       "rank": 7,
@@ -14585,39 +14596,39 @@
      },
      {
       "rank": 10,
-      "name": "霍芬海姆",
+      "name": "奥格斯堡",
       "pts": 12,
       "p": 10
      },
      {
       "rank": 11,
-      "name": "汉堡",
+      "name": "霍芬海姆",
       "pts": 12,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 12,
-      "name": "美因茨",
-      "pts": 10,
-      "p": 9
+      "name": "汉堡",
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 13,
-      "name": "科隆",
+      "name": "美因茨",
       "pts": 10,
       "p": 10
      },
      {
       "rank": 14,
-      "name": "帕德博恩",
+      "name": "科隆",
       "pts": 10,
       "p": 10
      },
      {
       "rank": 15,
-      "name": "奥格斯堡",
-      "pts": 9,
-      "p": 9
+      "name": "帕德博恩",
+      "pts": 10,
+      "p": 10
      },
      {
       "rank": 16,
@@ -15915,7 +15926,7 @@
    "code": "周六010",
    "competition": "德甲",
    "round": "",
-   "kickoff": "2026-11-21 22:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "法兰克福",
@@ -15936,7 +15947,7 @@
     "slug": "",
     "league": "德甲",
     "country": "",
-    "rank": 10,
+    "rank": 11,
     "points": 12,
     "played": 10,
     "win": 4,
@@ -16274,79 +16285,79 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "法兰克福",
      "n": 12,
-     "core_avg": 66.5,
-     "form_avg": 6.66,
+     "core_avg": 66.8,
+     "form_avg": 6.61,
      "high_fatigue": 0,
      "top": [
       {
        "name": "布尔卡特",
        "pos": "FW",
-       "oti": 61.42,
-       "dii": 42.48,
-       "gim": 78.65,
-       "form": 7.6,
-       "cons": 4.71,
+       "oti": 61.39,
+       "dii": 42.5,
+       "gim": 78.71,
+       "form": 7.7,
+       "cons": 4.89,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.1,
        "estimated": false
       },
       {
        "name": "埃布努塔利布",
        "pos": "FW",
-       "oti": 72.61,
-       "dii": 38.68,
-       "gim": 72.67,
-       "form": 6.7,
-       "cons": 9.19,
+       "oti": 72.62,
+       "dii": 38.71,
+       "gim": 72.74,
+       "form": 6.5,
+       "cons": 8.89,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.1,
        "estimated": false
       },
       {
        "name": "西·乌尊",
        "pos": "MF",
-       "oti": 71.31,
-       "dii": 32.1,
-       "gim": 70.04,
+       "oti": 71.41,
+       "dii": 32.07,
+       "gim": 70.65,
        "form": 6.6,
-       "cons": 10.09,
+       "cons": 10.89,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.6,
        "estimated": false
       },
       {
        "name": "布拉西耶",
        "pos": "DF",
-       "oti": 37.61,
-       "dii": 70.71,
-       "gim": 56.45,
-       "form": 6.7,
-       "cons": 41.26,
+       "oti": 37.75,
+       "dii": 70.64,
+       "gim": 56.91,
+       "form": 6.5,
+       "cons": 33.78,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.5,
        "estimated": false
       },
       {
        "name": "科赫",
        "pos": "DF",
-       "oti": 49.92,
+       "oti": 50.19,
        "dii": 53.0,
-       "gim": 54.58,
+       "gim": 54.94,
        "form": 6.8,
-       "cons": 35.43,
-       "fatigue": "Low",
+       "cons": 38.44,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.4,
        "estimated": false
       }
      ]
@@ -16354,31 +16365,31 @@
     "away": {
      "team": "霍芬海姆",
      "n": 13,
-     "core_avg": 66.6,
-     "form_avg": 6.76,
-     "high_fatigue": 0,
+     "core_avg": 67.5,
+     "form_avg": 6.65,
+     "high_fatigue": 1,
      "top": [
       {
        "name": "亚历山大·普拉斯",
        "pos": "DF",
-       "oti": 89.46,
-       "dii": 29.84,
-       "gim": 75.0,
-       "form": 7.1,
-       "cons": 27.8,
-       "fatigue": "Low",
+       "oti": 89.59,
+       "dii": 31.05,
+       "gim": 76.52,
+       "form": 6.8,
+       "cons": 25.33,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 1.5,
        "estimated": true
       },
       {
        "name": "孔泰",
        "pos": "FW",
-       "oti": 63.3,
+       "oti": 63.29,
        "dii": 79.92,
-       "gim": 72.75,
-       "form": 6.9,
-       "cons": 29.37,
+       "gim": 72.8,
+       "form": 6.6,
+       "cons": 26.89,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -16387,40 +16398,40 @@
       {
        "name": "卡巴克",
        "pos": "DF",
-       "oti": 44.52,
-       "dii": 66.73,
-       "gim": 65.07,
-       "form": 6.6,
-       "cons": 71.08,
+       "oti": 44.74,
+       "dii": 67.22,
+       "gim": 65.66,
+       "form": 6.4,
+       "cons": 65.11,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.6,
        "estimated": false
       },
       {
        "name": "亚当·赫洛热克",
        "pos": "FW",
-       "oti": 54.9,
-       "dii": 45.73,
-       "gim": 60.31,
+       "oti": 54.81,
+       "dii": 45.75,
+       "gim": 61.47,
        "form": 7.0,
-       "cons": 41.26,
-       "fatigue": "Low",
+       "cons": 40.89,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 1.2,
        "estimated": false
       },
       {
        "name": "阿夫杜拉胡",
        "pos": "MF",
-       "oti": 30.32,
-       "dii": 48.71,
-       "gim": 60.06,
+       "oti": 30.44,
+       "dii": 48.65,
+       "gim": 60.84,
        "form": 6.6,
-       "cons": 96.19,
-       "fatigue": "Medium",
+       "cons": 98.0,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.8,
        "estimated": false
       }
      ]
@@ -16436,7 +16447,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -16490,8 +16501,8 @@
      {
       "rank": 6,
       "name": "不来梅",
-      "pts": 15,
-      "p": 9
+      "pts": 18,
+      "p": 10
      },
      {
       "rank": 7,
@@ -16519,39 +16530,39 @@
      },
      {
       "rank": 10,
-      "name": "霍芬海姆",
+      "name": "奥格斯堡",
       "pts": 12,
       "p": 10
      },
      {
       "rank": 11,
-      "name": "汉堡",
+      "name": "霍芬海姆",
       "pts": 12,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 12,
-      "name": "美因茨",
-      "pts": 10,
-      "p": 9
+      "name": "汉堡",
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 13,
-      "name": "科隆",
+      "name": "美因茨",
       "pts": 10,
       "p": 10
      },
      {
       "rank": 14,
-      "name": "帕德博恩",
+      "name": "科隆",
       "pts": 10,
       "p": 10
      },
      {
       "rank": 15,
-      "name": "奥格斯堡",
-      "pts": 9,
-      "p": 9
+      "name": "帕德博恩",
+      "pts": 10,
+      "p": 10
      },
      {
       "rank": 16,
@@ -18032,7 +18043,7 @@
    "code": "周六011",
    "competition": "德甲",
    "round": "",
-   "kickoff": "2026-11-21 22:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "柏林联合",
@@ -18391,79 +18402,79 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "柏林联合",
      "n": 12,
-     "core_avg": 41.5,
-     "form_avg": 6.35,
+     "core_avg": 42.9,
+     "form_avg": 6.27,
      "high_fatigue": 0,
      "top": [
       {
        "name": "乌多凯",
        "pos": "DF",
-       "oti": 35.69,
-       "dii": 48.35,
-       "gim": 48.42,
+       "oti": 35.79,
+       "dii": 48.26,
+       "gim": 48.8,
        "form": 6.2,
-       "cons": 26.23,
+       "cons": 25.33,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.4,
        "estimated": false
-      },
-      {
-       "name": "利万·布尔库",
-       "pos": "FW",
-       "oti": 29.83,
-       "dii": 61.32,
-       "gim": 43.32,
-       "form": 6.4,
-       "cons": 68.83,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
-       "estimated": true
       },
       {
        "name": "蒂姆·斯卡尔克",
        "pos": "MF",
-       "oti": 65.5,
-       "dii": 30.31,
-       "gim": 41.82,
-       "form": 6.5,
-       "cons": 98.88,
+       "oti": 65.66,
+       "dii": 30.3,
+       "gim": 46.77,
+       "form": 6.2,
+       "cons": 96.22,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 5.0,
+       "estimated": true
+      },
+      {
+       "name": "利万·布尔库",
+       "pos": "FW",
+       "oti": 29.69,
+       "dii": 61.33,
+       "gim": 43.31,
+       "form": 6.4,
+       "cons": 67.78,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -0.0,
        "estimated": true
       },
       {
        "name": "舍费尔",
        "pos": "MF",
-       "oti": 31.66,
-       "dii": 74.22,
-       "gim": 40.22,
-       "form": 6.8,
-       "cons": 93.72,
+       "oti": 31.77,
+       "dii": 74.12,
+       "gim": 41.16,
+       "form": 6.5,
+       "cons": 85.33,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.9,
        "estimated": false
       },
       {
-       "name": "范登博斯",
-       "pos": "DF",
-       "oti": 34.12,
-       "dii": 52.28,
-       "gim": 33.93,
+       "name": "哈贝勒",
+       "pos": "MF",
+       "oti": 37.3,
+       "dii": 46.49,
+       "gim": 34.43,
        "form": 6.2,
-       "cons": 33.86,
-       "fatigue": "Low",
+       "cons": 82.0,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 1.0,
        "estimated": false
       }
      ]
@@ -18471,19 +18482,19 @@
     "away": {
      "team": "莱红牛",
      "n": 15,
-     "core_avg": 83.7,
-     "form_avg": 6.89,
-     "high_fatigue": 0,
+     "core_avg": 84.0,
+     "form_avg": 6.99,
+     "high_fatigue": 2,
      "top": [
       {
        "name": "罗慕洛",
        "pos": "FW",
-       "oti": 75.26,
-       "dii": 67.69,
-       "gim": 91.17,
+       "oti": 75.28,
+       "dii": 67.73,
+       "gim": 91.22,
        "form": 7.2,
-       "cons": 26.23,
-       "fatigue": "Low",
+       "cons": 23.33,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": true
@@ -18491,14 +18502,14 @@
       {
        "name": "努萨",
        "pos": "FW",
-       "oti": 83.34,
-       "dii": 48.22,
-       "gim": 90.84,
-       "form": 7.4,
-       "cons": 3.59,
-       "fatigue": "Medium",
+       "oti": 83.35,
+       "dii": 48.25,
+       "gim": 90.9,
+       "form": 7.5,
+       "cons": 4.89,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.1,
        "estimated": false
       },
       {
@@ -18506,10 +18517,10 @@
        "pos": "FW",
        "oti": 62.5,
        "dii": 70.35,
-       "gim": 90.62,
-       "form": 8.3,
-       "cons": 1.35,
-       "fatigue": "Medium",
+       "gim": 90.66,
+       "form": 8.4,
+       "cons": 1.56,
+       "fatigue": "High",
        "watch": "",
        "d_gim": 0.0,
        "estimated": true
@@ -18517,27 +18528,27 @@
       {
        "name": "威利·奥尔班",
        "pos": "DF",
-       "oti": 35.24,
-       "dii": 36.68,
-       "gim": 77.39,
-       "form": 6.7,
-       "cons": 12.11,
+       "oti": 35.35,
+       "dii": 36.62,
+       "gim": 78.07,
+       "form": 7.0,
+       "cons": 32.22,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.7,
        "estimated": false
       },
       {
        "name": "巴库",
        "pos": "DF",
-       "oti": 57.76,
-       "dii": 46.27,
-       "gim": 68.43,
-       "form": 6.7,
-       "cons": 13.68,
-       "fatigue": "Low",
+       "oti": 58.17,
+       "dii": 46.16,
+       "gim": 69.1,
+       "form": 7.2,
+       "cons": 9.56,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.7,
        "estimated": true
       }
      ]
@@ -18553,7 +18564,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -18607,8 +18618,8 @@
      {
       "rank": 6,
       "name": "不来梅",
-      "pts": 15,
-      "p": 9
+      "pts": 18,
+      "p": 10
      },
      {
       "rank": 7,
@@ -18636,39 +18647,39 @@
      },
      {
       "rank": 10,
-      "name": "霍芬海姆",
+      "name": "奥格斯堡",
       "pts": 12,
       "p": 10
      },
      {
       "rank": 11,
-      "name": "汉堡",
+      "name": "霍芬海姆",
       "pts": 12,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 12,
-      "name": "美因茨",
-      "pts": 10,
-      "p": 9
+      "name": "汉堡",
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 13,
-      "name": "科隆",
+      "name": "美因茨",
       "pts": 10,
       "p": 10
      },
      {
       "rank": 14,
-      "name": "帕德博恩",
+      "name": "科隆",
       "pts": 10,
       "p": 10
      },
      {
       "rank": 15,
-      "name": "奥格斯堡",
-      "pts": 9,
-      "p": 9
+      "name": "帕德博恩",
+      "pts": 10,
+      "p": 10
      },
      {
       "rank": 16,
@@ -20094,14 +20105,14 @@
    "code": "周六012",
    "competition": "英超",
    "round": "",
-   "kickoff": "2026-11-21 23:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "伯恩茅斯",
     "slug": "",
     "league": "英超",
     "country": "",
-    "rank": 4,
+    "rank": 5,
     "points": 18,
     "played": 11,
     "win": 5,
@@ -20134,7 +20145,7 @@
    "metrics_home": {
     "attack": 92,
     "defence": 90,
-    "control": 94,
+    "control": 97,
     "form": 95,
     "value": 88,
     "motivation": 85,
@@ -20453,15 +20464,15 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "伯恩茅斯",
      "n": 12,
      "core_avg": 70.8,
-     "form_avg": 6.82,
-     "high_fatigue": 0,
+     "form_avg": 6.87,
+     "high_fatigue": 1,
      "top": [
       {
        "name": "埃万尼尔森",
@@ -20469,11 +20480,11 @@
        "oti": 74.16,
        "dii": 73.18,
        "gim": 86.7,
-       "form": 7.9,
-       "cons": 10.16,
-       "fatigue": "Low",
+       "form": 8.0,
+       "cons": 9.11,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": -0.4,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -20482,11 +20493,11 @@
        "oti": 74.56,
        "dii": 33.25,
        "gim": 72.21,
-       "form": 6.7,
-       "cons": 20.9,
-       "fatigue": "Low",
+       "form": 7.0,
+       "cons": 19.57,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -20495,11 +20506,11 @@
        "oti": 48.6,
        "dii": 78.68,
        "gim": 70.56,
-       "form": 6.6,
-       "cons": 32.81,
-       "fatigue": "Low",
+       "form": 6.8,
+       "cons": 33.53,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.2,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -20508,11 +20519,11 @@
        "oti": 39.23,
        "dii": 48.15,
        "gim": 63.16,
-       "form": 6.9,
-       "cons": 60.16,
-       "fatigue": "Low",
+       "form": 7.0,
+       "cons": 63.95,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -20522,10 +20533,10 @@
        "dii": 61.01,
        "gim": 61.17,
        "form": 6.5,
-       "cons": 63.09,
-       "fatigue": "Low",
+       "cons": 66.47,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -20534,7 +20545,7 @@
      "team": "诺丁汉",
      "n": 12,
      "core_avg": 66.2,
-     "form_avg": 6.6,
+     "form_avg": 6.5,
      "high_fatigue": 0,
      "top": [
       {
@@ -20544,10 +20555,10 @@
        "dii": 40.07,
        "gim": 78.85,
        "form": 6.8,
-       "cons": 4.49,
-       "fatigue": "Low",
+       "cons": 5.81,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": -0.4,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -20557,10 +20568,10 @@
        "dii": 47.73,
        "gim": 66.45,
        "form": 6.5,
-       "cons": 67.19,
-       "fatigue": "Low",
+       "cons": 63.95,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.6,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -20569,11 +20580,11 @@
        "oti": 68.94,
        "dii": 69.72,
        "gim": 63.82,
-       "form": 6.8,
-       "cons": 75.98,
-       "fatigue": "Low",
+       "form": 6.7,
+       "cons": 75.97,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -20582,11 +20593,11 @@
        "oti": 83.11,
        "dii": 68.44,
        "gim": 61.11,
-       "form": 6.8,
-       "cons": 50.2,
-       "fatigue": "Low",
+       "form": 6.5,
+       "cons": 38.76,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -20595,11 +20606,11 @@
        "oti": 47.53,
        "dii": 31.18,
        "gim": 60.85,
-       "form": 7.0,
-       "cons": 34.18,
+       "form": 6.6,
+       "cons": 25.97,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -20615,7 +20626,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -20634,7 +20645,7 @@
       "rank": 2,
       "name": "布赖顿",
       "pts": 22,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 3,
@@ -20644,15 +20655,15 @@
      },
      {
       "rank": 4,
-      "name": "伯恩茅斯",
-      "pts": 18,
+      "name": "利物浦",
+      "pts": 21,
       "p": 11
      },
      {
       "rank": 5,
-      "name": "利物浦",
+      "name": "伯恩茅斯",
       "pts": 18,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
@@ -20704,7 +20715,7 @@
      },
      {
       "rank": 11,
-      "name": "维拉",
+      "name": "赫尔城",
       "pts": 14,
       "p": 11
      },
@@ -20716,27 +20727,27 @@
      },
      {
       "rank": 12,
-      "name": "纽卡斯尔",
-      "pts": 13,
+      "name": "维拉",
+      "pts": 14,
       "p": 11
      },
      {
       "rank": 13,
-      "name": "考文垂",
-      "pts": 12,
+      "name": "纽卡斯尔",
+      "pts": 13,
       "p": 11
-     },
-     {
-      "rank": 14,
-      "name": "赫尔城",
-      "pts": 11,
-      "p": 10
      },
      {
       "rank": 14,
       "name": "伊普斯维奇",
       "pts": 11,
       "p": 10
+     },
+     {
+      "rank": 14,
+      "name": "考文垂",
+      "pts": 12,
+      "p": 11
      },
      {
       "rank": 15,
@@ -20772,7 +20783,7 @@
       "rank": 19,
       "name": "曼联",
       "pts": 8,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 20,
@@ -22175,7 +22186,7 @@
    "code": "周六013",
    "competition": "英超",
    "round": "",
-   "kickoff": "2026-11-21 23:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "热刺",
@@ -22525,14 +22536,14 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "away": {
      "team": "伊普斯",
      "n": 14,
      "core_avg": 60.1,
-     "form_avg": 6.59,
+     "form_avg": 6.54,
      "high_fatigue": 0,
      "top": [
       {
@@ -22541,11 +22552,11 @@
        "oti": 83.91,
        "dii": 37.81,
        "gim": 66.28,
-       "form": 6.9,
-       "cons": 75.98,
+       "form": 6.7,
+       "cons": 72.67,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.8,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -22554,11 +22565,11 @@
        "oti": 68.65,
        "dii": 34.17,
        "gim": 64.63,
-       "form": 6.6,
-       "cons": 23.05,
-       "fatigue": "Low",
+       "form": 6.5,
+       "cons": 21.32,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": -2.6,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -22567,11 +22578,11 @@
        "oti": 63.86,
        "dii": 29.01,
        "gim": 57.23,
-       "form": 6.2,
-       "cons": 20.9,
+       "form": 6.3,
+       "cons": 27.13,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": -3.0,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -22580,11 +22591,11 @@
        "oti": 32.16,
        "dii": 42.85,
        "gim": 56.66,
-       "form": 6.5,
-       "cons": 94.92,
-       "fatigue": "Low",
+       "form": 6.4,
+       "cons": 91.47,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 1.3,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -22593,11 +22604,11 @@
        "oti": 76.52,
        "dii": 51.82,
        "gim": 55.59,
-       "form": 7.0,
-       "cons": 37.7,
+       "form": 6.8,
+       "cons": 75.97,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": -1.6,
+       "d_gim": 0.0,
        "estimated": true
       }
      ]
@@ -22613,7 +22624,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -22632,7 +22643,7 @@
       "rank": 2,
       "name": "布赖顿",
       "pts": 22,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 3,
@@ -22642,15 +22653,15 @@
      },
      {
       "rank": 4,
-      "name": "伯恩茅斯",
-      "pts": 18,
+      "name": "利物浦",
+      "pts": 21,
       "p": 11
      },
      {
       "rank": 5,
-      "name": "利物浦",
+      "name": "伯恩茅斯",
       "pts": 18,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
@@ -22702,7 +22713,7 @@
      },
      {
       "rank": 11,
-      "name": "维拉",
+      "name": "赫尔城",
       "pts": 14,
       "p": 11
      },
@@ -22714,27 +22725,27 @@
      },
      {
       "rank": 12,
-      "name": "纽卡斯尔",
-      "pts": 13,
+      "name": "维拉",
+      "pts": 14,
       "p": 11
      },
      {
       "rank": 13,
-      "name": "考文垂",
-      "pts": 12,
+      "name": "纽卡斯尔",
+      "pts": 13,
       "p": 11
-     },
-     {
-      "rank": 14,
-      "name": "赫尔城",
-      "pts": 11,
-      "p": 10
      },
      {
       "rank": 14,
       "name": "伊普斯维奇",
       "pts": 11,
       "p": 10
+     },
+     {
+      "rank": 14,
+      "name": "考文垂",
+      "pts": 12,
+      "p": 11
      },
      {
       "rank": 15,
@@ -22770,7 +22781,7 @@
       "rank": 19,
       "name": "曼联",
       "pts": 8,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 20,
@@ -24215,14 +24226,14 @@
    "code": "周六014",
    "competition": "英超",
    "round": "",
-   "kickoff": "2026-11-21 23:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "维拉",
     "slug": "",
     "league": "英超",
     "country": "",
-    "rank": 11,
+    "rank": 12,
     "points": 14,
     "played": 11,
     "win": 3,
@@ -24289,7 +24300,7 @@
    "metrics_away": {
     "attack": 27,
     "defence": 20,
-    "control": 15,
+    "control": 22,
     "form": 45,
     "value": 83,
     "motivation": 27,
@@ -24574,15 +24585,15 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "维拉",
      "n": 15,
      "core_avg": 66.3,
-     "form_avg": 6.61,
-     "high_fatigue": 0,
+     "form_avg": 6.66,
+     "high_fatigue": 1,
      "top": [
       {
        "name": "杰克逊",
@@ -24590,11 +24601,11 @@
        "oti": 74.23,
        "dii": 36.39,
        "gim": 90.13,
-       "form": 8.0,
-       "cons": 4.49,
-       "fatigue": "Medium",
+       "form": 7.5,
+       "cons": 3.29,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": -0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -24604,10 +24615,10 @@
        "dii": 52.62,
        "gim": 80.02,
        "form": 6.7,
-       "cons": 10.16,
-       "fatigue": "Low",
+       "cons": 9.11,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -24616,11 +24627,11 @@
        "oti": 79.58,
        "dii": 43.85,
        "gim": 56.53,
-       "form": 6.8,
-       "cons": 28.71,
+       "form": 7.0,
+       "cons": 28.29,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.4,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -24630,10 +24641,10 @@
        "dii": 88.49,
        "gim": 53.92,
        "form": 6.8,
-       "cons": 72.66,
+       "cons": 75.97,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.3,
+       "d_gim": 0.0,
        "estimated": true
       },
       {
@@ -24643,10 +24654,10 @@
        "dii": 89.04,
        "gim": 51.01,
        "form": 7.0,
-       "cons": 93.95,
+       "cons": 94.57,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": true
       }
      ]
@@ -24655,8 +24666,8 @@
      "team": "桑德兰",
      "n": 12,
      "core_avg": 64.0,
-     "form_avg": 6.54,
-     "high_fatigue": 0,
+     "form_avg": 6.57,
+     "high_fatigue": 2,
      "top": [
       {
        "name": "扎卡",
@@ -24665,10 +24676,10 @@
        "dii": 50.31,
        "gim": 81.33,
        "form": 6.9,
-       "cons": 43.16,
+       "cons": 42.05,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -24677,11 +24688,11 @@
        "oti": 39.71,
        "dii": 80.67,
        "gim": 67.35,
-       "form": 6.6,
-       "cons": 11.33,
-       "fatigue": "Low",
+       "form": 6.7,
+       "cons": 10.66,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -24691,10 +24702,10 @@
        "dii": 67.66,
        "gim": 58.13,
        "form": 6.6,
-       "cons": 18.36,
+       "cons": 16.86,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -24704,10 +24715,10 @@
        "dii": 27.99,
        "gim": 57.93,
        "form": 6.6,
-       "cons": 3.71,
+       "cons": 4.07,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.2,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -24716,11 +24727,11 @@
        "oti": 61.73,
        "dii": 42.78,
        "gim": 55.47,
-       "form": 6.7,
-       "cons": 39.45,
-       "fatigue": "Low",
+       "form": 6.6,
+       "cons": 38.76,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.4,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -24736,7 +24747,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -24755,7 +24766,7 @@
       "rank": 2,
       "name": "布赖顿",
       "pts": 22,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 3,
@@ -24765,15 +24776,15 @@
      },
      {
       "rank": 4,
-      "name": "伯恩茅斯",
-      "pts": 18,
+      "name": "利物浦",
+      "pts": 21,
       "p": 11
      },
      {
       "rank": 5,
-      "name": "利物浦",
+      "name": "伯恩茅斯",
       "pts": 18,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
@@ -24825,7 +24836,7 @@
      },
      {
       "rank": 11,
-      "name": "维拉",
+      "name": "赫尔城",
       "pts": 14,
       "p": 11
      },
@@ -24837,27 +24848,27 @@
      },
      {
       "rank": 12,
-      "name": "纽卡斯尔",
-      "pts": 13,
+      "name": "维拉",
+      "pts": 14,
       "p": 11
      },
      {
       "rank": 13,
-      "name": "考文垂",
-      "pts": 12,
+      "name": "纽卡斯尔",
+      "pts": 13,
       "p": 11
-     },
-     {
-      "rank": 14,
-      "name": "赫尔城",
-      "pts": 11,
-      "p": 10
      },
      {
       "rank": 14,
       "name": "伊普斯维奇",
       "pts": 11,
       "p": 10
+     },
+     {
+      "rank": 14,
+      "name": "考文垂",
+      "pts": 12,
+      "p": 11
      },
      {
       "rank": 15,
@@ -24893,7 +24904,7 @@
       "rank": 19,
       "name": "曼联",
       "pts": 8,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 20,
@@ -26400,14 +26411,14 @@
    "code": "周六015",
    "competition": "英超",
    "round": "",
-   "kickoff": "2026-11-21 23:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "考文垂",
     "slug": "",
     "league": "英超",
     "country": "",
-    "rank": 13,
+    "rank": 14,
     "points": 12,
     "played": 11,
     "win": 4,
@@ -26750,14 +26761,14 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "考文垂",
      "n": 14,
      "core_avg": 57.5,
-     "form_avg": 6.47,
+     "form_avg": 6.51,
      "high_fatigue": 0,
      "top": [
       {
@@ -26767,10 +26778,10 @@
        "dii": 48.15,
        "gim": 73.91,
        "form": 6.7,
-       "cons": 47.07,
+       "cons": 49.42,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -26780,10 +26791,10 @@
        "dii": 37.35,
        "gim": 57.66,
        "form": 6.4,
-       "cons": 57.23,
+       "cons": 56.98,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": -0.3,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -26792,11 +26803,11 @@
        "oti": 65.31,
        "dii": 39.12,
        "gim": 57.31,
-       "form": 6.9,
-       "cons": 19.34,
+       "form": 7.2,
+       "cons": 15.89,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -26805,11 +26816,11 @@
        "oti": 30.26,
        "dii": 37.47,
        "gim": 51.14,
-       "form": 6.3,
-       "cons": 25.2,
-       "fatigue": "Low",
+       "form": 6.2,
+       "cons": 19.57,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -26818,11 +26829,11 @@
        "oti": 57.49,
        "dii": 66.67,
        "gim": 47.67,
-       "form": 6.5,
-       "cons": 72.66,
-       "fatigue": "Low",
+       "form": 6.4,
+       "cons": 66.47,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -26831,8 +26842,8 @@
      "team": "水晶宫",
      "n": 12,
      "core_avg": 55.9,
-     "form_avg": 6.41,
-     "high_fatigue": 0,
+     "form_avg": 6.46,
+     "high_fatigue": 1,
      "top": [
       {
        "name": "泰里克·米切尔",
@@ -26840,11 +26851,11 @@
        "oti": 40.94,
        "dii": 57.87,
        "gim": 59.86,
-       "form": 6.1,
-       "cons": 50.2,
-       "fatigue": "Low",
+       "form": 6.2,
+       "cons": 51.55,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -26853,11 +26864,11 @@
        "oti": 56.65,
        "dii": 31.41,
        "gim": 57.26,
-       "form": 6.8,
-       "cons": 47.07,
+       "form": 6.5,
+       "cons": 40.5,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -26866,11 +26877,11 @@
        "oti": 30.33,
        "dii": 95.48,
        "gim": 55.79,
-       "form": 6.2,
-       "cons": 32.81,
+       "form": 6.5,
+       "cons": 30.04,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.3,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -26879,11 +26890,11 @@
        "oti": 39.16,
        "dii": 32.95,
        "gim": 55.27,
-       "form": 6.4,
-       "cons": 6.25,
+       "form": 6.9,
+       "cons": 5.04,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.2,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -26892,11 +26903,11 @@
        "oti": 36.52,
        "dii": 58.78,
        "gim": 51.11,
-       "form": 6.7,
-       "cons": 28.71,
-       "fatigue": "Medium",
+       "form": 6.8,
+       "cons": 27.13,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -26912,7 +26923,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -26931,7 +26942,7 @@
       "rank": 2,
       "name": "布赖顿",
       "pts": 22,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 3,
@@ -26941,15 +26952,15 @@
      },
      {
       "rank": 4,
-      "name": "伯恩茅斯",
-      "pts": 18,
+      "name": "利物浦",
+      "pts": 21,
       "p": 11
      },
      {
       "rank": 5,
-      "name": "利物浦",
+      "name": "伯恩茅斯",
       "pts": 18,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
@@ -27001,7 +27012,7 @@
      },
      {
       "rank": 11,
-      "name": "维拉",
+      "name": "赫尔城",
       "pts": 14,
       "p": 11
      },
@@ -27013,27 +27024,27 @@
      },
      {
       "rank": 12,
-      "name": "纽卡斯尔",
-      "pts": 13,
+      "name": "维拉",
+      "pts": 14,
       "p": 11
      },
      {
       "rank": 13,
-      "name": "考文垂",
-      "pts": 12,
+      "name": "纽卡斯尔",
+      "pts": 13,
       "p": 11
-     },
-     {
-      "rank": 14,
-      "name": "赫尔城",
-      "pts": 11,
-      "p": 10
      },
      {
       "rank": 14,
       "name": "伊普斯维奇",
       "pts": 11,
       "p": 10
+     },
+     {
+      "rank": 14,
+      "name": "考文垂",
+      "pts": 12,
+      "p": 11
      },
      {
       "rank": 15,
@@ -27069,7 +27080,7 @@
       "rank": 19,
       "name": "曼联",
       "pts": 8,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 20,
@@ -28334,7 +28345,7 @@
    "code": "周六016",
    "competition": "英超",
    "round": "",
-   "kickoff": "2026-11-21 23:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "切尔西",
@@ -28374,7 +28385,7 @@
    "metrics_home": {
     "attack": 78,
     "defence": 27,
-    "control": 63,
+    "control": 65,
     "form": 45,
     "value": 65,
     "motivation": 46,
@@ -28709,14 +28720,14 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "切尔西",
      "n": 15,
      "core_avg": 81.7,
-     "form_avg": 6.78,
+     "form_avg": 6.69,
      "high_fatigue": 0,
      "top": [
       {
@@ -28726,10 +28737,10 @@
        "dii": 36.4,
        "gim": 92.24,
        "form": 7.4,
-       "cons": 2.34,
+       "cons": 2.13,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": -0.4,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -28738,11 +28749,11 @@
        "oti": 63.0,
        "dii": 53.3,
        "gim": 83.7,
-       "form": 7.0,
-       "cons": 10.16,
+       "form": 6.8,
+       "cons": 7.75,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": -0.4,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -28751,11 +28762,11 @@
        "oti": 65.21,
        "dii": 17.72,
        "gim": 81.57,
-       "form": 6.7,
-       "cons": 23.05,
+       "form": 6.4,
+       "cons": 16.86,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": true
       },
       {
@@ -28764,11 +28775,11 @@
        "oti": 68.26,
        "dii": 55.37,
        "gim": 81.24,
-       "form": 6.8,
-       "cons": 11.33,
-       "fatigue": "Low",
+       "form": 6.7,
+       "cons": 10.66,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": -0.4,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -28778,10 +28789,10 @@
        "dii": 70.05,
        "gim": 69.68,
        "form": 6.6,
-       "cons": 7.81,
-       "fatigue": "Low",
+       "cons": 7.75,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": -0.1,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -28790,7 +28801,7 @@
      "team": "利兹联",
      "n": 12,
      "core_avg": 65.6,
-     "form_avg": 6.73,
+     "form_avg": 6.76,
      "high_fatigue": 0,
      "top": [
       {
@@ -28799,11 +28810,11 @@
        "oti": 51.56,
        "dii": 51.54,
        "gim": 72.71,
-       "form": 7.0,
-       "cons": 67.19,
-       "fatigue": "Low",
+       "form": 6.8,
+       "cons": 69.77,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.4,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -28812,11 +28823,11 @@
        "oti": 49.22,
        "dii": 28.96,
        "gim": 65.11,
-       "form": 6.6,
-       "cons": 19.34,
-       "fatigue": "Low",
+       "form": 6.7,
+       "cons": 18.22,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 4.8,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -28826,10 +28837,10 @@
        "dii": 68.51,
        "gim": 64.4,
        "form": 6.5,
-       "cons": 57.23,
+       "cons": 56.98,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.6,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -28838,11 +28849,11 @@
        "oti": 40.27,
        "dii": 69.13,
        "gim": 64.3,
-       "form": 6.8,
-       "cons": 47.07,
-       "fatigue": "Low",
+       "form": 6.9,
+       "cons": 46.9,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 2.2,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -28851,11 +28862,11 @@
        "oti": 32.97,
        "dii": 64.31,
        "gim": 61.72,
-       "form": 6.7,
-       "cons": 97.07,
-       "fatigue": "Low",
+       "form": 6.6,
+       "cons": 95.93,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -28871,7 +28882,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -28890,7 +28901,7 @@
       "rank": 2,
       "name": "布赖顿",
       "pts": 22,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 3,
@@ -28900,15 +28911,15 @@
      },
      {
       "rank": 4,
-      "name": "伯恩茅斯",
-      "pts": 18,
+      "name": "利物浦",
+      "pts": 21,
       "p": 11
      },
      {
       "rank": 5,
-      "name": "利物浦",
+      "name": "伯恩茅斯",
       "pts": 18,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
@@ -28960,7 +28971,7 @@
      },
      {
       "rank": 11,
-      "name": "维拉",
+      "name": "赫尔城",
       "pts": 14,
       "p": 11
      },
@@ -28972,27 +28983,27 @@
      },
      {
       "rank": 12,
-      "name": "纽卡斯尔",
-      "pts": 13,
+      "name": "维拉",
+      "pts": 14,
       "p": 11
      },
      {
       "rank": 13,
-      "name": "考文垂",
-      "pts": 12,
+      "name": "纽卡斯尔",
+      "pts": 13,
       "p": 11
-     },
-     {
-      "rank": 14,
-      "name": "赫尔城",
-      "pts": 11,
-      "p": 10
      },
      {
       "rank": 14,
       "name": "伊普斯维奇",
       "pts": 11,
       "p": 10
+     },
+     {
+      "rank": 14,
+      "name": "考文垂",
+      "pts": 12,
+      "p": 11
      },
      {
       "rank": 15,
@@ -29028,7 +29039,7 @@
       "rank": 19,
       "name": "曼联",
       "pts": 8,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 20,
@@ -30437,7 +30448,7 @@
    "code": "周六017",
    "competition": "荷甲",
    "round": "",
-   "kickoff": "2026-11-21 23:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "奈梅亨",
@@ -30795,14 +30806,14 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "奈梅亨",
      "n": 15,
      "core_avg": 65.0,
-     "form_avg": 6.73,
+     "form_avg": 6.6,
      "high_fatigue": 0,
      "top": [
       {
@@ -30812,8 +30823,8 @@
        "dii": 68.06,
        "gim": 72.6,
        "form": 6.7,
-       "cons": 37.93,
-       "fatigue": "Low",
+       "cons": 39.39,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -30825,7 +30836,7 @@
        "dii": 69.85,
        "gim": 69.88,
        "form": 6.5,
-       "cons": 85.34,
+       "cons": 88.74,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -30838,8 +30849,8 @@
        "dii": 32.58,
        "gim": 69.76,
        "form": 6.9,
-       "cons": 20.69,
-       "fatigue": "Low",
+       "cons": 21.65,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -30850,9 +30861,9 @@
        "oti": 30.33,
        "dii": 89.6,
        "gim": 56.51,
-       "form": 6.8,
-       "cons": 48.92,
-       "fatigue": "Low",
+       "form": 6.6,
+       "cons": 49.35,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -30863,9 +30874,9 @@
        "oti": 34.14,
        "dii": 74.54,
        "gim": 56.39,
-       "form": 6.7,
-       "cons": 93.1,
-       "fatigue": "Low",
+       "form": 6.2,
+       "cons": 54.11,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": true
@@ -30876,7 +30887,7 @@
      "team": "埃因霍温",
      "n": 16,
      "core_avg": 76.9,
-     "form_avg": 6.91,
+     "form_avg": 6.84,
      "high_fatigue": 0,
      "top": [
       {
@@ -30885,9 +30896,9 @@
        "oti": 83.01,
        "dii": 35.76,
        "gim": 82.23,
-       "form": 6.8,
-       "cons": 42.46,
-       "fatigue": "Low",
+       "form": 6.7,
+       "cons": 39.39,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -30898,9 +30909,9 @@
        "oti": 76.87,
        "dii": 57.43,
        "gim": 81.16,
-       "form": 6.9,
-       "cons": 64.22,
-       "fatigue": "Low",
+       "form": 6.7,
+       "cons": 62.99,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -30911,9 +30922,9 @@
        "oti": 91.81,
        "dii": 42.9,
        "gim": 78.81,
-       "form": 7.3,
-       "cons": 20.69,
-       "fatigue": "Low",
+       "form": 7.0,
+       "cons": 21.65,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -30924,9 +30935,9 @@
        "oti": 60.64,
        "dii": 28.79,
        "gim": 71.21,
-       "form": 7.1,
-       "cons": 26.08,
-       "fatigue": "Low",
+       "form": 7.2,
+       "cons": 28.35,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -30937,9 +30948,9 @@
        "oti": 75.76,
        "dii": 50.68,
        "gim": 70.99,
-       "form": 6.9,
-       "cons": 19.18,
-       "fatigue": "Low",
+       "form": 7.0,
+       "cons": 17.53,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -30957,7 +30968,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -30969,38 +30980,38 @@
      {
       "rank": 2,
       "name": "阿贾克斯",
-      "pts": 25,
-      "p": 12
+      "pts": 28,
+      "p": 13
      },
      {
       "rank": 3,
+      "name": "特温特",
+      "pts": 27,
+      "p": 13
+     },
+     {
+      "rank": 4,
+      "name": "阿尔克马",
+      "pts": 26,
+      "p": 13
+     },
+     {
+      "rank": 5,
       "name": "费耶诺德",
       "pts": 25,
       "p": 13
      },
      {
-      "rank": 4,
-      "name": "特温特",
-      "pts": 24,
-      "p": 12
-     },
-     {
-      "rank": 5,
+      "rank": 6,
       "name": "海伦芬",
       "pts": 24,
       "p": 13
      },
      {
-      "rank": 6,
-      "name": "阿尔克马",
-      "pts": 23,
-      "p": 12
-     },
-     {
       "rank": 7,
       "name": "福图纳",
-      "pts": 20,
-      "p": 12
+      "pts": 23,
+      "p": 13
      },
      {
       "rank": 8,
@@ -31012,7 +31023,7 @@
       "rank": 9,
       "name": "前进之鹰",
       "pts": 17,
-      "p": 12
+      "p": 13
      },
      {
       "rank": 10,
@@ -31042,7 +31053,7 @@
       "rank": 14,
       "name": "鹿斯巴达",
       "pts": 12,
-      "p": 12
+      "p": 13
      },
      {
       "rank": 15,
@@ -31060,13 +31071,13 @@
       "rank": 17,
       "name": "海牙",
       "pts": 9,
-      "p": 12
+      "p": 13
      },
      {
       "rank": 18,
       "name": "威廉二世",
       "pts": 3,
-      "p": 12
+      "p": 13
      }
     ],
     "lam_home": 1.458,
@@ -32443,14 +32454,14 @@
    "code": "周六018",
    "competition": "意甲",
    "round": "",
-   "kickoff": "2026-11-22 01:00",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "帕尔马",
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 17,
+    "rank": 16,
     "points": 8,
     "played": 12,
     "win": 2,
@@ -32483,7 +32494,7 @@
    "metrics_home": {
     "attack": 14,
     "defence": 26,
-    "control": 20,
+    "control": 21,
     "form": 20,
     "value": 11,
     "motivation": 13,
@@ -32802,14 +32813,14 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "帕尔马",
      "n": 14,
      "core_avg": 58.0,
-     "form_avg": 6.53,
+     "form_avg": 6.42,
      "high_fatigue": 0,
      "top": [
       {
@@ -32818,9 +32829,9 @@
        "oti": 80.01,
        "dii": 41.19,
        "gim": 62.4,
-       "form": 6.6,
-       "cons": 93.07,
-       "fatigue": "Low",
+       "form": 6.8,
+       "cons": 91.27,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -32831,9 +32842,9 @@
        "oti": 39.14,
        "dii": 58.66,
        "gim": 61.31,
-       "form": 6.5,
-       "cons": 77.74,
-       "fatigue": "Low",
+       "form": 6.4,
+       "cons": 78.18,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": true
@@ -32845,7 +32856,7 @@
        "dii": 46.71,
        "gim": 56.62,
        "form": 6.4,
-       "cons": 37.77,
+       "cons": 38.36,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -32857,8 +32868,8 @@
        "oti": 70.89,
        "dii": 36.28,
        "gim": 54.77,
-       "form": 6.7,
-       "cons": 48.91,
+       "form": 6.4,
+       "cons": 45.82,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -32870,7 +32881,7 @@
        "oti": 42.91,
        "dii": 70.75,
        "gim": 54.73,
-       "form": 6.9,
+       "form": 6.8,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -32882,8 +32893,8 @@
      "team": "罗马",
      "n": 16,
      "core_avg": 83.2,
-     "form_avg": 6.89,
-     "high_fatigue": 0,
+     "form_avg": 6.92,
+     "high_fatigue": 1,
      "top": [
       {
        "name": "保罗·迪巴拉",
@@ -32891,8 +32902,8 @@
        "oti": 73.09,
        "dii": 41.82,
        "gim": 92.89,
-       "form": 6.8,
-       "cons": 3.83,
+       "form": 6.7,
+       "cons": 6.91,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -32904,9 +32915,9 @@
        "oti": 91.69,
        "dii": 32.6,
        "gim": 87.59,
-       "form": 7.5,
-       "cons": 0.36,
-       "fatigue": "Medium",
+       "form": 8.2,
+       "cons": 0.0,
+       "fatigue": "High",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -32917,9 +32928,9 @@
        "oti": 71.92,
        "dii": 48.42,
        "gim": 84.18,
-       "form": 7.3,
-       "cons": 37.77,
-       "fatigue": "Low",
+       "form": 7.2,
+       "cons": 38.36,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -32930,8 +32941,8 @@
        "oti": 55.57,
        "dii": 53.83,
        "gim": 78.14,
-       "form": 6.9,
-       "cons": 29.01,
+       "form": 6.8,
+       "cons": 30.0,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -32944,8 +32955,8 @@
        "dii": 75.02,
        "gim": 73.18,
        "form": 6.9,
-       "cons": 16.06,
-       "fatigue": "Low",
+       "cons": 15.64,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -32963,7 +32974,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -32981,20 +32992,20 @@
      {
       "rank": 3,
       "name": "国际米兰",
-      "pts": 28,
-      "p": 11
+      "pts": 29,
+      "p": 12
      },
      {
       "rank": 4,
-      "name": "科莫",
-      "pts": 26,
+      "name": "AC米兰",
+      "pts": 27,
       "p": 12
      },
      {
       "rank": 5,
-      "name": "AC米兰",
-      "pts": 24,
-      "p": 11
+      "name": "科莫",
+      "pts": 26,
+      "p": 12
      },
      {
       "rank": 6,
@@ -33004,15 +33015,15 @@
      },
      {
       "rank": 6,
-      "name": "弗洛西诺",
-      "pts": 20,
-      "p": 11
+      "name": "尤文图斯",
+      "pts": 21,
+      "p": 12
      },
      {
       "rank": 7,
-      "name": "尤文图斯",
-      "pts": 18,
-      "p": 11
+      "name": "弗洛西诺",
+      "pts": 20,
+      "p": 12
      },
      {
       "rank": 8,
@@ -33023,32 +33034,32 @@
      {
       "rank": 9,
       "name": "博洛尼亚",
-      "pts": 17,
-      "p": 11
+      "pts": 18,
+      "p": 12
      },
      {
       "rank": 10,
-      "name": "卡利亚里",
+      "name": "热那亚",
       "pts": 16,
       "p": 12
      },
      {
       "rank": 11,
-      "name": "亚特兰大",
-      "pts": 14,
-      "p": 11
+      "name": "卡利亚里",
+      "pts": 16,
+      "p": 12
      },
      {
       "rank": 12,
-      "name": "都灵",
-      "pts": 14,
+      "name": "亚特兰大",
+      "pts": 15,
       "p": 12
      },
      {
       "rank": 13,
-      "name": "热那亚",
-      "pts": 13,
-      "p": 11
+      "name": "都灵",
+      "pts": 14,
+      "p": 12
      },
      {
       "rank": 14,
@@ -33064,13 +33075,13 @@
      },
      {
       "rank": 16,
-      "name": "萨索洛",
+      "name": "帕尔马",
       "pts": 8,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 17,
-      "name": "帕尔马",
+      "name": "萨索洛",
       "pts": 8,
       "p": 12
      },
@@ -33082,15 +33093,15 @@
      },
      {
       "rank": 19,
-      "name": "威尼斯",
+      "name": "乌迪内斯",
       "pts": 6,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 20,
-      "name": "乌迪内斯",
-      "pts": 5,
-      "p": 11
+      "name": "威尼斯",
+      "pts": 6,
+      "p": 12
      }
     ],
     "lam_home": 0.559,
@@ -34602,14 +34613,14 @@
    "code": "周六019",
    "competition": "英超",
    "round": "",
-   "kickoff": "2026-11-22 01:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "纽卡斯尔",
     "slug": "",
     "league": "英超",
     "country": "",
-    "rank": 12,
+    "rank": 13,
     "points": 13,
     "played": 11,
     "win": 3,
@@ -34642,7 +34653,7 @@
    "metrics_home": {
     "attack": 27,
     "defence": 12,
-    "control": 14,
+    "control": 12,
     "form": 13,
     "value": 60,
     "motivation": 27,
@@ -34961,14 +34972,14 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "纽卡斯尔",
      "n": 16,
      "core_avg": 56.2,
-     "form_avg": 6.64,
+     "form_avg": 6.61,
      "high_fatigue": 0,
      "top": [
       {
@@ -34977,11 +34988,11 @@
        "oti": 73.67,
        "dii": 73.9,
        "gim": 70.77,
-       "form": 6.8,
-       "cons": 12.5,
+       "form": 6.7,
+       "cons": 10.66,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.8,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -34991,10 +35002,10 @@
        "dii": 27.92,
        "gim": 56.77,
        "form": 6.6,
-       "cons": 60.16,
+       "cons": 59.69,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": true
       },
       {
@@ -35003,11 +35014,11 @@
        "oti": 62.6,
        "dii": 25.65,
        "gim": 54.46,
-       "form": 6.4,
-       "cons": 16.6,
-       "fatigue": "Low",
+       "form": 6.6,
+       "cons": 15.31,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.4,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -35016,11 +35027,11 @@
        "oti": 48.41,
        "dii": 34.81,
        "gim": 49.56,
-       "form": 6.7,
-       "cons": 39.45,
+       "form": 6.9,
+       "cons": 36.63,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 2.1,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -35030,10 +35041,10 @@
        "dii": 48.05,
        "gim": 49.35,
        "form": 6.6,
-       "cons": 32.81,
+       "cons": 31.98,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -35042,8 +35053,8 @@
      "team": "阿森纳",
      "n": 13,
      "core_avg": 80.4,
-     "form_avg": 6.99,
-     "high_fatigue": 1,
+     "form_avg": 6.92,
+     "high_fatigue": 2,
      "top": [
       {
        "name": "德克兰·赖斯",
@@ -35051,11 +35062,11 @@
        "oti": 73.96,
        "dii": 40.55,
        "gim": 86.13,
-       "form": 7.1,
-       "cons": 35.55,
-       "fatigue": "Medium",
+       "form": 6.9,
+       "cons": 34.88,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": 0.4,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -35064,11 +35075,11 @@
        "oti": 66.8,
        "dii": 22.46,
        "gim": 86.01,
-       "form": 7.9,
-       "cons": 16.6,
+       "form": 7.7,
+       "cons": 33.53,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -35078,10 +35089,10 @@
        "dii": 50.94,
        "gim": 83.86,
        "form": 7.1,
-       "cons": 8.79,
+       "cons": 7.75,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -35091,10 +35102,10 @@
        "dii": 44.85,
        "gim": 75.82,
        "form": 6.8,
-       "cons": 60.16,
+       "cons": 59.69,
        "fatigue": "High",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -35103,11 +35114,11 @@
        "oti": 35.6,
        "dii": 61.74,
        "gim": 69.96,
-       "form": 7.2,
-       "cons": 41.02,
+       "form": 7.1,
+       "cons": 49.42,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -35123,7 +35134,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -35142,7 +35153,7 @@
       "rank": 2,
       "name": "布赖顿",
       "pts": 22,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 3,
@@ -35152,15 +35163,15 @@
      },
      {
       "rank": 4,
-      "name": "伯恩茅斯",
-      "pts": 18,
+      "name": "利物浦",
+      "pts": 21,
       "p": 11
      },
      {
       "rank": 5,
-      "name": "利物浦",
+      "name": "伯恩茅斯",
       "pts": 18,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
@@ -35212,7 +35223,7 @@
      },
      {
       "rank": 11,
-      "name": "维拉",
+      "name": "赫尔城",
       "pts": 14,
       "p": 11
      },
@@ -35224,27 +35235,27 @@
      },
      {
       "rank": 12,
-      "name": "纽卡斯尔",
-      "pts": 13,
+      "name": "维拉",
+      "pts": 14,
       "p": 11
      },
      {
       "rank": 13,
-      "name": "考文垂",
-      "pts": 12,
+      "name": "纽卡斯尔",
+      "pts": 13,
       "p": 11
-     },
-     {
-      "rank": 14,
-      "name": "赫尔城",
-      "pts": 11,
-      "p": 10
      },
      {
       "rank": 14,
       "name": "伊普斯维奇",
       "pts": 11,
       "p": 10
+     },
+     {
+      "rank": 14,
+      "name": "考文垂",
+      "pts": 12,
+      "p": 11
      },
      {
       "rank": 15,
@@ -35280,7 +35291,7 @@
       "rank": 19,
       "name": "曼联",
       "pts": 8,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 20,
@@ -36702,7 +36713,7 @@
    "code": "周六020",
    "competition": "德甲",
    "round": "",
-   "kickoff": "2026-11-22 01:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "沙尔克04",
@@ -37052,79 +37063,79 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "沙尔克04",
      "n": 14,
-     "core_avg": 61.4,
-     "form_avg": 6.43,
+     "core_avg": 62.1,
+     "form_avg": 6.52,
      "high_fatigue": 0,
      "top": [
       {
        "name": "哈利勒·库鲁恰伊",
        "pos": "DF",
-       "oti": 33.42,
-       "dii": 70.92,
-       "gim": 71.08,
-       "form": 6.7,
-       "cons": 92.6,
-       "fatigue": "Low",
+       "oti": 33.48,
+       "dii": 70.54,
+       "gim": 71.42,
+       "form": 6.8,
+       "cons": 95.56,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.3,
        "estimated": false
       },
       {
        "name": "尼古拉·卡蒂奇",
        "pos": "DF",
-       "oti": 33.36,
-       "dii": 72.16,
-       "gim": 61.35,
-       "form": 6.3,
-       "cons": 55.16,
+       "oti": 33.42,
+       "dii": 72.03,
+       "gim": 62.24,
+       "form": 6.5,
+       "cons": 82.0,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.9,
        "estimated": false
       },
       {
        "name": "戈森斯",
        "pos": "DF",
-       "oti": 55.06,
-       "dii": 56.15,
-       "gim": 60.06,
+       "oti": 55.33,
+       "dii": 55.82,
+       "gim": 60.62,
        "form": 6.5,
-       "cons": 78.7,
+       "cons": 76.89,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.6,
        "estimated": false
       },
       {
        "name": "奥希什",
        "pos": "FW",
-       "oti": 41.4,
-       "dii": 69.07,
-       "gim": 57.38,
-       "form": 6.4,
-       "cons": 21.52,
+       "oti": 42.9,
+       "dii": 69.08,
+       "gim": 58.55,
+       "form": 6.6,
+       "cons": 29.78,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 1.2,
        "estimated": false
       },
       {
        "name": "汤姆·贝克尔",
        "pos": "DF",
-       "oti": 32.01,
-       "dii": 83.58,
-       "gim": 57.13,
+       "oti": 32.05,
+       "dii": 83.26,
+       "gim": 57.63,
        "form": 6.2,
-       "cons": 52.02,
+       "cons": 50.67,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.5,
        "estimated": true
       }
      ]
@@ -37132,73 +37143,73 @@
     "away": {
      "team": "斯图加特",
      "n": 14,
-     "core_avg": 72.9,
-     "form_avg": 6.64,
-     "high_fatigue": 0,
+     "core_avg": 70.8,
+     "form_avg": 6.68,
+     "high_fatigue": 1,
      "top": [
       {
        "name": "米特尔施泰特",
        "pos": "MF",
-       "oti": 66.3,
-       "dii": 87.8,
-       "gim": 92.1,
-       "form": 7.2,
-       "cons": 68.83,
-       "fatigue": "Medium",
+       "oti": 66.38,
+       "dii": 87.72,
+       "gim": 92.35,
+       "form": 7.4,
+       "cons": 65.11,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.2,
        "estimated": false
       },
       {
        "name": "比·汉努斯",
        "pos": "MF",
-       "oti": 63.75,
-       "dii": 59.07,
-       "gim": 71.19,
-       "form": 6.6,
-       "cons": 62.78,
+       "oti": 64.01,
+       "dii": 58.93,
+       "gim": 70.1,
+       "form": 6.5,
+       "cons": 57.33,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
-       "estimated": false
-      },
-      {
-       "name": "约沙·法格诺曼",
-       "pos": "MF",
-       "oti": 55.55,
-       "dii": 29.42,
-       "gim": 68.77,
-       "form": 6.8,
-       "cons": 24.44,
-       "fatigue": "Low",
-       "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -1.1,
        "estimated": false
       },
       {
        "name": "克里斯·费里希",
        "pos": "MF",
-       "oti": 72.01,
-       "dii": 41.08,
-       "gim": 68.38,
+       "oti": 72.03,
+       "dii": 41.0,
+       "gim": 65.01,
        "form": 6.8,
-       "cons": 59.42,
-       "fatigue": "Low",
+       "cons": 57.33,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -3.4,
        "estimated": false
       },
       {
        "name": "代米罗维奇",
        "pos": "FW",
-       "oti": 68.01,
-       "dii": 49.98,
-       "gim": 64.13,
-       "form": 6.7,
-       "cons": 0.67,
+       "oti": 67.97,
+       "dii": 50.0,
+       "gim": 64.18,
+       "form": 6.5,
+       "cons": 0.89,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": 0.1,
+       "estimated": false
+      },
+      {
+       "name": "约沙·法格诺曼",
+       "pos": "MF",
+       "oti": 55.67,
+       "dii": 29.41,
+       "gim": 62.18,
+       "form": 6.8,
+       "cons": 23.33,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -6.6,
        "estimated": false
       }
      ]
@@ -37214,7 +37225,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -37268,8 +37279,8 @@
      {
       "rank": 6,
       "name": "不来梅",
-      "pts": 15,
-      "p": 9
+      "pts": 18,
+      "p": 10
      },
      {
       "rank": 7,
@@ -37297,39 +37308,39 @@
      },
      {
       "rank": 10,
-      "name": "霍芬海姆",
+      "name": "奥格斯堡",
       "pts": 12,
       "p": 10
      },
      {
       "rank": 11,
-      "name": "汉堡",
+      "name": "霍芬海姆",
       "pts": 12,
-      "p": 9
+      "p": 10
      },
      {
       "rank": 12,
-      "name": "美因茨",
-      "pts": 10,
-      "p": 9
+      "name": "汉堡",
+      "pts": 12,
+      "p": 10
      },
      {
       "rank": 13,
-      "name": "科隆",
+      "name": "美因茨",
       "pts": 10,
       "p": 10
      },
      {
       "rank": 14,
-      "name": "帕德博恩",
+      "name": "科隆",
       "pts": 10,
       "p": 10
      },
      {
       "rank": 15,
-      "name": "奥格斯堡",
-      "pts": 9,
-      "p": 9
+      "name": "帕德博恩",
+      "pts": 10,
+      "p": 10
      },
      {
       "rank": 16,
@@ -38798,7 +38809,7 @@
    "code": "周六021",
    "competition": "西甲",
    "round": "",
-   "kickoff": "2026-11-22 01:30",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "塞维利亚",
@@ -39157,77 +39168,77 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "塞维利亚",
-     "n": 15,
-     "core_avg": 66.1,
-     "form_avg": 6.52,
+     "n": 14,
+     "core_avg": 65.4,
+     "form_avg": 6.55,
      "high_fatigue": 0,
      "top": [
       {
        "name": "优素福·福法纳",
        "pos": "MF",
-       "oti": 63.05,
-       "dii": 53.44,
-       "gim": 67.85,
+       "oti": 63.04,
+       "dii": 53.43,
+       "gim": 67.83,
        "form": 6.6,
-       "cons": 43.97,
-       "fatigue": "Low",
+       "cons": 44.33,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -0.0,
        "estimated": false
       },
       {
        "name": "加夫列尔·苏亚索",
        "pos": "DF",
-       "oti": 67.21,
-       "dii": 68.26,
-       "gim": 67.41,
+       "oti": 67.31,
+       "dii": 68.12,
+       "gim": 67.47,
        "form": 6.7,
-       "cons": 87.76,
+       "cons": 88.14,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.1,
        "estimated": false
       },
       {
        "name": "基克·萨拉斯",
        "pos": "DF",
-       "oti": 49.84,
-       "dii": 59.14,
-       "gim": 67.15,
-       "form": 6.8,
-       "cons": 81.38,
-       "fatigue": "Low",
+       "oti": 49.9,
+       "dii": 59.0,
+       "gim": 65.23,
+       "form": 7.1,
+       "cons": 76.46,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -1.9,
        "estimated": false
       },
       {
        "name": "米格尔·安赫尔",
        "pos": "MF",
-       "oti": 54.32,
-       "dii": 65.04,
-       "gim": 64.27,
+       "oti": 54.26,
+       "dii": 65.06,
+       "gim": 64.97,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.7,
        "estimated": true
       },
       {
        "name": "胡安·伊格莱西亚斯",
        "pos": "DF",
-       "oti": 60.21,
-       "dii": 73.05,
-       "gim": 63.93,
+       "oti": 60.29,
+       "dii": 72.9,
+       "gim": 61.37,
        "form": 6.2,
-       "cons": 57.93,
-       "fatigue": "Low",
+       "cons": 55.84,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -2.6,
        "estimated": false
       }
      ]
@@ -39243,7 +39254,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -39255,8 +39266,8 @@
      {
       "rank": 1,
       "name": "巴萨",
-      "pts": 33,
-      "p": 12
+      "pts": 36,
+      "p": 13
      },
      {
       "rank": 2,
@@ -39279,8 +39290,8 @@
      {
       "rank": 3,
       "name": "马竞",
-      "pts": 28,
-      "p": 12
+      "pts": 31,
+      "p": 13
      },
      {
       "rank": 4,
@@ -39298,7 +39309,7 @@
       "rank": 5,
       "name": "皇家社会",
       "pts": 22,
-      "p": 12
+      "p": 13
      },
      {
       "rank": 6,
@@ -39314,9 +39325,9 @@
      },
      {
       "rank": 7,
-      "name": "毕尔巴鄂",
-      "pts": 16,
-      "p": 12
+      "name": "桑坦德",
+      "pts": 17,
+      "p": 13
      },
      {
       "rank": 8,
@@ -39326,9 +39337,9 @@
      },
      {
       "rank": 8,
-      "name": "阿拉维斯",
+      "name": "毕尔巴鄂",
       "pts": 16,
-      "p": 13
+      "p": 12
      },
      {
       "rank": 9,
@@ -39338,9 +39349,9 @@
      },
      {
       "rank": 9,
-      "name": "比利亚雷",
-      "pts": 15,
-      "p": 12
+      "name": "阿拉维斯",
+      "pts": 16,
+      "p": 13
      },
      {
       "rank": 10,
@@ -39350,49 +39361,49 @@
      },
      {
       "rank": 10,
-      "name": "西班牙人",
+      "name": "比利亚雷",
       "pts": 15,
       "p": 13
      },
      {
       "rank": 11,
-      "name": "拉科",
+      "name": "西班牙人",
       "pts": 15,
       "p": 13
      },
      {
       "rank": 12,
-      "name": "桑坦德",
-      "pts": 14,
-      "p": 12
+      "name": "拉科",
+      "pts": 15,
+      "p": 13
      },
      {
       "rank": 13,
+      "name": "奥萨苏纳",
+      "pts": 15,
+      "p": 13
+     },
+     {
+      "rank": 14,
       "name": "塞尔塔",
       "pts": 13,
       "p": 13
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "巴列卡诺",
       "pts": 12,
       "p": 12
      },
      {
-      "rank": 15,
-      "name": "赫塔费",
-      "pts": 12,
-      "p": 12
-     },
-     {
       "rank": 16,
-      "name": "奥萨苏纳",
+      "name": "巴伦西亚",
       "pts": 12,
-      "p": 12
+      "p": 13
      },
      {
       "rank": 17,
-      "name": "巴伦西亚",
+      "name": "赫塔费",
       "pts": 12,
       "p": 13
      },
@@ -39418,7 +39429,7 @@
       "rank": 20,
       "name": "马拉加",
       "pts": 5,
-      "p": 12
+      "p": 13
      }
     ],
     "lam_home": 1.328,
@@ -40805,7 +40816,7 @@
    "code": "周六022",
    "competition": "法甲",
    "round": "",
-   "kickoff": "2026-11-22 03:45",
+   "kickoff": "",
    "venue": "",
    "home": {
     "name": "摩纳哥",
@@ -40826,7 +40837,7 @@
     "slug": "",
     "league": "法甲",
     "country": "",
-    "rank": 14,
+    "rank": 15,
     "points": 11,
     "played": 11,
     "win": 3,
@@ -40843,9 +40854,9 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 58,
+    "attack": 57,
     "defence": 86,
-    "control": 84,
+    "control": 88,
     "form": 31,
     "value": 86,
     "motivation": 62,
@@ -41119,79 +41130,79 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-21 03:37:18",
-    "asof": "2026-11-21",
-    "prev": "2026-11-20",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
     "home": {
      "team": "摩纳哥",
      "n": 12,
-     "core_avg": 73.1,
-     "form_avg": 6.7,
-     "high_fatigue": 0,
+     "core_avg": 72.9,
+     "form_avg": 6.73,
+     "high_fatigue": 1,
      "top": [
       {
        "name": "卡马拉",
        "pos": "MF",
-       "oti": 41.17,
-       "dii": 83.19,
-       "gim": 78.13,
-       "form": 6.6,
-       "cons": 50.68,
+       "oti": 40.91,
+       "dii": 83.33,
+       "gim": 78.08,
+       "form": 6.8,
+       "cons": 55.41,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -0.0,
        "estimated": false
       },
       {
        "name": "埃里克·戴尔",
        "pos": "DF",
-       "oti": 50.55,
-       "dii": 31.14,
-       "gim": 74.93,
+       "oti": 50.53,
+       "dii": 30.97,
+       "gim": 74.49,
        "form": 7.0,
-       "cons": 21.72,
-       "fatigue": "Low",
+       "cons": 23.2,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -0.4,
        "estimated": false
       },
       {
        "name": "斯塔尼斯·伊敦博",
        "pos": "MF",
-       "oti": 53.57,
-       "dii": 39.6,
-       "gim": 71.13,
+       "oti": 53.24,
+       "dii": 39.93,
+       "gim": 71.18,
        "form": 6.8,
-       "cons": 67.19,
+       "cons": 68.02,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 0.1,
        "estimated": true
       },
       {
        "name": "帕里斯·约书亚·布鲁纳",
        "pos": "FW",
-       "oti": 58.22,
-       "dii": 35.82,
-       "gim": 70.8,
-       "form": 6.7,
-       "cons": 1.36,
-       "fatigue": "Low",
+       "oti": 58.19,
+       "dii": 35.68,
+       "gim": 70.67,
+       "form": 6.6,
+       "cons": 3.38,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -0.1,
        "estimated": false
       },
       {
        "name": "万德松",
        "pos": "DF",
-       "oti": 72.46,
-       "dii": 85.98,
-       "gim": 70.3,
-       "form": 6.9,
-       "cons": 31.67,
+       "oti": 72.42,
+       "dii": 85.99,
+       "gim": 70.11,
+       "form": 7.1,
+       "cons": 29.95,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -0.2,
        "estimated": false
       }
      ]
@@ -41199,73 +41210,73 @@
     "away": {
      "team": "欧塞尔",
      "n": 13,
-     "core_avg": 63.4,
+     "core_avg": 63.2,
      "form_avg": 6.49,
      "high_fatigue": 0,
      "top": [
       {
        "name": "阿彻",
        "pos": "FW",
-       "oti": 59.06,
-       "dii": 30.13,
-       "gim": 80.13,
-       "form": 7.0,
-       "cons": 35.29,
-       "fatigue": "Low",
+       "oti": 59.03,
+       "dii": 30.08,
+       "gim": 80.03,
+       "form": 6.8,
+       "cons": 33.33,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -0.1,
        "estimated": false
       },
       {
        "name": "法夫尔",
        "pos": "FW",
-       "oti": 61.75,
-       "dii": 51.67,
-       "gim": 69.08,
-       "form": 7.0,
-       "cons": 18.1,
-       "fatigue": "Low",
+       "oti": 61.68,
+       "dii": 51.6,
+       "gim": 71.15,
+       "form": 7.3,
+       "cons": 15.32,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 2.1,
        "estimated": false
       },
       {
        "name": "纳马索",
        "pos": "FW",
-       "oti": 53.06,
-       "dii": 56.32,
-       "gim": 61.98,
+       "oti": 53.02,
+       "dii": 56.23,
+       "gim": 63.11,
        "form": 6.6,
-       "cons": 3.17,
+       "cons": 2.7,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 1.1,
        "estimated": false
       },
       {
        "name": "达努瓦",
        "pos": "MF",
-       "oti": 49.89,
-       "dii": 72.42,
-       "gim": 57.97,
-       "form": 6.5,
-       "cons": 25.34,
+       "oti": 49.34,
+       "dii": 72.62,
+       "gim": 52.58,
+       "form": 6.4,
+       "cons": 21.62,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": -5.4,
        "estimated": false
       },
       {
        "name": "图安泽贝",
        "pos": "DF",
-       "oti": 37.79,
-       "dii": 30.77,
-       "gim": 47.96,
+       "oti": 37.78,
+       "dii": 30.54,
+       "gim": 49.23,
        "form": 6.8,
-       "cons": 47.29,
+       "cons": 60.81,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.0,
+       "d_gim": 1.3,
        "estimated": false
       }
      ]
@@ -41281,7 +41292,7 @@
     "settled_at": "2026-11-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -41298,15 +41309,15 @@
      },
      {
       "rank": 2,
-      "name": "里尔",
-      "pts": 21,
+      "name": "巴黎FC",
+      "pts": 23,
       "p": 11
      },
      {
       "rank": 3,
-      "name": "巴黎FC",
-      "pts": 20,
-      "p": 10
+      "name": "里尔",
+      "pts": 21,
+      "p": 11
      },
      {
       "rank": 4,
@@ -41318,7 +41329,7 @@
       "rank": 5,
       "name": "马赛",
       "pts": 18,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 6,
@@ -41341,14 +41352,14 @@
      {
       "rank": 9,
       "name": "雷恩",
-      "pts": 16,
-      "p": 10
+      "pts": 17,
+      "p": 11
      },
      {
       "rank": 10,
       "name": "洛里昂",
-      "pts": 15,
-      "p": 10
+      "pts": 16,
+      "p": 11
      },
      {
       "rank": 11,
@@ -41370,12 +41381,18 @@
      },
      {
       "rank": 13,
-      "name": "特鲁瓦",
+      "name": "勒芒",
       "pts": 11,
       "p": 11
      },
      {
       "rank": 14,
+      "name": "特鲁瓦",
+      "pts": 11,
+      "p": 11
+     },
+     {
+      "rank": 15,
       "name": "欧塞尔",
       "pts": 11,
       "p": 11
@@ -41387,22 +41404,16 @@
       "p": 10
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "斯特拉斯",
       "pts": 10,
       "p": 11
      },
      {
-      "rank": 16,
-      "name": "勒芒",
-      "pts": 8,
-      "p": 10
-     },
-     {
       "rank": 17,
       "name": "昂热",
       "pts": 8,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 18,

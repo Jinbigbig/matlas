@@ -313,7 +313,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "lam_home": 2.149,
     "lam_away": 1.657,
@@ -743,7 +743,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "lam_home": 1.517,
     "lam_away": 1.529,
@@ -1298,7 +1298,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "lam_home": 2.248,
     "lam_away": 1.952,
@@ -1712,14 +1712,14 @@
      2.0
     ],
     "away": [
-     1.0,
      0.0,
      1.0,
      1.0,
      0.0,
      0.0,
      3.0,
-     4.0
+     4.0,
+     0.0
     ]
    },
    "forecasts": [
@@ -1920,7 +1920,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -2791,7 +2791,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -3251,7 +3251,7 @@
     "slug": "",
     "league": "西甲",
     "country": "",
-    "rank": 7,
+    "rank": 8,
     "points": 16,
     "played": 12,
     "win": 4,
@@ -3268,7 +3268,7 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 58,
+    "attack": 57,
     "defence": 19,
     "control": 34,
     "form": 10,
@@ -3547,7 +3547,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -3559,8 +3559,8 @@
      {
       "rank": 1,
       "name": "巴萨",
-      "pts": 33,
-      "p": 12
+      "pts": 36,
+      "p": 13
      },
      {
       "rank": 2,
@@ -3583,8 +3583,8 @@
      {
       "rank": 3,
       "name": "马竞",
-      "pts": 28,
-      "p": 12
+      "pts": 31,
+      "p": 13
      },
      {
       "rank": 4,
@@ -3602,7 +3602,7 @@
       "rank": 5,
       "name": "皇家社会",
       "pts": 22,
-      "p": 12
+      "p": 13
      },
      {
       "rank": 6,
@@ -3618,9 +3618,9 @@
      },
      {
       "rank": 7,
-      "name": "毕尔巴鄂",
-      "pts": 16,
-      "p": 12
+      "name": "桑坦德",
+      "pts": 17,
+      "p": 13
      },
      {
       "rank": 8,
@@ -3630,9 +3630,9 @@
      },
      {
       "rank": 8,
-      "name": "阿拉维斯",
+      "name": "毕尔巴鄂",
       "pts": 16,
-      "p": 13
+      "p": 12
      },
      {
       "rank": 9,
@@ -3642,9 +3642,9 @@
      },
      {
       "rank": 9,
-      "name": "比利亚雷",
-      "pts": 15,
-      "p": 12
+      "name": "阿拉维斯",
+      "pts": 16,
+      "p": 13
      },
      {
       "rank": 10,
@@ -3654,49 +3654,49 @@
      },
      {
       "rank": 10,
-      "name": "西班牙人",
+      "name": "比利亚雷",
       "pts": 15,
       "p": 13
      },
      {
       "rank": 11,
-      "name": "拉科",
+      "name": "西班牙人",
       "pts": 15,
       "p": 13
      },
      {
       "rank": 12,
-      "name": "桑坦德",
-      "pts": 14,
-      "p": 12
+      "name": "拉科",
+      "pts": 15,
+      "p": 13
      },
      {
       "rank": 13,
+      "name": "奥萨苏纳",
+      "pts": 15,
+      "p": 13
+     },
+     {
+      "rank": 14,
       "name": "塞尔塔",
       "pts": 13,
       "p": 13
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "巴列卡诺",
       "pts": 12,
       "p": 12
      },
      {
-      "rank": 15,
-      "name": "赫塔费",
-      "pts": 12,
-      "p": 12
-     },
-     {
       "rank": 16,
-      "name": "奥萨苏纳",
+      "name": "巴伦西亚",
       "pts": 12,
-      "p": 12
+      "p": 13
      },
      {
       "rank": 17,
-      "name": "巴伦西亚",
+      "name": "赫塔费",
       "pts": 12,
       "p": 13
      },
@@ -3722,7 +3722,7 @@
       "rank": 20,
       "name": "马拉加",
       "pts": 5,
-      "p": 12
+      "p": 13
      }
     ],
     "lam_home": 1.324,
@@ -4117,7 +4117,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -5062,7 +5062,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -6167,7 +6167,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -7137,7 +7137,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -8206,7 +8206,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -9159,7 +9159,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
@@ -9860,7 +9860,7 @@
    "metrics_away": {
     "attack": 70,
     "defence": 13,
-    "control": 48,
+    "control": 43,
     "form": 22,
     "value": 52,
     "motivation": 13,
@@ -10138,7 +10138,7 @@
     "settled_at": "2026-10-21"
    },
    "source_url": "",
-   "generated_at": "2026-11-22T15:46:49+08:00",
+   "generated_at": "2026-11-23T08:05:18+08:00",
    "extras": {
     "table": [
      {
