@@ -155,4 +155,20 @@ if [ -n "$(git log --oneline refs/remotes/origin/main..HEAD 2>/dev/null || true)
   fi
 fi
 
-echo "[√] 已发布。产物提交历史见 git -C .publish log；main 同步状态见上。"
+# ---- CF Pages 自动部署：与 GH 同一份 _site 产物，两站保持同步 ----
+# 快照红线：_site 在构建阶段已移走 data/live（快照唯一落点在 gh-pages），这里不写快照。
+# 复用 push_live_pages.deploy()：wrangler + CF_API_TOKEN(读 .env) + 剔除代理，不重复实现。
+# CF 部署失败不回滚、不改退出码：GH 产物此时已上线，CF 可稍后单独补部署。
+CF_OK=0
+echo "[5/5] 部署 _site → CF Pages (matlas)"
+if "$PY" -c 'import push_live_pages as p; p._load_dotenv(); raise SystemExit(0 if p.deploy() else 1)'; then
+  CF_OK=1
+else
+  echo "[!] CF Pages 部署失败（GH 已发布）。稍后手动补：python -c \"import push_live_pages as p; p._load_dotenv(); p.deploy()\"" >&2
+fi
+
+if [ "$CF_OK" -eq 1 ]; then
+  echo "[√] 已发布（GH + CF 两站）。产物提交历史见 git -C .publish log；main 同步状态见上。"
+else
+  echo "[√] GH 已发布；CF 未同步。产物提交历史见 git -C .publish log；main 同步状态见上。"
+fi
