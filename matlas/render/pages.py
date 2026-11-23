@@ -2554,7 +2554,7 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         f'<div class="stat-card"><div class="pct stat-num">{n_matches}</div><div class="stat-lbl">📊 总预测场次</div></div>'
         f'<div class="stat-card"><div class="pct stat-num">{acc_all:.1f}%</div><div class="stat-lbl">🎯 整体准确率</div></div>'
         f'<div class="stat-card"><div class="pct stat-num">{acc:.1f}%</div><div class="stat-lbl">🧭 方向命中率</div></div>'
-        f'<div class="stat-card"><div class="pct stat-num">{hit}</div><div class="stat-lbl">✅ 命中场次</div></div>'
+        f'<div class="stat-card"><div class="pct stat-num">{hit_all}</div><div class="stat-lbl">✅ 整体命中场次</div></div>'
         "</div>"
         + insight_box
         + '<div class="stats-box"><h3>🔍 单项维度准确率</h3>'
