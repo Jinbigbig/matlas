@@ -2444,7 +2444,7 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
     team_box = (
         '<div class="stats-box"><h3>🛡️ 球队准确率排名 (Top 30)</h3>'
         + (
-            C.table(["#", "球队", "已结算", "准确率"], t_rows, cls="history-table")
+            C.table(["#", "球队", "已结算", "准确率"], t_rows, cls="history-table rank-team-table")
             if t_rows
             else '<p class="panel-empty">暂无已结算样本。</p>'
         )

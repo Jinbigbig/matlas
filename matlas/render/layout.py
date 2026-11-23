@@ -627,6 +627,12 @@ body:has(#at-tm:checked) .arch-count .ac-tm { display: inline; }
   padding: 16px; min-width: 0; margin: 16px 0; }
 .stats-box h3 { margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #111; }
 .stats-box .history-table { margin-top: 8px; }
+/* 球队排名表：序号列收窄、球队列放宽，减少球队名左侧留白 */
+.rank-team-table th:nth-child(1), .rank-team-table td:nth-child(1) { width: 12%; }
+.rank-team-table th:nth-child(2), .rank-team-table td:nth-child(2) { width: 46%; }
+.rank-team-table th:nth-child(3), .rank-team-table td:nth-child(3) { width: 20%; }
+.rank-team-table th:nth-child(4), .rank-team-table td:nth-child(4) { width: 22%; }
+.rank-team-table td:nth-child(2) { padding-left: 0; }
 .insight-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .insight-list li { font-size: 13.5px; color: #374151; background: #f8fafc; border-radius: 8px; padding: 8px 12px; }
 .insight-list li b { color: #111; }
