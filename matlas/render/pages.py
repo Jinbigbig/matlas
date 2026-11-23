@@ -2297,6 +2297,9 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         return h, len(s)
 
     dims = [("direction", "方向"), ("score", "比分"), ("goals", "进球"), ("htft", "半全场")]
+    # 整体准确率：已结算场次中至少命中一个维度即算命中
+    hit_all = sum(1 for m in settled if any(getattr(m.result, f"{name}_hit") for name, _ in dims))
+    acc_all = (hit_all / len(settled) * 100) if settled else 0.0
     dim_cards = ""
     for name, zh in dims:
         h, n = _dim(name)
@@ -2549,7 +2552,8 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         f"<h1 class='page-h1'>{L.ICON_DATA} 数据统计</h1>"
         '<div class="stats-grid stats-main">'
         f'<div class="stat-card"><div class="pct stat-num">{n_matches}</div><div class="stat-lbl">📊 总预测场次</div></div>'
-        f'<div class="stat-card"><div class="pct stat-num">{acc:.1f}%</div><div class="stat-lbl">🎯 整体准确率</div></div>'
+        f'<div class="stat-card"><div class="pct stat-num">{acc_all:.1f}%</div><div class="stat-lbl">🎯 整体准确率</div></div>'
+        f'<div class="stat-card"><div class="pct stat-num">{acc:.1f}%</div><div class="stat-lbl">🧭 方向命中率</div></div>'
         f'<div class="stat-card"><div class="pct stat-num">{hit}</div><div class="stat-lbl">✅ 命中场次</div></div>'
         "</div>"
         + insight_box
