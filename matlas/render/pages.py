@@ -2283,8 +2283,7 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
     import json as _json
 
     base = cfg.base_url.rstrip("/")
-    # 统计口径：最近 10 个交易日（有比赛数据的日期），整页所有数字统一取此范围
-    ordered = sorted(days, key=lambda d: d.date)[-10:]
+    ordered = sorted(days, key=lambda d: d.date)
     n_matches = sum(len(d.matches) for d in ordered)
     settled = [m for d in ordered for m in d.matches if m.result and m.result.full_score]
     hit = sum(1 for m in settled if m.result.direction_hit)
@@ -2449,16 +2448,28 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         + "</div>"
     )
 
-    # ---- 洞察总结：每日命中率线图 + 维度横条 + 结论 chips（居中） ----
+    # ---- 洞察总结：每日命中率线图（全量） + 维度横条 + 结论 chips（近10个交易日，居中） ----
     day_acc = []
     for d in ordered:
         dd = [m for m in d.matches if m.result and m.result.full_score]
         if dd:
             day_acc.append((d.date[5:], sum(1 for m in dd if m.result.direction_hit) / len(dd) * 100, len(dd)))
-    dim_ok = [(zh, _dim(name)[0] / _dim(name)[1] * 100, _dim(name)[1])
-              for name, zh in dims if _dim(name)[1] >= 5]
+
+    # 维度横条与 chips 单独收窄到最近 10 个交易日，折线图仍用全量
+    settled10 = [m for d in ordered[-10:] for m in d.matches
+                 if m.result and m.result.full_score]
+    hit10 = sum(1 for m in settled10 if m.result.direction_hit)
+    acc10 = (hit10 / len(settled10) * 100) if settled10 else 0.0
+
+    def _dim10(name: str) -> tuple[int, int]:
+        s = [m for m in settled10 if getattr(m.result, f"{name}_hit") is not None]
+        h = sum(1 for m in s if getattr(m.result, f"{name}_hit"))
+        return h, len(s)
+
+    dim_ok = [(zh, _dim10(name)[0] / _dim10(name)[1] * 100, _dim10(name)[1])
+              for name, zh in dims if _dim10(name)[1] >= 5]
     by_lg_acc: dict[str, tuple[int, int]] = {}
-    for m in settled:
+    for m in settled10:
         if m.competition:
             h2, n2 = by_lg_acc.get(m.competition, (0, 0))
             by_lg_acc[m.competition] = (h2 + (1 if m.result.direction_hit else 0), n2 + 1)
@@ -2498,10 +2509,10 @@ def render_stats(cfg: Config, days: list[Day]) -> str:
         )
         viz.append('<div class="insight-block"><h4>单项维度准确率</h4>' + bars + "</div>")
     chips: list[str] = []
-    if settled:
+    if settled10:
         chips.append(
-            f'🎯 已结算 <b>{len(settled)}</b> 场 · 命中 <b>{hit}</b> 场 · '
-            f'整体 <span class="pct"><b>{acc:.1f}%</b></span>'
+            f'🎯 已结算 <b>{len(settled10)}</b> 场 · 命中 <b>{hit10}</b> 场 · '
+            f'整体 <span class="pct"><b>{acc10:.1f}%</b></span>'
         )
     if lg_ok:
         blg = max(lg_ok, key=lambda x: x[1])
