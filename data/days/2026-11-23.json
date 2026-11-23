@@ -1,0 +1,8744 @@
+{
+ "date": "2026-11-23",
+ "matches": [
+  {
+   "schema": "1.0",
+   "match_id": "2026-11-23-001",
+   "day": "2026-11-23",
+   "code": "周一001",
+   "competition": "瑞超",
+   "round": "",
+   "kickoff": "2026-11-24 02:00",
+   "venue": "",
+   "home": {
+    "name": "厄尔格里特",
+    "slug": "",
+    "league": "瑞超",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/2166.png"
+   },
+   "away": {
+    "name": "卡尔马",
+    "slug": "",
+    "league": "瑞超",
+    "country": "",
+    "rank": 13,
+    "points": 26,
+    "played": 28,
+    "win": 7,
+    "draw": 5,
+    "loss": 16,
+    "form": "",
+    "logo": "assets/logo/teams/374.png"
+   },
+   "odds": {
+    "home": 3.15,
+    "draw": 3.3,
+    "away": 1.93,
+    "handicap": 1.0,
+    "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 47,
+    "defence": 11,
+    "control": 23,
+    "form": 15,
+    "value": 0,
+    "motivation": 6,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 28,
+    "defence": 38,
+    "control": 32,
+    "form": 9,
+    "value": 32,
+    "motivation": 15,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-8",
+     "T-7",
+     "T-6",
+     "T-5",
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     0.0,
+     4.0,
+     0.0,
+     0.0,
+     3.0,
+     3.0,
+     1.0,
+     1.0
+    ],
+    "away": [
+     2.0,
+     2.0,
+     1.0,
+     2.0,
+     0.0,
+     0.0,
+     0.0,
+     2.0
+    ]
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.504,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.316,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.18,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.15,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.117,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.101,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.089,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.087,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.065,
+     "rank": 6,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.239,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.117,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.101,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.276,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.162,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/客",
+     "prob": 0.157,
+     "rank": 3,
+     "note": ""
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "main_pick": "卡尔马客战奥基迪有望保级，伊梅里缺阵，卡马拉受关注",
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球胜"
+   },
+   "h2h": [
+    {
+     "date": "2026-07-05",
+     "competition": "瑞超",
+     "home": "厄尔格里特",
+     "away": "卡尔马",
+     "score": "0-3",
+     "home_id": ""
+    }
+   ],
+   "recent_home": [],
+   "recent_away": [
+    {
+     "date": "2026-10-19",
+     "competition": "瑞超",
+     "opponent": "代格福什",
+     "venue": "away",
+     "score": "1-2",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-10-12",
+     "competition": "瑞超",
+     "opponent": "马尔默",
+     "venue": "away",
+     "score": "1-0",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-09-07",
+     "competition": "瑞超",
+     "opponent": "佐加顿斯",
+     "venue": "home",
+     "score": "0-1",
+     "outcome": "L",
+     "half_ft": "平/客"
+    }
+   ],
+   "injuries": [],
+   "squad": {
+    "source": "球小策球员数据中心",
+    "url": "https://www.qiuxiaoce.com/player-rankings/",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
+    "home": {
+     "team": "厄尔格里特",
+     "n": 13,
+     "core_avg": 59.3,
+     "form_avg": 6.41,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "斯蒂费",
+       "pos": "DF",
+       "oti": 47.96,
+       "dii": 47.53,
+       "gim": 62.73,
+       "form": 6.2,
+       "cons": 50.68,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 2.6,
+       "estimated": false
+      },
+      {
+       "name": "拉特纳斯",
+       "pos": "MF",
+       "oti": 30.7,
+       "dii": 78.03,
+       "gim": 60.7,
+       "form": 6.4,
+       "cons": 21.62,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 1.1,
+       "estimated": false
+      },
+      {
+       "name": "迪雷斯塔姆",
+       "pos": "DF",
+       "oti": 44.71,
+       "dii": 48.65,
+       "gim": 59.77,
+       "form": 6.6,
+       "cons": 48.42,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 3.5,
+       "estimated": false
+      },
+      {
+       "name": "奥斯卡·帕克·普赖斯",
+       "pos": "MF",
+       "oti": 43.83,
+       "dii": 36.8,
+       "gim": 58.68,
+       "form": 6.3,
+       "cons": 18.24,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 1.3,
+       "estimated": false
+      },
+      {
+       "name": "萨纳",
+       "pos": "FW",
+       "oti": 45.93,
+       "dii": 40.53,
+       "gim": 54.5,
+       "form": 6.7,
+       "cons": 24.77,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 1.7,
+       "estimated": false
+      }
+     ]
+    },
+    "away": {
+     "team": "卡尔马",
+     "n": 13,
+     "core_avg": 58.4,
+     "form_avg": 6.55,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "古斯塔夫松",
+       "pos": "MF",
+       "oti": 36.08,
+       "dii": 69.48,
+       "gim": 64.43,
+       "form": 6.5,
+       "cons": 7.88,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 1.0,
+       "estimated": false
+      },
+      {
+       "name": "A. Keita",
+       "pos": "DF",
+       "oti": 40.22,
+       "dii": 50.49,
+       "gim": 62.17,
+       "form": 6.5,
+       "cons": 46.17,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 2.2,
+       "estimated": false
+      },
+      {
+       "name": "萨戈",
+       "pos": "FW",
+       "oti": 46.06,
+       "dii": 75.15,
+       "gim": 57.06,
+       "form": 6.7,
+       "cons": 17.12,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -1.6,
+       "estimated": false
+      },
+      {
+       "name": "塞特拉",
+       "pos": "DF",
+       "oti": 34.92,
+       "dii": 19.96,
+       "gim": 54.54,
+       "form": 6.7,
+       "cons": 93.02,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 2.9,
+       "estimated": false
+      },
+      {
+       "name": "瑟德贝克",
+       "pos": "MF",
+       "oti": 48.71,
+       "dii": 60.14,
+       "gim": 53.76,
+       "form": 6.7,
+       "cons": 13.96,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.8,
+       "estimated": false
+      }
+     ]
+    }
+   },
+   "source_url": "",
+   "generated_at": "2026-11-23T12:08:48+08:00",
+   "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "天狼星",
+      "pts": 61,
+      "p": 29
+     },
+     {
+      "rank": 2,
+      "name": "哈马比",
+      "pts": 58,
+      "p": 28
+     },
+     {
+      "rank": 3,
+      "name": "佐加顿斯",
+      "pts": 52,
+      "p": 29
+     },
+     {
+      "rank": 4,
+      "name": "赫根",
+      "pts": 52,
+      "p": 29
+     },
+     {
+      "rank": 5,
+      "name": "埃夫斯堡",
+      "pts": 46,
+      "p": 29
+     },
+     {
+      "rank": 6,
+      "name": "韦斯特罗",
+      "pts": 45,
+      "p": 29
+     },
+     {
+      "rank": 7,
+      "name": "盖斯",
+      "pts": 43,
+      "p": 29
+     },
+     {
+      "rank": 8,
+      "name": "马尔默",
+      "pts": 42,
+      "p": 29
+     },
+     {
+      "rank": 9,
+      "name": "索尔纳",
+      "pts": 42,
+      "p": 29
+     },
+     {
+      "rank": 10,
+      "name": "哥德堡",
+      "pts": 39,
+      "p": 28
+     },
+     {
+      "rank": 11,
+      "name": "布鲁马波",
+      "pts": 35,
+      "p": 29
+     },
+     {
+      "rank": 12,
+      "name": "米亚尔比",
+      "pts": 29,
+      "p": 29
+     },
+     {
+      "rank": 13,
+      "name": "卡尔马",
+      "pts": 26,
+      "p": 28
+     },
+     {
+      "rank": 14,
+      "name": "哈尔姆斯",
+      "pts": 23,
+      "p": 29
+     },
+     {
+      "rank": 15,
+      "name": "代格福什",
+      "pts": 21,
+      "p": 29
+     },
+     {
+      "rank": 16,
+      "name": "厄格里特",
+      "pts": 20,
+      "p": 28
+     }
+    ],
+    "lam_home": 1.14,
+    "lam_away": 1.514,
+    "lam_total": 2.654,
+    "upset_prob": 54.6,
+    "upset_level": "高",
+    "rq_best_ev": 0.851,
+    "rq_best_odds": 1.65,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 5.0
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 15.0
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 11.7
+     }
+    },
+    "prob_home": 18.0,
+    "prob_draw": 31.6,
+    "prob_away": 50.4,
+    "data_n": {
+     "home": 12,
+     "away": 14
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 13.7
+    },
+    "htft_half": {
+     "home": 23.7,
+     "draw": 41.8,
+     "away": 34.4
+    },
+    "htft_cells": {
+     "主/主": 16.2,
+     "主/平": 5.0,
+     "主/客": 2.5,
+     "平/主": 10.6,
+     "平/平": 15.5,
+     "平/客": 15.7,
+     "客/主": 1.7,
+     "客/平": 5.0,
+     "客/客": 27.6
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 4
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ]
+    },
+    "odds_ticks": [
+     {
+      "t": "2026-11-21 11:03",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 12:00",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 13:00",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 14:00",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 15:00",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 16:00",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:21",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:25",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 18:00",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 19:00",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 20:00",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 22:37",
+      "胜": 3.15,
+      "平": 3.3,
+      "负": 1.93,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.65,
+        "平": 3.65,
+        "负": 3.85
+       }
+      ]
+     }
+    ],
+    "hc_at": "2026-11-23 11:51",
+    "intel": [
+     {
+      "title": "卡尔马客战奥基迪有望保级，伊梅里缺阵，卡马拉受关注",
+      "url": "https://m.dongqiudi.com/xinwen/223797",
+      "source": "懂球帝",
+      "text": "30秒看懂卡尔马FF客战厄尔格里特，拿1分即可保级。卡尔马FF伊梅里缺阵，卡马拉连续3场首发。厄尔格里特与降级附加赛区同分，需抢分。"
+     },
+     {
+      "title": "瑞典超奥基迪迎战卡尔马 两队预计首发均不变",
+      "url": "https://m.dongqiudi.com/xinwen/219419",
+      "source": "懂球帝",
+      "text": "30秒看懂瑞典超第29轮奥基迪主场对卡尔马，11月24日02:00开球奥基迪预计首发与上一场0-0韦斯特罗斯时…"
+     },
+     {
+      "title": "米克尔·吕高被指已确定加盟奥基迪：“我完全不明白”",
+      "url": "https://m.dongqiudi.com/xinwen/221395",
+      "source": "懂球帝",
+      "text": "30秒看懂赫根3比1胜埃尔夫斯堡，里高完成主场告别里高被传将加盟厄格里特，本人称毫不知情弗里贝里称不续约因认为里高下赛季非首发赫根在主场以3比1击败埃尔夫斯堡，35岁的中场米克尔·里高在赛后接受了告别。"
+     },
+     {
+      "title": "奥基迪 vs 卡尔马历史交锋：3次交手奥基迪1胜0平2负",
+      "url": "https://m.dongqiudi.com/xinwen/214889",
+      "source": "懂球帝",
+      "text": "30秒看懂两队3次交手，奥基迪1胜0平2负奥基迪进3球失7球，场均3.3球奥基迪主场对卡尔马0胜0平1负北京时间2026年11月24日02:00，瑞典超第29轮，奥基迪（主）对卡尔马（客）。"
+     },
+     {
+      "title": "奥基迪对卡尔马前瞻：瑞典超级联赛今日之战",
+      "url": "https://m.dongqiudi.com/xinwen/213291",
+      "source": "懂球帝",
+      "text": "30秒看懂厄格里特IS将于11月24日01:00主场对阵卡尔马FF。比赛在哥德堡GamlaUllevi进行，属瑞典超第29轮。近5次交锋卡尔马3胜1平1负占优。"
+     },
+     {
+      "title": "桑特斯马斯谈奥基迪：预计比赛强度很高",
+      "url": "https://m.dongqiudi.com/xinwen/223782",
+      "source": "懂球帝",
+      "text": "30秒看懂卡尔马助教桑特斯马斯谈客战厄尔格里特他强调防守要紧凑难缠、进攻要有勇气比赛11月23日19时在旧乌勒维进行瑞典超级联赛第29轮，卡尔马FF将客场对阵厄尔格里特IS。"
+     }
+    ],
+    "intel_at": "2026-11-23"
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-11-23-002",
+   "day": "2026-11-23",
+   "code": "周一002",
+   "competition": "瑞超",
+   "round": "",
+   "kickoff": "2026-11-24 02:00",
+   "venue": "",
+   "home": {
+    "name": "哈马比",
+    "slug": "",
+    "league": "瑞超",
+    "country": "",
+    "rank": 2,
+    "points": 58,
+    "played": 28,
+    "win": 18,
+    "draw": 4,
+    "loss": 6,
+    "form": "",
+    "logo": "assets/logo/teams/363.png"
+   },
+   "away": {
+    "name": "哥德堡",
+    "slug": "",
+    "league": "瑞超",
+    "country": "",
+    "rank": 10,
+    "points": 39,
+    "played": 28,
+    "win": 10,
+    "draw": 9,
+    "loss": 9,
+    "form": "",
+    "logo": "assets/logo/teams/366.png"
+   },
+   "odds": {
+    "home": 1.2376,
+    "draw": 8.3235,
+    "away": 13.9211,
+    "handicap": -2.0,
+    "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 98,
+    "defence": 66,
+    "control": 91,
+    "form": 89,
+    "value": 94,
+    "motivation": 94,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 28,
+    "defence": 17,
+    "control": 15,
+    "form": 53,
+    "value": 60,
+    "motivation": 26,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-8",
+     "T-7",
+     "T-6",
+     "T-5",
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     3.0,
+     4.0,
+     2.0,
+     2.0,
+     3.0,
+     2.0,
+     2.0,
+     4.0
+    ],
+    "away": [
+     2.0,
+     1.0,
+     2.0,
+     3.0,
+     0.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.864,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.125,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.011,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.154,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-0",
+     "prob": 0.129,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.122,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.095,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "4-0",
+     "prob": 0.082,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "3-1",
+     "prob": 0.08,
+     "rank": 6,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.224,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.162,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.154,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.552,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.208,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.089,
+     "rank": 3,
+     "note": ""
+    }
+   ],
+   "confidence": "high",
+   "is_cold_start": false,
+   "main_pick": "让球盘口存在价值",
+   "handicap": {
+    "spread": -2.0,
+    "pick": "让球负"
+   },
+   "h2h": [
+    {
+     "date": "2026-05-09",
+     "competition": "瑞超",
+     "home": "哈马比",
+     "away": "哥德堡",
+     "score": "1-0",
+     "home_id": ""
+    }
+   ],
+   "recent_home": [
+    {
+     "date": "2026-11-06",
+     "competition": "瑞超",
+     "opponent": "埃夫斯堡",
+     "venue": "home",
+     "score": "4-1",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-11-01",
+     "competition": "瑞超",
+     "opponent": "马尔默",
+     "venue": "away",
+     "score": "1-2",
+     "outcome": "W",
+     "half_ft": "主/客"
+    },
+    {
+     "date": "2026-10-29",
+     "competition": "瑞超",
+     "opponent": "天狼星",
+     "venue": "home",
+     "score": "2-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-13",
+     "competition": "瑞超",
+     "opponent": "布鲁马波",
+     "venue": "home",
+     "score": "3-1",
+     "outcome": "W",
+     "half_ft": "主/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-10-25",
+     "competition": "瑞超",
+     "opponent": "盖斯",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "主/平"
+    },
+    {
+     "date": "2026-10-09",
+     "competition": "瑞超",
+     "opponent": "韦斯特罗",
+     "venue": "home",
+     "score": "1-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    }
+   ],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "艾文保迪",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "奥利华哈根",
+     "reason": "不详",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "阿历山大佐奴",
+     "reason": "不详",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "雷蒙隆特基斯",
+     "reason": "私人理由",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "艾宁麦克",
+     "reason": "足伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "韦贝治",
+     "reason": "不详",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "梅古利",
+     "reason": "膝伤",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "森拿臣",
+     "reason": "不详",
+     "status": "doubt"
+    },
+    {
+     "team": "away",
+     "player": "庄拿斯比加",
+     "reason": "",
+     "status": "suspended"
+    },
+    {
+     "team": "away",
+     "player": "海恩斯",
+     "reason": "",
+     "status": "suspended"
+    }
+   ],
+   "squad": {
+    "source": "球小策球员数据中心",
+    "url": "https://www.qiuxiaoce.com/player-rankings/",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
+    "home": {
+     "team": "哈马比",
+     "n": 13,
+     "core_avg": 72.6,
+     "form_avg": 6.94,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "维克托·林德",
+       "pos": "MF",
+       "oti": 89.03,
+       "dii": 48.93,
+       "gim": 78.81,
+       "form": 6.8,
+       "cons": 2.48,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -0.4,
+       "estimated": false
+      },
+      {
+       "name": "马吉德",
+       "pos": "MF",
+       "oti": 71.86,
+       "dii": 15.83,
+       "gim": 74.9,
+       "form": 7.8,
+       "cons": 5.86,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -0.1,
+       "estimated": false
+      },
+      {
+       "name": "温特",
+       "pos": "DF",
+       "oti": 50.17,
+       "dii": 42.16,
+       "gim": 73.98,
+       "form": 7.2,
+       "cons": 58.56,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -1.3,
+       "estimated": false
+      },
+      {
+       "name": "斯科格伦德",
+       "pos": "DF",
+       "oti": 65.34,
+       "dii": 76.1,
+       "gim": 69.3,
+       "form": 7.0,
+       "cons": 38.29,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 1.8,
+       "estimated": false
+      },
+      {
+       "name": "马·卡尔松",
+       "pos": "MF",
+       "oti": 37.01,
+       "dii": 49.55,
+       "gim": 66.1,
+       "form": 6.8,
+       "cons": 94.82,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 1.0,
+       "estimated": false
+      }
+     ]
+    }
+   },
+   "source_url": "",
+   "generated_at": "2026-11-23T12:08:48+08:00",
+   "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "天狼星",
+      "pts": 61,
+      "p": 29
+     },
+     {
+      "rank": 2,
+      "name": "哈马比",
+      "pts": 58,
+      "p": 28
+     },
+     {
+      "rank": 3,
+      "name": "佐加顿斯",
+      "pts": 52,
+      "p": 29
+     },
+     {
+      "rank": 4,
+      "name": "赫根",
+      "pts": 52,
+      "p": 29
+     },
+     {
+      "rank": 5,
+      "name": "埃夫斯堡",
+      "pts": 46,
+      "p": 29
+     },
+     {
+      "rank": 6,
+      "name": "韦斯特罗",
+      "pts": 45,
+      "p": 29
+     },
+     {
+      "rank": 7,
+      "name": "盖斯",
+      "pts": 43,
+      "p": 29
+     },
+     {
+      "rank": 8,
+      "name": "马尔默",
+      "pts": 42,
+      "p": 29
+     },
+     {
+      "rank": 9,
+      "name": "索尔纳",
+      "pts": 42,
+      "p": 29
+     },
+     {
+      "rank": 10,
+      "name": "哥德堡",
+      "pts": 39,
+      "p": 28
+     },
+     {
+      "rank": 11,
+      "name": "布鲁马波",
+      "pts": 35,
+      "p": 29
+     },
+     {
+      "rank": 12,
+      "name": "米亚尔比",
+      "pts": 29,
+      "p": 29
+     },
+     {
+      "rank": 13,
+      "name": "卡尔马",
+      "pts": 26,
+      "p": 28
+     },
+     {
+      "rank": 14,
+      "name": "哈尔姆斯",
+      "pts": 23,
+      "p": 29
+     },
+     {
+      "rank": 15,
+      "name": "代格福什",
+      "pts": 21,
+      "p": 29
+     },
+     {
+      "rank": 16,
+      "name": "厄格里特",
+      "pts": 20,
+      "p": 28
+     }
+    ],
+    "lam_home": 2.522,
+    "lam_away": 0.617,
+    "lam_total": 3.139,
+    "upset_prob": 16.5,
+    "upset_level": "低",
+    "rq_best_ev": 1.154,
+    "rq_best_odds": 2.28,
+    "quad_top": {
+     "home": {
+      "score": "2:0",
+      "prob": 15.4
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 6.3
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 0.4
+     }
+    },
+    "prob_home": 86.4,
+    "prob_draw": 12.5,
+    "prob_away": 1.1,
+    "data_n": {
+     "home": 21,
+     "away": 17
+    },
+    "headline": {
+     "score": "2:0",
+     "prob": 13.1
+    },
+    "htft_half": {
+     "home": 58.3,
+     "draw": 32.6,
+     "away": 9.0
+    },
+    "htft_cells": {
+     "主/主": 55.2,
+     "主/平": 2.7,
+     "主/客": 0.5,
+     "平/主": 20.8,
+     "平/平": 8.9,
+     "平/客": 2.9,
+     "客/主": 2.7,
+     "客/平": 2.7,
+     "客/客": 3.6
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 5,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 6
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      }
+     ]
+    },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "艾文保迪",
+        "reason": "膝伤"
+       },
+       {
+        "name": "奥利华哈根",
+        "reason": "不详"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "阿历山大佐奴",
+        "reason": "不详"
+       },
+       {
+        "name": "雷蒙隆特基斯",
+        "reason": "私人理由"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "艾宁麦克",
+        "reason": "足伤"
+       },
+       {
+        "name": "韦贝治",
+        "reason": "不详"
+       },
+       {
+        "name": "梅古利",
+        "reason": "膝伤"
+       },
+       {
+        "name": "森拿臣",
+        "reason": "不详"
+       }
+      ],
+      "suspended": [
+       {
+        "name": "庄拿斯比加",
+        "reason": ""
+       },
+       {
+        "name": "海恩斯",
+        "reason": ""
+       }
+      ]
+     }
+    },
+    "mood": "天狼星前锋恩尼根仍受伤患困扰，今仗能否上阵成疑。佐加顿斯在国际赛周期间有重大人事变动，由于近期战绩下滑导致争标形势急转直下，会方解雇了领队汉卡华拉，并由美密迪、罗连斯及格朗比迪三人组成临时教练团，共同领军应付最后两周联赛。此外，中坚尤尼拿臣今场累积足够黄牌要停赛。\n天狼星停赛：无\n上阵成疑：恩尼根（不详）\n受伤／缺阵：利 …… 赫根主胜「夫」声高 2026-11-22 推介：主客和–主胜推介：第一队入球–主胜军情赫根中坚希兰达在国际赛周前的一仗因伤缺阵，今场能否赶及披甲仍属未知数。埃夫斯堡后卫侯尔特在国际赛周前斗哈马比之战中时受伤离场，同样上阵成疑。\n赫根停赛：无\n上阵成疑：菲腊奥曼（不详）、安达尔（不详）、希兰达（不详）\n受伤／缺阵：无\n埃夫斯堡停赛：无\n上阵成疑：列治拿（腹股沟）、柏费克（不详）、侯尔特（不详）\n受伤／缺阵：艾夫史 …… 哈马比抢分争「登」顶 2026-11-22 军情哈马比翼锋奥利华哈根自九月底对代格福什受伤后，经已确认提早「收咧」，无缘今季余下的关键赛事。哥德堡阵容面临严重打击，进攻主力海恩斯以及中坚庄拿斯比加均累积够黄牌，今场齐齐坐「波监」。\n哈马比停赛：无\n上阵成疑：无\n受伤／缺阵：艾文保迪（膝伤）、奥利华哈根（不详）\n哥德堡停赛：庄拿斯比加、海恩斯\n上阵成疑：艾宁麦克（足伤）、韦贝治（不详）、梅古利（膝伤）\n奥基迪停赛：无\n上阵成疑：威廉史云逊（不详）、拉图斯（不详）\n受伤／缺阵：艾保卡（膝伤）\n卡尔马停赛：无\n上阵成疑：艾保巴卡基达（足伤）、荷尔贝治（不详）受伤／ …… 天狼星为夺标全力去「马」 2026-11-08 军情卡尔马中坚艾保巴卡基达自国际赛期受伤后，上周已重返正选阵容。天狼星进攻球员利马达在十月经历长期伤患复出后再度受创，将会提早收咧。与此同时，前锋恩尼根在因伤缺阵一个月后，今终可候命。\n卡尔马停赛：无\n上阵成疑：无\n受伤／缺阵：伊美尔（不详）\n天狼星停赛：无\n上阵成疑：无\n受伤／缺阵：利马达（肌肉）卡尔马上周以0比0逼和米赞比，在经历两连败后总算稍微止跌。然而，他们的处 …… AIK索尔纳难挡恶「赫」 2026-11-08 军情AIK索尔纳领队利华路在上周对加尔斯的赛事中，令人意外地将中场祖汉贺夫贬为后备，并由伤愈复出的比舒洛域顶替其正选位置。另外前锋卡尔史特兰及艾迪哈坚阿里今场双双停赛。赫根中坚希兰达在前周对布洛马波卡纳时受伤，缺席了上仗对哥德堡的打吡战，今场上阵成疑。AIK\n索尔纳停赛：艾迪哈坚阿里、卡尔史特兰及\n上阵成疑：伊巴谦施斯（足伤）、阿祖安凯姆（不详）、夏维马菲斯（不详）",
+    "weather": {
+     "t_min": 2.3,
+     "t_max": 2.7,
+     "pop": 8,
+     "rain": 0.4,
+     "wind": 24.5,
+     "grade": "ok",
+     "city": "斯德哥尔摩"
+    },
+    "hc_at": "2026-11-23 11:51",
+    "intel": [
+     {
+      "title": "瑞典超第29轮：哈马比预计首发迎战哥德堡",
+      "url": "https://m.dongqiudi.com/xinwen/219430",
+      "source": "懂球帝",
+      "text": "30秒看懂瑞典超第29轮哈马比主场对哥德堡，11月24日02:00开球哈马比预计首发与11月6日4-1胜埃尔夫…"
+     },
+     {
+      "title": "哈马比迎战哥德堡前，主帅里德斯特伦透露泥地训练带来能量",
+      "url": "https://m.dongqiudi.com/xinwen/215787",
+      "source": "懂球帝",
+      "text": "30秒看懂哈马比主帅里德斯特伦称泥泞草场训练给球队带来能量哈马比在争冠中已追平天狼星哈马比下周一19点主场迎战IFK哥德堡斯德哥尔摩消息…"
+     },
+     {
+      "title": "哈马比名宿在李恩失误后开炮：“可悲”",
+      "url": "https://m.dongqiudi.com/xinwen/220891",
+      "source": "懂球帝",
+      "text": "30秒看懂尤尔加登获点球，林恩将球打偏罗迪奇在X上称此事“可悲”哈马比因此错失扩大争冠优势的机会瑞典超级联赛争冠形势出现波折。尤尔加登在对阵西里乌斯的比赛中获得点球机会，克里斯蒂安·林恩将球完全打偏，未能命中。"
+     },
+     {
+      "title": "哈马比 vs 哥德堡历史交锋：23次交手哈马比13胜6平4负",
+      "url": "https://m.dongqiudi.com/xinwen/214892",
+      "source": "懂球帝",
+      "text": "30秒看懂两队23次交手，哈马比13胜6平4负。哈马比进39球失14球，场均2.3球。哈马比近4次交手全胜。北京时间2026年11月24日02:00，瑞典超第29轮，哈马比坐镇主场对阵哥德堡。"
+     },
+     {
+      "title": "哈马比推迟夺冠庆祝——阿布拉罕：完全结束后我再庆祝",
+      "url": "https://m.dongqiudi.com/xinwen/212072",
+      "source": "懂球帝",
+      "text": "30秒看懂哈马比28轮后与天狼星同分，净胜球+14领先阿布拉罕称要等一切完全结束才庆祝夺冠贝萨拉强调无论天狼星结果如何都必须赢球瑞典超级联赛28轮过后，哈马比以净胜球优势领跑积分榜，与天狼星同分，净胜球为+14。"
+     },
+     {
+      "title": "哈马比冠军战前3竞技场关闭顶棚",
+      "url": "https://m.dongqiudi.com/xinwen/212049",
+      "source": "懂球帝",
+      "text": "30秒看懂哈马比23日主场对IFK哥德堡，3Arena因低温关闭顶棚哈马比与天狼星同积58分，净胜球+37对+…"
+     }
+    ],
+    "intel_at": "2026-11-23"
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-11-23-003",
+   "day": "2026-11-23",
+   "code": "周一003",
+   "competition": "意甲",
+   "round": "",
+   "kickoff": "2026-11-24 03:45",
+   "venue": "",
+   "home": {
+    "name": "蒙扎",
+    "slug": "",
+    "league": "意甲",
+    "country": "",
+    "rank": 18,
+    "points": 7,
+    "played": 11,
+    "win": 2,
+    "draw": 1,
+    "loss": 8,
+    "form": "",
+    "logo": "assets/logo/teams/1579.png"
+   },
+   "away": {
+    "name": "佛罗伦萨",
+    "slug": "",
+    "league": "意甲",
+    "country": "",
+    "rank": 15,
+    "points": 9,
+    "played": 11,
+    "win": 2,
+    "draw": 3,
+    "loss": 6,
+    "form": "",
+    "logo": "assets/logo/teams/502.png"
+   },
+   "odds": {
+    "home": 3.5,
+    "draw": 3.72,
+    "away": 1.71,
+    "handicap": 1.0,
+    "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 58,
+    "defence": 21,
+    "control": 44,
+    "form": 12,
+    "value": 24,
+    "motivation": 6,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 70,
+    "defence": 6,
+    "control": 35,
+    "form": 33,
+    "value": 49,
+    "motivation": 30,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-8",
+     "T-7",
+     "T-6",
+     "T-5",
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     2.0,
+     2.0,
+     1.0,
+     4.0,
+     2.0,
+     1.0,
+     1.0,
+     0.0
+    ],
+    "away": [
+     4.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     2.0,
+     4.0,
+     2.0
+    ]
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.568,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.262,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.17,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.12,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.115,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.078,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-3",
+     "prob": 0.074,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.072,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-2",
+     "prob": 0.07,
+     "rank": 6,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.19,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "4 球",
+     "prob": 0.152,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.115,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.324,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/客",
+     "prob": 0.157,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.153,
+     "rank": 3,
+     "note": ""
+    }
+   ],
+   "confidence": "medium",
+   "is_cold_start": false,
+   "main_pick": "拉涅里因脚伤缺阵",
+   "handicap": {
+    "spread": 1.0,
+    "pick": "让球胜"
+   },
+   "h2h": [],
+   "recent_home": [
+    {
+     "date": "2026-11-08",
+     "competition": "意甲",
+     "opponent": "亚特兰大",
+     "venue": "home",
+     "score": "0-1",
+     "outcome": "L",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-10-31",
+     "competition": "意甲",
+     "opponent": "博洛尼亚",
+     "venue": "away",
+     "score": "2-1",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-10-28",
+     "competition": "意甲",
+     "opponent": "那不勒斯",
+     "venue": "home",
+     "score": "1-4",
+     "outcome": "L",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-10-23",
+     "competition": "意甲",
+     "opponent": "都灵",
+     "venue": "away",
+     "score": "3-2",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-10-19",
+     "competition": "意甲",
+     "opponent": "卡利亚里",
+     "venue": "home",
+     "score": "4-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-11-08",
+     "competition": "意甲",
+     "opponent": "尤文图斯",
+     "venue": "home",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-11-02",
+     "competition": "意甲",
+     "opponent": "萨索洛",
+     "venue": "away",
+     "score": "2-4",
+     "outcome": "W",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-10-29",
+     "competition": "意甲",
+     "opponent": "亚特兰大",
+     "venue": "home",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "客/平"
+    },
+    {
+     "date": "2026-10-25",
+     "competition": "意甲",
+     "opponent": "国际米兰",
+     "venue": "away",
+     "score": "2-1",
+     "outcome": "L",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-10-18",
+     "competition": "意甲",
+     "opponent": "科莫",
+     "venue": "home",
+     "score": "1-3",
+     "outcome": "L",
+     "half_ft": "客/客"
+    }
+   ],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Cyril Ngonge",
+     "reason": "伤情",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Michael Folorunsho",
+     "reason": "小腿伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Yvan Maye",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Fabiano Parisi",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Marin Pongračić",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Riccardo Sottil",
+     "reason": "背伤",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Arthur Atta",
+     "reason": "伤情",
+     "status": "doubt"
+    }
+   ],
+   "squad": {
+    "source": "球小策球员数据中心",
+    "url": "https://www.qiuxiaoce.com/player-rankings/",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
+    "home": {
+     "team": "蒙扎",
+     "n": 15,
+     "core_avg": 60.3,
+     "form_avg": 6.43,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "古斯塔沃·瓦雷拉",
+       "pos": "FW",
+       "oti": 76.72,
+       "dii": 31.54,
+       "gim": 84.26,
+       "form": 7.1,
+       "cons": 4.55,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "杰伊·鲁滨逊",
+       "pos": "FW",
+       "oti": 55.86,
+       "dii": 47.95,
+       "gim": 62.38,
+       "form": 6.7,
+       "cons": 56.55,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "比林德利",
+       "pos": "MF",
+       "oti": 55.58,
+       "dii": 38.12,
+       "gim": 54.91,
+       "form": 6.3,
+       "cons": 38.36,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": true
+      },
+      {
+       "name": "戈格利奇泽",
+       "pos": "DF",
+       "oti": 36.06,
+       "dii": 72.21,
+       "gim": 53.71,
+       "form": 6.7,
+       "cons": 61.82,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "福洛伦肖",
+       "pos": "MF",
+       "oti": 30.86,
+       "dii": 52.66,
+       "gim": 46.41,
+       "form": 6.4,
+       "cons": 70.55,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": true
+      }
+     ]
+    },
+    "away": {
+     "team": "佛罗伦萨",
+     "n": 14,
+     "core_avg": 69.3,
+     "form_avg": 6.61,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "弗兰科·马斯坦图奥诺",
+       "pos": "MF",
+       "oti": 71.76,
+       "dii": 77.24,
+       "gim": 75.22,
+       "form": 6.9,
+       "cons": 3.64,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "恩吉",
+       "pos": "FW",
+       "oti": 61.58,
+       "dii": 63.13,
+       "gim": 74.09,
+       "form": 7.2,
+       "cons": 18.91,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "马特奥·佩莱格里诺",
+       "pos": "FW",
+       "oti": 50.05,
+       "dii": 35.92,
+       "gim": 68.31,
+       "form": 7.4,
+       "cons": 14.18,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "亚历克斯·希门尼斯",
+       "pos": "DF",
+       "oti": 86.36,
+       "dii": 52.33,
+       "gim": 68.08,
+       "form": 6.8,
+       "cons": 32.55,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "尼科洛·法乔利",
+       "pos": "MF",
+       "oti": 50.5,
+       "dii": 58.58,
+       "gim": 61.03,
+       "form": 6.5,
+       "cons": 43.27,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      }
+     ]
+    }
+   },
+   "source_url": "",
+   "generated_at": "2026-11-23T12:08:48+08:00",
+   "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "拉齐奥",
+      "pts": 32,
+      "p": 12
+     },
+     {
+      "rank": 2,
+      "name": "罗马",
+      "pts": 30,
+      "p": 12
+     },
+     {
+      "rank": 3,
+      "name": "国际米兰",
+      "pts": 29,
+      "p": 12
+     },
+     {
+      "rank": 4,
+      "name": "AC米兰",
+      "pts": 27,
+      "p": 12
+     },
+     {
+      "rank": 5,
+      "name": "科莫",
+      "pts": 26,
+      "p": 12
+     },
+     {
+      "rank": 6,
+      "name": "弗罗西诺内",
+      "pts": 20,
+      "p": 11
+     },
+     {
+      "rank": 6,
+      "name": "尤文图斯",
+      "pts": 21,
+      "p": 12
+     },
+     {
+      "rank": 7,
+      "name": "弗洛西诺",
+      "pts": 20,
+      "p": 12
+     },
+     {
+      "rank": 8,
+      "name": "那不勒斯",
+      "pts": 18,
+      "p": 12
+     },
+     {
+      "rank": 9,
+      "name": "博洛尼亚",
+      "pts": 18,
+      "p": 12
+     },
+     {
+      "rank": 10,
+      "name": "热那亚",
+      "pts": 16,
+      "p": 12
+     },
+     {
+      "rank": 11,
+      "name": "卡利亚里",
+      "pts": 16,
+      "p": 12
+     },
+     {
+      "rank": 12,
+      "name": "亚特兰大",
+      "pts": 15,
+      "p": 12
+     },
+     {
+      "rank": 13,
+      "name": "都灵",
+      "pts": 14,
+      "p": 12
+     },
+     {
+      "rank": 14,
+      "name": "莱切",
+      "pts": 10,
+      "p": 12
+     },
+     {
+      "rank": 15,
+      "name": "佛罗伦萨",
+      "pts": 9,
+      "p": 11
+     },
+     {
+      "rank": 16,
+      "name": "帕尔马",
+      "pts": 8,
+      "p": 12
+     },
+     {
+      "rank": 17,
+      "name": "萨索洛",
+      "pts": 8,
+      "p": 12
+     },
+     {
+      "rank": 18,
+      "name": "蒙扎",
+      "pts": 7,
+      "p": 11
+     },
+     {
+      "rank": 19,
+      "name": "乌迪内斯",
+      "pts": 6,
+      "p": 12
+     },
+     {
+      "rank": 20,
+      "name": "威尼斯",
+      "pts": 6,
+      "p": 12
+     }
+    ],
+    "lam_home": 1.338,
+    "lam_away": 1.935,
+    "lam_total": 3.273,
+    "upset_prob": 55.2,
+    "upset_level": "高",
+    "rq_best_ev": 1.018,
+    "rq_best_odds": 1.82,
+    "quad_top": {
+     "home": {
+      "score": "2:1",
+      "prob": 4.2
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 12.0
+     },
+     "away": {
+      "score": "1:2",
+      "prob": 11.5
+     }
+    },
+    "prob_home": 17.0,
+    "prob_draw": 26.2,
+    "prob_away": 56.8,
+    "data_n": {
+     "home": 12,
+     "away": 25
+    },
+    "headline": {
+     "score": "1:2",
+     "prob": 11.2
+    },
+    "htft_half": {
+     "home": 23.8,
+     "draw": 36.6,
+     "away": 39.6
+    },
+    "htft_cells": {
+     "主/主": 15.3,
+     "主/平": 5.2,
+     "主/客": 3.4,
+     "平/主": 9.1,
+     "平/平": 11.8,
+     "平/客": 15.7,
+     "客/主": 2.1,
+     "客/平": 5.2,
+     "客/客": 32.4
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 4,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "3.5",
+      "平": "3.72",
+      "负": "1.71"
+     },
+     "rq": [
+      {
+       "handicap": "+1",
+       "胜": "1.82",
+       "平": "3.6",
+       "负": "3.2"
+      }
+     ],
+     "score": {
+      "1:0": "12.5",
+      "2:0": "19",
+      "2:1": "9.5",
+      "3:0": "50",
+      "3:1": "25",
+      "3:2": "24",
+      "4:0": "150",
+      "4:1": "75",
+      "4:2": "75",
+      "5:0": "400",
+      "5:1": "300",
+      "5:2": "300",
+      "胜其他": "75",
+      "0:0": "20",
+      "1:1": "6.75",
+      "2:2": "10.5",
+      "3:3": "40",
+      "平其他": "200",
+      "0:1": "9",
+      "0:2": "9.5",
+      "1:2": "7",
+      "0:3": "15",
+      "1:3": "11.5",
+      "2:3": "16",
+      "0:4": "30",
+      "1:4": "26",
+      "2:4": "40",
+      "0:5": "90",
+      "1:5": "75",
+      "2:5": "100",
+      "负其他": "30"
+     },
+     "goals": {
+      "0": "20",
+      "1": "6.8",
+      "2": "4.1",
+      "3": "3.5",
+      "4": "4.5",
+      "5": "6.75",
+      "6": "11",
+      "7+": "15"
+     },
+     "htft": {
+      "胜胜": "5.75",
+      "胜平": "14.5",
+      "胜负": "20",
+      "平胜": "8.75",
+      "平平": "6.25",
+      "平负": "4.6",
+      "负胜": "28",
+      "负平": "14.5",
+      "负负": "2.75"
+     },
+     "kickoff": ""
+    },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "Cyril Ngonge",
+        "reason": "伤情"
+       },
+       {
+        "name": "Michael Folorunsho",
+        "reason": "小腿伤"
+       },
+       {
+        "name": "Yvan Maye",
+        "reason": "肌肉伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     },
+     "away": {
+      "out": [
+       {
+        "name": "Fabiano Parisi",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Marin Pongračić",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Riccardo Sottil",
+        "reason": "背伤"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Arthur Atta",
+        "reason": "伤情"
+       }
+      ],
+      "suspended": []
+     }
+    },
+    "mood": "AC米兰上仗意甲续以干卡路拉莫斯踢箭头，配合攻中艾法祖施斯及基斯甸普列锡后上取分；两位后上杀手表现亦出色，于上半场各入一球，为球队取得大好优势，即使完场前失回一球，亦无阻作客获胜。费辛隆尼上仗意甲改派丹尼尔比利基亚踢正箭头，配合攻中洛文奴舒密特后上取分，但二人表现平平，未有斩获；加上后防欠稳，上半场先失守，最终力追 …… 热那亚作客有必「萨」技 2026-11-22 推介：主客和–客胜推介：半场主客和–和军情萨斯索罗上仗意甲续派施巴斯坦艾斯保薛图踢正中锋，配合罗尼安迪踢双箭头攻坚，但二人表现差劲，形同虚设；加上后防演出不稳，上半场已接连失守，包括中坚华路基域斯摆乌龙，最终大败而回。热那亚上仗意甲续由米路天奥斯马积踢正中锋，配合攻中祖利亚美斯亚斯后上取分，但他们表现未如理想，一同食白果；加上后防不稳于上半场连失2球，即使翼 …… 博洛尼亚主场有力除「乌」 2026-11-22 推介：主客和–主胜推介：半全场–和军情博洛尼亚上仗意甲续以赞斯奥特加特踢正中锋，配合翼锋贝拿迪斯治及尼高路甘比亚基攻坚，3人表现不俗但未有士哥；球队要靠中坚艾法菲亚迪及后备锋将柯苏连尼下半场各入一球，作客小胜而回。乌迪内斯上仗意甲续派基伦戴维斯踢正中锋，配合攻中艾基伦甘及尼高路辛尼奥路后上攻坚，但他们表现平平无奇，未有斩获；加上后防演出不稳，下半场两度失守， …… 蒙扎「拿」手开半和 2026-11-22 军情蒙扎上仗意甲改踢双箭头，由古斯达禾华利拿伙拍积罗宾逊挂帅，但他们表现平平无奇，一同食白果；加上后防演出欠稳，下半场早段失守，最终力追不及，主场落败。佛罗伦萨上仗意甲续派马迪奥柏历坚奴踢正前锋，配合翼锋阿里奥尼捷及马斯坦杜奥奴后上攻坚。他们亦有出色表现，马迪奥柏历坚奴及阿里奥尼捷各入一球，助球队两度领先；可惜后防演出欠稳两度失守，主场未能保住胜局。蒙扎受伤 …… < 上一页 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 下一页 > 新 闻 球 队 球 员 巴塞罗那 皇家马德里 曼联 切尔西 梅西 C罗 范佩西 鲁尼 热点推荐 [赛前] 英超前瞻:利物浦VS曼联 [赛前] 巴塞罗那 VS 比利亚雷亚尔 [赛前] 英超前瞻：纽卡 vs 阿森纳 [赛前] 前瞻：帕尔马 VS 罗马 [赛前] 利物浦食硬曼联 [赛前] 德甲前瞻:门兴VS多特蒙德 [赛前] 前瞻：亚特兰大 VS 国米 [赛前] 西甲前瞻：赫塔费 vs 马竞 [赛前] 巴塞有「利」可图 [赛前] 祖记目标重振声「威」 本站声明 | 联系我们 | 报告错误 | 网站导航 | 返回页顶 提醒：第三方机构可能在7M体育宣传他们的产品或服务，7M体育将不保证其宣传信息的准确。 您跟第三方机构的任何交易与7M体育无关，7M体育将不会对可能引起的任何损失负责。 Copyright…",
+    "odds_ticks": [
+     {
+      "t": "2026-11-21 11:03",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 12:00",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 13:00",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 14:00",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 15:00",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 16:00",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:21",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:25",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 18:00",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 19:00",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 20:00",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 22:37",
+      "胜": 3.35,
+      "平": 3.65,
+      "负": 1.77,
+      "让球": [
+       {
+        "handicap": "+1",
+        "胜": 1.77,
+        "平": 3.75,
+        "负": 3.25
+       }
+      ]
+     }
+    ],
+    "weather": {
+     "t_min": 6.6,
+     "t_max": 9.5,
+     "pop": 0,
+     "rain": 0.0,
+     "wind": 5.4,
+     "grade": "ok",
+     "city": "Monza"
+    },
+    "hc_analyse": {
+     "home": [
+      "近期平局表现突出，近10场6场踢平，平率60%以上",
+      "近期顺风能力不俗，近10场率先进球的比赛中，8场赢得最终比赛，胜率为80%",
+      "近期逆风能力极差，近10场在对方先进球的比赛中，只有1场赢得最终比赛，胜率为10%",
+      "近期连续5场丢球"
+     ],
+     "guest": [
+      "近期战力佳，10场赢球7场，胜率70%，目前联盟第3",
+      "近10场客场赢球5场，占比50%",
+      "近期顺风能力不俗，近10场率先进球的比赛中，9场赢得最终比赛，胜率为90%",
+      "近10场防守不俗，6场无失球，占比60%"
+     ]
+    },
+    "hc_range": {
+     "home_total": {
+      "n": 30,
+      "w": 8,
+      "d": 14,
+      "l": 8,
+      "gf": 32,
+      "ga": 32,
+      "rank": 6,
+      "pts": 38,
+      "gd": 0
+     },
+     "away_total": {
+      "n": 30,
+      "w": 16,
+      "d": 10,
+      "l": 4,
+      "gf": 52,
+      "ga": 28,
+      "rank": 5,
+      "pts": 58,
+      "gd": 24
+     },
+     "home_home": {
+      "n": 15,
+      "w": 4,
+      "d": 7,
+      "l": 4,
+      "gf": 15,
+      "ga": 18,
+      "rank": 9,
+      "pts": 19,
+      "gd": -3
+     },
+     "home_guest": {
+      "n": 15,
+      "w": 4,
+      "d": 7,
+      "l": 4,
+      "gf": 17,
+      "ga": 14,
+      "rank": 6,
+      "pts": 19,
+      "gd": 3
+     },
+     "away_home": {
+      "n": 15,
+      "w": 11,
+      "d": 3,
+      "l": 1,
+      "gf": 33,
+      "ga": 10,
+      "rank": 3,
+      "pts": 36,
+      "gd": 23
+     },
+     "away_guest": {
+      "n": 15,
+      "w": 5,
+      "d": 7,
+      "l": 3,
+      "gf": 19,
+      "ga": 18,
+      "rank": 5,
+      "pts": 22,
+      "gd": 1
+     },
+     "home": {
+      "n": 15,
+      "w": 4,
+      "d": 7,
+      "l": 4,
+      "gf": 15,
+      "ga": 18,
+      "rank": 9,
+      "pts": 19,
+      "gd": -3
+     },
+     "away": {
+      "n": 15,
+      "w": 5,
+      "d": 7,
+      "l": 3,
+      "gf": 19,
+      "ga": 18,
+      "rank": 5,
+      "pts": 22,
+      "gd": 1
+     }
+    },
+    "hc_at": "2026-11-23 11:51",
+    "intel": [
+     {
+      "title": "蒙扎迎战佛罗伦萨前，尤里奇确认马耶等三人缺阵",
+      "url": "https://m.dongqiudi.com/xinwen/221920",
+      "source": "懂球帝",
+      "text": "30秒看懂蒙扎主帅尤里奇确认马耶、福洛伦肖、恩贡格缺阵齐奥尔科夫斯基进入名单，佩西纳已训练两周尤里奇称球队表现提升，对阵佛罗伦萨必须完美蒙扎主帅伊万·尤里奇在联赛对阵佛罗伦萨的赛前新闻发布会上谈到了球队的人员情况。"
+     },
+     {
+      "title": "拉涅里伤愈复出，佛罗伦萨客战蒙扎或首发",
+      "url": "https://m.dongqiudi.com/xinwen/221765",
+      "source": "懂球帝",
+      "text": "30秒看懂拉涅里因脚伤缺阵4场，对尤文已进入名单客战蒙扎拉涅里可能首发，维耶里也在竞争德拉古辛刚踢完罗马尼亚180分钟，可能轮休佛罗伦萨后卫卢卡·拉涅里即将重新回到首发阵容。"
+     },
+     {
+      "title": "佛罗伦萨客战蒙扎名单：阿塔伤愈回归",
+      "url": "https://m.dongqiudi.com/xinwen/221512",
+      "source": "懂球帝",
+      "text": "30秒看懂佛罗伦萨公布客战蒙扎22人名单，主帅瓦诺利阿塔伤缺近两个月后回归名单波格拉契奇和帕里西两名长期伤员仍缺席佛罗伦萨主帅保罗·瓦诺利公布了球队明天客场对阵蒙扎的22人名单。"
+     },
+     {
+      "title": "尤里奇：蒙扎迎战佛罗伦萨目标保级，三将缺阵",
+      "url": "https://m.dongqiudi.com/xinwen/220398",
+      "source": "懂球帝",
+      "text": "30秒看懂尤里奇称蒙扎本赛季目标是留在意甲梅耶、福洛伦肖、恩贡格将缺席对佛罗伦萨齐奥尔科夫斯基可以出场，佩西纳已训练两周蒙扎主帅伊万·尤里奇在联赛对阵佛罗伦萨的赛前发布会上表示，球队的目标是留在意甲。"
+     },
+     {
+      "title": "周一003 蒙扎vs佛罗伦萨几点直播：CCTV5转播吗？附时间看点",
+      "url": "https://m.dongqiudi.com/xinwen/224579",
+      "source": "懂球帝",
+      "text": "30秒看懂北京时间11月24日03:45开球，意甲第12轮央视体育频道暂未安排电视转播两队近7次交手蒙扎2胜2…"
+     },
+     {
+      "title": "紫百合逆转：两球落后4比3胜科莫，升至第三",
+      "url": "https://m.dongqiudi.com/xinwen/222786",
+      "source": "懂球帝",
+      "text": "30秒看懂佛罗伦萨主场4-3逆转科莫，反超对手升至第三科莫开场33分钟两球领先，上半场被追成2-1奥马斯多蒂尔…"
+     }
+    ],
+    "intel_at": "2026-11-23"
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-11-23-004",
+   "day": "2026-11-23",
+   "code": "周一004",
+   "competition": "法乙",
+   "round": "",
+   "kickoff": "2026-11-24 03:45",
+   "venue": "",
+   "home": {
+    "name": "索肖",
+    "slug": "",
+    "league": "法乙",
+    "country": "",
+    "rank": 17,
+    "points": 11,
+    "played": 12,
+    "win": 2,
+    "draw": 5,
+    "loss": 5,
+    "form": "",
+    "logo": "assets/logo/teams/115.png"
+   },
+   "away": {
+    "name": "敦刻尔克",
+    "slug": "",
+    "league": "法乙",
+    "country": "",
+    "rank": 11,
+    "points": 15,
+    "played": 12,
+    "win": 4,
+    "draw": 3,
+    "loss": 5,
+    "form": "",
+    "logo": "assets/logo/teams/1304.png"
+   },
+   "odds": {
+    "home": 2.2,
+    "draw": 3.0,
+    "away": 2.85,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 100,
+    "defence": 40,
+    "control": 40,
+    "form": 60,
+    "value": 0,
+    "motivation": 40,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 93,
+    "defence": 47,
+    "control": 47,
+    "form": 40,
+    "value": 60,
+    "motivation": 33,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.399,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.308,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.293,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.137,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.118,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.101,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.1,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.081,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.076,
+     "rank": 6,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.219,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.213,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "0 球",
+     "prob": 0.1,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.24,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.18,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.175,
+     "rank": 3,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": true,
+   "main_pick": "索肖对敦刻尔克：樊尚·奥尼翁想“终结这波”连败",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [],
+   "recent_away": [],
+   "injuries": [],
+   "squad": {
+    "source": "球小策球员数据中心",
+    "url": "https://www.qiuxiaoce.com/player-rankings/",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
+    "home": {
+     "team": "索肖",
+     "n": 17,
+     "core_avg": 56.0,
+     "form_avg": 6.41,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "B. Youssouf",
+       "pos": "DF",
+       "oti": 69.25,
+       "dii": 37.19,
+       "gim": 69.65,
+       "form": 7.1,
+       "cons": 79.89,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -2.4,
+       "estimated": true
+      },
+      {
+       "name": "E. N'Gatta",
+       "pos": "DF",
+       "oti": 38.31,
+       "dii": 33.14,
+       "gim": 55.16,
+       "form": 6.3,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 5.6,
+       "estimated": true
+      },
+      {
+       "name": "Dylan Tavares",
+       "pos": "DF",
+       "oti": 49.66,
+       "dii": 79.06,
+       "gim": 52.92,
+       "form": 6.3,
+       "cons": 83.6,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 8.3,
+       "estimated": false
+      },
+      {
+       "name": "B. Gomel",
+       "pos": "MF",
+       "oti": 61.65,
+       "dii": 38.7,
+       "gim": 52.15,
+       "form": 6.4,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 5.2,
+       "estimated": false
+      },
+      {
+       "name": "M. Peybernes",
+       "pos": "DF",
+       "oti": 32.59,
+       "dii": 35.22,
+       "gim": 50.24,
+       "form": 6.6,
+       "cons": 15.61,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -17.9,
+       "estimated": false
+      }
+     ]
+    },
+    "away": {
+     "team": "敦刻尔克",
+     "n": 14,
+     "core_avg": 61.3,
+     "form_avg": 6.76,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "奥帕·桑甘特",
+       "pos": "DF",
+       "oti": 41.98,
+       "dii": 39.72,
+       "gim": 66.4,
+       "form": 6.9,
+       "cons": 35.45,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": -4.8,
+       "estimated": false
+      },
+      {
+       "name": "A. Lebeau",
+       "pos": "MF",
+       "oti": 75.65,
+       "dii": 29.04,
+       "gim": 64.44,
+       "form": 7.1,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -8.4,
+       "estimated": true
+      },
+      {
+       "name": "S. Keita",
+       "pos": "MF",
+       "oti": 78.45,
+       "dii": 40.68,
+       "gim": 62.23,
+       "form": 7.0,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.6,
+       "estimated": false
+      },
+      {
+       "name": "加埃唐·罗拜",
+       "pos": "FW",
+       "oti": 55.57,
+       "dii": 40.81,
+       "gim": 57.45,
+       "form": 6.8,
+       "cons": 3.44,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -3.2,
+       "estimated": true
+      },
+      {
+       "name": "兰盖",
+       "pos": "DF",
+       "oti": 41.96,
+       "dii": 22.1,
+       "gim": 56.17,
+       "form": 6.7,
+       "cons": 96.3,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 2.0,
+       "estimated": false
+      }
+     ]
+    }
+   },
+   "source_url": "",
+   "generated_at": "2026-11-23T12:08:48+08:00",
+   "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "圣埃蒂安",
+      "pts": 31,
+      "p": 13
+     },
+     {
+      "rank": 2,
+      "name": "南锡",
+      "pts": 28,
+      "p": 13
+     },
+     {
+      "rank": 3,
+      "name": "蒙彼利埃",
+      "pts": 24,
+      "p": 13
+     },
+     {
+      "rank": 4,
+      "name": "兰斯",
+      "pts": 21,
+      "p": 13
+     },
+     {
+      "rank": 5,
+      "name": "梅斯",
+      "pts": 20,
+      "p": 13
+     },
+     {
+      "rank": 6,
+      "name": "波城FC",
+      "pts": 20,
+      "p": 13
+     },
+     {
+      "rank": 7,
+      "name": "圣旺红星",
+      "pts": 20,
+      "p": 13
+     },
+     {
+      "rank": 8,
+      "name": "阿纳西",
+      "pts": 19,
+      "p": 13
+     },
+     {
+      "rank": 9,
+      "name": "第戎",
+      "pts": 18,
+      "p": 13
+     },
+     {
+      "rank": 10,
+      "name": "罗德兹",
+      "pts": 16,
+      "p": 13
+     },
+     {
+      "rank": 11,
+      "name": "敦刻尔克",
+      "pts": 15,
+      "p": 12
+     },
+     {
+      "rank": 12,
+      "name": "甘冈",
+      "pts": 14,
+      "p": 13
+     },
+     {
+      "rank": 13,
+      "name": "布洛涅",
+      "pts": 13,
+      "p": 13
+     },
+     {
+      "rank": 14,
+      "name": "南特",
+      "pts": 12,
+      "p": 12
+     },
+     {
+      "rank": 15,
+      "name": "拉瓦勒",
+      "pts": 12,
+      "p": 13
+     },
+     {
+      "rank": 16,
+      "name": "克莱蒙",
+      "pts": 11,
+      "p": 13
+     },
+     {
+      "rank": 17,
+      "name": "索肖",
+      "pts": 11,
+      "p": 12
+     },
+     {
+      "rank": 18,
+      "name": "格勒诺布",
+      "pts": 11,
+      "p": 12
+     }
+    ],
+    "lam_home": 1.279,
+    "lam_away": 1.073,
+    "lam_total": 2.352,
+    "upset_prob": 59.6,
+    "upset_level": "高",
+    "rq_best_ev": 0.838,
+    "rq_best_odds": 1.49,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 11.8
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 13.7
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 10.1
+     }
+    },
+    "prob_home": 39.9,
+    "prob_draw": 29.3,
+    "prob_away": 30.8,
+    "data_n": {
+     "home": 0,
+     "away": 8
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 14.1
+    },
+    "htft_half": {
+     "home": 30.5,
+     "draw": 45.0,
+     "away": 24.4
+    },
+    "htft_cells": {
+     "主/主": 24.0,
+     "主/平": 4.9,
+     "主/客": 1.6,
+     "平/主": 15.1,
+     "平/平": 18.0,
+     "平/客": 11.9,
+     "客/主": 2.0,
+     "客/平": 4.9,
+     "客/客": 17.5
+    },
+    "form_net": {
+     "home_7": [],
+     "home_home": [],
+     "away_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 6,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "2.2",
+      "平": "3",
+      "负": "2.85"
+     },
+     "rq": [
+      {
+       "handicap": "-1",
+       "胜": "4.7",
+       "平": "3.92",
+       "负": "1.49"
+      }
+     ],
+     "score": {
+      "1:0": "7.5",
+      "2:0": "10.5",
+      "2:1": "7",
+      "3:0": "22",
+      "3:1": "16",
+      "3:2": "25",
+      "4:0": "65",
+      "4:1": "45",
+      "4:2": "70",
+      "5:0": "200",
+      "5:1": "150",
+      "5:2": "250",
+      "胜其他": "80",
+      "0:0": "10.5",
+      "1:1": "5.5",
+      "2:2": "11.5",
+      "3:3": "50",
+      "平其他": "400",
+      "0:1": "8.5",
+      "0:2": "13.5",
+      "1:2": "8.5",
+      "0:3": "32",
+      "1:3": "23",
+      "2:3": "29",
+      "0:4": "100",
+      "1:4": "70",
+      "2:4": "90",
+      "0:5": "350",
+      "1:5": "250",
+      "2:5": "350",
+      "负其他": "100"
+     },
+     "goals": {
+      "0": "10.5",
+      "1": "4.6",
+      "2": "3.3",
+      "3": "3.55",
+      "4": "5.7",
+      "5": "10.5",
+      "6": "19",
+      "7+": "30"
+     },
+     "htft": {
+      "胜胜": "3.65",
+      "胜平": "15",
+      "胜负": "32",
+      "平胜": "5.15",
+      "平平": "4.8",
+      "平负": "6.4",
+      "负胜": "29",
+      "负平": "15",
+      "负负": "4.5"
+     },
+     "kickoff": ""
+    },
+    "odds_ticks": [
+     {
+      "t": "2026-11-21 11:03",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 12:00",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 13:00",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 14:00",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 15:00",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 16:00",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:21",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:25",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 18:00",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 19:00",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 20:00",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 22:37",
+      "胜": 2.2,
+      "平": 3.1,
+      "负": 2.76,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.7,
+        "平": 3.92,
+        "负": 1.49
+       }
+      ]
+     }
+    ],
+    "hc_at": "2026-11-23 11:51",
+    "intel": [
+     {
+      "title": "索肖迎战敦刻尔克前，主帅奥尼翁称缺兵少将仍可取胜",
+      "url": "https://m.dongqiudi.com/xinwen/219374",
+      "source": "懂球帝",
+      "text": "30秒看懂奥尼翁承认球队目前不在好时期他表示球队缺席很多他强调要着眼积极面索肖主帅樊尚·奥尼翁表示，球队目前处境不佳，同时缺席情况很多，但他强调要着眼于积极的一面，并认为球队能够赢下与敦刻尔克的比赛。"
+     },
+     {
+      "title": "索肖对敦刻尔克：樊尚·奥尼翁想“终结这波”连败",
+      "url": "https://m.dongqiudi.com/xinwen/221580",
+      "source": "懂球帝",
+      "text": "30秒看懂索肖周一晚法乙主场迎战敦刻尔克，奥尼翁称要终结联赛连败。奥尼翁表示球队仍有多人缺阵，包括伤停和个人问题，洛布里仍在恢复。奥尼翁点名敦刻尔克的罗巴伊、阿亚里和凯塔进攻威胁大。"
+     },
+     {
+      "title": "索肖对敦刻尔克：皮埃尔·阿希尔·韦博呼吁纠正状态不稳",
+      "url": "https://m.dongqiudi.com/xinwen/218548",
+      "source": "懂球帝",
+      "text": "30秒看懂敦刻尔克主帅韦博呼吁球队改掉表现不稳定的问题敦刻尔克曾3-0胜甘冈，却在杯赛被QRM淘汰尼昂肌肉有伤，罗巴伊能否出场要到最后一刻决定法乙第13轮，敦刻尔克将于11月23日（周一）客场挑战索肖。"
+     },
+     {
+      "title": "马松：教练强调要保持积极，球队团结，方向明确，赛季初就知道会很艰难",
+      "url": "https://m.dongqiudi.com/xinwen/219351",
+      "source": "懂球帝",
+      "text": "索肖球员朱利安·马松表示，主帅在近期主要强调要保持积极心态。他说：“教练尤其强调要保持积极。球队很团结，我们清楚自己前进的方向。赛季初我们就知道这会很艰难。”这番表态由索肖俱乐部官方账号发布。"
+     },
+     {
+      "title": "索肖 vs 敦刻尔克历史交锋：4次交手索肖2胜1平1负",
+      "url": "https://m.dongqiudi.com/xinwen/214918",
+      "source": "懂球帝",
+      "text": "30秒看懂4次交手索肖2胜1平1负，进2球失1球索肖主场2战2胜，敦刻尔克主场1胜1平两队交手场均0.8球，3球及以上0场北京时间2026年11月24日03:45，法乙第13轮，索肖（主）对敦刻尔克（客）。"
+     },
+     {
+      "title": "马松：这种时期要埋头苦干，我们知道足球有困难阶段，现在就在其中，必须继续努力找回缺少的成功",
+      "url": "https://m.dongqiudi.com/xinwen/219360",
+      "source": "懂球帝",
+      "text": "索肖的朱利安·马松表示，球队目前正处于困难时期，需要埋头苦干、继续努力，找回缺失的成功。据索肖官方账号消息，马松说：“在这种时期，必须埋头苦干、继续努力。我们知道足球里总会有困难时期，现在我们就处在其中。"
+     }
+    ],
+    "intel_at": "2026-11-23"
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-11-23-005",
+   "day": "2026-11-23",
+   "code": "周一005",
+   "competition": "英超",
+   "round": "",
+   "kickoff": "2026-11-24 04:00",
+   "venue": "",
+   "home": {
+    "name": "布伦特",
+    "slug": "",
+    "league": "英超",
+    "country": "",
+    "rank": 10,
+    "points": 14,
+    "played": 10,
+    "win": 3,
+    "draw": 5,
+    "loss": 2,
+    "form": "",
+    "logo": "assets/logo/teams/55.png"
+   },
+   "away": {
+    "name": "埃弗顿",
+    "slug": "",
+    "league": "英超",
+    "country": "",
+    "rank": 7,
+    "points": 16,
+    "played": 10,
+    "win": 4,
+    "draw": 4,
+    "loss": 2,
+    "form": "",
+    "logo": "assets/logo/teams/45.png"
+   },
+   "odds": {
+    "home": 2.06,
+    "draw": 3.2,
+    "away": 2.93,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 87,
+    "defence": 52,
+    "control": 87,
+    "form": 20,
+    "value": 70,
+    "motivation": 71,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 31,
+    "defence": 74,
+    "control": 56,
+    "form": 70,
+    "value": 44,
+    "motivation": 61,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-8",
+     "T-7",
+     "T-6",
+     "T-5",
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     1.0,
+     2.0,
+     3.0,
+     2.0,
+     1.0,
+     1.0,
+     2.0,
+     2.0
+    ],
+    "away": [
+     0.0,
+     1.0,
+     2.0,
+     0.0,
+     0.0,
+     3.0,
+     1.0,
+     3.0
+    ]
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.426,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.3,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.274,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.135,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.095,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.091,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.075,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.075,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.071,
+     "rank": 6,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.206,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.17,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.166,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.261,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.178,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.153,
+     "rank": 3,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "心伊戈尔·蒂亚戈因红牌停赛",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负"
+   },
+   "h2h": [
+    {
+     "date": "2026-04-11",
+     "competition": "英超",
+     "home": "埃弗顿",
+     "away": "布伦特",
+     "score": "2-2",
+     "home_id": ""
+    },
+    {
+     "date": "2026-01-04",
+     "competition": "英超",
+     "home": "布伦特",
+     "away": "埃弗顿",
+     "score": "4-2",
+     "home_id": ""
+    }
+   ],
+   "recent_home": [
+    {
+     "date": "2026-10-31",
+     "competition": "英超",
+     "opponent": "诺丁汉",
+     "venue": "home",
+     "score": "2-0",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-10-28",
+     "competition": "英联杯",
+     "opponent": "桑德兰",
+     "venue": "away",
+     "score": "3-2",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-10-25",
+     "competition": "英超",
+     "opponent": "赫尔城",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "主/平"
+    },
+    {
+     "date": "2026-10-10",
+     "competition": "英超",
+     "opponent": "维拉",
+     "venue": "away",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-18",
+     "competition": "英超",
+     "opponent": "切尔西",
+     "venue": "home",
+     "score": "3-0",
+     "outcome": "W",
+     "half_ft": "平/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-11-06",
+     "competition": "英超",
+     "opponent": "考文垂",
+     "venue": "home",
+     "score": "3-1",
+     "outcome": "W",
+     "half_ft": "平/主"
+    },
+    {
+     "date": "2026-11-02",
+     "competition": "英超",
+     "opponent": "纽卡斯尔",
+     "venue": "away",
+     "score": "0-1",
+     "outcome": "W",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-10-29",
+     "competition": "英联杯",
+     "opponent": "纽卡斯尔",
+     "venue": "home",
+     "score": "3-1",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-10-24",
+     "competition": "英超",
+     "opponent": "阿森纳",
+     "venue": "away",
+     "score": "2-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-10-11",
+     "competition": "英超",
+     "opponent": "赫尔城",
+     "venue": "away",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "平/平"
+    }
+   ],
+   "injuries": [
+    {
+     "team": "home",
+     "player": "Aaron Hickey",
+     "reason": "腿筋伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Antoni Milambo",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Josh Dasilva",
+     "reason": "肌肉伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Kaye Furo",
+     "reason": "术后",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Nathan Collins",
+     "reason": "膝伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Rico Henry",
+     "reason": "髋伤",
+     "status": "out"
+    },
+    {
+     "team": "home",
+     "player": "Fábio Carvalho",
+     "reason": "肌肉伤",
+     "status": "doubt"
+    },
+    {
+     "team": "home",
+     "player": "Igor Thiago",
+     "reason": "红牌停赛",
+     "status": "suspended"
+    }
+   ],
+   "squad": {
+    "source": "球小策球员数据中心",
+    "url": "https://www.qiuxiaoce.com/player-rankings/",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
+    "home": {
+     "team": "布伦特",
+     "n": 15,
+     "core_avg": 58.6,
+     "form_avg": 6.52,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "沙德",
+       "pos": "MF",
+       "oti": 43.91,
+       "dii": 45.04,
+       "gim": 62.02,
+       "form": 6.2,
+       "cons": 54.26,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "阿热",
+       "pos": "DF",
+       "oti": 44.46,
+       "dii": 54.78,
+       "gim": 60.84,
+       "form": 6.6,
+       "cons": 97.67,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "雅内尔特",
+       "pos": "MF",
+       "oti": 35.96,
+       "dii": 82.73,
+       "gim": 58.77,
+       "form": 6.5,
+       "cons": 14.15,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "卡约德",
+       "pos": "DF",
+       "oti": 59.14,
+       "dii": 59.36,
+       "gim": 56.47,
+       "form": 6.3,
+       "cons": 25.97,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "刘易斯-波特",
+       "pos": "DF",
+       "oti": 81.32,
+       "dii": 25.98,
+       "gim": 54.93,
+       "form": 6.4,
+       "cons": 44.19,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      }
+     ]
+    },
+    "away": {
+     "team": "埃弗顿",
+     "n": 12,
+     "core_avg": 77.1,
+     "form_avg": 6.79,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "霍尔",
+       "pos": "MF",
+       "oti": 70.56,
+       "dii": 42.95,
+       "gim": 86.54,
+       "form": 7.3,
+       "cons": 28.29,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "塔可夫斯基",
+       "pos": "DF",
+       "oti": 48.26,
+       "dii": 77.09,
+       "gim": 82.56,
+       "form": 6.6,
+       "cons": 36.63,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "巴里",
+       "pos": "FW",
+       "oti": 72.04,
+       "dii": 41.19,
+       "gim": 81.01,
+       "form": 8.0,
+       "cons": 0.0,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "米科连科",
+       "pos": "DF",
+       "oti": 54.96,
+       "dii": 61.27,
+       "gim": 69.72,
+       "form": 6.6,
+       "cons": 69.77,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "詹姆斯·加纳",
+       "pos": "MF",
+       "oti": 33.45,
+       "dii": 49.5,
+       "gim": 65.69,
+       "form": 6.7,
+       "cons": 88.18,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      }
+     ]
+    }
+   },
+   "source_url": "",
+   "generated_at": "2026-11-23T12:08:48+08:00",
+   "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "阿森纳",
+      "pts": 28,
+      "p": 11
+     },
+     {
+      "rank": 2,
+      "name": "布莱顿",
+      "pts": 22,
+      "p": 10
+     },
+     {
+      "rank": 2,
+      "name": "布赖顿",
+      "pts": 22,
+      "p": 11
+     },
+     {
+      "rank": 3,
+      "name": "曼城",
+      "pts": 22,
+      "p": 11
+     },
+     {
+      "rank": 4,
+      "name": "利物浦",
+      "pts": 21,
+      "p": 11
+     },
+     {
+      "rank": 5,
+      "name": "伯恩茅斯",
+      "pts": 18,
+      "p": 11
+     },
+     {
+      "rank": 6,
+      "name": "利兹联",
+      "pts": 17,
+      "p": 11
+     },
+     {
+      "rank": 7,
+      "name": "埃弗顿",
+      "pts": 16,
+      "p": 10
+     },
+     {
+      "rank": 8,
+      "name": "切尔西",
+      "pts": 16,
+      "p": 11
+     },
+     {
+      "rank": 8,
+      "name": "布伦特福德",
+      "pts": 14,
+      "p": 10
+     },
+     {
+      "rank": 9,
+      "name": "热刺",
+      "pts": 15,
+      "p": 11
+     },
+     {
+      "rank": 10,
+      "name": "阿斯顿维拉",
+      "pts": 13,
+      "p": 10
+     },
+     {
+      "rank": 10,
+      "name": "布伦特",
+      "pts": 14,
+      "p": 10
+     },
+     {
+      "rank": 11,
+      "name": "托特纳姆热刺",
+      "pts": 12,
+      "p": 10
+     },
+     {
+      "rank": 11,
+      "name": "赫尔城",
+      "pts": 14,
+      "p": 11
+     },
+     {
+      "rank": 12,
+      "name": "纽卡斯尔联",
+      "pts": 12,
+      "p": 10
+     },
+     {
+      "rank": 12,
+      "name": "维拉",
+      "pts": 14,
+      "p": 11
+     },
+     {
+      "rank": 13,
+      "name": "纽卡斯尔",
+      "pts": 13,
+      "p": 11
+     },
+     {
+      "rank": 14,
+      "name": "伊普斯维奇",
+      "pts": 11,
+      "p": 10
+     },
+     {
+      "rank": 14,
+      "name": "考文垂",
+      "pts": 12,
+      "p": 11
+     },
+     {
+      "rank": 15,
+      "name": "富勒姆",
+      "pts": 11,
+      "p": 11
+     },
+     {
+      "rank": 16,
+      "name": "诺丁汉森林",
+      "pts": 9,
+      "p": 10
+     },
+     {
+      "rank": 16,
+      "name": "伊普斯",
+      "pts": 11,
+      "p": 11
+     },
+     {
+      "rank": 17,
+      "name": "诺丁汉",
+      "pts": 9,
+      "p": 11
+     },
+     {
+      "rank": 18,
+      "name": "桑德兰",
+      "pts": 9,
+      "p": 11
+     },
+     {
+      "rank": 19,
+      "name": "曼联",
+      "pts": 8,
+      "p": 11
+     },
+     {
+      "rank": 20,
+      "name": "水晶宫",
+      "pts": 7,
+      "p": 11
+     }
+    ],
+    "lam_home": 1.489,
+    "lam_away": 1.215,
+    "lam_total": 2.704,
+    "upset_prob": 57.3,
+    "upset_level": "高",
+    "rq_best_ev": 0.856,
+    "rq_best_odds": 1.57,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 9.5
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 13.5
+     },
+     "away": {
+      "score": "1:2",
+      "prob": 7.5
+     }
+    },
+    "prob_home": 42.6,
+    "prob_draw": 27.4,
+    "prob_away": 30.0,
+    "data_n": {
+     "home": 25,
+     "away": 25
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 11.0
+    },
+    "htft_half": {
+     "home": 33.1,
+     "draw": 41.5,
+     "away": 25.3
+    },
+    "htft_cells": {
+     "主/主": 26.1,
+     "主/平": 5.1,
+     "主/客": 1.9,
+     "平/主": 15.0,
+     "平/平": 15.3,
+     "平/客": 11.3,
+     "客/主": 2.5,
+     "客/平": 5.1,
+     "客/客": 17.8
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 6,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 6,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 4,
+       "ga": 3
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 4,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 4
+      }
+     ]
+    },
+    "injuries": {
+     "home": {
+      "out": [
+       {
+        "name": "Aaron Hickey",
+        "reason": "腿筋伤"
+       },
+       {
+        "name": "Antoni Milambo",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Josh Dasilva",
+        "reason": "肌肉伤"
+       },
+       {
+        "name": "Kaye Furo",
+        "reason": "术后"
+       },
+       {
+        "name": "Nathan Collins",
+        "reason": "膝伤"
+       },
+       {
+        "name": "Rico Henry",
+        "reason": "髋伤"
+       }
+      ],
+      "doubtful": [
+       {
+        "name": "Fábio Carvalho",
+        "reason": "肌肉伤"
+       }
+      ],
+      "suspended": [
+       {
+        "name": "Igor Thiago",
+        "reason": "红牌停赛"
+       }
+      ]
+     }
+    },
+    "odds_ticks": [
+     {
+      "t": "2026-11-21 11:03",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 12:00",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 13:00",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 14:00",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 15:00",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 16:00",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:21",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:25",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 18:00",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 19:00",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 20:00",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 22:37",
+      "胜": 1.95,
+      "平": 3.3,
+      "负": 3.1,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.7,
+        "负": 1.63
+       }
+      ]
+     }
+    ],
+    "weather": {
+     "t_min": 3.7,
+     "t_max": 5.1,
+     "pop": 0,
+     "rain": 0.0,
+     "wind": 7.6,
+     "grade": "ok",
+     "city": "伦敦"
+    },
+    "hc_at": "2026-11-23 11:51",
+    "intel": [
+     {
+      "title": "布伦特福德对埃弗顿：伤停与停赛名单、预计首发",
+      "url": "https://m.dongqiudi.com/xinwen/222806",
+      "source": "懂球帝",
+      "text": "30秒看懂布伦特福德主场迎战埃弗顿，主队落后两分，取胜即可反超。布伦特福德伊戈尔·蒂亚戈停赛，希基、科林斯等多人伤缺。布伦特福德自2021年以来未在主场击败过埃弗顿。"
+     },
+     {
+      "title": "布伦特福德迎战埃弗顿前，蒂亚戈停赛威尔逊首发",
+      "url": "https://m.dongqiudi.com/xinwen/222073",
+      "source": "懂球帝",
+      "text": "30秒看懂蒂亚戈红牌停赛三场，威尔逊将首发科林斯和希基伤缺，布伦特福德后防减员格拉利什缺席一个月后回归埃弗顿名单布伦特福德将在周一晚主场迎战埃弗顿，但锋线核心伊戈尔·蒂亚戈因红牌停赛三场，无缘本场比赛。"
+     },
+     {
+      "title": "格拉利什复出，埃弗顿客战布伦特福德多人缺阵",
+      "url": "https://m.dongqiudi.com/xinwen/219887",
+      "source": "懂球帝",
+      "text": "30秒看懂格拉利什回归埃弗顿名单，莫耶斯确认可出战布伦特福德。布伦特福德前锋蒂亚戈因对布莱顿红牌停赛。布伦特福德科林斯膝伤缺阵数周，希基、亨利等多人伤缺。格拉利什重新进入埃弗顿的比赛名单，球队将于周一客场对阵布伦特福德。"
+     },
+     {
+      "title": "英超第11轮布伦特福德预计首发迎战埃弗顿",
+      "url": "https://m.dongqiudi.com/xinwen/220045",
+      "source": "懂球帝",
+      "text": "30秒看懂布伦特福德主场迎战埃弗顿，北京时间11月24日04:00开球布伦特福德预计首发：凯莱赫守门，威尔逊、…"
+     },
+     {
+      "title": "莫耶斯执教埃弗顿第593场，客战布伦特福德",
+      "url": "https://m.dongqiudi.com/xinwen/223239",
+      "source": "懂球帝",
+      "text": "30秒看懂莫耶斯执教埃弗顿第593场，超越卡特里克成队史第一。埃弗顿客场对阵布伦特福德，莫耶斯生涯14次交手仅3胜。布伦特福德本赛季英超尚未丢定位球，埃弗顿定位球进4球。"
+     },
+     {
+      "title": "安德鲁斯期待与“标志性”莫耶斯斗智，布伦特福德迎战埃弗顿",
+      "url": "https://m.dongqiudi.com/xinwen/221570",
+      "source": "懂球帝",
+      "text": "30秒看懂莫耶斯周一晚执教埃弗顿第593场，打破队史纪录安德鲁斯称莫耶斯是英格兰足坛标志性主帅埃弗顿排名英超第…"
+     }
+    ],
+    "intel_at": "2026-11-23"
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-11-23-006",
+   "day": "2026-11-23",
+   "code": "周一006",
+   "competition": "西甲",
+   "round": "",
+   "kickoff": "2026-11-24 04:00",
+   "venue": "",
+   "home": {
+    "name": "莱万特",
+    "slug": "",
+    "league": "西甲",
+    "country": "",
+    "rank": 18,
+    "points": 11,
+    "played": 12,
+    "win": 2,
+    "draw": 5,
+    "loss": 5,
+    "form": "",
+    "logo": "assets/logo/teams/539.png"
+   },
+   "away": {
+    "name": "埃尔切",
+    "slug": "",
+    "league": "西甲",
+    "country": "",
+    "rank": 19,
+    "points": 10,
+    "played": 12,
+    "win": 2,
+    "draw": 4,
+    "loss": 6,
+    "form": "",
+    "logo": "assets/logo/teams/797.png"
+   },
+   "odds": {
+    "home": 1.93,
+    "draw": 3.25,
+    "away": 3.19,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 68,
+    "defence": 19,
+    "control": 45,
+    "form": 27,
+    "value": 15,
+    "motivation": 59,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 34,
+    "defence": 53,
+    "control": 50,
+    "form": 27,
+    "value": 15,
+    "motivation": 13,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-8",
+     "T-7",
+     "T-6",
+     "T-5",
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     2.0,
+     1.0,
+     3.0,
+     1.0,
+     3.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    "away": [
+     1.0,
+     2.0,
+     3.0,
+     0.0,
+     0.0,
+     3.0,
+     0.0,
+     0.0
+    ]
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.46,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.295,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.245,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.136,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.094,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.084,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.076,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.07,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.061,
+     "rank": 6,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.206,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.094,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.084,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.277,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.178,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.148,
+     "rank": 3,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "埃尔切近2个主场连败且未进球",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负"
+   },
+   "h2h": [
+    {
+     "date": "2026-01-23",
+     "competition": "西甲",
+     "home": "埃尔切",
+     "away": "莱万特",
+     "score": "2-3",
+     "home_id": ""
+    }
+   ],
+   "recent_home": [
+    {
+     "date": "2026-11-08",
+     "competition": "西甲",
+     "opponent": "塞尔塔",
+     "venue": "away",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-10-31",
+     "competition": "西甲",
+     "opponent": "马竞",
+     "venue": "home",
+     "score": "0-2",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-10-25",
+     "competition": "西甲",
+     "opponent": "皇家社会",
+     "venue": "away",
+     "score": "2-1",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-10-21",
+     "competition": "西甲",
+     "opponent": "毕尔巴鄂",
+     "venue": "home",
+     "score": "3-1",
+     "outcome": "W",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-10-12",
+     "competition": "西甲",
+     "opponent": "塞维利亚",
+     "venue": "home",
+     "score": "3-3",
+     "outcome": "D",
+     "half_ft": "客/平"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-11-08",
+     "competition": "西甲",
+     "opponent": "贝蒂斯",
+     "venue": "home",
+     "score": "0-2",
+     "outcome": "L",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-11-01",
+     "competition": "西甲",
+     "opponent": "巴伦西亚",
+     "venue": "home",
+     "score": "0-1",
+     "outcome": "L",
+     "half_ft": "平/客"
+    },
+    {
+     "date": "2026-10-24",
+     "competition": "西甲",
+     "opponent": "巴列卡诺",
+     "venue": "away",
+     "score": "0-3",
+     "outcome": "W",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-10-11",
+     "competition": "西甲",
+     "opponent": "塞尔塔",
+     "venue": "home",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-09-18",
+     "competition": "西甲",
+     "opponent": "西班牙人",
+     "venue": "away",
+     "score": "1-3",
+     "outcome": "W",
+     "half_ft": "客/客"
+    }
+   ],
+   "injuries": [
+    {
+     "team": "away",
+     "player": "Adam Boayar",
+     "reason": "伤情",
+     "status": "out"
+    },
+    {
+     "team": "away",
+     "player": "Marc Aguado",
+     "reason": "踝伤",
+     "status": "out"
+    }
+   ],
+   "squad": {
+    "source": "球小策球员数据中心",
+    "url": "https://www.qiuxiaoce.com/player-rankings/",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
+    "home": {
+     "team": "莱万特",
+     "n": 14,
+     "core_avg": 64.2,
+     "form_avg": 6.61,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "德拉",
+       "pos": "DF",
+       "oti": 62.25,
+       "dii": 39.0,
+       "gim": 68.91,
+       "form": 6.7,
+       "cons": 15.98,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.1,
+       "estimated": true
+      },
+      {
+       "name": "布鲁吉",
+       "pos": "MF",
+       "oti": 56.22,
+       "dii": 33.59,
+       "gim": 66.95,
+       "form": 6.7,
+       "cons": 29.21,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 2.3,
+       "estimated": false
+      },
+      {
+       "name": "马努·桑切斯",
+       "pos": "DF",
+       "oti": 42.01,
+       "dii": 77.43,
+       "gim": 63.62,
+       "form": 6.7,
+       "cons": 58.59,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.4,
+       "estimated": false
+      },
+      {
+       "name": "洪·安德尔·奥拉萨加斯蒂",
+       "pos": "MF",
+       "oti": 49.51,
+       "dii": 58.46,
+       "gim": 61.95,
+       "form": 6.9,
+       "cons": 33.51,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 1.0,
+       "estimated": false
+      },
+      {
+       "name": "伊菲安伊·恩杜克韦",
+       "pos": "DF",
+       "oti": 36.17,
+       "dii": 35.04,
+       "gim": 59.71,
+       "form": 6.7,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.9,
+       "estimated": false
+      }
+     ]
+    },
+    "away": {
+     "team": "埃尔切",
+     "n": 16,
+     "core_avg": 65.8,
+     "form_avg": 6.64,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "赫尔曼·巴莱拉",
+       "pos": "DF",
+       "oti": 77.73,
+       "dii": 35.97,
+       "gim": 68.56,
+       "form": 6.7,
+       "cons": 15.98,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -1.4,
+       "estimated": false
+      },
+      {
+       "name": "雷维沃",
+       "pos": "DF",
+       "oti": 73.23,
+       "dii": 40.89,
+       "gim": 65.98,
+       "form": 6.6,
+       "cons": 33.51,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.2,
+       "estimated": false
+      },
+      {
+       "name": "费尔·尼尼奥",
+       "pos": "FW",
+       "oti": 52.54,
+       "dii": 54.73,
+       "gim": 65.78,
+       "form": 6.6,
+       "cons": 19.24,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 2.1,
+       "estimated": false
+      },
+      {
+       "name": "维克托·丘斯特",
+       "pos": "DF",
+       "oti": 49.36,
+       "dii": 41.15,
+       "gim": 64.99,
+       "form": 6.8,
+       "cons": 44.33,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.6,
+       "estimated": false
+      },
+      {
+       "name": "托马斯·勒马尔",
+       "pos": "MF",
+       "oti": 47.98,
+       "dii": 66.51,
+       "gim": 63.84,
+       "form": 7.0,
+       "cons": 96.05,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -1.2,
+       "estimated": true
+      }
+     ]
+    }
+   },
+   "source_url": "",
+   "generated_at": "2026-11-23T12:08:48+08:00",
+   "extras": {
+    "table": [
+     {
+      "rank": 1,
+      "name": "巴塞罗那",
+      "pts": 33,
+      "p": 12
+     },
+     {
+      "rank": 1,
+      "name": "巴萨",
+      "pts": 36,
+      "p": 13
+     },
+     {
+      "rank": 2,
+      "name": "皇家马德里",
+      "pts": 30,
+      "p": 12
+     },
+     {
+      "rank": 2,
+      "name": "皇马",
+      "pts": 33,
+      "p": 13
+     },
+     {
+      "rank": 3,
+      "name": "马德里竞技",
+      "pts": 28,
+      "p": 12
+     },
+     {
+      "rank": 3,
+      "name": "马竞",
+      "pts": 31,
+      "p": 13
+     },
+     {
+      "rank": 4,
+      "name": "皇家贝蒂斯",
+      "pts": 26,
+      "p": 12
+     },
+     {
+      "rank": 4,
+      "name": "贝蒂斯",
+      "pts": 27,
+      "p": 13
+     },
+     {
+      "rank": 5,
+      "name": "皇家社会",
+      "pts": 22,
+      "p": 13
+     },
+     {
+      "rank": 6,
+      "name": "塞维利亚",
+      "pts": 19,
+      "p": 13
+     },
+     {
+      "rank": 7,
+      "name": "毕尔巴鄂竞技",
+      "pts": 16,
+      "p": 11
+     },
+     {
+      "rank": 7,
+      "name": "桑坦德",
+      "pts": 17,
+      "p": 13
+     },
+     {
+      "rank": 8,
+      "name": "比利亚雷亚尔",
+      "pts": 15,
+      "p": 12
+     },
+     {
+      "rank": 8,
+      "name": "毕尔巴鄂",
+      "pts": 16,
+      "p": 12
+     },
+     {
+      "rank": 9,
+      "name": "拉科鲁尼亚",
+      "pts": 15,
+      "p": 12
+     },
+     {
+      "rank": 9,
+      "name": "阿拉维斯",
+      "pts": 16,
+      "p": 13
+     },
+     {
+      "rank": 10,
+      "name": "桑坦德竞技",
+      "pts": 14,
+      "p": 12
+     },
+     {
+      "rank": 10,
+      "name": "比利亚雷",
+      "pts": 15,
+      "p": 13
+     },
+     {
+      "rank": 11,
+      "name": "西班牙人",
+      "pts": 15,
+      "p": 13
+     },
+     {
+      "rank": 12,
+      "name": "拉科",
+      "pts": 15,
+      "p": 13
+     },
+     {
+      "rank": 13,
+      "name": "奥萨苏纳",
+      "pts": 15,
+      "p": 13
+     },
+     {
+      "rank": 14,
+      "name": "塞尔塔",
+      "pts": 13,
+      "p": 13
+     },
+     {
+      "rank": 15,
+      "name": "巴列卡诺",
+      "pts": 12,
+      "p": 12
+     },
+     {
+      "rank": 16,
+      "name": "巴伦西亚",
+      "pts": 12,
+      "p": 13
+     },
+     {
+      "rank": 17,
+      "name": "赫塔费",
+      "pts": 12,
+      "p": 13
+     },
+     {
+      "rank": 18,
+      "name": "莱万特",
+      "pts": 11,
+      "p": 12
+     },
+     {
+      "rank": 19,
+      "name": "埃尔切",
+      "pts": 10,
+      "p": 12
+     },
+     {
+      "rank": 19,
+      "name": "瓦伦西亚",
+      "pts": 9,
+      "p": 12
+     },
+     {
+      "rank": 20,
+      "name": "马拉加",
+      "pts": 5,
+      "p": 13
+     }
+    ],
+    "lam_home": 1.673,
+    "lam_away": 1.337,
+    "lam_total": 3.01,
+    "upset_prob": 58.9,
+    "upset_level": "高",
+    "rq_best_ev": 0.964,
+    "rq_best_odds": 1.66,
+    "quad_top": {
+     "home": {
+      "score": "2:1",
+      "prob": 9.4
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 13.6
+     },
+     "away": {
+      "score": "1:2",
+      "prob": 5.9
+     }
+    },
+    "prob_home": 46.0,
+    "prob_draw": 29.5,
+    "prob_away": 24.5,
+    "data_n": {
+     "home": 25,
+     "away": 25
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 13.3
+    },
+    "htft_half": {
+     "home": 35.1,
+     "draw": 38.9,
+     "away": 26.0
+    },
+    "htft_cells": {
+     "主/主": 27.7,
+     "主/平": 5.3,
+     "主/客": 2.2,
+     "平/主": 14.8,
+     "平/平": 13.4,
+     "平/客": 10.7,
+     "客/主": 2.9,
+     "客/平": 5.3,
+     "客/客": 17.8
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 5,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 5
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 4,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 5
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 4
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 5
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 3
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "1.93",
+      "平": "3.25",
+      "负": "3.19"
+     },
+     "rq": [
+      {
+       "handicap": "-1",
+       "胜": "3.85",
+       "平": "3.6",
+       "负": "1.66"
+      }
+     ],
+     "score": {
+      "1:0": "9.25",
+      "2:0": "11.5",
+      "2:1": "7",
+      "3:0": "19",
+      "3:1": "13",
+      "3:2": "17",
+      "4:0": "50",
+      "4:1": "32",
+      "4:2": "40",
+      "5:0": "100",
+      "5:1": "90",
+      "5:2": "125",
+      "胜其他": "40",
+      "0:0": "17",
+      "1:1": "5.9",
+      "2:2": "10",
+      "3:3": "40",
+      "平其他": "200",
+      "0:1": "12",
+      "0:2": "18",
+      "1:2": "8.75",
+      "0:3": "36",
+      "1:3": "21",
+      "2:3": "22",
+      "0:4": "100",
+      "1:4": "60",
+      "2:4": "70",
+      "0:5": "300",
+      "1:5": "200",
+      "2:5": "250",
+      "负其他": "60"
+     },
+     "goals": {
+      "0": "17",
+      "1": "6",
+      "2": "3.8",
+      "3": "3.4",
+      "4": "4.6",
+      "5": "7.7",
+      "6": "14",
+      "7+": "19"
+     },
+     "htft": {
+      "胜胜": "3.3",
+      "胜平": "13.5",
+      "胜负": "24",
+      "平胜": "5.1",
+      "平平": "5.5",
+      "平负": "7.5",
+      "负胜": "20",
+      "负平": "13.5",
+      "负负": "5"
+     },
+     "kickoff": ""
+    },
+    "injuries": {
+     "away": {
+      "out": [
+       {
+        "name": "Adam Boayar",
+        "reason": "伤情"
+       },
+       {
+        "name": "Marc Aguado",
+        "reason": "踝伤"
+       }
+      ],
+      "doubtful": [],
+      "suspended": []
+     }
+    },
+    "odds_ticks": [
+     {
+      "t": "2026-11-21 11:03",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 12:00",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 13:00",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 14:00",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 15:00",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 16:00",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:21",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:25",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 18:00",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 19:00",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 20:00",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 22:37",
+      "胜": 1.97,
+      "平": 3.35,
+      "负": 3.0,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 3.92,
+        "平": 3.74,
+        "负": 1.62
+       }
+      ]
+     }
+    ],
+    "weather": {
+     "t_min": 11.6,
+     "t_max": 16.4,
+     "pop": 0,
+     "rain": 0.0,
+     "wind": 5.9,
+     "grade": "ok",
+     "city": "瓦伦西亚"
+    },
+    "hc_at": "2026-11-23 11:51",
+    "intel": [
+     {
+      "title": "莱万特对埃尔切前瞻：伤停和预计首发",
+      "url": "https://m.dongqiudi.com/xinwen/213983",
+      "source": "懂球帝",
+      "text": "30秒看懂莱万特主场迎战埃尔切，两队同陷降级区，莱万特第18、埃尔切第19。莱万特近3场联赛仅1分，埃尔切近2个主场连败且未进球。莱万特近8次正式比赛对埃尔切仅输1场，主场交手11次赢8场。"
+     },
+     {
+      "title": "前瞻：必须取胜，别拿赛程当借口。莱万特本周一在巴伦西亚市球场迎战埃尔切，随后周五几乎无休整又在主场对阵桑坦德竞技。",
+      "url": "https://m.dongqiudi.com/xinwen/221016",
+      "source": "懂球帝",
+      "text": "30秒看懂莱万特周一21点主场迎战埃尔切，两队同处降级区莱万特周五再主场对桑坦德竞技，休息时间极少卡斯特罗称无…"
+     },
+     {
+      "title": "莱万特对埃尔切预计首发：卡斯特罗全员可用但并非人人百分百",
+      "url": "https://m.dongqiudi.com/xinwen/224529",
+      "source": "懂球帝",
+      "text": "30秒看懂莱万特主场迎战埃尔切，卡斯特罗全员可用卡斯特罗称部分球员未达百分百，需做取舍预计首发：瑞安；托利安、德拉、曼迪、桑切斯等莱万特将在西甲EASports联赛中于巴伦西亚城市球场迎战埃尔切。"
+     },
+     {
+      "title": "西甲第13轮莱万特主场迎战埃尔切预计首发",
+      "url": "https://m.dongqiudi.com/xinwen/220053",
+      "source": "懂球帝",
+      "text": "30秒看懂莱万特主场对埃尔切，北京时间11月24日04:00开球莱万特预计首发较上一场有10处人员变化埃尔切预…"
+     },
+     {
+      "title": "前瞻：莱万特对埃尔切",
+      "url": "https://m.dongqiudi.com/xinwen/222883",
+      "source": "懂球帝",
+      "text": "30秒看懂莱万特与埃尔切仅差一分，周一21:00在瓦伦西亚城球场交手莱万特上轮客场战平塞尔塔，埃尔切则遭遇两连…"
+     },
+     {
+      "title": "莱万特 vs 埃尔切历史交锋：16次交手莱万特7胜6平3负",
+      "url": "https://m.dongqiudi.com/xinwen/214926",
+      "source": "懂球帝",
+      "text": "30秒看懂16次交手莱万特7胜6平3负莱万特进21球、失15球莱万特主场8战5胜3平0负北京时间2026年11月24日04:00，西甲第13轮，莱万特（主）对阵埃尔切（客）。"
+     }
+    ],
+    "intel_at": "2026-11-23"
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-11-23-007",
+   "day": "2026-11-23",
+   "code": "周一007",
+   "competition": "巴甲",
+   "round": "",
+   "kickoff": "2026-11-24 07:00",
+   "venue": "",
+   "home": {
+    "name": "博塔弗戈",
+    "slug": "",
+    "league": "巴甲",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/120.png"
+   },
+   "away": {
+    "name": "圣保罗",
+    "slug": "",
+    "league": "巴甲",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/126.png"
+   },
+   "odds": {
+    "home": 2.02,
+    "draw": 3.05,
+    "away": 3.16,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 10,
+    "defence": 5,
+    "control": 3,
+    "form": 0,
+    "value": 56,
+    "motivation": 8,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 17,
+    "defence": 32,
+    "control": 16,
+    "form": 13,
+    "value": 45,
+    "motivation": 8,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-6",
+     "T-5",
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     3.0,
+     0.0,
+     1.0,
+     1.0,
+     0.0,
+     0.0
+    ],
+    "away": [
+     1.0,
+     1.0,
+     1.0,
+     2.0,
+     0.0,
+     0.0
+    ]
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.434,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.288,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.278,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.137,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.135,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-0",
+     "prob": 0.107,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.103,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.087,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-0",
+     "prob": 0.085,
+     "rank": 6,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.24,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.22,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "0 球",
+     "prob": 0.107,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.248,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/平",
+     "prob": 0.194,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.16,
+     "rank": 3,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "达尼洛伤缺三场后暗示复出",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [
+    {
+     "date": "2026-11-18",
+     "competition": "巴甲",
+     "opponent": "科林蒂安",
+     "venue": "away",
+     "score": "4-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-10-12",
+     "competition": "巴甲",
+     "opponent": "科里蒂巴",
+     "venue": "away",
+     "score": "1-1",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-10-07",
+     "competition": "巴甲",
+     "opponent": "达伽马",
+     "venue": "home",
+     "score": "1-2",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-09-19",
+     "competition": "巴甲",
+     "opponent": "米拉索尔",
+     "venue": "away",
+     "score": "2-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    },
+    {
+     "date": "2026-09-16",
+     "competition": "巴甲",
+     "opponent": "格雷米奥",
+     "venue": "home",
+     "score": "3-2",
+     "outcome": "W",
+     "half_ft": "平/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-11-19",
+     "competition": "巴甲",
+     "opponent": "弗鲁米嫩",
+     "venue": "home",
+     "score": "0-1",
+     "outcome": "L",
+     "half_ft": "客/客"
+    },
+    {
+     "date": "2026-10-10",
+     "competition": "巴甲",
+     "opponent": "维多利亚",
+     "venue": "home",
+     "score": "2-1",
+     "outcome": "W",
+     "half_ft": "平/主"
+    }
+   ],
+   "injuries": [],
+   "squad": {
+    "source": "球小策球员数据中心",
+    "url": "https://www.qiuxiaoce.com/player-rankings/",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
+    "home": {
+     "team": "博塔弗戈",
+     "n": 14,
+     "core_avg": 67.6,
+     "form_avg": 6.61,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "达尼洛·桑托斯",
+       "pos": "MF",
+       "oti": 69.16,
+       "dii": 34.77,
+       "gim": 91.14,
+       "form": 7.2,
+       "cons": 32.51,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "纳乔·费拉雷斯",
+       "pos": "DF",
+       "oti": 41.44,
+       "dii": 69.92,
+       "gim": 73.52,
+       "form": 7.2,
+       "cons": 30.55,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -2.5,
+       "estimated": false
+      },
+      {
+       "name": "阿尔瓦罗·蒙托罗",
+       "pos": "FW",
+       "oti": 41.58,
+       "dii": 57.73,
+       "gim": 59.54,
+       "form": 6.6,
+       "cons": 3.92,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.5,
+       "estimated": false
+      },
+      {
+       "name": "马萨尔",
+       "pos": "DF",
+       "oti": 59.57,
+       "dii": 47.04,
+       "gim": 58.32,
+       "form": 6.7,
+       "cons": 50.52,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -0.5,
+       "estimated": false
+      },
+      {
+       "name": "马特乌斯·马丁斯",
+       "pos": "FW",
+       "oti": 51.27,
+       "dii": 62.18,
+       "gim": 55.69,
+       "form": 6.6,
+       "cons": 71.54,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.5,
+       "estimated": false
+      }
+     ]
+    },
+    "away": {
+     "team": "圣保罗",
+     "n": 16,
+     "core_avg": 68.7,
+     "form_avg": 6.78,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "阿图尔",
+       "pos": "MF",
+       "oti": 67.19,
+       "dii": 34.25,
+       "gim": 77.24,
+       "form": 6.8,
+       "cons": 32.51,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -0.1,
+       "estimated": false
+      },
+      {
+       "name": "萨比诺",
+       "pos": "DF",
+       "oti": 40.0,
+       "dii": 64.78,
+       "gim": 69.65,
+       "form": 6.9,
+       "cons": 71.54,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": -1.3,
+       "estimated": false
+      },
+      {
+       "name": "卢西亚诺",
+       "pos": "FW",
+       "oti": 53.03,
+       "dii": 42.56,
+       "gim": 68.98,
+       "form": 6.8,
+       "cons": 30.55,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 1.9,
+       "estimated": false
+      },
+      {
+       "name": "马科斯·安东尼奥",
+       "pos": "MF",
+       "oti": 46.09,
+       "dii": 37.37,
+       "gim": 65.4,
+       "form": 6.7,
+       "cons": 37.99,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 2.4,
+       "estimated": false
+      },
+      {
+       "name": "费雷拉",
+       "pos": "FW",
+       "oti": 55.38,
+       "dii": 48.05,
+       "gim": 62.46,
+       "form": 6.8,
+       "cons": 71.54,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 2.2,
+       "estimated": false
+      }
+     ]
+    }
+   },
+   "source_url": "",
+   "generated_at": "2026-11-23T12:08:48+08:00",
+   "extras": {
+    "lam_home": 1.239,
+    "lam_away": 0.966,
+    "lam_total": 2.205,
+    "upset_prob": 61.9,
+    "upset_level": "高",
+    "rq_best_ev": 0.939,
+    "rq_best_odds": 1.58,
+    "quad_top": {
+     "home": {
+      "score": "1:0",
+      "prob": 13.7
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 13.5
+     },
+     "away": {
+      "score": "0:1",
+      "prob": 10.3
+     }
+    },
+    "prob_home": 43.4,
+    "prob_draw": 28.8,
+    "prob_away": 27.8,
+    "data_n": {
+     "home": 11,
+     "away": 5
+    },
+    "headline": {
+     "score": "1:1",
+     "prob": 14.0
+    },
+    "htft_half": {
+     "home": 30.8,
+     "draw": 46.6,
+     "away": 22.6
+    },
+    "htft_cells": {
+     "主/主": 24.8,
+     "主/平": 4.7,
+     "主/客": 1.4,
+     "平/主": 15.8,
+     "平/平": 19.4,
+     "平/客": 11.4,
+     "客/主": 1.9,
+     "客/平": 4.7,
+     "客/客": 16.0
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 3
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 2,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 2
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 1,
+       "ga": 2
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "2.02",
+      "平": "3.05",
+      "负": "3.16"
+     },
+     "rq": [
+      {
+       "handicap": "-1",
+       "胜": "4.45",
+       "平": "3.55",
+       "负": "1.58"
+      }
+     ],
+     "score": {
+      "1:0": "8",
+      "2:0": "10.5",
+      "2:1": "7.25",
+      "3:0": "21",
+      "3:1": "15",
+      "3:2": "22",
+      "4:0": "55",
+      "4:1": "40",
+      "4:2": "60",
+      "5:0": "120",
+      "5:1": "100",
+      "5:2": "150",
+      "胜其他": "60",
+      "0:0": "12",
+      "1:1": "5.75",
+      "2:2": "11",
+      "3:3": "50",
+      "平其他": "300",
+      "0:1": "9",
+      "0:2": "15",
+      "1:2": "9",
+      "0:3": "30",
+      "1:3": "23",
+      "2:3": "28",
+      "0:4": "80",
+      "1:4": "60",
+      "2:4": "80",
+      "0:5": "250",
+      "1:5": "200",
+      "2:5": "250",
+      "负其他": "80"
+     },
+     "goals": {
+      "0": "12",
+      "1": "4.75",
+      "2": "3.25",
+      "3": "3.4",
+      "4": "5.4",
+      "5": "10",
+      "6": "22",
+      "7+": "35"
+     },
+     "htft": {
+      "胜胜": "3.4",
+      "胜平": "14.5",
+      "胜负": "34",
+      "平胜": "5",
+      "平平": "4.9",
+      "平负": "6.75",
+      "负胜": "27",
+      "负平": "14.5",
+      "负负": "4.9"
+     },
+     "kickoff": ""
+    },
+    "odds_ticks": [
+     {
+      "t": "2026-11-21 11:03",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 12:00",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 13:00",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 14:00",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 15:00",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 16:00",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:21",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:25",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 18:00",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 19:00",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 20:00",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 22:37",
+      "胜": 2.1,
+      "平": 3.12,
+      "负": 2.92,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.55,
+        "平": 3.65,
+        "负": 1.55
+       }
+      ]
+     }
+    ],
+    "weather": {
+     "t_min": 25.8,
+     "t_max": 26.7,
+     "pop": 71,
+     "rain": 0.1,
+     "wind": 7.7,
+     "grade": "bad",
+     "city": "里约热内卢"
+    },
+    "hc_at": "2026-11-23 11:51",
+    "intel": [
+     {
+      "title": "阿兰因失去位置不满，强行缺席科林蒂安比赛名单",
+      "url": "https://m.dongqiudi.com/xinwen/213708",
+      "source": "懂球帝",
+      "text": "30秒看懂科林蒂安中场阿兰因不满失去位置，主动要求不进入周三（18日）对阵博塔弗戈的巴西锦标赛名单。阿兰右跟腱不适但伤势不严重，最近几天他向俱乐部内部表示不适感有所加重。"
+     },
+     {
+      "title": "博塔弗戈战圣保罗 达尼洛伤愈有望复出",
+      "url": "https://m.dongqiudi.com/xinwen/224336",
+      "source": "懂球帝",
+      "text": "30秒看懂达尼洛伤缺三场后暗示复出，博塔弗戈战圣保罗费拉雷西、多明戈斯·安德拉德归队，乌吉尼奥停赛博塔弗戈42…"
+     },
+     {
+      "title": "阿图尔缺阵博塔弗戈之战 圣保罗买断谈判僵持",
+      "url": "https://m.dongqiudi.com/xinwen/223282",
+      "source": "懂球帝",
+      "text": "30秒看懂阿图尔将缺席圣保罗客战博塔弗戈的巴甲第36轮圣保罗想留下阿图尔，但3600万雷亚尔买断价被认为过高阿…"
+     },
+     {
+      "title": "圣保罗客战博塔弗戈 多里瓦尔三名停赛球员回归",
+      "url": "https://m.dongqiudi.com/xinwen/223263",
+      "source": "懂球帝",
+      "text": "30秒看懂圣保罗23日客场对阵博塔弗戈，为巴甲第36轮圣保罗22日上午完成赛前最后一练后启程赴里约牛顿·儒尼奥…"
+     },
+     {
+      "title": "博塔弗戈对圣保罗预计首发：达尼洛、费拉雷西、蒙托罗在列，改打新阵型",
+      "url": "https://m.dongqiudi.com/xinwen/224343",
+      "source": "懂球帝",
+      "text": "30秒看懂博塔弗戈23日主场对圣保罗，蒂特放弃三中卫改阵达尼洛伤愈、费拉雷西和蒙托罗回归首发乌吉尼奥三黄停赛，…"
+     },
+     {
+      "title": "牛顿重返圣保罗训练，或出战博塔弗戈",
+      "url": "https://m.dongqiudi.com/xinwen/221386",
+      "source": "懂球帝",
+      "text": "30秒看懂牛顿解禁复出，周六重返圣保罗训练场圣保罗周一晚客战博塔弗戈，第36轮巴甲托洛伊右内收肌受伤，防线多人缺阵圣保罗可能在对阵博塔弗戈的比赛中多出一个重要选择。"
+     }
+    ],
+    "intel_at": "2026-11-23"
+   }
+  },
+  {
+   "schema": "1.0",
+   "match_id": "2026-11-23-008",
+   "day": "2026-11-23",
+   "code": "周一008",
+   "competition": "美职联",
+   "round": "",
+   "kickoff": "2026-11-24 09:00",
+   "venue": "",
+   "home": {
+    "name": "圣路易城",
+    "slug": "",
+    "league": "美职联",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/20787.png"
+   },
+   "away": {
+    "name": "洛杉矶FC",
+    "slug": "",
+    "league": "美职联",
+    "country": "",
+    "form": "",
+    "logo": "assets/logo/teams/1616.png"
+   },
+   "odds": {
+    "home": 2.25,
+    "draw": 3.18,
+    "away": 2.63,
+    "handicap": -1.0,
+    "bookmaker": ""
+   },
+   "metrics_home": {
+    "attack": 82,
+    "defence": 60,
+    "control": 80,
+    "form": 84,
+    "value": 73,
+    "motivation": 84,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "metrics_away": {
+    "attack": 36,
+    "defence": 78,
+    "control": 53,
+    "form": 4,
+    "value": 91,
+    "motivation": 0,
+    "AXES": [
+     [
+      "attack",
+      "进攻"
+     ],
+     [
+      "defence",
+      "防守"
+     ],
+     [
+      "control",
+      "控制"
+     ],
+     [
+      "form",
+      "状态"
+     ],
+     [
+      "value",
+      "阵容"
+     ],
+     [
+      "motivation",
+      "战意"
+     ]
+    ]
+   },
+   "momentum": {
+    "labels": [
+     "T-5",
+     "T-4",
+     "T-3",
+     "T-2",
+     "T-1"
+    ],
+    "home": [
+     3.0,
+     1.0,
+     3.0,
+     6.0,
+     0.0
+    ],
+    "away": [
+     1.0,
+     0.0,
+     0.0,
+     0.0,
+     2.0
+    ]
+   },
+   "forecasts": [
+    {
+     "kind": "direction",
+     "label": "主胜",
+     "prob": 0.39,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "客胜",
+     "prob": 0.334,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "direction",
+     "label": "平",
+     "prob": 0.276,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-1",
+     "prob": 0.124,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-1",
+     "prob": 0.082,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "2-2",
+     "prob": 0.08,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-2",
+     "prob": 0.077,
+     "rank": 4,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "1-0",
+     "prob": 0.064,
+     "rank": 5,
+     "note": ""
+    },
+    {
+     "kind": "score",
+     "label": "0-1",
+     "prob": 0.057,
+     "rank": 6,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "3 球",
+     "prob": 0.159,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "2 球",
+     "prob": 0.124,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "goals",
+     "label": "1 球",
+     "prob": 0.121,
+     "rank": 3,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "主/主",
+     "prob": 0.254,
+     "rank": 1,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "客/客",
+     "prob": 0.208,
+     "rank": 2,
+     "note": ""
+    },
+    {
+     "kind": "htft",
+     "label": "平/主",
+     "prob": 0.134,
+     "rank": 3,
+     "note": ""
+    }
+   ],
+   "confidence": "low",
+   "is_cold_start": false,
+   "main_pick": "塞利奥·庞培乌均因膝伤缺阵",
+   "handicap": {
+    "spread": -1.0,
+    "pick": "让球负"
+   },
+   "h2h": [],
+   "recent_home": [
+    {
+     "date": "2026-10-14",
+     "competition": "美职联",
+     "opponent": "温哥华",
+     "venue": "home",
+     "score": "0-0",
+     "outcome": "D",
+     "half_ft": "平/平"
+    },
+    {
+     "date": "2026-10-11",
+     "competition": "美职联",
+     "opponent": "洛城银河",
+     "venue": "home",
+     "score": "6-2",
+     "outcome": "W",
+     "half_ft": "主/主"
+    }
+   ],
+   "recent_away": [
+    {
+     "date": "2026-10-25",
+     "competition": "美职联",
+     "opponent": "洛城银河",
+     "venue": "home",
+     "score": "2-2",
+     "outcome": "D",
+     "half_ft": "客/平"
+    },
+    {
+     "date": "2026-09-26",
+     "competition": "美职联",
+     "opponent": "达拉斯",
+     "venue": "away",
+     "score": "1-0",
+     "outcome": "L",
+     "half_ft": "主/主"
+    }
+   ],
+   "injuries": [],
+   "squad": {
+    "source": "球小策球员数据中心",
+    "url": "https://www.qiuxiaoce.com/player-rankings/",
+    "updated": "2026-11-23 03:37:11",
+    "asof": "2026-11-23",
+    "prev": "2026-11-21",
+    "away": {
+     "team": "洛杉矶FC",
+     "n": 14,
+     "core_avg": 71.2,
+     "form_avg": 6.69,
+     "high_fatigue": 0,
+     "top": [
+      {
+       "name": "德尼·布安加",
+       "pos": "MF",
+       "oti": 83.43,
+       "dii": 23.99,
+       "gim": 84.34,
+       "form": 6.9,
+       "cons": 0.91,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": -0.1,
+       "estimated": false
+      },
+      {
+       "name": "孙兴慜",
+       "pos": "FW",
+       "oti": 65.04,
+       "dii": 25.38,
+       "gim": 73.99,
+       "form": 6.9,
+       "cons": 6.45,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": 0.0,
+       "estimated": false
+      },
+      {
+       "name": "波蒂斯",
+       "pos": "DF",
+       "oti": 40.53,
+       "dii": 49.14,
+       "gim": 69.91,
+       "form": 6.7,
+       "cons": 62.2,
+       "fatigue": "Medium",
+       "watch": "",
+       "d_gim": 0.3,
+       "estimated": false
+      },
+      {
+       "name": "德尔加多",
+       "pos": "MF",
+       "oti": 49.41,
+       "dii": 52.14,
+       "gim": 64.32,
+       "form": 6.6,
+       "cons": 55.65,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.4,
+       "estimated": false
+      },
+      {
+       "name": "蒂尔曼",
+       "pos": "MF",
+       "oti": 53.18,
+       "dii": 67.11,
+       "gim": 63.65,
+       "form": 7.0,
+       "cons": 32.96,
+       "fatigue": "Low",
+       "watch": "",
+       "d_gim": 0.4,
+       "estimated": false
+      }
+     ]
+    }
+   },
+   "source_url": "",
+   "generated_at": "2026-11-23T12:08:48+08:00",
+   "extras": {
+    "lam_home": 1.686,
+    "lam_away": 1.527,
+    "lam_total": 3.213,
+    "upset_prob": 52.4,
+    "upset_level": "高",
+    "rq_best_ev": 0.759,
+    "rq_best_odds": 1.45,
+    "quad_top": {
+     "home": {
+      "score": "2:1",
+      "prob": 8.2
+     },
+     "draw": {
+      "score": "1:1",
+      "prob": 12.4
+     },
+     "away": {
+      "score": "1:2",
+      "prob": 7.7
+     }
+    },
+    "prob_home": 39.0,
+    "prob_draw": 27.6,
+    "prob_away": 33.4,
+    "data_n": {
+     "home": 5,
+     "away": 12
+    },
+    "headline": {
+     "score": "2:1",
+     "prob": 10.0
+    },
+    "htft_half": {
+     "home": 33.4,
+     "draw": 37.5,
+     "away": 29.1
+    },
+    "htft_cells": {
+     "主/主": 25.4,
+     "主/平": 5.4,
+     "主/客": 2.6,
+     "平/主": 13.4,
+     "平/平": 12.5,
+     "平/客": 11.6,
+     "客/主": 2.9,
+     "客/平": 5.4,
+     "客/客": 20.8
+    },
+    "form_net": {
+     "home_7": [
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 6,
+       "ga": 2
+      },
+      {
+       "gf": 3,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 2
+      }
+     ],
+     "home_home": [
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 6,
+       "ga": 2
+      }
+     ],
+     "away_7": [
+      {
+       "gf": 2,
+       "ga": 2
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 0,
+       "ga": 0
+      },
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 3
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 2,
+       "ga": 0
+      }
+     ],
+     "away_away": [
+      {
+       "gf": 0,
+       "ga": 1
+      },
+      {
+       "gf": 3,
+       "ga": 1
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      },
+      {
+       "gf": 1,
+       "ga": 4
+      },
+      {
+       "gf": 1,
+       "ga": 0
+      }
+     ]
+    },
+    "odds_full": {
+     "spf": {
+      "胜": "2.25",
+      "平": "3.18",
+      "负": "2.63"
+     },
+     "rq": [
+      {
+       "handicap": "-1",
+       "胜": "4.95",
+       "平": "4.05",
+       "负": "1.45"
+      }
+     ],
+     "score": {
+      "1:0": "9",
+      "2:0": "12.5",
+      "2:1": "7.5",
+      "3:0": "23",
+      "3:1": "16",
+      "3:2": "19",
+      "4:0": "65",
+      "4:1": "40",
+      "4:2": "50",
+      "5:0": "175",
+      "5:1": "100",
+      "5:2": "175",
+      "胜其他": "50",
+      "0:0": "15",
+      "1:1": "6",
+      "2:2": "10.5",
+      "3:3": "40",
+      "平其他": "250",
+      "0:1": "10",
+      "0:2": "14",
+      "1:2": "8",
+      "0:3": "29",
+      "1:3": "18",
+      "2:3": "20.5",
+      "0:4": "70",
+      "1:4": "50",
+      "2:4": "60",
+      "0:5": "275",
+      "1:5": "175",
+      "2:5": "200",
+      "负其他": "60"
+     },
+     "goals": {
+      "0": "15",
+      "1": "6",
+      "2": "3.65",
+      "3": "3.4",
+      "4": "4.8",
+      "5": "7.8",
+      "6": "14.5",
+      "7+": "21"
+     },
+     "htft": {
+      "胜胜": "3.8",
+      "胜平": "13.5",
+      "胜负": "24",
+      "平胜": "5.4",
+      "平平": "5.5",
+      "平负": "6.5",
+      "负胜": "22",
+      "负平": "13.5",
+      "负负": "4.25"
+     },
+     "kickoff": ""
+    },
+    "odds_ticks": [
+     {
+      "t": "2026-11-21 11:03",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 12:00",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 13:00",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 14:00",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 15:00",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 16:00",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:21",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 17:25",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 18:00",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 19:00",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 20:00",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     },
+     {
+      "t": "2026-11-21 22:37",
+      "胜": 2.25,
+      "平": 3.25,
+      "负": 2.58,
+      "让球": [
+       {
+        "handicap": "-1",
+        "胜": 4.95,
+        "平": 4.05,
+        "负": 1.45
+       }
+      ]
+     }
+    ],
+    "hc_at": "2026-11-23 11:51",
+    "intel": [
+     {
+      "title": "圣路易斯城伤情报告：霍尔瑟膝伤缺阵，蓬佩乌膝伤缺阵；洛杉矶：博伊德腿伤缺阵，沙费尔堡胸伤缺阵，塔伊隆腿伤缺阵，蒂尔曼骨盆伤出战成疑",
+      "url": "https://m.dongqiudi.com/xinwen/224206",
+      "source": "懂球帝",
+      "text": "30秒看懂圣路易斯城：霍尔塞（膝伤）缺阵，庞培乌（膝伤）缺阵洛杉矶FC：博伊德（腿伤）、沙费尔堡（胸伤）、泰隆（腿伤）缺阵，蒂尔曼（骨盆伤）出战成疑圣路易斯城公布伤停报告，卡洛·霍尔塞和塞利奥·庞培乌均因膝伤缺阵。"
+     },
+     {
+      "title": "美职联1/8决赛圣路易斯城预计首发迎战洛杉矶",
+      "url": "https://m.dongqiudi.com/xinwen/222102",
+      "source": "懂球帝",
+      "text": "30秒看懂圣路易斯城主场对洛杉矶，北京时间11月24日09:00开球圣路易斯城预计首发与11月8日胜休斯敦时相…"
+     },
+     {
+      "title": "孙兴慜为洛杉矶争冠甘愿牺牲自我",
+      "url": "https://m.dongqiudi.com/xinwen/224368",
+      "source": "懂球帝",
+      "text": "30秒看懂孙兴慜称来洛杉矶FC是为了夺冠，不只为自己洛杉矶FC季后赛首轮对阵圣路易斯城，常规赛末四场不胜孙兴慜本季15次助攻7球，布安加18球9助攻洛杉矶FC即将在能量球场迎战圣路易斯城，开启季后赛首轮三局两胜系列赛。"
+     },
+     {
+      "title": "周一008 圣路易斯城 vs 洛杉矶几点比赛：纳瓦罗布安加射手对决",
+      "url": "https://m.dongqiudi.com/xinwen/224744",
+      "source": "懂球帝",
+      "text": "30秒看懂北京时间11月24日09:00开球，竞彩周一008。纳瓦罗19球列射手榜第5，布安加18球第7。历史交锋圣路易斯城1胜2平5负，近5场1胜4负。"
+     },
+     {
+      "title": "比赛前瞻：圣路易斯城周一在劲量公园主场迎战洛杉矶，进行三局两胜首轮第一场",
+      "url": "https://m.dongqiudi.com/xinwen/202999",
+      "source": "懂球帝",
+      "text": "30秒看懂圣路易斯城11月23日主场迎战洛杉矶FC，季后赛首轮首场圣路易斯城常规赛末轮1-0胜休斯顿迪纳摩，西…"
+     },
+     {
+      "title": "“我希望球队最好，即使我不进球，也希望球队成功。”——孙兴慜",
+      "url": "https://m.dongqiudi.com/xinwen/213072",
+      "source": "懂球帝",
+      "text": "30秒看懂孙兴慜表态希望球队做到最好他表示即使自己不进球也乐见球队成功洛杉矶FC球员孙兴慜表示，他最希望球队取得好成绩，即便自己无法进球，也愿意看到球队走向成功。"
+     }
+    ],
+    "intel_at": "2026-11-23"
+   }
+  }
+ ]
+}
