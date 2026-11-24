@@ -9,6 +9,8 @@
 #   ./publish.sh --no-push 只构建，不动产物分支（本地预览用）
 #   SKIP_BUILD=1 ./publish.sh  跳过构建，直接同步现有 _site
 #                              （产物目录已单独清空重建好时用，避免覆盖写被拦）
+#   STRICT_SRC=1 ./publish.sh  源码有未提交改动时直接拒绝发布
+#                              （默认：已跟踪的源码改动自动提交到 main 再发布）
 #
 # 首次使用需要先建工作树：git worktree add .publish gh-pages
 set -euo pipefail
@@ -74,19 +76,44 @@ if [ -n "$(git status --porcelain)" ]; then
   # 与 data/ 同属运行态资源，不是源码。此前只认 data/ 导致 import 每下载一批
   # 新队徽（assets/logo/teams/*.png 未跟踪）就被判成源码改动、整条发布被拒
   # （2026-11-08 实测：37 个新队徽卡住发布，需人工单独提交）。
-  # 其余任何路径（pages.py / build.py / README 等）仍视为源码改动，照旧拒绝。
+  echo "[2.1/5] 自动提交 data/ 与 assets/logo/ 资源变动（import/build 产物）"
+  if [ -n "$(git status --porcelain -- data assets/logo)" ]; then
+    git add -A data assets/logo
+    git -c user.name="$(git -C "$ROOT" config user.name)" \
+        -c user.email="$(git -C "$ROOT" config user.email)" \
+        commit -q -m "data: $(date +%Y-%m-%d) 定时任务导入快照（含 assets/logo 资源）"
+    echo "      → $(git rev-parse --short HEAD)"
+  else
+    echo "      （数据无变化，跳过）"
+  fi
+
+  # 源码改动（pages.py / build.py / publish.sh 等，非 data、非 assets/logo）：
+  # 硬性拒绝会让「改完源码忘了提交」把整条自动链堵死——2026-11-23 19:02 的一处
+  # 5 行改动，堵掉了 11-23 19:00、11-24 08:07、11-24 12:00 连续三次发布。
+  # 护栏的目的是「产物不能与 main 源码脱节」，因此默认改为：已跟踪的改动就地
+  # 提交到 main 再发布（产物与源码始终一致，改动可追溯可回滚）；未跟踪文件仍
+  # 拒绝，避免把垃圾/半成品盲收进仓库。想先人工审阅时用 STRICT_SRC=1。
   OTHER="$(git status --porcelain | grep -Ev '^.. (data|assets/logo)/' || true)"
   if [ -n "$OTHER" ]; then
-    echo "[!] main 工作区有未提交的源码改动，先提交再发布（产物不应夹带源码改动）。" >&2
-    echo "$OTHER" >&2
-    exit 1
+    UNTRACKED="$(printf '%s\n' "$OTHER" | grep '^??' || true)"
+    if [ -n "$UNTRACKED" ]; then
+      echo "[!] main 工作区有未跟踪的非数据文件，不自动收进仓库，先处理再发布：" >&2
+      echo "$UNTRACKED" >&2
+      exit 1
+    fi
+    if [ "${STRICT_SRC:-0}" = "1" ]; then
+      echo "[!] main 工作区有未提交的源码改动（STRICT_SRC=1），先提交再发布。" >&2
+      echo "$OTHER" >&2
+      exit 1
+    fi
+    echo "[2.15/5] 检测到已跟踪源码改动，自动提交到 main 后继续发布"
+    printf '%s\n' "$OTHER" | sed 's/^/      /'
+    git add -u
+    git -c user.name="$(git -C "$ROOT" config user.name)" \
+        -c user.email="$(git -C "$ROOT" config user.email)" \
+        commit -q -m "src: 自动提交待发布的源码改动（发布前置，$(date +%Y-%m-%dT%H:%M)）"
+    echo "      → $(git rev-parse --short HEAD)"
   fi
-  echo "[2.2/5] 自动提交 data/ 与 assets/logo/ 资源变动（import/build 产物）"
-  git add -A data assets/logo
-  git -c user.name="$(git -C "$ROOT" config user.name)" \
-      -c user.email="$(git -C "$ROOT" config user.email)" \
-      commit -q -m "data: $(date +%Y-%m-%d) 定时任务导入快照（含 assets/logo 资源）"
-  echo "      → $(git rev-parse --short HEAD)"
 fi
 
 echo "[2/5] 清空产物工作树（保留 .git）"
