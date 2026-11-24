@@ -531,12 +531,17 @@ def _squad_panel(m: Match) -> str:
 
 
 _MOOD_TAG = ("停赛：", "上阵成疑：", "成疑：", "受伤／缺阵：", "受伤：", "缺阵：")
+_MOOD_CUT = ("上一页", "下一页", "热点推荐", "本站声明", "Copyright", "新 闻 球 队 球 员")
 
 def _mood_panel(m: Match) -> str:
     """赛前军情（extras.mood，7M 联赛稿，按场次编号匹配）。"""
     txt = str((m.extras or {}).get("mood") or "").strip()
     if not txt:
         return ""
+    # 7M 抓取会把网页导航与页脚带进军情正文，按首个垃圾标记截断
+    cut = [p for t in _MOOD_CUT if (p := txt.find(t)) > 40]
+    if cut:
+        txt = txt[:min(cut)].rstrip()
     parts = []
     for ln in txt.split("\n"):
         ln = ln.strip()
