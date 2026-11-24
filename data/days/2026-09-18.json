@@ -237,7 +237,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -718,7 +718,7 @@
    "metrics_away": {
     "attack": 52,
     "defence": 13,
-    "control": 26,
+    "control": 9,
     "form": 52,
     "value": 65,
     "motivation": 22,
@@ -906,7 +906,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -1249,7 +1249,7 @@
    "metrics_home": {
     "attack": 46,
     "defence": 38,
-    "control": 46,
+    "control": 62,
     "form": 77,
     "value": 77,
     "motivation": 69,
@@ -1449,7 +1449,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -2093,7 +2093,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -2654,7 +2654,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -2713,33 +2713,33 @@
      },
      {
       "rank": 10,
+      "name": "敦刻尔克",
+      "pts": 18,
+      "p": 13
+     },
+     {
+      "rank": 11,
       "name": "罗德兹",
       "pts": 16,
       "p": 13
      },
      {
-      "rank": 11,
-      "name": "敦刻尔克",
+      "rank": 12,
+      "name": "南特",
       "pts": 15,
-      "p": 12
+      "p": 13
      },
      {
-      "rank": 12,
+      "rank": 13,
       "name": "甘冈",
       "pts": 14,
       "p": 13
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "布洛涅",
       "pts": 13,
       "p": 13
-     },
-     {
-      "rank": 14,
-      "name": "南特",
-      "pts": 12,
-      "p": 12
      },
      {
       "rank": 15,
@@ -2757,13 +2757,13 @@
       "rank": 17,
       "name": "索肖",
       "pts": 11,
-      "p": 12
+      "p": 13
      },
      {
       "rank": 18,
       "name": "格勒诺布",
       "pts": 11,
-      "p": 12
+      "p": 13
      }
     ],
     "lam_home": 1.503,
@@ -3125,7 +3125,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -3864,7 +3864,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -3923,45 +3923,45 @@
      },
      {
       "rank": 10,
-      "name": "阿尔青年",
-      "pts": 20,
-      "p": 15
+      "name": "阿贾青年",
+      "pts": 22,
+      "p": 16
      },
      {
       "rank": 11,
+      "name": "格拉夫",
+      "pts": 21,
+      "p": 16
+     },
+     {
+      "rank": 12,
       "name": "瓦尔韦克",
       "pts": 20,
       "p": 16
      },
      {
-      "rank": 12,
+      "rank": 13,
+      "name": "阿尔青年",
+      "pts": 20,
+      "p": 16
+     },
+     {
+      "rank": 14,
       "name": "奥斯",
       "pts": 20,
       "p": 16
      },
      {
-      "rank": 13,
-      "name": "阿贾青年",
-      "pts": 19,
-      "p": 15
-     },
-     {
-      "rank": 14,
-      "name": "维迪斯",
-      "pts": 18,
-      "p": 15
-     },
-     {
       "rank": 15,
-      "name": "格拉夫",
-      "pts": 18,
-      "p": 15
+      "name": "埃因青年",
+      "pts": 20,
+      "p": 16
      },
      {
       "rank": 16,
-      "name": "埃因青年",
-      "pts": 17,
-      "p": 15
+      "name": "维迪斯",
+      "pts": 18,
+      "p": 16
      },
      {
       "rank": 17,
@@ -3979,7 +3979,7 @@
       "rank": 19,
       "name": "乌德青年",
       "pts": 14,
-      "p": 15
+      "p": 16
      },
      {
       "rank": 20,
@@ -4548,7 +4548,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -5162,10 +5162,10 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 18,
-    "points": 7,
-    "played": 11,
-    "win": 2,
+    "rank": 14,
+    "points": 10,
+    "played": 12,
+    "win": 3,
     "draw": 1,
     "loss": 8,
     "form": "",
@@ -5176,7 +5176,7 @@
     "slug": "",
     "league": "意甲",
     "country": "",
-    "rank": 17,
+    "rank": 18,
     "points": 8,
     "played": 12,
     "win": 2,
@@ -5273,13 +5273,13 @@
     ],
     "home": [
      2.0,
-     2.0,
      1.0,
      4.0,
      2.0,
      1.0,
      1.0,
-     0.0
+     0.0,
+     3.0
     ],
     "away": [
      1.0,
@@ -5436,7 +5436,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -5525,33 +5525,33 @@
      },
      {
       "rank": 14,
-      "name": "莱切",
+      "name": "蒙扎",
       "pts": 10,
       "p": 12
      },
      {
       "rank": 15,
-      "name": "佛罗伦萨",
-      "pts": 9,
-      "p": 11
+      "name": "莱切",
+      "pts": 10,
+      "p": 12
      },
      {
       "rank": 16,
+      "name": "佛罗伦萨",
+      "pts": 9,
+      "p": 12
+     },
+     {
+      "rank": 17,
       "name": "帕尔马",
       "pts": 8,
       "p": 12
      },
      {
-      "rank": 17,
+      "rank": 18,
       "name": "萨索洛",
       "pts": 8,
       "p": 12
-     },
-     {
-      "rank": 18,
-      "name": "蒙扎",
-      "pts": 7,
-      "p": 11
      },
      {
       "rank": 19,
@@ -6052,7 +6052,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -6402,10 +6402,10 @@
     "slug": "",
     "league": "英超",
     "country": "",
-    "rank": 10,
-    "points": 14,
-    "played": 10,
-    "win": 3,
+    "rank": 6,
+    "points": 17,
+    "played": 11,
+    "win": 4,
     "draw": 5,
     "loss": 2,
     "form": "",
@@ -6435,7 +6435,7 @@
    "metrics_home": {
     "attack": 70,
     "defence": 74,
-    "control": 81,
+    "control": 79,
     "form": 70,
     "value": 36,
     "motivation": 67,
@@ -6512,14 +6512,14 @@
      "T-1"
     ],
     "home": [
-     1.0,
      2.0,
      3.0,
      2.0,
      1.0,
      1.0,
      2.0,
-     2.0
+     2.0,
+     4.0
     ],
     "away": [
      0.0,
@@ -6694,7 +6694,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -6735,15 +6735,15 @@
      },
      {
       "rank": 6,
-      "name": "利兹联",
+      "name": "布伦特",
       "pts": 17,
       "p": 11
      },
      {
       "rank": 7,
-      "name": "埃弗顿",
-      "pts": 16,
-      "p": 10
+      "name": "利兹联",
+      "pts": 17,
+      "p": 11
      },
      {
       "rank": 8,
@@ -6759,8 +6759,8 @@
      },
      {
       "rank": 9,
-      "name": "热刺",
-      "pts": 15,
+      "name": "埃弗顿",
+      "pts": 16,
       "p": 11
      },
      {
@@ -6771,9 +6771,9 @@
      },
      {
       "rank": 10,
-      "name": "布伦特",
-      "pts": 14,
-      "p": 10
+      "name": "热刺",
+      "pts": 15,
+      "p": 11
      },
      {
       "rank": 11,
@@ -7235,7 +7235,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -7842,10 +7842,10 @@
     "league": "西甲",
     "country": "",
     "rank": 19,
-    "points": 10,
-    "played": 12,
+    "points": 11,
+    "played": 13,
     "win": 2,
-    "draw": 4,
+    "draw": 5,
     "loss": 6,
     "form": "",
     "logo": "assets/logo/teams/797.png"
@@ -7858,7 +7858,7 @@
     "bookmaker": ""
    },
    "metrics_home": {
-    "attack": 57,
+    "attack": 58,
     "defence": 78,
     "control": 78,
     "form": 16,
@@ -7894,7 +7894,7 @@
    "metrics_away": {
     "attack": 25,
     "defence": 6,
-    "control": 13,
+    "control": 14,
     "form": 0,
     "value": 18,
     "motivation": 10,
@@ -7947,14 +7947,14 @@
      1.0
     ],
     "away": [
-     1.0,
      2.0,
      3.0,
      0.0,
      0.0,
      3.0,
      0.0,
-     0.0
+     0.0,
+     1.0
     ]
    },
    "forecasts": [
@@ -8128,7 +8128,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "table": [
      {
@@ -8265,33 +8265,33 @@
      },
      {
       "rank": 15,
+      "name": "莱万特",
+      "pts": 12,
+      "p": 13
+     },
+     {
+      "rank": 16,
       "name": "巴列卡诺",
       "pts": 12,
       "p": 12
      },
      {
-      "rank": 16,
+      "rank": 17,
       "name": "巴伦西亚",
       "pts": 12,
       "p": 13
      },
      {
-      "rank": 17,
+      "rank": 18,
       "name": "赫塔费",
       "pts": 12,
       "p": 13
      },
      {
-      "rank": 18,
-      "name": "莱万特",
-      "pts": 11,
-      "p": 12
-     },
-     {
       "rank": 19,
       "name": "埃尔切",
-      "pts": 10,
-      "p": 12
+      "pts": 11,
+      "p": 13
      },
      {
       "rank": 19,
@@ -8741,7 +8741,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-23T15:09:06+08:00",
+   "generated_at": "2026-11-24T13:42:18+08:00",
    "extras": {
     "lam_home": 1.434,
     "lam_away": 0.8,
