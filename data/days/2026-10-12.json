@@ -15,7 +15,7 @@
     "slug": "",
     "league": "亚冠精英",
     "country": "",
-    "rank": 9,
+    "rank": 10,
     "points": 6,
     "played": 4,
     "win": 2,
@@ -29,7 +29,7 @@
     "slug": "",
     "league": "亚冠精英",
     "country": "",
-    "rank": 6,
+    "rank": 7,
     "points": 8,
     "played": 5,
     "win": 2,
@@ -47,7 +47,7 @@
    },
    "metrics_home": {
     "attack": 65,
-    "defence": 18,
+    "defence": 12,
     "control": 24,
     "form": 55,
     "value": 4,
@@ -82,7 +82,7 @@
    "metrics_away": {
     "attack": 51,
     "defence": 59,
-    "control": 69,
+    "control": 71,
     "form": 47,
     "value": 98,
     "motivation": 33,
@@ -238,7 +238,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -249,57 +249,57 @@
      },
      {
       "rank": 2,
+      "name": "胡巴卡德",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 3,
       "name": "利雅新月",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 3,
+      "rank": 4,
       "name": "德独立",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 4,
-      "name": "迪拜国青",
+      "rank": 5,
+      "name": "利雅胜利",
       "pts": 9,
       "p": 4
      },
      {
-      "rank": 5,
-      "name": "胡巴卡德",
-      "pts": 8,
-      "p": 4
+      "rank": 6,
+      "name": "迪拜国青",
+      "pts": 9,
+      "p": 5
      },
      {
-      "rank": 6,
+      "rank": 7,
       "name": "吉达国民",
       "pts": 8,
       "p": 5
      },
      {
-      "rank": 7,
+      "rank": 8,
       "name": "Shamal",
       "pts": 8,
       "p": 5
      },
      {
-      "rank": 8,
+      "rank": 9,
       "name": "吉达联合",
       "pts": 7,
       "p": 5
      },
      {
-      "rank": 9,
+      "rank": 10,
       "name": "迪拜连接",
       "pts": 6,
       "p": 4
-     },
-     {
-      "rank": 10,
-      "name": "利雅胜利",
-      "pts": 6,
-      "p": 3
      },
      {
       "rank": 11,
@@ -315,13 +315,13 @@
      },
      {
       "rank": 13,
-      "name": "多哈萨德",
+      "name": "大不里士",
       "pts": 2,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 14,
-      "name": "大不里士",
+      "name": "多哈萨德",
       "pts": 2,
       "p": 5
      },
@@ -914,7 +914,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -1690,7 +1690,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -2347,7 +2347,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -2930,7 +2930,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -3509,7 +3509,7 @@
    "metrics_away": {
     "attack": 20,
     "defence": 13,
-    "control": 7,
+    "control": 13,
     "form": 0,
     "value": 33,
     "motivation": 13,
@@ -3673,7 +3673,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -4525,7 +4525,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -5221,7 +5221,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -5655,11 +5655,11 @@
      0.0
     ],
     "away": [
-     0.0,
      1.0,
      1.0,
      0.0,
-     0.0
+     0.0,
+     1.0
     ]
    },
    "forecasts": [
@@ -5824,7 +5824,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 1.599,
     "lam_away": 1.652,
@@ -6329,7 +6329,7 @@
     "settled_at": "2026-10-12"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {

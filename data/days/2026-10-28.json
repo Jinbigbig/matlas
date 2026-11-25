@@ -15,7 +15,7 @@
     "slug": "",
     "league": "亚冠精英",
     "country": "",
-    "rank": 3,
+    "rank": 6,
     "points": 8,
     "played": 4,
     "win": 2,
@@ -31,10 +31,10 @@
     "country": "",
     "rank": 12,
     "points": 3,
-    "played": 4,
+    "played": 5,
     "win": 0,
     "draw": 3,
-    "loss": 1,
+    "loss": 2,
     "form": "",
     "logo": "assets/logo/teams/2780.png"
    },
@@ -115,6 +115,7 @@
    },
    "momentum": {
     "labels": [
+     "T-8",
      "T-7",
      "T-6",
      "T-5",
@@ -124,6 +125,7 @@
      "T-1"
     ],
     "home": [
+     0.0,
      0.0,
      3.0,
      1.0,
@@ -139,7 +141,8 @@
      1.0,
      0.0,
      1.0,
-     0.0
+     0.0,
+     1.0
     ]
    },
    "forecasts": [
@@ -317,14 +320,14 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "神户胜利",
       "pts": 12,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 2,
@@ -334,33 +337,33 @@
      },
      {
       "rank": 3,
+      "name": "柏太阳神",
+      "pts": 10,
+      "p": 5
+     },
+     {
+      "rank": 4,
+      "name": "上海海港",
+      "pts": 10,
+      "p": 5
+     },
+     {
+      "rank": 5,
+      "name": "京都",
+      "pts": 10,
+      "p": 5
+     },
+     {
+      "rank": 6,
       "name": "大阪钢巴",
       "pts": 8,
       "p": 4
      },
      {
-      "rank": 4,
-      "name": "柏太阳神",
-      "pts": 7,
-      "p": 4
-     },
-     {
-      "rank": 5,
-      "name": "上海海港",
-      "pts": 7,
-      "p": 4
-     },
-     {
-      "rank": 6,
-      "name": "京都",
-      "pts": 7,
-      "p": 4
-     },
-     {
       "rank": 7,
       "name": "柔佛",
-      "pts": 7,
-      "p": 4
+      "pts": 8,
+      "p": 5
      },
      {
       "rank": 8,
@@ -372,25 +375,25 @@
       "rank": 9,
       "name": "北京国安",
       "pts": 7,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 10,
-      "name": "大田市民",
-      "pts": 4,
-      "p": 4
+      "name": "CAND",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 11,
-      "name": "CAND",
-      "pts": 4,
-      "p": 4
+      "name": "大田市民",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 12,
       "name": "布里兰",
       "pts": 3,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 13,
@@ -401,20 +404,20 @@
      {
       "rank": 14,
       "name": "叻武里",
-      "pts": 1,
-      "p": 4
+      "pts": 2,
+      "p": 5
      },
      {
       "rank": 15,
       "name": "浦项制铁",
       "pts": 1,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 16,
       "name": "纽喷气机",
       "pts": 0,
-      "p": 4
+      "p": 5
      }
     ],
     "lam_home": 1.428,
@@ -968,14 +971,14 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "神户胜利",
       "pts": 12,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 2,
@@ -985,33 +988,33 @@
      },
      {
       "rank": 3,
+      "name": "柏太阳神",
+      "pts": 10,
+      "p": 5
+     },
+     {
+      "rank": 4,
+      "name": "上海海港",
+      "pts": 10,
+      "p": 5
+     },
+     {
+      "rank": 5,
+      "name": "京都",
+      "pts": 10,
+      "p": 5
+     },
+     {
+      "rank": 6,
       "name": "大阪钢巴",
       "pts": 8,
       "p": 4
      },
      {
-      "rank": 4,
-      "name": "柏太阳神",
-      "pts": 7,
-      "p": 4
-     },
-     {
-      "rank": 5,
-      "name": "上海海港",
-      "pts": 7,
-      "p": 4
-     },
-     {
-      "rank": 6,
-      "name": "京都",
-      "pts": 7,
-      "p": 4
-     },
-     {
       "rank": 7,
       "name": "柔佛",
-      "pts": 7,
-      "p": 4
+      "pts": 8,
+      "p": 5
      },
      {
       "rank": 8,
@@ -1023,25 +1026,25 @@
       "rank": 9,
       "name": "北京国安",
       "pts": 7,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 10,
-      "name": "大田市民",
-      "pts": 4,
-      "p": 4
+      "name": "CAND",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 11,
-      "name": "CAND",
-      "pts": 4,
-      "p": 4
+      "name": "大田市民",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 12,
       "name": "布里兰",
       "pts": 3,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 13,
@@ -1052,20 +1055,20 @@
      {
       "rank": 14,
       "name": "叻武里",
-      "pts": 1,
-      "p": 4
+      "pts": 2,
+      "p": 5
      },
      {
       "rank": 15,
       "name": "浦项制铁",
       "pts": 1,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 16,
       "name": "纽喷气机",
       "pts": 0,
-      "p": 4
+      "p": 5
      }
     ],
     "lam_home": 1.999,
@@ -1695,7 +1698,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 1.165,
     "lam_away": 1.956,
@@ -2361,7 +2364,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 0.707,
     "lam_away": 1.553,
@@ -2939,7 +2942,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -3619,7 +3622,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -4256,7 +4259,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -4980,7 +4983,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 1.644,
     "lam_away": 1.222,
@@ -5760,7 +5763,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -6551,7 +6554,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 0.997,
     "lam_away": 1.429,
@@ -7102,13 +7105,13 @@
      2.0
     ],
     "away": [
-     1.0,
      3.0,
      2.0,
      0.0,
      1.0,
      0.0,
      4.0,
+     0.0,
      0.0
     ]
    },
@@ -7341,7 +7344,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 1.51,
     "lam_away": 1.373,
@@ -8097,7 +8100,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 1.522,
     "lam_away": 0.96,
@@ -8502,14 +8505,14 @@
      3.0
     ],
     "away": [
-     1.0,
      0.0,
      4.0,
      3.0,
      4.0,
      0.0,
      1.0,
-     1.0
+     1.0,
+     2.0
     ]
    },
    "forecasts": [
@@ -8732,7 +8735,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -9628,7 +9631,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -10579,7 +10582,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 1.712,
     "lam_away": 1.393,
@@ -11435,7 +11438,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 1.482,
     "lam_away": 0.868,
@@ -11859,7 +11862,7 @@
    "metrics_away": {
     "attack": 67,
     "defence": 2,
-    "control": 16,
+    "control": 18,
     "form": 16,
     "value": 0,
     "motivation": 27,
@@ -12066,7 +12069,7 @@
     "settled_at": "2026-10-28"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 2.63,
     "lam_away": 1.57,

@@ -120,14 +120,14 @@
      5.0
     ],
     "away": [
-     0.0,
      3.0,
      4.0,
      2.0,
      2.0,
      2.0,
      5.0,
-     0.0
+     0.0,
+     2.0
     ]
    },
    "forecasts": [
@@ -263,7 +263,7 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 0.948,
     "lam_away": 1.759,
@@ -563,7 +563,7 @@
    "metrics_away": {
     "attack": 33,
     "defence": 27,
-    "control": 33,
+    "control": 40,
     "form": 40,
     "value": 67,
     "motivation": 93,
@@ -724,7 +724,7 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 1.502,
     "lam_away": 2.398,
@@ -1259,7 +1259,7 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -1892,7 +1892,7 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -2447,7 +2447,7 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -2970,7 +2970,7 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -3807,7 +3807,7 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -4466,7 +4466,7 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -5324,7 +5324,7 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -5592,12 +5592,12 @@
     "slug": "",
     "league": "英冠",
     "country": "",
-    "rank": 10,
+    "rank": 12,
     "points": 24,
-    "played": 16,
+    "played": 17,
     "win": 6,
     "draw": 6,
-    "loss": 4,
+    "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/48.png"
    },
@@ -5607,10 +5607,10 @@
     "league": "英冠",
     "country": "",
     "rank": 14,
-    "points": 21,
-    "played": 16,
+    "points": 22,
+    "played": 17,
     "win": 5,
-    "draw": 6,
+    "draw": 7,
     "loss": 5,
     "form": "",
     "logo": "assets/logo/teams/1837.png"
@@ -5825,25 +5825,25 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
       "name": "米堡",
-      "pts": 32,
-      "p": 16
+      "pts": 35,
+      "p": 17
      },
      {
       "rank": 2,
-      "name": "斯托克城",
-      "pts": 32,
-      "p": 16
+      "name": "伍尔弗",
+      "pts": 34,
+      "p": 17
      },
      {
       "rank": 3,
-      "name": "伍尔弗",
-      "pts": 31,
+      "name": "斯托克城",
+      "pts": 32,
       "p": 16
      },
      {
@@ -5861,44 +5861,44 @@
      {
       "rank": 6,
       "name": "南安普敦",
-      "pts": 27,
-      "p": 16
+      "pts": 28,
+      "p": 17
      },
      {
       "rank": 7,
       "name": "女王巡游",
-      "pts": 27,
-      "p": 16
+      "pts": 28,
+      "p": 17
      },
      {
       "rank": 8,
       "name": "斯旺西",
       "pts": 27,
-      "p": 16
+      "p": 17
      },
      {
       "rank": 9,
       "name": "谢菲联",
-      "pts": 25,
-      "p": 16
+      "pts": 26,
+      "p": 17
      },
      {
       "rank": 10,
-      "name": "西汉姆联",
-      "pts": 24,
-      "p": 16
+      "name": "朴次茅斯",
+      "pts": 26,
+      "p": 17
      },
      {
       "rank": 11,
       "name": "诺维奇",
-      "pts": 24,
-      "p": 16
+      "pts": 25,
+      "p": 17
      },
      {
       "rank": 12,
-      "name": "朴次茅斯",
-      "pts": 23,
-      "p": 16
+      "name": "西汉姆联",
+      "pts": 24,
+      "p": 17
      },
      {
       "rank": 13,
@@ -5909,68 +5909,68 @@
      {
       "rank": 14,
       "name": "雷克斯",
-      "pts": 21,
-      "p": 16
+      "pts": 22,
+      "p": 17
      },
      {
       "rank": 15,
-      "name": "加的夫城",
-      "pts": 18,
-      "p": 16
+      "name": "查尔顿",
+      "pts": 20,
+      "p": 17
      },
      {
       "rank": 16,
+      "name": "布城",
+      "pts": 19,
+      "p": 17
+     },
+     {
+      "rank": 17,
+      "name": "加的夫城",
+      "pts": 18,
+      "p": 17
+     },
+     {
+      "rank": 18,
       "name": "米尔沃尔",
       "pts": 18,
       "p": 16
      },
      {
-      "rank": 17,
+      "rank": 19,
       "name": "博尔顿",
       "pts": 18,
       "p": 16
      },
      {
-      "rank": 18,
-      "name": "布城",
-      "pts": 18,
-      "p": 16
-     },
-     {
-      "rank": 19,
-      "name": "查尔顿",
-      "pts": 17,
-      "p": 16
-     },
-     {
       "rank": 20,
-      "name": "林肯城",
-      "pts": 15,
-      "p": 16
-     },
-     {
-      "rank": 21,
       "name": "沃特福德",
       "pts": 15,
       "p": 16
      },
      {
+      "rank": 21,
+      "name": "林肯城",
+      "pts": 15,
+      "p": 17
+     },
+     {
       "rank": 22,
+      "name": "普雷斯顿",
+      "pts": 12,
+      "p": 17
+     },
+     {
+      "rank": 23,
       "name": "伯恩利",
       "pts": 11,
       "p": 16
      },
      {
-      "rank": 23,
+      "rank": 24,
       "name": "德比郡",
       "pts": 10,
-      "p": 16
-     },
-     {
-      "rank": 24,
-      "name": "普雷斯顿",
-      "pts": 9,
-      "p": 16
+      "p": 17
      }
     ],
     "lam_home": 2.02,
@@ -6451,7 +6451,7 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "table": [
      {
@@ -7037,7 +7037,7 @@
     "settled_at": "2026-09-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-24T15:08:47+08:00",
+   "generated_at": "2026-11-25T08:07:04+08:00",
    "extras": {
     "lam_home": 0.913,
     "lam_away": 1.149,
