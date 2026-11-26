@@ -193,13 +193,15 @@ def dqd_scan(matches: list) -> dict:
     # 每场我们的比赛 → 找懂球帝比赛 id（先按竞彩编号，再按双方队名）
     for mm in matches:
         code, home, away = mm['matchNumStr'], mm['home'], mm['away']
+        ha, aa = aliases(home), aliases(away)
         hit_id = ''
+        # 编号命中时核对队名：双方都沾不上就说明两边竞彩编号错位，改用队名找。
+        # 例：本站周四012=布拉迪斯vs库奥皮奥，懂球帝周四012=布拉加vs古比斯。
         for mid, label in games.items():
-            if code and code in label:
+            if code and code in label and any(x in label for x in ha + aa):
                 hit_id = mid
                 break
         if not hit_id:
-            ha, aa = aliases(home), aliases(away)
             for mid, label in games.items():
                 if any(x in label for x in ha) and any(x in label for x in aa):
                     hit_id = mid
@@ -248,10 +250,41 @@ def html_unescape_text(s: str) -> str:
     return _html.unescape(s)
 
 
+def _matches_with_today_codes(matches: list, today: str) -> list:
+    """把展示页当日竞彩场次补进采集清单。
+
+    matches_data.json 只收赛程源当天行，凌晨开赛的跨日竞彩场次（如周四011/012）
+    在源里归属次日且 code 为空，导致情报采集漏掉。data/days/<today>.json 是
+    展示页实际场次，编号与归属都正确，按 code 补进即可，不影响其它采集器。
+    """
+    path = _pathlib.Path(ROOT / "data" / "days" / f"{today}.json")
+    if not path.exists():
+        return matches
+    try:
+        rows = json.loads(path.read_text(encoding="utf-8")).get("matches") or []
+    except (OSError, ValueError):
+        return matches
+    have = {str(m.get("matchNumStr") or "").strip() for m in matches}
+    out = list(matches)
+    for r in rows:
+        code = str(r.get("code") or "").strip()
+        if not code or code in have:
+            continue
+        home = (r.get("home") or {}).get("name") or ""
+        away = (r.get("away") or {}).get("name") or ""
+        if not home or not away:
+            continue
+        out.append({"matchNumStr": code, "home": home, "away": away,
+                    "league": r.get("competition") or "", "matchId": "", "odds": {}})
+        have.add(code)
+    return out
+
+
 def main() -> int:
     today = date.today()
     days = [str(today), str(today + timedelta(days=1))]
     matches = json.load(open('scripts/matches_data.json', encoding='utf-8'))['matches']
+    matches = _matches_with_today_codes(matches, str(today))
 
     # 1) 扫列表
     seen, links = set(), []
