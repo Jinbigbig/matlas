@@ -123,14 +123,14 @@
      2.0
     ],
     "away": [
-     0.0,
      2.0,
      2.0,
      3.0,
      0.0,
      3.0,
      3.0,
-     1.0
+     1.0,
+     3.0
     ]
    },
    "forecasts": [
@@ -353,7 +353,7 @@
     "settled_at": "2026-11-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "lam_home": 1.577,
     "lam_away": 1.885,
@@ -1020,7 +1020,7 @@
     "settled_at": "2026-11-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "lam_home": 1.307,
     "lam_away": 1.157,
@@ -1806,7 +1806,7 @@
     "settled_at": "2026-11-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "lam_home": 1.513,
     "lam_away": 1.869,
@@ -2530,7 +2530,7 @@
     "settled_at": "2026-11-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "lam_home": 1.742,
     "lam_away": 1.381,
@@ -3089,7 +3089,7 @@
     "settled_at": "2026-11-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -4296,7 +4296,7 @@
     "slug": "",
     "league": "英锦标赛",
     "country": "",
-    "rank": 1,
+    "rank": 2,
     "points": 6,
     "played": 3,
     "win": 2,
@@ -4508,20 +4508,20 @@
     "settled_at": "2026-11-11"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
       "rank": 1,
-      "name": "奥德汉姆",
+      "name": "福利特",
       "pts": 6,
       "p": 3
      },
      {
       "rank": 2,
-      "name": "福利特",
-      "pts": 3,
-      "p": 2
+      "name": "奥德汉姆",
+      "pts": 6,
+      "p": 3
      },
      {
       "rank": 3,
@@ -4533,7 +4533,7 @@
       "rank": 4,
       "name": "Leeds",
       "pts": 3,
-      "p": 2
+      "p": 3
      }
     ],
     "lam_home": 1.74,

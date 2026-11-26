@@ -237,7 +237,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -718,7 +718,7 @@
    "metrics_away": {
     "attack": 52,
     "defence": 13,
-    "control": 26,
+    "control": 9,
     "form": 52,
     "value": 65,
     "motivation": 22,
@@ -906,7 +906,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -1449,7 +1449,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -2093,7 +2093,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -2654,7 +2654,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -3125,7 +3125,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -3864,7 +3864,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -4366,12 +4366,12 @@
      "T-1"
     ],
     "home": [
-     6.0,
      2.0,
      3.0,
      2.0,
      2.0,
      2.0,
+     1.0,
      1.0,
      1.0
     ],
@@ -4548,7 +4548,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -5436,7 +5436,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -6052,7 +6052,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -6694,7 +6694,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -7006,10 +7006,10 @@
     "country": "",
     "rank": 20,
     "points": 15,
-    "played": 16,
+    "played": 17,
     "win": 4,
     "draw": 3,
-    "loss": 9,
+    "loss": 10,
     "form": "",
     "logo": "assets/logo/teams/38.png"
    },
@@ -7235,7 +7235,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -7246,27 +7246,27 @@
      },
      {
       "rank": 2,
+      "name": "斯托克城",
+      "pts": 35,
+      "p": 17
+     },
+     {
+      "rank": 3,
       "name": "伍尔弗",
       "pts": 34,
       "p": 17
      },
      {
-      "rank": 3,
-      "name": "斯托克城",
-      "pts": 32,
-      "p": 16
-     },
-     {
       "rank": 4,
       "name": "伯明翰",
-      "pts": 29,
-      "p": 16
+      "pts": 32,
+      "p": 17
      },
      {
       "rank": 5,
       "name": "西布罗姆",
-      "pts": 29,
-      "p": 16
+      "pts": 32,
+      "p": 17
      },
      {
       "rank": 6,
@@ -7306,15 +7306,15 @@
      },
      {
       "rank": 12,
-      "name": "西汉姆联",
-      "pts": 24,
+      "name": "布莱克本",
+      "pts": 25,
       "p": 17
      },
      {
       "rank": 13,
-      "name": "布莱克本",
-      "pts": 22,
-      "p": 16
+      "name": "西汉姆联",
+      "pts": 24,
+      "p": 17
      },
      {
       "rank": 14,
@@ -7344,19 +7344,19 @@
       "rank": 18,
       "name": "米尔沃尔",
       "pts": 18,
-      "p": 16
+      "p": 17
      },
      {
       "rank": 19,
       "name": "博尔顿",
       "pts": 18,
-      "p": 16
+      "p": 17
      },
      {
       "rank": 20,
       "name": "沃特福德",
       "pts": 15,
-      "p": 16
+      "p": 17
      },
      {
       "rank": 21,
@@ -7374,7 +7374,7 @@
       "rank": 23,
       "name": "伯恩利",
       "pts": 11,
-      "p": 16
+      "p": 17
      },
      {
       "rank": 24,
@@ -8128,7 +8128,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "table": [
      {
@@ -8741,7 +8741,7 @@
     "settled_at": "2026-09-18"
    },
    "source_url": "",
-   "generated_at": "2026-11-25T15:05:54+08:00",
+   "generated_at": "2026-11-26T08:16:40+08:00",
    "extras": {
     "lam_home": 1.434,
     "lam_away": 0.8,
