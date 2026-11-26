@@ -7,7 +7,7 @@
    "day": "2026-11-24",
    "code": "周二001",
    "competition": "亚冠精英",
-   "kickoff": "2026-11-24 15:45",
+   "kickoff": "",
    "home": {
     "name": "纽喷气机",
     "league": "亚冠精英",
@@ -22,7 +22,7 @@
    "away": {
     "name": "柏太阳神",
     "league": "亚冠精英",
-    "rank": 3,
+    "rank": 4,
     "points": 10,
     "played": 5,
     "win": 3,
@@ -128,39 +128,39 @@
     "table": [
      {
       "rank": 1,
+      "name": "鹿岛鹿角",
+      "pts": 13,
+      "p": 5
+     },
+     {
+      "rank": 2,
       "name": "神户胜利",
       "pts": 12,
       "p": 5
      },
      {
-      "rank": 2,
-      "name": "鹿岛鹿角",
-      "pts": 10,
-      "p": 4
+      "rank": 3,
+      "name": "大阪钢巴",
+      "pts": 11,
+      "p": 5
      },
      {
-      "rank": 3,
+      "rank": 4,
       "name": "柏太阳神",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 4,
+      "rank": 5,
       "name": "上海海港",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 5,
+      "rank": 6,
       "name": "京都",
       "pts": 10,
       "p": 5
-     },
-     {
-      "rank": 6,
-      "name": "大阪钢巴",
-      "pts": 8,
-      "p": 4
      },
      {
       "rank": 7,
@@ -170,25 +170,25 @@
      },
      {
       "rank": 8,
-      "name": "全北现代",
-      "pts": 7,
-      "p": 4
-     },
-     {
-      "rank": 9,
       "name": "北京国安",
       "pts": 7,
       "p": 5
      },
      {
-      "rank": 10,
+      "rank": 9,
       "name": "CAND",
       "pts": 7,
       "p": 5
      },
      {
-      "rank": 11,
+      "rank": 10,
       "name": "大田市民",
+      "pts": 7,
+      "p": 5
+     },
+     {
+      "rank": 11,
+      "name": "全北现代",
       "pts": 7,
       "p": 5
      },
@@ -202,7 +202,7 @@
       "rank": 13,
       "name": "曼谷港务",
       "pts": 3,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 14,
@@ -668,9 +668,9 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-25 03:36:37",
-    "asof": "2026-11-25",
-    "prev": "2026-11-24",
+    "updated": "2026-11-26 03:36:37",
+    "asof": "2026-11-26",
+    "prev": "2026-11-25",
     "home": {
      "team": "纽喷气机",
      "n": 5,
@@ -694,7 +694,7 @@
       {
        "name": "丹尼尔·威尔默林",
        "pos": "DF",
-       "oti": 68.96,
+       "oti": 69.0,
        "dii": 31.69,
        "gim": 67.39,
        "form": 6.4,
@@ -707,7 +707,7 @@
       {
        "name": "肖内西",
        "pos": "DF",
-       "oti": 50.6,
+       "oti": 50.63,
        "dii": 50.12,
        "gim": 66.17,
        "form": 6.6,
@@ -740,7 +740,7 @@
        "cons": 50.0,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": null,
+       "d_gim": 0.0,
        "estimated": true
       }
      ]
@@ -750,17 +750,17 @@
      "n": 17,
      "core_avg": 63.6,
      "form_avg": 6.79,
-     "high_fatigue": 3,
+     "high_fatigue": 0,
      "top": [
       {
        "name": "久保藤次郎",
        "pos": "MF",
-       "oti": 59.02,
+       "oti": 58.8,
        "dii": 47.73,
        "gim": 65.06,
        "form": 6.7,
-       "cons": 11.3,
-       "fatigue": "Medium",
+       "cons": 11.21,
+       "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -768,11 +768,11 @@
       {
        "name": "小泉佳穗",
        "pos": "FW",
-       "oti": 51.25,
+       "oti": 51.35,
        "dii": 41.98,
        "gim": 64.25,
        "form": 6.8,
-       "cons": 15.38,
+       "cons": 15.15,
        "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
@@ -781,12 +781,12 @@
       {
        "name": "古贺太阳",
        "pos": "DF",
-       "oti": 37.28,
+       "oti": 37.27,
        "dii": 38.46,
        "gim": 63.52,
        "form": 7.0,
-       "cons": 88.29,
-       "fatigue": "High",
+       "cons": 87.39,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -794,11 +794,11 @@
       {
        "name": "中川敦瑛",
        "pos": "MF",
-       "oti": 49.84,
+       "oti": 49.86,
        "dii": 57.6,
        "gim": 62.92,
        "form": 7.1,
-       "cons": 67.83,
+       "cons": 68.97,
        "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
@@ -807,7 +807,7 @@
       {
        "name": "濑川祐辅",
        "pos": "MF",
-       "oti": 80.89,
+       "oti": 80.34,
        "dii": 38.3,
        "gim": 62.17,
        "form": 6.6,
@@ -826,11 +826,11 @@
    "day": "2026-11-24",
    "code": "周二002",
    "competition": "亚冠精英",
-   "kickoff": "2026-11-24 18:00",
+   "kickoff": "",
    "home": {
     "name": "大田市民",
     "league": "亚冠精英",
-    "rank": 11,
+    "rank": 10,
     "points": 7,
     "played": 5,
     "win": 2,
@@ -841,7 +841,7 @@
    "away": {
     "name": "北京国安",
     "league": "亚冠精英",
-    "rank": 9,
+    "rank": 8,
     "points": 7,
     "played": 5,
     "win": 2,
@@ -947,39 +947,39 @@
     "table": [
      {
       "rank": 1,
+      "name": "鹿岛鹿角",
+      "pts": 13,
+      "p": 5
+     },
+     {
+      "rank": 2,
       "name": "神户胜利",
       "pts": 12,
       "p": 5
      },
      {
-      "rank": 2,
-      "name": "鹿岛鹿角",
-      "pts": 10,
-      "p": 4
+      "rank": 3,
+      "name": "大阪钢巴",
+      "pts": 11,
+      "p": 5
      },
      {
-      "rank": 3,
+      "rank": 4,
       "name": "柏太阳神",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 4,
+      "rank": 5,
       "name": "上海海港",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 5,
+      "rank": 6,
       "name": "京都",
       "pts": 10,
       "p": 5
-     },
-     {
-      "rank": 6,
-      "name": "大阪钢巴",
-      "pts": 8,
-      "p": 4
      },
      {
       "rank": 7,
@@ -989,25 +989,25 @@
      },
      {
       "rank": 8,
-      "name": "全北现代",
-      "pts": 7,
-      "p": 4
-     },
-     {
-      "rank": 9,
       "name": "北京国安",
       "pts": 7,
       "p": 5
      },
      {
-      "rank": 10,
+      "rank": 9,
       "name": "CAND",
       "pts": 7,
       "p": 5
      },
      {
-      "rank": 11,
+      "rank": 10,
       "name": "大田市民",
+      "pts": 7,
+      "p": 5
+     },
+     {
+      "rank": 11,
+      "name": "全北现代",
       "pts": 7,
       "p": 5
      },
@@ -1021,7 +1021,7 @@
       "rank": 13,
       "name": "曼谷港务",
       "pts": 3,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 14,
@@ -1394,11 +1394,11 @@
    "day": "2026-11-24",
    "code": "周二003",
    "competition": "亚冠精英",
-   "kickoff": "2026-11-24 20:15",
+   "kickoff": "",
    "home": {
     "name": "上海海港",
     "league": "亚冠精英",
-    "rank": 4,
+    "rank": 5,
     "points": 10,
     "played": 5,
     "win": 3,
@@ -1515,39 +1515,39 @@
     "table": [
      {
       "rank": 1,
+      "name": "鹿岛鹿角",
+      "pts": 13,
+      "p": 5
+     },
+     {
+      "rank": 2,
       "name": "神户胜利",
       "pts": 12,
       "p": 5
      },
      {
-      "rank": 2,
-      "name": "鹿岛鹿角",
-      "pts": 10,
-      "p": 4
+      "rank": 3,
+      "name": "大阪钢巴",
+      "pts": 11,
+      "p": 5
      },
      {
-      "rank": 3,
+      "rank": 4,
       "name": "柏太阳神",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 4,
+      "rank": 5,
       "name": "上海海港",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 5,
+      "rank": 6,
       "name": "京都",
       "pts": 10,
       "p": 5
-     },
-     {
-      "rank": 6,
-      "name": "大阪钢巴",
-      "pts": 8,
-      "p": 4
      },
      {
       "rank": 7,
@@ -1557,25 +1557,25 @@
      },
      {
       "rank": 8,
-      "name": "全北现代",
-      "pts": 7,
-      "p": 4
-     },
-     {
-      "rank": 9,
       "name": "北京国安",
       "pts": 7,
       "p": 5
      },
      {
-      "rank": 10,
+      "rank": 9,
       "name": "CAND",
       "pts": 7,
       "p": 5
      },
      {
-      "rank": 11,
+      "rank": 10,
       "name": "大田市民",
+      "pts": 7,
+      "p": 5
+     },
+     {
+      "rank": 11,
+      "name": "全北现代",
       "pts": 7,
       "p": 5
      },
@@ -1589,7 +1589,7 @@
       "rank": 13,
       "name": "曼谷港务",
       "pts": 3,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 14,
@@ -1886,11 +1886,11 @@
    "day": "2026-11-24",
    "code": "周二004",
    "competition": "欧冠",
-   "kickoff": "2026-11-25 01:45",
+   "kickoff": "",
    "home": {
     "name": "加拉塔萨",
     "league": "欧冠",
-    "rank": 13,
+    "rank": 14,
     "points": 9,
     "played": 5,
     "win": 3,
@@ -1901,7 +1901,7 @@
    "away": {
     "name": "维拉",
     "league": "欧冠",
-    "rank": 9,
+    "rank": 11,
     "points": 9,
     "played": 5,
     "win": 3,
@@ -2026,8 +2026,8 @@
      {
       "rank": 2,
       "name": "巴黎圣曼",
-      "pts": 12,
-      "p": 4
+      "pts": 13,
+      "p": 5
      },
      {
       "rank": 3,
@@ -2037,14 +2037,8 @@
      },
      {
       "rank": 4,
-      "name": "贝蒂斯",
+      "name": "巴萨",
       "pts": 12,
-      "p": 5
-     },
-     {
-      "rank": 5,
-      "name": "阿森纳",
-      "pts": 11,
       "p": 5
      },
      {
@@ -2054,6 +2048,12 @@
       "p": 4
      },
      {
+      "rank": 5,
+      "name": "利物浦",
+      "pts": 12,
+      "p": 5
+     },
+     {
       "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
@@ -2061,33 +2061,27 @@
      },
      {
       "rank": 6,
+      "name": "贝蒂斯",
+      "pts": 12,
+      "p": 5
+     },
+     {
+      "rank": 7,
+      "name": "阿森纳",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 8,
       "name": "曼城",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 7,
-      "name": "多特蒙德",
+      "rank": 9,
+      "name": "里斯本",
       "pts": 10,
       "p": 5
-     },
-     {
-      "rank": 8,
-      "name": "巴萨",
-      "pts": 9,
-      "p": 4
-     },
-     {
-      "rank": 9,
-      "name": "维拉",
-      "pts": 9,
-      "p": 5
-     },
-     {
-      "rank": 10,
-      "name": "利物浦",
-      "pts": 9,
-      "p": 4
      },
      {
       "rank": 10,
@@ -2096,10 +2090,10 @@
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "布鲁日",
-      "pts": 9,
-      "p": 4
+      "rank": 10,
+      "name": "多特蒙德",
+      "pts": 10,
+      "p": 5
      },
      {
       "rank": 11,
@@ -2108,10 +2102,22 @@
       "p": 4
      },
      {
-      "rank": 12,
-      "name": "里斯本",
+      "rank": 11,
+      "name": "维拉",
       "pts": 9,
-      "p": 4
+      "p": 5
+     },
+     {
+      "rank": 12,
+      "name": "国际米兰",
+      "pts": 9,
+      "p": 5
+     },
+     {
+      "rank": 13,
+      "name": "布鲁日",
+      "pts": 9,
+      "p": 5
      },
      {
       "rank": 13,
@@ -2120,22 +2126,16 @@
       "p": 4
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "加拉塔萨",
       "pts": 9,
       "p": 5
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "拜仁",
       "pts": 8,
-      "p": 4
-     },
-     {
-      "rank": 15,
-      "name": "斯图加特",
-      "pts": 7,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 16,
@@ -2145,15 +2145,15 @@
      },
      {
       "rank": 16,
-      "name": "博德闪耀",
-      "pts": 7,
+      "name": "费内巴切",
+      "pts": 8,
       "p": 5
      },
      {
       "rank": 17,
-      "name": "国际米兰",
-      "pts": 6,
-      "p": 4
+      "name": "斯图加特",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 18,
@@ -2163,20 +2163,20 @@
      },
      {
       "rank": 18,
-      "name": "LASK林茨",
-      "pts": 6,
+      "name": "马竞",
+      "pts": 7,
       "p": 5
      },
      {
       "rank": 19,
       "name": "曼联",
-      "pts": 6,
-      "p": 4
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 20,
-      "name": "波尔图",
-      "pts": 6,
+      "name": "博德闪耀",
+      "pts": 7,
       "p": 5
      },
      {
@@ -2187,15 +2187,9 @@
      },
      {
       "rank": 21,
-      "name": "莱红牛",
+      "name": "LASK林茨",
       "pts": 6,
       "p": 5
-     },
-     {
-      "rank": 22,
-      "name": "费内巴切",
-      "pts": 5,
-      "p": 4
      },
      {
       "rank": 22,
@@ -2204,10 +2198,10 @@
       "p": 4
      },
      {
-      "rank": 23,
-      "name": "罗马",
-      "pts": 4,
-      "p": 4
+      "rank": 22,
+      "name": "波尔图",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 23,
@@ -2216,32 +2210,38 @@
       "p": 4
      },
      {
+      "rank": 23,
+      "name": "莱红牛",
+      "pts": 6,
+      "p": 5
+     },
+     {
       "rank": 24,
-      "name": "顿矿工",
-      "pts": 4,
-      "p": 4
+      "name": "比利亚雷",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 25,
-      "name": "维京",
-      "pts": 4,
-      "p": 4
+      "name": "罗马",
+      "pts": 5,
+      "p": 5
      },
      {
       "rank": 26,
-      "name": "马竞",
+      "name": "顿矿工",
       "pts": 4,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 27,
-      "name": "那不勒斯",
+      "name": "维京",
       "pts": 4,
       "p": 5
      },
      {
       "rank": 28,
-      "name": "埃因霍温",
+      "name": "那不勒斯",
       "pts": 4,
       "p": 5
      },
@@ -2253,19 +2253,19 @@
      },
      {
       "rank": 29,
-      "name": "比利亚雷",
-      "pts": 3,
-      "p": 4
+      "name": "里尔",
+      "pts": 4,
+      "p": 5
+     },
+     {
+      "rank": 30,
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 5
      },
      {
       "rank": 30,
       "name": "RB莱比锡",
-      "pts": 3,
-      "p": 4
-     },
-     {
-      "rank": 30,
-      "name": "萨巴赫",
       "pts": 3,
       "p": 4
      },
@@ -2289,6 +2289,12 @@
      },
      {
       "rank": 33,
+      "name": "萨巴赫",
+      "pts": 3,
+      "p": 5
+     },
+     {
+      "rank": 34,
       "name": "朗斯",
       "pts": 3,
       "p": 5
@@ -2300,16 +2306,10 @@
       "p": 4
      },
      {
-      "rank": 34,
+      "rank": 35,
       "name": "斯拉维亚",
       "pts": 1,
-      "p": 4
-     },
-     {
-      "rank": 35,
-      "name": "里尔",
-      "pts": 1,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 36,
@@ -2839,26 +2839,26 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-25 03:36:37",
-    "asof": "2026-11-25",
-    "prev": "2026-11-24",
+    "updated": "2026-11-26 03:36:37",
+    "asof": "2026-11-26",
+    "prev": "2026-11-25",
     "home": null,
     "away": {
      "team": "维拉",
      "n": 16,
-     "core_avg": 69.1,
-     "form_avg": 6.66,
-     "high_fatigue": 0,
+     "core_avg": 69.2,
+     "form_avg": 6.63,
+     "high_fatigue": 2,
      "top": [
       {
        "name": "杰克逊",
        "pos": "FW",
-       "oti": 65.69,
-       "dii": 34.57,
-       "gim": 87.19,
-       "form": 7.5,
+       "oti": 65.68,
+       "dii": 34.61,
+       "gim": 87.25,
+       "form": 7.1,
        "cons": 13.95,
-       "fatigue": "Medium",
+       "fatigue": "High",
        "watch": "",
        "d_gim": 0.1,
        "estimated": false
@@ -2866,14 +2866,14 @@
       {
        "name": "曼赞比",
        "pos": "MF",
-       "oti": 77.38,
-       "dii": 56.3,
-       "gim": 77.28,
-       "form": 6.7,
-       "cons": 13.01,
-       "fatigue": "Low",
+       "oti": 77.34,
+       "dii": 56.29,
+       "gim": 76.96,
+       "form": 6.6,
+       "cons": 10.57,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": -0.2,
+       "d_gim": -0.3,
        "estimated": false
       },
       {
@@ -2881,22 +2881,22 @@
        "pos": "GK",
        "oti": null,
        "dii": null,
-       "gim": 65.11,
-       "form": 6.7,
+       "gim": 65.22,
+       "form": 6.6,
        "cons": 90.91,
-       "fatigue": "Medium",
+       "fatigue": "High",
        "watch": "",
-       "d_gim": null,
+       "d_gim": 0.1,
        "estimated": false
       },
       {
        "name": "约翰·麦金",
        "pos": "MF",
-       "oti": 73.54,
-       "dii": 42.58,
-       "gim": 61.24,
-       "form": 7.0,
-       "cons": 26.02,
+       "oti": 73.5,
+       "dii": 42.57,
+       "gim": 61.41,
+       "form": 7.1,
+       "cons": 30.08,
        "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.2,
@@ -2905,14 +2905,14 @@
       {
        "name": "万·比萨卡",
        "pos": "DF",
-       "oti": 46.91,
-       "dii": 87.81,
-       "gim": 54.86,
+       "oti": 46.96,
+       "dii": 87.87,
+       "gim": 55.09,
        "form": 7.0,
-       "cons": 88.04,
+       "cons": 87.1,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.6,
+       "d_gim": 0.2,
        "estimated": true
       }
      ]
@@ -2924,11 +2924,11 @@
    "day": "2026-11-24",
    "code": "周二005",
    "competition": "欧冠",
-   "kickoff": "2026-11-25 01:45",
+   "kickoff": "",
    "home": {
     "name": "博德闪耀",
     "league": "欧冠",
-    "rank": 16,
+    "rank": 20,
     "points": 7,
     "played": 5,
     "win": 2,
@@ -2939,7 +2939,7 @@
    "away": {
     "name": "LASK林茨",
     "league": "欧冠",
-    "rank": 18,
+    "rank": 21,
     "points": 6,
     "played": 5,
     "win": 2,
@@ -3064,8 +3064,8 @@
      {
       "rank": 2,
       "name": "巴黎圣曼",
-      "pts": 12,
-      "p": 4
+      "pts": 13,
+      "p": 5
      },
      {
       "rank": 3,
@@ -3075,14 +3075,8 @@
      },
      {
       "rank": 4,
-      "name": "贝蒂斯",
+      "name": "巴萨",
       "pts": 12,
-      "p": 5
-     },
-     {
-      "rank": 5,
-      "name": "阿森纳",
-      "pts": 11,
       "p": 5
      },
      {
@@ -3092,6 +3086,12 @@
       "p": 4
      },
      {
+      "rank": 5,
+      "name": "利物浦",
+      "pts": 12,
+      "p": 5
+     },
+     {
       "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
@@ -3099,33 +3099,27 @@
      },
      {
       "rank": 6,
+      "name": "贝蒂斯",
+      "pts": 12,
+      "p": 5
+     },
+     {
+      "rank": 7,
+      "name": "阿森纳",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 8,
       "name": "曼城",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 7,
-      "name": "多特蒙德",
+      "rank": 9,
+      "name": "里斯本",
       "pts": 10,
       "p": 5
-     },
-     {
-      "rank": 8,
-      "name": "巴萨",
-      "pts": 9,
-      "p": 4
-     },
-     {
-      "rank": 9,
-      "name": "维拉",
-      "pts": 9,
-      "p": 5
-     },
-     {
-      "rank": 10,
-      "name": "利物浦",
-      "pts": 9,
-      "p": 4
      },
      {
       "rank": 10,
@@ -3134,10 +3128,10 @@
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "布鲁日",
-      "pts": 9,
-      "p": 4
+      "rank": 10,
+      "name": "多特蒙德",
+      "pts": 10,
+      "p": 5
      },
      {
       "rank": 11,
@@ -3146,10 +3140,22 @@
       "p": 4
      },
      {
-      "rank": 12,
-      "name": "里斯本",
+      "rank": 11,
+      "name": "维拉",
       "pts": 9,
-      "p": 4
+      "p": 5
+     },
+     {
+      "rank": 12,
+      "name": "国际米兰",
+      "pts": 9,
+      "p": 5
+     },
+     {
+      "rank": 13,
+      "name": "布鲁日",
+      "pts": 9,
+      "p": 5
      },
      {
       "rank": 13,
@@ -3158,22 +3164,16 @@
       "p": 4
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "加拉塔萨",
       "pts": 9,
       "p": 5
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "拜仁",
       "pts": 8,
-      "p": 4
-     },
-     {
-      "rank": 15,
-      "name": "斯图加特",
-      "pts": 7,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 16,
@@ -3183,15 +3183,15 @@
      },
      {
       "rank": 16,
-      "name": "博德闪耀",
-      "pts": 7,
+      "name": "费内巴切",
+      "pts": 8,
       "p": 5
      },
      {
       "rank": 17,
-      "name": "国际米兰",
-      "pts": 6,
-      "p": 4
+      "name": "斯图加特",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 18,
@@ -3201,20 +3201,20 @@
      },
      {
       "rank": 18,
-      "name": "LASK林茨",
-      "pts": 6,
+      "name": "马竞",
+      "pts": 7,
       "p": 5
      },
      {
       "rank": 19,
       "name": "曼联",
-      "pts": 6,
-      "p": 4
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 20,
-      "name": "波尔图",
-      "pts": 6,
+      "name": "博德闪耀",
+      "pts": 7,
       "p": 5
      },
      {
@@ -3225,15 +3225,9 @@
      },
      {
       "rank": 21,
-      "name": "莱红牛",
+      "name": "LASK林茨",
       "pts": 6,
       "p": 5
-     },
-     {
-      "rank": 22,
-      "name": "费内巴切",
-      "pts": 5,
-      "p": 4
      },
      {
       "rank": 22,
@@ -3242,10 +3236,10 @@
       "p": 4
      },
      {
-      "rank": 23,
-      "name": "罗马",
-      "pts": 4,
-      "p": 4
+      "rank": 22,
+      "name": "波尔图",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 23,
@@ -3254,32 +3248,38 @@
       "p": 4
      },
      {
+      "rank": 23,
+      "name": "莱红牛",
+      "pts": 6,
+      "p": 5
+     },
+     {
       "rank": 24,
-      "name": "顿矿工",
-      "pts": 4,
-      "p": 4
+      "name": "比利亚雷",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 25,
-      "name": "维京",
-      "pts": 4,
-      "p": 4
+      "name": "罗马",
+      "pts": 5,
+      "p": 5
      },
      {
       "rank": 26,
-      "name": "马竞",
+      "name": "顿矿工",
       "pts": 4,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 27,
-      "name": "那不勒斯",
+      "name": "维京",
       "pts": 4,
       "p": 5
      },
      {
       "rank": 28,
-      "name": "埃因霍温",
+      "name": "那不勒斯",
       "pts": 4,
       "p": 5
      },
@@ -3291,19 +3291,19 @@
      },
      {
       "rank": 29,
-      "name": "比利亚雷",
-      "pts": 3,
-      "p": 4
+      "name": "里尔",
+      "pts": 4,
+      "p": 5
+     },
+     {
+      "rank": 30,
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 5
      },
      {
       "rank": 30,
       "name": "RB莱比锡",
-      "pts": 3,
-      "p": 4
-     },
-     {
-      "rank": 30,
-      "name": "萨巴赫",
       "pts": 3,
       "p": 4
      },
@@ -3327,6 +3327,12 @@
      },
      {
       "rank": 33,
+      "name": "萨巴赫",
+      "pts": 3,
+      "p": 5
+     },
+     {
+      "rank": 34,
       "name": "朗斯",
       "pts": 3,
       "p": 5
@@ -3338,16 +3344,10 @@
       "p": 4
      },
      {
-      "rank": 34,
+      "rank": 35,
       "name": "斯拉维亚",
       "pts": 1,
-      "p": 4
-     },
-     {
-      "rank": 35,
-      "name": "里尔",
-      "pts": 1,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 36,
@@ -3821,25 +3821,25 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-25 03:36:37",
-    "asof": "2026-11-25",
-    "prev": "2026-11-24",
+    "updated": "2026-11-26 03:36:37",
+    "asof": "2026-11-26",
+    "prev": "2026-11-25",
     "home": {
      "team": "博德闪耀",
      "n": 15,
      "core_avg": 79.8,
-     "form_avg": 6.86,
-     "high_fatigue": 0,
+     "form_avg": 6.92,
+     "high_fatigue": 1,
      "top": [
       {
        "name": "弗雷德里克·肖沃尔",
        "pos": "DF",
-       "oti": 85.71,
+       "oti": 85.72,
        "dii": 45.89,
        "gim": 85.75,
-       "form": 6.8,
+       "form": 6.9,
        "cons": 27.96,
-       "fatigue": "Low",
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -3847,12 +3847,12 @@
       {
        "name": "贝格",
        "pos": "MF",
-       "oti": 62.69,
+       "oti": 62.7,
        "dii": 62.96,
        "gim": 80.42,
-       "form": 6.5,
-       "cons": 51.9,
-       "fatigue": "Medium",
+       "form": 6.9,
+       "cons": 45.57,
+       "fatigue": "High",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -3863,9 +3863,9 @@
        "oti": 79.79,
        "dii": 36.76,
        "gim": 78.78,
-       "form": 6.7,
-       "cons": 15.19,
-       "fatigue": "Low",
+       "form": 7.0,
+       "cons": 16.46,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -3873,12 +3873,12 @@
       {
        "name": "比约尔图夫特",
        "pos": "DF",
-       "oti": 46.13,
+       "oti": 46.16,
        "dii": 39.31,
        "gim": 78.1,
-       "form": 6.7,
+       "form": 6.8,
        "cons": 9.68,
-       "fatigue": "Low",
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -3889,9 +3889,9 @@
        "oti": 75.65,
        "dii": 53.62,
        "gim": 76.08,
-       "form": 7.3,
+       "form": 7.1,
        "cons": 46.51,
-       "fatigue": "Low",
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -3906,7 +3906,7 @@
    "day": "2026-11-24",
    "code": "周二006",
    "competition": "欧冠",
-   "kickoff": "2026-11-25 04:00",
+   "kickoff": "",
    "home": {
     "name": "科莫",
     "league": "欧冠",
@@ -4045,8 +4045,8 @@
      {
       "rank": 2,
       "name": "巴黎圣曼",
-      "pts": 12,
-      "p": 4
+      "pts": 13,
+      "p": 5
      },
      {
       "rank": 3,
@@ -4056,14 +4056,8 @@
      },
      {
       "rank": 4,
-      "name": "贝蒂斯",
+      "name": "巴萨",
       "pts": 12,
-      "p": 5
-     },
-     {
-      "rank": 5,
-      "name": "阿森纳",
-      "pts": 11,
       "p": 5
      },
      {
@@ -4073,6 +4067,12 @@
       "p": 4
      },
      {
+      "rank": 5,
+      "name": "利物浦",
+      "pts": 12,
+      "p": 5
+     },
+     {
       "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
@@ -4080,33 +4080,27 @@
      },
      {
       "rank": 6,
+      "name": "贝蒂斯",
+      "pts": 12,
+      "p": 5
+     },
+     {
+      "rank": 7,
+      "name": "阿森纳",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 8,
       "name": "曼城",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 7,
-      "name": "多特蒙德",
+      "rank": 9,
+      "name": "里斯本",
       "pts": 10,
       "p": 5
-     },
-     {
-      "rank": 8,
-      "name": "巴萨",
-      "pts": 9,
-      "p": 4
-     },
-     {
-      "rank": 9,
-      "name": "维拉",
-      "pts": 9,
-      "p": 5
-     },
-     {
-      "rank": 10,
-      "name": "利物浦",
-      "pts": 9,
-      "p": 4
      },
      {
       "rank": 10,
@@ -4115,10 +4109,10 @@
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "布鲁日",
-      "pts": 9,
-      "p": 4
+      "rank": 10,
+      "name": "多特蒙德",
+      "pts": 10,
+      "p": 5
      },
      {
       "rank": 11,
@@ -4127,10 +4121,22 @@
       "p": 4
      },
      {
-      "rank": 12,
-      "name": "里斯本",
+      "rank": 11,
+      "name": "维拉",
       "pts": 9,
-      "p": 4
+      "p": 5
+     },
+     {
+      "rank": 12,
+      "name": "国际米兰",
+      "pts": 9,
+      "p": 5
+     },
+     {
+      "rank": 13,
+      "name": "布鲁日",
+      "pts": 9,
+      "p": 5
      },
      {
       "rank": 13,
@@ -4139,22 +4145,16 @@
       "p": 4
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "加拉塔萨",
       "pts": 9,
       "p": 5
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "拜仁",
       "pts": 8,
-      "p": 4
-     },
-     {
-      "rank": 15,
-      "name": "斯图加特",
-      "pts": 7,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 16,
@@ -4164,15 +4164,15 @@
      },
      {
       "rank": 16,
-      "name": "博德闪耀",
-      "pts": 7,
+      "name": "费内巴切",
+      "pts": 8,
       "p": 5
      },
      {
       "rank": 17,
-      "name": "国际米兰",
-      "pts": 6,
-      "p": 4
+      "name": "斯图加特",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 18,
@@ -4182,20 +4182,20 @@
      },
      {
       "rank": 18,
-      "name": "LASK林茨",
-      "pts": 6,
+      "name": "马竞",
+      "pts": 7,
       "p": 5
      },
      {
       "rank": 19,
       "name": "曼联",
-      "pts": 6,
-      "p": 4
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 20,
-      "name": "波尔图",
-      "pts": 6,
+      "name": "博德闪耀",
+      "pts": 7,
       "p": 5
      },
      {
@@ -4206,15 +4206,9 @@
      },
      {
       "rank": 21,
-      "name": "莱红牛",
+      "name": "LASK林茨",
       "pts": 6,
       "p": 5
-     },
-     {
-      "rank": 22,
-      "name": "费内巴切",
-      "pts": 5,
-      "p": 4
      },
      {
       "rank": 22,
@@ -4223,10 +4217,10 @@
       "p": 4
      },
      {
-      "rank": 23,
-      "name": "罗马",
-      "pts": 4,
-      "p": 4
+      "rank": 22,
+      "name": "波尔图",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 23,
@@ -4235,32 +4229,38 @@
       "p": 4
      },
      {
+      "rank": 23,
+      "name": "莱红牛",
+      "pts": 6,
+      "p": 5
+     },
+     {
       "rank": 24,
-      "name": "顿矿工",
-      "pts": 4,
-      "p": 4
+      "name": "比利亚雷",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 25,
-      "name": "维京",
-      "pts": 4,
-      "p": 4
+      "name": "罗马",
+      "pts": 5,
+      "p": 5
      },
      {
       "rank": 26,
-      "name": "马竞",
+      "name": "顿矿工",
       "pts": 4,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 27,
-      "name": "那不勒斯",
+      "name": "维京",
       "pts": 4,
       "p": 5
      },
      {
       "rank": 28,
-      "name": "埃因霍温",
+      "name": "那不勒斯",
       "pts": 4,
       "p": 5
      },
@@ -4272,19 +4272,19 @@
      },
      {
       "rank": 29,
-      "name": "比利亚雷",
-      "pts": 3,
-      "p": 4
+      "name": "里尔",
+      "pts": 4,
+      "p": 5
+     },
+     {
+      "rank": 30,
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 5
      },
      {
       "rank": 30,
       "name": "RB莱比锡",
-      "pts": 3,
-      "p": 4
-     },
-     {
-      "rank": 30,
-      "name": "萨巴赫",
       "pts": 3,
       "p": 4
      },
@@ -4308,6 +4308,12 @@
      },
      {
       "rank": 33,
+      "name": "萨巴赫",
+      "pts": 3,
+      "p": 5
+     },
+     {
+      "rank": 34,
       "name": "朗斯",
       "pts": 3,
       "p": 5
@@ -4319,16 +4325,10 @@
       "p": 4
      },
      {
-      "rank": 34,
+      "rank": 35,
       "name": "斯拉维亚",
       "pts": 1,
-      "p": 4
-     },
-     {
-      "rank": 35,
-      "name": "里尔",
-      "pts": 1,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 36,
@@ -4778,79 +4778,79 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-25 03:36:37",
-    "asof": "2026-11-25",
-    "prev": "2026-11-24",
+    "updated": "2026-11-26 03:36:37",
+    "asof": "2026-11-26",
+    "prev": "2026-11-25",
     "home": {
      "team": "科莫",
      "n": 17,
      "core_avg": 76.4,
-     "form_avg": 6.88,
-     "high_fatigue": 0,
+     "form_avg": 6.94,
+     "high_fatigue": 4,
      "top": [
       {
        "name": "尼科·帕斯",
        "pos": "MF",
-       "oti": 77.75,
-       "dii": 71.61,
-       "gim": 83.78,
-       "form": 7.3,
+       "oti": 77.38,
+       "dii": 71.97,
+       "gim": 83.68,
+       "form": 7.5,
        "cons": 0.0,
-       "fatigue": "Medium",
+       "fatigue": "High",
        "watch": "",
-       "d_gim": -0.2,
+       "d_gim": -0.1,
        "estimated": false
       },
       {
        "name": "哈科沃·拉蒙·纳韦罗斯",
        "pos": "DF",
-       "oti": 57.99,
-       "dii": 54.21,
-       "gim": 80.66,
-       "form": 7.3,
+       "oti": 58.0,
+       "dii": 53.99,
+       "gim": 80.71,
+       "form": 7.5,
        "cons": 48.6,
-       "fatigue": "Low",
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.2,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "扬·科托",
        "pos": "DF",
-       "oti": 74.01,
-       "dii": 34.46,
-       "gim": 75.49,
-       "form": 7.3,
-       "cons": 24.3,
-       "fatigue": "Low",
+       "oti": 73.97,
+       "dii": 34.28,
+       "gim": 75.52,
+       "form": 7.0,
+       "cons": 26.17,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "卢卡斯·达库尼亚",
        "pos": "MF",
-       "oti": 52.55,
-       "dii": 28.78,
-       "gim": 72.54,
-       "form": 7.2,
-       "cons": 72.82,
-       "fatigue": "Medium",
+       "oti": 52.36,
+       "dii": 28.66,
+       "gim": 72.65,
+       "form": 7.1,
+       "cons": 71.84,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": 0.4,
+       "d_gim": 0.1,
        "estimated": false
       },
       {
        "name": "卡伊基",
        "pos": "DF",
-       "oti": 79.8,
-       "dii": 51.41,
+       "oti": 79.74,
+       "dii": 51.14,
        "gim": 69.49,
        "form": 6.7,
        "cons": 5.61,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.6,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -4863,11 +4863,11 @@
    "day": "2026-11-24",
    "code": "周二007",
    "competition": "欧冠",
-   "kickoff": "2026-11-25 04:00",
+   "kickoff": "",
    "home": {
     "name": "莱红牛",
     "league": "欧冠",
-    "rank": 21,
+    "rank": 23,
     "points": 6,
     "played": 5,
     "win": 2,
@@ -4878,7 +4878,7 @@
    "away": {
     "name": "朗斯",
     "league": "欧冠",
-    "rank": 33,
+    "rank": 34,
     "points": 3,
     "played": 5,
     "win": 1,
@@ -5003,8 +5003,8 @@
      {
       "rank": 2,
       "name": "巴黎圣曼",
-      "pts": 12,
-      "p": 4
+      "pts": 13,
+      "p": 5
      },
      {
       "rank": 3,
@@ -5014,14 +5014,8 @@
      },
      {
       "rank": 4,
-      "name": "贝蒂斯",
+      "name": "巴萨",
       "pts": 12,
-      "p": 5
-     },
-     {
-      "rank": 5,
-      "name": "阿森纳",
-      "pts": 11,
       "p": 5
      },
      {
@@ -5031,6 +5025,12 @@
       "p": 4
      },
      {
+      "rank": 5,
+      "name": "利物浦",
+      "pts": 12,
+      "p": 5
+     },
+     {
       "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
@@ -5038,33 +5038,27 @@
      },
      {
       "rank": 6,
+      "name": "贝蒂斯",
+      "pts": 12,
+      "p": 5
+     },
+     {
+      "rank": 7,
+      "name": "阿森纳",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 8,
       "name": "曼城",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 7,
-      "name": "多特蒙德",
+      "rank": 9,
+      "name": "里斯本",
       "pts": 10,
       "p": 5
-     },
-     {
-      "rank": 8,
-      "name": "巴萨",
-      "pts": 9,
-      "p": 4
-     },
-     {
-      "rank": 9,
-      "name": "维拉",
-      "pts": 9,
-      "p": 5
-     },
-     {
-      "rank": 10,
-      "name": "利物浦",
-      "pts": 9,
-      "p": 4
      },
      {
       "rank": 10,
@@ -5073,10 +5067,10 @@
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "布鲁日",
-      "pts": 9,
-      "p": 4
+      "rank": 10,
+      "name": "多特蒙德",
+      "pts": 10,
+      "p": 5
      },
      {
       "rank": 11,
@@ -5085,10 +5079,22 @@
       "p": 4
      },
      {
-      "rank": 12,
-      "name": "里斯本",
+      "rank": 11,
+      "name": "维拉",
       "pts": 9,
-      "p": 4
+      "p": 5
+     },
+     {
+      "rank": 12,
+      "name": "国际米兰",
+      "pts": 9,
+      "p": 5
+     },
+     {
+      "rank": 13,
+      "name": "布鲁日",
+      "pts": 9,
+      "p": 5
      },
      {
       "rank": 13,
@@ -5097,22 +5103,16 @@
       "p": 4
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "加拉塔萨",
       "pts": 9,
       "p": 5
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "拜仁",
       "pts": 8,
-      "p": 4
-     },
-     {
-      "rank": 15,
-      "name": "斯图加特",
-      "pts": 7,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 16,
@@ -5122,15 +5122,15 @@
      },
      {
       "rank": 16,
-      "name": "博德闪耀",
-      "pts": 7,
+      "name": "费内巴切",
+      "pts": 8,
       "p": 5
      },
      {
       "rank": 17,
-      "name": "国际米兰",
-      "pts": 6,
-      "p": 4
+      "name": "斯图加特",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 18,
@@ -5140,20 +5140,20 @@
      },
      {
       "rank": 18,
-      "name": "LASK林茨",
-      "pts": 6,
+      "name": "马竞",
+      "pts": 7,
       "p": 5
      },
      {
       "rank": 19,
       "name": "曼联",
-      "pts": 6,
-      "p": 4
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 20,
-      "name": "波尔图",
-      "pts": 6,
+      "name": "博德闪耀",
+      "pts": 7,
       "p": 5
      },
      {
@@ -5164,15 +5164,9 @@
      },
      {
       "rank": 21,
-      "name": "莱红牛",
+      "name": "LASK林茨",
       "pts": 6,
       "p": 5
-     },
-     {
-      "rank": 22,
-      "name": "费内巴切",
-      "pts": 5,
-      "p": 4
      },
      {
       "rank": 22,
@@ -5181,10 +5175,10 @@
       "p": 4
      },
      {
-      "rank": 23,
-      "name": "罗马",
-      "pts": 4,
-      "p": 4
+      "rank": 22,
+      "name": "波尔图",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 23,
@@ -5193,32 +5187,38 @@
       "p": 4
      },
      {
+      "rank": 23,
+      "name": "莱红牛",
+      "pts": 6,
+      "p": 5
+     },
+     {
       "rank": 24,
-      "name": "顿矿工",
-      "pts": 4,
-      "p": 4
+      "name": "比利亚雷",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 25,
-      "name": "维京",
-      "pts": 4,
-      "p": 4
+      "name": "罗马",
+      "pts": 5,
+      "p": 5
      },
      {
       "rank": 26,
-      "name": "马竞",
+      "name": "顿矿工",
       "pts": 4,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 27,
-      "name": "那不勒斯",
+      "name": "维京",
       "pts": 4,
       "p": 5
      },
      {
       "rank": 28,
-      "name": "埃因霍温",
+      "name": "那不勒斯",
       "pts": 4,
       "p": 5
      },
@@ -5230,19 +5230,19 @@
      },
      {
       "rank": 29,
-      "name": "比利亚雷",
-      "pts": 3,
-      "p": 4
+      "name": "里尔",
+      "pts": 4,
+      "p": 5
+     },
+     {
+      "rank": 30,
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 5
      },
      {
       "rank": 30,
       "name": "RB莱比锡",
-      "pts": 3,
-      "p": 4
-     },
-     {
-      "rank": 30,
-      "name": "萨巴赫",
       "pts": 3,
       "p": 4
      },
@@ -5266,6 +5266,12 @@
      },
      {
       "rank": 33,
+      "name": "萨巴赫",
+      "pts": 3,
+      "p": 5
+     },
+     {
+      "rank": 34,
       "name": "朗斯",
       "pts": 3,
       "p": 5
@@ -5277,16 +5283,10 @@
       "p": 4
      },
      {
-      "rank": 34,
+      "rank": 35,
       "name": "斯拉维亚",
       "pts": 1,
-      "p": 4
-     },
-     {
-      "rank": 35,
-      "name": "里尔",
-      "pts": 1,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 36,
@@ -5896,66 +5896,66 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-25 03:36:37",
-    "asof": "2026-11-25",
-    "prev": "2026-11-24",
+    "updated": "2026-11-26 03:36:37",
+    "asof": "2026-11-26",
+    "prev": "2026-11-25",
     "home": {
      "team": "莱红牛",
      "n": 16,
      "core_avg": 86.3,
      "form_avg": 7.01,
-     "high_fatigue": 0,
+     "high_fatigue": 3,
      "top": [
       {
        "name": "格鲁达",
        "pos": "FW",
-       "oti": 67.98,
+       "oti": 67.92,
        "dii": 65.67,
        "gim": 93.15,
-       "form": 8.4,
-       "cons": 15.22,
-       "fatigue": "Medium",
+       "form": 7.9,
+       "cons": 17.39,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": -0.0,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "努萨",
        "pos": "FW",
-       "oti": 73.23,
+       "oti": 77.46,
        "dii": 50.73,
        "gim": 91.44,
-       "form": 7.5,
-       "cons": 19.57,
-       "fatigue": "Medium",
+       "form": 7.7,
+       "cons": 26.09,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": -0.2,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "罗慕洛",
        "pos": "FW",
-       "oti": 86.39,
+       "oti": 86.41,
        "dii": 59.77,
        "gim": 90.44,
-       "form": 7.2,
-       "cons": 45.65,
+       "form": 7.0,
+       "cons": 47.83,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": -0.2,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "威利·奥尔班",
        "pos": "DF",
-       "oti": 43.4,
+       "oti": 43.37,
        "dii": 49.8,
        "gim": 78.46,
        "form": 7.0,
-       "cons": 21.69,
-       "fatigue": "Medium",
+       "cons": 31.33,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": -0.0,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -5964,11 +5964,11 @@
        "oti": null,
        "dii": null,
        "gim": 78.21,
-       "form": 7.3,
+       "form": 7.1,
        "cons": 9.52,
-       "fatigue": "Low",
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": null,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -5977,46 +5977,46 @@
      "team": "朗斯",
      "n": 18,
      "core_avg": 67.3,
-     "form_avg": 6.56,
-     "high_fatigue": 0,
+     "form_avg": 6.6,
+     "high_fatigue": 1,
      "top": [
       {
        "name": "弗洛里安·托万",
        "pos": "FW",
-       "oti": 84.27,
+       "oti": 84.29,
        "dii": 35.09,
        "gim": 90.55,
        "form": 7.0,
-       "cons": 13.46,
-       "fatigue": "Low",
+       "cons": 15.38,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": -0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "吕邦·阿吉拉尔",
        "pos": "DF",
-       "oti": 63.24,
+       "oti": 63.23,
        "dii": 79.16,
        "gim": 64.49,
        "form": 6.9,
        "cons": 70.45,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.7,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "加尼乌",
        "pos": "DF",
-       "oti": 55.62,
+       "oti": 55.6,
        "dii": 62.5,
        "gim": 64.48,
-       "form": 6.7,
-       "cons": 21.59,
+       "form": 6.5,
+       "cons": 19.32,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.7,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -6025,24 +6025,24 @@
        "oti": null,
        "dii": null,
        "gim": 61.54,
-       "form": 6.7,
+       "form": 6.8,
        "cons": 25.0,
-       "fatigue": "Low",
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": null,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "弗洛里安·索托卡",
        "pos": "FW",
-       "oti": 48.39,
+       "oti": 48.33,
        "dii": 54.09,
        "gim": 55.54,
-       "form": 6.9,
-       "cons": 23.08,
-       "fatigue": "Low",
+       "form": 6.7,
+       "cons": 25.0,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 1.4,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -6054,11 +6054,11 @@
    "day": "2026-11-24",
    "code": "周二008",
    "competition": "欧冠",
-   "kickoff": "2026-11-25 04:00",
+   "kickoff": "",
    "home": {
     "name": "阿森纳",
     "league": "欧冠",
-    "rank": 5,
+    "rank": 7,
     "points": 11,
     "played": 5,
     "win": 3,
@@ -6069,7 +6069,7 @@
    "away": {
     "name": "多特蒙德",
     "league": "欧冠",
-    "rank": 7,
+    "rank": 10,
     "points": 10,
     "played": 5,
     "win": 3,
@@ -6194,8 +6194,8 @@
      {
       "rank": 2,
       "name": "巴黎圣曼",
-      "pts": 12,
-      "p": 4
+      "pts": 13,
+      "p": 5
      },
      {
       "rank": 3,
@@ -6205,14 +6205,8 @@
      },
      {
       "rank": 4,
-      "name": "贝蒂斯",
+      "name": "巴萨",
       "pts": 12,
-      "p": 5
-     },
-     {
-      "rank": 5,
-      "name": "阿森纳",
-      "pts": 11,
       "p": 5
      },
      {
@@ -6222,6 +6216,12 @@
       "p": 4
      },
      {
+      "rank": 5,
+      "name": "利物浦",
+      "pts": 12,
+      "p": 5
+     },
+     {
       "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
@@ -6229,33 +6229,27 @@
      },
      {
       "rank": 6,
+      "name": "贝蒂斯",
+      "pts": 12,
+      "p": 5
+     },
+     {
+      "rank": 7,
+      "name": "阿森纳",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 8,
       "name": "曼城",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 7,
-      "name": "多特蒙德",
+      "rank": 9,
+      "name": "里斯本",
       "pts": 10,
       "p": 5
-     },
-     {
-      "rank": 8,
-      "name": "巴萨",
-      "pts": 9,
-      "p": 4
-     },
-     {
-      "rank": 9,
-      "name": "维拉",
-      "pts": 9,
-      "p": 5
-     },
-     {
-      "rank": 10,
-      "name": "利物浦",
-      "pts": 9,
-      "p": 4
      },
      {
       "rank": 10,
@@ -6264,10 +6258,10 @@
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "布鲁日",
-      "pts": 9,
-      "p": 4
+      "rank": 10,
+      "name": "多特蒙德",
+      "pts": 10,
+      "p": 5
      },
      {
       "rank": 11,
@@ -6276,10 +6270,22 @@
       "p": 4
      },
      {
-      "rank": 12,
-      "name": "里斯本",
+      "rank": 11,
+      "name": "维拉",
       "pts": 9,
-      "p": 4
+      "p": 5
+     },
+     {
+      "rank": 12,
+      "name": "国际米兰",
+      "pts": 9,
+      "p": 5
+     },
+     {
+      "rank": 13,
+      "name": "布鲁日",
+      "pts": 9,
+      "p": 5
      },
      {
       "rank": 13,
@@ -6288,22 +6294,16 @@
       "p": 4
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "加拉塔萨",
       "pts": 9,
       "p": 5
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "拜仁",
       "pts": 8,
-      "p": 4
-     },
-     {
-      "rank": 15,
-      "name": "斯图加特",
-      "pts": 7,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 16,
@@ -6313,15 +6313,15 @@
      },
      {
       "rank": 16,
-      "name": "博德闪耀",
-      "pts": 7,
+      "name": "费内巴切",
+      "pts": 8,
       "p": 5
      },
      {
       "rank": 17,
-      "name": "国际米兰",
-      "pts": 6,
-      "p": 4
+      "name": "斯图加特",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 18,
@@ -6331,20 +6331,20 @@
      },
      {
       "rank": 18,
-      "name": "LASK林茨",
-      "pts": 6,
+      "name": "马竞",
+      "pts": 7,
       "p": 5
      },
      {
       "rank": 19,
       "name": "曼联",
-      "pts": 6,
-      "p": 4
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 20,
-      "name": "波尔图",
-      "pts": 6,
+      "name": "博德闪耀",
+      "pts": 7,
       "p": 5
      },
      {
@@ -6355,15 +6355,9 @@
      },
      {
       "rank": 21,
-      "name": "莱红牛",
+      "name": "LASK林茨",
       "pts": 6,
       "p": 5
-     },
-     {
-      "rank": 22,
-      "name": "费内巴切",
-      "pts": 5,
-      "p": 4
      },
      {
       "rank": 22,
@@ -6372,10 +6366,10 @@
       "p": 4
      },
      {
-      "rank": 23,
-      "name": "罗马",
-      "pts": 4,
-      "p": 4
+      "rank": 22,
+      "name": "波尔图",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 23,
@@ -6384,32 +6378,38 @@
       "p": 4
      },
      {
+      "rank": 23,
+      "name": "莱红牛",
+      "pts": 6,
+      "p": 5
+     },
+     {
       "rank": 24,
-      "name": "顿矿工",
-      "pts": 4,
-      "p": 4
+      "name": "比利亚雷",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 25,
-      "name": "维京",
-      "pts": 4,
-      "p": 4
+      "name": "罗马",
+      "pts": 5,
+      "p": 5
      },
      {
       "rank": 26,
-      "name": "马竞",
+      "name": "顿矿工",
       "pts": 4,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 27,
-      "name": "那不勒斯",
+      "name": "维京",
       "pts": 4,
       "p": 5
      },
      {
       "rank": 28,
-      "name": "埃因霍温",
+      "name": "那不勒斯",
       "pts": 4,
       "p": 5
      },
@@ -6421,19 +6421,19 @@
      },
      {
       "rank": 29,
-      "name": "比利亚雷",
-      "pts": 3,
-      "p": 4
+      "name": "里尔",
+      "pts": 4,
+      "p": 5
+     },
+     {
+      "rank": 30,
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 5
      },
      {
       "rank": 30,
       "name": "RB莱比锡",
-      "pts": 3,
-      "p": 4
-     },
-     {
-      "rank": 30,
-      "name": "萨巴赫",
       "pts": 3,
       "p": 4
      },
@@ -6457,6 +6457,12 @@
      },
      {
       "rank": 33,
+      "name": "萨巴赫",
+      "pts": 3,
+      "p": 5
+     },
+     {
+      "rank": 34,
       "name": "朗斯",
       "pts": 3,
       "p": 5
@@ -6468,16 +6474,10 @@
       "p": 4
      },
      {
-      "rank": 34,
+      "rank": 35,
       "name": "斯拉维亚",
       "pts": 1,
-      "p": 4
-     },
-     {
-      "rank": 35,
-      "name": "里尔",
-      "pts": 1,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 36,
@@ -7253,79 +7253,79 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-25 03:36:37",
-    "asof": "2026-11-25",
-    "prev": "2026-11-24",
+    "updated": "2026-11-26 03:36:37",
+    "asof": "2026-11-26",
+    "prev": "2026-11-25",
     "home": {
      "team": "阿森纳",
      "n": 15,
-     "core_avg": 78.9,
-     "form_avg": 6.91,
-     "high_fatigue": 0,
+     "core_avg": 78.6,
+     "form_avg": 6.9,
+     "high_fatigue": 6,
      "top": [
       {
        "name": "厄德高",
        "pos": "MF",
-       "oti": 74.33,
-       "dii": 22.07,
-       "gim": 85.02,
-       "form": 7.7,
-       "cons": 30.08,
-       "fatigue": "Medium",
+       "oti": 74.28,
+       "dii": 22.01,
+       "gim": 84.54,
+       "form": 7.9,
+       "cons": 26.02,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": -0.4,
+       "d_gim": -0.5,
        "estimated": false
       },
       {
        "name": "萨卡",
        "pos": "MF",
-       "oti": 80.45,
-       "dii": 51.03,
-       "gim": 82.97,
+       "oti": 80.43,
+       "dii": 51.04,
+       "gim": 82.46,
        "form": 7.1,
-       "cons": 3.25,
+       "cons": 2.44,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": -0.4,
+       "d_gim": -0.5,
        "estimated": false
       },
       {
        "name": "德克兰·赖斯",
        "pos": "MF",
-       "oti": 60.93,
-       "dii": 37.92,
-       "gim": 82.81,
-       "form": 6.9,
+       "oti": 60.87,
+       "dii": 37.91,
+       "gim": 82.38,
+       "form": 7.0,
        "cons": 37.4,
-       "fatigue": "Medium",
+       "fatigue": "High",
        "watch": "",
-       "d_gim": -0.3,
+       "d_gim": -0.4,
        "estimated": false
       },
       {
        "name": "加布里埃尔",
        "pos": "DF",
-       "oti": 46.87,
-       "dii": 42.86,
-       "gim": 74.28,
-       "form": 6.8,
-       "cons": 50.0,
-       "fatigue": "Medium",
+       "oti": 46.94,
+       "dii": 43.03,
+       "gim": 74.24,
+       "form": 6.7,
+       "cons": 45.16,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": 0.4,
+       "d_gim": -0.0,
        "estimated": false
       },
       {
        "name": "孔萨",
        "pos": "DF",
-       "oti": 40.27,
-       "dii": 59.43,
-       "gim": 69.53,
+       "oti": 40.34,
+       "dii": 59.62,
+       "gim": 69.54,
        "form": 7.1,
-       "cons": 38.04,
-       "fatigue": "Medium",
+       "cons": 36.56,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -7334,31 +7334,31 @@
      "team": "多特蒙德",
      "n": 14,
      "core_avg": 72.4,
-     "form_avg": 6.83,
-     "high_fatigue": 0,
+     "form_avg": 6.89,
+     "high_fatigue": 5,
      "top": [
       {
        "name": "费利克斯·恩梅沙",
        "pos": "MF",
-       "oti": 48.98,
+       "oti": 49.06,
        "dii": 71.05,
        "gim": 78.47,
-       "form": 7.6,
+       "form": 7.2,
        "cons": 26.67,
-       "fatigue": "Low",
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": -0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "法比奥·席尔瓦",
        "pos": "FW",
-       "oti": 60.78,
+       "oti": 60.79,
        "dii": 35.1,
        "gim": 73.93,
-       "form": 6.9,
+       "form": 6.7,
        "cons": null,
-       "fatigue": "Low",
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": true
@@ -7366,12 +7366,12 @@
       {
        "name": "施洛特贝克",
        "pos": "DF",
-       "oti": 55.06,
+       "oti": 55.04,
        "dii": 61.98,
        "gim": 73.41,
        "form": 7.2,
-       "cons": 43.37,
-       "fatigue": "Medium",
+       "cons": 50.6,
+       "fatigue": "High",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -7379,27 +7379,27 @@
       {
        "name": "安东",
        "pos": "DF",
-       "oti": 40.44,
+       "oti": 40.41,
        "dii": 75.91,
        "gim": 70.8,
-       "form": 6.8,
+       "form": 7.0,
        "cons": 98.8,
-       "fatigue": "Low",
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "塞尔胡·吉拉西",
        "pos": "FW",
-       "oti": 60.79,
+       "oti": 60.81,
        "dii": 23.36,
        "gim": 65.56,
-       "form": 7.2,
+       "form": 7.0,
        "cons": 13.04,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 0.2,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -7411,11 +7411,11 @@
    "day": "2026-11-24",
    "code": "周二009",
    "competition": "欧冠",
-   "kickoff": "2026-11-25 04:00",
+   "kickoff": "",
    "home": {
     "name": "曼城",
     "league": "欧冠",
-    "rank": 6,
+    "rank": 8,
     "points": 10,
     "played": 5,
     "win": 3,
@@ -7426,7 +7426,7 @@
    "away": {
     "name": "那不勒斯",
     "league": "欧冠",
-    "rank": 27,
+    "rank": 28,
     "points": 4,
     "played": 5,
     "win": 1,
@@ -7551,8 +7551,8 @@
      {
       "rank": 2,
       "name": "巴黎圣曼",
-      "pts": 12,
-      "p": 4
+      "pts": 13,
+      "p": 5
      },
      {
       "rank": 3,
@@ -7562,14 +7562,8 @@
      },
      {
       "rank": 4,
-      "name": "贝蒂斯",
+      "name": "巴萨",
       "pts": 12,
-      "p": 5
-     },
-     {
-      "rank": 5,
-      "name": "阿森纳",
-      "pts": 11,
       "p": 5
      },
      {
@@ -7579,6 +7573,12 @@
       "p": 4
      },
      {
+      "rank": 5,
+      "name": "利物浦",
+      "pts": 12,
+      "p": 5
+     },
+     {
       "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
@@ -7586,33 +7586,27 @@
      },
      {
       "rank": 6,
+      "name": "贝蒂斯",
+      "pts": 12,
+      "p": 5
+     },
+     {
+      "rank": 7,
+      "name": "阿森纳",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 8,
       "name": "曼城",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 7,
-      "name": "多特蒙德",
+      "rank": 9,
+      "name": "里斯本",
       "pts": 10,
       "p": 5
-     },
-     {
-      "rank": 8,
-      "name": "巴萨",
-      "pts": 9,
-      "p": 4
-     },
-     {
-      "rank": 9,
-      "name": "维拉",
-      "pts": 9,
-      "p": 5
-     },
-     {
-      "rank": 10,
-      "name": "利物浦",
-      "pts": 9,
-      "p": 4
      },
      {
       "rank": 10,
@@ -7621,10 +7615,10 @@
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "布鲁日",
-      "pts": 9,
-      "p": 4
+      "rank": 10,
+      "name": "多特蒙德",
+      "pts": 10,
+      "p": 5
      },
      {
       "rank": 11,
@@ -7633,10 +7627,22 @@
       "p": 4
      },
      {
-      "rank": 12,
-      "name": "里斯本",
+      "rank": 11,
+      "name": "维拉",
       "pts": 9,
-      "p": 4
+      "p": 5
+     },
+     {
+      "rank": 12,
+      "name": "国际米兰",
+      "pts": 9,
+      "p": 5
+     },
+     {
+      "rank": 13,
+      "name": "布鲁日",
+      "pts": 9,
+      "p": 5
      },
      {
       "rank": 13,
@@ -7645,22 +7651,16 @@
       "p": 4
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "加拉塔萨",
       "pts": 9,
       "p": 5
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "拜仁",
       "pts": 8,
-      "p": 4
-     },
-     {
-      "rank": 15,
-      "name": "斯图加特",
-      "pts": 7,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 16,
@@ -7670,15 +7670,15 @@
      },
      {
       "rank": 16,
-      "name": "博德闪耀",
-      "pts": 7,
+      "name": "费内巴切",
+      "pts": 8,
       "p": 5
      },
      {
       "rank": 17,
-      "name": "国际米兰",
-      "pts": 6,
-      "p": 4
+      "name": "斯图加特",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 18,
@@ -7688,20 +7688,20 @@
      },
      {
       "rank": 18,
-      "name": "LASK林茨",
-      "pts": 6,
+      "name": "马竞",
+      "pts": 7,
       "p": 5
      },
      {
       "rank": 19,
       "name": "曼联",
-      "pts": 6,
-      "p": 4
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 20,
-      "name": "波尔图",
-      "pts": 6,
+      "name": "博德闪耀",
+      "pts": 7,
       "p": 5
      },
      {
@@ -7712,15 +7712,9 @@
      },
      {
       "rank": 21,
-      "name": "莱红牛",
+      "name": "LASK林茨",
       "pts": 6,
       "p": 5
-     },
-     {
-      "rank": 22,
-      "name": "费内巴切",
-      "pts": 5,
-      "p": 4
      },
      {
       "rank": 22,
@@ -7729,10 +7723,10 @@
       "p": 4
      },
      {
-      "rank": 23,
-      "name": "罗马",
-      "pts": 4,
-      "p": 4
+      "rank": 22,
+      "name": "波尔图",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 23,
@@ -7741,32 +7735,38 @@
       "p": 4
      },
      {
+      "rank": 23,
+      "name": "莱红牛",
+      "pts": 6,
+      "p": 5
+     },
+     {
       "rank": 24,
-      "name": "顿矿工",
-      "pts": 4,
-      "p": 4
+      "name": "比利亚雷",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 25,
-      "name": "维京",
-      "pts": 4,
-      "p": 4
+      "name": "罗马",
+      "pts": 5,
+      "p": 5
      },
      {
       "rank": 26,
-      "name": "马竞",
+      "name": "顿矿工",
       "pts": 4,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 27,
-      "name": "那不勒斯",
+      "name": "维京",
       "pts": 4,
       "p": 5
      },
      {
       "rank": 28,
-      "name": "埃因霍温",
+      "name": "那不勒斯",
       "pts": 4,
       "p": 5
      },
@@ -7778,19 +7778,19 @@
      },
      {
       "rank": 29,
-      "name": "比利亚雷",
-      "pts": 3,
-      "p": 4
+      "name": "里尔",
+      "pts": 4,
+      "p": 5
+     },
+     {
+      "rank": 30,
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 5
      },
      {
       "rank": 30,
       "name": "RB莱比锡",
-      "pts": 3,
-      "p": 4
-     },
-     {
-      "rank": 30,
-      "name": "萨巴赫",
       "pts": 3,
       "p": 4
      },
@@ -7814,6 +7814,12 @@
      },
      {
       "rank": 33,
+      "name": "萨巴赫",
+      "pts": 3,
+      "p": 5
+     },
+     {
+      "rank": 34,
       "name": "朗斯",
       "pts": 3,
       "p": 5
@@ -7825,16 +7831,10 @@
       "p": 4
      },
      {
-      "rank": 34,
+      "rank": 35,
       "name": "斯拉维亚",
       "pts": 1,
-      "p": 4
-     },
-     {
-      "rank": 35,
-      "name": "里尔",
-      "pts": 1,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 36,
@@ -8453,25 +8453,25 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-25 03:36:37",
-    "asof": "2026-11-25",
-    "prev": "2026-11-24",
+    "updated": "2026-11-26 03:36:37",
+    "asof": "2026-11-26",
+    "prev": "2026-11-25",
     "home": {
      "team": "曼城",
      "n": 15,
-     "core_avg": 74.9,
-     "form_avg": 6.79,
-     "high_fatigue": 0,
+     "core_avg": 74.8,
+     "form_avg": 6.78,
+     "high_fatigue": 6,
      "top": [
       {
        "name": "哈兰德",
        "pos": "FW",
-       "oti": 77.76,
-       "dii": 24.0,
-       "gim": 88.36,
-       "form": 7.2,
-       "cons": 6.98,
-       "fatigue": "Medium",
+       "oti": 77.82,
+       "dii": 24.02,
+       "gim": 88.42,
+       "form": 7.1,
+       "cons": 4.65,
+       "fatigue": "High",
        "watch": "",
        "d_gim": 0.1,
        "estimated": false
@@ -8479,51 +8479,51 @@
       {
        "name": "埃利奥特·安德森",
        "pos": "MF",
-       "oti": 48.57,
-       "dii": 75.69,
-       "gim": 79.13,
-       "form": 7.2,
+       "oti": 48.52,
+       "dii": 75.76,
+       "gim": 78.66,
+       "form": 7.0,
        "cons": 45.53,
-       "fatigue": "Medium",
+       "fatigue": "High",
        "watch": "",
-       "d_gim": -0.4,
+       "d_gim": -0.5,
        "estimated": false
       },
       {
        "name": "塞梅诺",
        "pos": "MF",
-       "oti": 66.52,
-       "dii": 24.72,
-       "gim": 71.86,
+       "oti": 66.48,
+       "dii": 24.65,
+       "gim": 71.67,
        "form": 7.0,
-       "cons": 12.2,
+       "cons": 11.38,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": -0.1,
+       "d_gim": -0.2,
        "estimated": false
       },
       {
        "name": "格瓦迪奥尔",
        "pos": "DF",
-       "oti": 72.94,
-       "dii": 77.49,
-       "gim": 67.7,
-       "form": 6.4,
-       "cons": 33.7,
+       "oti": 72.99,
+       "dii": 77.63,
+       "gim": 67.84,
+       "form": 6.5,
+       "cons": 50.54,
        "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.1,
        "estimated": false
       },
       {
        "name": "多库",
        "pos": "FW",
-       "oti": 62.05,
-       "dii": 53.5,
-       "gim": 67.51,
-       "form": 7.0,
-       "cons": 16.28,
-       "fatigue": "Medium",
+       "oti": 61.95,
+       "dii": 53.54,
+       "gim": 67.54,
+       "form": 7.2,
+       "cons": 9.3,
+       "fatigue": "High",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -8533,73 +8533,73 @@
     "away": {
      "team": "那不勒斯",
      "n": 18,
-     "core_avg": 68.9,
-     "form_avg": 6.69,
-     "high_fatigue": 0,
+     "core_avg": 69.0,
+     "form_avg": 6.75,
+     "high_fatigue": 6,
      "top": [
       {
        "name": "凯文·德布劳内",
        "pos": "MF",
-       "oti": 91.69,
-       "dii": 30.58,
-       "gim": 73.96,
+       "oti": 91.72,
+       "dii": 30.41,
+       "gim": 74.1,
        "form": 7.1,
        "cons": 1.94,
-       "fatigue": "Medium",
+       "fatigue": "High",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.1,
        "estimated": false
       },
       {
        "name": "斯科特·麦克托米奈",
        "pos": "MF",
-       "oti": 62.79,
-       "dii": 48.95,
-       "gim": 72.28,
+       "oti": 62.41,
+       "dii": 49.01,
+       "gim": 72.41,
        "form": 7.1,
-       "cons": 2.91,
-       "fatigue": "Medium",
+       "cons": 3.88,
+       "fatigue": "High",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.1,
        "estimated": false
       },
       {
        "name": "阿米尔·拉赫马尼",
        "pos": "DF",
-       "oti": 40.68,
-       "dii": 54.55,
-       "gim": 70.47,
-       "form": 6.8,
-       "cons": 1.87,
-       "fatigue": "Low",
+       "oti": 40.72,
+       "dii": 54.26,
+       "gim": 70.48,
+       "form": 6.9,
+       "cons": 2.8,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.5,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "拉法·马林",
        "pos": "DF",
-       "oti": 41.84,
-       "dii": 67.03,
-       "gim": 64.95,
+       "oti": 41.86,
+       "dii": 66.95,
+       "gim": 64.92,
        "form": 6.8,
-       "cons": 25.23,
+       "cons": 24.3,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": -1.1,
+       "d_gim": -0.0,
        "estimated": false
       },
       {
        "name": "迪洛伦佐",
        "pos": "DF",
-       "oti": 57.45,
-       "dii": 44.34,
-       "gim": 63.05,
+       "oti": 57.43,
+       "dii": 44.11,
+       "gim": 63.01,
        "form": 6.5,
        "cons": 82.24,
        "fatigue": "Low",
        "watch": "",
-       "d_gim": 1.0,
+       "d_gim": -0.0,
        "estimated": false
       }
      ]
@@ -8611,7 +8611,7 @@
    "day": "2026-11-24",
    "code": "周二010",
    "competition": "欧冠",
-   "kickoff": "2026-11-25 04:00",
+   "kickoff": "",
    "home": {
     "name": "布拉迪斯",
     "league": "欧冠",
@@ -8626,7 +8626,7 @@
    "away": {
     "name": "贝蒂斯",
     "league": "欧冠",
-    "rank": 4,
+    "rank": 6,
     "points": 12,
     "played": 5,
     "win": 4,
@@ -8751,8 +8751,8 @@
      {
       "rank": 2,
       "name": "巴黎圣曼",
-      "pts": 12,
-      "p": 4
+      "pts": 13,
+      "p": 5
      },
      {
       "rank": 3,
@@ -8762,14 +8762,8 @@
      },
      {
       "rank": 4,
-      "name": "贝蒂斯",
+      "name": "巴萨",
       "pts": 12,
-      "p": 5
-     },
-     {
-      "rank": 5,
-      "name": "阿森纳",
-      "pts": 11,
       "p": 5
      },
      {
@@ -8779,6 +8773,12 @@
       "p": 4
      },
      {
+      "rank": 5,
+      "name": "利物浦",
+      "pts": 12,
+      "p": 5
+     },
+     {
       "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
@@ -8786,33 +8786,27 @@
      },
      {
       "rank": 6,
+      "name": "贝蒂斯",
+      "pts": 12,
+      "p": 5
+     },
+     {
+      "rank": 7,
+      "name": "阿森纳",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 8,
       "name": "曼城",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 7,
-      "name": "多特蒙德",
+      "rank": 9,
+      "name": "里斯本",
       "pts": 10,
       "p": 5
-     },
-     {
-      "rank": 8,
-      "name": "巴萨",
-      "pts": 9,
-      "p": 4
-     },
-     {
-      "rank": 9,
-      "name": "维拉",
-      "pts": 9,
-      "p": 5
-     },
-     {
-      "rank": 10,
-      "name": "利物浦",
-      "pts": 9,
-      "p": 4
      },
      {
       "rank": 10,
@@ -8821,10 +8815,10 @@
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "布鲁日",
-      "pts": 9,
-      "p": 4
+      "rank": 10,
+      "name": "多特蒙德",
+      "pts": 10,
+      "p": 5
      },
      {
       "rank": 11,
@@ -8833,10 +8827,22 @@
       "p": 4
      },
      {
-      "rank": 12,
-      "name": "里斯本",
+      "rank": 11,
+      "name": "维拉",
       "pts": 9,
-      "p": 4
+      "p": 5
+     },
+     {
+      "rank": 12,
+      "name": "国际米兰",
+      "pts": 9,
+      "p": 5
+     },
+     {
+      "rank": 13,
+      "name": "布鲁日",
+      "pts": 9,
+      "p": 5
      },
      {
       "rank": 13,
@@ -8845,22 +8851,16 @@
       "p": 4
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "加拉塔萨",
       "pts": 9,
       "p": 5
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "拜仁",
       "pts": 8,
-      "p": 4
-     },
-     {
-      "rank": 15,
-      "name": "斯图加特",
-      "pts": 7,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 16,
@@ -8870,15 +8870,15 @@
      },
      {
       "rank": 16,
-      "name": "博德闪耀",
-      "pts": 7,
+      "name": "费内巴切",
+      "pts": 8,
       "p": 5
      },
      {
       "rank": 17,
-      "name": "国际米兰",
-      "pts": 6,
-      "p": 4
+      "name": "斯图加特",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 18,
@@ -8888,20 +8888,20 @@
      },
      {
       "rank": 18,
-      "name": "LASK林茨",
-      "pts": 6,
+      "name": "马竞",
+      "pts": 7,
       "p": 5
      },
      {
       "rank": 19,
       "name": "曼联",
-      "pts": 6,
-      "p": 4
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 20,
-      "name": "波尔图",
-      "pts": 6,
+      "name": "博德闪耀",
+      "pts": 7,
       "p": 5
      },
      {
@@ -8912,15 +8912,9 @@
      },
      {
       "rank": 21,
-      "name": "莱红牛",
+      "name": "LASK林茨",
       "pts": 6,
       "p": 5
-     },
-     {
-      "rank": 22,
-      "name": "费内巴切",
-      "pts": 5,
-      "p": 4
      },
      {
       "rank": 22,
@@ -8929,10 +8923,10 @@
       "p": 4
      },
      {
-      "rank": 23,
-      "name": "罗马",
-      "pts": 4,
-      "p": 4
+      "rank": 22,
+      "name": "波尔图",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 23,
@@ -8941,32 +8935,38 @@
       "p": 4
      },
      {
+      "rank": 23,
+      "name": "莱红牛",
+      "pts": 6,
+      "p": 5
+     },
+     {
       "rank": 24,
-      "name": "顿矿工",
-      "pts": 4,
-      "p": 4
+      "name": "比利亚雷",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 25,
-      "name": "维京",
-      "pts": 4,
-      "p": 4
+      "name": "罗马",
+      "pts": 5,
+      "p": 5
      },
      {
       "rank": 26,
-      "name": "马竞",
+      "name": "顿矿工",
       "pts": 4,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 27,
-      "name": "那不勒斯",
+      "name": "维京",
       "pts": 4,
       "p": 5
      },
      {
       "rank": 28,
-      "name": "埃因霍温",
+      "name": "那不勒斯",
       "pts": 4,
       "p": 5
      },
@@ -8978,19 +8978,19 @@
      },
      {
       "rank": 29,
-      "name": "比利亚雷",
-      "pts": 3,
-      "p": 4
+      "name": "里尔",
+      "pts": 4,
+      "p": 5
+     },
+     {
+      "rank": 30,
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 5
      },
      {
       "rank": 30,
       "name": "RB莱比锡",
-      "pts": 3,
-      "p": 4
-     },
-     {
-      "rank": 30,
-      "name": "萨巴赫",
       "pts": 3,
       "p": 4
      },
@@ -9014,6 +9014,12 @@
      },
      {
       "rank": 33,
+      "name": "萨巴赫",
+      "pts": 3,
+      "p": 5
+     },
+     {
+      "rank": 34,
       "name": "朗斯",
       "pts": 3,
       "p": 5
@@ -9025,16 +9031,10 @@
       "p": 4
      },
      {
-      "rank": 34,
+      "rank": 35,
       "name": "斯拉维亚",
       "pts": 1,
-      "p": 4
-     },
-     {
-      "rank": 35,
-      "name": "里尔",
-      "pts": 1,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 36,
@@ -9560,7 +9560,7 @@
    "day": "2026-11-24",
    "code": "周二011",
    "competition": "欧冠",
-   "kickoff": "2026-11-25 04:00",
+   "kickoff": "",
    "home": {
     "name": "费耶诺德",
     "league": "欧冠",
@@ -9575,7 +9575,7 @@
    "away": {
     "name": "波尔图",
     "league": "欧冠",
-    "rank": 20,
+    "rank": 22,
     "points": 6,
     "played": 5,
     "win": 2,
@@ -9700,8 +9700,8 @@
      {
       "rank": 2,
       "name": "巴黎圣曼",
-      "pts": 12,
-      "p": 4
+      "pts": 13,
+      "p": 5
      },
      {
       "rank": 3,
@@ -9711,14 +9711,8 @@
      },
      {
       "rank": 4,
-      "name": "贝蒂斯",
+      "name": "巴萨",
       "pts": 12,
-      "p": 5
-     },
-     {
-      "rank": 5,
-      "name": "阿森纳",
-      "pts": 11,
       "p": 5
      },
      {
@@ -9728,6 +9722,12 @@
       "p": 4
      },
      {
+      "rank": 5,
+      "name": "利物浦",
+      "pts": 12,
+      "p": 5
+     },
+     {
       "rank": 6,
       "name": "阿斯顿维拉",
       "pts": 9,
@@ -9735,33 +9735,27 @@
      },
      {
       "rank": 6,
+      "name": "贝蒂斯",
+      "pts": 12,
+      "p": 5
+     },
+     {
+      "rank": 7,
+      "name": "阿森纳",
+      "pts": 11,
+      "p": 5
+     },
+     {
+      "rank": 8,
       "name": "曼城",
       "pts": 10,
       "p": 5
      },
      {
-      "rank": 7,
-      "name": "多特蒙德",
+      "rank": 9,
+      "name": "里斯本",
       "pts": 10,
       "p": 5
-     },
-     {
-      "rank": 8,
-      "name": "巴萨",
-      "pts": 9,
-      "p": 4
-     },
-     {
-      "rank": 9,
-      "name": "维拉",
-      "pts": 9,
-      "p": 5
-     },
-     {
-      "rank": 10,
-      "name": "利物浦",
-      "pts": 9,
-      "p": 4
      },
      {
       "rank": 10,
@@ -9770,10 +9764,10 @@
       "p": 4
      },
      {
-      "rank": 11,
-      "name": "布鲁日",
-      "pts": 9,
-      "p": 4
+      "rank": 10,
+      "name": "多特蒙德",
+      "pts": 10,
+      "p": 5
      },
      {
       "rank": 11,
@@ -9782,10 +9776,22 @@
       "p": 4
      },
      {
-      "rank": 12,
-      "name": "里斯本",
+      "rank": 11,
+      "name": "维拉",
       "pts": 9,
-      "p": 4
+      "p": 5
+     },
+     {
+      "rank": 12,
+      "name": "国际米兰",
+      "pts": 9,
+      "p": 5
+     },
+     {
+      "rank": 13,
+      "name": "布鲁日",
+      "pts": 9,
+      "p": 5
      },
      {
       "rank": 13,
@@ -9794,22 +9800,16 @@
       "p": 4
      },
      {
-      "rank": 13,
+      "rank": 14,
       "name": "加拉塔萨",
       "pts": 9,
       "p": 5
      },
      {
-      "rank": 14,
+      "rank": 15,
       "name": "拜仁",
       "pts": 8,
-      "p": 4
-     },
-     {
-      "rank": 15,
-      "name": "斯图加特",
-      "pts": 7,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 16,
@@ -9819,15 +9819,15 @@
      },
      {
       "rank": 16,
-      "name": "博德闪耀",
-      "pts": 7,
+      "name": "费内巴切",
+      "pts": 8,
       "p": 5
      },
      {
       "rank": 17,
-      "name": "国际米兰",
-      "pts": 6,
-      "p": 4
+      "name": "斯图加特",
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 18,
@@ -9837,20 +9837,20 @@
      },
      {
       "rank": 18,
-      "name": "LASK林茨",
-      "pts": 6,
+      "name": "马竞",
+      "pts": 7,
       "p": 5
      },
      {
       "rank": 19,
       "name": "曼联",
-      "pts": 6,
-      "p": 4
+      "pts": 7,
+      "p": 5
      },
      {
       "rank": 20,
-      "name": "波尔图",
-      "pts": 6,
+      "name": "博德闪耀",
+      "pts": 7,
       "p": 5
      },
      {
@@ -9861,15 +9861,9 @@
      },
      {
       "rank": 21,
-      "name": "莱红牛",
+      "name": "LASK林茨",
       "pts": 6,
       "p": 5
-     },
-     {
-      "rank": 22,
-      "name": "费内巴切",
-      "pts": 5,
-      "p": 4
      },
      {
       "rank": 22,
@@ -9878,10 +9872,10 @@
       "p": 4
      },
      {
-      "rank": 23,
-      "name": "罗马",
-      "pts": 4,
-      "p": 4
+      "rank": 22,
+      "name": "波尔图",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 23,
@@ -9890,32 +9884,38 @@
       "p": 4
      },
      {
+      "rank": 23,
+      "name": "莱红牛",
+      "pts": 6,
+      "p": 5
+     },
+     {
       "rank": 24,
-      "name": "顿矿工",
-      "pts": 4,
-      "p": 4
+      "name": "比利亚雷",
+      "pts": 6,
+      "p": 5
      },
      {
       "rank": 25,
-      "name": "维京",
-      "pts": 4,
-      "p": 4
+      "name": "罗马",
+      "pts": 5,
+      "p": 5
      },
      {
       "rank": 26,
-      "name": "马竞",
+      "name": "顿矿工",
       "pts": 4,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 27,
-      "name": "那不勒斯",
+      "name": "维京",
       "pts": 4,
       "p": 5
      },
      {
       "rank": 28,
-      "name": "埃因霍温",
+      "name": "那不勒斯",
       "pts": 4,
       "p": 5
      },
@@ -9927,19 +9927,19 @@
      },
      {
       "rank": 29,
-      "name": "比利亚雷",
-      "pts": 3,
-      "p": 4
+      "name": "里尔",
+      "pts": 4,
+      "p": 5
+     },
+     {
+      "rank": 30,
+      "name": "埃因霍温",
+      "pts": 4,
+      "p": 5
      },
      {
       "rank": 30,
       "name": "RB莱比锡",
-      "pts": 3,
-      "p": 4
-     },
-     {
-      "rank": 30,
-      "name": "萨巴赫",
       "pts": 3,
       "p": 4
      },
@@ -9963,6 +9963,12 @@
      },
      {
       "rank": 33,
+      "name": "萨巴赫",
+      "pts": 3,
+      "p": 5
+     },
+     {
+      "rank": 34,
       "name": "朗斯",
       "pts": 3,
       "p": 5
@@ -9974,16 +9980,10 @@
       "p": 4
      },
      {
-      "rank": 34,
+      "rank": 35,
       "name": "斯拉维亚",
       "pts": 1,
-      "p": 4
-     },
-     {
-      "rank": 35,
-      "name": "里尔",
-      "pts": 1,
-      "p": 4
+      "p": 5
      },
      {
       "rank": 36,
@@ -10613,66 +10613,66 @@
    "squad": {
     "source": "球小策球员数据中心",
     "url": "https://www.qiuxiaoce.com/player-rankings/",
-    "updated": "2026-11-25 03:36:37",
-    "asof": "2026-11-25",
-    "prev": "2026-11-24",
+    "updated": "2026-11-26 03:36:37",
+    "asof": "2026-11-26",
+    "prev": "2026-11-25",
     "home": {
      "team": "费耶诺德",
      "n": 14,
      "core_avg": 78.5,
-     "form_avg": 6.65,
+     "form_avg": 6.71,
      "high_fatigue": 0,
      "top": [
       {
        "name": "哈吉·穆萨",
        "pos": "MF",
-       "oti": 82.12,
+       "oti": 82.26,
        "dii": 39.8,
        "gim": 89.21,
-       "form": 7.3,
-       "cons": 0.0,
-       "fatigue": "Low",
+       "form": 7.6,
+       "cons": 1.19,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.1,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "泽基尔",
        "pos": "MF",
-       "oti": 73.03,
+       "oti": 73.16,
        "dii": 32.03,
        "gim": 78.9,
-       "form": 6.3,
+       "form": 6.6,
        "cons": 5.95,
-       "fatigue": "Low",
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.4,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "雷德",
        "pos": "DF",
-       "oti": 77.25,
+       "oti": 77.26,
        "dii": 70.18,
        "gim": 75.59,
-       "form": 6.9,
-       "cons": 10.1,
-       "fatigue": "Low",
+       "form": 6.8,
+       "cons": 13.13,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": -0.3,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
        "name": "瓦伦特",
        "pos": "MF",
-       "oti": 80.25,
+       "oti": 78.47,
        "dii": 26.58,
        "gim": 74.89,
-       "form": 6.6,
-       "cons": 28.57,
-       "fatigue": "Low",
+       "form": 6.8,
+       "cons": 30.95,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.2,
+       "d_gim": 0.0,
        "estimated": false
       },
       {
@@ -10681,11 +10681,11 @@
        "oti": 79.24,
        "dii": 50.63,
        "gim": 74.02,
-       "form": 6.9,
-       "cons": 6.98,
-       "fatigue": "Low",
+       "form": 6.7,
+       "cons": 4.65,
+       "fatigue": "Medium",
        "watch": "",
-       "d_gim": 0.9,
+       "d_gim": 0.0,
        "estimated": false
       }
      ]
@@ -10694,8 +10694,8 @@
      "team": "波尔图",
      "n": 14,
      "core_avg": 85.5,
-     "form_avg": 6.82,
-     "high_fatigue": 0,
+     "form_avg": 6.91,
+     "high_fatigue": 1,
      "top": [
       {
        "name": "加布里·贝加",
@@ -10703,8 +10703,8 @@
        "oti": 93.67,
        "dii": 58.8,
        "gim": 89.44,
-       "form": 7.4,
-       "cons": 1.19,
+       "form": 7.3,
+       "cons": 2.38,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -10729,8 +10729,8 @@
        "oti": 72.32,
        "dii": 70.98,
        "gim": 86.12,
-       "form": 6.9,
-       "cons": 17.5,
+       "form": 6.7,
+       "cons": 10.0,
        "fatigue": "Low",
        "watch": "",
        "d_gim": 0.0,
@@ -10742,9 +10742,9 @@
        "oti": 58.95,
        "dii": 35.05,
        "gim": 84.49,
-       "form": 7.1,
-       "cons": 46.91,
-       "fatigue": "Low",
+       "form": 7.2,
+       "cons": 49.38,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
@@ -10755,9 +10755,9 @@
        "oti": 46.66,
        "dii": 69.27,
        "gim": 81.06,
-       "form": 7.3,
-       "cons": 43.21,
-       "fatigue": "Low",
+       "form": 7.4,
+       "cons": 65.43,
+       "fatigue": "Medium",
        "watch": "",
        "d_gim": 0.0,
        "estimated": false
