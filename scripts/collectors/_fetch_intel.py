@@ -153,8 +153,8 @@ def dqd_article_text(h: str) -> str:
                  flags=re.S | re.I)
     txt = _html.unescape(re.sub(r'<[^>]+>', '', seg))
     txt = re.sub(r'\s+', '', txt)
-    # 日文异体字归一（球员名等）：塚→冢，避免下游繁体红线误拦
-    txt = txt.translate(str.maketrans({'塚': '冢'}))
+    # 日文异体字归一（球员名等）：塚→冢、鎌→镰，避免下游繁体红线误拦
+    txt = txt.translate(str.maketrans({'塚': '冢', '鎌': '镰'}))
     for cut in ('本文根据', '查看原文', '点击查看完整内容', '懂球帝App里',
                 '广告', '相关阅读', '版权声明'):
         p = txt.find(cut)

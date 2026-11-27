@@ -35,7 +35,7 @@ TEAM_CITY = {
     # 2026-11-13 补充：欧国联/国际赛国家队主场（苏格兰=格拉斯哥汉普顿；塞尔维亚=贝尔格莱德；哥伦比亚=巴兰基亚大都会）
     '新加坡': 'Singapore', '摩尔多瓦': 'Chisinau', '保加利亚': 'Sofia',
     '苏格兰': 'Glasgow', '塞尔维亚': 'Belgrade', '卢森堡': 'Luxembourg',
-    '斯洛伐克': 'Bratislava', '斯洛文尼': 'Ljubljana', '荷兰': 'Amsterdam',
+    '斯洛伐克': 'Bratislava', '布拉迪斯': 'Bratislava', '斯洛文尼': 'Ljubljana', '荷兰': 'Amsterdam',
     '阿根廷': 'Buenos Aires', '哥伦比亚': 'Barranquilla',
     # 2026-11-16 补充：欧国联国家队主场（法罗群岛=托尔斯港；哈萨克=阿斯塔纳；爱沙尼亚=塔林；冰岛=雷克雅未克；
     # 瑞士=巴塞尔；德国=柏林；北马其顿=斯科普里；希腊=雅典）
@@ -222,6 +222,7 @@ CITY_ZH = {
     'Enschede': '恩斯赫德', 'Utrecht': '乌得勒支', 'Alkmaar': '阿尔克马尔',
     'Lisbon': '里斯本', 'Porto': '波尔图', 'Braga': '布拉加',
     'Bruges': '布鲁日', 'Brussels': '布鲁塞尔', 'Ghent': '根特',
+    'Bratislava': '布拉迪斯拉发',
     'Istanbul': '伊斯坦布尔', 'Linz': '林茨', 'Salzburg': '萨尔茨堡',
     'Graz': '格拉茨', 'Vienna': '维也纳', 'Basel': '巴塞尔', 'Bern': '伯尔尼',
     'Glasgow': '格拉斯哥', 'Stavanger': '斯塔万格', 'Bodo': '博德',
@@ -333,10 +334,40 @@ def fetch_one(lat, lon, date):
     return d
 
 
+def _matches_with_today_codes(matches: list, today: str) -> list:
+    """把展示页当日竞彩场次补进天气采集清单。
+
+    _calc_result.json 只收赛程源当天行，凌晨开赛的跨日竞彩场次（如周四012）
+    在源里归属次日且 code 为空，导致天气漏采。data/days/<today>.json 是
+    展示页实际场次，编号与归属都正确，按 code 补进即可。
+    """
+    path = _pathlib.Path(ROOT / "data" / "days" / f"{today}.json")
+    if not path.exists():
+        return matches
+    try:
+        rows = json.loads(path.read_text(encoding="utf-8")).get("matches") or []
+    except (OSError, ValueError):
+        return matches
+    have = {str(m.get("matchNumStr") or "").strip() for m in matches}
+    out = list(matches)
+    for r in rows:
+        code = str(r.get("code") or "").strip()
+        if not code or code in have:
+            continue
+        home = (r.get("home") or {}).get("name") or ""
+        away = (r.get("away") or {}).get("name") or ""
+        if not home or not away:
+            continue
+        out.append({"matchNumStr": code, "home": home, "away": away,
+                    "league": r.get("competition") or ""})
+        have.add(code)
+    return out
+
+
 def main():
     calc = json.load(open('_calc_result.json', encoding='utf-8'))
     today = calc['today']
-    matches = calc.get('matches') or []
+    matches = _matches_with_today_codes(calc.get('matches') or [], today)
     cache = load_geo()
     out = {'date': today, 'updated': time.strftime('%Y-%m-%d %H:%M'), 'matches': {}}
     miss = []
