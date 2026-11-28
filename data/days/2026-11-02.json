@@ -348,7 +348,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-27T15:06:15+08:00",
+   "generated_at": "2026-11-28T08:21:49+08:00",
    "extras": {
     "table": [
      {
@@ -1543,7 +1543,7 @@
    "metrics_away": {
     "attack": 36,
     "defence": 5,
-    "control": 10,
+    "control": 9,
     "form": 9,
     "value": 41,
     "motivation": 23,
@@ -1835,7 +1835,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-27T15:06:15+08:00",
+   "generated_at": "2026-11-28T08:21:49+08:00",
    "extras": {
     "table": [
      {
@@ -1888,13 +1888,13 @@
      },
      {
       "rank": 8,
-      "name": "那不勒斯",
-      "pts": 18,
-      "p": 12
+      "name": "博洛尼亚",
+      "pts": 19,
+      "p": 13
      },
      {
       "rank": 9,
-      "name": "博洛尼亚",
+      "name": "那不勒斯",
       "pts": 18,
       "p": 12
      },
@@ -1954,13 +1954,13 @@
      },
      {
       "rank": 19,
-      "name": "乌迪内斯",
-      "pts": 6,
-      "p": 12
+      "name": "威尼斯",
+      "pts": 7,
+      "p": 13
      },
      {
       "rank": 20,
-      "name": "威尼斯",
+      "name": "乌迪内斯",
       "pts": 6,
       "p": 12
      }
@@ -3413,7 +3413,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-27T15:06:15+08:00",
+   "generated_at": "2026-11-28T08:21:49+08:00",
    "extras": {
     "table": [
      {
@@ -4690,7 +4690,7 @@
    "metrics_home": {
     "attack": 65,
     "defence": 16,
-    "control": 41,
+    "control": 42,
     "form": 33,
     "value": 64,
     "motivation": 56,
@@ -4724,7 +4724,7 @@
    "metrics_away": {
     "attack": 2,
     "defence": 35,
-    "control": 12,
+    "control": 15,
     "form": 20,
     "value": 22,
     "motivation": 10,
@@ -5016,7 +5016,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-27T15:06:15+08:00",
+   "generated_at": "2026-11-28T08:21:49+08:00",
    "extras": {
     "table": [
      {
@@ -5069,13 +5069,13 @@
      },
      {
       "rank": 8,
-      "name": "那不勒斯",
-      "pts": 18,
-      "p": 12
+      "name": "博洛尼亚",
+      "pts": 19,
+      "p": 13
      },
      {
       "rank": 9,
-      "name": "博洛尼亚",
+      "name": "那不勒斯",
       "pts": 18,
       "p": 12
      },
@@ -5135,13 +5135,13 @@
      },
      {
       "rank": 19,
-      "name": "乌迪内斯",
-      "pts": 6,
-      "p": 12
+      "name": "威尼斯",
+      "pts": 7,
+      "p": 13
      },
      {
       "rank": 20,
-      "name": "威尼斯",
+      "name": "乌迪内斯",
       "pts": 6,
       "p": 12
      }
@@ -6434,7 +6434,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-27T15:06:15+08:00",
+   "generated_at": "2026-11-28T08:21:49+08:00",
    "extras": {
     "table": [
      {
@@ -7903,7 +7903,7 @@
    "metrics_away": {
     "attack": 45,
     "defence": 85,
-    "control": 74,
+    "control": 70,
     "form": 46,
     "value": 49,
     "motivation": 32,
@@ -8203,7 +8203,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-27T15:06:15+08:00",
+   "generated_at": "2026-11-28T08:21:49+08:00",
    "extras": {
     "table": [
      {
@@ -8258,7 +8258,7 @@
       "rank": 8,
       "name": "切尔西",
       "pts": 16,
-      "p": 11
+      "p": 12
      },
      {
       "rank": 8,
@@ -8322,12 +8322,18 @@
      },
      {
       "rank": 14,
+      "name": "诺丁汉",
+      "pts": 12,
+      "p": 12
+     },
+     {
+      "rank": 15,
       "name": "考文垂",
       "pts": 12,
       "p": 11
      },
      {
-      "rank": 15,
+      "rank": 16,
       "name": "富勒姆",
       "pts": 11,
       "p": 11
@@ -8339,15 +8345,9 @@
       "p": 10
      },
      {
-      "rank": 16,
+      "rank": 17,
       "name": "伊普斯",
       "pts": 11,
-      "p": 11
-     },
-     {
-      "rank": 17,
-      "name": "诺丁汉",
-      "pts": 9,
       "p": 11
      },
      {
@@ -9709,7 +9709,7 @@
    "metrics_away": {
     "attack": 15,
     "defence": 6,
-    "control": 10,
+    "control": 9,
     "form": 16,
     "value": 42,
     "motivation": 21,
@@ -9992,7 +9992,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-27T15:06:15+08:00",
+   "generated_at": "2026-11-28T08:21:49+08:00",
    "extras": {
     "table": [
      {
@@ -10051,6 +10051,12 @@
      },
      {
       "rank": 6,
+      "name": "桑坦德",
+      "pts": 20,
+      "p": 14
+     },
+     {
+      "rank": 7,
       "name": "塞维利亚",
       "pts": 19,
       "p": 13
@@ -10060,12 +10066,6 @@
       "name": "毕尔巴鄂竞技",
       "pts": 16,
       "p": 11
-     },
-     {
-      "rank": 7,
-      "name": "桑坦德",
-      "pts": 17,
-      "p": 13
      },
      {
       "rank": 8,
@@ -10131,7 +10131,7 @@
       "rank": 15,
       "name": "莱万特",
       "pts": 12,
-      "p": 13
+      "p": 14
      },
      {
       "rank": 16,
@@ -11162,7 +11162,7 @@
     "slug": "",
     "league": "葡超",
     "country": "",
-    "rank": 11,
+    "rank": 12,
     "points": 12,
     "played": 11,
     "win": 3,
@@ -11471,7 +11471,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-27T15:06:15+08:00",
+   "generated_at": "2026-11-28T08:21:49+08:00",
    "extras": {
     "table": [
      {
@@ -11536,19 +11536,19 @@
      },
      {
       "rank": 11,
+      "name": "葡国民",
+      "pts": 13,
+      "p": 12
+     },
+     {
+      "rank": 12,
       "name": "阿尔维卡",
       "pts": 12,
       "p": 11
      },
      {
-      "rank": 12,
-      "name": "阿马多拉",
-      "pts": 10,
-      "p": 11
-     },
-     {
       "rank": 13,
-      "name": "葡国民",
+      "name": "阿马多拉",
       "pts": 10,
       "p": 11
      },
@@ -11562,7 +11562,7 @@
       "rank": 15,
       "name": "马里迪莫",
       "pts": 8,
-      "p": 10
+      "p": 11
      },
      {
       "rank": 16,
@@ -12904,7 +12904,7 @@
     "settled_at": "2026-11-02"
    },
    "source_url": "",
-   "generated_at": "2026-11-27T15:06:15+08:00",
+   "generated_at": "2026-11-28T08:21:49+08:00",
    "extras": {
     "lam_home": 1.453,
     "lam_away": 1.11,
